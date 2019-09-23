@@ -1,0 +1,5 @@
+echo papers/Thesis.tex
+echo scripts/wip.jl
+echo scripts/plots.jl
+find src/ -name "*.jl"
+echo proj.files
