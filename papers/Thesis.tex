@@ -1,16 +1,47 @@
 %
-\documentclass[12pt]{report}
+\documentclass[10pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,xcolor}
 \usepackage{cancel}
 \usepackage{siunitx}
 \usepackage{graphicx}
 \usepackage{smartdiagram}
+\usepackage[caption=false]{subfig}
+\captionsetup[subfigure]{labelformat=brace}
 \usepackage{tikz}
 \usepackage{bm}
+\usepackage{natbib}
 \usepackage{hyperref}
 
+%to be used in main text
+\newcommand{\ket}[1]{$\left|#1\right\rangle$}
+\newcommand{\bra}[1]{$\langle #1\rvert$}
+
+%To be used within math env
+\newcommand{\Ket}[1]{\left|#1\right\rangle}
+\newcommand{\Bra}[1]{\langle #1\rvert}
+
+\newcommand{\kpoint}{$\bold{K}$ }
+\newcommand{\Kpoint}{$\bold{K'}$ }
+\newcommand{\gpoint}{$\bold{\Gamma}$}
+
+\newcommand{\angstrom}{\mbox{\normalfont\AA} }
+
+%For editing
+\newcommand{\sa}[1]{{\color{violet}[#1]}}
+\newcommand{\lp}[1]{{\color{red}[#1]}}
+
+% To make subfiles graphics be relative
+\def\Include#1{%
+        \def\ChapterPath{#1/}%
+        \def\GraphicsPath{\ChapterPath Images/}%
+        \include{\ChapterPath#1}}
+
+\newcommand\IncludeGraphics[2][width=\linewidth]{%
+    \includegraphics[#1]{\GraphicsPath #2}}   
+
 \usetikzlibrary{shapes,arrows,decorations.pathmorphing}
+
 %\title{Ultrafast manipulation of SDW in Cr}
 %model: Louis Ponet, Sergey Artyukhin
 %\date{November 2018}
@@ -28,11 +59,10 @@
 \chapter*{Acknowledgements}
 \tableofcontents
 
-\chapter{Introduction}
-\input{chapters/introduction}
-\chapter{Charge order and spin-momentum locking in high spin-orbit coupled ferroelectrics}
-\input{chapters/spinorbit_rashba.tex}
-\chapter{Strong coupling and ultrafast control of charge and spin density waves in elemental Chromium}
-\input{chapters/chromium_sdw_cdw.tex}
-\chapter{
+\Include{Introduction}
+% \subfile{chapters/introduction}
+% \chapter{Charge order and spin-momentum locking in high spin-orbit coupled ferroelectrics}
+\Include{Rashba}
+% \chapter{Strong coupling and ultrafast control of charge and spin density waves in elemental Chromium}
+% \subfile{chapters/chromium_sdw_cdw.tex}
 \end{document}
