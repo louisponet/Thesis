@@ -2,23 +2,29 @@
 \section{Introduction}
 % Bulk ferroelectrics with large atomic spin-orbit coupling allow for electric control of spin-polarized states~\cite{DiSante2013,Ishizaka2011,Kim2014, Liebmann2016, Krempasky2015SurfaceSemiconductor}, allowing for the switching of the spin texture by an externally applied electric field. 
 % The underlying mechanism is, however, not well understood.
-The research area of spintronics aims to supersede electronics  by using spins instead of charges for information processing and storage. %\sa{https://doi.org/10.1146/annurev-conmatphys-070909-104123} 
+The research area of spintronics aims to supersede electronics by using spins instead of charges for information processing and storage. %\sa{https://doi.org/10.1146/annurev-conmatphys-070909-104123} 
 Many possible devices that utilize both charge and spin degrees of freedom of carriers have been theorized. Examples are the spin field-effect transistors (spin-FET)\cite{Datta1990}, storage devices which utilize spin-current and associated spin-transfer torque to efficiently manipulate magnetic domains \cite{Kent2015,Jungwirth2016}. In spite of fundamental interest and potential for applications, the actual realization of these devices has been rather elusive. One of the main culprits for the limited success to date is that the devices require very granular, ideally electric, control of the spin, which is impeded by widely separated energy scales and weak coupling between magnetic and structural degrees of freedom. One class of materials that allow for such electric control of spin-polarized states are the ferroelectric semiconductors with large atomic spin-orbit coupling (SOC) \cite{DiSante2013,Ishizaka2011,Kim2014}. The underlying mechanism is a coupling between the spin-polarized states and the ferroelectric polarization of the material that makes it possible to switch the ferroelectric polarization and in turn the polarization of the spin by the external electric field. The effect has been confirmed both experimentally \cite{Ishizaka2011,Liebmann2016,Krempasky2015SurfaceSemiconductor}, and through ab initio density functional theory (DFT) simulations \cite{DiSante2013}. 
 
 \section{Rashba-Bychkov Effect}
-############################ NEW ############################
-The first effect that springs to mind bearing the signatures of the above description is the Rashba effect, first theorised in the seminal 1959 paper by Rashab and Bychkov\cite{Rashba1959Symmetry}. The standard derivation starts from the fully relativistic Dirac-equation
+%############################ NEW ############################
+The first effect that springs to mind bearing the signatures of the above description is the Rashba effect, first theorised in the seminal 1959 paper by Rashba and Bychkov \cite{Rashba1959SymmetryAr}. This effect is a text book case where the breaking of a symmetry, in this case inversion symmetry, leads to previously degenerate states becoming nondegenerate with a definite value of the parameter describing the symmetry. In the case of the Rashba-effect, the absence of inversion symmetry leads to a breaking of the up-down symmetry of the spin of bloch functions, leading to states with definite spin polarization. These could then in turn theoretically be used in spintronics applications.
+We will first describe how the effect was first derived and then discuss the issues with explaining the observed spin-splitting of bloch wavefunctions in bulk ferroelectrics, and give a hint why the largest spin-polarizing effect might actually be coming from a completely different origin. 
+
+The standard derivation starts from an expansion of the electron part of the fully relativistic Dirac-equation up to second order in $1/c$ where $c$ is the speed of light \cite{Rashba1959SymmetryAr}, in the absense of an external magnetic field:
 
 \begin{equation}
-
+	\mathcal{H} \psi = \left[\frac{\bm{p}^2}{2m} - e V - \frac{e \hbar}{4m^2c^2}(\bm{\sigma}\cdot[\bm{\nabla}V \times \bm{p}]) - \frac{\hbar^2}{8m^2c^2} \Delta V - \frac{\bm{p}^4}{8m^3c^2}\right]\psi = E\psi
 \end{equation}
 
-thought one tends to have when reading the above description One well known effect that has the same signatures as has been described above of the above described 
-While looking at the first While a very similar looking effect has been described 
+where $\psi$ is a two component spinor, V denotes the electric potential, $\bm{\sigma}$ a vector of Pauli-matrices $(\sigma_x, \sigma_y, \sigma_z)$, $m$ and $e$ the electron mass and charge respectively, and $\bm{p}$ the canonical momentum. The first two terms are the nonrelativistic part of the Hamiltonian, the third represents the spin-orbit coupling (SOC), the fourth is known as the Darwin effect and the fifth is the relativistic correction to the effective electron mass.
+
+The next step is to insert Bloch spinor wavefunctions $\psi(\bm{k}, \bm{r}) = u(\bm{k}, \bm{r})e^{i\bm{k}\cdot\bm{r}}$, where $u$ denotes the cell-periodic part
+% \begin{equation}
+
+% \end{equation}
 
 
-
-############################################################
+%############################################################
 
 This work aims to clarify the effect in bulk systems, the interplay between ferroelectricity, orbital character and atomic SOC that causes it, and in doing so identifies the criteria for finding other materials with large Rashba splitting.
 We start with a brief overview of the important properties of GeTe, followed by a qualitative description of the coupling between the orbital angular momentum (OAM) and the electric polarization. Then we verify the model by performing ab initio calculations on germanium telluride (GeTe), a typical example of the aforementioned effects.
