@@ -1,0 +1,6 @@
+#!/bin/fish
+
+set cmd 
+
+dev "set-option global makecmd 'pdflatex -output-directory /home/ponet/Documents/PhD/Thesis/papers /home/ponet/Documents/PhD/Thesis/papers/Thesis.tex && pkill -HUP mupdf'
+cd papers"
