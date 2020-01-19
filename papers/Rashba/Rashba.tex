@@ -16,15 +16,26 @@ The standard derivation starts from an expansion of the electron part of the ful
 	\mathcal{H} \psi = \left[\frac{\bm{p}^2}{2m} - e V - \frac{e \hbar}{4m^2c^2}(\bm{\sigma}\cdot[\bm{\nabla}V \times \bm{p}]) - \frac{\hbar^2}{8m^2c^2} \Delta V - \frac{\bm{p}^4}{8m^3c^2}\right]\psi = E\psi
 \end{equation}
 
-where $\psi$ is a two component spinor, V denotes the electric potential, $\bm{\sigma}$ a vector of Pauli-matrices $(\sigma_x, \sigma_y, \sigma_z)$, $m$ and $e$ the electron mass and charge respectively, and $\bm{p}$ the canonical momentum. The first two terms are the nonrelativistic part of the Hamiltonian, the third represents the spin-orbit coupling (SOC), the fourth is known as the Darwin effect and the fifth is the relativistic correction to the effective electron mass.
+where $\psi$ is a two component spinor, V denotes the electric potential, $\bm{\sigma}$ a vector of Pauli-matrices $(\sigma_x, \sigma_y, \sigma_z)$, $m$ and $e$ the electron mass and charge respectively, and $\bm{p}$ the canonical momentum. The first two terms are the nonrelativistic part of the Hamiltonian, the third represents the spin-orbit coupling (SOC), the fourth is known as the Darwin effect and the fifth is the relativistic correction to the effective electron mass. For the further discussion, we focus on the first three terms.
 
-The next step is to insert Bloch spinor wavefunctions $\psi(\bm{k}, \bm{r}) = u(\bm{k}, \bm{r})e^{i\bm{k}\cdot\bm{r}}$, where $u$ denotes the cell-periodic part
-% \begin{equation}
+The next step is to apply the Hamiltonian to Bloch spinor wavefunctions $\psi_n(\bm{k}, \bm{r}) = u_n(\bm{k}, \bm{r})e^{i\bm{k}\cdot\bm{r}}$, where $u_n$ denotes the cell-periodic part, and $n$ is the band index. This leads to an eigenvalue equation for $u_n(\bm{k}, \bm{r})$
 
-% \end{equation}
+\begin{align}
+	E_n u_n(\bm{k}, \bm{r}) =& \left(V_0 + V_1  -  (V_2 + V_3) \right) u_n(\bm{k}, \bm{r}) \\
+	V_0 =& \frac{p^2}{2m} - eV + \frac{\hbar^2 k^2}{2m} \\
+	V_1 =& \hbar\frac{\bm{k}\cdot\bm{p}}{m} \\
+	V_2 =& \frac{e \hbar^2}{4m^2c^2} \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{k}) \\
+	V_3 =& \frac{e \hbar}{4m^2c^2} \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{p})
+\end{align}
 
+In the following we assume that this equation can be solved for a time reversal symmetric point $\bm{k}_0$ in the first BZ, where the spin-up and spin-down part of the spinor are necessarily degenerate, and proceed following standard $\bm{k}\cdot\bm{p}$ theory to perform an expansion around this k-point. Since including the relativistic terms and nonzero $\bm{k}$ will lead to spin up-down symmetry breaking, we will denote the down spin state as $\Ket{u_n^\downarrow}$ and up spin state as $\Ket{u_n^\uparrow}$. We only investigate terms in the expansion that are linear in $\bm{k}$, since that's the part of the energy dispersion that we are seeking to explain. We again keep terms up to second order in $(1/c)^{-1}$.
+Without loss of generality we can take $\bm{k}_0 = 0$ and $E_0 = 0$.
 
-%############################################################
+\begin{align}
+	E_n^{\sigma_1}(\bm{k}) =& - \Bra{u_n^{\sigma_1}} V_2 \Ket{u_n^{\sigma_1}} + \\
+		& \sum_{m,\sigma_2=\uparrow,\downarrow}\frac{\Bra{u_n^{\sigma_1}} V_1 \Ket{u_m^{\sigma_2}}\Bra{u_m^{\sigma_2}} V_3 \Ket{u_n^{\sigma_1}} + h.c.}{E_m^{\sigma_2} - E_n^{\sigma_1}}
+\end{align}
+
 
 This work aims to clarify the effect in bulk systems, the interplay between ferroelectricity, orbital character and atomic SOC that causes it, and in doing so identifies the criteria for finding other materials with large Rashba splitting.
 We start with a brief overview of the important properties of GeTe, followed by a qualitative description of the coupling between the orbital angular momentum (OAM) and the electric polarization. Then we verify the model by performing ab initio calculations on germanium telluride (GeTe), a typical example of the aforementioned effects.

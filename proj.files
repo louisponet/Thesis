@@ -1,5 +1,6 @@
-echo proj.files
+echo papers/Rashba/Rashba.tex
 find papers/ -name "*.tex"
 echo scripts/wip.jl
 echo scripts/plots.jl
 find src/ -name "*.jl"
+echo proj.files
