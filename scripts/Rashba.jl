@@ -60,8 +60,12 @@ function create_shifted_pos(wfunction, axis_id, cell)
     return shifted
 end
 
-
 shifted_neg = create_shifted_neg(L_up, 2, cell(job))
+shifted_neg = DFW.WannierFunction(L_up.points, exp(-2π*1.0im * 0.6) * create_shifted_neg(wfuncs[8], 2, cell(job)))
+shifted_pos = DFW.WannierFunction(L_up.points, exp(2π*1.0im * 0.6) * create_shifted_pos(wfuncs[8], 2, cell(job)))
+
+DFW.calc_dip(shifted_neg, L_up)+DFW.calc_dip(shifted_pos, L_up)
+
 sum(shifted_neg.values .- )
 sum(L_up.values)
 dot(L_up, L_up)

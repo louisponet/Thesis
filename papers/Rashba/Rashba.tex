@@ -28,16 +28,22 @@ The next step is to apply the Hamiltonian to Bloch spinor wavefunctions $\psi_n(
 	V_3 =& \frac{e \hbar}{4m^2c^2} \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{p})
 \end{align}
 \begin{equation}
-	E_n u_n(\bm{k}, \bm{r}) = \left(\frac{p^2}{2m} - eV + \hbar\frac{\bm{k}\cdot\bm{p}}{m} + \frac{\hbar^2 k^2}{2m} - \frac{e \hbar}{4m^2c^2} \bm{\sigma} \cdot ( \bm{\nabla}V \times [\hbar \bm{k} + \bm{p}])\right) u_n(\bm{k}, \bm{r}).
 \end{equation}
 
-In the following we assume that this equation can be solved for a time reversal symmetric point $\bm{k}_0$ in the first BZ, where the spin-up and spin-down part of the spinor are necessarily degenerate, and proceed following standard $\bm{k}\cdot\bm{p}$ theory to perform an expansion around this k-point. Since including the relativistic terms and nonzero $\bm{k}$ will lead to spin up-down symmetry breaking, we will denote the down spin state as $\Ket{u_n^\downarrow}$ and up spin state as $\Ket{u_n^\uparrow}$. We only investigate terms in the expansion that are linear in $\bm{k}$, since that's the part of the energy dispersion that we are seeking to explain. We again keep terms up to second order in $(1/c)^{-1}$.
+In the following we assume that this equation can be solved for a time reversal symmetric point $\bm{k}_0$ in the first BZ, where the spin-up and spin-down part of the spinor are necessarily degenerate, and proceed following standard $\bm{k}\cdot\bm{p}$ theory to perform an expansion around this k-point. Since including the relativistic terms and nonzero $\bm{k}$ will lead to spin up-down symmetry breaking, we will denote the down spin state as $\Ket{u_n^\downarrow}$ and up spin state as $\Ket{u_n^\uparrow}$ at $\bm{k} = \bm{k}_0$. We only investigate terms in the expansion that are linear in $\bm{k}$, since that's the part of the energy dispersion that we are seeking to explain. We again keep terms up to second order in $(1/c)^{-1}$.
 Without loss of generality we can take $\bm{k}_0 = 0$ and $E_0 = 0$.
 
 \begin{align}
 	E_n^{\sigma_1}(\bm{k}) =& - \Bra{u_n^{\sigma_1}} V_2 \Ket{u_n^{\sigma_1}} + \\
-		& \sum_{m,\sigma_2=\uparrow,\downarrow}\frac{\Bra{u_n^{\sigma_1}} V_1 \Ket{u_m^{\sigma_2}}\Bra{u_m^{\sigma_2}} V_3 \Ket{u_n^{\sigma_1}} + h.c.}{E_m^{\sigma_2} - E_n^{\sigma_1}}
+		& \sum_{m,\sigma_2=\uparrow,\downarrow}\frac{\Bra{u_n^{\sigma_1}} V_1 \Ket{u_m^{\sigma_2}}\Bra{u_m^{\sigma_2}} V_3 \Ket{u_n^{\sigma_1}} + h.c.}{E_m^{\sigma_2} - E_n^{\sigma_1}},
 \end{align}
+
+where the sum over $m, \sigma_2$ includes all states which are not equal to $n, \sigma_1$. 
+
+These two terms are of similar order of magnitude in small parameters $c^{-2}$ and $\bm{k}$, but have different behavior with respect to the symmetries of the states, and different origins with respect to the ferroelectricity. The first term can be seen as a direct result of the electric field resulting from the ferroelecticity, i.e. $\nabla V$ there should be understood as the uniform internal electric field, whereas in the second term the $\nabla V$ should be understood as the potential which causes atomic spin-orbit coupling. This means that it is important that the orbitals $u_n and u_m$ in the second term originate from an atom with strong spin-orbit coupling. The reason why this term only leads to a non-zero contribution when inversion is broken can be understood by looking at the required symmetries of orbitals $u_n, u_m$, as was shown by [Blugel paper]. Since $\bm{p}$ is odd in spatial coordinates, $\bm{k} \cdot \bm{p}$ is only non-zero when one of the orbitals is odd with respect to a spatial direction and the other even. One example could be a $p_y$ orbital and a $s-pz$ hybdridized one, which would be created by the ferroelectricity with electric polarization along the $z$-axis. 
+
+
+
 
 
 This work aims to clarify the effect in bulk systems, the interplay between ferroelectricity, orbital character and atomic SOC that causes it, and in doing so identifies the criteria for finding other materials with large Rashba splitting.
