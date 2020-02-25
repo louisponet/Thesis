@@ -53,10 +53,12 @@ The crux is that Bloch functions with periodic part $u_n(\bm{k},\bm{r})$ that ha
 
 \subsection{Tight-Binding model}
 Due to the breaking of inversion symmetry there are extra allowed hopping terms between unit cells, on top of the usual ones from overlap integrals. These terms originate from the energy $H_{isb} = e (\bm{d}\cdot \bm{E})$, i.e. electric dipole moments coupling to the electric field. In the following we study a toy 2D square layer with one atom per unit cell and $s$, $p$ orbitals, where the field is chosen perpendicular to the 2D layer along the $z$ direction. Assuming Wannier functions $p_\alpha(\bm{r},\bm{R}) = \alpha e^{-|\bm{r}-\bm{R}|^2}$, we can write down the dipole matrix terms between the central unit cell and one shifted by $\bm{R}=\bm{n}a, \bm{n}=(n_x,n_y)$ as follows:
-\begin{equation}
-	d_z(\bm{n}) = ae^{-\frac{a^2|\bm{n}|^2}{2}}\frac{\pi^{\frac{3}{2}}}{16\sqrt{2}}\left(\begin{matrix}0&0&0&2\\\\0&0&0&n_x\\\\0&0&0&n_y\\\\2&n_x&n_y&0\end{matrix}\right),
+\begin{align}
+	\label{eq:dipole}
+	\hat{d}_z(\bm{n}) =& ae^{-\frac{a^2|\bm{n}|^2}{2}}\frac{\pi^{\frac{3}{2}}}{16\sqrt{2}}\left(\begin{matrix}0&0&0&2\\\\0&0&0&n_x\\\\0&0&0&n_y\\\\2&n_x&n_y&0\end{matrix}\right)\\
+	=&d_z^0(\bm{n})\hat{d}^1_z(\bm{n}),
 	% d_z(\bm{R}) = ae^{-\frac{|\bm{R}|^2}{2}}\frac{\pi^{\frac{3}{2}}}{16\sqrt{2}}(2,n_x,n_y,0),
-\end{equation}
+\end{align}
 where the indices run through $s$, $p_{x,y,z}$. Using these Wannier functions we can write down the dipoles of Bloch functions as,
 \begin{align}
 	d_z(\bm{k}) &= \sum_{\bm{n}} e^{i \bm{k}\cdot \bm{n}}d_z(\bm{n})\\
@@ -69,28 +71,55 @@ writing $\bm{k}$ in terms of crystalline coordinates, and we kept only the $\sin
 \end{align}
 The effect of $H_{isb}$ is to mix $p_{x,y}$ and $p_z$ orbitals, e.g. if $\Ket{\alpha} = p_x$ we get that
 \begin{align}
-	\Ket{\alpha(\bm{k})} &= \Ket{p_x} + i \frac{e E_z \sum_{\bm{n}} \sin(k_x n_x)}{E_{p_z} - E_{p_x}} \Ket{p_z}\\
-	&=\Ket{p_x} + i c(\bm{k}) \Ket{p_z}.
+	\Ket{\alpha(\bm{k})} &= \Ket{p_x} + i \frac{e E_z \sum_{\bm{n}} \sin(k_x n_x)n_x d_z^0(\bm{n})}{E_{p_z} - E_{p_x}} \Ket{p_z}\\
+	&=\Ket{p_x} + i c(k_x) \Ket{p_z}.
 \end{align}
-This shows that the inversion symmetry breaking term will lead to a linear variation of the orbital angular momentum. 
+With $l_y = -i\hbar(z \partial_x - x \partial_z )$ we get that
+\begin{equation}
+	\Bra{\alpha(\bm{k})} l_y \Ket{\alpha(\bm{k})} = c(k_x) = k_x \frac{e E_z \sum_{\bm{n}} n_x^2d_z^0(\bm{n})}{E_{p_z} - E_{p_x}}
+\end{equation}
+\lp{normalization!!}
+A similar term exists for $l_x$, but with the opposite sign. If the atomic spin-orbit coupling, $\lambda \bm{l}\cdot\bm{\sigma}$, is then taken into account, we get to a contribution to the energy dispersion $\varepsilon(\bm{k}) \sim E_z (k_x \sigma_y - k_y \sigma_x)$ which has exactly the form of a Rashba splitting. 
+This shows that the inversion symmetry breaking term will lead to a linear variation of the orbital angular momentum. When the orbitals originate from an atom with non-negligible atomic spin-orbit coupling , this linear variation of the OAM will lead to a contribution to the dispersion that varies linearly with $\bm{k}$, either upwards or downwards depending on the sign of $\sigma$. Except for the atomic spin-orbit coupling, which can be large, this effect is purely based around electrostatic considerations and thus does not suffer from the same minuscule prefactor as the purely relativistic Rashba effect.
 
-This work aims to clarify the effect in bulk systems, the interplay between ferroelectricity, orbital character and atomic SOC that causes it, and in doing so identifies the criteria for finding other materials with large Rashba splitting.
-We start with a brief overview of the important properties of GeTe, followed by a qualitative description of the coupling between the orbital angular momentum (OAM) and the electric polarization. Then we verify the model by performing ab initio calculations on germanium telluride (GeTe), a typical example of the aforementioned effects.
+This assumes that the states at the high symmetry point ($|k|=0$) have a fully quenched OAM, however, when spin-orbit coupling is included, this is only partially true. Due to the energy contribution from $H_{soc}$ the material can gain by creating orbitals that have $\bm{j} = \bm{l} + \bm{\sigma}$. Similar to the above derivation, we can look at a small-$k$ expansion for orbitals that have nonzero OAM.
+
+We can write in general that
+\begin{equation}
+	\Bra{\alpha} \hat{l}_{\gamma} \Ket{\beta} = i \epsilon_{\alpha \beta \gamma} c^*_\alpha c_\beta
+\end{equation}
+when $\alpha,\beta,\gamma$ designate $p_{x,y,z}$. This means that there has to be at least some admixing of multiple $p$-orbitals to get nonzero OAM. This leads to the following expansion of the Bloch functions around the high-symmetry $|k|=0$ point:
+\begin{align}
+	\Ket{\psi_n(\bm{k})} =& \sum_{\bm{n},\alpha} c_\alpha(\bm{k}) e^{i \bm{k}\cdot\bm{n}}\Ket{\alpha(\bm{n})}\\
+	=& \sum_{\bm{n},\alpha} \left(c_\alpha(0) + \bm{k}\left.\frac{\partial c_\alpha(\bm{k})}{\partial_k}\right\rvert_{\bm{k}=0} \right)\left(1 + i\bm{k}\cdot\bm{n}\right)\Ket{\alpha(\bm{n})} .
+\end{align}
+If we then calculate the linear-with-k varying dipole moment of these Bloch functions, we can recognize the contribution coming from the second term in the $c$ expansion together with the first term in the $e$ expansion as the previously discussed contribution. We can, however, also combine the first term in the $c$ expansion with the second in the $e$ expansion. If we single out this contribution to $d_z(\bm{k})$ we get
+\begin{align}
+	d_z(\bm{k}) =&  i\sum_{\bm{n},\alpha,\beta} c_\alpha^*(0)c_\beta(0)\bm{k}\cdot\bm{n}\Bra{\alpha(\bm{0})} \hat{d}_z \Ket{\beta(\bm{n})}\\
+	=&i\sum_{\bm{n}} d^0_z(\bm{n}) (c^*_x(0)c_z(0)k_x n_x^2 + c^*_y(0)c_z(0) k_y n_y^2) \\
+	=&\sum_{\bm{n}} d^0_z(\bm{n}) (l_x(0)k_y n_y^2-l_y(0) k_x n_x^2).
+\end{align}
+\lp{normalization!!}
+These expressions show us that, together with $H_{soc} = \lambda \bm{l}\cdot\bm{\sigma}$ and $H_{isb} = e E_z d_z$, an additional Rashba-like term will appear in the energy dispersion\lp{maybe a little more explanation is warranted here}.
+
+With the understanding that one can find Rashba like dispersions, coming not from the usually considered purely relativistic, but also from electrostatic means, we can look at an example situation where this leads to a gigantic spin-splitting in a bulk material, namely Germanium Telluride (GeTe).
+
 \begin{figure}[b]
 % ~\centering
 \IncludeGraphics[width=\linewidth]{BZBSDOS.pdf}
 \caption{\label{fig:eigvalsdos}(a) Rhombohedral unit cell and Brillouin zone of GeTe, with the polarization direction in yellow. (b) Band structure obtained from a DFT calculation with and without SOC, along the blue path in panel (a). (c) partial DOS for Te and Ge p orbitals computed without SOC.}
 \end{figure}
 \section{Overview: Germanium Telluride}
-Germanium telluride (GeTe) is a ferroelectric semiconductor with R$3m$ space group (\#160 in International Tables). The ferroelectricity is owed to a small displacement along the threefold rotation axis ($z$) of the Te layers towards one of the two neighboring Ge layers \cite{Rabe1987}. The resulting electric polarization is therefore also oriented along the $z$ axis, as can be seen in Fig. \ref{fig:eigvalsdos}-(a). The band structure, displayed in Fig. \ref{fig:eigvalsdos}-(b), presents a distinct large linear spin splitting around the $Z$ point, resembling the well known Rashba effect \cite{DiSante2013}. The characteristic splitting is observed both along the $Z-A$ and $Z-U$ directions, but not along $Z-\Gamma$ path, due to time-reversal symmetry of the latter.
-
-The density of states (DOS) is displayed in Fig.~\ref{fig:eigvalsdos}-(c). The valence bands are comprised mostly of Te 5p orbitals, whereas the conduction bands are mostly formed by Ge 4p orbitals. This orbital character of valence and conduction bands, together with the stronger atomic SOC on Te atom, results in a more pronounced spin splitting in the valence bands. We will focus on the first three valence bands, the top one of which mainly has $p_z$ character whereas the two lower bands, which are degenerate at the $Z$-point, are formed by $p_x$ and $p_y$ orbitals. The crystal field splitting between bands of $p_z$ and $p_{x,y}$ characters results from the distortion of the ideal Te-Ge$_6$ octahedron.
+The space group of GeTe is R$3m$ (\#160 in International Tables), with ferroelectric polarization along the threefold rotation $z$-axis caused by an off-centering of the central Te atom \cite{Rabe1987} as displayed in Fig. \ref{fig:eigvalsdos}-(a). The valence and conduction bands are formed mostly by $s$ and $p$ orbitals from Te and Ge, respectively. This, together with the large spin-splitting in the vicinity of the $Z$ point \cite{DiSante2013} as observed from the bandstructure in Fig. \ref{fig:eigvalsdos}-(b), lends it as a perfect test-case of the above described mechanisms. Moreover, since it's a bulk material, we can rule out the possibility that the relativistic Rashba effects results in a contribution from the existence of possible large potential gradients at a surface. The band structure,  presents a distinct large linear spin splitting around the $Z$ point, resembling the well known Rashba effect. Due to time reversal symmetry, no spin-splitting is only present observed along the $Z-A$ and $Z-U$ paths, not the $Z-\Gamma$ path.
+The density of states (DOS), displayed in Fig.~\ref{fig:eigvalsdos}-(c), confirms the orbital character of the bands, aluded to earlier.
+% The valence bands are comprised mostly of Te 5p orbitals, whereas the conduction bands are mostly formed by Ge 4p orbitals. This orbital character of valence and conduction bands, together with the stronger atomic SOC on Te atom, results in a more pronounced spin splitting in the valence bands. We will focus on the first three valence bands, the top one of which mainly has $p_z$ character whereas the two lower bands, which are degenerate at the $Z$-point, are formed by $p_x$ and $p_y$ orbitals. The crystal field splitting between bands of $p_z$ and $p_{x,y}$ characters results from the distortion of the ideal Te-Ge$_6$ octahedron.
 \section{Interplay of ferroelectricity, orbital angular momentum and spin-orbit coupling}
 % % ~\centering
 \begin{figure}[b!]
 \IncludeGraphics[width=\linewidth]{interference.png}
 \caption{\label{fig:interference}Interference between orbitals with nonzero OAM. Three neighboring unit cells are displayed, each with the same $p_x + ip_z$ orbital (thus having nonzero $l_y$). The wave functions of the left and right unit cells have their phase rotated by the plane-wave part $e^{i k_x R_x}$. The amplitude and phase of the wave function are encoded with the length and polar angle of the arrows.}
 \end{figure}
+If 
 The $k$-dependent spin splitting, shown in Fig.~\ref{fig:eigvalsdos}, could be (incorrectly) attributed to a Rashba effect, described by the relativistic Rashba Hamiltonian \cite{Rashba1959SymmetryAr, Lifshitz1982CourseTheory},
 \begin{equation}\label{eq:relrashba}
 \mathcal{H}_R=\alpha_R (\bm{k} \times \bm{E})\cdot \bm{\sigma}, \quad \alpha_R=\frac{e\hbar^2}{2m^2c^2},
