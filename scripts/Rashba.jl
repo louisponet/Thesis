@@ -5,8 +5,9 @@ using Revise
 using DFWannier
 const DFW = DFWannier
 using LinearAlgebra
-cd(datadir("Rashba/GeTe"))
 #%%
+## GeTe
+cd(datadir("Rashba/GeTe"))
 job = DFJob("NSOC")
 
 wgrid = DFW.read_points_from_xsf(joinpath(job, "wan_00001.xsf"))
@@ -78,3 +79,55 @@ DFW.calc_dip(shifted, L_up)
 norm(DFW.calc_dip(shifted_neg, shifted_neg) .- DFW.calc_dip(L_up, L_up))
 norm(cell(job)[:,2])
 DFW.calc_dip(shifted_pos, L_up) + DFW.calc_dip(shifted_neg, L_up)
+
+#%%
+## HfO2
+using Plots
+pyplot()
+cd(datadir("Rashba/HfO2"))
+job = DFJob("SOC")
+
+bands = readbands(job)
+fermi = readfermi(job)
+hami = readhami(job)
+wbands = wannierbands(hami, bands)
+
+plot(wbands, bands, fermi=fermi, ylims=[-5,10])
+bands[1].k_points_cryst[1]
+ops = load(joinpath(job, "Operators.jld2"))
+Smat, Lmat = ops["S"], ops["L"]
+
+findlast(x->maximum(x.eigvals)<fermi+1, wbands)
+plot(wbands[49])
+plot(wbands[48])
+plot!(wbands[47])
+plot(wbands[49])
+plot!(wbands[52])
+wbands[1].kpoints_cryst[155]
+#%%
+
+tot_S = zero(DFW.Vec3{ComplexF64})
+for (i1,v1) in enumerate(wbands[52].eigvec[161]), (i2,v2) in enumerate(wbands[52].eigvec[161])
+    global tot_S += v1' * v2 * Smat[i1, i2]
+end
+
+tot_S = zero(DFW.Vec3{ComplexF64})
+for (i1,v1) in enumerate(wbands[51].eigvec[161]), (i2,v2) in enumerate(wbands[51].eigvec[161])
+    global tot_S += v1' * v2 * Smat[i1, i2]
+end
+
+tot_S = zero(DFW.Vec3{ComplexF64})
+for (i1,v1) in enumerate(wbands[49].eigvec[155]), (i2,v2) in enumerate(wbands[49].eigvec[155])
+    global tot_S += v1' * v2 * Smat[i1, i2]
+end
+
+tot_S
+
+
+
+
+
+
+
+
+
