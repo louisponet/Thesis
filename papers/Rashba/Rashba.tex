@@ -18,17 +18,15 @@ The standard derivation starts from an expansion of the electron part of the ful
 
 where $\psi$ is a two component spinor, V denotes the electric potential, $\bm{\sigma}$ a vector of Pauli-matrices $(\sigma_x, \sigma_y, \sigma_z)$, $m$ and $e$ the electron mass and charge respectively, and $\bm{p}$ the canonical momentum. The first two terms are the nonrelativistic part of the Hamiltonian, the third represents the spin-orbit coupling (SOC), the fourth is known as the Darwin effect and the fifth is the relativistic correction to the effective electron mass. For the further discussion, we focus on the first three terms.
 
-The next step is to apply the Hamiltonian to Bloch spinor wavefunctions $\psi_n(\bm{k}, \bm{r}) = u_n(\bm{k}, \bm{r})e^{i\bm{k}\cdot\bm{r}}$, where $u_n$ denotes the cell-periodic part, and $n$ is the band index. This leads to an eigenvalue equation for $u_n(\bm{k}, \bm{r})$
 
+The next step is to apply the Hamiltonian to Bloch spinor wavefunctions $\psi_n(\bm{k}, \bm{r}) = u_n(\bm{k}, \bm{r})e^{i\bm{k}\cdot\bm{r}}$, where $u_n$ denotes the cell-periodic part, and $n$ is the band index. This leads to an eigenvalue equation for $u_n(\bm{k}, \bm{r})$
 \begin{align}
-	E_n u_n(\bm{k}, \bm{r}) =& \left(V_0 + V_1  -  (V_2 + V_3) \right) u_n(\bm{k}, \bm{r}) \\
+	E_n u_n(\bm{k}, \bm{r}) =& \left(V_0 + V_1  +  V_2 + V_3 \right) u_n(\bm{k}, \bm{r}) \\
 	V_0 =& \frac{p^2}{2m} - eV + \frac{\hbar^2 k^2}{2m} \\
 	V_1 =& \hbar\frac{\bm{k}\cdot\bm{p}}{m} \\
-	V_2 =& \frac{e \hbar^2}{4m^2c^2} \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{k}) \\
-	V_3 =& \frac{e \hbar}{4m^2c^2} \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{p})
+	V_2 =& -\frac{e \hbar^2}{4m^2c^2} \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{k}) \\
+	V_3 =& -\frac{e \hbar}{4m^2c^2} \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{p})
 \end{align}
-\begin{equation}
-\end{equation}
 
 In the following we assume that this equation can be solved for a time reversal symmetric point $\bm{k}_0$ in the first BZ, where the spin-up and spin-down part of the spinor are necessarily degenerate, and proceed following standard $\bm{k}\cdot\bm{p}$ theory to perform an expansion around this k-point. Since including the relativistic terms and nonzero $\bm{k}$ will lead to spin up-down symmetry breaking, we will denote the down spin state as $\Ket{u_n^\downarrow}$ and up spin state as $\Ket{u_n^\uparrow}$ at $\bm{k} = \bm{k}_0$. We only investigate terms in the expansion that are linear in $\bm{k}$, since that's the part of the energy dispersion that we are seeking to explain. We again keep terms up to second order in $(1/c)^{-1}$.
 Without loss of generality we can take $\bm{k}_0 = 0$ and $E_0 = 0$.
@@ -36,7 +34,7 @@ Without loss of generality we can take $\bm{k}_0 = 0$ and $E_0 = 0$.
 \begin{align}
 	\label{eq:kp_expansion}
 	E_n^{\sigma_1}(\bm{k}) =& - \Bra{u_n^{\sigma_1}} V_2 \Ket{u_n^{\sigma_1}} + \\
-		& \sum_{m,\sigma_2=\uparrow,\downarrow}\frac{\Bra{u_n^{\sigma_1}} V_1 \Ket{u_m^{\sigma_2}}\Bra{u_m^{\sigma_2}} V_3 \Ket{u_n^{\sigma_1}} + h.c.}{E_m^{\sigma_2} - E_n^{\sigma_1}},
+		& \sum_{m,\sigma_2=\uparrow,\downarrow}\frac{\Bra{u_n^{\sigma_1}} V_1 \Ket{u_m^{\sigma_2}}\Bra{u_m^{\sigma_2}} V_3 \Ket{u_n^{\sigma_1}} + h.c.}{E_n^{\sigma_2} - E_m^{\sigma_1}},
 \end{align}
 
 where the sum over $m, \sigma_2$ includes all states which are not equal to $n, \sigma_1$. 
@@ -52,32 +50,33 @@ To understand this contribution, we first need to understand the behavior of the
 The crux is that Bloch functions with periodic part $u_n(\bm{k},\bm{r})$ that have non-zero orbital angular momentum (OAM) create inter unit cell dipoles, which couple to the uniform electric field caused by the polarization. This will thus lead to the creation of orbitals with OAM away from high symmetry points, if symmetries allow for it and ferroelectricity is present. This effect is purely electrostatic and thus doesn't come with small prefectors like the first term in \ref{qe:kp_expansion}.
 
 \subsection{Tight-Binding model}
-Due to the breaking of inversion symmetry there are extra allowed hopping terms between unit cells, on top of the usual ones from overlap integrals. These terms originate from the energy $H_{isb} = e (\bm{d}\cdot \bm{E})$, i.e. electric dipole moments coupling to the electric field. In the following we study a toy 2D square layer with one atom per unit cell and $s$, $p$ orbitals, where the field is chosen perpendicular to the 2D layer along the $z$ direction. Assuming Wannier functions $p_\alpha(\bm{r},\bm{R}) = \alpha e^{-|\bm{r}-\bm{R}|^2}$, we can write down the dipole matrix terms between the central unit cell and one shifted by $\bm{R}=\bm{n}a, \bm{n}=(n_x,n_y)$ as follows:
+Due to the breaking of inversion symmetry there are extra allowed hopping terms between unit cells, on top of the usual ones from overlap integrals. These terms originate from the energy $H_{isb} = e (\bm{d}\cdot \bm{E})$, i.e. electric dipole moments coupling to the electric field. In the following we study a toy 2D square layer with one atom per unit cell and $s$, $p$ orbitals, where the field is chosen perpendicular to the 2D layer along the $z$ direction. Assuming Wannier functions $p_\alpha(\bm{r},\bm{R}) = \alpha e^{\left(\frac{-|\bm{r}-\bm{R}|}{a_0}\right)^2}$, we can write down the dipole matrix terms between the central unit cell and one shifted by $\bm{R}=\bm{n}a, \bm{n}=(n_x,n_y)$, using the basis $s, p_x, p_y, p_z$ as follows:
 \begin{align}
 	\label{eq:dipole}
-	\hat{d}_z(\bm{n}) =& ae^{-\frac{a^2|\bm{n}|^2}{2}}\frac{\pi^{\frac{3}{2}}}{16\sqrt{2}}\left(\begin{matrix}0&0&0&2\\\\0&0&0&n_x\\\\0&0&0&n_y\\\\2&n_x&n_y&0\end{matrix}\right)\\
-	=&d_z^0(\bm{n})\hat{d}^1_z(\bm{n}),
+	\hat{d}_z(\bm{n}) =& ae^{-\frac{1}{2}\left(\frac{a|\bm{n}|}{a_0}\right)^2}\frac{\pi^{\frac{3}{2}}}{16\sqrt{2}}\left(\begin{matrix}0&0&0&2\\\\0&0&0&n_x\\\\0&0&0&n_y\\\\2&n_x&n_y&0\end{matrix}\right)\\
+	=&d_z^0(\bm{n})\hat{d}^1_z(\bm{n}).
 	% d_z(\bm{R}) = ae^{-\frac{|\bm{R}|^2}{2}}\frac{\pi^{\frac{3}{2}}}{16\sqrt{2}}(2,n_x,n_y,0),
 \end{align}
-where the indices run through $s$, $p_{x,y,z}$. Using these Wannier functions we can write down the dipoles of Bloch functions as,
+Using these Wannier functions we can write down the dipoles of Bloch functions as,
 \begin{align}
-	d_z(\bm{k}) &= \sum_{\bm{n}} e^{i \bm{k}\cdot \bm{n}}d_z(\bm{n})\\
-	&=\sum_{\bm{n}}i \sin(\bm{k}\cdot\bm{n}) d_z(\bm{n})
+	\hat{d}_z(\bm{k}) &= \sum_{\bm{n}} e^{i \bm{k}\cdot \bm{n}}\hat{d}_z(\bm{n})\\
+	&=\sum_{\bm{n}}i \sin(\bm{k}\cdot\bm{n}) \hat{d}_z(\bm{n})
 \end{align}
-writing $\bm{k}$ in terms of crystalline coordinates, and we kept only the $\sin(\bm{k}\cdot\bm{n})$ part of the exponent since the $\cos(\bm{k}\cdot\bm{n})$ part is $0$ due to the fact that it is even in the sum over $\bm{n} = \{-\infty, \infty\}$, whereas $d_z(\bm{n})$ is odd. If we then assume that at $k=0$ the Bloch functions are formed purely from these $s$,$p_{x,y,z}$ Wannier functions: $\Ket{\alpha(\bm{k}=\bm{0})} = \sum_{\bm{n}} \Ket{\alpha(\bm{n})}$, we can write down a perturbation theory for small $\bm{k}$ in the spirit of the usual $\bm{k}\cdot\bm{p}$ theory,
+writing $\bm{k}$ in terms of crystalline coordinates, and we kept only the $\sin(\bm{k}\cdot\bm{n})$ part of the exponent since the $\cos(\bm{k}\cdot\bm{n})$ part is $0$ due to the fact that it is even in the sum over $\bm{n} = \{-\infty, \infty\}$, whereas $\hat{d}_z(\bm{n})$ is odd \lp{this is not fully true, the cos term actually does contribute for the $d_z^s$ term, but that leads to a higher order term, should I discuss this?}. If we then assume that at $k=0$ the Bloch functions are formed purely from these $p_x,p_y,p_z$ Wannier functions: $\Ket{\alpha(\bm{k}=\bm{0})} = \sum_{\bm{n}} \Ket{\alpha(\bm{n})}$, we can write down a perturbation theory for small $\bm{k}$ in the spirit of the usual $\bm{k}\cdot\bm{p}$ theory,
+
 \begin{align}
-	\Ket{\alpha(\bm{k})}&=\Ket{\alpha} + \sum_{\beta} \frac{\Bra{\alpha} H_0(\bm{k}) + H_{isb}(\bm{k}) \Ket{\beta}}{E_{\beta} - E_{\alpha}} \Ket{\beta}\\
-	&=\Ket{\alpha} + \sum_{\beta} \frac{\Bra{\alpha} H_0(\bm{k}) + e E_z d_z(\bm{k}) \Ket{\beta}}{E_{\beta} - E_{\alpha}} \Ket{\beta}.
+	\Ket{\alpha(\bm{k})}&=\Ket{\alpha} + \sum_{\beta \neq \alpha} \frac{\Bra{\beta} H_0(\bm{k}) + H_{isb}(\bm{k}) \Ket{\alpha}}{E_{\alpha} - E_{\beta}} \Ket{\beta}\\
+	&=\Ket{\alpha} + \sum_{\beta \neq \alpha} \frac{\Bra{\beta} H_0(\bm{k}) + e E_z \hat{d}_z(\bm{k}) \Ket{\alpha}}{E_{\alpha} - E_{\beta}} \Ket{\beta}.
 \end{align}
-The effect of $H_{isb}$ is to mix $p_{x,y}$ and $p_z$ orbitals, e.g. if $\Ket{\alpha} = p_x$ we get that
+The effect of $H_{isb}$ is to mix $p_x, p_y$ orbitals with the $p_z$ orbital, e.g. if $\Ket{\alpha} = p_x$ we get that
 \begin{align}
-	\Ket{\alpha(\bm{k})} &= \Ket{p_x} + i \frac{e E_z \sum_{\bm{n}} \sin(k_x n_x)n_x d_z^0(\bm{n})}{E_{p_z} - E_{p_x}} \Ket{p_z}\\
+	\Ket{\alpha(\bm{k})} &= \Ket{p_x} + i \frac{e E_z \sum_{\bm{n}} \sin(k_x n_x)n_x d_z^0(\bm{n})}{E_{p_x} - E_{p_z}} \Ket{p_z}\\
 	&=\Ket{p_x} + i c(k_x) \Ket{p_z}.
 \end{align}
 With $l_y = -i\hbar(z \partial_x - x \partial_z )$ we get that
 \begin{equation}
 	\label{eq:oam_from_k}
-	\Bra{\alpha(\bm{k})} l_y \Ket{\alpha(\bm{k})} = c(k_x) = k_x \frac{e E_z \sum_{\bm{n}} n_x^2d_z^0(\bm{n})}{E_{p_z} - E_{p_x}}
+	\Bra{\alpha(\bm{k})} l_y \Ket{\alpha(\bm{k})} = c(k_x) = k_x \frac{e E_z \sum_{\bm{n}} n_x^2d_z^0(\bm{n})}{E_{p_x} - E_{p_z}}
 \end{equation}
 \lp{normalization!!}
 A similar term exists for $l_x$, but with the opposite sign. If the atomic spin-orbit coupling, $\lambda \bm{l}\cdot\bm{\sigma}$, is then taken into account, we get to a contribution to the energy dispersion $\varepsilon(\bm{k}) \propto E_z (k_x \sigma_y - k_y \sigma_x)$ which has exactly the form of a Rashba splitting. 
@@ -244,15 +243,13 @@ The last issue with the purely relativistic explanation, which has been confirme
 
 % We performed ab initio calculations to study how the discussed effects manifest themselves in GeTe. To arrive at the desired basis of Wannier functions and tight-binding Hamiltonian, we first performed a collinear DFT calculation using the Quantum-Espresso package \cite{Giannozzi2009}, followed by WANNIER90 \cite{Mostofi2014AnFunctions}. For the DFT calculation we used a 10x10x10 Monkhorst-Pack k-grid, as well as an energy convergence threshold of $10^{-8}$~Ry. In the Wannierization step the gauge freedom of Wannier functions was exploited to arrive at a set of basis functions which are localized \cite{Marzari2012MaximallyApplications}, and resemble closely the atomic orbitals (spherical harmonics). Afterwards we added atomic SOC in the form $\lambda_{so} \bm{l} \cdot \bm{\sigma}$ using the muffin-tin approximation, with $\lambda_{so}$ for both atoms used as fitting parameters. Using this basis and Hamiltonian, we can the calculate the observables of interest, namely the OAM around Te and the dipole of the Bloch functions. 
 \section{Results and Discussion}
-The dispersion, OAM and SAM of the first valence band is shown in the left panel of Fig.~\ref{fig:oamvseigvalv}. Confirming our earlier conclusions, we can see that indeed non-zero, linearly varying OAM is formed as we move away from the high-symmetry $Z$-point. Moreover, the OAM is perpendicular to both the $z$-axis and the $k$ vector, as it should be from Eq.\ref{eq:oam_from_k}. This leads e.g. to $l_y=0$ along the $A \to Z$ path, where only $k_y$ is nonzero. When atomic SOC is included in the orange and blue graphs, we see the splitting that results from having the spin oriented either along or opposite to the already linearly varying OAM. The unquenching of the OAM at the $Z$-point when SOC is included is also clearly visible, together with a change in the slope that is associated with the contribution of Eq. \ref{eq:d_z_from_OAM}. This correlation can also be observed in the panel showing the center of mass $\bar{z}=\int_{\textrm{supercell}}z |\psi(k)|^2$ of the Bloch-functions, giving an idea.
-Focusing on the topmost valence band, displayed in the left panel of , there are several features that warrant a discussion. The first is that we clearly see the linear variation of the OAM even without SOC, with forms given by Eq.~(\ref{eq:OAM}). Secondly, since only $k_y$ varies along the $A \to Z$ path, it it evident that the OAM along the $y$ axis ($l_y$) vanishes along the entire path. It is only when $k_x$ varies, as the wavevector progresses along the $Z \to U$ path, that we observe a nonvanishing $l_y$. Along this path, the sign of $k_x$ is negative whereas the sign of $k_y$ is positive just as along the $Z-A$ path. This results in a consistent orientation of $l_y$ and $l_x$, given by Eq.~(\ref{eq:OAM}). The third observation is that including atomic SOC is manifestated in the "unquenching" of the OAM. In Fig.~\ref{fig:oamvseigvalv}, as soon as there is an infinitesimal variation of the the wave vector from the time-reversal invariant $Z$-point (where $\bm{l}=0$ due to the symmetry), the unquenching of OAM leads to a nonzero shift in the OAM, with the sign depending on the subband.
+The dispersion, OAM, and SAM of the first valence band are shown in the left panel of Fig.~\ref{fig:oamvseigvalv}. Confirming our earlier conclusions, we can see that non-zero, linearly varying OAM is formed as we move away from the high-symmetry $Z$-point. Moreover, the OAM is perpendicular to both the $z$-axis and the $k$ vector, as it should be from Eq.\ref{eq:oam_from_k}, and can also be seen from the panels in Fig. \ref{fig:textures}. This leads e.g. to $l_y=0$ along the $A \to Z$ path, where only $k_y$ is nonzero. When atomic SOC is included in the orange and blue graphs, we see the spin-splitting that results from having the spin oriented either along or opposite to the already linearly varying OAM. The unquenching of the OAM at the $Z$-point when SOC is included is also clearly visible, together with the resulting change in the slope that originates from the corresponding contribution to the dipole moment Eq. \ref{eq:d_z_from_OAM}. This correlation can also be observed in the panel showing the center of mass $\bar{z}=\int_{\textrm{supercell}}z |\psi(k)|^2$ of the Bloch-functions, which is proportional to the dipole moment around the same reference point.
 
-Lastly, to correlate the changes in the OAM and the dipole of the Bloch function, we computed the $z$ coordinate of the center of mass , which is proportional to the dipole moment computed around the same reference point. Figure ~\ref{fig:oamvseigvalv} shows the  correlation of the dipole and OAM of the bands, consistent with Eq.~(\ref{eq:dipfinal}), while Fig.~\ref{Fig:diffdens} displays the asymmetric variation of the charge density of the first valence band along the $Z\to A$ path. More specifically, there is a clear development of a nonzero dipole moment around Ge, which couples to the local $E_z$.
-These considerations also hold true for the third valence band, as seen from the right panel of Fig.~\ref{fig:oamvseigvalv}.
+When we compare this first valence band with the third valence band, shown in the right panel of Fig.~\ref{fig:oamvseigvalv}, we can clearly see the previously discussed issues with the purely relativistic explanation. As stated before, we can note that not only the magnitude but also the sign of $\alpha_R$ in \ref{eq:relrashba} is opposite for these two bands, showcased by the size of the splitting, and by the ordering of the spin-up vs the spin-down splitted part. This is because the character of the first and third valence bands are different. The first valence band is mostly coming from Te $j=\frac{3}{2}$ orbitals, whereas the third valence band is predominantly $j=\frac{1}{2}$. This causes the orientation of the OAM and SAM to be along eachother in the first band, and opposite for the third, as shown in Fig.~\ref{fig:textures}. This then leads to the different ordering of the spin-split bands.
 
-In addition to the magnitude of $\alpha_R$,  other important features are dependent on the orbital character of the bands, unlike in the case of the relativistic Rashba effect, as was discussed above. We see that for states with predominant $j=\frac{3}{2}$ or $j=\frac{1}{2}$ character, the SAM is oriented along or opposite to the OAM, respectively. Comparing the orientations of the SAM and OAM, shown in Fig.~\ref{fig:textures}, we conclude that close to the $Z$-point, the topmost valence band has mostly $j=\frac{3}{2}$ character, whereas the third mostly $j=\frac{1}{2}$.
-Interestingly, the states in the upper third valence band and lower first valence band switch characters when moving further away from the $Z$ point, as seen in the panels (c) and (f) of Fig.~\ref{fig:textures}. This draws attention to the fact that inclusion of Eq.~(\ref{HOR}) breaks threefold symmetry and results in $j$ not being a good quantum number anymore. This causes a highly nontrivial SAM and OAM texture to be present in these two subbands, with both SAM and OAM varying considerably throughout the BZ.
-When comparing the spin splitting of the two valence bands, their relative signs are opposite, an effect which cannot be explained by the relativistic Rashba effect [Eq.~(\ref{eq:relrashba})], that leads to the same splittings, regardless of the character of the band. Only terms such as Eq.~(\ref{eq:dipfinal}) can explain this behavior.
+There is one last very interesting feature one can notice from Fig.~\ref{fig:textures} (c) and (f), that is, the switching of the character (and SAM, OAM orientation) of the bands, very close to the $Z$ point. This is because Eq.~(\ref{HOR}) breaks threefold symmetry causes the atomic $j$ to not be a conserved quantity, i.e. there is a mixing between different atomic $j$ orbitals, in this very narrow region around $Z$.
+
+All these considerations lead to a very nontrivial SAM and OAM texture of the bands as we progress through the BZ.
 
 %Looking back to Eq.~(\ref{eq:hami}), we can identify three main mechanisms that can result in a large linear spin splitting in the band dispersion.
   %The first is large OAM unquenching effect, resulting in a significant $\bm{l}(Z)$ which couples to $\bm{\sigma}(Z)$, causing a linear variation of the dipole energy through the first term of Eq.~(\ref{eq:dipfinal}). The second is a linear variation of OAM a constant SAM, and the third -- vice versa. 
@@ -264,330 +261,5 @@ We have explored the microscopic origin of the giant Rashba-like spin splitting 
 
 Ultimately, the results suggest that (1) large ferroelectric polarization, (2) high atomic SOC, and (3) highly symmetric environment producing little OAM quenching could be the design rules for new materials with strong Rashba-like spin splitting. These materials could enable spintronic devices with the much needed electric control of spin polarization.
 
-% \bibliography{000Mendeley}%
-
-%merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
-%Control: key (0)
-%Control: author (8) initials jnrlst
-%Control: editor formatted (1) identically to author
-%Control: production of article title (-1) disabled
-%Control: page (0) single
-%Control: year (1) truncated
-%Control: production of eprint (0) enabled
-\begin{thebibliography}{20}%
-\makeatletter
-\providecommand \@ifxundefined [1]{%
- \@ifx{#1\undefined}
-}%
-\providecommand \@ifnum [1]{%
- \ifnum #1\expandafter \@firstoftwo
- \else \expandafter \@secondoftwo
- \fi
-}%
-\providecommand \@ifx [1]{%
- \ifx #1\expandafter \@firstoftwo
- \else \expandafter \@secondoftwo
- \fi
-}%
-\providecommand \natexlab [1]{#1}%
-\providecommand \enquote  [1]{``#1''}%
-\providecommand \bibnamefont  [1]{#1}%
-\providecommand \bibfnamefont [1]{#1}%
-\providecommand \citenamefont [1]{#1}%
-\providecommand \href@noop [0]{\@secondoftwo}%
-\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
-\providecommand \@href[1]{\@@startlink{#1}\@@href}%
-\providecommand \@@href[1]{\endgroup#1\@@endlink}%
-\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
-  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
-\providecommand \@@startlink[1]{}%
-\providecommand \@@endlink[0]{}%
-\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
-\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
-\providecommand \urlprefix  [0]{URL }%
-\providecommand \Eprint [0]{\href }%
-\providecommand \doibase [0]{http://dx.doi.org/}%
-\providecommand \selectlanguage [0]{\@gobble}%
-\providecommand \bibinfo  [0]{\@secondoftwo}%
-\providecommand \bibfield  [0]{\@secondoftwo}%
-\providecommand \translation [1]{[#1]}%
-\providecommand \BibitemOpen [0]{}%
-\providecommand \bibitemStop [0]{}%
-\providecommand \bibitemNoStop [0]{.\EOS\space}%
-\providecommand \EOS [0]{\spacefactor3000\relax}%
-\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
-\let\auto@bib@innerbib\@empty
-%</preamble>
-\bibitem [{\citenamefont {Datta}\ and\ \citenamefont {Das}(1990)}]{Datta1990}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
-  {Datta}}\ and\ \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Das}},\
-  }\href {\doibase 10.1063/1.102730} {\bibfield  {journal} {\bibinfo  {journal}
-  {Applied Physics Letters}\ }\textbf {\bibinfo {volume} {56}},\ \bibinfo
-  {pages} {665} (\bibinfo {year} {1990})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Kent}\ and\ \citenamefont
-  {Worledge}(2015)}]{Kent2015}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~D.}\ \bibnamefont
-  {Kent}}\ and\ \bibinfo {author} {\bibfnamefont {D.~C.}\ \bibnamefont
-  {Worledge}},\ }\href {\doibase 10.1038/nnano.2015.24} {\bibfield  {journal}
-  {\bibinfo  {journal} {Nature Nanotechnology}\ }\textbf {\bibinfo {volume}
-  {10}},\ \bibinfo {pages} {187} (\bibinfo {year} {2015})}\BibitemShut
-  {NoStop}%
-\bibitem [{\citenamefont {Jungwirth}\ \emph {et~al.}(2016)\citenamefont
-  {Jungwirth}, \citenamefont {Marti}, \citenamefont {Wadley},\ and\
-  \citenamefont {Wunderlich}}]{Jungwirth2016}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
-  {Jungwirth}}, \bibinfo {author} {\bibfnamefont {X.}~\bibnamefont {Marti}},
-  \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Wadley}}, \ and\ \bibinfo
-  {author} {\bibfnamefont {J.}~\bibnamefont {Wunderlich}},\ }\href {\doibase
-  10.1038/nnano.2016.18} {\bibfield  {journal} {\bibinfo  {journal} {Nature
-  Nanotechnology}\ }\textbf {\bibinfo {volume} {11}},\ \bibinfo {pages} {231}
-  (\bibinfo {year} {2016})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Di~Sante}\ \emph {et~al.}(2013)\citenamefont
-  {Di~Sante}, \citenamefont {Barone}, \citenamefont {Bertacco},\ and\
-  \citenamefont {Picozzi}}]{DiSante2013}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
-  {Di~Sante}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Barone}},
-  \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Bertacco}}, \ and\
-  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Picozzi}},\ }\href
-  {\doibase 10.1002/adma.201203199} {\bibfield  {journal} {\bibinfo  {journal}
-  {Advanced Materials}\ }\textbf {\bibinfo {volume} {25}},\ \bibinfo {pages}
-  {509} (\bibinfo {year} {2013})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Ishizaka}(2011)}]{Ishizaka2011}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
-  {Ishizaka}},\ }\href {\doibase 10.1038/nmat3051} {\bibfield  {journal}
-  {\bibinfo  {journal} {Nature materials}\ }\textbf {\bibinfo {volume} {10}},\
-  \bibinfo {pages} {521} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Kim}\ \emph {et~al.}(2014)\citenamefont {Kim},
-  \citenamefont {Im}, \citenamefont {Freeman}, \citenamefont {Ihm},\ and\
-  \citenamefont {Jin}}]{Kim2014}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
-  {Kim}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Im}}, \bibinfo
-  {author} {\bibfnamefont {A.~J.}\ \bibnamefont {Freeman}}, \bibinfo {author}
-  {\bibfnamefont {J.}~\bibnamefont {Ihm}}, \ and\ \bibinfo {author}
-  {\bibfnamefont {H.}~\bibnamefont {Jin}},\ }\href {\doibase
-  10.1073/pnas.1405780111} {\bibfield  {journal} {\bibinfo  {journal}
-  {Proceedings of the National Academy of Sciences of the United States of
-  America}\ }\textbf {\bibinfo {volume} {111}},\ \bibinfo {pages} {6900}
-  (\bibinfo {year} {2014})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Liebmann}\ \emph {et~al.}(2016)\citenamefont
-  {Liebmann}, \citenamefont {Rinaldi}, \citenamefont {Di~Sante}, \citenamefont
-  {Kellner}, \citenamefont {Pauly}, \citenamefont {Wang}, \citenamefont
-  {Boschker}, \citenamefont {Giussani}, \citenamefont {Bertoli}, \citenamefont
-  {Cantoni}, \citenamefont {Baldrati}, \citenamefont {Asa}, \citenamefont
-  {Vobornik}, \citenamefont {Panaccione}, \citenamefont {Marchenko},
-  \citenamefont {Sanchez-Barriga}, \citenamefont {Rader}, \citenamefont
-  {Calarco}, \citenamefont {Picozzi}, \citenamefont {Bertacco},\ and\
-  \citenamefont {Morgenstern}}]{Liebmann2016}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
-  {Liebmann}}, {\bibfnamefont {C.}~\bibnamefont{Rinaldi}}, {\bibfnamefont {D.}~\bibnamefont{Di Sante}},
-  {\bibfnamefont {J.}~\bibnamefont{Kellner}}, {\bibfnamefont {C.}~\bibnamefont{Pauly}}, {\bibfnamefont {R. N.}~\bibnamefont{Wang}},
-  {\bibfnamefont {J. E.}~\bibnamefont{Boschker}}, {\bibfnamefont {A.}~\bibnamefont{Giussani}}, {\bibfnamefont {S.}~\bibnamefont{Bertoli}},
-  {\bibfnamefont {M.}~\bibnamefont{Cantoni}}, {\bibfnamefont {L.}~\bibnamefont{Baldrati}},
-  {\bibfnamefont {M.}~\bibnamefont{Asa}}, {\bibfnamefont {I.}~\bibnamefont{Vobornik}}, {\bibfnamefont {G.}~\bibnamefont{Panaccione}},
-  {\bibfnamefont {D.}~\bibnamefont{Marchenko}}, {\bibfnamefont {J.}~\bibnamefont{S\'anchez-Barriga}}, 
-  {\bibfnamefont {O.}~\bibnamefont{Rader}}, {\bibfnamefont {R.}~\bibnamefont{Calarco}}, {\bibfnamefont {S.}~\bibnamefont{Picozzi}},
-  {\bibfnamefont {R.}~\bibnamefont{Bertacco}}, {\bibfnamefont {M.}~\bibnamefont{Morgenstern}}  
-  {\it et~al.},\ }\href {\doibase 10.1002/adma.201503459}
-  {\bibfield  {journal} {\bibinfo  {journal} {Advanced Materials}\ }\textbf
-  {\bibinfo {volume} {28}},\ \bibinfo {pages} {560} (\bibinfo {year}
-  {2016})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Krempask{\'{y}}}, {\it et~al.}(2016)\citenamefont
-  {Krempask{\'{y}}}, \citenamefont {Volfov{\'{a}}}, \citenamefont {Muff},
-  \citenamefont {Pilet}, \citenamefont {Landolt}, \citenamefont
-  {Radovi{\'{c}}}, \citenamefont {Shi}, \citenamefont {Kriegner}, \citenamefont
-  {Hol{\'{y}}}, \citenamefont {Braun}, \citenamefont {Ebert}, \citenamefont
-  {Bisti}, \citenamefont {Rogalev}, \citenamefont {Strocov}, \citenamefont
-  {Springholz}, \citenamefont {Min{\'{a}}r},\ and\ \citenamefont
-  {Dil}}]{Krempasky2015SurfaceSemiconductor}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
-  {Krempask{\'{y}}}}, {\bibfnamefont {H.}~\bibnamefont
-  {Volfov\'a}}, {\bibfnamefont {S.}~\bibnamefont
-  {Muff}}, {\bibfnamefont {N.}~\bibnamefont
-  {Pilet}}, {\bibfnamefont {G.}~\bibnamefont
-  {Landolt}}, {\bibfnamefont {M.}~\bibnamefont
-  {Radovi\'c}}, {\bibfnamefont {M.}~\bibnamefont
-  {Shi}}, {\bibfnamefont {D.}~\bibnamefont
-  {Kriegner}}, {\bibfnamefont {V.}~\bibnamefont
-  {Hol\'y}}, {\bibfnamefont {J.}~\bibnamefont
-  {Braun}}, {\bibfnamefont {H.}~\bibnamefont
-  {Ebert}}, {\bibfnamefont {F.}~\bibnamefont
-  {Bisti}}, {\bibfnamefont {V. A.}~\bibnamefont
-  {Rogalev}}, {\bibfnamefont {V. N.}~\bibnamefont
-  {Strocov}}, {\bibfnamefont {G.}~\bibnamefont
-  {Springholz}}, {\bibfnamefont {J.}~\bibnamefont
-  {Min\'ar}}, {\bibfnamefont {J. H.}~\bibnamefont
-  {Dil}}, }\href {\doibase 10.1103/PhysRevB.94.205111}
-  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf
-  {\bibinfo {volume} {94}},\ \bibinfo {pages} {205111} (\bibinfo {year} 
-  {2016})}\BibitemShut {NoStop}%
-  
-\bibitem [{\citenamefont {Rashba}\ and\ \citenamefont
-  {Sheka}(1959)}]{Rashba1959SymmetryAr}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
-  {Rashba}}\ and\ \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont {Sheka}},\
-  }\href {http://nrs.harvard.edu/urn-3:HUL.InstRepos:29426010} {\bibfield  {journal} {\bibinfo  {journal} {New. J. Phys.} \textbf{\bibinfo{volume}{17}},\ \bibinfo {pages} {050202}} (\bibinfo {year}
-  {2015})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Lifshitz}\ \emph {et~al.}(1982)\citenamefont
-  {Lifshitz}, \citenamefont {Berestetskii},\ and\ \citenamefont
-  {Pitaevskii}}]{Lifshitz1982CourseTheory}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.~M.}\ \bibnamefont
-  {Lifshitz}}, \bibinfo {author} {\bibfnamefont {V.~B.}\ \bibnamefont
-  {Berestetskii}}, \ and\ \bibinfo {author} {\bibfnamefont {L.~P.}\
-  \bibnamefont {Pitaevskii}},\ }\href {http://ci.nii.ac.jp/ncid/BA20776995}
-  {\bibinfo {title} \it Course of Theoretical Physics - Volume 4:
-  Relativistic Quantum Theory},\ \bibinfo {edition} {2nd}\ ed.\ (\bibinfo
-  {publisher} {Elsevier, Oxford},\ \bibinfo {year} {1982})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Rabe}\ and\ \citenamefont
-  {Joannopoulos}(1987)}]{Rabe1987}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~M.}\ \bibnamefont
-  {Rabe}}\ and\ \bibinfo {author} {\bibfnamefont {J.~D.}\ \bibnamefont
-  {Joannopoulos}},\ }\href {\doibase 10.1103/PhysRevB.36.6631} {\bibfield
-  {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo
-  {volume} {36}},\ \bibinfo {pages} {6631} (\bibinfo {year}
-  {1987})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Garrity}\ \emph {et~al.}(2014)\citenamefont
-  {Garrity}, \citenamefont {Rabe},\ and\ \citenamefont
-  {Vanderbilt}}]{Garrity2013Hyperferroelectrics:Polarization}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~F.}\ \bibnamefont
-  {Garrity}}, \bibinfo {author} {\bibfnamefont {K.~M.}\ \bibnamefont {Rabe}}, \
-  and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Vanderbilt}},\
-  }\href {\doibase 10.1103/PhysRevLett.112.127601} {\bibfield  {journal}
-  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume}
-  {112}},\ \bibinfo {pages} {127601} (\bibinfo {year} {2014})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Meyer}\ and\ \citenamefont
-  {Vanderbilt}(2001)}]{Meyer2008AbFields}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
-  {Meyer}}\ and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
-  {Vanderbilt}},\ } \href {\doibase 10.1103/PhysRevB.63.205426} {\bibfield      {journal}
-  {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume}{63}},\ \bibinfo    {pages} {205426} (\bibinfo {year} {2001})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Park}\ \emph {et~al.}(2011)\citenamefont {Park},
-  \citenamefont {Kim}, \citenamefont {Yu}, \citenamefont {Han},\ and\
-  \citenamefont {Kim}}]{Park2011}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~R.}\ \bibnamefont
-  {Park}}, \bibinfo {author} {\bibfnamefont {C.~H.}\ \bibnamefont {Kim}},
-  \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Yu}}, \bibinfo {author}
-  {\bibfnamefont {J.~H.}\ \bibnamefont {Han}}, \ and\ \bibinfo {author}
-  {\bibfnamefont {C.}~\bibnamefont {Kim}},\ }\href {\doibase
-  10.1103/PhysRevLett.107.156803} {\bibfield  {journal} {\bibinfo  {journal}
-  {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {107}},\ \bibinfo
-  {pages} {156803} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Park}\ \emph {et~al.}(2012)\citenamefont {Park},
-  \citenamefont {Kim}, \citenamefont {Rhim},\ and\ \citenamefont
-  {Han}}]{Park2012}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~H.}\ \bibnamefont
-  {Park}}, \bibinfo {author} {\bibfnamefont {C.~H.}\ \bibnamefont {Kim}},
-  \bibinfo {author} {\bibfnamefont {J.~W.}\ \bibnamefont {Rhim}}, \ and\
-  \bibinfo {author} {\bibfnamefont {J.~H.}\ \bibnamefont {Han}},\ }\href
-  {\doibase 10.1103/PhysRevB.85.195401} {\bibfield  {journal} {\bibinfo
-  {journal} {Phys. Rev. B}\
-  }\textbf {\bibinfo {volume} {85}},\ \bibinfo {pages} {195401} (\bibinfo {year}
-  {2012})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Park}\ and\ \citenamefont
-  {Kim}(2015)}]{Park2015MicroscopicMomentum}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~R.}\ \bibnamefont
-  {Park}}\ and\ \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Kim}},\
-  }\href {\doibase 10.1016/j.elspec.2014.12.009} {\bibfield  {journal}
-  {\bibinfo  {journal} {J. Electron. Spectros. Relat. Phenomena}\ }\textbf {\bibinfo {volume} {201}},\ \bibinfo {pages} {6}
-  (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Hong}\ \emph {et~al.}(2015)\citenamefont {Hong},
-  \citenamefont {Rhim}, \citenamefont {Kim}, \citenamefont {Ryong~Park},\ and\
-  \citenamefont {Hoon~Shim}}]{Hong2015QuantitativeSplitting}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
-  {Hong}}, \bibinfo {author} {\bibfnamefont {J.-W.}\ \bibnamefont {Rhim}},
-  \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Kim}}, \bibinfo {author}
-  {\bibfnamefont {S.}~\bibnamefont {Ryong~Park}}, \ and\ \bibinfo {author}
-  {\bibfnamefont {J.}~\bibnamefont {Hoon~Shim}},\ }\href {\doibase
-  10.1038/srep13488} {\bibfield  {journal} {\bibinfo  {journal} {Sci.
-  Rep.}\ }\textbf {\bibinfo {volume} {5}},\ \bibinfo {pages} {13488}
-  (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Marzari}\ \emph {et~al.}(2012)\citenamefont
-  {Marzari}, \citenamefont {Mostofi}, \citenamefont {Yates}, \citenamefont
-  {Souza},\ and\ \citenamefont
-  {Vanderbilt}}]{Marzari2012MaximallyApplications}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
-  {Marzari}}, \bibinfo {author} {\bibfnamefont {A.~A.}\ \bibnamefont
-  {Mostofi}}, \bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont {Yates}},
-  \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont {Souza}}, \ and\ \bibinfo
-  {author} {\bibfnamefont {D.}~\bibnamefont {Vanderbilt}},\ }\href {\doibase
-  10.1103/RevModPhys.84.1419} {\bibfield  {journal} {\bibinfo  {journal}
-  {Rev. Mod. Phys.}\ }\textbf {\bibinfo {volume} {84}},\ \bibinfo
-  {pages} {1419} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Petersen}\ and\ \citenamefont
-  {Hedeg{\aa}rd}(2000)}]{Petersen2000SimpleStates}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
-  {Petersen}}\ and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
-  {Hedeg{\aa}rd}},\ }\href {\doibase 10.1016/S0039-6028(00)00441-6} {\bibfield
-  {journal} {\bibinfo  {journal} {Surf. Sci.}\ }\textbf {\bibinfo {volume}
-  {459}},\ \bibinfo {pages} {49} (\bibinfo {year} {2000})}\BibitemShut
-  {NoStop}%
-\bibitem [{\citenamefont {Go}\ \emph {et~al.}(2016)\citenamefont {Go},
-  \citenamefont {Hanke}, \citenamefont {Buhl}, \citenamefont {Freimuth},
-  \citenamefont {Bihlmayer}, \citenamefont {Lee}, \citenamefont {Mokrousov},\
-  and\ \citenamefont {Bl{\"{u}}gel}}]{Go2016SurfacePhysics}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
-  {Go}}, \bibinfo {author} {\bibfnamefont {J.-P.}\ \bibnamefont {Hanke}},
-  \bibinfo {author} {\bibfnamefont {P.~M.}\ \bibnamefont {Buhl}}, \bibinfo
-  {author} {\bibfnamefont {F.}~\bibnamefont {Freimuth}}, \bibinfo {author}
-  {\bibfnamefont {G.}~\bibnamefont {Bihlmayer}}, \bibinfo {author}
-  {\bibfnamefont {H.-W.}\ \bibnamefont {Lee}}, \bibinfo {author} {\bibfnamefont
-  {Y.}~\bibnamefont {Mokrousov}}, \ and\ \bibinfo {author} {\bibfnamefont
-  {S.}~\bibnamefont {Bl{\"{u}}gel}},\ }\href {\doibase 10.1038/srep46742} 		
-  {\bibfield
-  {journal} {\bibinfo  {journal} {Sci. Rep.}\ }\textbf {\bibinfo {volume}
-  {7}},\ \bibinfo {pages} {46742} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Giannozzi}\ \emph {et~al.}(2009)\citenamefont
-  {Giannozzi}, \citenamefont {Baroni}, \citenamefont {Bonini}, \citenamefont
-  {Calandra}, \citenamefont {Car}, \citenamefont {Cavazzoni}, \citenamefont
-  {Ceresoli}, \citenamefont {Chiarotti}, \citenamefont {Cococcioni},
-  \citenamefont {Dabo}, \citenamefont {Dal~Corso}, \citenamefont
-  {de~Gironcoli}, \citenamefont {Fabris}, \citenamefont {Fratesi},
-  \citenamefont {Gebauer}, \citenamefont {Gerstmann}, \citenamefont
-  {Gougoussis}, \citenamefont {Kokalj}, \citenamefont {Lazzeri}, \citenamefont
-  {Martin-Samos}, \citenamefont {Marzari}, \citenamefont {Mauri}, \citenamefont
-  {Mazzarello}, \citenamefont {Paolini}, \citenamefont {Pasquarello},
-  \citenamefont {Paulatto}, \citenamefont {Sbraccia}, \citenamefont {Scandolo},
-  \citenamefont {Sclauzero}, \citenamefont {Seitsonen}, \citenamefont
-  {Smogunov}, \citenamefont {Umari},\ and\ \citenamefont
-  {Wentzcovitch}}]{Giannozzi2009}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
-  {Giannozzi}}, {\it et~al.}}\href {\doibase 10.1088/0953-8984/21/39/395502} {\bibfield  {journal}
-  {\bibinfo  {journal} {J. Phys.: Cond. Mat.}\ }\textbf {\bibinfo {volume} {21}},\ \bibinfo {pages}
-  {395502} (\bibinfo {year} {2009})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Mostofi}\ \emph {et~al.}(2014)\citenamefont
-  {Mostofi}, \citenamefont {Yates}, \citenamefont {Pizzi}, \citenamefont {Lee},
-  \citenamefont {Souza}, \citenamefont {Vanderbilt},\ and\ \citenamefont
-  {Marzari}}]{Mostofi2014AnFunctions}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~A.}\ \bibnamefont
-  {Mostofi}}, \bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont {Yates}},
-  \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Pizzi}}, \bibinfo
-  {author} {\bibfnamefont {Y.~S.}\ \bibnamefont {Lee}}, \bibinfo {author}
-  {\bibfnamefont {I.}~\bibnamefont {Souza}}, \bibinfo {author} {\bibfnamefont
-  {D.}~\bibnamefont {Vanderbilt}}, \ and\ \bibinfo {author} {\bibfnamefont
-  {N.}~\bibnamefont {Marzari}},\ }\href {\doibase 10.1016/j.cpc.2014.05.003}
-  {\bibfield  {journal} {\bibinfo  {journal} {Comp. Phys. Comm.}\
-  }\textbf {\bibinfo {volume} {185}},\ \bibinfo {pages} {2309} (\bibinfo {year}
-  {2014})}\BibitemShut {NoStop}%
-\end{thebibliography}%
+\printbibliography
 

@@ -2,16 +2,20 @@
 \documentclass[10pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,xcolor}
+\usepackage[backend=biber,refsection=chapter]{biblatex}
 \usepackage{cancel}
 \usepackage{siunitx}
 \usepackage{graphicx}
 % \usepackage{smartdiagram}
 \usepackage[caption=false]{subfig}
 \captionsetup[subfigure]{labelformat=brace}
+\usepackage[normalem]{ulem}
 \usepackage{tikz}
 \usepackage{bm}
-\usepackage{natbib}
+% \usepackage{natbib}
 \usepackage{hyperref}
+\addbibresource{/home/ponet/Documents/PhD/Thesis/papers/GdMn2O5/bib.bib}
+\addbibresource{/home/ponet/Documents/PhD/Thesis/papers/Rashba/bib.bib}
 
 %to be used in main text
 \newcommand{\ket}[1]{$\left|#1\right\rangle$}
@@ -42,9 +46,6 @@
 
 \usetikzlibrary{shapes,arrows,decorations.pathmorphing}
 
-%\title{Ultrafast manipulation of SDW in Cr}
-%model: Louis Ponet, Sergey Artyukhin
-%\date{November 2018}
 \title{
 	{Interplay between complex orders in functional materials}\\
 	{\large Department of Nanosciences, Scuola Normale Superiore di Pisa}\\
@@ -63,6 +64,8 @@
 \Include{Theory}
 % \chapter{Charge order and spin-momentum locking in high spin-orbit coupled ferroelectrics}
 \Include{Rashba}
+\Include{Cr}
+\Include{GdMn2O5}
 
 % \chapter{Strong coupling and ultrafast control of charge and spin density waves in elemental Chromium}
 % \subfile{chapters/chromium_sdw_cdw.tex}

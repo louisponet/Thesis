@@ -1,0 +1,85 @@
+\chapter{Topological Multiferroic switching; coupling between Magnetism and Ferroelectricity in GdMn2O5}
+\section{Introduction}
+Multiferroic materials, where there are multiple ordered structures, have been studied intensely in recent times. The first reason for this is that these orders are usually coupled to some degree, allowing the indirect manipulation of one order by an external perturbation applied to the other. Secondly, this coupling enables a wealth of physical processes to be observed in these materials. Especially materials with relatively low symmetry are a veritable playground to study different effects. In the case under present scrutiny, GdMn2O5, the magnetic configuration that is present in the system breaks inversion symmetry and leads to a small ferroelectric polarization to show up. With an externally applied magnetic field, we can influence the magnetic order and in turn change the ferroelectric polarization through magnetostriction. Experiments have previously shown exactly this effect, but what was previously missed, is that depending on the angle of the applied magnetic field there are three distinguishable switching regimes. As will be discussed later two of these three regimes can be regarded as two topologically trivial extremes, whereas the third one that lives in the crossover region between these two orders can be regarded as topologically non-trivial in the same sense as a Thouless pump.
+
+\section{GdMn$_2$O$_5$}
+Before describing the underlying theory to describe the processes that happen in GdMn$_2$O$_5$, we focus for a moment on the magnetic unit cell shown in Fig.~\ref{fig:GdMn2O5_unit_cell}. There are two differently oriented chains of Manganese atoms, distinguished by the light blue lines and polygons. Inside these chains there are both tetrahedrally coordinated (Mn$^{3+}$) and octahedrally coordinated (Mn$^{4+}$) manganese atoms. Due to the Goodenough-Kanamori rules\lp{citation!} these chains are strongly coupled AFM, leading us to assign one AFM order parameter for each ($L_1$ and $L_2$), this amounts to taking the rigid spin approximation in each chain. However, due to the same rules, the chains also couple AFM between eachother. When considering the Mn pentagons formed by the two chains around each of the Gd atoms, it becomes clear that there is a magnetic frustration in the system. This will cause the chains to cant a little to be more perpendicular to eachother which can then lead to an energy gain through small canting. This frustration breaks inversion symmetry and leads to the first contribution to the ferroelectric polarization through magnetostriction. However, due to the spins of the Gd atoms, and their strong AFM coupling to the surrounding Mn atoms, there is a second contribution to the ferroelectricity. This happens because the Gd atom will move towards the closest tetrahedrally coordinated Mn atom in an effort to optimize the super-exchange energy gain with it. These two contributions add up to a polarization of around 3600 $\mu C/cm^2$, which is tiny compared to proper ferroelectrics, but enormous for multiferroics. Lastly due to the size of the spin from the half-filled f-shell Gd atoms (nominally $S=\frac{7}{2}$), dipolar effects may play a role, and each of the Gd spins inside the unit cell need to be considered separately. 
+\begin{figure}
+	\IncludeGraphics{unit_cell}
+	\caption{\label{fig:GdMn2O5_unit_cell}}
+\end{figure}
+
+\section{Theory}
+In light of the above considerations we use a model with two antiferromagnetic order parameters signifying the two orientations of Mn chains, and eight classical spins that describe the different Gd atoms. The Hamiltonian then takes the form:
+\begin{align}
+    \label{eq:GdMn2O5_1}
+    H=&\Gamma(\mathbf{L}_1\cdot \mathbf{L}_2)^2
+    -\sum_{\alpha}\chi^{-1}((\mathbf{H}\cdot \mathbf{L}_\alpha)^2-H^2)\\
+    &-K_L\sum_\alpha(\mathbf{L}_\alpha\cdot \mathbf{n}_\alpha)^2\\
+    %\sum_{i,j}J_{ij} \mathbf{S}_i\cdot \mathbf{S}_j 
+    &+\frac{1}{2}(g \mu_B)^2\sum_{i\neq j}\left(\frac{\mathbf{S}_i\cdot \mathbf{S}_j}{r_{ij}^3}-3\frac{(\mathbf{S}_i\cdot \mathbf{r}_{ij})(\mathbf{S}_j\cdot \mathbf{r}_{ij})}{r_{ij}^5}\right)\\
+    &-\sum_i\left( K_S(\mathbf{N}_i\cdot \mathbf{S}_i)^2 + g\mu_\mathrm{B} \mathbf{H} \cdot \mathbf{S}_i\right) + \sum_{i,\alpha}V_{i\alpha}\mathbf{S}_i\cdot \mathbf{L}_\alpha,
+\end{align}
+
+where the first term originates from the competition of the interchain exchange $J_\perp$ and the intrachain AFM exchange $J_\|$ \cite{Sushkov2008}, with $\Gamma\sim\frac{J_{\perp}^2}{J_\|}>0$ determined by the energy gain on the spin canting, possible when $L_1$ and $L_2$ are not collinear. The term with $\chi$ represents the gained Zeeman energy when the Mn spins are slightly canted from the purely AFM order inside the chains; terms with $K_L$ and $K_S$ refer to easy-axis anisotropy constants of Mn and Gd spins, respectively.
+Anisotropy axes for $L_1$, $L_2$ are unit vectors chosen to be aligned with the threefold axes of the tetrahedrally coordinated Mn atoms, i.e. $n_\alpha=\pm23.4^\circ$ respectively. The anisotropy axes for the Gd atoms, $N_i$, are also unit vectors that alternate as $\pm 12^\circ$. The third line describes the dipole-dipole interactions between Gd ions, which were restricted to five nearest neighbors. It was checked that including further neighbors up to $8.5\angstrom$ away didn't lead to qualitative changes of the results. The Heisenberg exchange constants $V_{i,\alpha}$ describe Mn-Gd interactions, where $V_{i,\alpha}=v_1$ for the exchange constant between the Gd and the nearest (tetragonally coordinated) Mn atom and its chain, and $v_2$ the exchange with the other Mn chain. The model parameters used here are $J_\perp = 1.89$~meV, $J_\parallel = 26.67$~meV, $K_L = 5.27$~meV, $K_S = 0.2$~meV, $v_1 = 3.33$~meV, $v_2 = 0.15$~meV. The electric polarization $P_b$, induced by the Heisenberg exchange striction, is given by
+\begin{align}
+    P_b=&\alpha (\vec{L}_1\cdot \vec{L}_2)+\nonumber\\
+    &(\vec{S}_1-\vec{S}_5)(\beta \vec{L}_2 + \gamma \vec{L}_1) +\nonumber\\
+    &(\vec{S}_2-\vec{S}_6)(\beta \vec{L}_1 + \gamma \vec{L}_2) +\\ 
+    &(\vec{S}_3-\vec{S}_7)(\beta \vec{L}_2 - \gamma \vec{L}_1) +\nonumber\\ 
+    &(\vec{S}_4-\vec{S}_8)(\beta \vec{L}_1 - \gamma \vec{L}_2)\nonumber,
+\end{align}
+with the model parameters used to fit the experimental data, $\alpha = 0.06\:\mu$C/cm$^2$, $\beta = 0.04\:\mu$C/cm$^2$, $\gamma = 0.06\:\mu$C/cm$^2$. The results are shown in Fig.~\ref{fig:theory_Gd1}
+
+\begin{figure*}[t]
+    \centering
+    \IncludeGraphics[width=\linewidth]{fig_theory.png}
+    %\includegraphics[width=\linewidth]{fig/L1L2_heatmap.png}
+    \caption{\label{fig:theory_Gd1} (a-c) Evolution of electric polarization $P_b$ during the magnetic field sweep cycle for various magnetic field orientations. The four states are marked by the numbers, and the switching paths indicated by insets and arrows next to the graphs. The colors are used to indicate sequential sweep branches. $\nu$ signifies the winding number of each switching regime.
+    (d-f) Trajectories (in yellow) of the AFM order parameter orientations $(\phi_{L_1},\phi_{L_2})$ through the field sweep cycles in different regimes. The color map shows the energy landscape at an intermediate field inside the hysteresis region. 
+    (g) NEB showing the evolution of transition barriers between states 1,2,3,4 as the magnetic field aligned with with magic angle is swept through the hysteresis region. The plots are shifted vertically for clarity. The curve colors encode the corresponding magnetic field strength. The trajectory of the energy minimum due to field sweeps is shown with blue balls and arrows.
+    Coordinated changes of the state energies and barrier asymmetry with magnetic field enable the topological behavior. 
+    (h) Spin configurations of the four states, labeled $1\dots 4$ in (a).
+    (k) Schematic evolution of the barriers connecting the state 2 to states 1 and 3 away from $H^*$. Saddle point states are denoted by $\tilde{1}$ and $\tilde{3}$.
+    }
+\end{figure*}
+
+We proceed by identifying the 2 low and 2 high $P_b$ states in Fig.~\ref{fig:theory_Gd1}(b) as 1,3 and 2,4 respectively. The magnetic configuration of these states is displayed in panel (h) of the same figure. We then perform a nudged elastic band calculation between these states at different magnetic field strengths while remaining in the 4-state hysteresis region, resulting in the evolution of barriers between these states as shown in panel (g), where the color coding is used to denote the magnetic field strength, and the energy graphs are offset for clarity. The arrows and blue balls denote the evolution during the double magnetic field sweep. As expected, there are two degenerate minima at each value of $H$, at low field these are located at states 1 and 3, then as the field is ramped up they move to favor states 2 and 4. We see that during the sweep the barriers between the different states evolve asymmetrically. As we start in state 1, when the field is ramped up first the barrier towards state 2 decreases faster than the one towards state 4, causing the system to move from 1 to 2. Then as the magnetic field is lowered, the barrier from 2 to 3 increases slower than from 2 to 1. When ultimately state 2 goes from being metastable to a saddle point, the state spills towards state 3, and so on.
+In order to try and understand where the asymmetric evolution of the barriers comes from, we look at the particular $H$-field strength where the barriers between state 2 and 1, and 2 and 3 are the same height. This is highlighted by the red dashed box around the blue graph. The inset of panel (k) provides a zoom on this situation. The states on top of the barriers are denoted by a tilde over the state towards the barrier is oriented, i.e. $\tilde{1}$ signifies the state on the top of the barrier from state 2 towards state 1. We then perform a Taylor expansion in terms of $H$, around $H^*$:
+\begin{equation}
+	F(H) = F(H^*) + \left.\frac{\partial F}{\partial H}\right\rvert_{H=H^*} (H-H^*) + ...,
+\end{equation}
+for each of the states and subtract the result. Using $\frac{\partial F}{\partial H} = M$ we find
+\begin{equation}
+	F_{\tilde{1}}(H) - F_{\tilde{2}} = (M_{\tilde{1}} - M_{\tilde{2}}) (H - H^*).
+\end{equation}
+\lp{show how to calculate M?}
+This means that to first order the evolution of the barrier asymmetry is given by the difference magnetization of the states on top of the barriers. Indeed we find that the magnetizations are different from our simulations, confirming that this is at least a part of the reason for the asymmetric evolution of the barriers. Moreover, due to the symmetry of the system, this asymmetry is opposite when the field is swept up, as compared with when the field is swept down. This causes the unidirectional movements through the four states.
+
+\section{Simplified Model}
+Having found a description for the situation in the complicated material GdMn$_2$O$_5$ using the model \ref{eq:GdMn2O5_1}, one may wonder what the minimal requirements are to have a similar four-state behavior where the spins rotate 360$^\circ$ while the applied field only oscillates along a single axis.
+We look to the spin configurations of Fig.~\ref{fig:theory_Gd1}(h) for inspiration. It is clear that, although necessary for the $P_b$ behavior, it seems that the chain with Mn moments most parallel to the applied field does the full rotation, while the other chain merely osciallates around its starting position. The Gd moments seem to follow the behavior of the chain they are most strongly coupled to. This warrants an attempt to explain the observed behavior using only a single chain with its Gd moments.   
+In the particular case where the magic angle is along $\alpha = +10^\circ$, we keep $L_1$, $S_2$, $S_3$, $S_6$ and $S_7$ as the variables in the model. We also assume that the easy axis of Gd is not that important.
+This leaves us with the following Hamiltonian, which we will split up in two parts, one with the dipolar terms $H_{dip}$ and one with all the other terms $H'$:
+\begin{align}
+	H &= H' + H_{dip} \\
+	H' &= J_1(\mathbf{S}_2 + \mathbf{S}_3 - (\mathbf{S}_6 + \mathbf{S}_7))\cdot\mathbf{L}_1 - g \mu_b (\mathbf{S}_2 + \mathbf{S}_3 + \mathbf{S}_6 + \mathbf{S}_7) \cdot \mathbf{H} \\
+	&+ K_L (\mathbf{L} \cdot \mathbf{n}) \\
+	H_{dip} &= \frac{1}{2}(g \mu_B)^2\sum_{i\neq j}\left(\frac{\mathbf{S}_i\cdot \mathbf{S}_j}{r_{ij}^3}-3\frac{(\mathbf{S}_i\cdot \mathbf{r}_{ij})(\mathbf{S}_j\cdot \mathbf{r}_{ij})}{r_{ij}^5}\right).
+\end{align}
+
+Due to the symmetries of this model and the geometry of the material we end up with two copies of one spin in the first half of the magnetic unit cell and one in the second half of the unit cell, with the chain inbetween (see Fig.~\ref{fig:GdMn2O5_simple_model}).
+\begin{figure}
+	\IncludeGraphics{double_cell.png}
+	\caption{\label{fig:GdMn2O5_simple_model} Simplified single chain model.}
+\end{figure}
+
+This causes $S_2 = S_3$ and $S_6 = S_7$, and thus allows us to look at a single one of the two copies. Again keep only nearest neighbor dipolar terms, and assuming no anisotropy for the Gd spins, we end up with
+\begin{align}
+	H' &= 2J_1(\mathbf{S}_3 - \mathbf{S}_6)\cdot\mathbf{L}_1 - 2g \mu_b (\mathbf{S}_3 + \mathbf{S}_6) \cdot \mathbf{H} \\
+	&+ K_L (\mathbf{L} \cdot \mathbf{n}) \\
+	H_{dip} &= (g \mu_B)^2\left(\frac{\mathbf{S}_3\cdot \mathbf{S}_6}{r_{36}^3}-3\frac{(\mathbf{S}_3\cdot \mathbf{r}_{36})(\mathbf{S}_6\cdot \mathbf{r}_{36})}{r_{36}^5}\right).
+\end{align}
+
+\printbibliography
