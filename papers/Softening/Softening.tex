@@ -1,0 +1,48 @@
+\chapter{Mechanical softening in Ferroelectric domain walls}
+
+
+\section{Introduction}
+The study of domain walls in ferroelectric and ferroelastic materials has taken the center stage in recent years. This is because they signify crossover regions between domains where the parent symmetry of the material was broken. These regions therefore often harbor effects that are markedly different from the behaviors found in the domains themselves. Here we investigate mainly 180$^\circ$ domain walls in ferroelectric BaTiO$_3$ (BTO).
+These domain walls are purely ferroelectric, i.e. the strain textures accompanying the ferroelectricity (see below for a more in depth discussion) is the same in both domains, separated by the wall. Given this fact it is fairly remarkable that it was observed that these walls are mechanically distinct from the domains they separate. In the case of BTO, they appear softer.
+After giving an overview of the performed experiments and the results we are trying to describe, we continue with a discription of the underlying theory, followed by the numerical results together with a discussion.
+
+
+\section{Experimental}
+In order to characterise the stiffness of the material, scanning probe microscopy experiments were performed on single crystal BTO, by the group of Prof. Catalan. More specifically, Contact Resonance Frequency Microscopy (CR-FM) was performed, whereby an Atomic Force Microscopy (AFM) tip is brought into contact with the material, upon which the resonance frequency is measured. The higher the frequency the stiffer is the material in contact with the tip. This allows one to produce a mapping of stiffness the entire crystalline surface where the main limit on resolution is time. This leads to images as shown in Fig.~\ref{fig:BTO_experiment}, where there is a clear contrast between soft areas close to the wall and harder areas inside the domains.
+\begin{figure}
+	\IncludeGraphics{experiment.png}
+	\caption{\label{fig:BTO_experiment} Ferroelectric polarization and stiffness maps of the surface of a single crystal of BTO. a) orientation of the ferroelectric polarization, obtained by Piezoresponse Force Microscopy (PFM). b) Mechanical response of the material as measured by CR-FM.}
+\end{figure}
+The softening of domain walls was previously studied for ferroelastic materials (i.e. materials where the wall separates two domains with different strain textures), where a similar effect was observed \cite{Lee2003}.
+
+
+\section{Theory}
+In order to describe the coupling between the ferroelectric order parameter $P$ and the strain $\varepsilon$ we use a Ginzburg-Landau-Devonshire model as described in \cite{Marton2010}. The free energy density throughout the material is given by:
+\begin{eqnarray}\label{eq:BTO_energy}
+&&f = f_{L}+f_{G}+f_{c}+f_{q}+f_{fl},\\
+&&f_{L} = \alpha_{ij}P_{ij} + \frac{1}{2}\alpha_{ijkl}P_{i}P_{j}P_{k}P_{l} + \alpha_{ijklmn} P_i P_j P_k P_l P_m P_n,\\
+&&f_{G} = \frac{1}{2}G_{jklm}\partial_k P_j\partial_m P_l,\\
+&&f_{c} = \frac{1}{2}\varepsilon_{jk}C_{jklm}\varepsilon_{lm},\\
+&&f_{q}=-\frac{1}{2}\varepsilon_{jk}q_{jklm}P_{l}P_{m},\label{eq:qpp}\\
+&&f_{fl}=\frac{1}{2}f_{jklm}(\varepsilon_{jk}\partial_mP_l-P_l\partial_m\varepsilon_{jk})
+\end{eqnarray}
+where the indices run through ${x,y,z}$, and einstein summation is assumed. The first term is the Landau free energy for a uniform ferroelectic polarization. Up to sixth order had to be included to bound the energy, since in BTO the fourth order term turns out to be negative. The second term denotes the Ginzburg part, the energy penalty occurred by spatial variations of the polarization. $f_c$ is the elastic energy density, and $f_q$ gives the contribution of electrostriction to the free energy. This is the main term coupling the polarization to the strain and causes the domains to be stretched along the polarization \lp{add some panels like in the discussion of the powerpoint}. Lastly we include the flexoelectric contribution, $f_{fl}$, since it leads to small but possibly important effects.
+
+The first possible source for the mechanical softening originates from the electrostriction term, and the strain texture it results in. As mentioned before, electrostriction stretches the domains in the direction of the polarization. Since we are investigating 180$^\circ$ domain walls, we can take the main polarization to be $P_z$, leading to a stretching of the domains in the $z$ direction, or equivalently, $\varepsilon_{zz} \neq 0$ inside the domains. In the domain wall, however, $P_z^2$ is diminished and even zero at the center. This then causes $\varepsilon_{zz}$ to be dimished, but never reduced to zero due to compatibility relations and the elastic coupling to neighboring unit cells. Nonetheless, this will result in an indentation that forms at the location of the domain wall, as shown pictorially in Fig.~\ref{fig:BTO_theory}(b), and more realistically in (c-d). As it turns out, the strain texture of this indentation stretches out relatively far \lp{actual derivation and formula for this?} from the domain wall. This long-rangedness of strain is a general fenomenon, and depends on the morfology of the strain defect \lp{more indepth on this?}. When the tip is then applied in an area where this strain texture is present, the wall will try to bend towards the tip in order to gain on the displacement. This will thus lead to a relatively big displacement to be caused by applying the tip, making the material appear soft.
+
+Even though the interaction between the pinning potential, Peierls-Nabarro barriers, and electrostatics, with the force applied by the tip is hard to analytically describe, we can make statements about two extremes of the behavior: i) If the force of the tip is large enough, the wall slide towards it, maximizing the possible energy gain from the interaction with the tip.  ii) A bending of the wall, where it remains inside the original Peierls-Nabarro potential, but deviates from  the equilibrium position. \lp{The situation that happens in the real material is more like a mix between the two, the top part of the wall bends almost completely towards teh tip, but it's not moved as a whole because the bottom/bending electrostatics pins it. Can we say that these things are causing the potential for the entire wall to behave like the one we describe below?}
+
+The first case can be ignored because this would mean that in the experiments, the wall would be dragged along the tip since the tip moves at a relatively slow rate, which would lose any contrast between wall and domain during the full measurement. We therefore try to formulate a simple free energy expansion for the second situation, where we assume that the wall at $x_{DW}$ is pinned by a parabolic potential, and perturbed by a tip applying a force $F_z$ at $x_{tip}$,
+\begin{equation}
+	E = E_0 - F_z u_z (x_{tip} - x_{DW}) + \frac{m\omega^2 x_{DW}^2}{2}.
+\end{equation}
+We can expand this equation under the assumption of a small $x_{DW}$, i.e. that the wall doesn't move far from the $x_{DW}=0$ equilibrium situation. Together with minimizing the energy we obtain $x_{DW} = -F u'(x_{tip})/m \omega^2$, with a compliance correction $\Delta c = u'(x_{tip})^2/(m\omega^2)^2$. Thus, we can conclude that to maximize the softening, the tip should be applied where $u'(x_{tip})$ is large, i.e. within the strain variation caused by the above discussed electrostrictive coupling. This part of the effect is pictorially depicted in panel (b) of Fig.~\ref{fig:BTO_theory}.
+
+\begin{figure}
+	\IncludeGraphics{theory}
+	\caption{\label{fig:BTO_theory}}
+\end{figure}
+
+\section{Results}
+
+\printbibliography
