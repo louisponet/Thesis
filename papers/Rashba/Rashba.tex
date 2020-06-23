@@ -1,15 +1,23 @@
+\newcommand{\unkr}{$u_n(\bm{k}, \bm{r})$}
+\newcommand{\Unkr}{u_n(\bm{k}, \bm{r})}
+\newcommand{\eikr}{$e^{i\bm{k}\cdot\bm{r}}$}
+\newcommand{\Eikr}{e^{i\bm{k}\cdot\bm{r}}}
 \chapter{Charge order and spin-momentum locking in high spin-orbit coupled ferroelectrics}
 \section{Introduction}
 % Bulk ferroelectrics with large atomic spin-orbit coupling allow for electric control of spin-polarized states~\cite{DiSante2013,Ishizaka2011,Kim2014, Liebmann2016, Krempasky2015SurfaceSemiconductor}, allowing for the switching of the spin texture by an externally applied electric field. 
 % The underlying mechanism is, however, not well understood.
-The research area of spintronics aims to supersede standard electronics by using both the spin as charge degree of freedom of carriers for information processing and storage. %\sa{https://doi.org/10.1146/annurev-conmatphys-070909-104123} 
+% Note: Not sure we should really focus on technology, also it's not particularly clear it wants to use both spin and charge, rather than just spin.
+% The research area of spintronics aims to supersede standard electronics by using both the spin and charge degree of freedom of the carriers for information processing and storage. %\sa{https://doi.org/10.1146/annurev-conmatphys-070909-104123}
+%
+The research field of spintronics aims to understand the behavior of spins inside materials, and translate this understanding into active control of these degrees of freedom for possible technological applications.
 Many possible devices have been theorized, examples are the spin field-effect transistors (spin-FET)\cite{Datta1990} and storage devices which utilize spin-current and associated spin-transfer torque to efficiently manipulate magnetic domains \cite{Kent2015,Jungwirth2016}. In spite of fundamental interest and potential for applications, the actual realization of these devices has been rather elusive.
-One of the main culprits for the limited success to date is that the devices require very granular, ideally electric, control of the spin, which is impeded by widely separated energy scales and weak coupling between magnetic and structural degrees of freedom.
+One of the main culprits for the limited success to date is that the devices require very granular, ideally electric, control of the spin, which is impeded by widely separated energy scales and weak coupling between magnetic and charge degrees of freedom.
 One class of materials that allow for such electric control of spin-polarized states are the ferroelectric semiconductors with large atomic spin-orbit coupling (SOC) \cite{DiSante2013,Ishizaka2011,Kim2014}.
-The inversion symmetry breaking together with the SOC results in a clear splitting between spin-polarized states in certain parts of the Brillouin Zone. If current carriers travel through one of these spin-polarized states, their spin will align with it. As will be discussed in more detail below, the direction of the spin polarization depends on the orientation of the ferroelectric polarization $P$, allowing it to be tuned by an external electric field. These spin-polarized states have been observed both experimentally \cite{Ishizaka2011,Liebmann2016,Krempasky2015SurfaceSemiconductor}, and from ab initio density functional theory (DFT) simulations \cite{DiSante2013}. It is, however, often not well understood and often misattributed what the underlying microscopic effects are that lead to the splitting.
+Inversion symmetry breaking together with SOC results in a clear splitting between spin-polarized states in low symmetry parts of the Brillouin Zone. If current carriers travel through one of these spin-polarized states, their spins will tend align with it. As will be discussed in more detail below, the direction of the spin polarization depends on the orientation of the ferroelectric polarization $P$, allowing it to be tuned by an external electric field. These spin-polarized states have been observed both experimentally \cite{Ishizaka2011,Liebmann2016,Krempasky2015SurfaceSemiconductor}, and from ab initio density functional theory (DFT) simulations \cite{DiSante2013}. It is, however, often not well understood and often misattributed what the underlying microscopic mechanisms are that lead to the observed splitting.
 \lp{explicit mentions? Maybe too aggressive}
 
-In this part of the thesis we will investigate the different origins of this $k$ and $P$ dependent spin-splitting. The contributions that will be scrutinized have the form $\mathbf{P} \cdot (\mathbf{k} \times \mathbf{\sigma})$, where $\mathbf{\sigma}$ denotes the spin of the electron. As it will turn out, multiple microscopic effects lead to contributions of this form, some of these are well known, others are a little more obscure. We hope that this will shed light on where these contributions come from and how they compare with eachother and how they ultimately lead to the observed spin-splitting.
+In this part of the thesis we will investigate the different origins of this $k$ and $P$ dependent spin-splitting. The contributions that will be scrutinized have the form $\mathbf{P} \cdot (\mathbf{k} \times \mathbf{\sigma})$, where $\mathbf{\sigma}$ denotes the spin of the electron. It will turn out that multiple microscopic effects can lead to contributions of this form, some of these are well known, others are a little more obscure. The magnitude of the contribution depends on the microscopic origin, namely whether the effect is purely relativistic or rather electrostatic.
+We hope that this will shed light on where these contributions come from and how they compare with eachother and how they ultimately lead to the observed spin-splitting.
 
 \section{Rashba-Bychkov Effect}
 %############################ NEW ############################
@@ -18,38 +26,43 @@ The first discovered and most well known effect bearing the correct form is the 
 \begin{equation}
 	\mathcal{H} \psi = \left[\frac{\bm{p}^2}{2m} - e V - \frac{e \hbar}{4m^2c^2}(\bm{\sigma}\cdot[\bm{\nabla}V \times \bm{p}]) - \frac{\hbar^2}{8m^2c^2} \Delta V - \frac{\bm{p}^4}{8m^3c^2}\right]\psi = E\psi
 \end{equation}
-
 where $\psi$ is a two component spinor, $V$ denotes the electric potential, $\bm{\sigma}$ a vector of Pauli-matrices $(\sigma_x, \sigma_y, \sigma_z)$, $m$ and $e$ the electron mass and charge respectively, and $\bm{p}$ the canonical momentum. The first two terms are the nonrelativistic part of the Hamiltonian, the third represents the SOC, the fourth is known as the Darwin effect and the fifth is the relativistic correction to the effective electron mass. 
 
-The first three terms can be applied to Bloch spinor wavefunctions $\psi_n(\bm{k}, \bm{r}) = u_n(\bm{k}, \bm{r})e^{i\bm{k}\cdot\bm{r}}$, where $u_n$ denotes the cell-periodic part, and $n$ is the band index. This leads to an eigenvalue equation for $u_n(\bm{k}, \bm{r})$
+From now on we will denote $\frac{e \hbar}{4m^2c^2}$ as $\lambda$.
+The first three terms can be applied to Bloch spinor wavefunctions $\psi_n(\bm{k}, \bm{r}) = \Unkr \Eikr$, where $u_n$ denotes the cell-periodic part, and $n$ is the band index. This leads to an eigenvalue equation for \unkr
 \begin{align}
 	E_n u_n(\bm{k}, \bm{r}) =& \left(V_0 + V_1  +  V_2 + V_3 \right) u_n(\bm{k}, \bm{r}) \\
-	V_0 =& \frac{p^2}{2m} - eV + \frac{\hbar^2 k^2}{2m} \\
-	V_1 =& \hbar\frac{\bm{k}\cdot\bm{p}}{m} \\
-	V_2 =& -\frac{e \hbar^2}{4m^2c^2} \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{k}) \\
-	V_3 =& -\frac{e \hbar}{4m^2c^2} \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{p})
+	V_0(\bm{k}) =& \frac{p^2}{2m} - eV + \frac{\hbar^2 k^2}{2m} \\
+	V_1(\bm{k}) =& \hbar\frac{\bm{k}\cdot\bm{p}}{m} \\
+	V_2(\bm{k}) =& -\lambda \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{k}) \\
+	V_3(\bm{k}) =& -\lambda \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{p}).
 \end{align}
+Before proceeding with the perturbation theory, it is important to understand how the electric fields inside the crystal contribute to $V_2$ and $V_3$, where we remember that both terms originate from the application of $\bm{p}$ to either \unkr or \eikr.
+To do this, we first separate it in two contributions, one coming from the potential wells created by the atoms, and another originating from the ferroelectric polarization (it is assumed that no external fields are applied):
+\begin{equation}
+	\bm{\nabla} V = \bm{E} = \bm{E}_{at} + \bm{E}_{P}
+\end{equation}
+These contributions, together with the two parts of the Bloch functions (i.e. the cell periodic \unkr, and envelope function \eikr) are pictorially showcased in Fig.~\ref{fig:Efield_cell_drawing}. 
+Looking at the picture, it becomes clear that the contribution of the atomic potential applied to the envelope function is zero because while $k$ is a constant, $E_{at}$ is odd throughout the unit cell, leading to the contributions on either side of the potential well to cancel out. Thus the only contribution to the first term in Eq. \ref{eq:kp_expansion} comes only from the uniform (even) $E_P$, which in general is very small compared to the atomic one. A similar argument can be applied to the contribution to $V_3$. Here we can see that due to the shape of the periodic part of the wavefunction, only the contribution coming from $E_{at}$ will be nonzero, this is essentially the well-known atomic spin-orbit coupling and can be rather large. 
 
-In the following it is assumed that this equation can be solved for a time reversal symmetric point $\bm{k}_0$ in the first BZ, where the two spin states areare necessarily degenerate. Due to the broken inversion symmetry and inclusion of the SOC terms ($V_2$,$V_3$), this degeneracy will be broken for nonzero $k$, away from the time-reversal invariant point.
-We denote the two degenerate states at $\bm{k}_0$ by $\Ket{u_n^\downarrow}$ and $\Ket{u_n^\uparrow}$, where $n$ denotes a particular band. It is important to realize that the quantization axis of the spin can change depending on the direction of $\bm{k}$, as will become clear later.
+In the following it is assumed that this equation can be solved for a time reversal (TR) invariant point $\bm{k}_0$ in the first BZ, where the two spin states are necessarily degenerate. Due to the broken inversion symmetry and inclusion of the SOC terms ($V_2$,$V_3$), this degeneracy will be broken for $k$ points away from the TR invariant point.
+We denote the two degenerate states at $\bm{k}_0$ by $\Ket{u_n^\downarrow}$ and $\Ket{u_n^\uparrow}$, where $n$ denotes a particular band. It is important to realize that the quantization axis of the spin can change depending on the direction of both $\bm{k}$ and $\bm{P}$, as will become clear later.
 Without loss of generality we can take $\bm{k}_0 = \bm{0}$ and $E^{\uparrow,\downarrow}_n(\bm{0}) = 0$.
-Expanding in the usual $\bm{k}\cdot\bm{p}$ sense, keeping only linear $\bm{k}$ terms and terms up to second order in $1\c$, we get
-
+Expanding in the usual $\bm{k}\cdot\bm{p}$ sense, keeping only linear $\bm{k}$ terms and terms up to second order in $1/c$, we get
 \begin{align}
 	\label{eq:kp_expansion}
-	E_n^{\sigma_1}(\bm{k}) =& - \Bra{u_n^{\sigma_1}} V_2 \Ket{u_n^{\sigma_1}} + \\
-		& \sum_{m,\sigma_2=\uparrow,\downarrow}\frac{\Bra{u_n^{\sigma_1}} V_1 \Ket{u_m^{\sigma_2}}\Bra{u_m^{\sigma_2}} V_3 \Ket{u_n^{\sigma_1}} + h.c.}{E_n^{\sigma_1} - E_m^{\sigma_2}},
+	E_n^{\sigma_1}(\bm{k}) =& - V_2^{\sigma_1}(\bm{k}) + \\
+		& \sum_{m,\sigma_2=\uparrow,\downarrow}\frac{\Bra{u_n^{\sigma_1}} V_1(\bm{k}) \Ket{u_m^{\sigma_2}}\Bra{u_m^{\sigma_2}} V_3(\bm{k}) \Ket{u_n^{\sigma_1}} + h.c.}{E_n^{\sigma_1} - E_m^{\sigma_2}},
 \end{align}
-
 where the sum over $m, \sigma_2$ includes all states which are not equal to $n, \sigma_1$. 
 
+Recalling the above discussion of which fields contribute to what terms, even though the latter term of Eq.~\ref{eq:kp_expansion} is of higher order in the perturbation theory, it usually has the same order of magnitude as the former. 
+For this to be true, however, it is important that the orbitals $u_n$, and $u_m$ in the second term have contributions that originate from an atom with strong spin-orbit coupling. From the point of view of symmetries, another requirement for the second term to be nonzero is that $u_n$ and $u_m$ have contributions that have different parity, since $\bm{p}$ is odd in spatial coordinates, $\bm{k} \cdot \bm{p}$ is only non-zero when one of the orbitals is odd with respect to a spatial direction and the other even. One example could be a $p_y$ orbital and a $s$-$pz$ hybdridized one, which would be created by the ferroelectricity with electric polarization along the $z$-axis (add drawing? add hopping matrix?).
 
-
-These two terms are of similar order of magnitude in small parameters $c^{-2}$ and $\bm{k}$, but have different behavior with respect to the symmetries of the states, and different origins with respect to the ferroelectricity. The first term can be seen as a direct result of the electric field resulting from the ferroelecticity, i.e. $\nabla V$ there should be understood as the uniform internal electric field, whereas in the second term the $\nabla V$ should be understood as the potential which causes atomic spin-orbit coupling. This means that it is important that the orbitals $u_n$, and $u_m$ in the second term originate from an atom with strong spin-orbit coupling. The reason why this term only leads to a non-zero contribution when inversion is broken can be understood by looking at the required symmetries of orbitals $u_n, u_m$, as was shown by [Blugel paper]. Since $\bm{p}$ is odd in spatial coordinates, $\bm{k} \cdot \bm{p}$ is only non-zero when one of the orbitals is odd with respect to a spatial direction and the other even. One example could be a $p_y$ orbital and a $s$-$pz$ hybdridized one, which would be created by the ferroelectricity with electric polarization along the $z$-axis (add drawing? add hopping matrix?).
-
-
-
-With regards to the size of the effect, the first term usually results in a tiny splitting, due to the tiny prefactor ($~10^{-6}$) and small $\bm{k}$ value. The second term can be larger, because atomic SOC can be large for heavier atoms. There is, however, another possible source of spin splitting, originating from the so-called orbital Rashba effect (ORE).
+\begin{figure}[h]
+~\centering
+\IncludeGraphics[width=0.5\linewidth]{V2V3drawing.png}\caption{\label{fig:Efield_cell_drawing} Pictorial representation of the different electric fields present in the crystal. The black lines denote the atomic potential and electric field, $V_{at}$ and $E_{at}$ respectively, and the contribution due to ferroelectricity, $V_P$ and $E_P$. The green and red graphs denote the periodic ($u(\bm{k}, \bm{r})_n$) and envelope part of the Bloch functions, respectively.}
+\end{figure}
 
 \section{Orbital Rashba Effect}
 Contrary to the relativistic effect, this one originates from electrostatic considerations. Namely, it can be shown that Bloch functions with nonzero orbital angular momentum have nonzero dipoles. This leads to two seperate effects, firstly, when spin orbit coupling is included, OAM is unquenched at the high symmetry k-points, and as will be shown below, this leads to a correction to the band dispersion that varies linearly with $\bm{k}$. Secondly, this causes a linear variation of the OAM of the Bloch functions as one moves away from the high-symmetry point. If one then includes $\bm{l}\cdot\bm{\sigma}$ this linear $l$ will lead to an energy contribution with either positive or negative slope.
