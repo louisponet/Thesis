@@ -124,7 +124,14 @@ end
 tot_S
 
 
+#%%
+using Plots
+wbands = wannierbands(hami, bands)
+length(bands[1].k_points_cryst)
+plot(wbands[4].eigvals)
 
+plot(abs.(getindex.(wbands[5].eigvec[90:110],1)))
+plot!(abs.(getindex.(wbands[6].eigvec[90:110],1)))
 
 
 

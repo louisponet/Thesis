@@ -80,7 +80,7 @@ uuid = "a8cc5b0e-0ffa-5ad4-8c14-923d3ee1735f"
 version = "4.0.1"
 
 [[DFControl]]
-deps = ["BinDeps", "Crayons", "Dates", "DelimitedFiles", "LinearAlgebra", "Media", "NearestNeighbors", "Parameters", "RecipesBase", "Reexport", "Requires", "StaticArrays", "Statistics", "Unitful", "spglib_jll"]
+deps = ["BinDeps", "Crayons", "Dates", "DelimitedFiles", "FileIO", "LinearAlgebra", "Media", "NearestNeighbors", "Parameters", "RecipesBase", "Reexport", "Requires", "StaticArrays", "Statistics", "Unitful", "spglib_jll"]
 path = "/home/ponet/.julia/dev/DFControl"
 uuid = "1e31e15d-4957-550d-a244-318eced754ae"
 version = "0.1.1"
@@ -150,9 +150,9 @@ version = "0.4.0"
 
 [[Expat_jll]]
 deps = ["Libdl", "Pkg"]
-git-tree-sha1 = "9cdd4b1523086c9d93604599e3a389e8941e52b0"
+git-tree-sha1 = "fb53564d23aeaa2936ff26adbe17255296ef487c"
 uuid = "2e619515-83b5-522b-bb60-26c02a35a201"
-version = "2.2.7+1"
+version = "2.2.7+2"
 
 [[FileIO]]
 deps = ["Pkg"]
@@ -276,9 +276,9 @@ version = "1.0.1"
 
 [[MbedTLS_jll]]
 deps = ["Libdl", "Pkg"]
-git-tree-sha1 = "066a4467008745eed36dad973ceb66405785a621"
+git-tree-sha1 = "c83f5a1d038f034ad0549f9ee4d5fac3fb429e33"
 uuid = "c8ffd9c3-330d-5841-b78e-0817d7145fa1"
-version = "2.16.0+1"
+version = "2.16.0+2"
 
 [[Media]]
 deps = ["MacroTools", "Test"]
