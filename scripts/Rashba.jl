@@ -5,11 +5,22 @@ using Revise
 using DFWannier
 const DFW = DFWannier
 using LinearAlgebra
+using Plots
+using LaTeXStrings
 #%%
 ## GeTe
 cd(datadir("Rashba/GeTe"))
-job = DFJob("NSOC")
+job = DFJob("../../GeTe/NSOC")
+job_soc = DFJob("../../GeTe/SOC")
 
+bands = readbands(job)
+bands_soc = readbands(job_soc)
+fermi = readfermi(job)
+fermi_soc = readfermi(job_soc)
+bands[20].eigvals.-fermi
+plot(bands[15].eigvals[90:110] .- fermi , ylims=[-0.8,-0.4], ylabel = L"E - E_f (eV)", xticks=([6, 12, 18], [L"A \leftarrow Z", L"Z", L"Z \rightarrow U"]), label="No SOC", color=:blue, xtickfontsize=15, ytickfontsize=15, yguidefontsize=20, linewidth=2, legendfontsize=15, legend=:bottom, linestyle=:dash, dpi=150)
+plot!([(bands_soc[30].eigvals[90:110] .- fermi_soc) (bands_soc[29].eigvals[90:110] .- fermi_soc)], ylims=[-0.8,-0.4], ylabel = L"E - E_f (eV)", xticks=([6, 12, 18], [L"A \leftarrow Z", L"Z", L"Z \rightarrow U"]), label=["SOC" ""], color=:red, linewidth=2)
+savefig("../papers/Rashba/Images/intro_dispersion.png")
 wgrid = DFW.read_points_from_xsf(joinpath(job, "wan_00001.xsf"))
 wfuncs = [DFW.WannierFunction(joinpath(job, "wan_0000$i.xsf"), wgrid) for i = 1:8]
 
