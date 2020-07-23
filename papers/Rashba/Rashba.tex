@@ -14,16 +14,16 @@ Many possible devices have been theorized for example are spin field-effect tran
 One of the main culprits for the limited success to date is that the devices require very granular, ideally electric, control of the spin, which is impeded by widely separated energy scales and weak coupling between magnetic and charge degrees of freedom.
 One class of materials that allow for such electric control of spin-polarized states are the ferroelectric semiconductors with large atomic spin-orbit coupling (SOC) \cite{DiSante2013,Ishizaka2011,Kim2014}.
 Inversion symmetry breaking together with SOC results in a linear splitting of spin-polarized bands, seen in the band structure as a conical intersection surrounding a high-symmetry point of the Brillouin Zone (see Fig.~\ref{fig:Rashba_intro_dispersion}).
-Thus, current carriers (holes in the case of Fig.~\ref{fig:Rashba_intro_dispersion}) travelling through these spin-polarized bands will tend to align their spin with it.
+Thus, current carriers (holes in the case of Fig.~\ref{fig:Rashba_intro_dispersion}) travelling through the material will tend to align their spins to these spin-polarized bands.
 As we discuss in more detail in the following, the direction of the spin polarization depends on the orientation and strength of the electric field $\mathbf{E}$. In ferroelectrics, an internal field results from the polarization $P$, allowing it to be tuned and switched by an external applied electric field. These spin-polarized states have been observed both experimentally \cite{Ishizaka2011,Liebmann2016,Krempasky2015SurfaceSemiconductor}, and from {\it ab-initio} density functional theory (DFT) simulations \cite{DiSante2013}. It is, however, often not well understood and often misattributed what the underlying microscopic mechanisms are that lead to the observed splitting.
 \lp{explicit mentions? Maybe too aggressive}
 
-We investigate multiple different origins of this $k$ and $P$ dependent spin-splitting. The discussed contributions have the form
+We investigate multiple different origins of this $k$ and $E$ dependent spin-splitting. The discussed contributions arise due to the Hamiltonian of form
 \begin{equation}
 	\label{eq:Rashba_form}
-	e(\mathbf{k}) \sim \hat{\mathbf{E}} \cdot (\mathbf{k} \times \hat{\mathbf{\sigma}}),
+	H_R(\mathbf{k}) = \alpha_R \frac{\mathbf{E}}{|\mathbf{E}|} \cdot (\mathbf{k} \times \hat{\mathbf{\sigma}}),
 \end{equation}
-where $\hat{\mathbf{\sigma}}$ is the electron spin operator, and $\hat{{\mathbf{E}}}=\frac{\mathbf{E}}{|\mathbf{E}|}$. It will turn out that multiple microscopic effects can lead to contributions of this form, some of these are well known, others are  more obscure. The magnitude of the contribution depends on the microscopic origin, namely whether the effect is purely relativistic or rather a combination of relativistic and electrostatic. Certain materials showcase an exceedingly big splitting, for example in GeTe as can be seen in Fig.~\ref{fig:Rashba_intro_dispersion}, and will be used as the main example throughout this chapter.
+where $\hat{\mathbf{\sigma}}$ is the electron spin operator, and $\mathbf{E}$ the electric field. It will turn out that multiple microscopic effects can lead to contributions of this form, some of these are well known, others are more obscure. The magnitude of the contribution depends on the microscopic origin, namely whether the effect is purely relativistic or rather a combination of relativistic and electrostatic. Certain materials showcase an exceedingly big splitting, for example in GeTe as can be seen in Fig.~\ref{fig:Rashba_intro_dispersion}, and will be used as the main example throughout this chapter.
 \begin{figure}[h]
 	\IncludeGraphics[width=0.5\linewidth]{intro_dispersion_svg.png}
 	\caption{\label{fig:Rashba_intro_dispersion}
@@ -53,6 +53,7 @@ To obtain the eigenvalue equation for \unkr, we insert $\psi_n$ in Eq.~\ref{eq:R
 	V_2(\bm{k}) =& -\lambda \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{k}) \\
 	V_3(\bm{k}) =& -\lambda \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{p}).
 \end{align}
+We neglected the last two terms of Eq.~\ref{eq:Rashba_dirac} since they are exceedingly small and don't contribute to the linear form of Eq.~\ref{eq:Rashba_form}.
 It is important to understand how the electric fields inside the crystal contribute to $V_2$ and $V_3$, where both terms originate from the application of $\bm{p}$ to either \unkr or \eikr, respectively.
 We first separate $\bm{\nabla}V$ in two contributions, one coming from the potential wells created by the atoms, and another originating from the ferroelectric polarization (it is assumed that no external fields are applied):
 \begin{equation}
@@ -82,22 +83,22 @@ For this to be true, however, it is important that the orbitals $u_n$, and $u_m$
 
 \section{Orbital Rashba Effect}
 Unlike the purely relativistic Rashba-Bychkov effect, the orbital effect combines strong atomic SOC with the generation of nonzero orbital angular momentum (OAM) through electrostatic means.
-This contribution, therefore, is not limited by the small prefactors of Eq.~\ref{eq:kp_expansion}. As will be explicitely shown below, Bloch functions with nonzero OAM acquire nonzero electric dipoles between unit cells\cite{Park2011}, wich will couple to any uniform electric field (e.g. from electric polarization). This leads to two seperate effects.
+This contribution, therefore, is not limited by the small prefactors of Eq.~\ref{eq:kp_expansion}. As will be explicitely shown below, Bloch functions with nonzero OAM acquire nonzero electric dipoles between unit cells\cite{Park2011}, which will couple to any uniform electric field (e.g. from electric polarization). This leads to two seperate effects.
 
 Firstly, when atomic SOC is included, OAM is unquenched at the high symmetry k-points. This leads to a correction to the band dispersion that varies linearly with $\bm{k}$. Secondly, even without including the contribution of the atomic SOC, it causes a linear variation of the OAM of the Bloch functions as one moves away from the high-symmetry k-point. If one then includes the atomic SOC from Eq.~\ref{eq:Rashba_unk_Vs}, this linear-in-k $l$ will lead to a linear variation of the energy with either positive or negative slope, depending on the spin orientation.
 
 We now proceed by giving a pedagogical derivation of this mechanism based on a tight-binding model.
 
 \subsection{Tight-Binding model}
-The tight-binding model is defined on a 2D square layer with one atom per unit cell, and four Wannier orbitals on the atom. We will assume these orbitals are close to hydrogenic $s$ and $p$ orbitals. The bare tight-binding Hamiltonian is denoted as $H_0$ and includes the usual hopping parameters due to overlap $t^{\alpha\beta}_{ij} = \int d\mathbf{r} \,w^{\alpha}_i(\mathbf{r})^*w^{\beta}_j(\mathbf{r})$ between orbitals centered in different unit cells. To mimick the inversion symmetry breaking in ferroelectric materials (i.e. with a polar space group), an electric field perpendicular to the layer ($z$ direction) is applied.
-This allows extra hopping terms associated with $H_{isb} = e (\hat{\bm{d}}\cdot \bm{E})$. Assuming the form of the Wannier functions $s(\bm{r},\bm{R}) = e^{\left(\frac{-|\bm{r}-\bm{R}|}{a_0}\right)^2}$, $p_\alpha(\bm{r},\bm{R}) = \alpha e^{\left(\frac{-|\bm{r}-\bm{R}|}{a_0}\right)^2}$ with $\alpha = x,y,z$, we can write down the dipole matrix between the central unit cell and ones shifted by $\bm{R}=\bm{n}a, \bm{n}=(n_x,n_y)$, using the basis $s, p_x, p_y, p_z$ as follows:
+The tight-binding model is defined on a 2D square layer with one atom per unit cell, and four Wannier orbitals on the atom. We will assume these orbitals are close to hydrogenic $s$ and $p$ orbitals. The bare tight-binding Hamiltonian is denoted as $H_0$ and includes the usual hopping parameters due to overlap $t^{\alpha\beta}_{ij} = \int d\mathbf{r} \,w^{\alpha}_i(\mathbf{r})^*(\frac{\mathbf{p}^2}{2m} + V)w^{\beta}_j(\mathbf{r})$. To mimick the inversion symmetry breaking in ferroelectric materials (i.e. with a polar space group), an electric field perpendicular to the layer ($z$ direction) is applied.
+This allows extra hopping terms associated with $H_{isb} = e (\hat{\bm{d}}\cdot \bm{E})$. Assuming the form of the Wannier functions $s(\bm{r},\bm{R}) = e^{\left(\frac{-|\bm{r}-\bm{R}|}{a_0}\right)^2}$, $p_\alpha(\bm{r},\bm{R}) = \alpha e^{\left(\frac{-|\bm{r}-\bm{R}|}{a_0}\right)^2}$ with $\alpha = x,y,z$, we can write down the matrix of the electric dipole moment between the orbitals of the central unit cell and the ones shifted by $\bm{R}=\bm{n}a, \bm{n}=(n_x,n_y)$, using the basis $s, p_x, p_y, p_z$ as follows:
 \begin{align}
 	\label{eq:dipole}
 	\hat{d}_z(\bm{n}) =& ae^{-\frac{1}{2}\left(\frac{a|\bm{n}|}{a_0}\right)^2}\frac{\pi^{\frac{3}{2}}}{16\sqrt{2}}\left(\begin{matrix}0&0&0&2\\\\0&0&0&n_x\\\\0&0&0&n_y\\\\2&n_x&n_y&0\end{matrix}\right)\\
-	=&d_z^0(\bm{n})\hat{d}^1_z(\bm{n}).
+	=&\delta_z^n\hat{d}^1_z(\bm{n}),
 	% d_z(\bm{R}) = ae^{-\frac{|\bm{R}|^2}{2}}\frac{\pi^{\frac{3}{2}}}{16\sqrt{2}}(2,n_x,n_y,0),
 \end{align}
-
+with $\delta_z^n = ae^{-\frac{1}{2}\left(\frac{a|\bm{n}|}{a_0}\right)^2}\frac{\pi^{\frac{3}{2}}}{16\sqrt{2}}$.
 Fig.~\ref{fig:overlapdip} shows pictorially how these dipole terms arise. 
 \begin{figure}[t]
 ~\centering
@@ -108,9 +109,10 @@ Fig.~\ref{fig:overlapdip} shows pictorially how these dipole terms arise.
 Using the aforementioned Wannier functions to construct Bloch functions, we can write down their dipoles as:
 \begin{align}
 	\hat{d}_z(\bm{k}) &= \sum_{\bm{n}} e^{i \bm{k}\cdot \bm{n}}\hat{d}_z(\bm{n})\\
-	&=\sum_{\bm{n}}i \sin(\bm{k}\cdot\bm{n}) \hat{d}_z(\bm{n}),
+	&=\sum_{\bm{n}}i \sin(\bm{k}\cdot\bm{n}) \hat{d}_z(\bm{n}) + k\mathrm{-even\,terms},
 \end{align}
-writing $\bm{k}$ in terms of crystalline coordinates ($\frac{2\pi}{a}$), and keeping only the $\sin(\bm{k}\cdot\bm{n})$ part of the exponent since the $\cos(\bm{k}\cdot\bm{n})$ part is zero due to the fact that it is even in the sum over $\bm{n} = \{-\infty, \infty\}$, whereas $\hat{d}_z(\bm{n})$ is odd \lp{this is not fully true, the cos term actually does contribute for the $d_z^s$ term, but that leads to a higher order term, should I discuss this? I could just keep sin from the point of view of linear-in-k terms}. Solving the tight binding model for $k=0$, hybridization occurs between the $s$ and $p_z$ orbitals due to $H_{isb}$, however, since this hybridization has no terms that vary linearly with $k$, we write in the following $p_z$ as the hybrid $s$-$p_z$ orbital. If we then assume that at $k=0$ the Bloch functions are formed from this orbital and the $p_x$,$p_y$ orbitals: $\Ket{\alpha(\bm{k}=\bm{0})} = \sum_{\bm{n}} \Ket{\alpha(\bm{n})}$, we can write down a perturbation theory for small $\bm{k}$ in the spirit of the usual $\bm{k}\cdot\bm{p}$ theory,
+% \lp{add some discussion on s-p_z hybridization}
+writing $\bm{k}$ in terms of crystalline coordinates ($\frac{2\pi}{a}$), and keeping only the $\sin(\bm{k}\cdot\bm{n})$ part of the exponent since the $\cos(\bm{k}\cdot\bm{n})$ part since it does not result in linear-in-k terms. Solving the tight binding model for $k=0$, hybridization occurs between the $s$ and $p_z$ orbitals due to $H_{isb}$, however, since this hybridization has no terms that vary linearly with $k$, we write in the following $p_z$ as the hybrid $s$-$p_z$ orbital. If we then assume that at $k=0$ the Bloch functions are formed from this orbital and the $p_x$,$p_y$ orbitals: $\Ket{\alpha(\bm{k}=\bm{0})} = \sum_{\bm{n}} \Ket{\alpha(\bm{n})}$, we can write down a perturbation theory for small $\bm{k}$ in the spirit of the usual $\bm{k}\cdot\bm{p}$ theory,
 
 \begin{align}
 	\Ket{\alpha(\bm{k})}&=\Ket{\alpha} + \sum_{\beta \neq \alpha} \frac{\Bra{\beta} H_0(\bm{k}) + H_{isb}(\bm{k}) \Ket{\alpha}}{E_{\alpha} - E_{\beta}} \Ket{\beta}\\
@@ -118,19 +120,18 @@ writing $\bm{k}$ in terms of crystalline coordinates ($\frac{2\pi}{a}$), and kee
 \end{align}
 The effect of $H_{isb}$ is to mix $p_x$ and $p_y$ orbitals with the $p_z$ orbital, e.g. if $\Ket{\alpha} = p_x$ we get that
 \begin{align}
-	\Ket{\alpha(\bm{k})} &= \Ket{p_x} + i \frac{e E_z \sum_{\bm{n}} \sin(k_x n_x)n_x d_z^0(\bm{n})}{E_{p_x} - E_{p_z}} \Ket{p_z}\\
+	\Ket{\alpha(\bm{k})} &= \Ket{p_x} + i \frac{e E_z \sum_{\bm{n}} \sin(k_x n_x)n_x \delta_z^n}{E_{p_x} - E_{p_z}} \Ket{p_z}\\
 	&=\Ket{p_x} + i c(k_x) \Ket{p_z}.
 \end{align}
 With $l_y = -i\hbar(z \partial_x - x \partial_z )$ we get that
 \begin{equation}
 	\label{eq:oam_from_k}
-	\Bra{\alpha(\bm{k})} l_y \Ket{\alpha(\bm{k})} = c(k_x) = k_x \frac{e E_z \sum_{\bm{n}} n_x^2d_z^0(\bm{n})}{E_{p_x} - E_{p_z}}
+	\Bra{\alpha(\bm{k})} l_y \Ket{\alpha(\bm{k})} = c(k_x) = k_x \frac{e E_z \sum_{\bm{n}} n_x^2\delta_z^n}{E_{p_x} - E_{p_z}}
 \end{equation}
-\lp{normalization!!}
 A similar term involving $l_x$, comes from the variation of $k_y$, but with the opposite sign. If the atomic spin-orbit coupling, $\lambda \bm{l}\cdot\bm{\sigma}$, is then taken into account, we get to a contribution to the energy dispersion $\varepsilon(\bm{k}) \propto E_z (k_x \sigma_y - k_y \sigma_x)$ which has the from of Eq.~\ref{eq:Rashba_form}. 
 The inversion symmetry thus leads to a linear variation of the OAM. When the orbitals originate from an atom with non-negligible atomic SOC, this linear variation of the OAM will lead to a contribution to the dispersion that varies linearly with $\bm{k}$, either upwards or downwards depending on the sign of $\sigma$. Except for the atomic spin-orbit coupling, which can be large, this effect is purely based around electrostatic considerations and thus does not have the same minuscule prefactor as the purely relativistic Rashba effect.\lp{discuss}
 
-This assumes that the states at the high symmetry point ($|k|=0$) have a fully quenched OAM, however, when spin-orbit coupling is included, this is only partially true. Due to the energy contribution from $H_{soc}$ the material can gain by creating orbitals that have $\bm{j} = \bm{l} + \bm{\sigma}$. Similar to the above derivation, we can look at a small-$k$ expansion for orbitals that have nonzero OAM.
+This assumes that the states at the high symmetry point ($|k|=0$) have a fully quenched OAM, however, when spin-orbit coupling is included, this is only partially true. Due to the energy contribution from $H_{soc}$ the material can gain by creating orbitals that have $\bm{j} = \bm{l} + \frac{1}{2}\bm{\sigma}$. Similar to the above derivation, we can look at a small-$k$ expansion for orbitals that have nonzero OAM.
 We can write in general that
 \begin{equation}
 	\Bra{\alpha} \hat{l}_{\gamma} \Ket{\beta} = i \epsilon_{\alpha \beta \gamma} c^*_\alpha c_\beta
@@ -144,11 +145,10 @@ Focusing on the terms that vary linearly with $k$, we recognize the contribution
 \begin{align}
 	\label{eq:d_z_from_OAM}
 	d_z(\bm{k}) =&  i\sum_{\bm{n},\alpha,\beta} c_\alpha^*(0)c_\beta(0)\bm{k}\cdot\bm{n}\Bra{\alpha(\bm{0})} \hat{d}_z \Ket{\beta(\bm{n})}\\
-	=&i\sum_{\bm{n}} d^0_z(\bm{n}) (c^*_x(0)c_z(0)k_x n_x^2 + c^*_y(0)c_z(0) k_y n_y^2) \\
-	=&\sum_{\bm{n}} d^0_z(\bm{n}) (l_x(0)k_y n_y^2-l_y(0) k_x n_x^2).
+	=&i\sum_{\bm{n}} \delta_z^n (c^*_x(0)c_z(0)k_x n_x^2 + c^*_y(0)c_z(0) k_y n_y^2) \\
+	=&\sum_{\bm{n}} \delta_z^n (l_x(0)k_y n_y^2-l_y(0) k_x n_x^2).
 \end{align}
-\lp{normalization!!}
-These expressions show us that, together with $H_{soc} = \lambda \bm{l}\cdot\bm{\sigma}$ and $H_{isb} = e E_z d_z$, an additional Rashba-like term appears in the energy dispersion\lp{maybe a little more explanation is warranted here}.
+These expressions show us that, together with ${H_{soc} = \lambda \bm{l}\cdot\bm{\sigma}}$ and $H_{isb} = e E_z d_z$, an additional Rashba-like term appears in the energy dispersion\lp{maybe a little more explanation is warranted here}.
 
 With the understanding that one can find Rashba like dispersions, coming not from the usually considered purely relativistic, but also from electrostatic mechanisms. We now look at a concrete example that behaves very similar to the above toy model, GeTe.
 
@@ -158,7 +158,7 @@ With the understanding that one can find Rashba like dispersions, coming not fro
 \caption{\label{fig:Rashba_BZBSDOS}(a) Rhombohedral unit cell and Brillouin zone of GeTe, with the polarization direction in yellow. (b) Band structure obtained from a DFT calculation with and without SOC, along the blue path in panel (a). (c) partial DOS for Te and Ge p orbitals computed without SOC.}
 \end{figure}
 \section{Overview: Germanium Telluride}
-The space group of GeTe is R$3m$ (\#160 in International Tables), with ferroelectric polarization along the threefold rotation $z$-axis caused by an off-centering of the central Te atom \cite{Rabe1987} as displayed in Fig. \ref{fig:eigvalsdos}-(a). The valence and conduction bands are formed mostly by $s$ and $p$ orbitals from Te and Ge, respectively. This, together with the large spin-splitting in the vicinity of the $Z$ point \cite{DiSante2013} as observed from the bandstructure in Fig. \ref{fig:eigvalsdos}-(b), lends it as a perfect test-case of the above described mechanisms. Moreover, since it's a bulk material, we can rule out the possibility that the relativistic Rashba effects results in a contribution from the existence of possible large potential gradients at a surface. The band structure,  presents a distinct large linear spin splitting around the $Z$ point, resembling the well known Rashba effect. Due to time reversal symmetry, spin-splitting is only present along the $Z-A$ and $Z-U$ paths, not the $Z-\Gamma$ path.
+The space group of GeTe is R$3m$ (\#160 in International Tables), with ferroelectric polarization along the threefold rotation $z$-axis caused by an off-centering of the central Te atom \cite{Rabe1987} as displayed in Fig. \ref{fig:Rashba_BZBSDOS}-(a). The valence and conduction bands are formed mostly by $s$ and $p$ orbitals from Te and Ge, respectively. This, together with the large spin-splitting in the vicinity of the $Z$ point \cite{DiSante2013} as observed from the bandstructure in Fig. \ref{fig:Rashba_BZBSDOS}-(b), lends it as a perfect test-case of the above described mechanisms. Moreover, since it is a bulk material, we can rule out the possibility that the relativistic Rashba effects results in a contribution from the existence of possible large potential gradients at a surface. The band structure,  presents a distinct large linear spin splitting around the $Z$ point, resembling the well known Rashba effect. Due to time reversal symmetry, spin-splitting is only present along the $Z-A$ and $Z-U$ paths, not the $Z-\Gamma$ path.
 The density of states (DOS), displayed in Fig.~\ref{fig:Rashba_BZBSDOS}-(c), confirms the orbital character of the bands, aluded to earlier.
 % The valence bands are comprised mostly of Te 5p orbitals, whereas the conduction bands are mostly formed by Ge 4p orbitals. This orbital character of valence and conduction bands, together with the stronger atomic SOC on Te atom, results in a more pronounced spin splitting in the valence bands. We will focus on the first three valence bands, the top one of which mainly has $p_z$ character whereas the two lower bands, which are degenerate at the $Z$-point, are formed by $p_x$ and $p_y$ orbitals. The crystal field splitting between bands of $p_z$ and $p_{x,y}$ characters results from the distortion of the ideal Te-Ge$_6$ octahedron.
 % \begin{figure*}[ht!]
@@ -236,19 +236,18 @@ To clarify the Orbital Rashba effect in GeTe, we performed ab-initio DFT calcula
 \end{figure}
 The bands we will focus on most are the three topmost valence bands. As seen in Fig. \ref{fig:Rashba_BZBSDOS}-(b), these bands have the largest spin-splitting. This suggests that indeed the atomic SOC plays an important rule, seen as these bands are comprised mostly of Te orbitals, and SOC is largest on Te. If one were to fit the dispersion of the topmost band to Eq.~\ref{eq:Rashba_form},
 it results in a large prefactor $\alpha_R\approx 30.7$~eV\.\angstrom \cite{DiSante2013}. As discussed before, a more realistic prefactor would be $\alpha_R=10^{-6}$~eV in the purely relativistic case inside the vacuum.
-\lp{discuss}
-This is even more abnormal considering the fact that this is a bulk material, and that it is known that proper ferroelectrics have zero polarization in open boundary conditions because the depolarizing fields are not screened. Moreover, in the periodic boundary conditions utilized by DFT, the potential mimics short circuit boundary conditions \cite{Meyer2008}, $\bm E=0$, which results in zero contribution from Eq. \ref{eq:Rashba_form}. 
 
-The last issue with the purely relativistic explanation, which has been confirmed experimentally\cite{Krempasky2015SurfaceSemiconductor}, lies in the orientation of the spin polarization of the split bands. According to Eq. \ref{eq:Rashba_unk_Vs}, the bands should all be split equally and with the same spin orientations, since nothing depends on the character of the bands.\lp{discuss, this is not really true for the k.p term, but I wonder if this term can really do anything} However, as has been shown and will be confirmed by our results below, the orientation depends on the character of the band, more specifically on the value of the total angular momentum $j$. 
+% This is even more abnormal considering the fact that this is a bulk material, and that it is known that proper ferroelectrics have zero polarization in open boundary conditions because the depolarizing fields are not screened. Moreover, in the periodic boundary conditions utilized by DFT, the potential mimics short circuit boundary conditions \cite{Meyer2008}, $\bm E=0$, which results in zero contribution from Eq.~\ref{eq:Rashba_form}. 
+
+The last issue with the purely relativistic explanation, which has been confirmed experimentally\cite{Krempasky2015SurfaceSemiconductor}, lies in the orientation of the spin polarization of the split bands. According to Eq.~\ref{eq:Rashba_form}, the bands should all be split equally and Bloch functions at the same $k$-point should have the same spin orientations, since their character does not enter Eq.~\ref{eq:Rashba_form}. However, as has been shown and will be confirmed by our results below, the orientation depends on the character of the band, more specifically on the value of the total angular momentum $j$. 
 
 % We performed ab initio calculations to study how the discussed effects manifest themselves in GeTe. To arrive at the desired basis of Wannier functions and tight-binding Hamiltonian, we first performed a collinear DFT calculation using the Quantum-Espresso package \cite{Giannozzi2009}, followed by WANNIER90 \cite{Mostofi2014AnFunctions}. For the DFT calculation we used a 10x10x10 Monkhorst-Pack k-grid, as well as an energy convergence threshold of $10^{-8}$~Ry. In the Wannierization step the gauge freedom of Wannier functions was exploited to arrive at a set of basis functions which are localized \cite{Marzari2012MaximallyApplications}, and resemble closely the atomic orbitals (spherical harmonics). Afterwards we added atomic SOC in the form $\lambda_{so} \bm{l} \cdot \bm{\sigma}$ using the muffin-tin approximation, with $\lambda_{so}$ for both atoms used as fitting parameters. Using this basis and Hamiltonian, we can the calculate the observables of interest, namely the OAM around Te and the dipole of the Bloch functions. 
 \section{Results and Discussion}
-The dispersion, OAM, and SAM of the first valence band are shown in the left panel of Fig.~\ref{fig:Rashba_oamvseigvalv}. Confirming our earlier conclusions, we can see that non-zero, linearly varying OAM is formed as we move away from the high-symmetry $Z$-point. Moreover, the OAM is perpendicular to both the $z$-axis and the $k$ vector, as it should be from Eq.\ref{eq:oam_from_k}, and can also be seen from the panels in Fig. \ref{fig:Rashba_textures}. This leads e.g. to $l_y=0$ along the $A \to Z$ path, where only $k_y$ is nonzero. When atomic SOC is included in the orange and blue graphs, we see the spin-splitting that results from having the spin oriented either along or opposite to the already linearly varying OAM. The unquenching of the OAM at the $Z$-point when SOC is included is also clearly visible, together with the resulting change in the slope that originates from the corresponding contribution to the dipole moment Eq. \ref{eq:d_z_from_OAM}. This correlation can also be observed in the panel showing the center of mass $\bar{z}=\int_{\textrm{supercell}}z |\psi(k)|^2$ of the Bloch-functions, which is proportional to the dipole moment around the same reference point.
+The dispersion, OAM, and SAM of the first valence band are shown in the left panel of Fig.~\ref{fig:Rashba_oamvseigvalv}. Confirming our earlier conclusions, we can see that non-zero, linearly varying OAM is formed as we move away from the high-symmetry $Z$-point. Moreover, the OAM is perpendicular to both the $z$-axis and the $k$ vector, as it should be from Eq.~\ref{eq:oam_from_k}, and can also be seen from the panels in Fig. \ref{fig:Rashba_textures}. This leads e.g. to $l_y=0$ along the $A \to Z$ path, where only $k_y$ is nonzero. When atomic SOC is included in the orange and blue graphs, we see the spin-splitting that results from having the spin oriented either along or opposite to the already linearly varying OAM. The unquenching of the OAM at the $Z$-point when SOC is included is also clearly visible, together with the resulting change in the slope that originates from the corresponding contribution to the dipole moment Eq.~\ref{eq:d_z_from_OAM}. This correlation can also be observed in the panel showing the center of mass $\bar{z}=\int_{\textrm{supercell}}z |\psi(k)|^2$ of the Bloch-functions, which is proportional to the dipole moment around the same reference point.
 
 When we compare this first valence band with the third valence band, shown in the right panel of Fig.~\ref{fig:Rashba_oamvseigvalv}, we can clearly see the previously discussed issues with the purely relativistic explanation. As stated before, we can note that not only the magnitude but also the sign of the prefactor in Eq.~\ref{eq:Rashba_form} is opposite for these two bands, showcased by the size of the splitting, and by the ordering of the spin-up vs the spin-down splitted part. This is because the character of the first and third valence bands are different. The first valence band is mostly coming from Te $j=\frac{3}{2}$ orbitals, whereas the third valence band is predominantly $j=\frac{1}{2}$. This causes the orientation of the OAM and SAM to be along eachother in the first band, and opposite for the third, as shown in Fig.~\ref{fig:Rashba_textures}. This then leads to the different ordering of the spin-split bands.
 
-\lp{discuss}
-There is one last very interesting feature one can notice from Fig.~\ref{fig:Rashba_textures} (c) and (f), that is, the switching of the character (and SAM, OAM orientation) of the bands, very close to the $Z$ point. This is because Eq.~\ref{HOR} breaks threefold symmetry causes the atomic $j$ to not be a conserved quantity, i.e. there is a mixing between different atomic $j$ orbitals, in this very narrow region around $Z$.
+There is one last very interesting feature one can notice from Fig.~\ref{fig:Rashba_textures} (c) and (f), that is, the switching of the character (and SAM, OAM orientation) of the bands, very close to the $Z$ point. This is because the crystal field breaks rotationial symmetry causing the atomic $j$ to not be a conserved quantity, i.e. there is a mixing between different atomic $j$ orbitals, which varies strongly in this very narrow region around $Z$.
 
 All these considerations lead to a very nontrivial SAM and OAM texture of the bands as we progress through the BZ.
 
