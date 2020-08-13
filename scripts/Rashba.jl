@@ -7,6 +7,7 @@ const DFW = DFWannier
 using LinearAlgebra
 using Plots
 using LaTeXStrings
+using FileIO
 #%%
 ## GeTe
 cd(datadir("Rashba/GeTe"))
@@ -17,12 +18,34 @@ bands = readbands(job)
 bands_soc = readbands(job_soc)
 fermi = readfermi(job)
 fermi_soc = readfermi(job_soc)
+wfuncs = load(joinpath(job, "wfuncs.jld2"))["wfuncs"]
+for i = 1:8
+    DFW.write_xsf(joinpath(job_soc, "$i.xsf"), wfuncs_soc[i], job_soc.structure, value_func = x -> sign(real(x[1])) * norm(x) )
+end
+wfuncs = load(joinpath(job, "wfuncs.jld2"))["wfuncs"]
+wfuncs_soc = load(joinpath(job_soc, "wfuncs.jld2"))["wfuncs"]
+hami = readhami(job)
+hami_soc = readhami(job_soc)
+wbands = wannierbands(hami, bands)
+wbands_soc = wannierbands(hami_soc, bands_soc)
+plot(bands_soc,  wbands_soc, fermi=fermi_soc, ylims=[-5,5])
+wbands[5].eigvec[101]
+t = similar(wfuncs[1])
+Lx, Ly, Lz = zeros(ComplexF64, 8, 8), zeros(ComplexF64, 8, 8), zeros(ComplexF64, 8, 8)
+Sx, Sy, Sz = zeros(ComplexF64, 8, 8), zeros(ComplexF64, 8, 8), zeros(ComplexF64, 8, 8)
+for i = 1:4, j = 1:4
+    Sx[i,j], Sy[i,j], Sz[i,j] = DFW.calc_spin(wfuncs_soc[i], wfuncs_soc[j])
+    Sx[i+4,j+4], Sy[i+4,j+4], Sz[i+4,j+4] = DFW.calc_spin(wfuncs_soc[i+4], wfuncs_soc[j+4])
+end
+save(joinpath(job_soc, "operators.jld2"), "Lx", Lx, "Ly", Ly, "Lz", Lz,"Sx", Sx, "Sy", Sy, "Sz", Sz, "hash", wan_hash(job_soc))
+Lx + Sx
+DFW.write_xsf(joinpath(job, "Z.xsf"), t, job.structure, value_func = x -> sign(real(x[1])) * norm(x))
+#%%
 bands[20].eigvals.-fermi
 plot(bands[15].eigvals[90:110] .- fermi , ylims=[-0.8,-0.4], ylabel = L"E - E_f (eV)", xticks=([6, 12, 18], [L"A \leftarrow Z", L"Z", L"Z \rightarrow U"]), label="No SOC", color=:blue, xtickfontsize=15, ytickfontsize=15, yguidefontsize=20, linewidth=2, legendfontsize=15, legend=:bottom, linestyle=:dash, dpi=150)
 plot!([(bands_soc[30].eigvals[90:110] .- fermi_soc) (bands_soc[29].eigvals[90:110] .- fermi_soc)], ylims=[-0.8,-0.4], ylabel = L"E - E_f (eV)", xticks=([6, 12, 18], [L"A \leftarrow Z", L"Z", L"Z \rightarrow U"]), label=["SOC" ""], color=:red, linewidth=2)
 savefig("../papers/Rashba/Images/intro_dispersion.png")
-wgrid = DFW.read_points_from_xsf(joinpath(job, "wan_00001.xsf"))
-wfuncs = [DFW.WannierFunction(joinpath(job, "wan_0000$i.xsf"), wgrid) for i = 1:8]
+#%%
 
 
 L_up = DFW.WannierFunction(wgrid, wfuncs[6]+1.0im*wfuncs[8])
