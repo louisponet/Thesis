@@ -169,6 +169,14 @@ plot!(abs.(getindex.(wbands[6].eigvec[90:110],1)))
 
 
 
+#%%
+using Glimpse
 
+dio = Diorama()
+expose(dio)
 
+Entity(dio, Glimpse.assemble_sphere(Vec3f0(0.0,0.0,0.0))...)
+
+grid = Glimpse.Grid([Point3f0(x, y, z) for x = -2:0.1:2, y=-2:0.1:2, z=-2:0.1:2])
+Entity(dio, 
 

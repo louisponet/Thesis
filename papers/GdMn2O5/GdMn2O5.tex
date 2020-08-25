@@ -7,18 +7,19 @@ By alternating the information storing (usually) ferromagnetic domains with nonm
 This effect is based on the depence of the electrical conductivity of ferromagnetic metals on the spin orientation of the current carriers, a beautiful example of the technological promises that the field of spintronics holds.
 There remains, however, the issue of writing the information in the first place.
 In current state of the art storage technologies from the point of view of density, this is still done by applying an external magnetic field to reorient the ferromagnetic domains. One can imagine this to be quite an inefficient process, both from the point of view of granularity (stray fields and non-locality of the magnetic fields limit the minimum size of the domains) as from that of energetics.
-This conundrum drives much of the current research in the field of spintronics, with promising applications like spin-transfer torque devices, utilizing the torque applied by spin-polarized current carriers on the magnetic moments inside the storage medium.
-It is thus clear that the longevity of magnetism based order, combined with the easy of manipulation associated with charge based order is highly desirable.
+This conundrum drives much of the current research in the field of spintronics, with promising applications like spin-transfer torque devices, utilizing the torque applied by spin-polarized current carriers on the magnetic moments inside the storage medium, circumventing the need to create a magnetic field from circular currents.
+It is clear that the longevity of magnetism based order, combined with the easy of manipulation associated with charge based order is highly desirable.
 This leads us to the topic of this chapter, namely the magnetoelectric effect in multiferroic materials.
-As the name implies, the magnetoelectric effect allows for the electric control of magnetic order or the magnetic control of ferroelectric polarization\cite{Spaldin2019,Khomskii2009,Fiebig2005,Fiebig2016,Cheong2007}.
-In practice, however, there are some issues that limit the effectiveness of this cross-order coupling, and the number of multiferroic materials is limited.
+As the name implies, the magnetoelectric effect allows for the electric control of magnetic order or the magnetic control of ferroelectric polarization\cite{Spaldin2019,Khomskii2009,Fiebig2005,Fiebig2016,Cheong2007}, the former of which is most important for technological applications.
+In practice, however, there are many issues that limit the effectiveness of this cross-order coupling, and the number of multiferroic materials is limited to begin with.
 This latter point can be already understood from a symmetry point of view.
 Namely, ferroelectric materials break inversion symmetry, whereas magnetic order needs the breaking of time reversal symmetry.
-This leads to only 13 Shubnikov magnetic point groups that allow simultaneous appearance of ferroelectricity and magnetization\cite{Wang2009}. Moreover, it is now well-known that not all compounds that belong to one of those 13 groups showcase multiferroicity.
-Another reason for the relative sparseness of multiferroic materials is that generally speaking ferroelectricity and magnetism are not compatible on the ionic level.
+This leads to only 13 Shubnikov magnetic point groups that allow simultaneous appearance of ferroelectricity and magnetization\cite{Wang2009}.
+Moreover, it has become clear that not all compounds that belong to one of those 13 groups showcase multiferroicity.
+Another reason for the relative sparseness of multiferroic materials is that generally speaking ferroelectricity and magnetism are not compatible on the ionic level, i.e. they require ions with different valence configurations.
 For example, in perovskites (ABO$_3$, A cation, B anion), there are many ferroelectric oxides and magnetic oxides, but there are almost no materials belonging to this class that harbor both orders.
-In this case, the reason is that, in general, a prerequisite for ferroelectricity is a B-site configuration of $d^0$, i.e. an empty $d$-shell.
-Conversely, magnetism requires partially filled $d$ or $f$ shells, such that the unpaired electrons lead to nonzero magnetic moments on the B-site anions.
+In this case, the reason is that, in general, a prerequisite for ferroelectricity is a B-site configuration of $d^0$, i.e. an empty $d$-shell, or the presence of lone pairs (ns$^2$).
+Conversely, magnetism requires partially filled $d$ or $f$ shells, such that the unpaired electrons lead to nonzero magnetic moments on the constituent ions.
 It is clear that these two requirements are impossible to satisfy simultaneously and this is one of the major reason why multiferroics are not commonplace \lp{there is also the issue of hybridization where empty shells lead to occupation of bonding orbitals and half-filled orbitals engaging in anti-bonding hybridization never stabilizing the ionic shift, not sure if I should also discuss that}.
 There are two ways around these issues, which lead to so-called Type-I and Type-II multiferroics\cite{Khomskii2009}.
 Multiferroic materials of the Type-I variety harbor two different `subsystems` that separately handle either the magnetic or ferroelectric order.
@@ -26,10 +27,10 @@ Referring back to the perovskites discussed above, one could, for example, imagi
 This strategy gets around the issue of the mutual exclusivity of ferroelectricity and magnetization on the atomic level, and can lead to large magnitude of both orders \lp{specifics?}, but also tends to lead to small magnetoelectric effects due to the different origins of the two orders. 
 Ideally, one uses the other variety, i.e. Type-II multiferroic materials, where the magnetic and ferroelectric order originate from the same mechanism.
 The usual situation in these Type-II materials is that one order stabilizes, lowering the symmetry of the material and thus allowing for the other to also appear.
-Key examples are inversion breaking magnetic configurations that lead to ferroelectricity, as is also the situation at hand \lp{add more examples, show the symmetry considerations discussed in wang for spin-spirals?}.
-Although it is clear that the size of the secondary order thus created is usually orders of magnitude smaller than in Type-I materials, their common origin leads to very sizable magnetoelectric effects.
-Here we specifically investigate GdMn$_2$O$_5$, an example of a type-II multiferroic\cite{Khomskii2009}, where ,as will be shown below, the ferroelectric polarization can be controlled to a high degree by the application of an external magnetic field.
-Gd$^{3+}$ is special with respect to the other possible rare-earths in the orthorhombic magnanites $R$Mn$_2$O$_5$ ($R$ being one of the rare-earths), because it has a very isotropic electronic configuration (4$f^7$), i.e. there is no unquenched OAM. This means that the large spin (nominally $S=7/2$) can orient itself relatively freely to optimize the magnetic interactions with its neighboring Mn atoms.
+The key example that we discuss here is that of an inversion breaking magnetic configuration that leads to the appearance of ferroelectricity\lp{add more examples, show the symmetry considerations discussed in wang for spin-spirals?}.
+Although the size of the electric polarization thus created is usually orders of magnitude smaller than in Type-I materials, the common origin of the two orders leads to a very sizable magnetoelectric effect.
+Here we specifically investigate GdMn$_2$O$_5$, an example of a type-II multiferroic\cite{Khomskii2009}, where, as will be shown below, the ferroelectric polarization can be controlled to a high degree by the application of an external magnetic field.
+Gd$^{3+}$ is special with respect to the other possible rare-earths in the orthorhombic magnanites $R$Mn$_2$O$_5$ ($R$ being one of the rare-earths), because it has a very isotropic electronic configuration (4$f^7$), i.e. there is no unquenched OAM, and corresponding anisotropic charge distribution. This means that the large spin (nominally $S=7/2$) can orient itself relatively freely to optimize the magnetic interactions with its neighboring Mn atoms.
 This turns out to be one of the main reasons behind the very large electric polarization and magnetoelectric coupling, compared to other multiferroics, and even to other $R$Mn$_2$O$_5$ compounds.
 
 The orthorhombic manganites have a very complex crystalline structure, which leads to a wealth of different phases depending on the temperature, magnetic field and even electric-field poling history \cite{Zheng2019}.
@@ -38,8 +39,10 @@ To keep the discussion tractable and in line with the experiments that were perf
 All orthorhombic manganites have a paramagnetic space group $Pbam$ \cite{Alfonso97a} at high temperature, which eventually gets lowered to $P_ab2_1a$ when the commensurate magnetic order locks in at $T_{N} \sim 33K$, with propagation vector $\bm{k} \sim (1/2, 0.0, 0.0)$, i.e. there is a unit cell doubling along the crystalline $a$ direction. Spins are ordered ferromagnetically along the crystalline $c$ direction. This magnetic transition goes hand in hand with a sharp anomaly in the dielectric constant $\varepsilon_b$, signalling the onset of the improper ferroelectric order along the $b$ direction \cite{Lee13}.
 When the temperature is lowered further, the polarization $P_b$ saturates to a maximum value of around $3600 \mu C/m^2$, which is the largest of all rare-earth magnanites, but still tiny compared to proper ferroelectrics like BaTiO$_3$ with $P \sim 2 \times 10^5 \mu C/m^2$.
 The magnetic configuration features two AFM Mn chains per unit cell, that feature both $Mn^{3+}$ pyramids and $Mn^{4+}$ octahedra, as indicated by the light blue lines and purple polygons in Fig.~\ref{fig:GdMn2O5_unit_cell}. The Mn spins of the chains in GdMn$_2$O$_5$ lie mostly along the easy axis of the Mn pyramids, making angles of $\pm 23.4^\circ$ with the $a$-axis.
-There are two sources of ferroelectricity, both originate from symmetric exchange striction \ref{Choi2008}. The first, $P_{MM}$, comes from the interchain frustrated magnetic exchanges between Mn$^{3+}$ -- Mn$^{4+}$ -- Mn$^{3+}$ ions, the second, $P_{GM}$ originates from the interaction between the Gd spins and neighboring Mn chains.
-Both of them result in both ionic (leading to the lower $P_ab2_1a$ symmetry), and electronic contributions. $P_{MM}$ is also present in other $R$Mn$_2$O$_5$ compounds, but it was shown \ref{Khomskii2009} that the electronic and ionic contributions are oriented in opposite sense and nearly cancel eachother. The contribution attributed to the Gd spins $P_{GM}$, however, is large leading to the eventual large polarization. Also, due to the size (nominally $S=7/2$) and isotropic character of the Gd spins, this leads to a very high magnetoelectric coupling, leading to a variation of up to $5000 \mu C/m^2$ when a magnetic field is applied \ref{Lee13}. 
+There are two sources of ferroelectricity, both originate from symmetric exchange striction \ref{Choi2008}, where the AFM superexchange combined with the spin configuration will decrease the length of bonds with antiparallel spins, and increase those with parallel spins. The first of those contributions, $P_{MM}$, comes from the interchain (roughly along the $b$-direction) frustration between Mn$^{3+}$ -- Mn$^{4+}$ -- Mn$^{3+}$ ion sequences, the second, $P_{GM}$ originates from the interaction between the Gd spins and neighboring Mn chains.
+Both of them result in both ionic (leading to the lower $P_ab2_1a$ symmetry), and electronic contributions to the polarization.
+$P_{MM}$ is also present in other $R$Mn$_2$O$_5$ compounds, but it was shown \ref{Khomskii2009} that the electronic and ionic contributions are oriented in opposite sense and nearly cancel eachother.
+There is no such cancellation associated with $P_{GM}$, which causes the eventual polarzation of the material to be relatively large. Also, due to the size (nominally $S=7/2$) and isotropic character of the Gd spins, their susceptibility with an externally applied field is high, leading to a very high magnetoelectric coupling that results in a variation of $P_b$ of up to $5000 \mu C/m^2$ when a magnetic field is applied \ref{Lee13}. 
 
 Now that the stage is set, we continue describing the experimental observations that we will try to explain. In previous experimental measurements, the magnetic field was always applied along the crystalline $a$-direction \ref{Lee13}. This leads to the aforementioned reversal and restoration of the polarization, and a relatively normal hysteresis loop (see Fig.~1 of \cite{Lee13}), alternating between two states. However, we found that the behavior of $P(H)$ depends strongly on the angle between the applied magnetic field and the $a$-direction, $\phi_H$.
 More specifically, as can be seen from Fig.~\ref{fig:GdMn2O5_experiment}, at high angle the $P$ remains positive although a small `switching` can be observed signalling two different internal states. In the intermediate `magic angle` region there is a crossover between the low and high angle regimes where four different states with different values of $P$ are visited while the external field cycles up and down twice.
@@ -119,10 +122,10 @@ The low temperature commensurate state breaks both time reversal symmetry, $T: (
 To simulate the experimental measurements in Fig.~\ref{fig:GdMn2O5_experiment} at low temperature, we choose one of the four degenerate minima of the Hamiltonian, gradually increase and decrease the applied magnetic field, and minimize the energy in order to track the instantaneous local minimum. 
 
 The results are shown in Fig.~\ref{fig:GdMn2O5_theory}
-\begin{figure*}[t]
-    \centering
-    \IncludeGraphics[width=\linewidth]{0field_heatmap.png}
-\end{figure*}
+% \begin{figure*}[t]
+%     \centering
+%     \IncludeGraphics[width=\linewidth]{0field_heatmap.png}
+% \end{figure*}
 
 \begin{figure*}[t]
     \centering
@@ -167,32 +170,33 @@ The converse is true when $H < H^*$, but since the system is then coming from th
 This causes the deterministic unidirectional movements through the four states sequentially when two field sweeps are applied.
 Since the two low field states that get accessed sequentially have two different $P_b$ values, this situation effectively results in a single crystal binary counter behavior.  
 
-This robust one directional rotation of certain order parameters allows one to assign a non-zero winding number to the `magic-angle` switching behavior, i.e. $Q=\frac{1}{2\pi}\int_0^{T_0} dt (l_x\partial_t l_y - l_y \partial_t l_x)$ 
+This robust one directional rotation of certain order parameters allows one to assign a non-zero winding number to the `magic-angle` switching behavior, i.e. $Q=\frac{1}{2\pi}\int_0^{T_0} dt (l_x\partial_t l_y - l_y \partial_t l_x)$. 
 
 \section{Simplified Model}
-Having found a description for the situation in the complicated material GdMn$_2$O$_5$ using the model \ref{eq:GdMn2O5_1}, one may wonder what the minimal requirements are to have a similar four-state behavior where the spins rotate 360$^\circ$ while the applied field only oscillates along a single axis.
-We look to the spin configurations of Fig.~\ref{fig:theory_Gd1}(h) for inspiration. It is clear that, although necessary for the $P_b$ behavior, it seems that the chain with Mn moments most parallel to the applied field does the full rotation, while the other chain merely oscillates around its starting position. The Gd moments seem to follow the behavior of the chain they are most strongly coupled to. This warrants an attempt to search for the four state behavior using only a single chain with its Gd moments.   
-To this end, in the particular case where the magic angle is along $\alpha = +10^\circ$, we keep $L_1$, $S_2$, $S_3$, $S_6$ and $S_7$ as the variables in the model.
-We also neglect the easy axis anisotropy of the Gd ions.
+Having found a description for the situation in the complicated material GdMn$_2$O$_5$ using the model \ref{eq:GdMn2O5_1}, one may wonder what the minimal requirements are to have a similar four-state behavior where the spins rotate 360$^\circ$ while the applied field only oscillates back and forth along a single axis.
+We look to the spin configurations of Fig.~\ref{fig:GdMn2O5_theory}(h) for inspiration.
+It is clear that, although both chains are necessary for the $P_b$ behavior, the chain with equilibrium Mn moments most parallel to the applied field does the full rotation, while the other chain merely oscillates around its starting position.
+Similarly, only the Gd moments most strongly coupled to that chain perform the full 360$^\circ$ cycle.
+This warrants an attempt to search for the four state behavior using only a single chain with its Gd moments, more specifically, in the case of $\phi_H = +10^\circ$, we keep $L_1$, $S_2$, $S_3$, $S_6$ and $S_7$ as the degrees of freedom in the model.
+Given the negligible importance of the anisotropy on the Gd ions, we also put $K_S = 0$.
 This leaves us with the following Hamiltonian, which is split up in two parts, one with the dipolar terms $H_{dip}$ and one with all the other terms $H'$:
 \begin{align}
 	H &= H' + H_{dip} \\
-	H' &= J_1(\mathbf{S}_2 + \mathbf{S}_3 - (\mathbf{S}_6 + \mathbf{S}_7))\cdot\mathbf{L}_1 - g \mu_b (\mathbf{S}_2 + \mathbf{S}_3 + \mathbf{S}_6 + \mathbf{S}_7) \cdot \mathbf{H} \\
-	&+ K_L (\mathbf{L} \cdot \mathbf{n}) \\
+	H' &= v_1(\mathbf{S}_2 + \mathbf{S}_3 - (\mathbf{S}_6 + \mathbf{S}_7))\cdot\mathbf{L}_1 - g \mu_b (\mathbf{S}_2 + \mathbf{S}_3 + \mathbf{S}_6 + \mathbf{S}_7) \cdot \mathbf{H} \\
+	&- K_L (\mathbf{L}_1 \cdot \mathbf{n})^2 \\
 	H_{dip} &= \frac{1}{2}(g \mu_B)^2\sum_{i\neq j}\left(\frac{\mathbf{S}_i\cdot \mathbf{S}_j}{r_{ij}^3}-3\frac{(\mathbf{S}_i\cdot \mathbf{r}_{ij})(\mathbf{S}_j\cdot \mathbf{r}_{ij})}{r_{ij}^5}\right).
 \end{align}
 
-Due to the symmetries of this model and the geometry of the material we end up with two copies of one spin in the first half of the magnetic unit cell and one in the second half of the unit cell, with the chain inbetween (see Fig.~\ref{fig:GdMn2O5_simple_model}).
+Due to the higher symmetries of this model throughout the field sweep cycle, compared with the full model, one can identify two symmetry related copies of one spin in the first half of the magnetic unit cell and one in the second half of the unit cell, with the chain in between (see Fig.~\ref{fig:GdMn2O5_simple_model}), i.e. $S_2 = S_3$ and $S_6 = S_7$.
 \begin{figure}
 	\IncludeGraphics{double_cell.png}
 	\caption{\label{fig:GdMn2O5_simple_model} Simplified single chain model.}
 \end{figure}
-
-This causes $S_2 = S_3$ and $S_6 = S_7$, and thus allows us to look at a single one of the two copies. Again keep only nearest neighbor dipolar terms, we end up with
+This further simplifies the Hamiltonian:
 \begin{align}
-	H' &= 2J_1(\mathbf{S}_3 - \mathbf{S}_6)\cdot\mathbf{L}_1 - 2g \mu_b (\mathbf{S}_3 + \mathbf{S}_6) \cdot \mathbf{H} \\
-	&+ K_L (\mathbf{L} \cdot \mathbf{n}) \\
+	H' &= 2v_1(\mathbf{S}_3 - \mathbf{S}_6)\cdot\mathbf{L}_1 - 2g \mu_b (\mathbf{S}_3 + \mathbf{S}_6) \cdot \mathbf{H} \\
+	&- K_L (\mathbf{L} \cdot \mathbf{n})^2 \\
 	H_{dip} &= (g \mu_B)^2\left(\frac{\mathbf{S}_3\cdot \mathbf{S}_6}{r_{36}^3}-3\frac{(\mathbf{S}_3\cdot \mathbf{r}_{36})(\mathbf{S}_6\cdot \mathbf{r}_{36})}{r_{36}^5}\right).
 \end{align}
-
+\lp{what can we say more about this?}
 \printbibliography
