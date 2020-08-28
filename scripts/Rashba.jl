@@ -170,13 +170,58 @@ plot!(abs.(getindex.(wbands[6].eigvec[90:110],1)))
 
 
 #%%
+using DrWatson
+quickactivate(@__DIR__)
+using Revise
 using Glimpse
 
 dio = Diorama()
+grid = Glimpse.Grid([Point3f0(x, y, z) for x = -2:0.01:2, y=-2:0.01:2, z=-2:0.01:2])
+density = map(x->1/sqrt(x[1]^2 + x[2]^2) + x[3], grid.points)
+grid2 = Glimpse.Grid([Point3f0(x, y, z) for x = -2:0.01:6, y=-2:0.01:6, z=-2:0.01:2])
+density2 = map(x-> -exp(-sqrt(x[1]^2 + x[2]^2)^2/0.50) + x[3], grid.points)
+density3 = map(x->cos(x[1]/3) - x[3], grid2.points)
+#%%
+esph1 = Entity(dio, Glimpse.assemble_sphere(Point3f0(0.0,0.0,0.0), radius=0.5f0)...)
+esph2 = Entity(dio, Glimpse.assemble_sphere(Point3f0(4.0,0.0,0.0), radius=0.5f0)...)
+e1 = Entity(dio, grid, Glimpse.DensityGeometry(density, 0.4), Glimpse.UniformColor(RGB{Float32}(1.0,0.0,0.0)),Glimpse.Alpha(0.8f0), Glimpse.Material(), Glimpse.Spatial())  
+e2 = Entity(dio, grid, Glimpse.DensityGeometry(density, 0.4), Glimpse.UniformColor(RGB{Float32}(1.0,0.0,0.0)),Glimpse.Alpha(0.8f0), Glimpse.Material(), Glimpse.Spatial(position=Point3f0(4,0,0)))  
+esph3 = Entity(dio, Glimpse.assemble_sphere(Point3f0(0.0,4.0,0.0), radius=0.5f0)...)
+esph4 = Entity(dio, Glimpse.assemble_sphere(Point3f0(4.0,4.0,0.0), radius=0.5f0)...)
+e3 = Entity(dio, grid, Glimpse.DensityGeometry(density, 0.4), Glimpse.UniformColor(RGB{Float32}(1.0,0.0,0.0)),Glimpse.Alpha(0.8f0), Glimpse.Material(), Glimpse.Spatial(position=Point3f0(0,4,0)))  
+e4 = Entity(dio, grid, Glimpse.DensityGeometry(density, 0.4), Glimpse.UniformColor(RGB{Float32}(1.0,0.0,0.0)),Glimpse.Alpha(0.8f0), Glimpse.Material(), Glimpse.Spatial(position=Point3f0(4,4,0)))
+e5 = Entity(dio, grid, Glimpse.DensityGeometry(density2, 0.4), Glimpse.UniformColor(RGB{Float32}(0.0,1.0,0.0)),Glimpse.Alpha(0.5f0), Glimpse.Material(), Glimpse.Spatial(position=Point3f0(0,0,0.0)))
+e6 = Entity(dio, grid, Glimpse.DensityGeometry(density2, 0.4), Glimpse.UniformColor(RGB{Float32}(0.0,1.0,0.0)),Glimpse.Alpha(0.5f0), Glimpse.Material(), Glimpse.Spatial(position=Point3f0(4,0,0.0)))
+e7 = Entity(dio, grid, Glimpse.DensityGeometry(density2, 0.4), Glimpse.UniformColor(RGB{Float32}(0.0,1.0,0.0)),Glimpse.Alpha(0.5f0), Glimpse.Material(), Glimpse.Spatial(position=Point3f0(4,4,0.0)))
+e8 = Entity(dio, grid, Glimpse.DensityGeometry(density2, 0.4), Glimpse.UniformColor(RGB{Float32}(0.0,1.0,0.0)),Glimpse.Alpha(0.5f0), Glimpse.Material(), Glimpse.Spatial(position=Point3f0(0,4,0.0)))
+e9 = Entity(dio, Glimpse.assemble_box(Point3f0(-4.0, -4.0, 2.0), Point3f0(20, 20, 2.01), color=RGB{Float32}(0.5,0.2,0.4))..., Glimpse.Rotation(Vec3(1.0,0.0,0.0), deg2rad(20)), Glimpse.Alpha(0.4f0))
+e10 = Entity(dio, grid2, Glimpse.DensityGeometry(density3, 0.4), Glimpse.UniformColor(RGB{Float32}(1.0,1.0,0.0)),Glimpse.Alpha(0.5f0), Glimpse.Material(), Glimpse.Spatial(position=Point3f0(0,0,1.0)))
+dio[Entity(2)] = Glimpse.Spatial(position=Point3f0(0,-10,10.0))
+e11 = Entity(dio, Glimpse.assemble_wire_axis_box(position=Point3f0(-2,-2,-2), x=Vec3f0(4,0,0), y=Vec3f0(0,4,0), z=Vec3f0(0,0,4),color=Glimpse.BLACK)...)
+e12 = Entity(dio, Glimpse.assemble_wire_axis_box(position=Point3f0(2,-2,-2), x=Vec3f0(4,0,0), y=Vec3f0(0,4,0), z=Vec3f0(0,0,4),color=Glimpse.BLACK)...)
+e13 = Entity(dio, Glimpse.assemble_wire_axis_box(position=Point3f0(2,2,-2), x=Vec3f0(4,0,0), y=Vec3f0(0,4,0), z=Vec3f0(0,0,4),color=Glimpse.BLACK)...)
+e14 = Entity(dio, Glimpse.assemble_wire_axis_box(position=Point3f0(-2,2,-2), x=Vec3f0(4,0,0), y=Vec3f0(0,4,0), z=Vec3f0(0,0,4),color=Glimpse.BLACK)...)
+arrow_entities = map(x->Entity(dio, x...), Glimpse.assemble_axis_arrows(Point3f0(-2.5,-2.5,0), thickness=0.05f0, axis_length=2f0)[[1,3,4]])
+dio[Glimpse.Camera3D][1].camerakind = Glimpse.Orthographic
 expose(dio)
+#%%
+delete!(dio, e9)
+dio[e9] = Glimpse.Alpha(0.8f0)
+dio[e9] = Glimpse.Spatial(position=Point3f0(0,0,0))
 
-Entity(dio, Glimpse.assemble_sphere(Vec3f0(0.0,0.0,0.0))...)
+dio[Glimpse.DioEntity]
 
-grid = Glimpse.Grid([Point3f0(x, y, z) for x = -2:0.1:2, y=-2:0.1:2, z=-2:0.1:2])
-Entity(dio, 
+
+all(x->x∈valid_entities(dio), arrow_entities)
+dio[Glimpse.UniformColor]
+for c in components(dio)
+    if !isempty(c)
+        @show eltype(c)
+        @show c.indices
+    end
+end
+dio[Mesh]
+delete!(dio, arrow_entities
+dio.ledger.free_entities
+dio.ledger.components
 
