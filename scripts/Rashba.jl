@@ -11,16 +11,22 @@ using FileIO
 #%%
 ## GeTe
 cd(datadir("Rashba/GeTe"))
-job = DFJob("../../GeTe/NSOC")
-job_soc = DFJob("../../GeTe/SOC")
-
-bands = readbands(job)
-bands_soc = readbands(job_soc)
-fermi = readfermi(job)
-fermi_soc = readfermi(job_soc)
-wfuncs = load(joinpath(job, "wfuncs.jld2"))["wfuncs"]
+job1 = DFJob(datadir("Rashba/GeTe/NSOC"))
+wfuncs1 = load(joinpath(job1, "wfuncs.jld2"))["wfuncs"]
+wfuncs1_soc = WannierFunction[]
 for i = 1:8
-    DFW.write_xsf(joinpath(job_soc, "$i.xsf"), wfuncs_soc[i], job_soc.structure, value_func = x -> sign(real(x[1])) * norm(x) )
+    push!(wfuncs1_soc, WannierFunction(wfuncs1[i].points, map(x-> SVector(x[1], 0.0), wfuncs1[i].values)))
+    push!(wfuncs1_soc, WannierFunction(wfuncs1[i].points, map(x-> SVector(0.0, x[1]), wfuncs1[i].values)))
+end
+job = DFJob(datadir("Rashba/GeTe/SOC"))
+
+bands_soc = readbands(job_soc)
+bands = readbands(job)
+fermi = readfermi(job)
+
+wfuncs = load(joinpath(job, "wfuncs.jld2"))["wfuncs"]
+for i = 1:16
+    DFW.write_xsf(joinpath(job1, "$i.xsf"), wfuncs1_soc[i], job1.structure, value_func = x -> abs(x[1]) > abs(x[2]) ? sign(real(x[1])) * norm(x) : sign(real(x[2]))*norm(x))
 end
 wfuncs = load(joinpath(job, "wfuncs.jld2"))["wfuncs"]
 wfuncs_soc = load(joinpath(job_soc, "wfuncs.jld2"))["wfuncs"]
