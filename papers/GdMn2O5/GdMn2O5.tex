@@ -1,25 +1,25 @@
 \chapter{Magnetoelectric crankshaft: topologically protected switching in multiferroic GdMn$_2$O$_5$}
 \section{Introduction}
-\lp{words to sprinkle around: coexist, attracted much attention}
 Efficient control and probing of robust order has historically been one of the main technological drivers for research in condensed matter.
 The hallmark example is the impact that the discovery of giant magnetoresistance has had on the efficiency of the readhead in hard disks.
-This is achieved by having a multilayer sandwich composed of one pinned magnet, a non-magnetic metal and a soft magnet, the last of which aligns with the information storing magnetic domain on the disk itself.
-This will influence the amount of current which flows through the readhead due to the lower conductivity of the soft magnetic layer when it is antiparallel with respect to the pinned magnet. Indeed, the pinned magnet will polarise the spins of the current carriers to be aligned with its magnetization, as they travel through it. When those carriers subsequently arrive at the second magnetic layer, they will have the wrong spin polarization as compared with the conducting states close to the fermi level. This leads to greater scattering and thus to a lower conductivity.
-The end result is a purely electrical way of reading back the orientation of the magnetic domains on disk, greatly increasing the efficiency compared with reading through induction with a solenoid.
+This is achieved by having the readhead be comprised of a multilayer sandwich composed of one pinned magnet, a non-magnetic metal and a soft magnet, the last of which aligns with the information storing magnetic domain on the disk itself.
+This will influence the amount of current which flows through the readhead depending on the alignment between the magnetizations in the two magnetic layers. This is because, due to the Stoner effect, the conducting states located close to the Fermi level of metallic magnets have a spin polarization along the internal magnetization. This causes the current carriers that exit the pinned magnet to be scattered strongly (leading to low conductivity) from the second magnet if the magnetizations are antiparallel, compared to when the two magnetizations are aligned (high conductivity).
+This leads to a change in current through the readhead, and can be electrically probed, indirectly reading out the magnetization state of the information storing domains underneath the readhead.
+The end result is a purely electrical way of reading the stored information, greatly increasing the efficiency compared with reading through induction in a solenoid.
 
 There remains, however, the issue of writing the information in the first place.
 In modern state-of-the art high density storage technologies, this is still done by applying an external magnetic field with an electromagnet to reorient the ferromagnetic domains. One can imagine this to be quite an inefficient process, both from the point of view of granularity (stray fields and non-locality of the magnetic fields limit the minimum size of the domains) as from that of dissipation.
-Improving these figures of merit drives much of the current research in the field of spintronics, with promising applications like spin-transfer torque devices, utilizing the torque applied by spin-polarized current carriers on the magnetic moments inside the storage medium, circumventing the need to create a magnetic field from circular currents in electromagnets.
+Improving these figures of merit drives much of the current research in the field of spintronics, with promising applications like spin-transfer torque devices, utilizing an inverse effect to the one described above in which the information is written to the ferromagnetic domains through the torque applied by the misaligned spin moments of polarized current carriers. This circumvents the need to create a magnetic field from circular currents in electromagnets.
 
-It is clear that the longevity of magnetic order, combined with the ease of manipulation provided by charge-based order is highly desirable.
+It is clear that the longevity associated with magnetic order, combined with the ease of manipulation provided by charge-based order is highly desirable.
 This leads us to the topic of this chapter, namely the magnetoelectric effect in multiferroic insulators.
-As the name implies, the magnetoelectric effect allows for the electric control of magnetic order or the magnetic control of ferroelectric polarization\cite{Spaldin2019,Khomskii2009,Fiebig2005,Fiebig2016,Cheong2007}, the former of which could be used in devices where information is stored magnetically but read and written electrically.
+As the name implies, the magnetoelectric effect allows for the electric control of magnetic order or the magnetic control of ferroelectric polarization~\cite{Spaldin2019,Khomskii2009,Fiebig2005,Fiebig2016,Cheong2007}, the former of which is most attractive from a technological point of view.
 
 In practice, however, there are many issues that limit the effectiveness of this cross-order coupling, and the number of multiferroic materials is limited to begin with.
 This latter point can be partly understood from a symmetry point of view.
 Namely, ferroelectric materials break inversion symmetry, whereas magnetic order needs the breaking of time reversal symmetry.
 There are thus only 13 Shubnikov magnetic point groups that allow simultaneous appearance of ferroelectricity and magnetization~\cite{Wang2009}, but not all compounds that belong to one of those 13 groups showcase multiferroicity.
-Another reason for the relative rarity of multiferroic materials is that, generally speaking, ferroelectricity and magnetism are not compatible on the ionic level, i.e. they require ions with different valence configurations\cite{Spaldin2019}.
+Another reason for the relative rarity of multiferroic materials is that, generally speaking, ferroelectricity and magnetism are not compatible on the single ion level, i.e. they require ions with different valence configurations~\cite{Spaldin2019}.
 For example, among perovskites (ABO$_3$, A cation, B anion), there are many ferroelectric or magnetic oxides, but the combination of the two is very uncommon.
 The reason in this case is that, in general, a prerequisite for ferroelectricity is a valence configuration of $d^0$, i.e. an empty $d$-shell, or the presence of lone pairs (ns$^2$).
 Conversely, magnetism requires partially filled $d$ or $f$ shells, such that the unpaired electrons lead to nonzero magnetic moments on the constituent ions.
@@ -27,39 +27,40 @@ These two requirements are mutually exclusive and can thus not be realized simul
 
 There are two ways around this issue, which lead to so-called Type-I and Type-II classification of multiferroics\cite{Khomskii2009}.
 The Type-I variety harbors two different `subsystems' that separately handle the magnetic and ferroelectric orders.
-Using perovskites again as an example, a ferroelectrically active A-site cation such as Bi$^{3+}$ or Pb$^{3+}$ can be combined with a magnetically active B-site anion such as Fe which is the case in, for example, BiMnO$_3$. In this material, the lone pairs of the Bi ions result in a ferroelectric polarization of $\approx$ 16 $\mu$C/cm$^2$, whereas the Mn ions result in a ferromagnetic phase below 110K~\cite{Wang2009}.
+Using perovskites again as an example, a ferroelectrically active A-site cation such as Bi$^{3+}$ or Pb$^{3+}$ can be combined with a magnetically active B-site anion such as Fe or Mn, as e.g. in BiMnO$_3$. In this material, the lone pairs of the Bi ions result in a ferroelectric polarization of $\approx$ 16 $\mu$C/cm$^2$, whereas the Mn ions result in a ferromagnetic phase below 110K~\cite{Wang2009}.
 One can write down a Landau Theory for a homogeneous type-II multiferroic by expanding the free energy $F$ in terms of $P$ and magnetization $M$:
 \begin{align}
-	F(P, H) =& F_0 + \frac{a}{2} (T-T_P) P^2 + \frac{b}{4} P^4 - \varepsilon_p P E \\
-	&+\frac{\alpha}{2} (T-T_M)M^2 + \frac{\beta}{4} M^4 - \chi_M MH - \frac{g}{2}P^2 M^2.
+	F(P, H) =& F_0 + \frac{a}{2} (T-T_P) P^2 + \frac{b}{4} P^4 - P E \\
+	&+\frac{\alpha}{2} (T-T_M)M^2 + \frac{\beta}{4} M^4 - MH - \frac{g}{2}P^2 M^2.
 \end{align}
-This is the simplest form of the free energy of a multiferroic with ferroelectric polarization $P$ and magnetization $M$. All Landau parameters are taken to be positive, such that below the ferroelectric (ferromagnetic) transition temperature $T_P$ ($T_M$) nonzero $P$ ($M$) develops. The dielectric constant $\varepsilon_P$ and magnetic susceptibility $\chi_M$ couple $P$ and $M$ to an externally applied electric or magnetic field, respectively. The lowest symmetrically allowed magnetoelectric term that couples $P$ and $M$ is $-gP^2M^2$, obeying both time and inversion symmetries above the transition temperatures $T_P$ and $T_M$.
-Minimizing the energy with respect to both orders, with no applied external fields, leads to
+This is the simplest form of the free energy of a multiferroic with ferroelectric polarization $P$ and magnetization $M$. All parameters are taken to be positive, such that below the ferroelectric (ferromagnetic) transition temperature $T_P$ ($T_M$) nonzero $P$ ($M$) develops.
+The lowest symmetrically allowed magnetoelectric term that couples $P$ and $M$ is $-gP^2M^2$, obeying both time and inversion symmetries above the transition temperatures $T_P$ and $T_M$.
+Minimizing the energy with respect to both orders for $T<T_M,T_P$, with no applied external fields, leads to
 \begin{align}
 	P^2 &= - a(T-T_P)/b + gM^2\\
 	M^2 &= - \alpha(T-T_M)/\beta + gP^2.
 \end{align}
-Both order parameters thus depend on the value of the other through the magnetoelectric coupling $g$. This leads to a change in one when an external perturbation is applied to the other.
-The different origin of both orders, however, usually results in a small value of $g$. Indeed, the effective dielectric constant $\varepsilon$ of BiMnO$_3$ only displays a weak anomaly at the ferromagnetic transition temperature, and is only weakly affected by an applied magnetic field, leading to a variation of 0.6\% of $\varepsilon$ at a field value of 9T.
+Both order parameters thus depend on the value of the other through the magnetoelectric coupling $g$. This leads to a change in one through an applied perturbation to the other.
+The different origin of both orders, however, usually results in a small value of $g$. Indeed, the effective dielectric constant $\varepsilon$ of BiMnO$_3$ only displays a weak anomaly at the ferromagnetic transition temperature, and is only weakly affected by an external magnetic field, leading to a variation of 0.6\% of $\varepsilon$ at a field value of 9T.
 
 The other class of multiferroics, i.e. those with Type-II multiferroicity, generally hold a bigger magnetoelectric effect, because the magnetic and ferroelectric orders both originate from the same underlying physics.
 
-The materials have improper ferroelectricity, i.e. the electron degrees of freedom cause a particular magnetic configuration that breaks inversion symmetry, rather than a structural instability and associated ionic displacements.
+These multiferroics have improper ferroelectricity, i.e. the electron degrees of freedom cause a particular magnetic configuration that breaks inversion symmetry, rather than a structural instability through phonon instabilities and the structural deformations associated with them.
 To optimize the magnetic exchange energies, however, there will be displacements of the ions, that ultimately leads to a lowering of the crystalline symmetry.  
 Although the size of the electric polarization thus created is usually orders of magnitude smaller than in Type-I multiferroics, the common origin of the two orders leads to a very sizable magnetoelectric effect.
 
-Here we specifically investigate GdMn$_2$O$_5$ (see Fig.~\ref{fig:GdMn2O5_unit_cell}), an example of a type-II multiferroic\cite{Khomskii2009}, where the ferroelectric polarization can be controlled to a high degree by the application of an external magnetic field, as will be shown below.
-The orthorhombic $R$Mn$_2$O$_5$ manganites have a very complex crystalline structure, which leads to a wealth of different phases depending on the temperature, magnetic field and even electric-field poling history \cite{Zheng2019}.
+Here we specifically investigate GdMn$_2$O$_5$ (see Fig.~\ref{fig:GdMn2O5_unit_cell})~\cite{Khomskii2009}, showing an exceptional tunability of the ferroelectric polarization through an applied magnetic field~\cite{Lee13}.
+The orthorhombic $R$Mn$_2$O$_5$ manganites all have a very complex crystalline structure, which leads to a wealth of different phases depending on the temperature, rare-earth, external magnetic field and even electric-field poling history~\cite{Zheng2019}.
 To keep the discussion tractable and in line with the experiments that were performed, we give a summary of the transitions and phases that are important for this part of the Thesis.
 $R$Mn$_2$O$_5$ have crystallographic group $Pbam$ \cite{Alonso97} in the paramagnetic phase at high temperature, which eventually gets lowered to the crystallographic space group $P_ab2_1a$ when the commensurate magnetic order locks in below $T_{N} \sim 33K$.
 This order is characterised by the propagation vector $\bm{k} = (1/2, 0, 0)$, i.e. there is a unit cell doubling along the crystalline $a$-direction. Spins are ordered ferromagnetically along the crystalline $c$-direction. This magnetic transition goes hand in hand with a sharp anomaly in the dielectric constant $\varepsilon_b$, signalling the onset of the improper ferroelectric polarization order along the $b$-direction \cite{Lee13}.
-When the temperature is lowered further, the polarization $P_b$ saturates to a maximum value of around 3600 $\mu$ C/m$^2$, which is the largest of all rare-earth magnanites, but still tiny compared to proper ferroelectrics like BaTiO$_3$ with $P \approx 2 \times 10^5 \mu C/m^2$.
-The magnetic configuration features two AFM Mn chains per unit cell, which are formed by pyramidally coordinated $Mn^{3+}$ and octahedrally coordinated $Mn^{4+}$ ions, as indicated by the light blue lines and purple polygons in Fig.~\ref{fig:GdMn2O5_unit_cell}. The Mn spins of the chains in GdMn$_2$O$_5$ lie mostly along the fourfold symmetry axis of the Mn pyramids, making angles of $\pm 23.4^\circ$ with the $a$-axis.
+When the temperature is lowered further, the polarization $P_b$ saturates to a maximum value of around 3600 $\mu$C/m$^2$, which is the largest of all rare-earth magnanites, but still tiny compared to proper ferroelectrics like BaTiO$_3$ with $P \approx 2 \times 10^5 \mu C/m^2$.
+The magnetic configuration features two AFM Mn chains per unit cell, which are formed by pyramidally coordinated Mn$^{3+}$ and octahedrally coordinated Mn$^{4+}$ ions, as indicated by the light blue lines and purple polygons in Fig.~\ref{fig:GdMn2O5_unit_cell}. The Mn spins of the chains in GdMn$_2$O$_5$ lie mostly along the fourfold symmetry axis of the Mn pyramids, making angles of $\pm 23.4^\circ$ with the $a$-axis.
 
 The improper ferroelectricity is generated through the symmetric Heisenberg exchange striction, combined with the geometric frustration and strong antiferromagnetic exchanges~\cite{Choi2008}.
 The geometric frustration appears due to the odd number of AFM coupled spins in the Mn pentagons that surround each Gd ion, as can be seen in panel c of Fig.~\ref{fig:GdMn2O5_unit_cell}.
 Similar to the situation in AFM coupled ions on a triangular lattice, not all AFM exchanges can be simultaneously satisfied (i.e. by having completely antiparallel spins on each AFM bond).
-Each bond will then optimize the magnetic exchange energy together with the elastic energy resulting in bonds with antiparallel spins to contract whereas bonds with parallel spins will extend, as shown in Fig.~\ref{fig:GdMn2O5_unit_cell}(b). This can be understood from the dependence energy of each bond on the bondlength between two Mn ions $W$, following Ref. \cite{Harris1972}, as:
+Each bond will then optimize the magnetic exchange energy together with the elastic energy resulting in bonds with antiparallel spins to contract whereas bonds with parallel spins will extend, as shown in Fig.~\ref{fig:GdMn2O5_unit_cell}(b). This can be understood from the dependence energy of each bond on the bond length between two Mn ions $W$, following Ref. \cite{Harris1972}, as:
 \begin{equation}
 	W = J(r)\mathbf{S}_i \cdot \mathbf{S}_j + \frac{\kappa \delta r^2}{2r_0},
 \end{equation}
@@ -74,7 +75,7 @@ If one then assumes that $J(r) = J_0 e^{- \frac{\varepsilon r}{r_0}}$ with $\var
 \end{equation}
 Thus, bonds with antiparallel spins will contract ($\delta r < 0$), and bonds with parallel spins will extend ($\delta r > 0$).
 In the $R$Mn$_2$O$_5$ materials, this causes the ocatahedrally coordinated Mn$^{4+}$ ion to shift towards one of the two neighboring Mn$^{3+}$ pyramids in the Mn$^{3+}$ -- Mn$^{4+}$ -- Mn$^{3+}$ sequences, as showcased in Fig.~\ref{fig:GdMn2O5_unit_cell}(b).
-This leads to the lowering of the symmetry from $Pbam$ to $P_ab2_1a$, and, as the valence of the Mn$^{3+}$ and Mn$^{4+}$ ions differs, to a nonzero contribution to the polarization along the $b$-axis\cite{Khomskii2009}.
+This leads to the lowering of the symmetry from P$bam$ to P$_ab2_1a$, and, as the valence of the Mn$^{3+}$ and Mn$^{4+}$ ions differs, to a nonzero contribution to the polarization along the $b$-axis\cite{Khomskii2009}.
 It was shown, however, that this ionic displacement is largely compensated by electronic correlation effects, shifting the electronic wavefunctions opposite to the ions and almost fully cancelling the contribution to the polarization that originates from the Mn chains.
 There is a second source of polarization in $R$Mn$_2$O$_5$ with a magnetic rare-earth, also due to the symmetric Heisenberg exchange striction, this time between the rare-earth and the surrounding Mn pentagon.
 A similar train of thought can be followed as before, where all the exchanges between the rare earth and the surround Mn ions are AFM, again causing certain bonds to have antiparallel spins versus parallel spins, and the associated contraction and extension (see Fig.~\ref{fig:GdMn2O5_unit_cell}(c)).
@@ -94,7 +95,7 @@ Now that the stage is set, we will describe the puzzling experimental observatio
 In previous experimental measurements, the magnetic field was always applied along the crystalline $a$-direction~\cite{Lee13}.
 This leads to the aforementioned reversal and restoration of the polarization, and a relatively normal hysteresis loop (see Fig.~1 of \cite{Lee13}), alternating between two states. However, we found that the behavior of $P(H)$ depends strongly on the angle between the applied magnetic field and the $a$-direction, $\phi_H$.
 As can be seen from Fig.~\ref{fig:GdMn2O5_experiment} panel a, at high angle $P_b$ remains positive although a small jump can be observed signalling two different internal states.
-In the intermediate `magic angle' region (panel b and d), there is a crossover between the low angle regime of Ref.~\ref{Lee13} and the high angle regime of our experiments, where four different states with different values of $P_b$ are visited while the external field cycles up and down twice.
+In the intermediate `magic angle' region (panel b and d), there is a crossover between the low angle regime of Ref.~\ref{Lee13} and the high angle regime of the experiments performed by the group of A. Pimenov, where four different states with different values of $P_b$ are visited while the external field cycles up and down twice.
 This novel four state switching is the focus of this part of the thesis, and is found to originate from a rotational motion of the internal spins in one direction.
 One could say that this behavior is a microscopic analogy to the crankshaft in a car, converting the linear back--and--forth motion of the magnetic field into a unidirectional rotational motion of the spins.
 As will be shown below, these three regimes can each be assigned a winding number, with the four state switching regime lying on the boundary between the two extremal regimes.
