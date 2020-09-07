@@ -1,5 +1,7 @@
 #%%
 using Revise
+using DrWatson
+@quickactivate()
 using GdMn2O5
 const Gd = GdMn2O5
 using LinearAlgebra
@@ -17,7 +19,7 @@ const stop  = 5.0
 const len   = 120
 const Hr    = H_sweep_range(start, stop, len)
 const hsweep = generate_Hsweep_states(l, 10, Hr)
-const N = 151
+const N = 152
 const margin = 2.1 * Plots.Measures.mm * 2
 const BLACK = RGB(0, 0, 0)
 const DARK_GREEN = RGB(0, 0.5, 0)
@@ -74,40 +76,44 @@ function plot_heatmap(h_ledger, hsweep, L1_traj_shift, L2_traj_shift, offset = 1
     return p
 end
 #%%
-
-length(hsweep)
-Etots = calculate_Etots(hsweep[1:50:end]...)
+hms = [hsweep[1]; hsweep[60:10:120]]
+Etots = calculate_Etots(hms...)
 ϕ1_r = range(0, 2π, length = N)
 ϕ2_r = range(0, 2π, length = N)
 
 fontsize = 25 * 1
-for E in Etots
-    display(heatmap(ϕ1_r, ϕ2_r, E,
-            colorbar_title = "E",
+plts = []
+for (i, E) in enumerate(Etots)
+    # push!(plts, heatmap(ϕ1_r, ϕ2_r, E,
+    #         colorbar_title = "E",
+    #         color          = :rainbow,
+    #         aspect_ratio   = 1,
+    #         linewidth      = 5,
+    #         markersize     = 15,
+    #         framestyle     = :box,
+    #         legend=false))
+    push!(plts, heatmap(ϕ1_r, ϕ2_r, E,
+            title = "|H| = $(round(norm(singleton(hms[i], H).v), digits=2))", 
             color          = :rainbow,
-            aspect_ratio   = 1,
-            ylabel         = L"ϕ_{L_1}",
-            yticks         = ([π, 2π], [L"π", L"2π"]),
-            left_margin    = 1.5 * margin,
-            ylims          = [0,2π],
-            xticks         = ([0,π, 2π], ["0","π", "2π"]),
-            xlims          = [0,2π],
-            linewidth      = 5,
-            markersize     = 15,
-            xlabel         = L"ϕ_{L_2}",
-            top_margin     = 3.0 * margin,
-            bottom_margin  = 0.2 * margin,
             xtickfontsize  = fontsize,
             ytickfontsize  = fontsize,
             yguidefontsize = fontsize,
             xguidefontsize = fontsize,
             titlefontsize  = fontsize,
+            yticks         = ([π, 2π], ["π", "2π"]),
+            ylabel         = L"ϕ_{L_1}",
+            xlabel         = L"ϕ_{L_2}",
+            ylims          = [0,2π],
+            xticks         = ([0,π, 2π], ["0","π", "2π"]),
+            xlims          = [0,2π],
+            aspect_ratio   = 1,
             framestyle     = :box,
             legend=false))
-    sleep(10)
+    savefig(plts[i], "GdMn2O5/Images/field_heatmap$i.png")
+    clip_image("GdMn2O5/Images/field_heatmap$i.png")
 end
-savefig("GdMn2O5/Images/0field_heatmap.png")
-
+plot(plts...)
+#%%
 Entity(l, GdMn2O5.VisualizationSettings(Gd_color=GdMn2O5.Gl.BLACK, Mn_color=GdMn2O5.Gl.BLACK, spin_arrow_thickness=0.08f0, spin_arrow_length=0.8f0, Gd_sphere_radius=0.4f0, Mn_text_offset=Vec3f0(0.4,0.4,0.0), Gd_text_offset=Vec3f0(1.4,1.4,0.0)))
 
 dio = Diorama(l)
