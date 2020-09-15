@@ -89,6 +89,12 @@ Now that the stage is set, we will describe the puzzling experimental observatio
 	\caption{\label{fig:GdMn2O5_unit_cell}{\bf Unit cell and magnetic configuration of GdMn$_2$O$_5$.} The spheres signify Mn (purple), Gd (green) and Oxygen (red) ions. a) {\it Magnetic unit cell}, the zig-zag chains along the $a$-direction (cyan lines) show which Mn ions are linked with strong AFM exchange, resulting in the $\mathbf{L}_1$ and $\mathbf{L}_2$ N\'eel vectors. The boundary of the structural unit cell is marked by the black box and the yellow arrows denote the exchange paths between Gd and neighboring Mn ions in both chains, corresponding to $v_1$ and $v_2$. (b-c) {\it Symmetric magnetostriction}, the black arrows signify the zero field orientation of the spins. The yellow arrows denote the expanding bonds due to alignment of spins and AFM exchange, and the blue arrows denote contracting bonds.}
 \end{figure}
 \section{Experimental results}
+\begin{figure*}[t]
+    \centering
+    \IncludeGraphics[width=0.99\linewidth]{fig_exp.png}
+\caption{ \label{fig:GdMn2O5_experiment} {\bf Experimental measurements of the electric polarization.} (a) At higher temperatures only a small step is seen at the transition that shows some hysteresis and the two-state switching; (b) 4-state switching starts to appear approximately from $T=5$~K.(c) four-state hysteresis loop is clearly seen at $T=2.3$~K with the magnetic field at the ``magic'' angle;  
+(d-f) Field dependence of the electric polarization of GdMn$_2$O$_5$ for different off-axis orientations of the applied magnetic field. (d,f): Conventional two-state switching is observed if magnetic field is (d) far away from the ``magic" direction  or (f) very close to the crystallographic $a$-axis. (e,g): Unusual four-state hysteresis loop for the magnetic field direction close to the magic angle of $\pm 9^o$. The inset shows the sequence of the magnetic field-sweeps. The labels 1-4 mark the four polarization states. The arrows show the direction of magnetic field-change during the sweep. The experiments have been done at $T=2.3$\,K. }
+\end{figure*}
 In previous experimental measurements, the magnetic field was always applied along the crystalline $a$-direction~\cite{Lee13}.
 This leads to the aforementioned reversal and restoration of the polarization, and a relatively conventional hysteresis loop (see Fig.~1 of \cite{Lee13}), alternating between two polarization states. However, in measurements performed by A. Pimenov's group, it was found that the behavior of $P(H)$ depends strongly on the angle between the applied magnetic field and the $a$-direction, $\phi_H$.
 As can be seen from Fig.~\ref{fig:GdMn2O5_experiment}(a), at high angle $P_b$ remains positive although a small jump can be observed signalling two transition between different internal states.
@@ -104,19 +110,36 @@ Even though all experimental measurements were performed on single crystal sampl
 the complexity and low symmetry of the material leads to a wealth of different effects, which is clear from the details of the $P_b$ evolution at $T=4K$, shown in panel e, but also from some details of the evolution at $T=2K$.
 We will only focus on the overall behavior, i.e. how the main four-state regime develops as an interpolation between the high and low angle regimes that have the more usual two state switching loop.
 It is not clear what led to the discrepancy between the present low angle measurements (panel a) and earlier ones performed in Ref.~\cite{Lee13}, from our theoretical model it will be shown that the behavior in Ref.~\cite{Lee13} arises, rather than the one observed here.
-\begin{figure*}[t]
-    \centering
-    \IncludeGraphics[width=0.99\linewidth]{fig_exp.png}
-\caption{ \label{fig:GdMn2O5_experiment} {\bf Evolution of the electric polarization loop across critical angle  and critical temperature.} (a) At higher temperatures only a small step is seen at the transition that shows some hysteresis and the two-state switching; (b) 4-state switching starts to appear approximately from $T=5$~K.(c) four-state hysteresis loop is clearly seen at $T=2.3$~K with the magnetic field at the ``magic'' angle;  
-(d-f) Field dependence of the electric polarization of GdMn$_2$O$_5$ for different off-axis orientations of the applied magnetic field. (d,f): Conventional two-state switching is observed if magnetic field is (d) far away from the ``magic" direction  or (f) very close to the crystallographic $a$-axis. (e,g): Unusual four-state hysteresis loop for the magnetic field direction close to the magic angle of $\pm 9^o$. The inset shows the sequence of the magnetic field-sweeps. The labels 1-4 mark the four polarization states. The arrows show the direction of magnetic field-change during the sweep. The experiments have been done at $T=2.3$\,K. }
-\end{figure*}
 \section{Modeling}
 In order to describe the physics at play we use a classical model Hamiltonian with eight Gd spins whose orientations are described by unit vectors $\mathbf{S}_i, i=1..8$, two AFM order parameters $\mathbf{L}_\alpha, \alpha=1,2$ (also unit vectors) given by the difference of spins of neighboring Mn ions inside the two Mn chains inside the magnetic unit cell, and the slave order parameter $P_b$ for the ferroelectric polarization, see Fig~\ref{fig:GdMn2O5_unit_cell}.
-Using these AFM order parameters amounts to taking the rigid $L$ approximation, i.e. all spins in each chain are assumed to be AFM ordered and approximately collinear. This simplification is justified by the large intrachain AFM exchanges, compared with the relatively small exchanges between the two chains.
-Another simplification that is adopted is to keep all spins in the $ab$-plane, since this was experimentally shown to be the case, and the magnetic order is repeated along the crystalline $c$-direction~\cite{Lee13}.
+Using $\mathbf{L}_\alpha$ to describe the chains amounts to taking the rigid $L$ approximation, i.e. all spins in each chain are assumed to be AFM ordered and approximately collinear. This simplification is justified by the large intrachain AFM exchanges, compared with the relatively small exchanges between the two chains.
+A further simplification we adopt here is to confine all spins to the $ab$-plane. It was experimentally shownthat indeed the $c$-direction acts as the magnetic hard-axis, and that the magnetic order is indeed repeated along the crystalline $c$-direction~\cite{Lee13}.
 This lowers the dimensionality of the problem from 3D to 2D, with a single angle for every Gd spin and Mn chain as the remaining degrees of freedom, thus greatly simplifying the numerical complexity.
 Since all spins and AFM order parameters are unit vectors, their sizes are implicitely included in the model parameters.
 
+The first step in order to derive the correct Hamiltonian that governs the system using these model parameters is to translate the microscopic Hamiltonian in terms of the individual spins inside the chains to one which uses the AFM order parameters $\mathbf{L}_\alpha$.
+
+The Zeeman energy of two neighboring spins $\pmb{\sigma}_1$ and $\pmb{\sigma}_2$ in a chain reads
+\begin{equation}
+	E_Z = -g \mu_b \mathbf{H} \cdot (\pmb{\sigma}_1 + \pmb{\sigma}_2).
+\end{equation}
+Obviously, when the spins are assumed to be collinear, no energy gain is possible. However, to include some canting away from the collinear configuration an expansion in small canting angle $\delta \theta$ can be performed.\lp{make some figures!}
+\begin{align}
+	E &= J_{||} \cos(2\delta \theta) - g \mu_b H \left[\cos(\theta_L - \theta_H + \delta \theta) + \cos(\theta_L + 180^\circ - \theta_H - \delta \theta)\right],\nonumber\\
+	&= J_{||}\left( 1+2\delta\theta^2 \right) - 2 g \mu_b H \sin(\theta_L - \theta_H)\delta\theta \label{eq:GdMn2O5_zeeman_exp}.
+\end{align}
+Minimizing in terms of $\delta \theta$ leads to
+\begin{align}
+	\frac{\partial E}{\partial \delta \theta} = 0 &= 4 J_{||} \delta \theta - 2 g \mu_b H \sin(\theta_L - \theta_H) \nonumber\\
+	&\Leftrightarrow \nonumber\\
+	\delta \theta &= \frac{g\mu_b H \sin(\theta_L - \theta_H)}{2 J_{||}}.\nonumber
+\end{align}
+Inserting this expression for $\delta \theta$ back into Eq.~\ref{eq:GdMn2O5_zeeman_exp}, keeping only the first order terms, leads to the following expression for the gain in Zeeman energy when the spins cant:
+\begin{align}
+	E_Z &= -\frac{g^2\mu_b^2 H^2 \sin(\theta_L - \theta_H)^2}{J_{||}} = -\frac{g^2\mu_b^2 H^2 \left(1 - \cos(\theta_L - \theta_H)^2\right)}{J_{||}} \nonumber\\
+	&=\frac{g^2\mu_b^2}{J_{||}}\left((\mathbf{H}\cdot\mathbf{L})^2 - H^2\right)\nonumber
+\end{align}
+This energy gain is maximized when $\mathbf{L}$ is oriented perpendicular to $\mathbf{H}$, which is exactly what happens in the well-known spin-flop transition, where a strong enough magnetic field, applied along the easy-axis of an AFM system will cause a sudden flip of the spins away from the easy-axis when gain of the Zeeman energy through canting overcomes the lost easy-axis anisotropy energy.
 The next step in deriving the appropriate model Hamiltonian, using these simplifications, is to find combinations of order parameters that are allowed by symmetry and transform according to the identity representation of the symmetry group of the crystal.
 To this end we utilize the following generators of the paramagnetic high symmetry P$bam$ phase:
 \begin{align}
@@ -163,8 +186,11 @@ Three further terms in the Hamiltonian depend solely on $L_1$ and $L_2$:
     +\sum_{\alpha}\chi^{-1}((\mathbf{H}\cdot \mathbf{L}_\alpha)^2-H^2)
     -K_L\sum_\alpha(\mathbf{L}_\alpha\cdot \mathbf{n}_\alpha)^2\label{eq:GdMn2O5_hami_1}.
 \end{equation}
-The first originates from the gain in exchange energy through spin canting possible when the chains are not colinear, due to the competition of interchain exchange $J_\perp$ and the intrachain AFM exchange $J_\|$ \cite{Sushkov2008} \lp{more details?}, with $\Gamma\sim\frac{J_{\perp}^2}{J_\|}>0$. The term with $\chi$ represents the gain in Zeeman energy when the Mn spins slightly cant away from the purely AFM order inside the chains, resulting in a weak magnetic moment which in turn couples to the the external field. The last term describes the easy-axis anisotropy along the direction of the fourfold axes of the pyramidally coordinated Mn ions, i.e. $\mathbf{n}_1=$(cos(23.4$^\circ$), sin(23.4$^\circ$)) and $\mathbf{n}_2=$(cos(-23.4$^\circ$), sin(-23.4$^\circ$)).
-
+The last term describes the easy-axis anisotropy along the direction of the fourfold axes of the pyramidally coordinated Mn ions, i.e. $\mathbf{n}_1=$(cos(23.4$^\circ$), sin(23.4$^\circ$)) and $\mathbf{n}_2=$(cos(-23.4$^\circ$), sin(-23.4$^\circ$)).
+The first two terms both originate from the energy gains, possible when spins inside the two chains are not exactly colinear and AFM.
+The term with Assuming that the AFM intrachain magnetic exchange constant $J_\|$ is much bigger than $J_\perp$,
+The term with $\chi$ represents the gain in Zeeman energy from the weak ferromagnetic moment that is generated when the AFM spins cant slightly in the same direction, i.e. towards the applied magnetic field   
+The first originates from the gain in exchange energy through spin canting possible when the chains are not colinear, due to the competition of interchain exchange  and the intrachain AFM exchange $J_\|$ \cite{Sushkov2008} \lp{more details?}, with $\Gamma\sim\frac{J_{\perp}^2}{J_\|}>0$. when the Mn spins slightly cant away from the purely AFM order inside the chains, resulting in a weak magnetic moment which in turn couples to the the external field. 
 Similarly, three terms can be identified as coming purely from the Gd spins:
 \begin{equation}
      H_S=\frac{1}{2}(g \mu_B)^2\sum_{i\neq j}\left(\frac{\mathbf{S}_i\cdot \mathbf{S}_j}{r_{ij}^3}-3\frac{(\mathbf{S}_i\cdot \mathbf{r}_{ij})(\mathbf{S}_j\cdot \mathbf{r}_{ij})}{r_{ij}^5}\right) - \sum_i\left( K_S(\mathbf{N}_i\cdot \mathbf{S}_i)^2 + g\mu_\mathrm{B} \mathbf{H} \cdot \mathbf{S}_i\right) 
@@ -204,23 +230,33 @@ The results are shown in Fig.~\ref{fig:GdMn2O5_theory}
 	\begin{subfigure}{0.24\textwidth}
     \IncludeGraphics{"field_heatmap8"}
 	\end{subfigure}
-	\caption{{\bf Energy surfaces inside hysteresis loop} $\phi_{L_1}$ and $\phi_{L_2}$ both range between 0 to $2\pi$.}
+	\caption{{\bf Evolution of the energy surface during field sweep.}\\ The white dots in the top left panel denote the four degenerate minima.}
 	\label{fig:GdMn2O5_heatmap}
 \end{figure*}
 
-\begin{figure*}[t]
+\begin{figure*}[h]
     \centering
-    \IncludeGraphics[width=\linewidth]{fig_theory}
+    \IncludeGraphics[width=\linewidth]{Pb_3panels_heatmaps}
     %\includegraphics[width=\linewidth]{fig/L1L2_heatmap.png}
     \caption{\label{fig:GdMn2O5_theory}{\bf Simulation of magnetoelectric behaviour.}
     (a-c) Evolution of electric polarization $P_b$ during the magnetic field sweep cycle for various magnetic field orientations. 
-   In each panel, the changes of the curve color indicate the same progression of the sweep cycle as Fig 2. The four-state switching is seen for the field at the magic orientation. 
+   In each panel, the changes of the curve color indicate the same progression of the sweep cycle as Fig~\ref{fig:GdMn2O5_experiment}. The four-state switching is seen for the field at the magic orientation. 
     The insets indicate the corresponding switching paths and winding numbers.
     (d-f) Trajectories (in green) in the space of the N\'eel vectors orientations, $(\phi_{\rm L_1},\phi_{\rm L_2})$, through the field sweep cycles in different regimes. The color map shows the energy landscape in the vicinity of the switching fields. 
-    (g) Evolution of transition barriers between states 1,2,3,4 as the magnetic field at 10$^\circ$ to the $a$ axis is swept through the hysteresis region. The plots are shifted vertically, and magnetodipolar interactions were enhanced by a factor of 5.3 for clarity. The curve colors encode the corresponding magnetic field strength. The trajectory of the energy minimum due to field sweeps is shown with blue circles and arrows.
+}
+\end{figure*}
+\begin{figure*}[t]
+    \centering
+	\begin{subfigure}{\textwidth}
+    \IncludeGraphics{"neb"}
+	\end{subfigure}
+    % \IncludeGraphics[width=\linewidth]{}
+    %\includegraphics[width=\linewidth]{fig/L1L2_heatmap.png}
+    \caption{\label{fig:GdMn2O5_neb}{\bf Energy barrier evolution.}
+    Evolution of transition barriers between states 1, 2, 3, 4 as the magnetic field at 10$^\circ$ to the $a$-axis is swept through the hysteresis region. The plots are shifted vertically, and magnetodipolar interactions were enhanced by a factor of 5.3 for clarity. This latter increases the width of the hysteresis region. The curve colors encode the corresponding magnetic field strength. The blue circles and arrows show the trajectory of the energy minimum due to field sweeps.
+    The red square and corresponding schematic on the right shows the asymmetric evolution of the barrier from state 2 to 1, and from 2 to 3 around the critical field $H^*$ where the barriers are of equal height. 
     Coordinated changes of the state energies and barrier asymmetry with magnetic field enable the topological behavior.
-    (h) Spin configurations in states 1, 2, 3 and 4.
-    (k) Schematic evolution of the barriers connecting the state 2 to states 1 and 3 in the vicinity of $H^*$. Saddle point states are denoted by $12$ and $23$.}
+    }
 \end{figure*}
 In order to understand the energy surface connecting the four states, we proceed by labeling them in the same way as Fig.~\ref{fig:GdMn2O5_experiment}, and perform a nudged elastic band calculation between the four states at a given magnetic field inside the hysterisis region.
 This results in the evolution of barriers between these states as shown in panel (g), where the color coding is used to denote the magnetic field strength, and the energy graphs are offset for clarity.

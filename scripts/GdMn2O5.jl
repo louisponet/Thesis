@@ -8,6 +8,7 @@ using LinearAlgebra
 using LaTeXStrings
 using ProgressMeter
 using FileIO
+using PStdLib.Images
 pyplot()
 #%%
 
@@ -78,8 +79,8 @@ end
 #%%
 hms = [hsweep[1]; hsweep[60:10:120]]
 Etots = calculate_Etots(hms...)
-ϕ1_r = range(0, 2π, length = N)
-ϕ2_r = range(0, 2π, length = N)
+ϕ1_r = range(0, 2π, length = 152)
+ϕ2_r = range(0, 2π, length = 152)
 
 fontsize = 25 * 1
 plts = []
@@ -100,19 +101,36 @@ for (i, E) in enumerate(Etots)
             yguidefontsize = fontsize,
             xguidefontsize = fontsize,
             titlefontsize  = fontsize,
-            yticks         = ([π, 2π], ["π", "2π"]),
+            yticks         = ([ϕ1_r[76], ϕ1_r[end]], [L"\pi", L"2\pi"]),
             ylabel         = L"ϕ_{L_1}",
             xlabel         = L"ϕ_{L_2}",
             ylims          = [0,2π],
-            xticks         = ([0,π, 2π], ["0","π", "2π"]),
+            xticks         = ([ϕ1_r[1],ϕ1_r[76], ϕ1_r[end]], [" 0 ",L"\pi", L"2\pi"]),
             xlims          = [0,2π],
             aspect_ratio   = 1,
             framestyle     = :box,
             legend=false))
-    savefig(plts[i], "GdMn2O5/Images/field_heatmap$i.png")
-    clip_image("GdMn2O5/Images/field_heatmap$i.png")
+    # savefig(plts[i], "GdMn2O5/Images/field_heatmap$i.png")
+    # clip_image("GdMn2O5/Images/field_heatmap$i.png")
 end
+plts[1]
+plot(plts[1], colorbar=true,colorbarticks=nothing)
+scatter!(plts[1], [ϕ1_r[67], ϕ1_r[67+75], ϕ1_r[67+75], ϕ1_r[67]],[ϕ2_r[81], ϕ2_r[81], ϕ2_r[81-75], ϕ2_r[81-75]],
+         color=:white,
+         markersize=20,
+        yticks         = ([π, 2π], ["π", "2π"]),
+        ylabel         = L"ϕ_{L_1}",
+        xlabel         = L"ϕ_{L_2}",
+        ylims          = [0,2π],
+        xticks         = ([ϕ1_r[1],ϕ1_r[76], ϕ1_r[end]], [" 0 "," pi ", " 2pi "]),
+        xlims          = [0,2π],
+        aspect_ratio   = 1,
+         framestyle=:box, legend=false)
+savefig(plts[1], "GdMn2O5/Images/field_heatmap1.png")
+clip_image("GdMn2O5/Images/field_heatmap1.png")
+plts[2]
 plot(plts...)
+findfirst(x->x==π, ϕ1_r)
 #%%
 Entity(l, GdMn2O5.VisualizationSettings(Gd_color=GdMn2O5.Gl.BLACK, Mn_color=GdMn2O5.Gl.BLACK, spin_arrow_thickness=0.08f0, spin_arrow_length=0.8f0, Gd_sphere_radius=0.4f0, Mn_text_offset=Vec3f0(0.4,0.4,0.0), Gd_text_offset=Vec3f0(1.4,1.4,0.0)))
 
