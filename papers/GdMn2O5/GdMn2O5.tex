@@ -1,3 +1,5 @@
+\newcommand{\Jpar}{J_{||}}
+\newcommand{\Jperp}{J_{\perp}}
 \chapter{Magnetoelectric crankshaft: topologically protected switching in multiferroic GdMn$_2$O$_5$}
 \section{Introduction}
 Efficient control and probing of robust order has historically been one of the main technological drivers for research in condensed matter.
@@ -123,24 +125,54 @@ The Zeeman energy of two neighboring spins $\pmb{\sigma}_1$ and $\pmb{\sigma}_2$
 \begin{equation}
 	E_Z = -g \mu_b \mathbf{H} \cdot (\pmb{\sigma}_1 + \pmb{\sigma}_2).
 \end{equation}
-Obviously, when the spins are assumed to be collinear, no energy gain is possible. However, to include some canting away from the collinear configuration an expansion in small canting angle $\delta \theta$ can be performed.\lp{make some figures!}
+Obviously, when the spins are assumed to be collinear, no energy gain is possible. However, if the spins inside each chain cant slightly towards the applied field, a weak ferromagnetic moment is created that will couple to the magnetic field. To include this behavior, an expansion in small canting angle $\delta \theta$, away from the collinear configuration, can be performed.\lp{make some figures!}
 \begin{align}
-	E &= J_{||} \cos(2\delta \theta) - g \mu_b H \left[\cos(\theta_L - \theta_H + \delta \theta) + \cos(\theta_L + 180^\circ - \theta_H - \delta \theta)\right],\nonumber\\
-	&= J_{||}\left( 1+2\delta\theta^2 \right) - 2 g \mu_b H \sin(\theta_L - \theta_H)\delta\theta \label{eq:GdMn2O5_zeeman_exp}.
+	E &= \Jpar \cos(2\delta \theta) - g \mu_b H \left[\cos(\theta_L - \theta_H + \delta \theta) + \cos(\theta_L + 180^\circ - \theta_H - \delta \theta)\right],\nonumber\\
+	&= \Jpar \left( 1+2\delta\theta^2 \right) - 2 g \mu_b H \sin(\theta_L - \theta_H)\delta\theta \label{eq:GdMn2O5_zeeman_exp}.
 \end{align}
 Minimizing in terms of $\delta \theta$ leads to
 \begin{align}
-	\frac{\partial E}{\partial \delta \theta} = 0 &= 4 J_{||} \delta \theta - 2 g \mu_b H \sin(\theta_L - \theta_H) \nonumber\\
+	\frac{\partial E}{\partial \delta \theta} = 0 &= 4 \Jpar \delta \theta - 2 g \mu_b H \sin(\theta_L - \theta_H) \nonumber\\
 	&\Leftrightarrow \nonumber\\
-	\delta \theta &= \frac{g\mu_b H \sin(\theta_L - \theta_H)}{2 J_{||}}.\nonumber
+	\delta \theta &= \frac{g\mu_b H \sin(\theta_L - \theta_H)}{2 \Jpar}.\nonumber
 \end{align}
 Inserting this expression for $\delta \theta$ back into Eq.~\ref{eq:GdMn2O5_zeeman_exp}, keeping only the first order terms, leads to the following expression for the gain in Zeeman energy when the spins cant:
 \begin{align}
-	E_Z &= -\frac{g^2\mu_b^2 H^2 \sin(\theta_L - \theta_H)^2}{J_{||}} = -\frac{g^2\mu_b^2 H^2 \left(1 - \cos(\theta_L - \theta_H)^2\right)}{J_{||}} \nonumber\\
-	&=\frac{g^2\mu_b^2}{J_{||}}\left((\mathbf{H}\cdot\mathbf{L})^2 - H^2\right)\nonumber
+	E_Z &= -\frac{g^2\mu_b^2 H^2 \sin(\theta_L - \theta_H)^2}{\Jpar} = -\frac{g^2\mu_b^2 H^2 \left(1 - \cos(\theta_L - \theta_H)^2\right)}{\Jpar} \nonumber\\
+	&=\frac{g^2\mu_b^2}{\Jpar}\left((\mathbf{H}\cdot\mathbf{L})^2 - H^2\right)\nonumber
 \end{align}
 This energy gain is maximized when $\mathbf{L}$ is oriented perpendicular to $\mathbf{H}$, which is exactly what happens in the well-known spin-flop transition, where a strong enough magnetic field, applied along the easy-axis of an AFM system will cause a sudden flip of the spins away from the easy-axis when gain of the Zeeman energy through canting overcomes the lost easy-axis anisotropy energy.
-The next step in deriving the appropriate model Hamiltonian, using these simplifications, is to find combinations of order parameters that are allowed by symmetry and transform according to the identity representation of the symmetry group of the crystal.
+
+An additional energy contribution due to small opposite canting in both chains originates from the geometric frustration. This causes the inter chain AFM exchange energies to not completely cancel out, and lead to a small gain through $\Jperp$.
+Adopting a similar strategy as above, this can be written down as
+\begin{equation}
+	E_{ic} = 2 \Jpar \cos(\delta \theta) + \Jperp \left(\cos(\theta_1 + \delta \theta - \theta_2) - \cos(\theta_1 - \theta_2 -\delta \theta)\right),
+\end{equation}
+where $\theta_1$ and $\theta_2$ signifiy the angle, w.r.t. the $a$-axis, of $\mathbf{L}_1$ and $\mathbf{L}_2$, respectively.
+Expanding again to second order leads to
+\begin{equation}
+	E_{ic} = 2 \Jpar ( 1+ \delta \theta^2) - 2 \Jperp \sin(\theta_1 - \theta_2)\delta \theta. \label{eq:GdMn2O5_Eic_exp}
+\end{equation}
+Again minimizing this contribution in terms of $\delta \theta$, we find
+\begin{equation}
+	\delta \theta = \frac{\Jperp}{2 \Jpar} \sin(\theta_1 - \theta_2).
+\end{equation}
+Inserting this in Eq.~\ref{eq:GdMn2O5_Eic_exp}, keeping only first order terms in  $\frac{\Jperp^2}{\Jpar}$ since it is assumed that $\Jperp << \Jpar$, leads to the final expression of this energy contribution:
+\begin{equation}
+	E_{ic} = -\frac{\Jperp^2}{\Jpar}\sin(\theta_1 - \theta_2)^2 =  \frac{\Jperp^2}{\Jpar}(\cos(\theta_1 - \theta_2) - 1) = \frac{\Jperp^2}{\Jpar}(\mathbf{L}_1 \cdot \mathbf{L}_2)^2 - \frac{\Jperp^2}{\Jpar},
+\end{equation}
+where the last contribution is a constant and thus merely causes a shift in the energy.
+The maximum gain in energy ($\frac{\Jperp^2}{\Jpar}$) is achieved when the chains are oriented perpendicular to eachother.
+It is clear that these two terms compete with the easy-axis anisotropy energy $K_L\sum_\alpha(\mathbf{L}_\alpha\cdot \mathbf{n}_\alpha)^2$.
+Collecting these three terms results in the contribution to the Hamiltonian that originates from the interaction between the chains, and between the chains and the external magnetic field:
+\begin{equation}
+	H_L = \Gamma(\mathbf{L}_1\cdot \mathbf{L}_2)^2
+    +\sum_{\alpha}\chi^{-1}((\mathbf{H}\cdot \mathbf{L}_\alpha)^2-H^2)
+    -K_L\sum_\alpha(\mathbf{L}_\alpha\cdot \mathbf{n}_\alpha)^2\label{eq:GdMn2O5_hami_1},
+\end{equation}
+with $\Gamma = \frac{\Jperp^2}{\Jpar}$, $\chi^{-1} = \frac{g^2\mu_b^2}{\Jpar}$, and $K_L$ the easy-axis anisotropy w.r.t. easy axes $\mathbf{n}_1=$(cos(23.4$^\circ$), sin(23.4$^\circ$)) and $\mathbf{n}_2=$(cos(-23.4$^\circ$), sin(-23.4$^\circ$)). These are the fourfold axes of the pyramidally coordinated Mn ions inside each chain.
+
+The next step is to find cross-order couplings of order parameters that are allowed by symmetry and thus transform according to the identity representation of the symmetry group of the crystal.
 To this end we utilize the following generators of the paramagnetic high symmetry P$bam$ phase:
 \begin{align}
 	I &: (x, y) \rightarrow (-x, -y, -z)\\
@@ -180,18 +212,7 @@ A similar process can be applied starting from $P_b \, \mathbf{S_1}\cdot(\beta_2
     (\mathbf{S}_4-\mathbf{S}_8)(\beta_2 \mathbf{L}_1 - \beta_3 \mathbf{L}_2)],
 \end{align}
 where the interaction with an external electric field $E_b$ was also included. 
-Three further terms in the Hamiltonian depend solely on $L_1$ and $L_2$:
-\begin{equation}
-	H_L = \Gamma(\mathbf{L}_1\cdot \mathbf{L}_2)^2
-    +\sum_{\alpha}\chi^{-1}((\mathbf{H}\cdot \mathbf{L}_\alpha)^2-H^2)
-    -K_L\sum_\alpha(\mathbf{L}_\alpha\cdot \mathbf{n}_\alpha)^2\label{eq:GdMn2O5_hami_1}.
-\end{equation}
-The last term describes the easy-axis anisotropy along the direction of the fourfold axes of the pyramidally coordinated Mn ions, i.e. $\mathbf{n}_1=$(cos(23.4$^\circ$), sin(23.4$^\circ$)) and $\mathbf{n}_2=$(cos(-23.4$^\circ$), sin(-23.4$^\circ$)).
-The first two terms both originate from the energy gains, possible when spins inside the two chains are not exactly colinear and AFM.
-The term with Assuming that the AFM intrachain magnetic exchange constant $J_\|$ is much bigger than $J_\perp$,
-The term with $\chi$ represents the gain in Zeeman energy from the weak ferromagnetic moment that is generated when the AFM spins cant slightly in the same direction, i.e. towards the applied magnetic field   
-The first originates from the gain in exchange energy through spin canting possible when the chains are not colinear, due to the competition of interchain exchange  and the intrachain AFM exchange $J_\|$ \cite{Sushkov2008} \lp{more details?}, with $\Gamma\sim\frac{J_{\perp}^2}{J_\|}>0$. when the Mn spins slightly cant away from the purely AFM order inside the chains, resulting in a weak magnetic moment which in turn couples to the the external field. 
-Similarly, three terms can be identified as coming purely from the Gd spins:
+Three further terms coming purely from the Gd spins can be identified:
 \begin{equation}
      H_S=\frac{1}{2}(g \mu_B)^2\sum_{i\neq j}\left(\frac{\mathbf{S}_i\cdot \mathbf{S}_j}{r_{ij}^3}-3\frac{(\mathbf{S}_i\cdot \mathbf{r}_{ij})(\mathbf{S}_j\cdot \mathbf{r}_{ij})}{r_{ij}^5}\right) - \sum_i\left( K_S(\mathbf{N}_i\cdot \mathbf{S}_i)^2 + g\mu_\mathrm{B} \mathbf{H} \cdot \mathbf{S}_i\right) 
 \end{equation}
