@@ -120,6 +120,14 @@ This lowers the dimensionality of the problem from 3D to 2D, with a single angle
 Since all spins and AFM order parameters are unit vectors, their sizes are implicitely included in the model parameters.
 
 The first step in order to derive the correct Hamiltonian that governs the system using these model parameters is to translate the microscopic Hamiltonian in terms of the individual spins inside the chains to one which uses the AFM order parameters $\mathbf{L}_\alpha$.
+More specifically we include energy contributions due to small spin cantings, i.e. small deviations away from the perfect collinear intrachain spin configuration, as shown in Fig.~\ref{fig:GdMn2O5_canting}.
+
+\begin{figure*}[h]
+    \centering
+    \label{fig:GdMn2O5_canting}
+    \IncludeGraphics[width=\linewidth]{canting}
+	\caption{{\bf Energy contributions due to spin canting.}\\ Zeeman (a) and Heisenberg exchange (b) energy gains when Mn spins (black arrows) are canted slightly with angle $\delta \theta$. In each panel the blue arrows signify the canted spins, compared with the perfect collinear configuration. In the Zeeman term (a) the spins inside one chain are canted slightly towards the field (red), leading to a weak ferromagnetic moment that couples to it, thus gaining energy. The interchain vs intrachain AFM exchange is optimized through a small canting of the two neighboring ferromagnetically oriented spins that invevitably arise due to the geometric frustration.}
+\end{figure*}
 
 The Zeeman energy of two neighboring spins $\pmb{\sigma}_1$ and $\pmb{\sigma}_2$ in a chain reads
 \begin{equation}
@@ -141,9 +149,9 @@ Inserting this expression for $\delta \theta$ back into Eq.~\ref{eq:GdMn2O5_zeem
 	E_Z &= -\frac{g^2\mu_b^2 H^2 \sin(\theta_L - \theta_H)^2}{\Jpar} = -\frac{g^2\mu_b^2 H^2 \left(1 - \cos(\theta_L - \theta_H)^2\right)}{\Jpar} \nonumber\\
 	&=\frac{g^2\mu_b^2}{\Jpar}\left((\mathbf{H}\cdot\mathbf{L})^2 - H^2\right)\nonumber
 \end{align}
-This energy gain is maximized when $\mathbf{L}$ is oriented perpendicular to $\mathbf{H}$, which is exactly what happens in the well-known spin-flop transition, where a strong enough magnetic field, applied along the easy-axis of an AFM system will cause a sudden flip of the spins away from the easy-axis when gain of the Zeeman energy through canting overcomes the lost easy-axis anisotropy energy.
+This energy gain is maximized when $\mathbf{L}$ is oriented perpendicular to $\mathbf{H}$, which is exactly what happens in the well-known spin-flop transition, where a strong enough magnetic field, applied along the easy-axis of an AFM system will cause a sudden flip of the spins away from the easy-axis when gain of the Zeeman energy through canting overcomes the lost easy-axis anisotropy energy. This situation is shown in Fig.~\ref{fig:GdMn2O5_canting}(a).
 
-An additional energy contribution due to small opposite canting in both chains originates from the geometric frustration. This causes the inter chain AFM exchange energies to not completely cancel out, and lead to a small gain through $\Jperp$.
+An additional energy contribution due to small opposite canting in both chains originates from the geometric frustration, as shown in Fig.~\ref{fig:GdMn2O5_canting}(b). This causes the inter chain AFM exchange energies to not completely cancel out, and lead to a small gain through $\Jperp$.
 Adopting a similar strategy as above, this can be written down as
 \begin{equation}
 	E_{ic} = 2 \Jpar \cos(\delta \theta) + \Jperp \left(\cos(\theta_1 + \delta \theta - \theta_2) - \cos(\theta_1 - \theta_2 -\delta \theta)\right),
@@ -157,7 +165,7 @@ Again minimizing this contribution in terms of $\delta \theta$, we find
 \begin{equation}
 	\delta \theta = \frac{\Jperp}{2 \Jpar} \sin(\theta_1 - \theta_2).
 \end{equation}
-Inserting this in Eq.~\ref{eq:GdMn2O5_Eic_exp}, keeping only first order terms in  $\frac{\Jperp^2}{\Jpar}$ since it is assumed that $\Jperp << \Jpar$, leads to the final expression of this energy contribution:
+Substituting $\delta \theta$ into Eq.~\ref{eq:GdMn2O5_Eic_exp}, keeping only first order terms in $\frac{\Jperp^2}{\Jpar}$, since it is assumed that $\Jperp << \Jpar$, leads to the final expression of this energy contribution:
 \begin{equation}
 	E_{ic} = -\frac{\Jperp^2}{\Jpar}\sin(\theta_1 - \theta_2)^2 =  \frac{\Jperp^2}{\Jpar}(\cos(\theta_1 - \theta_2) - 1) = \frac{\Jperp^2}{\Jpar}(\mathbf{L}_1 \cdot \mathbf{L}_2)^2 - \frac{\Jperp^2}{\Jpar},
 \end{equation}
@@ -179,7 +187,7 @@ To this end we utilize the following generators of the paramagnetic high symmetr
 	2_z &: (x, y) \rightarrow (-x, -y, z)\\
 	2_y &: (x, y) \rightarrow (\frac{1}{2} - x, \frac{1}{2} + y, z)
 \end{align}
-$I$ and $2z$ are the same symmetry operations in the 2D case. Next, a doubling of the unit cell is necessary to fit the overall AFM state. This leads to an additional symmetry operation $a: (x, y, z) \rightarrow (x + a, y, z)$ when the spins are not taken into account, and a halving of the fractional translation $2_y: (x, y) \rightarrow (\frac{1}{4} - x, \frac{1}{2}+y, z)$.
+$I$ and $2_z$ are the same symmetry operations in the 2D case. Next, a doubling of the unit cell is necessary to fit the overall AFM state. This leads to an additional symmetry operation $a: (x, y, z) \rightarrow (x + a, y, z)$ when the spins are not taken into account, and a halving of the fractional translation $2_y: (x, y) \rightarrow (\frac{1}{4} - x, \frac{1}{2}+y, z)$.
 In effect, applying these symmetry operations to the degrees of freedom, bearing in mind the AFM spin transformation between the two halves of the magnetic unit cell, leads to the following transformation table:
 \begin{table}[h]
 \centering
