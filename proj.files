@@ -1,4 +1,4 @@
-echo papers/GdMn2O5/GdMn2O5.tex
+echo papers/Softening/Softening.tex
 find papers/ -name "*.tex"
 echo scripts/wip.jl
 echo scripts/plots.jl
