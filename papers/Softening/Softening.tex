@@ -2,20 +2,29 @@
 
 
 \section{Introduction}
-So far, the focus of this work was largely on the behavior of various orders in uniform domains, and how they interact with eachother.
-A thorough understanding of these physics is of fundamental importance, since this provides the building blocks for more complex scenarios.
+So far, the focus of this work was largely on the behavior of, and interaction between various orders in uniform domains.
+A thorough understanding of these physics is of fundamental importance, since it provides the building blocks for more complex scenarios.
 Reality, however, presents to us almost exclusively these more complex scenarios.
-The reason for this is that while going through a phase transition with an associated spontaneous symmetry breaking, different parts of the material which are separated in space will separately (and usually randomly), choose one of the degenerate states with different values of the order parameters.
+The reason for this is that while going through a phase transition with an associated spontaneous symmetry breaking, different parts of the material which are separated in space will separately (and usually randomly) choose one of the degenerate states with different values of the order parameters.
 One could argue that second order phase transitions could happen coherently throughout the entire system, but this assumes that the crystals are completely uniform and without defects, and that the temperature variation happens at an infinitely slow rate.
 In reality these assumptions are almost always invalid, inevitably leading to domains separated by domain walls (DWs) in which one or more order parameters interpolate between the values in the neighboring domains.
 The fundamental difference between DWs and the domains themselves has led to a great amount of research interest, both from the fundamental and technological point of view.
 The latter can be attributed to the small size and the fact that their location can usually be controlled easily.
-One example are conducting DWs in a ferroelectric materials, which have are bulk insulators.
-However, sandwiching a ferroelectric that harbors these walls between two conducting plates allows for creating these DWs by applying electric fields.
-When more conducting DWs are present, current will flow more easily through the material.
-This fact can be exploited to efficiently store and read information.
-A lot of research has been focused on the functionality that DWs present, but less is known about their mechanical properties.
-It has been shown that ferroelectric-ferroelastic (ferroelastic walls separate domains with differing strain textures) DWs can be moved by applying stress \cite{Schneider2001}.
+For example, while external electric fields can efficiently reorient the polarization of ferroelectric domains, their insulating nature makes them rather useless in advanced electronic applications such as information storage.
+There are, however, materials in which domains of differing polarization are separated by conducting DWs, which can be created and moved efficiently by applying electric fields to the domains that they separate\lp{citation}.
+This behavior can be exploited by sandwiching a ferroelectric that harbors these walls between two conducting plates, and utilizing electric fields to increase or decrease the amount of conductive domain walls. This constitutes the writing of information, since it directly corresponds to the amount of current that flows through the device, which can be probed to read back the information\lp{citation}. 
+
+While this kind of technological promise has driven much of the research of DWs towards their electronic properties, the coupling between electric polarization and internal strain puts the spotlight on their mechanical properties.
+This field is much less developed and has many unanswered questions. \lp{mention piezoelectrics?}
+It has been shown that ferroelectric-ferroelastic (ferroelastic walls separate domains with differing strain textures) DWs can be moved by applying stress \cite{Schneider2001}. This is not surprising since the strain directly couples to the mechanical perturbation.
+More interesting is the fact that the polarization itself can also be influenced by purely mechanical means, for example by the flexoelectric effect:
+\begin{equation}
+\frac{1}{2}f_{jklm}(\varepsilon_{jk}\partial_mP_l-P_l\partial_m\varepsilon_{jk}),
+\end{equation}
+where repeated indices are summed over, $\varepsilon$ denotes the strain and $P$ the ferroelectric polarization. This causes an applied strain gradient to appear as an internal electric field, coupling to the dipoles that constitute $P$.
+While the effect is generally small (i.e. the elements of the flexoelectric tensor $f_{jklm}$ are small), it scales inversely with the size of the sample, meaning that it becomes more and more important at the nanoscale of current state of the art electronic devices.
+Thus, using a tip to apply a strain gradient to the surface of a ferroelectric material allows one to mechanically write domain patterns at will \cite{Lu2012}.
+
 While the influence of stress on these ferroelectric-ferroelastic DWs has been investigated theoretically \cite{Lee2003}, it was not done for purely ferroelectric domain walls.
 \lp{maybe some more examples etc?}
 
