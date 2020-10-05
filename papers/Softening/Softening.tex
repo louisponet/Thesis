@@ -61,10 +61,10 @@ Due to the relatively large size of geometry that needs to be simulated, we adop
 The free energy density written in terms of primary order parameter $P$ and associated strain $\varepsilon$ can be written as:
 \begin{eqnarray}\label{eq:BTO_energy}
 &&f = f_{L}+f_{G}+f_{c}+f_{q}+f_{fl},\\
-&&f_{L} = \alpha_{ij}P_{ij} + \alpha_{ijkl}P_{i}P_{j}P_{k}P_{l} + \alpha_{ijklmn} P_i P_j P_k P_l P_m P_n,\\
+&&f_{L} = \alpha_{ij}P_iP_l + \frac{\alpha_{ijkl}}{2}P_{i}P_{j}P_{k}P_{l} + \frac{\alpha_{ijklmn}}{3} P_i P_j P_k P_l P_m P_n,\\
 &&f_{G} = \frac{1}{2}G_{ijkl}\partial_i P_j\partial_k P_l,\\
 &&f_{c} = \frac{1}{2}C_{ijkl}\varepsilon_{ij}\varepsilon_{kl},\\
-&&f_{q}=-\frac{1}{2}q_{ijkl}\varepsilon_{ij}P_{k}P_{l},\label{eq:qpp}\\
+&&f_{q}= - q_{ijkl}\varepsilon_{ij}P_{k}P_{l},\label{eq:qpp}\\
 &&f_{fl}=\frac{1}{2}f_{ijkl}(\varepsilon_{ij}\partial_k P_l - P_i\partial_j\varepsilon_{kl}),
 \end{eqnarray}
 where the indices run through ${x,y,z}$, and a summation is performed over the repeated ones.
@@ -75,19 +75,61 @@ The elastic energy density is described by $f_c$ with stiffness tensor $C_{ijkl}
 $f_q$ signifies the electrostrictio, the main term coupling the polarization to the strain, and causes the domains to be stretched along the direction of the polarization \lp{add some panels like in the discussion of the powerpoint}.
 Lastly, to be complete, we include the flexoelectric contribution, $f_{fl}$, since it leads to small but possibly important effects\lp{rather vague}.
 
+To find the static equilibrium conditions in the most general sense, the integrated free energy $F[P] = \int d^3x f(P(x))$ needs to be minimized using the variational methdod, which leads to the well known Euler-Lagrange equations \cite{Cao1991, Marton2010}:
+\begin{align}
+	\label{eq:BTO_euler}
+	\frac{\partial}{\partial x_j}\left( \frac{\partial f}{\partial \partial_j P_i}\right) - \frac{\partial f}{\partial P_i} &= 0, \\
+	\frac{\partial}{\partial x_j}\frac{\partial f}{\partial \varepsilon_{ij}} = 0.
+\end{align}
+In the homogeneous case of a single domain with $P_z$ (which we write $P$ in the following) and no external forces, it is easier to work in terms of $P^2$ and $\varepsilon_{zz}$ (which we write as $\varepsilon$), reducing Eq.~\ref{eq:BTO_euler} to  
+\begin{align}
+	\frac{\partial f}{\partial \varepsilon} &= 0 \Leftrightarrow \varepsilon = \frac{qP^2}{C}\label{eq:BTO_e0},\\
+	\frac{\partial f}{\partial P^2} &= 0 = \left(\alpha - \frac{q^2}{C}\right) + \beta P^2 + \gamma P^4,
+\end{align}
+where the parameters are those with all $z$ indices, and the solution for $\varepsilon$ was filled into the second equation. This can in turn be solved to find
+\begin{equation}
+	P_0^2 = \frac{-\beta + \sqrt{\beta^2 - 4\gamma (\alpha - q^2/C)}}{2\gamma}
+\end{equation}
+
 The effective stiffness $\tilde{C}_{ijkl}$ can be found by taking the double derivative of the free energy with respect to $\varepsilon$:
 \begin{equation}
-	\tilde{C}_{ijkl} = \frac{\partial^2 f}{\partial \varepsilon_{ij} \partial \varepsilon_{kl}}.
+	\tilde{C}_{ijkl} = \frac{\partial^2 f}{\partial \varepsilon_{ij} \partial \varepsilon_{kl}},
 \end{equation}
-In order to get an idea how having nonzero polarization influences the effective stiffness, we can solve this in the case of a single domain, leading to
+or, making the same homogeneous assumptions as above, we arrive at a single domain stiffness of
+
 \begin{equation}
-\tilde{C}_{ijkl} = C_{ijkl} +  
-     \end{equation}
-The first possible source for the mechanical softening originates from the electrostriction term, and the strain texture it results in. As mentioned before, electrostriction stretches the domains in the direction of the polarization. Since we are investigating 180$^\circ$ domain walls, we can take the main polarization to be $P_z$, leading to a stretching of the domains in the $z$ direction, or equivalently, $\varepsilon_{zz} \neq 0$ inside the domains. In the domain wall, however, $P_z^2$ is diminished and even zero at the center. This then causes $\varepsilon_{zz}$ to be dimished, but never reduced to zero due to compatibility relations and the elastic coupling to neighboring unit cells. Nonetheless, this will result in an indentation that forms at the location of the domain wall, as shown pictorially in Fig.~\ref{fig:BTO_theory}(b), and more realistically in (c-d). As it turns out, the strain texture of this indentation stretches out relatively far \lp{actual derivation and formula for this?} from the domain wall. This long-rangedness of strain is a general fenomenon, and depends on the morfology of the strain defect \lp{more indepth on this?}. When the tip is then applied in an area where this strain texture is present, the wall will try to bend towards the tip in order to gain on the displacement. This will thus lead to a relatively big displacement to be caused by applying the tip, making the material appear soft.
+	\tilde{C} = C - \frac{2q^2\left(\beta^2-4\alpha\gamma + 3 \varepsilon \gamma q\right)}{\left(\beta^2 - 4 \alpha \gamma + 4 \varepsilon \gamma q\right)^{3/2}}\label{eq:BTO_domainC}.
+\end{equation}
+Having nonzero $P$ leads to a nonzero $\varepsilon$ as shown by the relation Eq.~\ref{eq:BTO_e0}, and leads to a softening compared to if $P=0$, since the second term of Eq.~\ref{eq:BTO_domainC} is always positive.
+This is contradictory with the observations by the experiments, so a different explanation has to be sought.
 
-Even though the interaction between the pinning potential, Peierls-Nabarro barriers, and electrostatics, with the force applied by the tip is hard to analytically describe, we can make statements about two extremes of the behavior: i) If the force of the tip is large enough, the wall slide towards it, maximizing the possible energy gain from the interaction with the tip.  ii) A bending of the wall, where it remains inside the original Peierls-Nabarro potential, but deviates from  the equilibrium position. \lp{The situation that happens in the real material is more like a mix between the two, the top part of the wall bends almost completely towards teh tip, but it's not moved as a whole because the bottom/bending electrostatics pins it. Can we say that these things are causing the potential for the entire wall to behave like the one we describe below?}
+% As can be seen from the experimental figures, the signature of the domain wall is much wider than the area in which $P$ interpolates between the two values of neighboring domains.
+% Coupled with the observation that due to the lower values of $P$ inside the wall, there will be less tensile strain generated by $f_q$, leading to an indentation at the domain wall, with a strain texture extending much further than the wall itself (see the blue line in Fig.~\ref{fig:BTO_rigid_wall}).
+% When the tip pushes on this strain texture on either side of the wall, the indentation naturally shifts a little towards the tip without causing extra elastic energy penalties.
+% In this rigid wall approximation, the center of the wall is pinned to its equilibrium position due to the Peierls-Nabarro barrier, which can be written as a simple parabolic potential for the wall center coordinate $x$ $\frac{m \omega^2x^2}{2}$.
+% \begin{figure}
+% 	\label{fig:BTO_rigid_wall}
+% 	\IncludeGraphics{rigid_shift.jpg}
+% \end{figure}
 
-The first case can be ignored because this would mean that in the experiments, the wall would be dragged along the tip since the tip moves at a relatively slow rate, which would lose any contrast between wall and domain during the full measurement. We therefore try to formulate a simple free energy expansion for the second situation, where we assume that the wall at $x_{DW}$ is pinned by a parabolic potential, and perturbed by a tip applying a force $F_z$ at $x_{tip}$,
+% This so-called domain wall bending mode leads to an observed softening around the wall, which can be found by expanding the free energy in the sliding of the wall $x_{sl}$:
+% \begin{equation}
+% 	f = - F u(x-x_{sl}) + \frac{m\omega^2 x^2_{sl}}{2}
+% \end{equation}
+The first possible source for the mechanical softening originates from the electrostriction term, and the strain texture it results in.
+As mentioned before, electrostriction stretches the domains in the direction of the polarization, i.e. $\varepsilon_{zz} \neq 0$ in the domains.
+In the domain wall, however, $P_z^2$ is diminished and even zero at the center, causing $\varepsilon_{zz}$ to be dimished, but never reduced to zero due to compatibility relations and the elastic coupling to neighboring unit cells.
+Nonetheless, this results in an indentation that forms at the location of the domain wall, as shown pictorially in Fig.~\ref{fig:BTO_theory}(b), and more realistically in (c-d).
+As it turns out, the strain texture of this indentation stretches out relatively far \lp{actual derivation and formula for this?} from the domain wall.
+This long-rangedness of strain is a general fenomenon, and depends on the morfology of the strain defect \lp{more indepth on this?}. When the tip is then applied in an area where this strain texture is present, the wall will try to bend rigidly (i.e. the strain texture shifts but doesn't change shape) towards the tip in order to gain on the displacement.
+This leads to a relatively big displacement when the tip is applied, making the material appear soft.
+
+Even though the interaction between the pinning potential, Peierls-Nabarro barriers, and electrostatics, with the force applied by the tip is hard to analytically describe, we can make statements about two extremes of the behavior: i) If the force of the tip is large enough, the wall slide towards it, maximizing the possible energy gain from the interaction with the tip.
+ii) A bending of the wall, where it remains inside the original Peierls-Nabarro potential, but deviates from  the equilibrium position.
+\lp{The situation that happens in the real material is more like a mix between the two, the top part of the wall bends almost completely towards teh tip, but it's not moved as a whole because the bottom/bending electrostatics pins it. Can we say that these things are causing the potential for the entire wall to behave like the one we describe below?}
+
+The first case can be ignored because this would mean that in the experiments, the wall would be dragged along the tip since the tip moves at a relatively slow rate, which would lose any contrast between wall and domain during the full measurement.
+We therefore try to formulate a simple free energy expansion for the second situation, where we assume that the wall at $x_{DW}$ is pinned by a parabolic potential, and perturbed by a tip applying a force $F_z$ at $x_{tip}$,
 \begin{equation}
 	E = E_0 - F_z u_z (x_{tip} - x_{DW}) + \frac{m\omega^2 x_{DW}^2}{2}.
 \end{equation}
@@ -97,6 +139,16 @@ We can expand this equation under the assumption of a small $x_{DW}$, i.e. that 
 	\IncludeGraphics{theory}
 	\caption{\label{fig:BTO_theory}}
 \end{figure}
+
+In reality, depending on where the tip is pressed, a combination of the two above mentioned extremes will happen.
+When the center of the tip is close enough to the wall, the upper part of it will completely bend to shift the indentation underneath the tip.
+The lower portion of the wall will remain at the center of its original Peierls Nabarro potential, since it experiences less effect of the tip.
+It is therefore impossible to solve analytically the realistic situation, and we proceed with simulations to make semi-quantitative statements on the behavior.
+
+The parameters we used are taken from previous ab-initio results \cite{Marton2010}, and the tip-applied force field is modeled by a bell-shaped function $a exp(-x^2/d^2)$ with $d \approx 20$nm representing the diameter of the contact area and $a = 10^{-7} J/m^3$. The softening is estimated as the ratio of deformation between the domain and the wall.
+As seen in Fig.~\ref{fig:BTO_theory}(a), and predicted by the above statements, the wall is softest not in the center, but rather at the point where $u'$ or $\varepsilon_{xz}$ is highest.
+
+
 
 \section{Results}
 
