@@ -7,12 +7,17 @@ A thorough understanding of these physics is of fundamental importance, since it
 Reality, however, presents to us almost exclusively these more complex scenarios.
 The reason for this is that while going through a phase transition with an associated spontaneous symmetry breaking, different parts of the material which are separated in space will separately (and usually randomly) choose one of the degenerate states with different values of the order parameters.
 One could argue that second order phase transitions could happen coherently throughout the entire system, but this assumes that the crystals are completely uniform and without defects, and that the temperature variation happens at an infinitely slow rate.
+\lp{there is also the issue of dipolar fields, should I mention that?}
 In reality these assumptions are almost always invalid, inevitably leading to domains separated by domain walls (DWs) in which one or more order parameters interpolate between the values in the neighboring domains.
 The fundamental difference between DWs and the domains themselves has led to a great amount of research interest, both from the fundamental and technological point of view.
-The latter can be attributed to the small size and the fact that their location can usually be controlled easily.
-For example, while external electric fields can efficiently reorient the polarization of ferroelectric domains, their insulating nature makes them rather useless in advanced electronic applications such as information storage.
-There are, however, materials in which domains of differing polarization are separated by conducting DWs, which can be created and moved efficiently by applying electric fields to the domains that they separate\lp{citation}.
-This behavior can be exploited by sandwiching a ferroelectric that harbors these walls between two conducting plates, and utilizing electric fields to increase or decrease the amount of conductive domain walls. This constitutes the writing of information, since it directly corresponds to the amount of current that flows through the device, which can be probed to read back the information\lp{citation}. 
+The physics that govern the region of the DW is usually richer than that of the domains, since the domains force that region to not be at a local energetic minimum.
+This is often associated with a local inversion of the curvature of the energy potential, leading to a potential softening of the order parameters locally.
+DWs are also a manifestly two dimensional region embedded in a three dimentional medium, which can have a myriad of interesting consequences.
+An obvious example where DWs are exploited technologically is in ferroelectric information storage devices.
+Here the their small size, which is beneficial from the density point of view, and the fact that their location can be easily controlled by applied electric fields, is utilized.
+Certain materials can harbor charged conducting DWs, separating the manifestly nonconductive domains.
+By applying electric fields it has been shown that these can be created and destroyed at will, increasing or decreasing the conductivity of the device.
+This conductivity can in turn be probed, effectively reading back what ``data'' was written previously\lp{citation}.
 
 While this kind of technological promise has driven much of the research of DWs towards their electronic properties, the coupling between electric polarization and internal strain puts the spotlight on their mechanical properties.
 This field is much less developed and has many unanswered questions. \lp{mention piezoelectrics?}
@@ -21,22 +26,23 @@ More interesting is the fact that the polarization itself can also be influenced
 \begin{equation}
 f_{fl} = \frac{1}{2}f_{jklm}(\varepsilon_{jk}\partial_mP_l-P_l\partial_m\varepsilon_{jk}),
 \end{equation}
-where repeated indices are summed over, $\varepsilon$ denotes the strain and $P$ the ferroelectric polarization. An applied strain gradient will as an internal electric field, thus coupling to the dipoles that constitute $P$.
+where repeated indices are summed over, $\varepsilon$ denotes the strain and $P$ the ferroelectric polarization. An applied strain gradient will as an internal electric field, thus coupling to the dipoles that constitute $P$, ultimately leading to the above expression.
 While this effect is generally small (i.e. the elements of the flexoelectric tensor $f_{jklm}$ are small), it scales inversely with the size of the sample, meaning that it becomes increasingly important at the nanoscale of current state of the art electronic devices.
 Thus, using a tip to apply a strain gradient to the surface of a ferroelectric material allows one to mechanically write domain patterns and DWs at will \cite{Lu2012}.
 
 These developments have increased the research into the mechanical properties of these materials in recent years. Here we focus on the mechanical properties of purely ferroelectric, 180$^\circ$, DWs.
 As it turns out, these walls appear mechanically softer than the domains they separate.
 A similar softening has been previously observed and studied for ferroelastic DWs \cite{Lee2003}, but purely electric DWs have largely flown under the radar of mechanical studies.
-One reason is that the size of the domain wall (i.e. the region where the order parameter switches between the two domains) is on the order of a couple of unit cells, and was thus perceived to be to small to be detected with mechanical means, seen as tip contact areas are generally at least 100 unit cells.
+One reason is that the size of ferroelectric domain walls is on the order of a couple of unit cells, and was thus perceived too small to be detected with mechanical means, seen as tip contact areas are generally at least 100 unit cells.
 As it turns out, however, there is a strain texture associated with these DWs, which extends much further than the region in which the primary order parameter changes.
 This can qualitatively be understood by considering the electrostriction energy density
 \begin{equation}
-f_{q}=-\frac{1}{2}\varepsilon_{jk}q_{jklm}P_{l}P_{m},\label{eq:qpp}
+f_{q}=-\frac{1}{2}\varepsilon_{jk}q_{jklm}P_{l}P_{m},\label{eq:qpp},
 \end{equation}
-which causes the up and down domains to both be stretched along the direction of $P$, but no such stress exists inside the wall itself, since $P=0$.
-This causes an indentation to form with an associated long range strain texture, because sharp changes in the strain are very unfavorable from an elastic point of view.
-This texture can be picked up mechanically by the applied tips and allows to make the observations that are the subject of this Chapter.
+which causes domains to be stretched along the direction of $P$.
+No such stress exists inside the wall itself, since $P=0$, leading to an indentation with an associated long range strain texture.
+The extent of strain textures tends to generally be a lot larger because sharp changes in the strain are very unfavorable from an elastic point of view.
+This mechanical texture associated with the DW can be picked up mechanically by the applied tips and allows to make the observations that are the subject of this Chapter.
 
 \section{Experimental}
 Before going into the theoretical details that describe the physics of this problem, we describe the experiments performed by the group of Prof. Catalan that were the impetus of this research.
