@@ -1,6 +1,8 @@
 \chapter{Coupling between spin and strain density waves}
 \section{Introduction}
-Chromium is an itinerant antiferromagnetic metal. It is the hallmark example of a material where a SDW develops due to local repulsive interactions of the electron gas, combined with a nesting of the fermi surface. 
+
+Chromium is an itinerant antiferromagnetic metal. It is the hallmark example of a material where a SDW develops due to local repulsive interactions of the electron gas, combined with a nesting of the fermi surface.
+
 \section{Experimental methods}
 Before focusing on the theoretical description of the coupling between the SDW and CDW, we take a look at the experimental techniques and results that we are seeking to reproduce. Optical pulses were used to heat up the material, mostly absorbed by the SDW order through photoexcitation. An x-ray free-electron laser (XFEL) is then used to probe the bragg-peaks of the CDW and how they change in time. The need of the XFEL can be attributed to the very short timescales at which the observed behavior is excibited by the material, with resolutions of a couple femtoseconds being made accessible.
 The scattering intensity of the bragg peak is directly proportional to the magnitude of the CDW, offering both phase and amplitude information of the oscillation that we study. It is important to realize that the SDW order is not directly accessible through these kinds of measurements, so we are effectively studying the effect of exciting one order parameter through the reaction of the other due to the coupling between them.
@@ -27,22 +29,26 @@ The geometry that is used in the experiment is such that a microscopic model as 
 
 \begin{equation}
 	\label{eq:Cr_landau}
-	F = \frac{\alpha}{2}(T_L-T_c) L^2 + \frac{\beta}{4} L^4 - g L^2 y + \frac{\omega_0}{2} y^2 + \frac{b}{4} y^4.
+	F(L, y, T_L) = \frac{\alpha}{2}(T_L - T_c) L^2 + \frac{\beta}{4} L^4 - g L^2 y + \frac{\omega_0}{2} y^2 + \frac{b}{4} y^4,
 \end{equation}
+where $L$, $y$ and $T_L$ are the time dependent variables.
+The double well potential that leads to the SDW is characterised by $\alpha$ and $\beta$, with the temperature of the SDW given by $T_L$, with the critical temperature $T_c$ below which the phase transition occurs and the SDW order sets in. The coupling between the two order parameters is given by term with $\gamma$. Only even orders of $L$ appear in the energy, since the energy is time reversal even, but $L$ is time reversal odd. The PLD order parameter $y$ has a zero equilibrium value without any interaction with $L$, since it is not the primary order parameter. The fourth order term $\frac{b}{4}y^4$ is only included to provide a better fit to some of the anistropic features of observed by the experiment, not to bound the energy potential in terms of $y$, as would be required if $y$ was the primary order parameter with a negative second order term.
+It is the interaction with the primary order parameter $L$ that provides the ``force'' to move $y$ up in its own potential, leading to the nonzero equilibrium value. This concept is the key to understanding the observed physics.
 
-The double well potential that leads to the SDW is characterised by $\alpha$ and $\beta$, with the temperature of the SDW given by $T_L$, with the critical temperature $T_c$ below which the phase transition occurs and the SDW order sets in. The coupling between the two order parameters is given by term with $\gamma$. Only even orders of $L$ appear in the energy, since the energy is time reversal even, but $L$ is time reversal odd. Notice, also, that the PLD order parameter $y$ by itself would have a zero equilibrium value, the fourth order term with strength $b$ is only included to provide a better fit to some anistropic features of the experiment, not to bound the energy as is required if $y$ would also undergo a second order phase transition as $L$. The equilibrium value of $y$ will, however, be shifted away from zero due to the \"force\" applied to it by the nonzero equilibrium value of $L$, a key feature of this model to bear in mind for later. $y$ is thus a pure slave order parameter.
-
-The temperature of the SDW $T_L$ is described by a two temperature model, including a time-dependent heat source describing the XFEL pulses, and a bath with non infinite mass and temperature $T_b$, meaning that the bath temperature will increase. 
+Since SDWs in Chromium originate purely from electronic correlations, it is fair to equate the temperature of the SDW order parameter with the electronic temperature.
+It is also known that the electronic excitations caused by the X-rays that were used in the experiments thermalize on a very short timescale, allowing us to treat them thermodynamically and assign a temperature~\cite{Nicholson2016}.
+For our modeling the X-ray pulses thus effectively inject heat into the SDW, which then thermalizes with the lattice (a phonon bath) on a longer timescale of the order of 400 ps.
+This naturally leads to a two temperature model to describe the perturbation caused by the pulses, with $T_L$ the temperature for the SDW and $T_b$ the temperature for the phonon bath:
 \begin{align}
 	c_L \dot{T}_L &= -k(T_L - T_b) + q(t) \\
-	c_b \dot{T}_b &= -k(T_b - T_L)
+	c_b \dot{T}_b &= -k(T_b - T_L).
 \end{align}
-where $c_L, c_b$ are the heat capacities of the SDW and the bath, $k$ the heat transfer rate, and $q(t)$ signifies the heat injected into the system through the photon pulses, and is modeled by a gaussian $q(t) = \frac{f}{\tau \sqrt{\pi}} e^{-(t-t_0)^2/2\tau^2}$, where $\tau$ denotes the pulse width. The dots signify time derivatives.
+$c_L, c_b$ are the heat capacities of the SDW and the bath, $k$ the heat transfer rate, and $q(t)$ signifies the heat injected into the system through the photon pulses, and is modeled by a time dependent gaussian $q(t) = \frac{f}{\tau \sqrt{\pi}} e^{-(t-t_0)^2/2\tau^2}$, where $\tau$ denotes the pulse width. The dots signify time derivatives.
 
-In order to solve the time evolution of the system we start by incorporating the free energy given by Eq. \ref{eq:Cr_landau} into the full Lagrangian
-\begin{equation}
-    \mathcal{L} = \frac{m_L (\dot{L} + \gamma_L L)^2}{2} + \frac{m_y (\dot{y} + \gamma_y y)^2}{2} - F,
-\end{equation}
+The time evolution of the system can be described using the Euler-Lagrange equations with an energy dissipation term for $y$ that denotes the damping.
+\begin{align}
+    \mathcal{L}(L, y, \dot{L}, \dot{y}, t) = \frac{m_L \dot{L}(t)^2}{2} + \frac{m_y \dot{y}(t)^2}{2} - F(L, y, t),
+\end{align}
 where the $\gamma$ denote the damping parameters for both order parameters. This then leads to the well-known Euler-Lagrange equations given by
 \begin{align}
     m_L \Ddot{L} &= -\alpha(T-T_c)L - \beta L^3 + 2g L y - \gamma_L \dot{L} \label{eq:L_diffeq}\\
@@ -111,5 +117,5 @@ Having fit the model, we can go one step further and try to fit the PLD oscillat
 	\caption{\label{fig:Cr_control} Two examples of optimal control. (a) Shows a reproduction of a sinusoidal envelope function, (b) shows the result for more complicated envelope, with an the absolute value of a sinusoidal followed by a half a period of a sawtooth function. The pulse train is highlighted by the purple dots, and the evolution of the temperature of the SDW is given by the orange plot.}
 \end{figure}
 
-
+\printbibliography
 
