@@ -1,13 +1,57 @@
 \chapter{Coupling between spin and strain density waves}
 \section{Introduction}
-
-Chromium is an itinerant antiferromagnetic metal. It is the hallmark example of a material where a SDW develops due to local repulsive interactions of the electron gas, combined with a nesting of the fermi surface.
+In the previously discussed situations, the coupling between the orders was relatively static.
+In the case of GeTe the polarization influenced the sign of the spin splitting, but was assumed static in the description.
+While there was an element of a time evolution in the GdMn$_2$O$_5$ it was assumed that the magnetic field varied at a slow enough rate such that both the polarization as the magnetic order were always at equilibrium.
+Similarly, while the experiments performed on BaTiO$_3$ where dependent on a resonance frequency, this was assumed to not influence the material itself and thus the description was again static.
+New physics arise, however, when two orders with different timescales for their dynamics are coupled.
+This is the case in the material we study here, Chromium, an itinerant antiferromagnetic metal \cite{Kulikov1984,Fawcett1988}.
+It is the hallmark example of a material where a spin density wave (SDW) develops due to local repulsive interactions of the electron gas, combined with a nesting of the fermi surface.
+Due to magnetostriction, this spin density wave then causes a periodic lattice displacement (PLD) which decreases the bondlengths between the spins that have large magnitude.
+The SDW is formed by electrons and thus thermalizes on very quick timescales when a perturbation is applied\cite{Nicholson2016}.
+The coupled PLD, however, denotes the movement of atoms and thus has much slower dynamics.
+With ultrafast pump-probe experiments that have a below picosecond resolution, these PLD dynamics can be studied and, more imporantly, controlled very precisely through excitation of the much faster responding SDW.
+Among other things, this allows for the suppression of the intermediate state and reproducing adiabatic transitions on much faster timescales which is termed ``shortcuts to adiabaticity'' in quantum technology \cite{Torrontegui2013,Deffner2014,Zhou2017}.
+This also allows to apply a specific set of pulses in order for the PLD oscillation to follow a particular envelope function, as will be shown theoretically below.
 
 \section{Experimental methods}
-Before focusing on the theoretical description of the coupling between the SDW and CDW, we take a look at the experimental techniques and results that we are seeking to reproduce. Optical pulses were used to heat up the material, mostly absorbed by the SDW order through photoexcitation. An x-ray free-electron laser (XFEL) is then used to probe the bragg-peaks of the CDW and how they change in time. The need of the XFEL can be attributed to the very short timescales at which the observed behavior is excibited by the material, with resolutions of a couple femtoseconds being made accessible.
-The scattering intensity of the bragg peak is directly proportional to the magnitude of the CDW, offering both phase and amplitude information of the oscillation that we study. It is important to realize that the SDW order is not directly accessible through these kinds of measurements, so we are effectively studying the effect of exciting one order parameter through the reaction of the other due to the coupling between them.
-XFELs also allow for higher peak selectivity (narrow and intense satellite Bragg peaks), such that it allows for measurements performed on thin films even deposited on thick substrates, as was the case in the experiments performed by A. Singer et.al. The thin films offer a clarity in terms of describing the physics of this process, since it leads to a very even excitation of the entire volume, and it causes the order parameters to be homogeneous throughout the material. This absence of topological defects is confirmed by the absence of a widening of the satellite peak associated with the PLD, as compared with the peaks of the material itself. \lp{not sure about this, I actually don't understand what they are talking about in the paper either}.
-To this end, a 30nm thick Cr film was used in the experiments, harboring seven periods of the SDW perpendicular to the plane. This thinness of the film also decreases the Neel temperature to 290K, from the bulk value of around 307K. The pulses used to excite the SDW were 40 fs long, with a total intensity of 2.9 $mJ/cm^2$. In the experiments with two sequential pulses the power of the second pulse was roughly half that of the first.
+Before focusing on the theoretical description of the coupling between the SDW and PLD, we take a look at the experimental techniques employed by A. Singer's group and the results that we are seeking to reproduce.
+A thin film (28 nm) of Cr was used, supporting around seven periods of the SDW with a N\'eel temperature $T_N$ of 290 K, slightly lower than in the bulk where $T_N\approx$ 308 K.
+The film was illuminated by two sequential 40 fs optical pulses at times $\tau_1$ and $\tau_2$, heating up the electronic subsystem and the SDW which is a part of it.
+Due to magnetostriction, this SDW is coupled with a PLD which is probed through the Bragg peaks by an x-ray free-electron laser (XFEL)\cite{Singer2015}.
+The scattering intensity of the Bragg peak is directly proportional to the magnitude of the PLD, offering both phase and amplitude information of the PLD oscillation that occurs when the SDW is (partially) melted by the optical pulses.
+The high resolution ultrafast measurements that the XFEL enables (fs timescales), allows to follow the evolution of the PLD in time.
+The acoustic phonon associated with the PLD oscillation has a wavevector normal to the material surface and an oscillation period of approximately 450 fs.
+The heat exchange rate between the lattice (or bath) and the electrons is quite high, leading to a thermalization between the two subsystems within a picosecond after heating.
+Even though some heat is deposited in the system, and the heat capacity is not infinite, the final temperature stays below the N\'eel temperature leading to a recovery of the SDW and eventually the PLD, as can be seen by the non-zero oscillation equilibrium at the end of the measurements in Fig.~\ref{fig:Cr_experimental}.
+Further thermalization of the Cr lattice to the substrate occurs on the nanosecond timescale, out of the scope of our measurements.
+Due to the slight increase in temperature of the system (around 45 K), this equilibrium amplitude of the PLD is slightly lower after the pulses, compared with before.
+The damping time of the PLD is around 3 ps.
+It is important to realize that the SDW order is not directly accessible through these kinds of measurements, so we are effectively studying the effect of exciting one order parameter through the reaction of the other by the coupling between them.
+
+The most interesting observation is that by changing the timing of the second pulse $\tau_2$, the dynamics of the PLD can be controlled to a high degree.
+In Fig.~\ref{fig:Cr_experimental}(b-c) it can be seen that the oscillation amplitude in the first one is almost completely destroyed by the second pulse, whereas in panel c it is increased slightly.
+Panel a of the same figure shows a more complete visualization of this effect, where the horizontal bands with low amplitude signify the destructive interference and those with high amplitude the constructive situation.
+
+The maximum PLD amplitude that is reached in the experiments, after the second pulse is 150\% of the original amplitude.
+This is significantly higher than the excitation amplitudes associated with the conventional displacive excitation mechanism, where the ratio is about one \cite{Singer2015,Zeiger1992}. 
+When the second pulse arrives before the SDW had time to cool down, the maximum oscillation amplitude is lowered as can be seen from the horizontal band around $\tau_2 - \tau_1 = 0$ ps in Fig.~\ref{fig:Cr_experimental}(a).
+As will be further discussed below, this signifies that the SDW momentarily exceeds $T_N$, and additional heating does not contribute to a larger excitation of the PLD phonon.
+
+Experiments performed at higher fluence, i.e. such that the SDW gets heated above $T_N$ from a single pulse, show that the second pulse does not impact the oscillation of the PLD, as can be seen from Fig.~\ref{fig:Cr_experiment2}(c).
+If control is the goal, it is thus important that the SDW is kept below $T_N$.
+Moreover, the SDW order parameter varies the most with temperature when it is close to the critical point, increasing the pulse efficiency.
+XFELs also allow for higher peak selectivity (narrow and intense satellite Bragg peaks), such that it allows for measurements performed on thin films even deposited on thick substrates, as was the case in the experiments performed by A. Singer et.al.
+This absence of topological defects is confirmed by the absence of a widening of the satellite peak associated with the PLD, as compared with the peaks of the material itself. \lp{not sure about this, I actually don't understand what they are talking about in the paper either}.
+
+\begin{figure}
+\IncludeGraphics{Experimental}
+\caption{\label{fig:Cr_experimental}{\bf Controlled enhancement and destruction of the excited state.} {\bf (a)} A laser pulse excites the system by destroying the magnetic order; a second pulse either excites the released phonon further or stops the excitation. Schematic energy surfaces show the PLD state as the orange point. Inset: x-ray scattering from periodic atomic displacement is detected on a fringe of the main peak from the crystalline film. {\bf (b-c)} Amplitude of the PLD in two extreme control cases. Solid lines are experimental data (empty circles) - connected. The dashed red line marks the time of second pulse arrival. {\bf (b)} $\tau_2 - \tau_1 = 620$ fs, {\bf (c)} $\tau_2 - \tau_1 = 845$ fs. Insets show the Laue fringe with the satellite peak at maximum and minimum PLD values.}
+\end{figure}
+\begin{figure}
+\IncludeGraphics{experimental2}
+\caption{\label{fig:Cr_experimental2}{\bf Experimental maps of the excited state depending on probe and pump delay.} { \bf (a)} Map of the PLD amplitude before and after excitation by two pulses with a fluence of 1.45 mJ/cm$^2$. {\bf (b)} Same as (a) but with the second pulse twice less intense than the first. {\bf (c)} Magnitude of the PLD in ``enhancement'' and ``suppression'' conditions at laser pulse fluence of 9.5 mJ/cm$^2$ for the first and 4.7 mJ/cm$^2$ for the second. The dashed line marks the arrival time of the second pulse, $\tau_2 - \tau_1$ = 1295 fs for the top panel and 1065 fs for the bottom.}
+\end{figure}
 
 \section{Theory}
 \lp{some explanation of Peierls instabilities etc, the things that cause the SDW in the first place?}
@@ -25,28 +69,38 @@ To this end, a 30nm thick Cr film was used in the experiments, harboring seven p
 % with the coupling constant (often referred to as the magnetic exchange) $J_{ij}=t_{ij}^2/U$. Since hopping parameters are a result of the overlap between orbitals on neighboring sites, it is clear that they depend on the length of the bond $r$ between them, i.e. $t_{ij} \sim r$ to first order. 
 % In materials where SDW are formed, this magnetostriction will lead to PLD leading to strain waves. 
 
-The geometry that is used in the experiment is such that a microscopic model as described above is unnecessary to describe the essential physics, since the Cr thin film can be considered to be homogeneous throughout the experiment. This allows us to instead adopt a continuum description utilizing a standard Landau theory with two order parameters describing the SDW ($L$) and PLD ($y$) and a coupling between them to describe the magnetostriction.  
+As was already aluded to, we can describe the effect of the photon pulses by considering two subsystems with two temperatures.
+The first is the electronic subsystem, that thermalizes on a 100 fs timescale, as was shown by high-resolution ARPES measurements~\cite{Nicholson2016}, and can thus be considered to be always thermal on the picosecond timescales that we are interested in, allowing us to assign a temperature to it.
+The SDW is formed by electronic states and thus belongs to the electronic subsystem~\cite{Nicholson2016}, with the same temperature $T_L$.
+The second subsystem is the lattice (phonon modes excluding the mode associated with the PLD) which we denote as the bath which is always assumed to be thermal, with temperature $T_b$.
+After the electronic system absorbs the heat from the pulses, it will exchange heat with this bath, cooling it down within one picosecond.
+This process can be described by the so-called two temperature model:
+\begin{align}
+	\label{eq:Cr_twotemp}
+	C_L \dot{T}_L &= -k(T_L(t) - T_b(t)) + Q_ph(t) \\
+	C_b \dot{T}_b &= -k(T_b(t) - T_L(t)),\nonumber
+\end{align}
+with $k$ the heat transfer rate, $C_L$ and $C_b$ the heat capacities of the electronic degrees of freedom and bath, respectively.
+The dots signify time derivatives.
+As one could expect, we find that the heat capacity of the bath is larger than that of the electronic system by an order of magnitude\lp{ref}.
+Finally, the heat injected by the pulses is modelled by a gaussian $Q_ph(t) = A e^{\frac{-(t - t_0)^2}{\tau^2}}$, with $A$ the strength, $\tau$ the duration and $t_0$ the time delay.
 
+The changes to $T_L$ through heating and subsequent cooling affects the amplitude SDW order parameter $L$ and indirectly the one describing the PLD $y$, as described by a Landau-type theory~\cite{Khomskii2010}.
+These order parameters are related to the Fourier component of the SDW with wavevector $q$, i.e. $L = S_q$, and to the acoustic phonon amplitude $y = u_{2q}$.
+The phonon mode is the second harmonic ($2q$) of the SDW because the magnetostriction acts on the magnitude of the spins, and not the phase, so that during one period of the SDW oscillation two periods of the PLD occur.
+This leads to the following expression for the total free energy:
 \begin{equation}
 	\label{eq:Cr_landau}
 	F(L, y, T_L) = \frac{\alpha}{2}(T_L - T_c) L^2 + \frac{\beta}{4} L^4 - g L^2 y + \frac{\omega_0}{2} y^2 + \frac{b}{4} y^4,
 \end{equation}
 where $L$, $y$ and $T_L$ are the time dependent variables.
-The double well potential that leads to the SDW is characterised by $\alpha$ and $\beta$, with the temperature of the SDW given by $T_L$, with the critical temperature $T_c$ below which the phase transition occurs and the SDW order sets in. The coupling between the two order parameters is given by term with $\gamma$. Only even orders of $L$ appear in the energy, since the energy is time reversal even, but $L$ is time reversal odd. The PLD order parameter $y$ has a zero equilibrium value without any interaction with $L$, since it is not the primary order parameter. The fourth order term $\frac{b}{4}y^4$ is only included to provide a better fit to some of the anistropic features of observed by the experiment, not to bound the energy potential in terms of $y$, as would be required if $y$ was the primary order parameter with a negative second order term.
-It is the interaction with the primary order parameter $L$ that provides the ``force'' to move $y$ up in its own potential, leading to the nonzero equilibrium value. This concept is the key to understanding the observed physics.
-
-Through careful analysis of the electronic band structure through high-resolution ARPES experiments, it was found that the dynamics of the SDW and more
-Since SDWs in Chromium originate purely from electronic correlations, it is fair to equate the temperature of the SDW order parameter with the electronic temperature.
-It is also known that the electronic excitations caused by the X-rays that were used in the experiments thermalize on a very short timescale, allowing us to treat them thermodynamically and assign a temperature~\cite{Nicholson2016}.
-For our modeling the X-ray pulses thus effectively inject heat into the SDW, which then thermalizes with the lattice (a phonon bath) on a longer timescale of the order of 400 ps.
-This naturally leads to a two temperature model to describe the perturbation caused by the pulses, with $T_L$ the temperature for the SDW and $T_b$ the temperature for the phonon bath:
-\begin{align}
-	\label{eq:Cr_twotemp}
-	c_L \dot{T}_L &= -k(T_L - T_b) + q \\
-	c_b \dot{T}_b &= -k(T_b - T_L).\nonumber
-\end{align}
-$c_L, c_b$ are the heat capacities of the SDW and the bath, $k$ the heat transfer rate, and $q$ signifies the heat injected into the system through the photon pulses, and is modeled by a time dependent gaussian $q(t) = \frac{f}{\tau \sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{t-t_0}{\tau}\right)^2}$, where $\tau$ denotes the pulse width and $f$ the fluence.
-The dots signify time derivatives.
+The double well potential that leads to the SDW phase transition is characterised by $\alpha$ and $\beta$, with the temperature of the SDW given by $T_L$ and critical temperature $T_c$ below which the SDW order sets in.
+The magnetostrictive coupling between the two order parameters is described by term with $\gamma$.
+Only even orders of $L$ appear in the free energy, since the energy is time reversal even, but $L$ is time reversal odd.
+The PLD order parameter $y$ has a zero equilibrium value without the presence or interaction with $L$, since it is not the primary order parameter.
+The fourth order term $\frac{b}{4}y^4$ is only included to provide a better fit to some of the anistropic features of observed by the experiment, not to bound the energy potential in terms of $y$, as would be required if $y$ was the primary order parameter with a negative second order term, like in the case of $L$.
+It is the interaction with the primary order parameter $L$ that provides the ``force'' to move $y$ up in its own potential, leading to the nonzero equilibrium value.
+While this sounds trivial, this concept is the key to understanding the observed physics.
 
 The time evolution of the system can be described using the Langrangian:
 \begin{equation}
@@ -65,10 +119,11 @@ Substituting Eq.~\ref{eq:Cr_landau} leads to
 	    m_y \Ddot{y} &= -\omega_0^2 y  - b y^3 - \gamma_y \dot{y} + gL^2.\nonumber
 \end{align}
 These equations, together with Eqs.~\ref{eq:Cr_twotemp} describing the temperature evolution of the SDW ($T_L$) under influence of the optical pulses, fully describe the dynamics that are experimentally observed.
-One obvious remark can be made here, in that to be completely exact, the energy dissipated through the damping terms in Eq.~\ref{eq:Cr_euler_lagrange} should be absorbed into the bath and thus influence $T_b$. However, the case can be made that since these are only single modes, their contribution to the heating of the bath will be negligible compared with that coming from the thermalization of all the electronic degrees of freedom.
+One obvious remark can be made here, in that to be completely exact, the energy dissipated through the damping terms in Eq.~\ref{eq:Cr_euler_lagrange} should be absorbed into the bath and thus influence $T_b$. However, the case can be made that since this is only a single mode, its contribution to the heating of the bath will be negligible compared with the one due to the thermalization of all the electronic degrees of freedom.
 
 \section{Methods}
-To solve the time evolution of $L$ and $y$ throught the differential equations in Eqs.~\ref{eq:Cr_euler_lagrange} we used the numerical integration methods implemented in the DifferentialEquations.jl package. More specifically the \lp{I think Tsit5} algorithm was used. Originally the dynamics were fully solved both for $L$ and $y$, but it was found during the fitting process that the dynamics of $L$ are significantly faster than those of $y$, i.e. both the ``mass'' of the SDW order is orders of magnitude smaller than that for $y$ parameter, and the parameters describing the Landau free energy potential are orders of magnitude larger. This all leads to the SDW almost perfectly tracking its instantaneous minimum on the timescales that are of interest.
+To solve the time evolution of $L$ and $y$ throught the differential equations in Eqs.~\ref{eq:Cr_euler_lagrange} we used the numerical integration methods implemented in the \href{https://github.com/SciML/DifferentialEquations.jl}{DifferentialEquations.jl} package~\cite{rackauckas2017differentialequations}. More specifically the Tsit5 algorithm was used, which has adaptive timestepping to capture the sharp pulses.
+Originally the dynamics were fully solved both for $L$ and $y$, but it was found during the fitting process that the dynamics of $L$ are significantly faster than those of $y$, i.e. both the ``mass'' of the SDW order is orders of magnitude smaller than that for $y$ parameter, and the parameters describing the Landau free energy potential are orders of magnitude larger. This all leads to the SDW almost perfectly tracking its instantaneous minimum on the timescales that are of interest.
 Solving dynamics with significantly different timescales is in general hard from the numerical point of view, and while there are other ways around this, we opted to take $m_L = 0$ and use the instantaneous minimum in the equation describing the dynamics of $y$.
 This minimum is found by minimizing the Landau free energy in Eq.~\ref{eq:Cr_landau} for a given $y$ and $T_L$ in terms of $L$ such that $\frac{\partial F}{\partial L} = 0$, leading to:
 \begin{equation}
@@ -97,11 +152,6 @@ We then took eleven representative experiments, which can be thought of as horiz
 	\omega_0 &= 14.1, b = \SI{3.38e8}, \gamma_y = 0.76,\\
 	f &= 64.43, c_b = 3.58, c_L = 0.36, k = 1.29, \tau = 0.074
 \end{align}
-
-\begin{figure}
-\IncludeGraphics{Experimental}
-\caption{\label{fig:Cr_experimental}Experimental measurements. (a) Heatmap showing different pump-pump delay experiments. Notice the low intensity horizontal band around 0 ps pump-pump delay, where the oscillation amplitude is not at the maximum due to only one big pulse exciting the material and heating it through the phase transition, thus wasting a portion of the enrgy. The horizontal bands with alternating maximum and minimum magnitudes highlight constructive and destructive interference. (b-c), Magnitude of the strain wave in two extreme control cases, where (b) showcases maximum destructive interference, and (c) close to maximum constructive interference. Solid lines are experimental data (empty circles in figure) smoothed by a Savitzky-Golay filter.  b – pump-pump delay of 620 fs, c – pump-pump delay of 845 fs.}
-\end{figure}
 
 The results of this fitting procedure is shown in Fig.~\ref{fig:Cr_theoretical_fit}, showing an excellent agreement between the theory and experiment.
 \begin{figure}
@@ -139,7 +189,7 @@ One assumption made here was that the heat capacity of the bath $c_b$ was increa
 
 Having fit the model, we can go one step further and try to fit the PLD oscillation to an arbitrary signal shape. To this end we use the fitted model, and predict the timing of a fixed fluence pulse train that will result in the required shape. The results are shown in Fig.~\ref{fig:Cr_control}. This showcases that with an arbitrary pulse train we can achieve indirect, but optimal control of the PLD order parameter.
 \begin{figure}
-	\IncludeGraphics{Control}
+	\IncludeGraphics{fits.pdf}
 	\caption{\label{fig:Cr_control} Two examples of optimal control. (a) Shows a reproduction of a sinusoidal envelope function, (b) shows the result for more complicated envelope, with an the absolute value of a sinusoidal followed by a half a period of a sawtooth function. The pulse train is highlighted by the purple dots, and the evolution of the temperature of the SDW is given by the orange plot.}
 \end{figure}
 

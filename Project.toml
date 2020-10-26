@@ -2,6 +2,7 @@ name = "Thesis"
 
 [deps]
 BTO = "5fb9f698-aa0b-11e8-3d94-87c774b35c7b"
+CrSDW = "dc637f32-2dd5-11e9-17d4-3d77e321c8d7"
 DFControl = "1e31e15d-4957-550d-a244-318eced754ae"
 DFWannier = "5e267647-ebb4-5b7d-bc28-1d3eda37ab19"
 DrWatson = "634d3b9d-ee7a-5ddf-bec9-22491ea816e1"
