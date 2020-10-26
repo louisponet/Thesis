@@ -19,6 +19,7 @@ Before focusing on the theoretical description of the coupling between the SDW a
 A thin film (28 nm) of Cr was used, supporting around seven periods of the SDW with a N\'eel temperature $T_N$ of 290 K, slightly lower than in the bulk where $T_N\approx$ 308 K.
 The film was illuminated by two sequential 40 fs optical pulses at times $\tau_1$ and $\tau_2$, heating up the electronic subsystem and the SDW which is a part of it.
 Due to magnetostriction, this SDW is coupled with a PLD which is probed through the Bragg peaks by an x-ray free-electron laser (XFEL)\cite{Singer2015}.
+XFELs also allow for higher peak selectivity (narrow and intense satellite Bragg peaks), such that it allows for measurements performed on thin films even deposited on thick substrates.
 The scattering intensity of the Bragg peak is directly proportional to the magnitude of the PLD, offering both phase and amplitude information of the PLD oscillation that occurs when the SDW is (partially) melted by the optical pulses.
 The high resolution ultrafast measurements that the XFEL enables (fs timescales), allows to follow the evolution of the PLD in time.
 The acoustic phonon associated with the PLD oscillation has a wavevector normal to the material surface and an oscillation period of approximately 450 fs.
@@ -41,9 +42,7 @@ As will be further discussed below, this signifies that the SDW momentarily exce
 Experiments performed at higher fluence, i.e. such that the SDW gets heated above $T_N$ from a single pulse, show that the second pulse does not impact the oscillation of the PLD, as can be seen from Fig.~\ref{fig:Cr_experiment2}(c).
 If control is the goal, it is thus important that the SDW is kept below $T_N$.
 Moreover, the SDW order parameter varies the most with temperature when it is close to the critical point, increasing the pulse efficiency.
-XFELs also allow for higher peak selectivity (narrow and intense satellite Bragg peaks), such that it allows for measurements performed on thin films even deposited on thick substrates, as was the case in the experiments performed by A. Singer et.al.
-This absence of topological defects is confirmed by the absence of a widening of the satellite peak associated with the PLD, as compared with the peaks of the material itself. \lp{not sure about this, I actually don't understand what they are talking about in the paper either}.
-
+The XFEL also shows the absence of topological defects by the absence of a widening of the satellite peak associated with the PLD, as compared with the peaks of the material itself, supporting the assumption that through the use of a thin film, the optical pulses excite the material homogeneously. 
 \begin{figure}
 \IncludeGraphics{Experimental}
 \caption{\label{fig:Cr_experimental}{\bf Controlled enhancement and destruction of the excited state.} {\bf (a)} A laser pulse excites the system by destroying the magnetic order; a second pulse either excites the released phonon further or stops the excitation. Schematic energy surfaces show the PLD state as the orange point. Inset: x-ray scattering from periodic atomic displacement is detected on a fringe of the main peak from the crystalline film. {\bf (b-c)} Amplitude of the PLD in two extreme control cases. Solid lines are experimental data (empty circles) - connected. The dashed red line marks the time of second pulse arrival. {\bf (b)} $\tau_2 - \tau_1 = 620$ fs, {\bf (c)} $\tau_2 - \tau_1 = 845$ fs. Insets show the Laue fringe with the satellite peak at maximum and minimum PLD values.}
@@ -133,33 +132,56 @@ This minimum is found by minimizing the Landau free energy in Eq.~\ref{eq:Cr_lan
 The starting temperature of the bath was fixed at 115 K, and $T_c$ was observed to be at 290 K, consistent with previous observations that in general the N\'eel temperature of a thin film is lower than that of the bulk material (bulk Cr has a N\'eel temperature of $\approx$ 310 K).
 Most parameters of the model described above were not known a priori and thus had to be fitted to the experimental measurements. To aid with the fitting, judicious starting values could be chosen for some parameters. For example, it was known that the pulse width $\tau$ was under 100 fs, the oscillation frequency of the PLD $\omega_0 \approx$ 14 or equivalently a period of around 450 fs. It was also known that in general the second pulse had a fluency of around 80\% that of the first, and we also chose the initial heat capacities for the bath and electronic degrees of freedom to have a ratio $\frac{c_b}{c_L}$ close to 7, which was known from previous experiments \lp{citation}.
 
-For each set of trial parameters, the time evolution of the system was solved on an interval of -2 ps to 8 ps, where the lower bound is chosen so that the numerical integration starts from a completely equilibrium initial condition. This is needed because when the sharp pulse arrives around 0 ps, some energy already enters the system slightly before 0 ps due to the gaussian shape.
+For each set of trial parameters, the time evolution of the system was solved on an interval of -2 ps to 8 ps, where the lower bound is chosen so that the numerical integration starts from a completely equilibrium initial condition.
+This is needed because when the sharp pulse arrives around 0 ps, some energy already enters the system slightly before 0 ps due to the gaussian shape.
 The error of the solution $\tilde{x}$ w.r.t. the experimental measurements $x$ is then the mean square sum $err = \sum_{i=1}^n \frac{(x_i - \tilde{x}_i)^2}{n}$, where $i$ denote the measurement points.
-The numerical optimization was done through the Optim package, where it was found that the Nelder Mead simplex algorithm \lp{citation needed} works best for this very non-linear problem.
+The numerical optimization was done through the \href{https://github.com/JuliaNLSolvers/Optim.jl}{Optim.jl} package ~\cite{mogensen2018optim}, where it was found that the Nelder Mead simplex algorithm \cite{Nelder1965} works best for this very non-linear problem.
 
 \section{Results}
-The experimental results we use as a basis to fit our model to are shown in Fig.~\ref{fig:Cr_experimental}. In the numerical model, we found in earlier trials that the dynamics of the SDW order parameter $L$ is orders of magnitude faster than the ones from the PLD $y$, as expected. This can also be seen from Fig.~\ref{fig:Cr_energy_surfaces} since the energy potential is a lot flatter for $y$ than for $L$, leading to a slower time evolution. This difference in dynamics makes it extremely hard to solve the differential equations numerically, we therefore assumed that at each timestep the $L$ order parameter is in equilibrium in its instantaneous energy potential. This is equivalent to the limit of the mass $m_L$ in Eq.~\ref{eq:L_diffeq} going to zero.
+The experimental results we use as a basis to fit our model to are shown in Fig.~\ref{fig:Cr_experimental}.
+In the numerical model, we found in earlier trials that the dynamics of the SDW order parameter $L$ is orders of magnitude faster than the ones from the PLD $y$, as expected.
+This can also be seen from Fig.~\ref{fig:Cr_energy_surfaces} since the energy potential is a lot flatter for $y$ than for $L$, leading to a slower time evolution.
+This difference in dynamics makes it extremely hard to solve the differential equations numerically, we therefore assumed that at each timestep the $L$ order parameter is in equilibrium in its instantaneous energy potential that depends on time through $T_L$.
+This is equivalent to the limit of the mass $m_L$ in Eq.~\ref{eq:L_diffeq} going to zero.
 The value of $L$ at a given $T_L$ and $y$ can be found by minimizing the Landau free energy \ref{eq:Cr_landau} 
 \begin{equation}
 	\label{eq:Cr_L0}
 	L_0 = \pm \sqrt{\frac{\alpha (T_L - T_c) + 2 g y}{\beta}}.
 \end{equation}
-This eliminates to evaluate Eq.~\ref{eq:L_diffeq}, instead using Eq.~\ref{eq:Cr_L0} to evaluate $L$ in the partial differential equation for the evolution of $y$.
+This eliminates the need to evaluate Eq.~\ref{eq:L_diffeq}, instead using Eq.~\ref{eq:Cr_L0} to evaluate $L$ in the partial differential equation for the evolution of $y$.
 
-We then took eleven representative experiments, which can be thought of as horizontal slices of Fig.~\ref{fig:Cr_experimental}(a), in order to fit the model parameters to get the best total fit accross all datasets. The parameters are
+We then took eleven representative experiments, which can be thought of as horizontal slices of Fig.~\ref{fig:Cr_experimental}(a), in order to fit the model parameters to get the best total fit accross all datasets, allowing only the pulse fluence to fluctuate between sets.
+The parameters are
 \begin{align}
 	\alpha &= 6039, \beta = \SI{7.97e7}, g = 0.52, \gamma_L = 25.0, \\
 	\omega_0 &= 14.1, b = \SI{3.38e8}, \gamma_y = 0.76,\\
 	f &= 64.43, c_b = 3.58, c_L = 0.36, k = 1.29, \tau = 0.074
 \end{align}
 
-The results of this fitting procedure is shown in Fig.~\ref{fig:Cr_theoretical_fit}, showing an excellent agreement between the theory and experiment.
+The results of this fitting procedure is shown in Fig.~\ref{fig:Cr_theoretical_fit}, showing an excellent agreement between the theory and experiment, accross the board.
 \begin{figure}
-\IncludeGraphics{Theory_Fit}
-\caption{\label{fig:Cr_theoretical_fit} Comparison of theoretical fit vs Experiment. (a-b) Two examples of fits to constructive (a) and destructive (b) experiments. (c-d) Comparison of the theoretically generated heatmap (c) with the experimental heatmap (d).}
+\IncludeGraphics{exp_fits.pdf}
+\caption{\label{fig:Cr_theoretical_fit} {\bf Comparison of theoretical fit vs Experiment.} {\bf (a-b)} Two examples of fits to constructive experiments. {\bf (c-d)} The same for destructive interference.}
 \end{figure}
 
-To get a deeper understanding of the underlying effect, we look at the evolution of the free energy surfaces for both order parameters, as shown in Fig.~\ref{fig:Cr_energy_surfaces}. The characteristic double well potential for $L\neq0$ equilibrium is clearly visible, and as expected, when the pulses hit and $T_L$ increases in the term $\alpha(T_L-T_c)L^2$ of Eq.~\ref{eq:Cr_landau}, we see that the potential flattens causing the the minimum of $L$ to very quickly change, as discussed above. This in turn causes the single-well potential of $y$ to shift as quickly. The dynamics of $y$ is orders of magnitude slower than that of $L$ and due to this instant shift of the energy surface, it will cause an oscillation of $y$. While the temperature $T_L$ decreases again, $L$ and the minimum of the $y$ potential shift back towards the original equilibrium position. The oscillation of $y$ remains for a relatively long time while this shift is occurring since the damping is not that big (of the order of 4ps). It then becomes clear that if the second pulse can repeat this mechanism while the oscillation of $y$ is still there, it can be increased or decreased depending on the timing. Having this understanding, let's investigate what the ideal way to excite $y$ is. 
+To get a deeper understanding of the underlying effect, we look at the evolution of the free energy surfaces for both order parameters, as shown in Fig.~\ref{fig:Cr_energy_surfaces}.
+The characteristic double well potential for $L\neq0$ equilibrium is clearly visible, and as expected, when the pulses hit and $T_L$ increases in the term $\alpha(T_L-T_c)L^2$ of Eq.~\ref{eq:Cr_landau}, we see that the potential flattens causing the the minimum of $L$ to very quickly change, as discussed above.
+This in turn causes the single-well potential of $y$ to shift as quickly.
+An oscillation of $y$ will occur due to its relatively slow dynamics, and instantaneous shift of its energy landscape as $L$ varies.
+While the temperature $T_L$ decreases again, $L$ and the minimum of the $y$ potential shift back towards the original equilibrium position.
+The oscillation of $y$ remains for quite a long time while this shift is occurring since the damping is not that big (of the order of 4ps).
+
+This presents us already with the first hint at the benefit of indirectly exciting the PLD through the SDW.
+In a hypothetical system where the PLD is the primary order parameter, and no other coupled order parameters are present, the only possibility to excite a similar oscillation is to heat it up.
+This would shift the minimum of the hypothetical energy potential to 0, and again due to the slow dynamics an oscillation would occur.
+However, as with any normal oscillator, the amplitude of the oscillation would never exceed the starting value, as the thermalization, and restoration of the potential will occur on much longer timescales.
+Here, however, due to the relatively fast thermalization of the SDW with the bath, the potential surface for $y$ recovers on a faster timescale than it would on its own, leading to a relative movement of the potential opposite to the movement of $y$ itself.
+This relative movement transfers additional momentum to $y$ as the SDW is thermalizing and the potential is being restored, leading ultimately to a higher oscillation amplitude, even when only as single pulse is applied.
+This was observed experimentally in previous measurements by A. Singer's group and reported in Ref.~\cite{Singer2015}. 
+
+Having multiple pulses that can rapidly change the potential surface for $y$ of course opens up many more possibilities, allowing for additional constructive interference (Fig.~\ref{fig:Cr_theoretical_fit}(a-b)) or, by shifting the potential surface in the same direction as the movement of $y$, complete destructive interference (see Fig.~\ref{fig:Cr_theoretical_fit}(c-d)).
+It then becomes clear that the second pulse can repeat this process while the oscillation of $y$ is still present, thus either increasing or decreasing it depending on the timing.
+Having this understanding, let's investigate what the ideal way to excite $y$ is. 
 
 
 \begin{figure}
@@ -190,8 +212,28 @@ One assumption made here was that the heat capacity of the bath $c_b$ was increa
 Having fit the model, we can go one step further and try to fit the PLD oscillation to an arbitrary signal shape. To this end we use the fitted model, and predict the timing of a fixed fluence pulse train that will result in the required shape. The results are shown in Fig.~\ref{fig:Cr_control}. This showcases that with an arbitrary pulse train we can achieve indirect, but optimal control of the PLD order parameter.
 \begin{figure}
 	\IncludeGraphics{fits.pdf}
-	\caption{\label{fig:Cr_control} Two examples of optimal control. (a) Shows a reproduction of a sinusoidal envelope function, (b) shows the result for more complicated envelope, with an the absolute value of a sinusoidal followed by a half a period of a sawtooth function. The pulse train is highlighted by the purple dots, and the evolution of the temperature of the SDW is given by the orange plot.}
+	\caption{\label{fig:Cr_control} {\bf Two examples of optimal control.} {\bf (a)} One period of a sinusoid followed by a sawtooth with the same width and height. {\bf (b)} Gaussian followed by an exponential and inverse exponential.}
 \end{figure}
+Another question we can now answer is what is the best way to achieve the maximum oscillation amplitude.
+We tried with either a set of pulses for each PLD period, or one per two periods, see Fig.~\ref{fig:Cr_maximum_amp}.
+The damping rate is clearly the limiting factor, meaning that applying as many pulses per period is desirable, as long as the SDW can cool down enough below $T_c$ by the next set of pulses.
+However, the interesting conclusion from this simulation is that it's not the most favorable to never melt the SDW completely.
+For as long as the SDW is melted, the PLD experiences the same potential which is beneficial until the oscillation reverses direction.
+This is why the fitting algorithm finds sometimes applying more pulses than needed to reach $T_c$ will increase the oscillation amplitude of the next peak.
+\begin{figure}
+	\IncludeGraphics{maximumamplitude.pdf}
+	\caption{\label{fig:Cr_maximum_amp} {\bf Two schemes for achieving maximum amplitude.} {\bf (a)} One set of pulses is applied within each period. {\bf (b)} One set of pulses every two periods. The damping is clearly the limiting factor and warrants as many pulses per timeframe in order to achieve the maximum amplitude.}
+\end{figure}
+
+\section{Conclusions}
+This chapter has shown that the coupling between the SDW and PLD through magnetostriction in Chromium is another prime example of a cross-order control, where in this case the perturbation applied by optical pulses to the SDW leads to an excitation in the PLD mode.
+Moreover, the slower dynamics of the PLD compared to the SDW opens up new behavior and additional dynamic control that would not be possible without the coupling.
+If the PLD would have dynamics on the same timescale as the SDW, changing its potential through excitation of the latter would not be very impactful since it would follow the minimum of the potential as fast as the excited SDW would change it.
+
+As demonstrated by both the experiments and the theory, this allows for either increasing the oscillation amplitude dramatically (up to 400\% the original value), or destroy it at a moment's notice, allowing for a shortcut to adiabaticity where the final state is at higher temperature than the original one.
+
+Whether this can be exploited for technological means is probably a bit of a stretch, seen as XFELs are rather large. However, this understanding and demonstration of the perfect control of a couple order parameter could open the road to finding other similar situations with more technologically viable properties.   
+
 
 \printbibliography
 

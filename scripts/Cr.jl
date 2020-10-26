@@ -48,3 +48,20 @@ plot(fitrange, t2, mp, envelope)
 savefig(papersdir("Cr/Images/fits.pdf"))
 
 plot(plot(fitrange, t1, mp, envelope1), plot(fitrange, t2, mp, envelope2, legend=nothing), ylims=[-1.5,2.5])
+
+#%%
+## For maximum amplitude
+envelope = x -> 4.0
+fitrange = -1.0:0.01:4π
+t1 = fit_signal(envelope, fitrange, params=mp, optim_params=get_optim_params(iterations=500),threaded=true)
+fitrange = -1.0:0.002:4π
+plot(fitrange, t1, mp, envelope)
+t2 = fit_signal(envelope, fitrange, params=mp, optim_params=get_optim_params(iterations=500),threaded=true)
+fitrange = -1.0:0.002:4π
+plot(plot(fitrange, t1, mp, envelope), plot(fitrange, t2, mp, envelope, legend=nothing))
+savefig(papersdir("Cr/Images/maximumamplitude.pdf"))
+#%%
+
+plot(plot(sets[3], dpi=200, xticks = ([0, 2, 4, 6, 8], ["", "","","",""]), yguide = "PLD Amplitude (a.u.)"), plot(sets[1], dpi=200, legend=nothing, xticks = ([0, 2, 4, 6, 8], ["", "","","",""]), yticks = ([-0.5, 0.0, 0.5, 1.0, 1.5], ["","","","",""])), plot(sets[6], yguide = "PLD Amplitude (a.u.)", dpi=200, legend=nothing, xguide = "Time (ps)",), plot(sets[7], dpi=200, legend=nothing, xguide = "Time (ps)", yticks = ([-0.5, 0.0, 0.5, 1.0, 1.5], ["","","","",""])), ylims=[-0.5,1.5])
+savefig(papersdir("Cr/Images/exp_fits.pdf"))
+#%%
