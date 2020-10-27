@@ -179,11 +179,11 @@ Here, however, due to the relatively fast thermalization of the SDW with the bat
 This relative movement transfers additional momentum to $y$ as the SDW is thermalizing and the potential is being restored, leading ultimately to a higher oscillation amplitude, even when only as single pulse is applied.
 This was observed experimentally in previous measurements by A. Singer's group and reported in Ref.~\cite{Singer2015}. 
 
+One final remark to make w.r.t. to the behavior after a single pulse, is that since it is the position or magnitude of $L$ which is the driver of the energy surface of $y$, the effect is most efficiently generated when $L$ is close to $T_c$ because a small change in temperature causes a large variation of the equilibrium position of $L$ as shown by Eq.~\ref{eq:Cr_L0} and corresponding familiar graph in Fig.~\ref{blabla}\lp{make an image of general sqrt(T-Tc) behavior}.    
+
 Having multiple pulses that can rapidly change the potential surface for $y$ of course opens up many more possibilities, allowing for additional constructive interference (Fig.~\ref{fig:Cr_theoretical_fit}(a-b)) or, by shifting the potential surface in the same direction as the movement of $y$, complete destructive interference (see Fig.~\ref{fig:Cr_theoretical_fit}(c-d)).
-It then becomes clear that the second pulse can repeat this process while the oscillation of $y$ is still present, thus either increasing or decreasing it depending on the timing.
-Having this understanding, let's investigate what the ideal way to excite $y$ is. 
-
-
+This can be leveraged by applying a whole train of pulses in order to create any graph your heart desires.
+Having this understanding, we continue by investigating what can be achieved with a longer pulse train.
 \begin{figure}
 	\begin{subfigure}{0.5\textwidth}
 		\IncludeGraphics{energy_surface_L.pdf}
@@ -194,35 +194,37 @@ Having this understanding, let's investigate what the ideal way to excite $y$ is
 	\caption{\label{fig:Cr_energy_surfaces} Time evolution of the energy surfaces of the order parameters.}
 \end{figure}
 
-First of all, when the system is relatively close to the phase transition of $L$, a small increase of temperature causes a large change in the value of $L$ as shown through Eq.~\ref{eq:Cr_L0}, and thus causes a large the shift of the potential for $y$. It is then important to keep this initial shift of the potential for $y$ in place until $y$ crosses the minimum, converting as much potential energy into "kinetic" energy. This requires $L$ to be heated slightly above the PT, which leads to the largest possible shift of the potential of $y$, and the additional temperature of $L$ above $T_c$, together with the non-infinite cooling rate, allows $y$ to gain the maximum kinetic energy. Since only the size of $L$ matters for the potential surface of $y$, it can only cause a shift in one direction, meaning that, similar to someone pushing a swing, the ideal intervals for the subsequent pulses are close to multiples of the period of $y$, if the goal is maximum oscillation amplitude.
-The amount of periods depends on the cooling rate of $L$, this influences how much $T_L$ can cool back down within one period and thus the size of the maximum shift, since this depends on distance of $T_L$ from $T_c$, and the damping of $y$ since that is the main source of kinetic energy loss.
-Taking these understandings into consideration, a high degree of control of the oscillation of $y$ can be achieved through the intensity, amount and timing of a pulse train applied to the material. To demonstrate this, we went one step further and utilized the fitted model to simulate what pulse train has to be applied to the material in order for the oscillation maxima to follow a given envelope signal. To limit the dimensionality of the manifold of possible solutions, we performed the following ruleset:
-\begin{itemize}
-	\item Only one fluence can be used per pulse
-	\item Pulses are grouped in sets per period of oscillation
-	\item The first pulse group only has a single pulse, applied 20 fs after the first non zero value of the envelope function, this determines the fluence of each pulse
-	\item The maximum allowed pulses per group is fixed
-	\item The groups are then fitted sequentially, since the later pulses don't influence the oscillation caused by the earlier ones
-	\item If the function is seen to increase during a period, the pulses will be initiated close to the ideal boost location, and if a decrease is required, close to the ideal brake location
-\end{itemize}
-
-Adhering to these rules, we tested this procedure on different envelope functions, showcased in Fig.~\ref{fig:Cr_control}.
-One assumption made here was that the heat capacity of the bath $c_b$ was increased to infinity, this is done because with the increase of temperature of the bath, the equilibrium position of $L$ changes and leads to a general downwards slope of the oscillation of $y$ as see from panel (a-b) of Fig.~\ref{fig:Cr_theoretical_fit}.
-
-Having fit the model, we can go one step further and try to fit the PLD oscillation to an arbitrary signal shape. To this end we use the fitted model, and predict the timing of a fixed fluence pulse train that will result in the required shape. The results are shown in Fig.~\ref{fig:Cr_control}. This showcases that with an arbitrary pulse train we can achieve indirect, but optimal control of the PLD order parameter.
-\begin{figure}
-	\IncludeGraphics{fits.pdf}
-	\caption{\label{fig:Cr_control} {\bf Two examples of optimal control.} {\bf (a)} One period of a sinusoid followed by a sawtooth with the same width and height. {\bf (b)} Gaussian followed by an exponential and inverse exponential.}
-\end{figure}
-Another question we can now answer is what is the best way to achieve the maximum oscillation amplitude.
-We tried with either a set of pulses for each PLD period, or one per two periods, see Fig.~\ref{fig:Cr_maximum_amp}.
-The damping rate is clearly the limiting factor, meaning that applying as many pulses per period is desirable, as long as the SDW can cool down enough below $T_c$ by the next set of pulses.
-However, the interesting conclusion from this simulation is that it's not the most favorable to never melt the SDW completely.
-For as long as the SDW is melted, the PLD experiences the same potential which is beneficial until the oscillation reverses direction.
-This is why the fitting algorithm finds sometimes applying more pulses than needed to reach $T_c$ will increase the oscillation amplitude of the next peak.
+First we discuss the strategy to achieve maximal amplitude.
+The maximal change in the value of $L$, and thus the potential surface for $y$, can be achieved by heating it all the way to $T_c$.
+It is then important to keep this initial shift of the potential for $y$ in place until $y$ crosses the minimum, converting as much potential energy into kinetic energy.
+This can be achieved by heating $L$ to slightly above $T_c$, where the additional heat and finite cooling rate will keep the potential shift present until $y$ passes through the minimum, gaining the most momentum.
+Fig.~\ref{fig:Cr_maximum_amp} demonstrates this by the red peaks of $T_L$ which signify that it is above $T_c$.
+Exactly at this point $L$ should start to reform causing the potential surface of $y$ to start moving in the opposite direction to its movement, which in the end supplies it with additional momentum, as was described above in relation to the larger than 100\% relative amplitude of $y$ after one pulse.
+Since the sign of $L$ does not matter for the position of the potential surface of $y$, it can only cause a shift in one direction, meaning that, similar to someone pushing a swing, the ideal intervals for the subsequent pulses are close to multiples of the period of $y$, if the goal is maximum oscillation amplitude.
+The amount of periods depends on the cooling rate of $L$, and damping rate of $y$.
+The former influences how much $T_L$ can cool back down within one period and thus the size of the maximum kinetic energy gain of $y$, while the latter is the main source of kinetic energy loss.From our simulations, unless the damping is really negligible, it is always best to supply a set of pulses at each oscillation period of $y$.
+The results in Fig.~\ref{fig:Cr_maximum_amp} showcase this situation, where the heat capacity of the bath was artificially increased to infinity to mimic a possible strong cooled regime which would be ideal for maximizing the oscillation amplitude.
+With the damping rate of $y$ taken as in the experiment, the maximal amplitude thus achieved is about 400\% the original value, quite a remarkable increase.  
 \begin{figure}
 	\IncludeGraphics{maximumamplitude.pdf}
 	\caption{\label{fig:Cr_maximum_amp} {\bf Two schemes for achieving maximum amplitude.} {\bf (a)} One set of pulses is applied within each period. {\bf (b)} One set of pulses every two periods. The damping is clearly the limiting factor and warrants as many pulses per timeframe in order to achieve the maximum amplitude.}
+\end{figure}
+
+We can go one step further, however, and design a pulse train such that the oscillation amplitude follows a particular ``signal'' envelope function, demonstrating the incredibly high degree of control of the PLD that this system allows for.  
+To limit the dimensionality of the manifold of possible solutions, we followed the ruleset:
+\begin{itemize}
+	\item Only one fluence can be used per pulse 
+	\item Pulses are grouped in sets per period of oscillation
+	\item The first pulse group only has a single pulse, purely for technical reasons
+	\item The maximum allowed pulses per group is fixed
+	\item The groups are then fitted sequentially, since the later pulses don't influence the oscillation caused by the earlier ones
+\end{itemize}
+Adhering to these rules, we tested this procedure on different envelope functions, showcased in Fig.~\ref{fig:Cr_control}.
+Similar to before, the assumption of an infinite $C_b$ was made here, this is done so the equilibrium position of $L$ does not change, otherwise causing a general downwards slope of the oscillation of $y$ as see from the lower final equilibrium positions of $y$ in panels (a-b) of Fig.~\ref{fig:Cr_theoretical_fit}.
+This showcases that with a carefully chosen pulse train we can achieve indirect, but optimal control of the PLD order parameter.
+\begin{figure}
+	\IncludeGraphics{fits.pdf}
+	\caption{\label{fig:Cr_control} {\bf Two examples of optimal control.} {\bf (a)} One period of a sinusoid followed by a sawtooth with the same width and height. {\bf (b)} Gaussian followed by an exponential and inverse exponential.}
 \end{figure}
 
 \section{Conclusions}
