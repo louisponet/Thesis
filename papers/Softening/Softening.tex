@@ -184,13 +184,13 @@ A big bonus of this framework is that gradients of the fields can be evaluated p
 It also allows for a great flexibility through the density of the chosen grid and the order of interpolating functions used, although we do not exploit these.
 
 In our case, we use a rectangular geometry uniformly spanned by tetrahedron elements, as shown in Fig.~\ref{fig:BTO_fem}(c-d).
-The uniform mesh is largely motivated by implementation complexity, since we use a mostly in-house developed code based on the FEM building blocks supplied by the JuAFEM.jl package \lp{cite + link?}.
+The uniform mesh is largely motivated by implementation complexity, since we use a mostly in-house developed code based on the FEM building blocks supplied by the \href{https://github.com/KristofferC/JuAFEM.jl}{JuAFEM.jl} package.
 It is obvious that the computational cost could be lowered by using a finer meshing close to the domain wall, where the fields vary the most, and a more course one in the domains.
 One has to, however, consider that when the tip is applied a finer mesh is also required around it, leading to different meshes for different locations of applied tip, greatly increasing the post-processing complexity.
 
 The last bulding block for the simulation is a way to optimize the fields in order to reach the equilibrium condition, both with and without applied tip.
 To do this we use a Conjugate Gradient method to minimize the total energy in terms of all the degrees of freedom (DOFs), i.e. the values of the fields at each of the nodes on the mesh.
-This requires us to define the partial derivatives of the total energy in terms of all the DOFs, for which we use a forward automatic differentiation scheme as implemented in ForwardDiff.jl, again for its remarkable simplicity and speed (as an idea, on a 64 core Epyc cluster, the $\approx$ 4 million partial derivatives are computed in a couple of seconds).
+This requires us to define the partial derivatives of the total energy in terms of all the DOFs, for which we use a forward automatic differentiation scheme as implemented in \href{www.juliadiff.org/ForwardDiff.jl/latest/}{ForwardDiff.jl}, again for its remarkable simplicity and speed (as an idea, on a 24 core E5-2680 v3 server, the $\approx$ 3.5 million partial derivatives are computed in around 2.1 seconds).
 
 Using the parameters from previous ab-initio results \cite{Marton2010}, we first optimized the equilibrium situation for both a uniform domain and a single domain wall.
 A bell shaped force field, modeled by function $a e^{-x^2/d^2}$ with $d \approx 20$nm representing the diameter of the contact area and $a = 10^{-7} J/m^3$, was then applied at various positions throughout both geometries.
