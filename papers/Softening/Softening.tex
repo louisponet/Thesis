@@ -199,6 +199,19 @@ This causes the indentation at the center of the geometry for a single domain to
 Since this is unphysical, we compensate for this by adding the differences to the results in the geometry with a wall present \lp{better explanation?}.
 
 \section{Results}
+
+We chose to use open boundary conditions\lp{maybe try with periodic too}.
+
+When using finite element methods, it's important to verify to what extent the results are influenced by finite size effects and other numerical considerations.
+Since the effect we are investigating depends crucially on the movement and position of the domain wall, the issue of the numerical Peierls-Nabarro barrier \cite{Marton2018} is quite important since the degree of pinning that the wall experiences depends on the elementsize.
+We found that when the elementsize is 0.5 nm, the wall is too strongly pinned and never moves towards the tip, even if it's applied very close to it.
+Using elements of 0.3 nm alleviates this issue and leads to a more realistic behavior.
+
+
+Furthermore, due to the computational cost, it is desirable to use as small geometries as possible.
+
+In order to get an idea of how robust this behavior is w.r.t. the numerical parameters we show the relative 
+
 Multiple geometries and element sizes were tested in order to verify that the results were not too much influenced by these numerical parameters which. 
 The softening is estimated as the ratio of the surface deformation between the domain and the wall.
 
