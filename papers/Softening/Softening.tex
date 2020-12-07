@@ -12,11 +12,10 @@ In reality these assumptions are almost always invalid, inevitably leading to do
 The fundamental difference between DWs and the domains themselves has led to a great amount of research interest, both from the fundamental and technological point of view.
 The physics that govern the region of the DW is usually richer than that of the domains, since the domains force that region to not be at a local energetic minimum.
 This is often associated with a local inversion of the curvature of the energy potential, leading to a potential softening of the order parameters locally.
-DWs are also a manifestly two dimensional region embedded in a three dimentional medium, which can have a myriad of interesting consequences.
-An obvious example where DWs are exploited technologically is in ferroelectric information storage devices.
-Here the their small size, which is beneficial from the density point of view, and the fact that their location can be easily controlled by applied electric fields, is utilized.
-Certain materials can harbor charged conducting DWs, separating the manifestly nonconductive domains.
-By applying electric fields it has been shown that these can be created and destroyed at will, increasing or decreasing the conductivity of the device.
+DWs are also a manifestly two dimensional region embedded in a three dimentional medium, which can have a myriad of interesting consequences which can potentially be exploited technologically.
+One example is in ferroelectric information storage devices, where the small size is beneficial for information density, and ease of manipulation of their position allows for a great degree of flexibility.
+The materials that are usually used in this sense are those that can harbor charged conducting DWs, separating the manifestly nonconductive domains.
+By applying electric fields these can be created or destroyed at will, increasing or decreasing the conductivity of the devicem.
 This conductivity can in turn be probed, effectively reading back what ``data'' was written previously\lp{citation}.
 
 While this kind of technological promise has driven much of the research of DWs towards their electronic properties, the coupling between electric polarization and internal strain puts the spotlight on their mechanical properties.
@@ -26,7 +25,8 @@ More interesting is the fact that the polarization itself can also be influenced
 \begin{equation}
 f_{fl} = \frac{1}{2}f_{jklm}(\varepsilon_{jk}\partial_mP_l-P_l\partial_m\varepsilon_{jk}),
 \end{equation}
-where repeated indices are summed over, $\varepsilon$ denotes the strain and $P$ the ferroelectric polarization. An applied strain gradient will as an internal electric field, thus coupling to the dipoles that constitute $P$, ultimately leading to the above expression.
+where repeated indices are summed over, $\varepsilon$ denotes the strain and $P$ the ferroelectric polarization.
+An applied strain gradient will act as an internal electric field $E_{j} = \frac{1}{2}f_{jklm}\partial_k\varepsilon_{lm}$, coupling to the dipoles that constitute $P_l$.
 While this effect is generally small (i.e. the elements of the flexoelectric tensor $f_{jklm}$ are small), it scales inversely with the size of the sample, meaning that it becomes increasingly important at the nanoscale of current state of the art electronic devices.
 Thus, using a tip to apply a strain gradient to the surface of a ferroelectric material allows one to mechanically write domain patterns and DWs at will \cite{Lu2012}.
 
@@ -40,34 +40,36 @@ This can qualitatively be understood by considering the electrostriction energy 
 f_{q}=-\frac{1}{2}\varepsilon_{jk}q_{jklm}P_{l}P_{m},\label{eq:qpp},
 \end{equation}
 which causes domains to be stretched along the direction of $P$.
-No such stress exists inside the wall itself, since $P=0$, leading to an indentation with an associated long range strain texture.
-The extent of strain textures tends to generally be a lot larger because sharp changes in the strain are very unfavorable from an elastic point of view.
-This mechanical texture associated with the DW can be picked up mechanically by the applied tips and allows to make the observations that are the subject of this Chapter.
+No such stress exists inside the wall itself, since $P=0$, leading to an indentation with an associated long range strain texture, because sharp changes in the strain are very unfavorable from an elastic point of view.
+This structural texture associated with the DW can be picked up mechanically by the applied tips and allows to make the observations that are the subject of this Chapter.
 
 \section{Experimental}
 Before going into the theoretical details that describe the physics of this problem, we describe the experiments performed by the group of Prof. Catalan that were the impetus of this research.
 In order to determine the generality of the softening of ferroelectric DWs, three single crystal systems were investigated experimentally: LiNbO$_3$, BaTiO$_3$ and PbTiO$_3$.
 All measurements are based on Contact Resonance Frequency Microscopy, a scanning probe microscopy technique that uses the resonance frequence of an atomic force microscopy tip in contact with the sample to measure its local stiffness~\cite{Rabe2000}.
-A higher sample stiffness leads to a higher frequency, sothat a mapping of the surface stiffness can be made where the main limit on resolution is time.
-The results are shown in Fig.~\ref{fig:BTO_experiment}, where the main focus are the right panels, displaying a clear contrast between soft areas close to the wall and harder areas inside the domains.
+Through Hooke's law it is known that the resonance frequency is given by $\omega = \sqrt{\frac{k}{m}}$, i.e. a higher sample stiffness $k$ leads to a higher frequency.
+This allows for a direct translation of the measured frequency into sample stiffness, where the only limit on spatial resolution is the scanning speed, or the duration of th experiment.
+The results are shown in Fig.~\ref{fig:BTO_experiment}, where the main focus are the right panels, displaying a clear contrast between soft areas (brown) close to the wall, and harder areas (purple) inside the domains.
 \begin{figure}
 	\IncludeGraphics{experiment.jpg}
 	\caption{\label{fig:BTO_experiment} {\bf Ferroelectric polarization and stiffness} (a-b) Periodically poled LiNbO$_3$ single crystal, (c-d) BaTiO$_3$ spontaneously polarized and (e-f) PbTiO$_3$ thin film. The contrast in figures (a,c,d) demonstrate the two opposite out-of-plane orientations of the ferroelectric polarization, and the differing stiffness in (b,d,f). The main focus are the DWs which appear most dark and are thus markedly softer than the domains.}
 \end{figure}
 One observation that points to the strain texture of the walls as the main actor is the relatively large width of the soft areas around the domain walls.
-It is also important to realize that the tip is in contact with the surface at all times during the experiment, ensuring neutrality and thus excluding electrical excitation.
-Another feature of the measurements, most clearly present in Fig.~\ref{fig:BTO_experiment}(f) is the diffence in constrast between the up and down domains. This can be attributed to the flexoelectric coupling between the tip induced strain gradient and the polarization. Even though the applied forces were too small to reorient the polarization, the asymmetry in mechanical response can still be observed, and has been proposed as a mechanism for voltage-free mechanical reading of polarization~\cite{Cordero-Edwards2017,Cordero-Edwards2019,Abdollahi2015}.
-A similar explanation can not be used for the DWs, though, since they are markedly softer than either domain, resulting in a reduction of the Young's modulus of $\approx 19\%$.
+It is also important to realize that the tip is conductive and in contact with the surface at all times during the experiment, ensuring charge neutrality and thus excluding electrical excitation.
+Another feature of the measurements, most clearly present in Fig.~\ref{fig:BTO_experiment}(f) is the diffence in constrast between the up and down domains.
+This can be attributed to the flexoelectric coupling between the tip induced strain gradient and the polarization.
+Even though the applied forces were too small to reorient the polarization, the asymmetry in mechanical response can still be observed, and has been proposed as a mechanism for voltage-free mechanical reading of polarization~\cite{Cordero-Edwards2017,Cordero-Edwards2019,Abdollahi2015}.
+A similar explanation can not be used for the DWs, though, since they are markedly softer than either domain, resulting in a reduction of the stiffness of $\approx 19\%$.
 
 \lp{should I go more into detail of the models used by the experimentalists for the Young's modulus calculation?}
 
 \section{Theory}
 Since the mechanical DW softening seems a general property of 180$^\circ$ ferroelectric DWs, we focus on BaTiO$_3$ (BTO) in the following.
 Due to the relatively large size of the strain texture associated with domain walls, and the tip that is pressed into the material, we adopt the continuum Ginzburg-Landau-Devonshire model as described in \cite{Marton2010}.  
-The free energy density written in terms of primary order parameter $P$ and associated strain $\varepsilon$ can be written as:
+The free energy density in terms of primary order parameter for the ferroelectric polarization, $P$, and associated strain $\varepsilon$ can be written as:
 \begin{eqnarray}\label{eq:BTO_energy}
 &&f = f_{L}+f_{G}+f_{c}+f_{q}+f_{fl},\\
-&&f_{L} = \alpha_{ij}P_iP_l + \frac{\alpha_{ijkl}}{2}P_{i}P_{j}P_{k}P_{l} + \frac{\alpha_{ijklmn}}{3} P_i P_j P_k P_l P_m P_n,\\
+&&f_{L} = \alpha_{ij}P_iP_l + \alpha_{ijkl}P_{i}P_{j}P_{k}P_{l} + \alpha_{ijklmn} P_i P_j P_k P_l P_m P_n,\\
 &&f_{G} = \frac{1}{2}G_{ijkl}\partial_i P_j\partial_k P_l,\\
 &&f_{c} = \frac{1}{2}C_{ijkl}\varepsilon_{ij}\varepsilon_{kl},\\
 &&f_{q}= - q_{ijkl}\varepsilon_{ij}P_{k}P_{l},\label{eq:qpp}\\
@@ -76,12 +78,44 @@ The free energy density written in terms of primary order parameter $P$ and asso
 where the indices run through ${x,y,z}$, and a summation is performed over the repeated ones.
 The first term is the Landau free energy for a uniform ferroelectic polarization, where terms up to sixth order have to included to bound $P$, since in BTO both $\alpha_{ij}$ and $\alpha_{ijkl}$ are negative below the transition temperature.
 The second term denotes the Ginzburg part, i.e. the energy penalty for spatial variations of the polarization.
-This term influences the width of DWs, where a larger $G$ leads to smaller walls and vice versa.
+This term influences the width of DWs, where a larger $G$ leads to wider walls and vice versa.
 The elastic energy density is described by $f_c$ with stiffness tensor $C_{ijkl}$, which has the form of the standard Hooke's law.
-$f_q$ signifies the electrostrictio, the main term coupling the polarization to the strain, and causes the domains to be stretched along the direction of the polarization \lp{add some panels like in the discussion of the powerpoint}.
-Lastly, to be complete, we include the flexoelectric contribution, $f_{fl}$, since it leads to small but possibly important effects\lp{rather vague}.
+$f_q$ signifies the electrostriction, the main term that couples the polarization to the strain, and causes the domains to be stretched along the direction of the polarization \lp{add some panels like in the discussion of the powerpoint}.
+Lastly, to be complete, we can include the flexoelectric contribution, $f_{fl}$, but ultimately we neglected in the simulations, since it leads to effects which are small and did not markedly influence the results.
 
-To find the static equilibrium conditions in the most general sense, the integrated free energy $F[P] = \int d^3x f(P(x))$ needs to be minimized using the variational methdod, which leads to the well known Euler-Lagrange equations \cite{Cao1991, Marton2010}:
+% \begin{tabular}{|c|c|}
+% 	\hline
+% 	 $\alpha$ &\\
+% 	 \hline
+% 	 $\alpha_1$ & $3.34\cdot 10^5 (T - 381)$  \\
+% 	 $\alpha_{11}$ & $4.68 \cdot 10^6 (T-393) - 2.02 \cdot 10^8$ \\
+% 	 $\alpha_{12}$ & $3.23 \cdot 10^8$ \\
+% 	 $\alpha_{111}$ & $-5.52 \cdot 10^7 (T - 393) + 2.76 \cdot 10^6 $ \\
+% 	 $\alpha_{112}$ &  $4.47 \cdot 10^9 $\\
+% 	 $\alpha_{123}$ &$4.91 \cdot 10^9$\\
+% 	 \hline
+% \end{tabular}
+\begin{table}
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	 $\alpha$ & & $G$ & & $q$ &\\
+	 \hline
+	 $\alpha_1$ & $3.34\cdot 10^5 (T - 381)$  & $G_{11}$ & $51 \cdot 10^{-11}$ & $q_{11}$ & $14.2 \cdot 10^{9}$ \\
+	 $\alpha_{11}$ & $4.68 \cdot 10^6 (T-393) - 2.02 \cdot 10^8$ & $G_{12}$ & $-2 \cdot 10^{-11}$ & $q_{12}$ & $-0.74 \cdot 10^{9}$ \\
+	 $\alpha_{12}$ & $3.23 \cdot 10^8$ & $G_{44}$ & $2 \cdot 10^{-11}$  & $q_{44}$ & $1.57 \cdot 10^{9}$ \\
+	 \cline{3-6}
+	 & & $C$ & & $f$ &\\
+	 \cline{3-6}
+	 $\alpha_{111}$ & $-5.52 \cdot 10^7 (T - 393) + 2.76 \cdot 10^6 $ & $C_{11}$ & $27.5 \cdot 10^{10}$ & $f_{11}$ & $0.85$ \\
+	 $\alpha_{112}$ &  $4.47 \cdot 10^9 $ & $C_{12}$ & $17.9 \cdot 10^{10}$ & $f_{12}$ & $-0.5$  \\
+	 $\alpha_{123}$ & $4.91 \cdot 10^9$ &$C_{44}$ & $5.43 \cdot 10^{10}$ & $f_{44}$ & $ 0.072$ \\
+	 \hline
+\end{tabular}
+\caption{{\bf Ginzburg-Landau-Devonshire model parameters} SI units are used, and T = 300K in the simulations.}
+\end{table}
+
+To find the static equilibrium conditions in the most general sense, the integrated free energy $F[P] = \int d^3x f(P(x))$ needs to be minimized, for which the variational method can be used.
+This leads to the well known Euler-Lagrange equations \cite{Cao1991, Marton2010}:
 \begin{align}
 	\label{eq:BTO_euler}
 	\frac{\partial}{\partial x_j}\left( \frac{\partial f}{\partial \partial_j P_i}\right) - \frac{\partial f}{\partial P_i} &= 0, \\
@@ -92,12 +126,13 @@ In the homogeneous case of a single domain with $P_z$ (which we write $P$ in the
 	\frac{\partial f}{\partial \varepsilon} &= 0 \Leftrightarrow \varepsilon = \frac{qP^2}{C}\label{eq:BTO_e0},\\
 	\frac{\partial f}{\partial P^2} &= 0 = \left(\alpha - \frac{q^2}{C}\right) + \beta P^2 + \gamma P^4,
 \end{align}
-where the parameters are those with all $z$ indices, and the solution for $\varepsilon$ was filled into the second equation. This can in turn be solved to find
+where the parameters are those with all $z$ indices, and the solution for $\varepsilon$ was filled into the second equation.
+This can in turn be solved to find
 \begin{equation}
-	P_0^2 = \frac{-\beta + \sqrt{\beta^2 - 4\gamma (\alpha - q^2/C)}}{2\gamma}
+	P_0 = \frac{-\beta \pm \sqrt{\beta^2 - 4\gamma (\alpha - q^2/C)}}{2\gamma}
 \end{equation}
 
-The effective stiffness $\tilde{C}_{ijkl}$ can be found by taking the double derivative of the free energy with respect to $\varepsilon$:
+The effective stiffness $\tilde{C}_{ijkl}$ can be found in general by taking the double derivative of the free energy with respect to $\varepsilon$:
 \begin{equation}
 	\tilde{C}_{ijkl} = \frac{\partial^2 f}{\partial \varepsilon_{ij} \partial \varepsilon_{kl}},
 \end{equation}
@@ -106,8 +141,9 @@ or, making the same homogeneous assumptions as above, we arrive at a single doma
 \begin{equation}
 	\tilde{C} = C - \frac{2q^2\left(\beta^2-4\alpha\gamma + 3 \varepsilon \gamma q\right)}{\left(\beta^2 - 4 \alpha \gamma + 4 \varepsilon \gamma q\right)^{3/2}}\label{eq:BTO_domainC}.
 \end{equation}
-Having nonzero $P$ leads to a nonzero $\varepsilon$ as shown by the relation Eq.~\ref{eq:BTO_e0}, and leads to a softening compared to if $P=0$, since the second term of Eq.~\ref{eq:BTO_domainC} is always positive.
-This is contradictory with the observations by the experiments, so a different explanation has to be sought.
+Having nonzero $P$ leads to a nonzero $\varepsilon$ as shown by the relation Eq.~\ref{eq:BTO_e0}.
+Combined with the fact that $\alpha,\beta < 0,$ and $\gamma > 0$, the second term in Eq.~\ref{eq:BTO_domainC} is always negative, leading to a smaller $\tilde{C}$ (softening) compared to when $P=0$. 
+This is in contradtion with the observations of the experiments, so a different explanation has to be sought.
 
 % As can be seen from the experimental figures, the signature of the domain wall is much wider than the area in which $P$ interpolates between the two values of neighboring domains.
 % Coupled with the observation that due to the lower values of $P$ inside the wall, there will be less tensile strain generated by $f_q$, leading to an indentation at the domain wall, with a strain texture extending much further than the wall itself (see the blue line in Fig.~\ref{fig:BTO_rigid_wall}).
