@@ -81,20 +81,10 @@ The second term denotes the Ginzburg part, i.e. the energy penalty for spatial v
 This term influences the width of DWs, where a larger $G$ leads to wider walls and vice versa.
 The elastic energy density is described by $f_c$ with stiffness tensor $C_{ijkl}$, which has the form of the standard Hooke's law.
 $f_q$ signifies the electrostriction, the main term that couples the polarization to the strain, and causes the domains to be stretched along the direction of the polarization \lp{add some panels like in the discussion of the powerpoint}.
-Lastly, to be complete, we can include the flexoelectric contribution, $f_{fl}$, but ultimately we neglected in the simulations, since it leads to effects which are small and did not markedly influence the results.
+Lastly, to be complete, we can include the flexoelectric contribution, $f_{fl}$, but ultimately we neglected it in the simulations, since it leads to effects which are small and did not markedly influence the results.
+The parameters for the model for BaTiO$_3$ are given in Tab.~\ref{tab:BTO_param}.
+From symmetry, only a limited set of parameters is unique, for example $C_{1111} = C_{2222} = C_{3333}$, and $C_{1212} = C_{2121} = C_{2323} = C_{3232} = C_{1313} = C_{3131}$, etc. 
 
-% \begin{tabular}{|c|c|}
-% 	\hline
-% 	 $\alpha$ &\\
-% 	 \hline
-% 	 $\alpha_1$ & $3.34\cdot 10^5 (T - 381)$  \\
-% 	 $\alpha_{11}$ & $4.68 \cdot 10^6 (T-393) - 2.02 \cdot 10^8$ \\
-% 	 $\alpha_{12}$ & $3.23 \cdot 10^8$ \\
-% 	 $\alpha_{111}$ & $-5.52 \cdot 10^7 (T - 393) + 2.76 \cdot 10^6 $ \\
-% 	 $\alpha_{112}$ &  $4.47 \cdot 10^9 $\\
-% 	 $\alpha_{123}$ &$4.91 \cdot 10^9$\\
-% 	 \hline
-% \end{tabular}
 \begin{table}
 \begin{tabular}{|c|c|c|c|c|c|}
 	\hline
@@ -111,7 +101,7 @@ Lastly, to be complete, we can include the flexoelectric contribution, $f_{fl}$,
 	 $\alpha_{123}$ & $4.91 \cdot 10^9$ &$C_{44}$ & $5.43 \cdot 10^{10}$ & $f_{44}$ & $ 0.072$ \\
 	 \hline
 \end{tabular}
-\caption{{\bf Ginzburg-Landau-Devonshire model parameters} SI units are used, and T = 300K in the simulations.}
+\caption{{\bf Ginzburg-Landau-Devonshire model parameters} The parameters are reported in Voigt notation, e.g. $C_{11} = C_{1111}$, $C_{12} = C_{1122}$ and $C_{44}= C_{1212}$.  SI units are used, and T = 300K in the simulations.\label{tab:BTO_param}}
 \end{table}
 
 To find the static equilibrium conditions in the most general sense, the integrated free energy $F[P] = \int d^3x f(P(x))$ needs to be minimized, for which the variational method can be used.
@@ -121,29 +111,30 @@ This leads to the well known Euler-Lagrange equations \cite{Cao1991, Marton2010}
 	\frac{\partial}{\partial x_j}\left( \frac{\partial f}{\partial \partial_j P_i}\right) - \frac{\partial f}{\partial P_i} &= 0, \\
 	\frac{\partial}{\partial x_j}\frac{\partial f}{\partial \varepsilon_{ij}} = 0.
 \end{align}
-In the homogeneous case of a single domain with $P_z$ (which we write $P$ in the following) and no external forces, it is easier to work in terms of $P^2$ and $\varepsilon_{zz}$ (which we write as $\varepsilon$), reducing Eq.~\ref{eq:BTO_euler} to  
+
+In the homogeneous case of a single domain with $P_z$ (which we write $P$ in the following) and $\varepsilon_{zz}$ (written as $\varepsilon$) and no external forces, Eq.~\ref{eq:BTO_euler} is reduced to  
 \begin{align}
-	\frac{\partial f}{\partial \varepsilon} &= 0 \Leftrightarrow \varepsilon = \frac{qP^2}{C}\label{eq:BTO_e0},\\
-	\frac{\partial f}{\partial P^2} &= 0 = \left(\alpha - \frac{q^2}{C}\right) + \beta P^2 + \gamma P^4,
+	\frac{\partial f}{\partial \varepsilon} &= 0 \Leftrightarrow \varepsilon = \frac{q_{11}P^2}{C_{11}}\label{eq:BTO_e0},\\
+	\frac{\partial f}{\partial P^2} &= 0 = \alpha_1 + (2 \alpha_{11} - \frac{q_{11}^2}{C_{11}})P^2 + 3\alpha_{111}P^4 \\
+	& \Leftrightarrow \\
+	P^2 &= \frac{-(2\alpha_{11} - \frac{q_{11}^2}{C_{11}}) + \sqrt{(2\alpha_{11}-\frac{q_{11}^2}{C_{11}})^2 - 12 \alpha_{111} \alpha_1}}{6\alpha_{111}}.
 \end{align}
-where the parameters are those with all $z$ indices, and the solution for $\varepsilon$ was filled into the second equation.
-This can in turn be solved to find
-\begin{equation}
-	P_0 = \frac{-\beta \pm \sqrt{\beta^2 - 4\gamma (\alpha - q^2/C)}}{2\gamma}
-\end{equation}
+If the parameters of Tab.~\ref{tab:BTO_param} are filled in, we find $P = \pm 0.311$ and $\varepsilon = 5 \cdot 10^{-3}$.
+This is higher than $P = 0.265$ \cite{Marton2010} without any electrostriction included, because the system can lower it's energy through $-q_{11}P_z^2\varepsilon_{zz}$ by increasing $P_z$ and having tensile strain $\varepsilon_{zz} > 0$.
+Similarly, when all terms are included in the full numerical simulation, we find for the domains that $P_z = \pm 0.363$ and $\varepsilon_{zz} = 1.4 \cdot 10^{-2}$.
 
 The effective stiffness $\tilde{C}_{ijkl}$ can be found in general by taking the double derivative of the free energy with respect to $\varepsilon$:
 \begin{equation}
 	\tilde{C}_{ijkl} = \frac{\partial^2 f}{\partial \varepsilon_{ij} \partial \varepsilon_{kl}},
 \end{equation}
-or, making the same homogeneous assumptions as above, we arrive at a single domain stiffness of
-
+or, making the same assumptions as above (only $P_z$ and $\varepsilon_{zz})$, we arrive at a stiffness of
 \begin{equation}
-	\tilde{C} = C - \frac{2q^2\left(\beta^2-4\alpha\gamma + 3 \varepsilon \gamma q\right)}{\left(\beta^2 - 4 \alpha \gamma + 4 \varepsilon \gamma q\right)^{3/2}}\label{eq:BTO_domainC}.
+	\tilde{C} = C - \frac{q_{11}^2}{2\left(\alpha_{11}^2 - 3 \alpha_{111}\left(\alpha_1  - \frac{q^2 P^2}{C_{11}}\right)\right)}\label{eq:BTO_domainC}.
 \end{equation}
-Having nonzero $P$ leads to a nonzero $\varepsilon$ as shown by the relation Eq.~\ref{eq:BTO_e0}.
-Combined with the fact that $\alpha,\beta < 0,$ and $\gamma > 0$, the second term in Eq.~\ref{eq:BTO_domainC} is always negative, leading to a smaller $\tilde{C}$ (softening) compared to when $P=0$. 
-This is in contradtion with the observations of the experiments, so a different explanation has to be sought.
+Again filling in all parameters for the homogeneous case leads to $\tilde{C}_d = 0.778 \,C$ in the domain.
+If there would be no penalty for shear strain, we find that, at the all, $P = 0$ and $\varepsilon_{zz} = 0.0$, leading to a stiffness of $\tilde{C}_w = 0.642 \, C = 0.82\, \tilde{C}_d$.
+While this does look like a triumph for the theory (since we're trying to find a $19\%$ softer wall), in reality the shear elastic constants $C_{44}$  will lead to a nonzero strain $\varepsilon_{zz}$ at the surface of the wall of around $40\%$ that in the domain, leading to $\tilde{C}_w = 0.79 \, C = 1.01 \tilde{C}_w$. 
+This is in contradiction with the observations of the experiments, so a different explanation has to be sought.
 
 % As can be seen from the experimental figures, the signature of the domain wall is much wider than the area in which $P$ interpolates between the two values of neighboring domains.
 % Coupled with the observation that due to the lower values of $P$ inside the wall, there will be less tensile strain generated by $f_q$, leading to an indentation at the domain wall, with a strain texture extending much further than the wall itself (see the blue line in Fig.~\ref{fig:BTO_rigid_wall}).
