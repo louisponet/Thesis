@@ -121,7 +121,7 @@ In the homogeneous case of a single domain with $P_z$ (which we write $P$ in the
 \end{align}
 If the parameters of Tab.~\ref{tab:BTO_param} are filled in, we find $P = \pm 0.311$ and $\varepsilon = 5 \cdot 10^{-3}$.
 This is higher than $P = 0.265$ \cite{Marton2010} without any electrostriction included, because the system can lower it's energy through $-q_{11}P_z^2\varepsilon_{zz}$ by increasing $P_z$ and having tensile strain $\varepsilon_{zz} > 0$.
-Similarly, when all terms are included in the full numerical simulation, we find for the domains that $P_z = \pm 0.363$ and $\varepsilon_{zz} = 1.4 \cdot 10^{-2}$.
+Similarly, when all terms are included in the full numerical simulation, we find for the domains that $P_z$ is higher still at $\pm 0.363$ and $\varepsilon_{zz} = 1.4 \cdot 10^{-2}$.
 
 The effective stiffness $\tilde{C}_{ijkl}$ can be found in general by taking the double derivative of the free energy with respect to $\varepsilon$:
 \begin{equation}
@@ -187,7 +187,7 @@ The lower portion of the wall will remain at the center of its original Peierls 
 It is therefore impossible to solve analytically the realistic situation, and we proceed with simulations to make semi-quantitative statements on the behavior.
 
 \section{Methods}
-The Finite Elements method (FEM) provides a natural framework to solve continuum problems, sometimes also referred to as phase-field problems, that involve gradients such as strain (gradient of the displacement $u$) and the gradient of polarization \cite{Biner}.
+The Finite Elements method (FEM) provides a natural framework to solve continuum problems, sometimes also referred to as phase-field problems, that involve gradients such as strain (gradient of the displacement $u$) and the gradients of polarization $\nabla P$ needed for the Ginzburg part of the energy\cite{Biner}.
 
 Similar to the well-known finite-difference methods, FEM is a local method, dividing the problem into separate domains (the elements) for which the contribution to the total energy can be calculated locally.
 A fundamental building block of this method is the isoparametric representation.
@@ -213,14 +213,14 @@ The values of the the displacement field $\mathbf{u}(\mathbf{x})$ and ferroelect
 	\caption{\label{fig:BTO_fem} Example of the morfology of a 2D finite element grid.}
 \end{figure}
 Inside each element a local coordinate system with axes $\eta$ and $\zeta$ can then be defined as shown by the red arrows in Fig.~\ref{fig:BTO_fem}(b).
-Together with the shape functions that are defined on each local element \lp{Should I give some more info on what they are}, this allows for the values of the fields to be interpolated at all points inside the elements from their values at the nodes.
+Together with the shape functions (local basis functions) that are defined on each local element \lp{Should I give some more info on what they are}, this allows for the values of the fields to be interpolated at all points inside the elements from their values at the nodes.
 Since the element represents a given volume of the total geometry, the contribution of each element to the total integral can thus be evaluated.
-A big bonus of this framework is that gradients of the fields can be evaluated purely locally, inside each element, through the use of this interpolation method.
+A big bonus of this framework is that gradients of the fields can be evaluated purely locally, inside each element, through the use of this interpolation method and field values at the nodal points.
 It also allows for a great flexibility through the density of the chosen grid and the order of interpolating functions used, although we do not exploit these.
 
 In our case, we use a rectangular geometry uniformly spanned by tetrahedron elements, as shown in Fig.~\ref{fig:BTO_fem}(c-d).
 The uniform mesh is largely motivated by implementation complexity, since we use a mostly in-house developed code based on the FEM building blocks supplied by the \href{https://github.com/KristofferC/JuAFEM.jl}{JuAFEM.jl} package.
-It is obvious that the computational cost could be lowered by using a finer meshing close to the domain wall, where the fields vary the most, and a more course one in the domains.
+It is obvious that the computational cost could be lowered by using a finer meshing close to the domain wall, where the fields vary the most, and a more coarse one in the domains.
 One has to, however, consider that when the tip is applied a finer mesh is also required around it, leading to different meshes for different locations of applied tip, greatly increasing the post-processing complexity.
 
 The last bulding block for the simulation is a way to optimize the fields in order to reach the equilibrium condition, both with and without applied tip.
@@ -228,9 +228,12 @@ To do this we use a Conjugate Gradient method to minimize the total energy in te
 This requires us to define the partial derivatives of the total energy in terms of all the DOFs, for which we use a forward automatic differentiation scheme as implemented in \href{www.juliadiff.org/ForwardDiff.jl/latest/}{ForwardDiff.jl}, again for its remarkable simplicity and speed (as an idea, on a 24 core E5-2680 v3 server, the $\approx$ 3.5 million partial derivatives are computed in around 2.1 seconds).
 
 Using the parameters from previous ab-initio results \cite{Marton2010}, we first optimized the equilibrium situation for both a uniform domain and a single domain wall.
-A bell shaped force field, modeled by function $a e^{-x^2/d^2}$ with $d \approx 20$nm representing the diameter of the contact area and $a = 10^{-7} J/m^3$, was then applied at various positions throughout both geometries.
+A gaussian force field, $\frac{a}{\sigma \sqrt{2\pi}}e^{-\frac{(x-x_0)^2}{2\sigma^2}}$ with $\sigma = 1 \cdot 10^{-9}$ representing the diameter of the contact area and $a = 1 \cdot 10^{-18} \frac{eV}{nm^3}$, was then applied at various positions $x_0$ throughout both geometries.
 The uniform domain simulation is used as a measure of the finite-size effects that are inherently present in our simulations due to the long rangedness of strain and non-infinite geometry.
-This causes the indentation at the center of the geometry for a single domain to be less than the one when the tip is applied off-center.
+
+This causes the indentation at the center of the geometry for a single domain to be less than the one when the tip is applied off-center, due to less material being present to support the force.
+
+
 Since this is unphysical, we compensate for this by adding the differences to the results in the geometry with a wall present \lp{better explanation?}.
 
 \section{Results}
