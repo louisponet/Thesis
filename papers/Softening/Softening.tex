@@ -232,9 +232,14 @@ A gaussian force field, $\frac{a}{\sigma \sqrt{2\pi}}e^{-\frac{(x-x_0)^2}{2\sigm
 The uniform domain simulation is used as a measure of the finite-size effects that are inherently present in our simulations due to the long rangedness of strain and non-infinite geometry.
 
 This causes the indentation at the center of the geometry for a single domain to be less than the one when the tip is applied off-center, due to less material being present to support the force.
+The effect this has on the simulations is shown in Fig.~\ref{fig:BTO_domain_strain}.
+Since this is unphysical, we compensate for this by adding the differences to the results in the geometry with a wall present.
 
+\begin{figure}
+	\IncludeGraphics{xsize_domain_strain.png}
+	\caption{{\bf Finite size effects in domain.} a) Maximum indent by the applied tip, the smaller $L_x$ results in a larger difference of the indentation at the edge of the  geometry versus in the center. Since this simulation is for a domain the tip should result in an identical indentiation no matter where it is applied. It is also clear that when the geometry is smaller, the central indentation is also larger due to less total material supporting the tip. b) Visual demonstration of the asymmetric deformation and $\varepsilon_{zz}$ that results from the open boundary conditions and a tip applied at the edge of the geometry.}
+\end{figure}
 
-Since this is unphysical, we compensate for this by adding the differences to the results in the geometry with a wall present \lp{better explanation?}.
 
 \section{Results}
 
@@ -254,5 +259,12 @@ Multiple geometries and element sizes were tested in order to verify that the re
 The softening is estimated as the ratio of the surface deformation between the domain and the wall.
 
 As seen in Fig.~\ref{fig:BTO_theory}(a), and predicted by the above statements, the wall is softest not in the center, but rather at the point where $u'$ or $\varepsilon_{xz}$ is highest.
+The breathing mode can be observed from Fig.~\ref{fig:BTO_breathing}, where the polarization throughout the geometry at different values of the z-coordinate is displayed.
+Close to the surface, at $z=5$ nm, the wall is markedly wider when the tip is applied, a result of the presence of the breathing mode.
+Since this is not possible in the domain, this contributes to the softness of the wall itself.
+\begin{figure}
+	\IncludeGraphics{breathing.png}
+	\caption{{\bf Breathing mode.} \label{fig:BTO_breathing}}
+\end{figure}
 
 \printbibliography
