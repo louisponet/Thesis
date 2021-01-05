@@ -10,31 +10,34 @@ using LaTeXStrings
 using FileIO
 #%%
 ## GeTe
-cd(datadir("Rashba/GeTe"))
-job1 = DFJob(datadir("Rashba/GeTe/NSOC"))
-wfuncs1 = load(joinpath(job1, "wfuncs.jld2"))["wfuncs"]
-wfuncs1_soc = WannierFunction[]
-for i = 1:8
-    push!(wfuncs1_soc, WannierFunction(wfuncs1[i].points, map(x-> SVector(x[1], 0.0), wfuncs1[i].values)))
-    push!(wfuncs1_soc, WannierFunction(wfuncs1[i].points, map(x-> SVector(0.0, x[1]), wfuncs1[i].values)))
-end
-job = DFJob(datadir("Rashba/GeTe/SOC"))
+# cd(datadir("Rashba/GeTe"))
+job_nsoc = DFJob(datadir("Rashba/GeTe/NSOC"))
+bands_nsoc = readbands(job_nsoc)
+fermi_nsoc = readfermi(job_nsoc)
+hami_nsoc = readhami(job_nsoc)
+wfuncs_nsoc = load(joinpath(job_nsoc, "wfuncs.jld2"))["wfuncs"]
+wbands_nsoc = wannierbands(hami_nsoc, bands_nsoc)
+plot(wbands_nsoc, bands_nsoc, ylims=[-2.1, 16])
+job_nsoc["wan"][:dis_froz_max]
+plot(job_nsoc, -5, 5)
+# wfuncs_nsoc = WannierFunction[]
+# for i = 1:8
+#     push!(wfuncs1_soc, WannierFunction(wfuncs1[i].points, map(x-> SVector(x[1], 0.0), wfuncs1[i].values)))
+#     push!(wfuncs1_soc, WannierFunction(wfuncs1[i].points, map(x-> SVector(0.0, x[1]), wfuncs1[i].values)))
+# end
 
+job_soc = DFJob(datadir("Rashba/GeTe/SOC"))
 bands_soc = readbands(job_soc)
-bands = readbands(job)
-fermi = readfermi(job)
+fermi_soc = readfermi(job_soc)
+hami_soc = readhami(job_soc)
+wfuncs_soc = load(joinpath(job_soc, "wfuncs.jld2"))["wfuncs"]
+Sx_soc, Sy_soc, Sz_soc = DFW.readspin(job_soc)
+wbands_soc = wannierbands(hami_soc, bands_soc)
+plot(bands_soc,  wbands_soc, fermi=fermi_soc, ylims=[-5,5])
 
-wfuncs = load(joinpath(job, "wfuncs.jld2"))["wfuncs"]
 for i = 1:16
     DFW.write_xsf(joinpath(job1, "$i.xsf"), wfuncs1_soc[i], job1.structure, value_func = x -> abs(x[1]) > abs(x[2]) ? sign(real(x[1])) * norm(x) : sign(real(x[2]))*norm(x))
 end
-wfuncs = load(joinpath(job, "wfuncs.jld2"))["wfuncs"]
-wfuncs_soc = load(joinpath(job_soc, "wfuncs.jld2"))["wfuncs"]
-hami = readhami(job)
-hami_soc = readhami(job_soc)
-wbands = wannierbands(hami, bands)
-wbands_soc = wannierbands(hami_soc, bands_soc)
-plot(bands_soc,  wbands_soc, fermi=fermi_soc, ylims=[-5,5])
 wbands[5].eigvec[101]
 t = similar(wfuncs[1])
 Lx, Ly, Lz = zeros(ComplexF64, 8, 8), zeros(ComplexF64, 8, 8), zeros(ComplexF64, 8, 8)
