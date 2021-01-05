@@ -174,7 +174,7 @@ plot(abs.(getindex.(wbands[5].eigvec[90:110],1)))
 plot!(abs.(getindex.(wbands[6].eigvec[90:110],1)))
 
 
-
+## Potentials figure
 #%%
 using DrWatson
 quickactivate(@__DIR__)
