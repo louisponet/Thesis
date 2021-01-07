@@ -12,20 +12,26 @@
 The research field of spintronics aims to understand the behavior of spins inside materials, and translate this understanding into active control of these degrees of freedom for possible technological applications.
 Many possible devices have been theorized, for example, spin field-effect transistors (spin-FET)\cite{Datta1990}, and storage devices which utilize spin-current and associated spin-transfer torque to efficiently manipulate magnetic domains \cite{Kent2015,Jungwirth2016}.
 In spite of fundamental interest and potential for applications, the actual realization of these devices has been rather elusive.
-One of the main culprits for the limited success to date is that the devices require very granular, ideally electric, control of the spin, which is impeded by the, usually, widely separated energy scales and weak coupling between magnetic and charge degrees of freedom.
+One of the main culprits for the limited success to date is that the devices require very granular, ideally electric, control of the spin.
+This is often precluded by the widely separated energy scales and weak coupling between magnetic and charge degrees of freedom.
 One class of materials that can allow for such electric control of spin-polarized states are the ferroelectric semiconductors with large atomic spin-orbit coupling (SOC) \cite{DiSante2013,Ishizaka2011,Kim2014}.
-Inversion symmetry breaking together with SOC results in a linear energy splitting of spin-polarized bands, manifested in the band structure as a conical intersection surrounding a high-symmetry point of the Brillouin Zone (BZ) (see Fig.~\ref{fig:Rashba_intro_dispersion}).
-Thus, current carriers (holes in the case of Fig.~\ref{fig:Rashba_intro_dispersion}) travelling through the material will tend to align their spins to these spin-polarized bands.
-As we discuss in more detail in the following, the direction of the spin polarization depends on the orientation and strength of the electric field $\mathbf{E}$. In ferroelectrics, an internal field results from the polarization $P$, allowing it to be tuned and switched by an external applied electric field. These spin-polarized states have been observed both experimentally \cite{Ishizaka2011,Liebmann2016,Krempasky2015SurfaceSemiconductor}, and from {\it ab-initio} density functional theory (DFT) simulations \cite{DiSante2013}. It is, however, often not well understood and often misattributed what the underlying microscopic mechanisms are that lead to the observed splitting.
-\lp{explicit mentions? Maybe too aggressive}
+Inversion symmetry breaking together with SOC results in a linear energy splitting of spin-polarized bands, manifested in the band structure as a conical intersection surrounding a time-reversal symmetric point of the Brillouin Zone (BZ) (see Fig.~\ref{fig:Rashba_intro_dispersion}).
+Due to the definite spin-polarization of these bands, current carriers \footnote{holes in the case of Fig.~\ref{fig:Rashba_intro_dispersion}} traveling through the material will tend to align their spins to this spin-polarization.
+As we discuss in more detail in the following, the direction of the spin polarization depends on the orientation and strength of the electric field $\mathbf{E}$. In ferroelectrics, an internal field results from the polarization $P$, allowing it to be tuned and switched by an external electric field.
+These spin-polarized states have been observed both experimentally \cite{Ishizaka2011,Liebmann2016,Krempasky2015SurfaceSemiconductor}, and from {\it ab-initio} density functional theory (DFT) simulations \cite{DiSante2013}.
+It is, however, often not well understood and misattributed what the underlying microscopic mechanisms are that lead to the observed splitting.
 
-We investigate multiple different origins of this $k$ and $E$ dependent spin-splitting. The discussed contributions arise due to the Hamiltonian of form
+We start by investigating multiple origins of this $k$ and $E$ dependent spin-splitting. The discussed energy contributions all arise due to the Hamiltonian of form
 \begin{equation}
 	\label{eq:Rashba_form}
 	H_R(\mathbf{k}) = \alpha_R \frac{\mathbf{E}}{|\mathbf{E}|} \cdot (\mathbf{k} \times \hat{\mathbf{\sigma}}),
 \end{equation}
-where $\hat{\mathbf{\sigma}}$ is the electron spin operator, and $\mathbf{E}$ the electric field. It will turn out that multiple microscopic effects can lead to contributions of this form, some of these are well known, others are more obscure. The magnitude of the contribution depends on the microscopic origin, namely whether the effect is purely relativistic or rather a combination of relativistic and electrostatic. Certain materials showcase an exceedingly big splitting, for example in GeTe as can be seen in Fig.~\ref{fig:Rashba_intro_dispersion}, and will be used as the main example throughout this chapter.
+where $\hat{\mathbf{\sigma}}$ is the electron spin operator, and $\mathbf{E}$ the electric field.
+It will turn out that multiple microscopic effects can lead to contributions of this form, some of these are well known, others are more obscure.
+The magnitude of the contribution depends on the microscopic origin, namely whether the effect is purely relativistic or rather a combination of relativistic and electrostatic terms.
 
+Certain materials showcase an exceedingly big splitting, for example in GeTe as can be seen in Fig.~\ref{fig:Rashba_intro_dispersion}, and we therefore use this material as the main example throughout this chapter.
+To investigate how these effects occur in GeTe, we utilize DFT, followed by a Wannierization, in order to investigate local real-space properties of the Bloch functions around the time reversal symmetric points of the BZ.
 
 \begin{figure}[h]
 	\begin{subfigure}[b]{0.49\textwidth}
@@ -40,7 +46,7 @@ where $\hat{\mathbf{\sigma}}$ is the electron spin operator, and $\mathbf{E}$ th
 		{\bf Large Rashba splitting} (a) The band dispersion of the first valence band in GeTe, around the $Z$-point of the Brillouin zone (see Fig.~\ref{fig:Rashba_BZBSDOS} for details). Two graphs show both non spin-orbit coupled (NSOC, blue), and spin-orbit coupled (SOC, red) case. The $u-d$ and $u'-d'$ labels designate the up and down spin-polarized bands, where the prime signifies that the orientation of the spin axis depends on specific path followed in $k$-space. b) Shifted parabolic energy leves due to Rashba splitting, and associated spin texture.}
 \end{figure}
 
-We hope that this will shed light on where these contributions come from and how they compare with eachother and how they ultimately lead to the observed spin-splitting.
+We finish with a conclusion on the origin of most observed Rashba-like phenomena \lp{could be better}.
 
 \section{Rashba-Bychkov Effect}
 %############################ NEW ############################
