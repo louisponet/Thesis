@@ -2,10 +2,12 @@
 
 dev "
 cd papers
-hook global ModeChange .*:insert:.* %{nop %sh{rm /home/ponet/Documents/PhD/Thesis/papers/*aux
-rm /home/ponet/Documents/PhD/Thesis/papers/*/*aux
-pdflatex -output-directory /home/ponet/Documents/PhD/Thesis/papers /home/ponet/Documents/PhD/Thesis/papers/Thesis.tex > /dev/null 2>&1 < /dev/null &} }
 "
+#hook global NormalIdle .* %{nop %sh{rm /home/ponet/Documents/PhD/Thesis/papers/*aux
+#rm /home/ponet/Documents/PhD/Thesis/papers/*/*aux
+#pdflatex -output-directory /home/ponet/Documents/PhD/Thesis/papers /home/ponet/Documents/PhD/Thesis/papers/Thesis.tex > /dev/null 2>&1 < /dev/null &} }
+#set-option global idle_timeout 2000
+#"
 # dev "
 # cd papers
 # hook global ModeChange .*:insert:.* %{nop %sh{rm /home/ponet/Documents/PhD/Thesis/papers/*aux} }

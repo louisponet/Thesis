@@ -8,6 +8,7 @@ using LinearAlgebra
 using Plots
 using LaTeXStrings
 using FileIO
+pyplot()
 #%%
 ## GeTe
 # cd(datadir("Rashba/GeTe"))
@@ -17,9 +18,12 @@ fermi_nsoc = readfermi(job_nsoc)
 hami_nsoc = readhami(job_nsoc)
 wfuncs_nsoc = load(joinpath(job_nsoc, "wfuncs.jld2"))["wfuncs"]
 wbands_nsoc = wannierbands(hami_nsoc, bands_nsoc)
-plot(wbands_nsoc, bands_nsoc, ylims=[-2.1, 16])
-job_nsoc["wan"][:dis_froz_max]
-plot(job_nsoc, -5, 5)
+# plot(wbands_nsoc, bands_nsoc, ylims=[-2.1, 16])
+p = plot(job_nsoc, -5.3, 5, 0.1, dpi=200, layout = grid(1, 2, widths=(0.7,0.3)))
+plot!(p[1], xticks = ([1, 101, 201], ["A", "Z", "U"]))
+plot!(p[2], legendfontsize = 10)
+
+savefig(papersdir("Rashba", "Images", "NSOC_dos.png"))
 # wfuncs_nsoc = WannierFunction[]
 # for i = 1:8
 #     push!(wfuncs1_soc, WannierFunction(wfuncs1[i].points, map(x-> SVector(x[1], 0.0), wfuncs1[i].values)))
@@ -33,7 +37,15 @@ hami_soc = readhami(job_soc)
 wfuncs_soc = load(joinpath(job_soc, "wfuncs.jld2"))["wfuncs"]
 Sx_soc, Sy_soc, Sz_soc = DFW.readspin(job_soc)
 wbands_soc = wannierbands(hami_soc, bands_soc)
-plot(bands_soc,  wbands_soc, fermi=fermi_soc, ylims=[-5,5])
+p = plot(job_soc, -5.3, 5, 0.1, dpi=200, layout = grid(1, 2, widths=(0.7,0.3)))
+plot!(p[1], xticks = ([1, 101, 201], ["A", "Z", "U"]))
+plot!(p[2], legendfontsize = 10)
+savefig(papersdir("Rashba", "Images", "SOC_dos.png"))
+
+plot(plot(wbands_nsoc, bands_nsoc, fermi=fermi_nsoc, ylims=[-5.3, 5], legend=:topright), plot(wbands_soc, bands_soc, fermi=fermi_soc, ylims=[-5.3, 5]), dpi=200, title = "",xticks = ([1, 101, 201], ["A", "Z", "U"]))
+savefig(papersdir("Rashba", "Images", "wanvsdft.png"))
+
+
 
 for i = 1:16
     DFW.write_xsf(joinpath(job1, "$i.xsf"), wfuncs1_soc[i], job1.structure, value_func = x -> abs(x[1]) > abs(x[2]) ? sign(real(x[1])) * norm(x) : sign(real(x[2]))*norm(x))

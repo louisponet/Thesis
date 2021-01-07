@@ -2,7 +2,7 @@
 \newcommand{\Unkr}{u_n(\bm{k}, \bm{r})}
 \newcommand{\eikr}{$e^{i\bm{k}\cdot\bm{r}}$}
 \newcommand{\Eikr}{e^{i\bm{k}\cdot\bm{r}}}
-\chapter{Spin-momentum locking in high spin-orbit coupled ferroelectrics}
+\chapter{Spin-momentum locking in high spin-orbit coupled ferroelectrics \label{ch:Rashba}}
 \section{Introduction}
 % Bulk ferroelectrics with large atomic spin-orbit coupling allow for electric control of spin-polarized states~\cite{DiSante2013,Ishizaka2011,Kim2014, Liebmann2016, Krempasky2015SurfaceSemiconductor}, allowing for the switching of the spin texture by an externally applied electric field. 
 % The underlying mechanism is, however, not well understood.
@@ -10,10 +10,11 @@
 % The research area of spintronics aims to supersede standard electronics by using both the spin and charge degree of freedom of the carriers for information processing and storage. %\sa{https://doi.org/10.1146/annurev-conmatphys-070909-104123}
 %
 The research field of spintronics aims to understand the behavior of spins inside materials, and translate this understanding into active control of these degrees of freedom for possible technological applications.
-Many possible devices have been theorized for example are spin field-effect transistors (spin-FET)\cite{Datta1990} and storage devices which utilize spin-current and associated spin-transfer torque to efficiently manipulate magnetic domains \cite{Kent2015,Jungwirth2016}. In spite of fundamental interest and potential for applications, the actual realization of these devices has been rather elusive.
-One of the main culprits for the limited success to date is that the devices require very granular, ideally electric, control of the spin, which is impeded by widely separated energy scales and weak coupling between magnetic and charge degrees of freedom.
-One class of materials that allows for such electric control of spin-polarized states are the ferroelectric semiconductors with large atomic spin-orbit coupling (SOC) \cite{DiSante2013,Ishizaka2011,Kim2014}.
-Inversion symmetry breaking together with SOC results in a linear splitting of spin-polarized bands, seen in the band structure as a conical intersection surrounding a high-symmetry point of the Brillouin Zone (see Fig.~\ref{fig:Rashba_intro_dispersion}).
+Many possible devices have been theorized, for example, spin field-effect transistors (spin-FET)\cite{Datta1990}, and storage devices which utilize spin-current and associated spin-transfer torque to efficiently manipulate magnetic domains \cite{Kent2015,Jungwirth2016}.
+In spite of fundamental interest and potential for applications, the actual realization of these devices has been rather elusive.
+One of the main culprits for the limited success to date is that the devices require very granular, ideally electric, control of the spin, which is impeded by the, usually, widely separated energy scales and weak coupling between magnetic and charge degrees of freedom.
+One class of materials that can allow for such electric control of spin-polarized states are the ferroelectric semiconductors with large atomic spin-orbit coupling (SOC) \cite{DiSante2013,Ishizaka2011,Kim2014}.
+Inversion symmetry breaking together with SOC results in a linear energy splitting of spin-polarized bands, manifested in the band structure as a conical intersection surrounding a high-symmetry point of the Brillouin Zone (BZ) (see Fig.~\ref{fig:Rashba_intro_dispersion}).
 Thus, current carriers (holes in the case of Fig.~\ref{fig:Rashba_intro_dispersion}) travelling through the material will tend to align their spins to these spin-polarized bands.
 As we discuss in more detail in the following, the direction of the spin polarization depends on the orientation and strength of the electric field $\mathbf{E}$. In ferroelectrics, an internal field results from the polarization $P$, allowing it to be tuned and switched by an external applied electric field. These spin-polarized states have been observed both experimentally \cite{Ishizaka2011,Liebmann2016,Krempasky2015SurfaceSemiconductor}, and from {\it ab-initio} density functional theory (DFT) simulations \cite{DiSante2013}. It is, however, often not well understood and often misattributed what the underlying microscopic mechanisms are that lead to the observed splitting.
 \lp{explicit mentions? Maybe too aggressive}
@@ -270,7 +271,22 @@ The density of states (DOS), displayed in Fig.~\ref{fig:Rashba_BZBSDOS}-(c), con
 % where we only included terms with the $E_z$ component.
 
 \section{Methods}
-We performed ab-initio DFT calculations using the Quantum-Espresso software package\cite{Giannozzi2009}. In order to confirm the linear varying OAM even when spin-orbit is not included we performed non-relativistic, as well as relativistc calculations. Both were performed using ONCVPSP pseudopotentials, with 30 Ry for the energy cutoff, and 160 Ry for the density cutoff. The reciprocal space was sampled using a 10x10x10 and 6x6x6 Monkhorst-Pack grid for the self-consistent and non-self-consistent calculations, respectively, using an energy convergence threshold of $10^{-7}Ry$. Afterwards we used the Wannier90 package \cite{Mostofi2014AnFunctions} to perform the Wannierization, using atomic $s$ and $p$-orbitals on both Ge and Te. This provides us with the tools to analyze the real space properties of Bloch functions such as the dipole moment and OAM. 
+We performed ab-initio DFT calculations using the Quantum-Espresso software package\cite{Giannozzi2009}. In order to confirm the linear varying OAM even when spin-orbit is not included we performed non-relativistic, as well as fully relativistic calculations.
+Both were performed using ONCVPSP pseudopotentials, with 30 Ry for the energy cutoff, and 120 Ry for the density cutoff.
+The reciprocal space was sampled using a 6x6x6 Monkhorst-Pack grid, for the self-consistent and non self-consistent calculations, using an energy convergence threshold of $10^{-7}$Ry.
+Afterwards we used the Wannier90 package \cite{Mostofi2014AnFunctions} to perform the Wannierization, using projections on atomic $s$- and $p$-orbitals for both Ge and Te ions. The result is showcased in Fig.~\ref{fig:GeTe_wannierization}.
+\begin{figure}[b!]
+\IncludeGraphics[width=\linewidth]{wanvsdft.png}
+\caption{\label{fig:GeTe_wannierization} Result of Wannierization procedure for non-relativistic (a) and relativistic (b) calculations.}
+\end{figure}
+
+Since the present theory depends crucially on local, real space, properties of the Bloch functions, the next step is to generate the Wannier orbitals $\Ket{w_\alpha(\bm{r})}$.
+
+
+
+This provides us with the tools to analyze the real space properties of Bloch functions such as the dipole moment and OAM.
+
+
 
 \section{Band structure}
 % % ~\centering
@@ -278,8 +294,19 @@ We performed ab-initio DFT calculations using the Quantum-Espresso software pack
 \IncludeGraphics[width=\linewidth]{interference.png}
 \caption{\label{fig:interference}Interference between orbitals with nonzero OAM. Three neighboring unit cells are displayed, each with the same $p_x + ip_z$ orbital (thus having nonzero $l_y$). The wave functions of the left and right unit cells have their phase rotated by the plane-wave part $e^{i k_x R_x}$. The amplitude and phase of the wave function are encoded with the length and polar angle of the arrows.}
 \end{figure}
+\begin{figure}[b!]
+	\begin{subfigure}[b]{0.49\textwidth}
+	\caption{Non-relativistic}
+	\IncludeGraphics{NSOC_dos.png}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+	\caption{Fully-relativistic}
+	\IncludeGraphics{SOC_dos.png}
+	\end{subfigure}
+\caption{\label{fig:GeTe_bands_dos} Bandstructure and projected density of states. In both panels the bandstructure was colored according to the contribution of the constituent orbitals, as indicated in the density of state plots. The bands that are formed by the $s$-orbitals are situated 5 eV below the shown window.}
+\end{figure}
 The bands we will focus on most are the three topmost valence bands. As seen in Fig. \ref{fig:Rashba_BZBSDOS}-(b), these bands have the largest spin-splitting. This suggests that indeed the atomic SOC plays an important rule, seen as these bands are comprised mostly of Te orbitals, and SOC is largest on Te. If one were to fit the dispersion of the topmost band to Eq.~\ref{eq:Rashba_form},
-it results in a large prefactor $\alpha_R\approx 30.7$~eV\.\angstrom \cite{DiSante2013}. As discussed before, a more realistic prefactor would be $\alpha_R=10^{-6}$~eV in the purely relativistic case inside the vacuum.
+it results in a large prefactor $\alpha_R\approx 30.7$~eV$\cdot$\angstrom \cite{DiSante2013}. As discussed before, a more realistic prefactor would be $\alpha_R=10^{-6}$~eV in the purely relativistic case inside the vacuum.
 
 % This is even more abnormal considering the fact that this is a bulk material, and that it is known that proper ferroelectrics have zero polarization in open boundary conditions because the depolarizing fields are not screened. Moreover, in the periodic boundary conditions utilized by DFT, the potential mimics short circuit boundary conditions \cite{Meyer2008}, $\bm E=0$, which results in zero contribution from Eq.~\ref{eq:Rashba_form}. 
 

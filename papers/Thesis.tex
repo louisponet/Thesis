@@ -1,8 +1,9 @@
 %
-\documentclass[10pt,a4paper]{book}
+\documentclass[12pt,a4paper,makeidx]{phdthesis}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,xcolor}
 \usepackage[backend=biber,refsection=chapter]{biblatex}
+\usepackage[margin=30mm]{geometry}
 % \usepackage{cancel}
 \usepackage{siunitx}
 \usepackage{graphicx}
@@ -13,6 +14,7 @@
 % \usepackage[normalem]{ulem}
 % \usepackage{tikz}
 \usepackage{bm}
+\usepackage{fancyhdr}
 % \usepackage{natbib}
 \usepackage{hyperref}
 \addbibresource{./GdMn2O5/bib.bib}
@@ -87,15 +89,12 @@ And finally, the coupling between ferroelectricity and strain in BaTiO$_3$ leads
 
 We utilize both theoretical and computational tools to understand the nature of these interactions, how they lead to cross-order coupling in these materials, and how this then translates into the experimentally observed behavior.
 % \chapter*{Acknowledgements}
-% \tableofcontents
+\tableofcontents
 
-% \Include{Introduction}
-% \Include{Theory}
-% \chapter{Charge order and spin-momentum locking in high spin-orbit coupled ferroelectrics}
+\Include{Introduction}
+\Include{Theory}
 \Include{Rashba}
+% \Include{Cr}
 % \Include{GdMn2O5}
 % \Include{Softening}
-% \Include{Cr}
-% \chapter{Strong coupling and ultrafast control of charge and spin density waves in elemental Chromium}
-% \subfile{chapters/chromium_sdw_cdw.tex}
 \end{document}
