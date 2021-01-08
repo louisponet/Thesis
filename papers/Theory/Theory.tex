@@ -32,25 +32,59 @@ In much of this work the term $e^{i\bm{k}\cdot\bm{r}}$ will be called the envelo
 When $k=0$ we can see that the sum over the WFs, centered at different unit cells, reconstruct the $u_{n\bm{k}}$ periodic part of the BF.
 In the case of $k \neq 0$, similar to how the envelope part modulates the periodic part of the BF, the contribution of each WF to the total sum over the unit cells needs to be modulated in a discrete way through $e^{i \bm{k} \cdot \bm{R}}$.
 
-The inverse Fourier transform over the BF in the first Brillouin Zone (BZ) can then be performed in order to generate the localized WF,
+The inverse Fourier transform over the BF in the first Brillouin Zone (BZ) can then be performed in order to generate the localized WFs,
 \begin{equation}
+	\label{eq:Theory_wanfourier}
 	\Ket{w_{n}(\bm{r} - \bm{R})} = \frac{V}{(2\pi)^3} \int_{BZ} d \bm{k} e^{-i \bm{k} \cdot \bm{R}} \Ket{\psi_{n\bm{k}}(\bm{r})},
 \end{equation}
 where $V$ denotes the real-space volume of the unit cell.
 In these and following equations, the normalization convention is used such that $\int_V d\bm{r}\BraKet{\psi_{n\bm{k}}(\bm{r})} = 1$.
+As can be seen from the right panel in Fig.~\ref{fig:Theory_blochvswan}, WFs centered in different unit cells are shifted copies of one another.
 
-One of the most useful properties of the WFs lies in the realization that, through the gauge freedom at each $\bm{k}$ of the BF\footnote{The solution to Schr\"odinger equation does not depend on this phase.} , the shape of the WFs is not unique:
+One of the most useful properties of the WFs lies in the realization that, through the gauge freedom at each $\bm{k}$ of the BF\footnote{The solution to Schr\"odinger equation does not determine uniquely its phase.}, the shape of the WFs is not unique:
 \begin{align}
 	\Ket{\psi_{n\bm{k}}(\bm{r})} &\Rightarrow \Ket{\tilde{\psi}_{n\bm{k}}(\bm{r})} = e^{i \phi_n(\bm{k})} \Ket{\psi_{n\bm{k}}(\bm{r})} \\
 	\Ket{w_{n}(\bm{r} - \bm{R})} &\Rightarrow \Ket{\tilde{w}_{n}(\bm{r} - \bm{R})} = \frac{V}{(2\pi)^3} \int_{BZ} d \bm{k} e^{-i (\bm{k} \cdot \bm{R} + \phi_n(\bm{k}))} \Ket{\psi_{n\bm{k}}(\bm{r})},
 \end{align}
 This means that by varying $\phi_n(\bm{k})$ we can adapt the used WF basis to the needs of the particular problem under investigation.
-In the case of a single isolated band, as discussed up to now, this is mainly a luxury. However, in most situations we are interested in groups of bands forming a composite manifold. In this case deciding the gauge in a good way  
+In the case of a single isolated band, as discussed up to now, this is mainly a luxury. However, in most situations we are interested in groups of bands forming a composite manifold, detached from other bands.
+Deciding on the right gauge is a necessity in order to achieve well localized WFs.
+This is because composite band manifolds, in general, will harbor crossings and degeneracies where the BFs become non-analytic and thus the variation of the periodic parts $u_{n\bm{k}}$, and by proxy the BFs themselves, will be non-analytic in the variation over $\bm{k}$.
+If one then performs the Fourier transform as in Eq.~\ref{eq:Theory_wanfourier} it becomes clear that only when the BFs vary smoothly there will be a cancellation of terms from the fast varying exponent $e^{i \bm{k}\cdot \bm{R}}$ for large $\bm{R}$.
+It is thus important to choose a gauge at each $k$-point such that the BFs vary a smoothly as possible, which will then leads to the WFs to be as localized as possible. \lp{I could use also eq (23,24) of Marzari's review to show this more explicitely}.
+One can prove \cite{Kunes2004, Marzari2012} that in this way a unique set of maximally localized Wannier functions (MLWF) can be found for an isolated set of composite bands.
 
-WFs offer a rigorous and flexible solution to this question, rewriting the BFs as a discrete Fourier transform of (exponentially) localized, cell-periodic wavefunctions.
+In practice, this amounts to finding unitary transformation matrices $U^{nm}_{\bm{k}}$ such that the BFs
+\begin{equation}
+	\Ket{\tilde{\psi}_{n\bm{k}}(\bm{r})} = \sum_m U^{nm}_{\bm{k}} \Ket{\psi_{m\bm{k}}(\bm{r})}
+\end{equation}
+are as smoothly varying as possible throughout the BZ.
+Here $n,m$ are band indices enumerating the bands inside the composite manifold.
+It can be shown that since traces are invariant w.r.t. these transformations, making observables such as the Hamiltonian well-defined in terms of these isolated sets of composite bands.
+If maximal localization is not the goal, tweaking the $U^{nm}_{\bm{k}}$ allows for the generation of WFs with other desirable characteristics in a way that they, e.g., obey certain ionic-site symmetries.
+This can be achieved by projecting onto atomic-like orbitals, which can be very useful in gaining a further understanding in terms of orbitals with definite and known properties.
+More details on the different construction methods and can be found in Ref.~\cite{Marzari2012}.
 
-This construction is flexible in the sense that it is not unique. BFs have a gauge freedom at each k value, which in turn will have an effect on the WFs.
-One gauge that is commonly used is the one that localized the functions as much as possible, leading to the so-called Maximally Localized Wannier Functions (MLWF).
-Other gauges can be chosen such that the obtained functions have certain symmetries or have maximum similarity to atomic orbitals.
+Up to now, only isolated sets of bands were discussed. However, in many cases such a set does not exist in the region of interest.
+This leads to sets of band which are termed {\it entangled bands}, being connected to bands that lie outside this energy range.
+If we are seeking $J$ WFs, we need to somehow select at each $k$-point $J$ states from a bigger set $J_{\bm{k}}$, that can then be used in the localization procedure.
+This leads to a two-step process where first a subspace is selected, followed by the final gauge selection to arrive at the final localized WFs.
+In general there are again many ways to do this subspace selection (or {\it disentanglement}).
+The most prevalent two are to use another projection based method, or one that again minimizes the real space spread of the WFs.
+We utilize the latter in this work. It is based on trying to find a set of unitary transformations (one for each $k$-point) that lead to the maximal overlap of the selected subspaces at each $k$-point.
+As discussed before, smoothness in reciprocal space means that this subspace as a whole can be said to be more localized in real space, although it is not as straightforward to understand exactly what this means as in the case of the indvidual WFs.
+Nonetheless, following this procedure, it is again possible to utilize the one discussed for composite bands to ultimately lead to the WFs which are very well localized.
+In many cases, it is desirable to adapt the algorithm in such a way that the BFs inside a ``frozen'' energy window are exactly interpolated by the resulting WF base and tight-binding Hamiltonian.
+
+The final process to extract a tight-binding Hamiltonian in a WF basis, starting from an ab-initio DFT simulation, can thus be summarized as follows:
+\begin{enumerate}
+	\item perform a self-consisten DFT calculation in order to find the ground state density and BFs
+	\item find which trial orbitals (e.g. atomic-like) are most suitable for the bands or problem under investigation. This can be done for example by perfoming a projected density of states calculation.
+	\item select an inner ``frozen'' window with the most important bands, and, if entangled, an outer window from which to disentangle $J$-dimensional subspaces for each $k$-point
+	\item use a projection on the trial orbitals as the initial guess and then optimize the smoothness of the subspaces as a whole to find $J$ orbitals at each $k$-point
+	\item find the final gauges $U^{nm}_{\bm{k}}$ in order to minimize the spread of each of the $J$ WFs.
+\end{enumerate}
+
+
 
 
