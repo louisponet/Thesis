@@ -1,5 +1,5 @@
 #!/bin/fish
 evince papers/Thesis.pdf &
 while sleep 2
-	find ./ -name '*.tex' | entr -s 'pdflatex -output-dir /home/ponet/Documents/PhD/Thesis/papers /home/ponet/Documents/PhD/Thesis/papers/Thesis.tex'
+	find ./ -name '*.tex' | entr -s 'pdflatex -halt-on-error -output-dir /home/ponet/Documents/PhD/Thesis/papers /home/ponet/Documents/PhD/Thesis/papers/Thesis.tex'
  end

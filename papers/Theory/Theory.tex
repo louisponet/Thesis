@@ -2,15 +2,54 @@
 \section{Spin-orbit coupling}
 \section{Wannier Functions}
 
-In a lot of the work presented in this Thesis we construct models to describe the physics that result in a certain effect in real materials.
-These models are most of the time defined in terms of a limited set of local atomic-like orbitals, since these offer the most intuitive understanding most of the time, and the biggest contribution to particular effects can often be traced back to only a limited subset of all the orbitals.
+In a lot of the work presented in this Thesis we construct simplified model Hamiltonians to describe the physics that result in a certain effect in real materials.
+For topics that deal with the electronic structure of materials, either directly in describing the Rashba-splitting of energy bands in Chapter \ref{ch:Rashba}, or indirectly to parametrize the magnetic exchanges between localized spins as in Chapter \ref{ch:GdMn2O5}, a tight-binding model is the most appropriate tool.
+These are constructed using a limited set of local, atomic-like orbitals as the basis, which play the biggest role in the physics under investigation.
+Not only does this simplification make solving the numerics of the problem more tractable\footnote{A limited set of orbitals leads to a reduction of the dimensions of the matrices that represent various operators, lowering the computational cost.}, the representation in terms of real-space localized wavefunctions over extended Bloch functions (BFs) often also leads to a more intuitive picture.
+There are two ways of proceeding in order to construct the tight-binding Hamiltonian.
+The first is to use a semi-empirical approach, where the elements of the Hamiltonian are written, using symmetry arguments, as combinations of certain model parameters, which in turn have to be fit to experiments.
+The second is to extract these parameters from a first-principles based simulation such as density functional theory.
+In thesis we favor the latter since it is more flexible, not depending on experiments while still providing quantitative results.
+This also allows for an easy comparison of multiple materials in order to better understand how certain physics manifest themselves in different cases. 
 
-If we want to apply these models to real materials to get not only qualitative, but also quantitative results, we need to perform a fit to either experimentally obtained values, or first-principles simulations.
-The most feasible way is usually the latter, which requires us to find a bridge between the plane waves that are used in a lot of first-principles DFT codes, and the localized basis set of that the model is built from.
+The next obvious question then becomes how to choose a good set of localized orbitals. There are many ways to do this, but the one most natural for the purpose of describing the Hamiltonian of periodic crystals is that of the Wannier functions (WFs) \cite{Wannier1937}.
+Constructing these functions (so-called Wannierization) implements the bridge between the extended plane waves that form the eigenstates of the Hamiltonian of a periodic crystal, and thus used in many first-principles DFT codes, and the limited localized basis set of the tight-binding model.
 
-Wannier functions offer a rigorous and flexible solution to this question, rewriting the Bloch functions as a discrete Fourier transform of (exponentially) localized, cell-periodic wavefunctions.
+We will here give a short recap of the excellent review done by Marzari et. al. \cite{Marzari2012}.
 
-This construction is flexible in the sense that it is not unique. Bloch functions have a gauge freedom at each k value, which in turn will have an effect on the Wannier functions.
+The most clear case is that of a single, isolated band $n$ with BFs $\Ket{\psi_{n\bm{k}}(\bm{r})}$, where we can write the BF as a straightforward discrete Fourier transform of the WF: 
+\begin{equation}
+	\label{eq:Theory_1bandwan}
+	\Ket{\psi_{n\bm{k}}(\bm{r})} = e^{i\bm{k}\cdot\bm{r}} \Ket{u_{n\bm{k}}(\bm{r})} = \sum_{\bm{R}} e^{i \bm{R} \cdot \bm{k}} \Ket{w_n(\bm{r}-\bm{R})},
+\end{equation}
+with $\Ket{u_{n\bm{k}}(\bm{r})}$ the periodic part of the BF, $\Ket{w_n(\bm{r}-\bm{R})}$ the corresponding localized WF centered in the unit cell defined by lattice vector $\bm{R}$, and $n$ the band index.
+The comparison between BFs and WFs is made in Fig.~\ref{fig:Theory_blochvswan} taken from Ref.~\cite{Marzari2012}.
+In much of this work the term $e^{i\bm{k}\cdot\bm{r}}$ will be called the envelope (shown as the green graph), as it modulates the periodic $u_{n\bm{k}}$ part.
+\begin{figure}
+	\IncludeGraphics{blochvswan.png}
+	\caption{\label{fig:Theory_blochvswan}}
+\end{figure}
+When $k=0$ we can see that the sum over the WFs, centered at different unit cells, reconstruct the $u_{n\bm{k}}$ periodic part of the BF.
+In the case of $k \neq 0$, similar to how the envelope part modulates the periodic part of the BF, the contribution of each WF to the total sum over the unit cells needs to be modulated in a discrete way through $e^{i \bm{k} \cdot \bm{R}}$.
+
+The inverse Fourier transform over the BF in the first Brillouin Zone (BZ) can then be performed in order to generate the localized WF,
+\begin{equation}
+	\Ket{w_{n}(\bm{r} - \bm{R})} = \frac{V}{(2\pi)^3} \int_{BZ} d \bm{k} e^{-i \bm{k} \cdot \bm{R}} \Ket{\psi_{n\bm{k}}(\bm{r})},
+\end{equation}
+where $V$ denotes the real-space volume of the unit cell.
+In these and following equations, the normalization convention is used such that $\int_V d\bm{r}\BraKet{\psi_{n\bm{k}}(\bm{r})} = 1$.
+
+One of the most useful properties of the WFs lies in the realization that, through the gauge freedom at each $\bm{k}$ of the BF\footnote{The solution to Schr\"odinger equation does not depend on this phase.} , the shape of the WFs is not unique:
+\begin{align}
+	\Ket{\psi_{n\bm{k}}(\bm{r})} &\Rightarrow \Ket{\tilde{\psi}_{n\bm{k}}(\bm{r})} = e^{i \phi_n(\bm{k})} \Ket{\psi_{n\bm{k}}(\bm{r})} \\
+	\Ket{w_{n}(\bm{r} - \bm{R})} &\Rightarrow \Ket{\tilde{w}_{n}(\bm{r} - \bm{R})} = \frac{V}{(2\pi)^3} \int_{BZ} d \bm{k} e^{-i (\bm{k} \cdot \bm{R} + \phi_n(\bm{k}))} \Ket{\psi_{n\bm{k}}(\bm{r})},
+\end{align}
+This means that by varying $\phi_n(\bm{k})$ we can adapt the used WF basis to the needs of the particular problem under investigation.
+In the case of a single isolated band, as discussed up to now, this is mainly a luxury. However, in most situations we are interested in groups of bands forming a composite manifold. In this case deciding the gauge in a good way  
+
+WFs offer a rigorous and flexible solution to this question, rewriting the BFs as a discrete Fourier transform of (exponentially) localized, cell-periodic wavefunctions.
+
+This construction is flexible in the sense that it is not unique. BFs have a gauge freedom at each k value, which in turn will have an effect on the WFs.
 One gauge that is commonly used is the one that localized the functions as much as possible, leading to the so-called Maximally Localized Wannier Functions (MLWF).
 Other gauges can be chosen such that the obtained functions have certain symmetries or have maximum similarity to atomic orbitals.
 
