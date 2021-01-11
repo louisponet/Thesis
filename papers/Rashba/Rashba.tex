@@ -1,4 +1,3 @@
-\newcommand{\unkr}{$u_n(\bm{k}, \bm{r})$}
 \newcommand{\Unkr}{u_n(\bm{k}, \bm{r})}
 % \renewcommand{\eikr}{$e^{i\bm{k}\cdot\bm{r}}$}
 \newcommand{\Eikr}{e^{i\bm{k}\cdot\bm{r}}}
@@ -59,7 +58,7 @@ The first discovered and most well known effect bearing the form of Eq.~\ref{eq:
 where $\psi$ is a two component spinor, $V$ denotes the electric potential, $\bm{\sigma}$ a vector of Pauli-matrices $(\sigma_x, \sigma_y, \sigma_z)$, $m$ and $e$ the electron mass and charge respectively, and $\bm{p}$ the canonical momentum. The first two terms are the nonrelativistic part of the Hamiltonian, the third represents the SOC, the fourth is known as the Darwin effect and the fifth is the relativistic correction to the effective electron mass. 
 As is common in literature, we introduce the spin-orbit coupling constant $\lambda = \frac{e \hbar}{4m^2c^2}$.
 In a crystal with a perodic potential $V(\mathbf{r})$, electronic wavefunctions are Bloch wavefunctions $\psi_n(\bm{k}, \bm{r}) = \Unkr \eikr{r}$, where $u_n$ denotes the cell-periodic part, and $n$ is the band index.
-To obtain the eigenvalue equation for \unkr, we insert $\psi_n$ in Eq.~\ref{eq:Rashba_dirac}, and carry out the differentiation $\mathbf{p} \, \Eikr\Unkr = \Eikr(\mathbf{p} + \mathbf{k})\Unkr$, and similarly $\mathbf{p}^2 \rightarrow (\mathbf{p}+\mathbf{k})^2$. This leads to the following equation for \unkr:
+To obtain the eigenvalue equation for $\unkr{n}{k}$, we insert $\psi_n$ in Eq.~\ref{eq:Rashba_dirac}, and carry out the differentiation $\mathbf{p} \, \Eikr\Unkr = \Eikr(\mathbf{p} + \mathbf{k})\Unkr$, and similarly $\mathbf{p}^2 \rightarrow (\mathbf{p}+\mathbf{k})^2$. This leads to the following equation for $\unkr{n}{k}$:
 \begin{align}
 	\label{eq:Rashba_unk_Vs}
 	E_n u_n(\bm{k}, \bm{r}) =& \left(V_0 + V_1  +  V_2 + V_3 \right) u_n(\bm{k}, \bm{r}) \\
@@ -69,12 +68,12 @@ To obtain the eigenvalue equation for \unkr, we insert $\psi_n$ in Eq.~\ref{eq:R
 	V_3(\bm{k}) =& -\lambda \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{p}).
 \end{align}
 We neglected the last two terms of Eq.~\ref{eq:Rashba_dirac} since they are exceedingly small and don't contribute to the linear form of Eq.~\ref{eq:Rashba_form}.
-It is important to understand how the electric fields inside the crystal contribute to $V_2$ and $V_3$, where both terms originate from the application of $\bm{p}$ to either \unkr or $\eikr{r}$, respectively.
+It is important to understand how the electric fields inside the crystal contribute to $V_2$ and $V_3$, where both terms originate from the application of $\bm{p}$ to either $\unkr{n}{k}$ or $\eikr{r}$, respectively.
 We first separate $\bm{\nabla}V$ in two contributions, one coming from the potential wells created by the atoms, and another originating from the ferroelectric polarization (it is assumed that no external fields are applied):
 \begin{equation}
 	\bm{\nabla} V = \bm{E} = \bm{E}_{at} + \bm{E}_{P}
 \end{equation}
-These contributions, together with the two parts of the Bloch functions (i.e. the cell periodic \unkr, and envelope function $\eikr{r}$) are pictorially shown in Fig.~\ref{fig:Efield_cell_drawing}. 
+These contributions, together with the two parts of the Bloch functions (i.e. the cell periodic $\unkr{n}{k}$, and envelope function $\eikr{r}$) are pictorially shown in Fig.~\ref{fig:Efield_cell_drawing}. 
 \begin{figure}[h]
 ~\centering
 \IncludeGraphics[width=\linewidth]{Rashba_potentials.png}\caption{\label{fig:Efield_cell_drawing} Pictorial representation of the different electric potentials ($V$) and fields ($E$) in a 2D square lattice. The blue spheres show the atoms, which produce the spherically symmetric red potential $V_a$ and field $E_a$. The purple slab denotes a uniform ferroelectric polarzation potential $V_p$ which in this case is directed along the crystalline $y$-direction, creating field $E_p$. The green and yellow surfaces denote two components of the Bloch function: $u_n(k) e^{ikx}$, where the yellow is the envelope plane wave part and the green the cell periodic part. $k$ and $p_u$ denote the two components to the momentum of the bloch function, the former from the envelope function, and the latter the contribution from the periodic part.}
@@ -105,18 +104,18 @@ We now proceed by giving a pedagogical derivation of this mechanism based on a t
 
 \subsection{Tight-Binding model}
 The tight-binding model is defined on a 2D square layer with lattice parameter $a$, one atom per unit cell, and four Wannier orbitals centered on that atom.
-These orbitals resemble the angular character of an $s$-orbital and three $p$-orbitals: $\Ket{s_{\bm{n}}}$, $\Ket{x_{\bm{n}}}$, $\Ket{y_{\bm{n}}}$, $\Ket{z_{\bm{n}}}$, where $\bm{n}$ denotes the unit-cell indices ($n_x$,$n_y$) to which the Wannier function belongs to.
+These orbitals resemble the angular character of an $s$-orbital and three $p$-orbitals: $\Ket{s^{\bm{n}}}$, $\Ket{x^{\bm{n}}}$, $\Ket{y^{\bm{n}}}$, $\Ket{z^{\bm{n}}}$, where $\bm{n}$ denotes the unit-cell indices ($n_x$,$n_y$) to which the Wannier function belongs to.
+To simplify notation, we omit $\bm{0}$ in writing the Wannier functions of the central unit cell.
 We furthermore assume that these orbitals have a Gaussian radial shape $\Sandwich{\bm{r}}{s_{\bm{n}}} = e^{-\frac{|\bm{r}-\bm{n}a|^2}{a_0}}$, $\Sandwich{\bm{r}}{\alpha_{\bm{n}}} = \alpha e^{-\frac{|\bm{r}-\bm{n}a|^2}{a_0}}$ with $\alpha = x, y, z$, and inner products implying integrals over space.
 The reason for choosing gaussians is to make solving the overlap integrals easier, changing to a different radial shape for the orbitals does not lead to any qualitative changes to the derivation below.
-To simplify notation below, we omit $\bm{r}$ and write $\Ket{\alpha^0} = \Ket{\alpha}$.
-The bare tight-binding Hamiltonian is denoted as $\hat{H}_0$ and includes the usual hopping parameters due to overlap $t_{\alpha\beta}^{ij} = \int d\mathbf{r} \,w^{\alpha}_i(\mathbf{r})^*(\frac{\mathbf{p}^2}{2m} + V(\bm{r}))w^{\beta}_j(\mathbf{r})$.
+The bare tight-binding Hamiltonian is denoted as $\hat{H}_0$ and includes the usual hopping parameters due to overlap $t_{\alpha\beta}^{\bm{n}\bm{n}'} = \Bra{\alpha^{\bm{n}}}\frac{\hat{\mathbf{p}}^2}{2m} + \hat{V}\Ket{\beta^{\bm{n}'}}$.
 To mimick the inversion symmetry breaking in ferroelectric materials (i.e. with a polar space group), an electric field perpendicular to the layer ($z$ direction) is applied.
 This allows extra hopping terms associated with $\hat{H}_{isb} = e (\hat{\bm{d}}\cdot \bm{E})$, with $\hat{\bm{d}}$ the electric dipole moment:
 \begin{align}
 	\label{eq:dipole}
-	\Bra{s} \hat{H}_{isb} \Ket{p_z} &= 2 e E_z \theta_z^n\\
-	\Bra{p_z} \hat{H}_{isb} \Ket{p_x(\bm{n})} &= e E_z \theta_z^n n_x\\
-	\Bra{p_z} \hat{H}_{isb} \Ket{p_y(\bm{n})} &= e E_z \theta_z^n n_y
+	\Bra{s} \hat{H}_{isb} \Ket{z} &= 2 e E_z \theta_z^0\\
+	\Bra{z} \hat{H}_{isb} \Ket{x^{\bm{n}}} &= e E_z \theta_z^n n_x\\
+	\Bra{z} \hat{H}_{isb} \Ket{y^{\bm{n}}} &= e E_z \theta_z^n n_y
 	% \hat{d}_z(\bm{n}) =& -ae^{-\frac{1}{2}\left(\frac{a|\bm{n}|}{a_0}\right)^2}\frac{\pi^{\frac{3}{2}}}{16\sqrt{2}}\left(\begin{matrix}0&0&0&2\\\\0&0&0&n_x\\\\0&0&0&n_y\\\\2&n_x&n_y&0\end{matrix}\right)\\
 	% =&\theta_z^n\hat{d}^1_z(\bm{n}),
 \end{align}
@@ -124,45 +123,48 @@ with $\theta_z^n = -ae^{-\frac{1}{2}\left(\frac{a|\bm{n}|}{a_0}\right)^2}\frac{\
 Fig.~\ref{fig:overlapdip} shows pictorially how these terms arise from the electric dipoles between the shifted orbitals. 
 \begin{figure}[t]
 ~\centering
-\IncludeGraphics[width=\linewidth]{overlapdip.png}\caption{\label{fig:overlapdip} {\bf Overlap dipoles.} (a) On-site dipole from $s$ and $p_z$ hybridization, (b) Dipole due to overlap of shifted $p$ orbitals, the dashed line signifies a unit cell boundary.}
+\IncludeGraphics[width=\linewidth]{overlapdip.png}\caption{\label{fig:overlapdip} {\bf Overlap dipoles.} (a) On-site dipole from $\Ket{s}$ and $\Ket{z}$ hybridization, (b) Dipole due to overlap of shifted $\Ket{p}$ orbitals, the dashed line signifies a unit cell boundary.}
 \end{figure}
-
-Solving the tight binding model for $k=0$, one can treat $\hat{H}_{isb}$ as a perturbation on $\hat{H}_0$ due to the smallness of $E_z$, leading to a hybridization between the $s$ and $p_z$ orbitals:
+Since we are interested in ferroelectric materials, the internal field $E_z$ caused by the electric polarization is usually small.
+This warrants a perturbative approach where $\hat{H}_{isb}$ is the perturbation on $\hat{H}_0$, leading to a hybridization between the $\Ket{s}$ and $\Ket{z}$ orbitals:
 \begin{align}
-	\Ket{\tilde{p}_z} &= \Ket{p_z} + \frac{\Bra{s} 2 e E_z \theta^n_z\Ket{p_z}}{\varepsilon_z - \varepsilon_s}\Ket{s}\\
-	\Ket{\tilde{s}}   &= \Ket{s} + \frac{\Bra{p_z} 2 e E_z \theta^n_z\Ket{s}}{\varepsilon_s - \varepsilon_z}\Ket{p_z},
+	\Ket{\tilde{z}} &= \Ket{z} + \frac{\Bra{s} 2 e E_z \theta^n_z\Ket{z}}{\varepsilon_z - \varepsilon_s}\Ket{s}\\
+	\Ket{\tilde{s}}   &= \Ket{s} + \frac{\Bra{z} 2 e E_z \theta^n_z\Ket{s}}{\varepsilon_s - \varepsilon_z}\Ket{z},
 \end{align}
-where $\varepsilon_s = \Bra{s} \hat{H}_0 \Ket{s}$ and $\varepsilon_z = \Bra{p_z} \hat{H}_0 \Ket{p_z}$.
-In order to proceed, we only treat the important kinetic energy part of $\hat{H}_0$ and rewrite it in terms of this hybrid $\tilde{p}_z$ orbital in the central unit cell and the shifted $p_x$, $p_y$ orbitals, leading to:
+where $\varepsilon_s = \Bra{s} \hat{H}_0 \Ket{s}$ and $\varepsilon_z = \Bra{z} \hat{H}_0 \Ket{z}$.
+
+We can then write the kinetic energy part of $\hat{H}_0$ and terms of this hybrid $\Ket{\tilde{z}}$ orbital in the central unit cell and the shifted $\Ket{x}$, $\Ket{y}$ orbitals, leading to:
 \begin{align}
-	\Bra{\tilde{p}_z} \hat{H}_0 \Ket{p_x(\bm{n})} &= \frac{2 e E_z \theta_z^n}{\varepsilon_z - \varepsilon_s}\Bra{s} \frac{-\mathbf{\nabla}^2}{2} \Ket{p_x(\bm{n})}\\
+	\Bra{\tilde{z}} \hat{H}_0 \Ket{x^{\bm{n}}} &= \frac{2 e E_z \theta_z^n}{\varepsilon_z - \varepsilon_s}\Bra{s} \frac{-\mathbf{\nabla}^2}{2} \Ket{x^{\bm{n}}}\\
 	&= \frac{4 e E_z (\theta_z^n)^2}{\varepsilon_z - \varepsilon_s} n_x (-5 + a^2 |\bm{n}|^2)\\
-	\Bra{\tilde{p}_z} \hat{H}_0 \Ket{p_y(\bm{n})} &= \frac{4 e E_z (\theta_z^n)^2}{\varepsilon_z - \varepsilon_s} n_y (-5 + a^2 |\bm{n}|^2)
+	\Bra{\tilde{z}} \hat{H}_0 \Ket{y^{\bm{n}}} &= \frac{4 e E_z (\theta_z^n)^2}{\varepsilon_z - \varepsilon_s} n_y (-5 + a^2 |\bm{n}|^2)
 \end{align}
 
-To construct $\hat{H}_0(\bm{k})$ and $\hat{H}_{isb}(\bm{k})$, one can fourier transform the Wannier Functions:
+To construct $\hat{H}_0^{\bm{k}}$ and $\hat{H}_{isb}^{\bm{k}}$, one can fourier transform the Wannier Functions following Eq.~\ref{eq:Theory_wantok}:
 \begin{equation}
-	\Ket{\alpha(\bm{k})} = \frac{1}{\sqrt{N}}\sum_{\bm{n}} e^{i \bm{k}\cdot \bm{n}}\Ket{\alpha(\bm{n})}
-\end{equation}i
-with $\alpha$ one of the aforementioned orbitals, $\bm{k}$ written in terms of crystalline coordinates ($\frac{2\pi}{a}$), and $N$ denoting the total amount of unit cells in the material. This results in:
+	\label{eq:Rashba_wantok}
+	\Ket{\alpha^{\bm{k}}} = \frac{1}{\sqrt{N}}\sum_{\bm{n}} e^{i \bm{k}\cdot \bm{n}}\Ket{\alpha^{\bm{n}}}
+\end{equation}
+with $\Ket{\alpha}$ one of the four aforementioned orbitals, $\bm{k}$ written in terms of crystalline coordinates ($\frac{2\pi}{a}$), and $N$ denoting the total amount of unit cells in the material. This results in:
 \begin{align}
-	\hat{H}_0(\bm{k}) + \hat{H}_{isb}(\bm{k}) &= \sum_{\bm{n}} e^{i \bm{k}\cdot \bm{n}}(\hat{H}_0(\bm{n}) + \hat{H}_{isb}(\bm{n}))\\
-	&= \sum_{\bm{n}} i \sin(\bm{k}\cdot \bm{n})(\hat{H}_0(\bm{n}) + \hat{H}_{isb}(\bm{n})) + k\mathrm{-even\,terms},
+	\label{eq:Rashba_wantokH}
+	\hat{H}_0^{\bm{k}} + \hat{H}_{isb}^{\bm{k}} &= \sum_{\bm{n}} \eikr{n} \left(\hat{H}_0^{\bm{n}} + \hat{H}_{isb}^{\bm{n}}\right)%\\
+	% &= \sum_{\bm{n}} i \sin(\bm{k}\cdot \bm{n})(\hat{H}_0(\bm{n}) + \hat{H}_{isb}(\bm{n})) + k\mathrm{-even\,terms},
 \end{align}
-keeping only the $\sin(\bm{k}\cdot\bm{n})$ part of the exponent since the $\cos(\bm{k}\cdot\bm{n})$ part does not result in linear-in-$k$ terms, in the small $\bm{k}$ expansion below we keep only these linear-in-$k$ terms.
+% keeping only the $\sin(\bm{k}\cdot\bm{n})$ part of the exponent since the $\cos(\bm{k}\cdot\bm{n})$ part does not result in linear-in-$k$ terms, in the small $\bm{k}$ expansion below we keep only these linear-in-$k$ terms.
 
-If we then assume that at $k=0$ the Bloch functions are formed from $p_x$,$p_y$, $\tilde{p}_z$ and $\tilde{s}$ orbitals: $\Ket{\alpha(\bm{k}=\bm{0})} = \frac{1}{\sqrt{N}}\sum_{\bm{n}} \Ket{\alpha(\bm{n})}$  a perturbation theory for small deviations $\bm{k}$ away from zero can be written down:
+If we then assume that at $k=0$ the Bloch functions are formed from $p_x$, $p_y$, $\tilde{p}_z$ and $\tilde{s}$ orbitals through Eq.~\ref{eq:Rashba_wantok}, a perturbation theory for small deviations $\bm{k}$ away from zero can be formulated as ($\bm{k}=0$ superscripts are omitted for simplicity):
 \begin{equation}
-	\Ket{\alpha(\bm{k})}=\Ket{\alpha} + \sum_{\beta \neq \alpha} \frac{\Bra{\beta} H_0(\bm{k}) + \hat{H}_{isb}(\bm{k}) \Ket{\alpha}}{\varepsilon_{\alpha} - \varepsilon_{\beta}} \Ket{\beta}
+	\Ket{\alpha^{\bm{k}}}=\Ket{\alpha} + \sum_{\beta \neq \alpha} \frac{\Bra{\beta} \hat{H}_0^{\bm{k}} + \hat{H}_{isb}^{\bm{k}} \Ket{\alpha}}{\varepsilon_{\alpha} - \varepsilon_{\beta}} \Ket{\beta}
 \end{equation}
 
-Gathering the linear-in-$k$ terms, and assuming $\varepsilon_p = \Bra{p_x} \hat{H}_0 \Ket{p_x} = \Bra{p_y} \hat{H}_0 \Ket{p_y}$, we find
+Gathering the linear-in-$k$ terms from the expansion of $\eikr{n}$ in Eq.~\ref{eq:Rashba_wantokH}, and assuming $\varepsilon_p = \Bra{x} \hat{H}_0 \Ket{x} = \Bra{y} \hat{H}_0 \Ket{y}$ at $\bm{k}=0$, we find
 \begin{align}
-	\Ket{\tilde{p}_x(\bm{k})} &= \Ket{p_x(0)} + \Theta \frac{ i e E_z k_x}{\varepsilon_p - \varepsilon_{\tilde{z}}}\Ket{\tilde{p}_z(0)} \\
-	\Ket{\tilde{p}_y(\bm{k})} &= \Ket{p_y(0)} + \Theta \frac{ i e E_z k_y}{\varepsilon_p - \varepsilon_{\tilde{z}}}\Ket{\tilde{p}_z(0)}\\
-	\Ket{\tilde{p}_z(\bm{k})} &= \Ket{\tilde{p}_z(0)} + \Theta \frac{i e E_z}{\varepsilon_p - \varepsilon_{\tilde{z}}} \left(k_x\Ket{p_x(0)} + k_y\Ket{p_y(0)}\right),
+	\Ket{x^{\bm{k}}} &= \Ket{x} + i \Theta \frac{k_x}{\varepsilon_p - \varepsilon_{\tilde{z}}}\Ket{\tilde{z}} \\
+	\Ket{y^{\bm{k}}} &= \Ket{y} + i \Theta \frac{k_y}{\varepsilon_p - \varepsilon_{\tilde{z}}}\Ket{\tilde{z}}\\
+	\Ket{\tilde{z}^{\bm{k}}} &= \Ket{\tilde{z}} + i \Theta \frac{1}{\varepsilon_{\tilde{z}} - \varepsilon_p} \left(k_x\Ket{x} + k_y\Ket{y}\right),
 \end{align}
-with $\Theta = \frac{\pi^{5/2}}{256 a^3 }\left(-16\sqrt{2} + \frac{3a\pi^{3/2}}{\varepsilon_z - \varepsilon_s}\right)$.
+with $\Theta = \frac{\pi^{5/2}}{256 a^3 }\left(-16\sqrt{2} + \frac{3a\pi^{3/2}}{\varepsilon_z - \varepsilon_s}\right) e E_z$.
 Then, using the definition of the OAM operators for $p$-orbitals:
 \begin{equation}
 	\hat{L}_x =\left(\begin{matrix}0&0&0\\\\0&0&-i\\\\0&i&0&\end{matrix}\right), \hat{L}_y =\left(\begin{matrix}0&0&i\\\\0&0&0\\\\-i&0&0&\end{matrix}\right), \hat{L}_z =\left(\begin{matrix}0&-i&0\\\\i&0&0\\\\0&0&0&\end{matrix}\right)
@@ -170,15 +172,16 @@ Then, using the definition of the OAM operators for $p$-orbitals:
 we find that,
 \begin{align}
 	\label{eq:oam_from_k}
-	\Bra{\tilde{p}_z(\bm{k})} \hat{L}_x \Ket{\tilde{p}_z(\bm{k})} &= - 2 \Theta \frac{e E_z k_y}{\varepsilon_p - \varepsilon_{\tilde{z}}}\\ 
-	\Bra{\tilde{p}_z(\bm{k})} \hat{L}_y \Ket{\tilde{p}_z(\bm{k})} &= 2 \Theta \frac{e E_z k_x}{\varepsilon_p - \varepsilon_{\tilde{z}}} 
+	\Bra{\tilde{z}^{\bm{k}}} \hat{L}_x \Ket{\tilde{z}^{\bm{k}}} &= - 2 \Theta \frac{k_y}{\varepsilon_{\tilde{z}} - \varepsilon_p}\\ 
+	\Bra{\tilde{z}^{\bm{k}}} \hat{L}_y \Ket{\tilde{z}^{\bm{k}}} &= 2 \Theta \frac{k_x}{\varepsilon_{\tilde{z}}-\varepsilon_p} 
 \end{align}
-These expressions for $\hat{\bm{L}}$ can be filled into the expression for the atomic SOC $\hat{H}_{soc}= \lambda \hat{\bm{L}} \cdot \hat{\bm{\sigma}}$ to find the energy for $\Ket{\tilde{p}_z}$:
+These expressions for $\hat{\bm{L}}$ can be filled into the expression for the atomic SOC $\hat{H}_{soc}= \lambda \hat{\bm{L}} \cdot \hat{\bm{\sigma}}$ to find the energy for $\Ket{\tilde{z}^{\bm{k}}}$:
 \begin{equation}
 	\label{eq:Rashba_from_OAM}
-	\varepsilon(\bm{k}) = \frac{2 \lambda \Theta e E_z}{\varepsilon_p - \varepsilon_{\tilde{z}}}(\bm{k} \times \bm{\sigma})
+	\varepsilon^{\bm{k}} = \frac{2 \lambda \Theta}{\varepsilon_{\tilde{z}}-\varepsilon_p}(\bm{k} \times \bm{\sigma})
 \end{equation}
-which has the from of Eq.~\ref{eq:Rashba_form}.
+which has the form of Eq.~\ref{eq:Rashba_form}.
+We want to emphasize here that the only influence of the initial choice of the Gaussian radial shape of the orbitals is reflected in the prefactor in front of $e E_z$ in the definition of $\Theta$.
 
 From this qualitative derivation, it is clear that the main reason behind the orbital Rashba effect can be traced back to the observation that Bloch functions with nonzero OAM have electric dipoles that couple to the inversion symmetry breaking electric field. We identified two sources that lead to the effect: the first one comes from the direct overlap dipoles between $p_x$ and $p_y$ orbitals, and the $p_z$ orbital\cite{Petersen2000}, the second is due to the hybridization of the $s$ and $p_z$ overlap, and the kinetic energy term between the $s$ and neighboring $p_x$ and $p_y$ orbitals\cite{Go2016}. These two terms are reflected in the two terms that contribute to $\Theta$, and lead to a chiral, linear-in-$k$ texture of the OAM.
 If there then exists strong atomic SOC, this linear-in-$k$ OAM will couple to the spin and result in the final Rashba-like form of Eq.~\ref{eq:Rashba_from_OAM}.
