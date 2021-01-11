@@ -1,6 +1,6 @@
 \newcommand{\unkr}{$u_n(\bm{k}, \bm{r})$}
 \newcommand{\Unkr}{u_n(\bm{k}, \bm{r})}
-\newcommand{\eikr}{$e^{i\bm{k}\cdot\bm{r}}$}
+% \renewcommand{\eikr}{$e^{i\bm{k}\cdot\bm{r}}$}
 \newcommand{\Eikr}{e^{i\bm{k}\cdot\bm{r}}}
 \chapter{Spin-momentum locking in high spin-orbit coupled ferroelectrics \label{ch:Rashba}}
 \section{Introduction}
@@ -58,7 +58,7 @@ The first discovered and most well known effect bearing the form of Eq.~\ref{eq:
 \end{equation}
 where $\psi$ is a two component spinor, $V$ denotes the electric potential, $\bm{\sigma}$ a vector of Pauli-matrices $(\sigma_x, \sigma_y, \sigma_z)$, $m$ and $e$ the electron mass and charge respectively, and $\bm{p}$ the canonical momentum. The first two terms are the nonrelativistic part of the Hamiltonian, the third represents the SOC, the fourth is known as the Darwin effect and the fifth is the relativistic correction to the effective electron mass. 
 As is common in literature, we introduce the spin-orbit coupling constant $\lambda = \frac{e \hbar}{4m^2c^2}$.
-In a crystal with a perodic potential $V(\mathbf{r})$, electronic wavefunctions are Bloch wavefunctions $\psi_n(\bm{k}, \bm{r}) = \Unkr \Eikr$, where $u_n$ denotes the cell-periodic part, and $n$ is the band index.
+In a crystal with a perodic potential $V(\mathbf{r})$, electronic wavefunctions are Bloch wavefunctions $\psi_n(\bm{k}, \bm{r}) = \Unkr \eikr{r}$, where $u_n$ denotes the cell-periodic part, and $n$ is the band index.
 To obtain the eigenvalue equation for \unkr, we insert $\psi_n$ in Eq.~\ref{eq:Rashba_dirac}, and carry out the differentiation $\mathbf{p} \, \Eikr\Unkr = \Eikr(\mathbf{p} + \mathbf{k})\Unkr$, and similarly $\mathbf{p}^2 \rightarrow (\mathbf{p}+\mathbf{k})^2$. This leads to the following equation for \unkr:
 \begin{align}
 	\label{eq:Rashba_unk_Vs}
@@ -69,12 +69,12 @@ To obtain the eigenvalue equation for \unkr, we insert $\psi_n$ in Eq.~\ref{eq:R
 	V_3(\bm{k}) =& -\lambda \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{p}).
 \end{align}
 We neglected the last two terms of Eq.~\ref{eq:Rashba_dirac} since they are exceedingly small and don't contribute to the linear form of Eq.~\ref{eq:Rashba_form}.
-It is important to understand how the electric fields inside the crystal contribute to $V_2$ and $V_3$, where both terms originate from the application of $\bm{p}$ to either \unkr or \eikr, respectively.
+It is important to understand how the electric fields inside the crystal contribute to $V_2$ and $V_3$, where both terms originate from the application of $\bm{p}$ to either \unkr or $\eikr{r}$, respectively.
 We first separate $\bm{\nabla}V$ in two contributions, one coming from the potential wells created by the atoms, and another originating from the ferroelectric polarization (it is assumed that no external fields are applied):
 \begin{equation}
 	\bm{\nabla} V = \bm{E} = \bm{E}_{at} + \bm{E}_{P}
 \end{equation}
-These contributions, together with the two parts of the Bloch functions (i.e. the cell periodic \unkr, and envelope function \eikr) are pictorially shown in Fig.~\ref{fig:Efield_cell_drawing}. 
+These contributions, together with the two parts of the Bloch functions (i.e. the cell periodic \unkr, and envelope function $\eikr{r}$) are pictorially shown in Fig.~\ref{fig:Efield_cell_drawing}. 
 \begin{figure}[h]
 ~\centering
 \IncludeGraphics[width=\linewidth]{Rashba_potentials.png}\caption{\label{fig:Efield_cell_drawing} Pictorial representation of the different electric potentials ($V$) and fields ($E$) in a 2D square lattice. The blue spheres show the atoms, which produce the spherically symmetric red potential $V_a$ and field $E_a$. The purple slab denotes a uniform ferroelectric polarzation potential $V_p$ which in this case is directed along the crystalline $y$-direction, creating field $E_p$. The green and yellow surfaces denote two components of the Bloch function: $u_n(k) e^{ikx}$, where the yellow is the envelope plane wave part and the green the cell periodic part. $k$ and $p_u$ denote the two components to the momentum of the bloch function, the former from the envelope function, and the latter the contribution from the periodic part.}
@@ -89,9 +89,8 @@ Expanding in the deviation away from the high-symmetry point, in the usual $\bm{
 \begin{align}
 	\label{eq:kp_expansion}
 	E_n^{\sigma_1}(\bm{k}) =& - V_2^{\sigma_1}(\bm{k}) + \\
-		& \sum_{m,\sigma_2=\uparrow,\downarrow}\frac{\Bra{u_n^{\sigma_1}} V_1(\bm{k}) \Ket{u_m^{\sigma_2}}\Bra{u_m^{\sigma_2}} V_3(\bm{k}) \Ket{u_n^{\sigma_1}} + h.c.}{E_n^{\sigma_1} - E_m^{\sigma_2}},
+		& \sum_{m,\sigma_2 \neq n,\sigma_1}\frac{\Bra{u_n^{\sigma_1}} V_1(\bm{k}) \Ket{u_m^{\sigma_2}}\Bra{u_m^{\sigma_2}} V_3(\bm{k}) \Ket{u_n^{\sigma_1}} + h.c.}{E_n^{\sigma_1} - E_m^{\sigma_2}}.
 \end{align}
-where the sum over $m, \sigma_2$ includes all states which are not equal to $n, \sigma_1$. 
 
 Even though the latter term of Eq.~\ref{eq:kp_expansion} is of higher order in the perturbation theory, it usually has the same order of magnitude as the former. This can be understood from the previous discussion on the origin of various terms in Eq.~\ref{eq:Rashba_unk_Vs}, and in particular what fields contribute to $V_2$ or $V_3$. 
 For this to be true, however, it is important that the orbitals $u_n$, and $u_m$ in the second term have contributions that originate from an atom with a strong spin-orbit coupling. From the point of view of symmetries, another requirement for the second term to be nonzero is that $u_n$ and $u_m$ have contributions that have different parity, since $\bm{p}$ is odd in spatial coordinates, $\bm{k} \cdot \bm{p}$ is only non-zero when one of the orbitals is odd with respect to a spatial direction and the other even. One example could be a $p_y$ orbital and a $s$-$pz$ hybdridized one, which would be created by the ferroelectricity with electric polarization along the $z$-axis (add drawing? add hopping matrix?).
@@ -105,8 +104,10 @@ Firstly, when atomic SOC is included, OAM is unquenched at the high symmetry k-p
 We now proceed by giving a pedagogical derivation of this mechanism based on a tight-binding model \cite{Petersen2000,Go2016}.
 
 \subsection{Tight-Binding model}
-The tight-binding model is defined on a 2D square layer with one atom per unit cell, and four Wannier orbitals on the atom. We assume that these orbitals are gaussians the form $s(\bm{r}, \bm{n}) = e^{-\frac{|\bm{r}-\bm{n}a|^2}{a_0}}$, $p_\alpha(\bm{r}, \bm{n}) = \alpha e^{-\frac{|\bm{r}-\bm{n}a|^2}{a_0}}$ with $\alpha = x, y, z$, and $\bm{n}$ denoting the unit cell indices $\bm{n} = (n_x, n_y)$.
-The reason for choosing gaussians is to make solving the overlap integrals more easy, it does not lead to any qualitative changes to the derivation below.
+The tight-binding model is defined on a 2D square layer with lattice parameter $a$, one atom per unit cell, and four Wannier orbitals centered on that atom.
+These orbitals resemble the angular character of an $s$-orbital and three $p$-orbitals: $\Ket{s_{\bm{n}}}$, $\Ket{x_{\bm{n}}}$, $\Ket{y_{\bm{n}}}$, $\Ket{z_{\bm{n}}}$, where $\bm{n}$ denotes the unit-cell indices ($n_x$,$n_y$) to which the Wannier function belongs to.
+We furthermore assume that these orbitals have a Gaussian radial shape $\Sandwich{\bm{r}}{s_{\bm{n}}} = e^{-\frac{|\bm{r}-\bm{n}a|^2}{a_0}}$, $\Sandwich{\bm{r}}{\alpha_{\bm{n}}} = \alpha e^{-\frac{|\bm{r}-\bm{n}a|^2}{a_0}}$ with $\alpha = x, y, z$, and inner products implying integrals over space.
+The reason for choosing gaussians is to make solving the overlap integrals easier, changing to a different radial shape for the orbitals does not lead to any qualitative changes to the derivation below.
 To simplify notation below, we omit $\bm{r}$ and write $\Ket{\alpha^0} = \Ket{\alpha}$.
 The bare tight-binding Hamiltonian is denoted as $\hat{H}_0$ and includes the usual hopping parameters due to overlap $t_{\alpha\beta}^{ij} = \int d\mathbf{r} \,w^{\alpha}_i(\mathbf{r})^*(\frac{\mathbf{p}^2}{2m} + V(\bm{r}))w^{\beta}_j(\mathbf{r})$.
 To mimick the inversion symmetry breaking in ferroelectric materials (i.e. with a polar space group), an electric field perpendicular to the layer ($z$ direction) is applied.

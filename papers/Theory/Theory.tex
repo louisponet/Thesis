@@ -9,9 +9,9 @@
 \newcommand{\BlochKet}[1]{\Ket{\Bloch{#1}}}
 \newcommand{\tildeBloch}[1]{\tilde{\psi}_{#1\bm{k}}(\bm{r})}
 \newcommand{\tildeBlochKet}[1]{\Ket{\tildeBloch{#1}}}
-\newcommand{\eikr}[1]{e^{i \bm{k}\cdot \bm{#1}}}
 \newcommand{\inveikr}[1]{e^{-i \bm{k}\cdot \bm{#1}}}
 \chapter{Theory}
+\newcommand{\eikr}[1]{e^{i \bm{k}\cdot \bm{#1}}}
 \section{Spin-orbit coupling}
 \section{Wannier Functions}
 
@@ -154,7 +154,7 @@ When the $U_{\bm{k}}$ and $V_{\bm{k}}$ matrices are found, any property $f(\bm{k
 Since the WFs are well localized, $F(\bm{R})$ tends to decay rapidly with $|\bm{R}|$.
 It is important to realize that, depending on the coarseness of the $k$-grid used in the first-principles calculation, $F(\bm{R})$ can only be calculated for limited values of $|\bm{R}|$, spanning the supercell defined by the discretization of the BZ.
 Using these short-ranged real-space $F(\bm{R})$, it is then possible to interpolate the values of $f(\bm{k})$ by performing the inverse procedure. This allows to efficiently calculate $f(\bm{k})$ on a finer $k$-mesh compared with the one used in the first-principles calculations, provided the WFs are well localized inside the supercell defined by the original coarse $k$-mesh.
-This efficient interpolation is one of the great advantages of using this technique, since the basis, and thus dimensions of the matrices, is much lower than that used in the first-principles calculation (e.g. many plane waves). 
+This efficient interpolation is one of the great advantages of using this technique, since the basis, and thus dimensions of the matrices, is much lower than that used in the first-principles calculation (e.g. many plane waves).
 
 The main quantity we will use this interpolation for is the Hamiltonian:
 \begin{equation}
