@@ -186,25 +186,38 @@ We want to emphasize here that the only influence of the initial choice of the G
 From this qualitative derivation, it is clear that the main reason behind the orbital Rashba effect can be traced back to the observation that Bloch functions with nonzero OAM have electric dipoles that couple to the inversion symmetry breaking electric field. We identified two sources that lead to the effect: the first one comes from the direct overlap dipoles between $p_x$ and $p_y$ orbitals, and the $p_z$ orbital\cite{Petersen2000}, the second is due to the hybridization of the $s$ and $p_z$ overlap, and the kinetic energy term between the $s$ and neighboring $p_x$ and $p_y$ orbitals\cite{Go2016}. These two terms are reflected in the two terms that contribute to $\Theta$, and lead to a chiral, linear-in-$k$ texture of the OAM.
 If there then exists strong atomic SOC, this linear-in-$k$ OAM will couple to the spin and result in the final Rashba-like form of Eq.~\ref{eq:Rashba_from_OAM}.
 
-There is one final term that contributes to the linear variation of OAM with $\bm{k}$, which is only present when there is an unquenching of the OAM at the high symmetry point ($|k|=0$) due to the atomic SOC \ref{Park2011}. This is due to the energy gain from $\hat{H}_{soc}$ if the material has orbitals that have $\bm{j} = \bm{l} + \frac{1}{2}\bm{\sigma}$. Similar to the above derivation a small-$k$ expansion for orbitals with nonzero OAM can be performed, leading in general to:
+
+There is one final term that contributes to the linear variation of OAM with $\bm{k}$, which is present due to the unquenching of the OAM at the high symmetry point (e.g. $|k|=0$) due to atomic SOC \ref{Park2011}.
+If the Bloch functions at $\bm{k}=0$ in this case are written as a linear combination of Wannier functions that have angular character of $p$-orbitals
 \begin{equation}
-	\Bra{\alpha} \hat{L}_{\gamma} \Ket{\beta} = i \epsilon_{\alpha \beta \gamma} c^*_\alpha c_\beta
+\Ket{\psi} = \sum_{\bm{n},\alpha} c_\alpha \Ket{\alpha^{\bm{n}}},
 \end{equation}
-when $\alpha,\beta,\gamma$ designate $x,y,z$. This means that there has to be at least some admixing of multiple $p$-orbitals to get nonzero OAM. This leads to the following expansion of the Bloch functions around the high-symmetry $|k|=0$ point:
+the general formula for the OAM in terms of these $c_\alpha$ becomes
+\begin{equation}
+	\hat{L}_{\gamma}= i \epsilon_{\alpha \beta \gamma} c^*_\alpha c_\beta
+\end{equation}
+when $\alpha,\beta,\gamma$ designate $x,y,z$.
+Thus, through the gain on $\hat{H}_{soc}$ if $\bm{j} = \bm{l} + \frac{1}{2}\bm{\sigma}$, the orbitals at the high-symmetry point will now be a linear combination of what were orginally pure $p$-orbitals (due to the quenching we assumed that the bands at $\bm{k}=0$ had a single $c_\alpha \neq 0$ in the previous derivation).
+This unquenching will not be complete in the sense that it won't create orbitals with maximal $\bm{j}$ as is the case for an isolated ion through the Hund's rules, since in a crystal the neighboring charge will limit the creation of OAM\footnote{This is the reason why without SOC the OAM is fully quenched.}.
+
+
+Similar to the above derivation, a small-$k$ expansion for orbitals $\Ket{\psi^{\bm{k}}}$ with nonzero OAM can be performed around $|k|=0$ leading in general to:
 \begin{align}
-	\Ket{\psi(\bm{k})} =& \sum_{\bm{n},\alpha} c_\alpha(\bm{k}) e^{i \bm{k}\cdot\bm{n}}\Ket{\alpha(\bm{n})}\\
-	=& \sum_{\bm{n},\alpha} \left(c_\alpha(0) + \bm{k}\left.\frac{\partial c_\alpha(\bm{k})}{\partial_k}\right\rvert_{\bm{k}=0} \right)\left(1 + i\bm{k}\cdot\bm{n}\right)\Ket{\alpha(\bm{n})}.
+	\Ket{\psi^{\bm{k}}} =& \sum_{\bm{n},\alpha} c_\alpha^{\bm{k}} \eikr{n} \Ket{\alpha^{\bm{n}}}\\
+	=& \sum_{\bm{n},\alpha} \left(c_\alpha + \bm{k}\left.\frac{\partial c_\alpha^{\bm{k}}}{\partial_{\bm{k}}}\right\rvert_{\bm{k}=0} \right)\left(1 + i\bm{k}\cdot\bm{n}\right)\Ket{\alpha^{\bm{n}}}.
 \end{align}
-Focusing on the terms that vary linearly with $k$, the second term in the $c$ expansion together with the first term in the exponent expansion is exactly the contribution that was discussed before. The final term for the Orbital Rashba effect originates from combining the first term in the $c$ expansion with the second in the exponent expansion, leading to the contribution
+Again we omit terms with $\bm{k}=0$ for clarity.
+Focusing on the terms that vary linearly with $k$, the second term in the $c_{\alpha}$ expansion together with the first term in the exponent expansion is exactly the contribution that was discussed before.
+The other term for the Orbital Rashba effect, due to unquenching, originates from combining the first term in the $c_\alpha$ expansion with the second in the exponent expansion, leading to the contribution
 \begin{align}
 	\label{eq:d_z_from_OAM}
-	\varepsilon(\bm{k}) = \Bra{\psi(\bm{k})} \hat{H}_{isb} \Ket{\psi(\bm{k})} =&  i\sum_{\bm{n},\alpha,\beta} c_\alpha^*(0)c_\beta(0)\bm{k}\cdot\bm{n}\Bra{\alpha(0)} \hat{H}_{isb} \Ket{\beta(\bm{n})}\\
-	=&i e E_z \frac{-\pi^{5/2}}{8\sqrt{2}a^3}(c^*_x(0)c_z(0)k_x + c^*_y(0)c_z(0) k_y) \\
-	=&e E_z \frac{\pi^{5/2}}{8\sqrt{2}a^3}(L_y(0)k_x - L_x(0)k_y).
+	\varepsilon^{\bm{k}} = \Bra{\psi^{\bm{k}}} \hat{H}_{isb} \Ket{\psi^{\bm{k}}} =&  i\sum_{\bm{n},\alpha,\beta} c_\alpha^* c_\beta \bm{k}\cdot\bm{n}\Bra{\alpha} \hat{H}_{isb} \Ket{\beta^{\bm{n}}}\\
+	=&\frac{-\pi^{5/2}}{8\sqrt{2}a^3}i(c^*_xc_zk_x + c^*_yc_z k_y) e E_z  \\
+	=&\frac{\pi^{5/2}}{8\sqrt{2}a^3}(L_y k_x - L_x k_y) e E_z.
 \end{align}
-These expressions show us that, due to ${\hat{H}_{soc} = \lambda \hat{\bm{L}}\cdot\hat{\bm{\sigma}}}$ and $\hat{H}_{isb} = e E_z d_z$, an additional Rashba-like term appears in the energy dispersion.
+These expressions show us that, due to ${\hat{H}_{soc} = \lambda \hat{\bm{L}}\cdot\hat{\bm{\sigma}}}$ and $\hat{H}_{isb} = e E_z d_z$, an additional Rashba-like term appears in the energy dispersion, due to the creation of orbitals with nonzero $L_y$ and $L_x$ at the high-symmetry point.
 
-With the understanding that one can find Rashba like dispersions, coming not from the usually considered purely relativistic, but also from electrostatic mechanisms. We now look at a concrete example that behaves very similar to the above toy model, GeTe.
+With the understanding that one can find Rashba like dispersions, coming not from the usually considered purely relativistic, but also from electrostatic mechanisms, we now look at a concrete example that behaves very similar to the above toy model, GeTe.
 
 \begin{figure}[h]
 % ~\centering
