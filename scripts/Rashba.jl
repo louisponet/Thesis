@@ -2,6 +2,7 @@
 using DrWatson
 quickactivate(@__DIR__)
 using Revise
+using DFControl
 using DFWannier
 const DFW = DFWannier
 using LinearAlgebra
@@ -22,8 +23,13 @@ wbands_nsoc = wannierbands(hami_nsoc, bands_nsoc)
 p = plot(job_nsoc, -5.3, 5, 0.1, dpi=200, layout = grid(1, 2, widths=(0.7,0.3)))
 plot!(p[1], xticks = ([1, 101, 201], ["A", "Z", "U"]))
 plot!(p[2], legendfontsize = 10)
+plot(bands_nsoc[11:20], fermi=fermi_nsoc, ylims=[-12.5,6], dpi=200, color=hcat([[:red for i=1:2];[:green for i =1:3];[:blue for i =1:5]]...), xticks = ([1, 101, 201], ["A", "Z", "U"]), title=nothing, xtickfontsize=15, ytickfontsize=15, yguidefontsize=15)
+plot!([-10 for i = 1:length(bands_nsoc[1].k_points_cryst)])
+savefig(papersdir("Rashba", "Images", "band_windows.png"))
 
-savefig(papersdir("Rashba", "Images", "NSOC_dos.png"))
+
+
+
 # wfuncs_nsoc = WannierFunction[]
 # for i = 1:8
 #     push!(wfuncs1_soc, WannierFunction(wfuncs1[i].points, map(x-> SVector(x[1], 0.0), wfuncs1[i].values)))
@@ -41,7 +47,7 @@ p = plot(job_soc, -5.3, 5, 0.1, dpi=200, layout = grid(1, 2, widths=(0.7,0.3)))
 plot!(p[1], xticks = ([1, 101, 201], ["A", "Z", "U"]))
 plot!(p[2], legendfontsize = 10)
 savefig(papersdir("Rashba", "Images", "SOC_dos.png"))
-
+plot(bands_soc, fermi=fermi_soc, ylims=[-12.5,5])
 plot(plot(wbands_nsoc, bands_nsoc, fermi=fermi_nsoc, ylims=[-5.3, 5], legend=:topright), plot(wbands_soc, bands_soc, fermi=fermi_soc, ylims=[-5.3, 5]), dpi=200, title = "",xticks = ([1, 101, 201], ["A", "Z", "U"]))
 savefig(papersdir("Rashba", "Images", "wanvsdft.png"))
 
