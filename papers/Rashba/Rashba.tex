@@ -120,12 +120,21 @@ We thus need to seek a different explanation for the large splittings that are o
 This will lead to a similar second order perturbative effect as in the second term of Eq.~\ref{eq:kp_expansion}, but where the relativistic $V_1$ is substituted by a contribution from electrostatics, which is not plagued by the small relativistic prefactor.
 
 \section{Orbital Rashba Effect}
-Unlike the purely relativistic Rashba-Bychkov effect, the orbital effect combines strong atomic SOC with the generation of nonzero orbital angular momentum (OAM) through electrostatic means.
-This contribution, therefore, is not limited by the small prefactors of Eq.~\ref{eq:kp_expansion}. As will be explicitely shown below, electric dipole matrix element s can cause Bloch functions to acquire nonzero OAM when any electric field is present (e.g. from electric polarization), and vice versa Bloch functions with nonzero OAM  acquire nonzero electric dipoles between unit cells\cite{Petersen2000,Park2011,Go2016}. This leads to two seperate effects.
 
-Firstly, when atomic SOC is included, OAM is unquenched at the high symmetry k-points. This leads to a correction to the band dispersion that varies linearly with $\bm{k}$. Secondly, even without including the contribution of the atomic SOC, the OAM of the Bloch functions to appear in a chiral texture as one moves away from the high-symmetry k-point, similarly to how the relativistic Rashba effect leads to a chiral spin texture. If one then includes the atomic SOC from Eq.~\ref{eq:Rashba_unk_Vs}, this linear-in-k $l$ will lead to a linear variation of the energy with either positive or negative slope, depending on the spin orientation.
+As will be demonstrated throughout this section, it turns out that the key lies in the realization that Bloch functions at non-TR invariant $k$-points, generate nonzero intercell electric dipoles if they have a nonzero orbital angular momentum (OAM)\cite{Petersen2000,Park2011,Go2016}.
+These dipoles couple to any electric field, e.g. the internal one assiated with ferroelectric polarization, with the inverse effect leading to the generation of Bloch functions with nonzero OAM.
+This OAM then couples to the spin of the electrons throught the atomic SOC, leading to a splitting with the size determined (in part) by the weight of the ion around which the OAM develops.
+We will thus focus in this section on how this OAM appears, since it is well-known that in crystals it is generally said to be quenched.
+Indeed, ignoring atomic SOC, the influence of neighboring ions on the charge distribution of the atomic orbitals that form the Bloch functions is such that it favors orbitals with zero OAM.
+This is directly translated into the commonly used language of $p_x$, $p_y$ and $p_z$ orbitals in the case of $L=1$.
 
-We now proceed by giving a pedagogical derivation of this mechanism based on a tight-binding model \cite{Petersen2000,Go2016}.
+Nonetheless, there exist two mechanisms that favor nonzero OAM.
+Firstly, atomic SOC gains energy through $\mathcal{H}_{SOC} = -\lambda_a \hat{\bm{L}} \cdot \hat{\bm{\sigma}}$ when the OAM is nonzero. Even at TR-invariant $k$-points this leads to orbitals with some OAM.
+When expanding for small $\bm{k}$, a linear varying term will appear in the energy dispersion that originates from the plane wave $\eikr{r}$ envelope of the Bloch functions.
+Secondly, even without inclusion of atomic SOC, it will be shown that the OAM of the Bloch functions appears in a chiral texture as one moves away from the high-symmetry $k$-point, similarly to how the relativistic Rashba effect leads to a chiral spin texture, due to the earlier discussed intercell dipoles.
+If one then includes again the atomic SOC, this linear-in-k $\bm{L}$ results in a linear variation of the energy with either positive or negative slope depending on the spin orientation in relation to $\hat{\bm{L}}$.
+
+We now proceed by giving a pedagogical derivation of these mechanisms based on a tight-binding model \cite{Petersen2000,Go2016}.
 
 \subsection{Tight-Binding model}
 The tight-binding model is defined on a 2D square layer with lattice parameter $a$, one atom per unit cell, and four Wannier orbitals centered on that atom.
