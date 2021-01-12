@@ -49,7 +49,7 @@ To investigate how these effects occur in GeTe, we utilize DFT followed by a Wan
 
 We finish with a conclusion on the origin of most observed Rashba-like phenomena \lp{could be better}.
 
-\section{Rashba-Bychkov Effect}
+\section{Rashba-Bychkov Effect \label{sec:Rashba_relativistic}}
 %############################ NEW ############################
 The first discovered, and most well known effect bearing the form of Eq.~\ref{eq:Rashba_form} is the Rashba-Bychkov effect, first derived in their seminal 1959 paper\cite{Rashba1959SymmetryAr}.
 It is a purely relativistic effect that is derived from an expansion to second order in $1/c$, $c$ denoting the speed of light, of the electronic Dirac equation (where the Fouldy-Wouthuysen transformation was applied):
@@ -154,10 +154,10 @@ This allows extra hopping terms associated with $\hat{H}_{isb} = e (\hat{\bm{d}}
 	% =&\theta_z^n\hat{d}^1_z(\bm{n}),
 \end{align}
 with $\theta_z^n = -ae^{-\frac{1}{2}\left(\frac{a|\bm{n}|}{a_0}\right)^2}\frac{\pi^{\frac{3}{2}}}{16\sqrt{2}}$, other terms of $\hat{H}_{isb}$ are zero.
-Fig.~\ref{fig:overlapdip} shows pictorially how these terms arise from the electric dipoles between the shifted orbitals. 
+Fig.~\ref{fig:Rashba_overlapdip} shows pictorially how these terms arise from the electric dipoles between the shifted orbitals. 
 \begin{figure}[t]
 ~\centering
-\IncludeGraphics[width=\linewidth]{overlapdip.png}\caption{\label{fig:overlapdip} {\bf Overlap dipoles.} (a) On-site dipole from $\Ket{s}$ and $\Ket{z}$ hybridization, (b) Dipole due to overlap of shifted $\Ket{p}$ orbitals, the dashed line signifies a unit cell boundary.}
+\IncludeGraphics[width=\linewidth]{overlapdip.png}\caption{\label{fig:Rashba_overlapdip} {\bf Overlap dipoles.} (a) On-site dipole from $\Ket{s}$ and $\Ket{z}$ hybridization, (b) Dipole due to overlap of shifted $\Ket{p}$ orbitals, the dashed line signifies a unit cell boundary.}
 \end{figure}
 Since we are interested in ferroelectric materials, the internal field $E_z$ caused by the electric polarization is usually small.
 This warrants a perturbative approach where $\hat{H}_{isb}$ is the perturbation on $\hat{H}_0$, leading to a hybridization between the $\Ket{s}$ and $\Ket{z}$ orbitals:
@@ -217,12 +217,22 @@ These expressions for $\hat{\bm{L}}$ can be filled into the expression for the a
 which has the form of Eq.~\ref{eq:Rashba_form}.
 We want to emphasize here that the only influence of the initial choice of the Gaussian radial shape of the orbitals is reflected in the prefactor in front of $e E_z$ in the definition of $\Theta$.
 
-From this qualitative derivation, it is clear that the main reason behind the orbital Rashba effect can be traced back to the observation that Bloch functions with nonzero OAM have electric dipoles that couple to the inversion symmetry breaking electric field. We identified two sources that lead to the effect: the first one comes from the direct overlap dipoles between $p_x$ and $p_y$ orbitals, and the $p_z$ orbital\cite{Petersen2000}, the second is due to the hybridization of the $s$ and $p_z$ overlap, and the kinetic energy term between the $s$ and neighboring $p_x$ and $p_y$ orbitals\cite{Go2016}. These two terms are reflected in the two terms that contribute to $\Theta$, and lead to a chiral, linear-in-$k$ texture of the OAM.
-If there then exists strong atomic SOC, this linear-in-$k$ OAM will couple to the spin and result in the final Rashba-like form of Eq.~\ref{eq:Rashba_from_OAM}.
+From this qualitative derivation, it is clear that the main reason behind the orbital Rashba effect can be traced back to the observation that Bloch functions with nonzero OAM have electric dipoles that couple to the inversion symmetry breaking electric field.
+We identified two sources that lead to the effect.
 
+The first one comes from the direct overlap dipoles between $p_x$ and $p_y$ orbitals with the $p_z$ orbital (panel (b) in Fig.~\ref{fig:Rashba_overlapdip})\cite{Petersen2000}.
+An exaggerated demonstration for the case of $p_x + ip_z$ orbitals is shown in Fig.~\ref{fig:Rashba_interference}.
+\begin{figure}[t!]
+\IncludeGraphics[width=\linewidth]{interference.png}
+\caption{\label{fig:Rashba_interference}Interference between orbitals with nonzero OAM. Three neighboring unit cells are displayed, each with the same $p_x + ip_z$ orbital (thus having nonzero $l_y$). The wave functions of the left and right unit cells have their phase rotated by the plane-wave part $e^{i k_x R_x}$. The amplitude and phase of the wave function are encoded with the length and polar angle of the arrows. It is clear from the resulting phases (red arrows) that there exists constructive interference on the bottom half of the material, and destructive interference at the top half, which leads to the intercell dipoles.}
+\end{figure}
+
+The second is due to the hybridization of the $s$ and $p_z$ orbitals (panel (a) in Fig.~\ref{fig:Rashba_overlapdip}), and the kinetic energy term between the $s$ and neighboring $p_x$ and $p_y$ orbitals\cite{Go2016}.
+These two terms are reflected in the two terms that contribute to $\Theta$, and lead to a chiral, linear-in-$k$ texture of the OAM.
+Through the atomic SOC, this linear-in-$k$ OAM will couple to the spin and result in the final splitting with the Rashba-like form of Eq.~\ref{eq:Rashba_from_OAM}.
 
 There is one final term that contributes to the linear variation of OAM with $\bm{k}$, which is present due to the unquenching of the OAM at the high symmetry point (e.g. $|k|=0$) due to atomic SOC \ref{Park2011}.
-If the Bloch functions at $\bm{k}=0$ in this case are written as a linear combination of Wannier functions that have angular character of $p$-orbitals
+If the Bloch functions at $\bm{k}=0$ are written as a linear combination of Wannier functions that have angular character of $p$-orbitals
 \begin{equation}
 \Ket{\psi} = \sum_{\bm{n},\alpha} c_\alpha \Ket{\alpha^{\bm{n}}},
 \end{equation}
@@ -234,8 +244,7 @@ when $\alpha,\beta,\gamma$ designate $x,y,z$.
 Thus, through the gain on $\hat{H}_{soc}$ if $\bm{j} = \bm{l} + \bm{\sigma}$, the orbitals at the high-symmetry point will now be a linear combination of what were orginally pure $p$-orbitals (due to the quenching we assumed that the bands at $\bm{k}=0$ had a single $c_\alpha \neq 0$ in the previous derivation).
 This unquenching will not be complete in the sense that it won't create orbitals with maximal $\bm{j}$ as is the case for an isolated ion through the Hund's rules, since in a crystal the neighboring charge will limit the creation of OAM\footnote{This is the reason why without SOC the OAM is fully quenched.}.
 
-
-Similar to the above derivation, a small-$k$ expansion for orbitals $\Ket{\psi^{\bm{k}}}$ with nonzero OAM can be performed around $|k|=0$ leading in general to:
+Similar to the above derivation, a small-$k$ expansion for Bloch functions $\Ket{\psi^{\bm{k}}}$ with nonzero OAM can be performed around $|k|=0$ leading in general to:
 \begin{align}
 	\Ket{\psi^{\bm{k}}} =& \sum_{\bm{n},\alpha} c_\alpha^{\bm{k}} \eikr{n} \Ket{\alpha^{\bm{n}}}\\
 	=& \sum_{\bm{n},\alpha} \left(c_\alpha + \bm{k}\left.\frac{\partial c_\alpha^{\bm{k}}}{\partial_{\bm{k}}}\right\rvert_{\bm{k}=0} \right)\left(1 + i\bm{k}\cdot\bm{n}\right)\Ket{\alpha^{\bm{n}}}.
@@ -253,14 +262,34 @@ These expressions show us that, due to ${\hat{H}_{soc} = \lambda \hat{\bm{L}}\cd
 
 With the understanding that one can find Rashba like dispersions, coming not from the usually considered purely relativistic, but also from electrostatic mechanisms, we now look at a concrete example that behaves very similar to the above toy model, GeTe.
 
+\section{Germanium Telluride}
 \begin{figure}[h]
-% ~\centering
-\IncludeGraphics[width=\linewidth]{BZBSDOS.pdf}
-\caption{\label{fig:Rashba_BZBSDOS}(a) Rhombohedral unit cell and Brillouin zone of GeTe, with the polarization direction in yellow. (b) Band structure obtained from a DFT calculation with and without SOC, along the blue path in panel (a). (c) partial DOS for Te and Ge p orbitals computed without SOC.}
+\IncludeGraphics[width=\linewidth]{crystal.png}
+\caption{\label{fig:Rashba_crystal}{\bf Crystal structure of GeTe}(a) Rhombohedral unit cell, with the polarization along the [111] direction in yellow. b) First Brillouin zone with the high-symmetry $k$-path that is under focus indicated by the blue lines.}
 \end{figure}
-\section{Overview: Germanium Telluride}
-The space group of GeTe is R$3m$ (\#160 in International Tables), with ferroelectric polarization along the threefold rotation $z$-axis caused by an off-centering of the central Te atom \cite{Rabe1987} as displayed in Fig.~\ref{fig:Rashba_BZBSDOS}-(a). The valence and conduction bands are formed mostly by $s$ and $p$ orbitals from Te and Ge, respectively.
-This, together with the large spin-splitting in the vicinity of the $Z$ point \cite{DiSante2013} as observed from the bandstructure in Fig.~\ref{fig:Rashba_BZBSDOS}-(b), lends it as a perfect test-case for the above described mechanisms. Moreover, since it is a bulk material, the relativistic Rashba effects contribute negligibly due to the small potential gradients caused by bulk ferroelectricity. The band structure,  presents a distinct large linear spin splitting around the $Z$ point, along the $Z-A$ and $Z-U$ paths. The $Z-\Gamma$ path shows no splitting because the electric field is along the $z$ direction, and as shown by the above derivation, only $k_x$ and $k_y$ will show a linear splitting.
+At high temperatures GeTe has the standard rocksalt structure.
+When temperatures are lowered, a displacive phonon instability occurs, freezing in a $\bm{q} = 0$ phonon that shifts the central Te ion along the [111] direction\cite{Rabe1987}.
+The space group after this inversion symmetry breaking phase transition becomes R$3m$ (\#160 in International Tables), and a nonzero electric polarization along the $z$-direction develops as indicated by the yellow arrow in Fig.~\ref{fig:Rashba_crystal}(a). The first BZ for this low temperature structure is shown in panel (b), with the high-symmetry path under focus indicated by the blue line.
+
+\begin{figure}[b!]
+	\begin{subfigure}[b]{0.49\textwidth}
+	\caption{Non-relativistic}
+	\IncludeGraphics{NSOC_dos.png}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+	\caption{Fully-relativistic}
+	\IncludeGraphics{SOC_dos.png}
+	\end{subfigure}
+\caption{\label{fig:Rashba_bands_dos}{\bf Bandstructure of GeTe} In both panels the bandstructure was colored according to the contribution of the constituent orbitals, as indicated in the flanking density of state plots. The bands that have larger $s$ character are situated 5 eV below the shown window.}
+\end{figure}
+
+The valence and conduction bands are formed mostly by $s$- and $p$-orbitals from the Te and Ge ions, respectively, as can be seen from Fig.~\ref{fig:Rashba_bands_dos}.
+From the fully relativistic bandstructure in panel (b) it can be seen that multiple bands exhibit a large linear spin splitting around the $Z$-point in the plane perpendicular to the [111] direction.
+The $Z-\Gamma$ path does not show any splitting because the electric field is along the $z$-direction, and thus only a variation of $k_x$ and $k_y$ will show a linear splitting, as previously discussed.
+
+This means that from the point of view of our earlier derivation using the tight-binding model in terms of $s$- and $p$-orbitals, it is the perfect test case.
+Moreover, since it is a bulk material, we can neglect the contributions from to the relativistic Rashba effects described in Sec.~\ref{sec:Rashba_relativistic}, due to the small potential gradients $\bm{\nabla}V$ resulting from the bulk ferroelectricity.
+The band structure,  presents a distinct large linear spin splitting around the $Z$ point, along the $Z-A$ and $Z-U$ paths. 
 The density of states (DOS), displayed in Fig.~\ref{fig:Rashba_BZBSDOS}-(c), confirms the orbital character of the bands.
 % The valence bands are comprised mostly of Te 5p orbitals, whereas the conduction bands are mostly formed by Ge 4p orbitals. This orbital character of valence and conduction bands, together with the stronger atomic SOC on Te atom, results in a more pronounced spin splitting in the valence bands. We will focus on the first three valence bands, the top one of which mainly has $p_z$ character whereas the two lower bands, which are degenerate at the $Z$-point, are formed by $p_x$ and $p_y$ orbitals. The crystal field splitting between bands of $p_z$ and $p_{x,y}$ characters results from the distortion of the ideal Te-Ge$_6$ octahedron.
 % \begin{figure*}[ht!]
@@ -301,8 +330,8 @@ The density of states (DOS), displayed in Fig.~\ref{fig:Rashba_BZBSDOS}-(c), con
 % ~\centering
 % \IncludeGraphics[width=\linewidth]{1_1.png}\caption{\label{fig:overlaparrows} Dipoles due to interference for $p$, $d$ and $f$ orbitals, with maximal angular momentum projection, $\psi\sim e^{i l\phi}$, are shown in panels (a) - c) respectively. Black and blue arrows denote the complex phases of wavefunctions in neighboring unit cells, where the red arrow shows the resulting complex amplitude of the total Bloch function due to interference of the orbitals. The overlapping orbitals where spaced apart for visual clarity.}
 % \end{figure}
-% Upon closer inspection of the overlap dipole, $\mathcal{Z}_{\alpha,\beta}^{\bm{R}}$, one concludes that for $d_z$ to be nonzero, at least one of the orbitals $\alpha,\beta$ needs to be the $p_z$ orbital and the shift-vector $\bm{R}$ has to have a component along the second orbital ($p_x$ or $p_y$). This is illustrated in Fig.~\ref{fig:overlapdip}(a). 
-% Another requirement for this term to be nonzero is that the orbitals have odd parity, such as $p$ and $f$. This is highlighted in Fig.~\ref{fig:overlaparrows}. If they have even parity (as is the case for the $d$ orbitals displayed in Fig.~\ref{fig:overlapdip}(b) and ~\ref{fig:overlaparrows}(b)), the overlap dipoles from neighboring unit cells will cancel. 
+% Upon closer inspection of the overlap dipole, $\mathcal{Z}_{\alpha,\beta}^{\bm{R}}$, one concludes that for $d_z$ to be nonzero, at least one of the orbitals $\alpha,\beta$ needs to be the $p_z$ orbital and the shift-vector $\bm{R}$ has to have a component along the second orbital ($p_x$ or $p_y$). This is illustrated in Fig.~\ref{fig:Rashba_overlapdip}(a). 
+% Another requirement for this term to be nonzero is that the orbitals have odd parity, such as $p$ and $f$. This is highlighted in Fig.~\ref{fig:overlaparrows}. If they have even parity (as is the case for the $d$ orbitals displayed in Fig.~\ref{fig:Rashba_overlapdip}(b) and ~\ref{fig:overlaparrows}(b)), the overlap dipoles from neighboring unit cells will cancel. 
 % Filling this into Eq.~(\ref{eq:dip}) and summing over the nearest neighbor unit cells ($\bm{R} = \pm 1$), we arrive at
 % \begin{align}\label{eq:dipfinal}
 %     d_z(\bm{k}) &= 4e \left(l_x(Z) + \bm{k}^r \left.\frac{\partial l_x(\bm{k}) }{\partial \bm{k}}\right\rvert_{\bm{k}=Z}\right) k^r_yR_y \mathcal{Z}_{y,z}^{R_y}\nonumber \\
@@ -343,25 +372,11 @@ Since the present theory depends crucially on local, real space, properties of t
 
 This provides us with the tools to analyze the real space properties of Bloch functions such as the dipole moment and OAM.
 
-
+\lp{look in the high throughput paper for a decent definition of the wannier band distance w.r.t the dft one!}
+\lp{also put some values on the wannier centers etc}
 
 \section{Band structure}
 % % ~\centering
-\begin{figure}[b!]
-\IncludeGraphics[width=\linewidth]{interference.png}
-\caption{\label{fig:interference}Interference between orbitals with nonzero OAM. Three neighboring unit cells are displayed, each with the same $p_x + ip_z$ orbital (thus having nonzero $l_y$). The wave functions of the left and right unit cells have their phase rotated by the plane-wave part $e^{i k_x R_x}$. The amplitude and phase of the wave function are encoded with the length and polar angle of the arrows.}
-\end{figure}
-\begin{figure}[b!]
-	\begin{subfigure}[b]{0.49\textwidth}
-	\caption{Non-relativistic}
-	\IncludeGraphics{NSOC_dos.png}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.49\textwidth}
-	\caption{Fully-relativistic}
-	\IncludeGraphics{SOC_dos.png}
-	\end{subfigure}
-\caption{\label{fig:GeTe_bands_dos} Bandstructure and projected density of states. In both panels the bandstructure was colored according to the contribution of the constituent orbitals, as indicated in the density of state plots. The bands that are formed by the $s$-orbitals are situated 5 eV below the shown window.}
-\end{figure}
 The bands we will focus on most are the three topmost valence bands. As seen in Fig. \ref{fig:Rashba_BZBSDOS}-(b), these bands have the largest spin-splitting. This suggests that indeed the atomic SOC plays an important rule, seen as these bands are comprised mostly of Te orbitals, and SOC is largest on Te. If one were to fit the dispersion of the topmost band to Eq.~\ref{eq:Rashba_form},
 it results in a large prefactor $\alpha_R\approx 30.7$~eV$\cdot$\angstrom \cite{DiSante2013}. As discussed before, a more realistic prefactor would be $\alpha_R=10^{-6}$~eV in the purely relativistic case inside the vacuum.
 
