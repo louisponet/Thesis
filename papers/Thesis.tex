@@ -39,6 +39,44 @@
 \newcommand{\gpoint}{$\bold{\Gamma}$}
 
 \newcommand{\angstrom}{\mbox{\normalfont\AA} }
+% Commands for Kets and Bras
+\newcommand{\Wan}[2]{w_{#1}^{\bm{#2}}}
+\newcommand{\tildeWan}[2]{\tilde{w}_{#1}^{\bm{#2}}}
+\newcommand{\WanKetr}[2]{\Ket{\Wan{#1}{#2}(\bm{r})}}
+\newcommand{\tildeWanKetr}[2]{\Ket{\tildeWan{#1}{#2}(\bm{r})}}
+\newcommand{\WanKet}[2]{\Ket{\Wan{#1}{#2}}}
+\newcommand{\tildeWanKet}[2]{\Ket{\tildeWan{#1}{#2}}}
+\newcommand{\WanBrar}[2]{\Bra{\Wan{#1}{#2}(\bm{r})}}
+\newcommand{\tildeWanBrar}[2]{\Bra{\tildeWan{#1}{#2}(\bm{r})}}
+\newcommand{\WanBra}[2]{\Bra{\Wan{#1}{#2}}}
+\newcommand{\tildeWanBra}[2]{\Bra{\tildeWan{#1}{#2}}}
+
+\newcommand{\Bloch}[1]{\psi_{#1}^{\bm{k}}}
+\newcommand{\tildeBloch}[1]{\tilde{\psi}_{#1}^{\bm{k}}}
+
+\newcommand{\BlochKet}[1]{\Ket{\Bloch{#1}}}
+\newcommand{\tildeBlochKet}[1]{\Ket{\tildeBloch{#1}}}
+\newcommand{\BlochBra}[1]{\Bra{\Bloch{#1}}}
+\newcommand{\tildeBlochBra}[1]{\Bra{\tildeBloch{#1}}}
+
+\newcommand{\Blochr}[1]{\psi_{#1}^{\bm{k}}(\bm{r})}
+\newcommand{\tildeBlochr}[1]{\tilde{\psi}_{#1}^{\bm{k}}(\bm{r})}
+
+\newcommand{\BlochKetr}[1]{\Ket{\Blochr{#1}}}
+\newcommand{\tildeBlochKetr}[1]{\Ket{\tildeBlochr{#1}}}
+\newcommand{\BlochBrar}[1]{\Bra{\Blochr{#1}}}
+\newcommand{\tildeBlochBrar}[1]{\Bra{\tildeBlochr{#1}}}
+
+\newcommand{\unkr}[2]{u_{#1}^{\bm{#2}}(\bm{r})}
+\newcommand{\unk}[2]{u_{#1}^{\bm{#2}}}
+
+\newcommand{\unkrBra}[2]{\Bra{\unkr{#1}{#2}}}
+\newcommand{\unkrKet}[2]{\Ket{\unkr{#1}{#2}}}
+\newcommand{\unkBra}[2]{\Bra{\unk{#1}{#2}}}
+\newcommand{\unkKet}[2]{\Ket{\unk{#1}{#2}}}
+
+\newcommand{\inveikr}[1]{e^{-i \bm{k}\cdot \bm{#1}}}
+\newcommand{\eikr}[1]{e^{i \bm{k}\cdot \bm{#1}}}
 
 %For editing
 \newcommand{\sa}[1]{{\color{violet}[#1]}}
