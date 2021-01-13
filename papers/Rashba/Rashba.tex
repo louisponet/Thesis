@@ -289,103 +289,86 @@ The $Z-\Gamma$ path does not show any splitting because the electric field is al
 
 This means that from the point of view of our earlier derivation using the tight-binding model in terms of $s$- and $p$-orbitals, it is the perfect test case.
 Moreover, since it is a bulk material, we can neglect the contributions from to the relativistic Rashba effects described in Sec.~\ref{sec:Rashba_relativistic}, due to the small potential gradients $\bm{\nabla}V$ resulting from the bulk ferroelectricity.
-The band structure,  presents a distinct large linear spin splitting around the $Z$ point, along the $Z-A$ and $Z-U$ paths. 
-The density of states (DOS), displayed in Fig.~\ref{fig:Rashba_BZBSDOS}-(c), confirms the orbital character of the bands.
-% The valence bands are comprised mostly of Te 5p orbitals, whereas the conduction bands are mostly formed by Ge 4p orbitals. This orbital character of valence and conduction bands, together with the stronger atomic SOC on Te atom, results in a more pronounced spin splitting in the valence bands. We will focus on the first three valence bands, the top one of which mainly has $p_z$ character whereas the two lower bands, which are degenerate at the $Z$-point, are formed by $p_x$ and $p_y$ orbitals. The crystal field splitting between bands of $p_z$ and $p_{x,y}$ characters results from the distortion of the ideal Te-Ge$_6$ octahedron.
-% \begin{figure*}[ht!]
-% \centering
-% \begin{subfigure}[b]{0.49\textwidth}
-% \centering
-% \IncludeGraphics[width=\linewidth]{OAMvsK}
-% \caption{}
-% \end{subfigure}
-% ~
-% \begin{subfigure}[b]{0.49\textwidth}
-% \centering
-% \IncludeGraphics[width=\linewidth]{OAMvsK2.png}
-% \caption{}
-% \end{subfigure}
-% %{oamvseigvalsv1.pdf}
-% \caption{Comparison between the real-space observables and energy dispersion in (a) the first and (b) third valence band. The values are plotted in function of the relative distance from the $Z$ point $\bm{k}_r = \bm{k} - \bm{k}_Z$, towards the A and U points. The green graphs denote the values before turning on atomic SOC, whereas the orange and blue graphs denote the two spin-split bands.}\label{fig:oamvseigvalv}
-% \end{figure*}
-% Wannier representation allows us to elucidate the $k$-dependent electric dipole moment arising due to interference of the atomic orbitals on the neighboring sites \cite{Marzari2012MaximallyApplications}. In order to obtain the effective Hamiltonian, we write the Bloch functions as linear combinations of the Wannier functions that describe the bands of interest: $$\psi_{\bm{k}}(\bm{r})=\sum_{\alpha,\bm{R}} c_\alpha(\bm{k}) w_\alpha(\bm{r}-\bm{R})e^{i\bm{k}\bm{R}},$$ where the Wannier functions $w_\alpha(r)$ are chosen to be real and $\bm{R}$ denote the unit cell in which the orbital is centered.
-
-% In the case of GeTe the electric polarization is along the $z$ direction, making it sufficient to focus on the corresponding dipole moment
-% \begin{align}
-% d_z(\bm{k}) &=e\sum_{\alpha,\beta,\bm{R}}A_{\alpha,\beta}(\bm{k})e^{i\bm{k}.\bm{R}} \, \mathcal{Z}_{\alpha,\beta}^{\bm{R}} \\
-% A_{\alpha,\beta}(\bm{k}) &= c_{\alpha}^*(\bm{k}) c_\beta(\bm{k}) \\
-% \mathcal{Z}_{\alpha,\beta}^{\bm{R}} &= \int d\bm{r}   w_{\alpha}(\bm{r})w_\beta(\bm{r}-\bm{R}) z. \label{eq:Znn}
-% \end{align}
-% Expanding each term around $k_Z$, and keeping contributions up to first order in $\bm{k}^r = (k_Z - \bm{k})$, one obtains
-% \begin{align}\label{eq:dip}
-% d_z(\bm{k}) =e\sum_{\alpha,\beta,\bm{R}} &\left(A_{\alpha,\beta}(Z) + \bm{k}^r \left.\frac{\partial A_{\alpha,\beta}(\bm{k}) }{\partial \bm{k}}\right\rvert_{\bm{k}=Z}\right) \times \nonumber \\ 
-% &(1 + i\bm{k}^r \cdot \bm{R}) \mathcal{Z}_{\alpha,\beta}^{\bm{R}}.
-% \end{align}
-% The term that combines the first order variation of $A_{\alpha,\beta}(\bm{k})$ with the zeroth order term from the exponent leads to a nonzero contribution only if $w_\alpha, w_\beta = s, p_z$ in the same unit cell ($\bm{R}=0$).
-% This is the charge asymmetry that comes from $s$-$p_z$ hybridization and was previously considered in the context of giant spin splitting at surfaces in Refs.~\citenum{Petersen2000SimpleStates,Go2016SurfacePhysics} and for bulk perovskites in Ref.~\citenum{Kim2014}.
-% The new terms that we consider here combine the zeroth and first order contributions to $A_{\alpha,\beta}(\bm{k})$ with the first order $i\bm{k}^r \cdot \bm{R}$ term.
-% Using indices $1,2,3$ to denote $p_x, p_y, p_z$ Wannier functions one obtains the following relation between the Bloch function coefficients and the OAM: $l_k(\bm{k}) = -i \epsilon_{ijk} A_{ij}$.%\sa{only for pure $p_x$ etc. functions}
-
-% \begin{figure}[t]
-% ~\centering
-% \IncludeGraphics[width=\linewidth]{1_1.png}\caption{\label{fig:overlaparrows} Dipoles due to interference for $p$, $d$ and $f$ orbitals, with maximal angular momentum projection, $\psi\sim e^{i l\phi}$, are shown in panels (a) - c) respectively. Black and blue arrows denote the complex phases of wavefunctions in neighboring unit cells, where the red arrow shows the resulting complex amplitude of the total Bloch function due to interference of the orbitals. The overlapping orbitals where spaced apart for visual clarity.}
-% \end{figure}
-% Upon closer inspection of the overlap dipole, $\mathcal{Z}_{\alpha,\beta}^{\bm{R}}$, one concludes that for $d_z$ to be nonzero, at least one of the orbitals $\alpha,\beta$ needs to be the $p_z$ orbital and the shift-vector $\bm{R}$ has to have a component along the second orbital ($p_x$ or $p_y$). This is illustrated in Fig.~\ref{fig:Rashba_overlapdip}(a). 
-% Another requirement for this term to be nonzero is that the orbitals have odd parity, such as $p$ and $f$. This is highlighted in Fig.~\ref{fig:overlaparrows}. If they have even parity (as is the case for the $d$ orbitals displayed in Fig.~\ref{fig:Rashba_overlapdip}(b) and ~\ref{fig:overlaparrows}(b)), the overlap dipoles from neighboring unit cells will cancel. 
-% Filling this into Eq.~(\ref{eq:dip}) and summing over the nearest neighbor unit cells ($\bm{R} = \pm 1$), we arrive at
-% \begin{align}\label{eq:dipfinal}
-%     d_z(\bm{k}) &= 4e \left(l_x(Z) + \bm{k}^r \left.\frac{\partial l_x(\bm{k}) }{\partial \bm{k}}\right\rvert_{\bm{k}=Z}\right) k^r_yR_y \mathcal{Z}_{y,z}^{R_y}\nonumber \\
-%     &  - 4e\left(l_y(Z) + \bm{k}^r \left.\frac{\partial l_y(\bm{k}) }{\partial \bm{k}}\right\rvert_{\bm{k}=Z}\right) k^r_xR_x \mathcal{Z}_{x,z}^{R_x}.
-% \end{align}
-% The coupling of the electric dipole moment with an external electric field, or in the case of GeTe, with the electric polarization, leads to a contribution to the Hamiltonian of the form:
-% \begin{equation}\label{HOR}
-%     \mathcal{H}_{OR} \propto \bm{l} \cdot ( \bm{k} \times \bm{E})
-% \end{equation}
-% The terms with $l_{x,y}(Z)$ lead to a linear $k$-dependence of the band energy if the atomic SOC partially unquenches the OAM.
-% The second term leads to energy contribution, quadratic in $k$, but results in a linear variation of the OAM even in the absence of SOC. This linear variation of the OAM will then couple to $\bm{\sigma}$ [also referred to as spin angular momentum (SAM)] through the atomic SOC, leading to the linear spin splitting.
-
-% The energy dispersion close to the $Z$ point can thus be modeled by
-% \begin{equation}\label{eq:hami}
-% \epsilon(\bm{k}) = \epsilon(Z) + \lambda_{so} \bm{l}\cdot \bm{\sigma} + c_1 \bm{l} \cdot ( \bm{k} \times \bm{E})+ c_2 l_z^2,
-% \end{equation}
-% where $\epsilon(Z)$ contains a constant band shift, while the term with $\lambda$ is the atomic spin-orbit coupling, and the latter terms represent the contribution due to the threefold symmetric crystal field for $l=1$.
-% To explicitly show how the linear variation of the OAM arises from the terms in Eq.~(\ref{eq:dipfinal}), we performed a $k\cdot p$-expansion of the first valence band which leads to following expressions for the OAM around $k=Z$:
-% \begin{align}\label{eq:OAM}
-% l_x &= -\frac{\lambda_{so}\sigma_x - c_1 E_z k_y}{c_2} \\
-% l_y &= -\frac{\lambda_{so}\sigma_y + c_1 E_z k_x}{c_2},\nonumber
-% \end{align}
-% where we only included terms with the $E_z$ component.
 
 \section{Methods}
-We performed ab-initio DFT calculations using the Quantum-Espresso software package\cite{Giannozzi2009}. In order to confirm the linear varying OAM even when spin-orbit is not included we performed non-relativistic, as well as fully relativistic calculations.
-Both were performed using ONCVPSP pseudopotentials, with 30 Ry for the energy cutoff, and 120 Ry for the density cutoff.
-The reciprocal space was sampled using a 6x6x6 Monkhorst-Pack grid, for the self-consistent and non self-consistent calculations, using an energy convergence threshold of $10^{-7}$Ry.
-Afterwards we used the Wannier90 package \cite{Mostofi2014AnFunctions} to perform the Wannierization, using projections on atomic $s$- and $p$-orbitals for both Ge and Te ions. The result is showcased in Fig.~\ref{fig:GeTe_wannierization}.
+In order to study this effect in a quantitative manner, without relying on experiments to fit the model to, the bandstructure is simulated from first-principles.
+Density functional theory (DFT), originally envisioned in the seminal works of P. Hohenberg, W. Kohn and L. J. Sham \cite{Hohenberg1964,Kohn1965}, is a formalism very well suited for achieving this goal.
+We won't delve into the fine details in light of conciceness, resorting instead to a very high-level overview following the excellent introduction to the topic by R. Martin in Ref.~\cite{Martin2004}.
+On a rudementary level, DFT is built on top of three main theoretical pillars.
+
+The first pillar is the observation that any property of a system of interacting particles can be written as a functional of the ground-state density $n_0(\bm{r})$.
+This means that DFT is, in principle, an exact theory of many-body systems.
+Writing the Hamiltonian as
+\begin{equation}
+	\hat{\mathcal{H}} = -\frac{\hbar}{2m_e} \sum_i \nabla_i^2 + \sum_i V_{\rm ext}(\bm{r}_i) + \frac{1}{2}\sum_{i\neq j} \frac{e^2}{|\bm{r}_i - \bm{r}_j|},
+\end{equation}
+where the indices $i,j$ iterate over the electrons\footnote{The ionic terms are easily included and are not the core difficulty and thus omitted here.}, the statement is that $V_{\rm ext}$ is uniquely defined by $n_0(\bm{r})$, and vice versa.
+Thus, as soon as the ground-state density is found, the exact Hamiltonian of the system is known.
+This in turn allows one to find all other eigenstates of the system, exactly solving the problem in the process.
+
+The second pillar is formed by the ability to define a universal functional for the total energy of the system $E[n]$ in terms of the density $n(\bm{r})$, which is valid for any external potential $V_{\rm ext}$.
+The density that globally minimizes this functional is then equal to the ground-state density $n_0(\bm{r})$.
+
+In order to turn these foundational first two pillars into a practically usable framework, one needs to address the question of the form of the energy functional $E[n]$, leading us straight to the third pillar: the Kohn-Sham Ansatz \cite{Kohn1965}.
+In essence, this ansatz makes the assumption that the original many-body problem can be replaced by an auxiliary independent-particle problem, both having exactly the same ground-state density $n_0(\bm{r})$.
+This means that, theoretically speaking, calculations for the many-body problem can be exactly translated instead into calculations using independent-particle methods.
+It is found that a set of independent particle equations can thus be formulated, lumping all the cumbersome many-body terms together in the so-called ``exchange-correlation'' functional $E_{xc}[n]$.
+If the exact form of $E_{xc}[n]$ was known, DFT would lead to the exact the solutions of the original many-body problem.
+The success of the DFT method from a numerical and quantitative point of view can be wholly attributed to the ability of finding local or semi-local approximations to this functional that manage to often reproduce quite well, in a mean-field kind of way, the original many-body problem.
+
+Bringing everything together, we can write down the total energy functional as:
+\begin{equation}
+	\label{eq:Rashba_kohnsham}
+	E_{KS} = T_s[n] + \int d\bm{r} V_{\rm ext}(\bm{r}) n(\bm{r}) + E_{\rm Hartree}[n] + E_{II} + E_{xc}[n],
+\end{equation}
+where $T_s$ is the independent-particle kinetic energy, $V_{\rm ext}$ the external potential due to the nuclei and any other external fields, $E_{II}$ the Coulomb interactions between the nuclei, and $E_{\rm Hartree}[n]$ denoting the classical Coulomb contributions:
+\begin{equation}
+	E_{\rm Hartree} = \frac{1}{2}\int d\bm{r}d\bm{r}' \frac{n(\bm{r})n(\bm{r}')}{|\bm{r} - \bm{r}'|}.
+\end{equation}
+
+The next question is how to perform the minimization in order to find the ground-state density $n_0$.
+In general, a self-consistent algorithm is used that iteratively constructs the energy contributions from the previous trial density $n_i$, diagonalizes the resulting Hamiltonian, and uses the found ground-state wavefunction to construct a new trial density $n_o$, after which the algorithm is repeated until $n_o$ is sufficiently close to $n_i$.
+This means that the energy terms which, according to the Hohenberg-Kohn theorems are uniquely defined by the density, did not change markedly w.r.t. the previous iteration, i.e. self-consistency between density and functional is reached.
+It can be shown that this process, at least, leads to a local minimum of the Kohn-Sham functional\ref{eq:Rashba_kohnsham}.
+The question of how to reach the global minimum of any function, let alone any functional, is from an entirely different caliber that we wish to avoid in this thesis. 
+
+There are many ways to numerically implement DFT, with variations depending mostly on the basis set of independent particle that is being used to construct the energy functional.
+Since we are interested in extended systems such as crystals, a plane-wave basis set comes very natural.
+In this case, both the envelope and unit-cell periodic part of the Bloch functions $\Ket{\psi^{\bm{k}}} = \eikr{r} \Ket{u^{\bm{k}}}$ are represented in terms of plane waves.
+
+In the calculations presented here, we used the implementation in the {\texttt Quantum ESPRESSO} software package\cite{Giannozzi2009}.
+To limit the size of the plane wave basis set that needs to be used, this package uses another approximation: the so-called Pseudopotentials that replace the exact ionic potentials.
+Again, a full description of pseudopotentials is out of scope of this thesis, but the main point is that they try to alleviate the requirement of including very fast oscillating plane waves (very high energy) in order to resolve the fast density oscillations that occur close to the ionic cores.
+Indeed the atomic states out of which Bloch functions are formed usually have one or many nodes close to the ionic cores.
+Pseudopotentials define a different potential for those cores in such a way that the wavefunctions match identically the exact ones outside the core region, but have less nodes and therefore a smoother density variation close to the cores.
+In most problems one is not interested in the exact form of the wavefunctions close to the core anyway.
+
+In order to confirm the linear varying OAM even when spin-orbit is not included we performed non-relativistic, as well as fully relativistic DFT calculations.
+Both were performed using the Optimized Norm-conserving Vanderbilt Pseudo Potentials \cite{Hamann2013}, a generalized-gradient approximation for the exchange-correlation functional \cite{Perdew1996}.
+Plane waves with an energy cutoff of 30 Ry were included, with a 120 Ry cutoff for the density.
+
+The reciprocal space was sampled using a 6x6x6 Monkhorst-Pack grid\cite{Pack1977} for the self-consistent calculation, using a total energy convergence threshold of $10^{-7}$Ry.
+
+Afterwards we used the {\texttt Wannier90} package \cite{Mostofi2014AnFunctions} to perform the Wannierization as described in the theory Chapter \ref{sec:Wannier}, using projections on hydrogenic $s$- and $p$-orbitals for both Ge and Te ions as the initial guess.
+A 10x10x10 $k$-grid was used for the sampling of the BZ during the Wannierization. 
+The result is shown in Fig.~\ref{fig:GeTe_wannierization}.
 \begin{figure}[b!]
 \IncludeGraphics[width=\linewidth]{wanvsdft.png}
 \caption{\label{fig:GeTe_wannierization} Result of Wannierization procedure for non-relativistic (a) and relativistic (b) calculations.}
 \end{figure}
 
-Since the present theory depends crucially on local, real space, properties of the Bloch functions, the next step is to generate the Wannier orbitals $\Ket{w_\alpha(\bm{r})}$.
-
-
-
-This provides us with the tools to analyze the real space properties of Bloch functions such as the dipole moment and OAM.
 
 \lp{look in the high throughput paper for a decent definition of the wannier band distance w.r.t the dft one!}
-\lp{also put some values on the wannier centers etc}
 
-\section{Band structure}
-% % ~\centering
-The bands we will focus on most are the three topmost valence bands. As seen in Fig. \ref{fig:Rashba_BZBSDOS}-(b), these bands have the largest spin-splitting. This suggests that indeed the atomic SOC plays an important rule, seen as these bands are comprised mostly of Te orbitals, and SOC is largest on Te. If one were to fit the dispersion of the topmost band to Eq.~\ref{eq:Rashba_form},
-it results in a large prefactor $\alpha_R\approx 30.7$~eV$\cdot$\angstrom \cite{DiSante2013}. As discussed before, a more realistic prefactor would be $\alpha_R=10^{-6}$~eV in the purely relativistic case inside the vacuum.
-
-% This is even more abnormal considering the fact that this is a bulk material, and that it is known that proper ferroelectrics have zero polarization in open boundary conditions because the depolarizing fields are not screened. Moreover, in the periodic boundary conditions utilized by DFT, the potential mimics short circuit boundary conditions \cite{Meyer2008}, $\bm E=0$, which results in zero contribution from Eq.~\ref{eq:Rashba_form}. 
+\section{Results and Discussion}
+The bands we will focus on most are the three topmost valence bands. As seen in Fig. \ref{fig:Rashba_BZBSDOS}-(b), these bands have the largest spin-splitting.
+This suggests that indeed the atomic SOC plays an important rule, seen as these bands are comprised mostly of Te orbitals, and SOC is largest on Te.
+If one were to fit the dispersion of the topmost band to Eq.~\ref{eq:Rashba_form}, it results in a large prefactor $\alpha_R\approx 30.7$~eV$\cdot$\angstrom \cite{DiSante2013}.
+As discussed before, a more realistic prefactor would be $\alpha_R=10^{-6}$~eV in the purely relativistic case inside the vacuum.
 
 The last issue with the purely relativistic explanation, which has been confirmed experimentally\cite{Krempasky2015SurfaceSemiconductor}, lies in the orientation of the spin polarization of the split bands. According to Eq.~\ref{eq:Rashba_form}, the bands should all be split equally and Bloch functions at the same $k$-point should have the same spin orientations, since their character does not enter Eq.~\ref{eq:Rashba_form}. However, as has been shown and will be confirmed by our results below, the orientation depends on the character of the band, more specifically on the value of the total angular momentum $j$. 
 
-% We performed ab initio calculations to study how the discussed effects manifest themselves in GeTe. To arrive at the desired basis of Wannier functions and tight-binding Hamiltonian, we first performed a collinear DFT calculation using the Quantum-Espresso package \cite{Giannozzi2009}, followed by WANNIER90 \cite{Mostofi2014AnFunctions}. For the DFT calculation we used a 10x10x10 Monkhorst-Pack k-grid, as well as an energy convergence threshold of $10^{-8}$~Ry. In the Wannierization step the gauge freedom of Wannier functions was exploited to arrive at a set of basis functions which are localized \cite{Marzari2012MaximallyApplications}, and resemble closely the atomic orbitals (spherical harmonics). Afterwards we added atomic SOC in the form $\lambda_{so} \bm{l} \cdot \bm{\sigma}$ using the muffin-tin approximation, with $\lambda_{so}$ for both atoms used as fitting parameters. Using this basis and Hamiltonian, we can the calculate the observables of interest, namely the OAM around Te and the dipole of the Bloch functions. 
-\section{Results and Discussion}
+\lp{also put some values on the wannier centers etc}
 The dispersion, OAM, and SAM of the first valence band are shown in the left panel of Fig.~\ref{fig:Rashba_oamvseigvalv}. Confirming our earlier conclusions, we can see that non-zero, linearly varying OAM is formed as we move away from the high-symmetry $Z$-point. Moreover, the OAM is perpendicular to both the $z$-axis and the $k$ vector, as it should be from Eq.~\ref{eq:oam_from_k}, and can also be seen from the panels in Fig. \ref{fig:Rashba_textures}. This leads e.g. to $l_y=0$ along the $A \to Z$ path, where only $k_y$ is nonzero. When atomic SOC is included in the orange and blue graphs, we see the spin-splitting that results from having the spin oriented either along or opposite to the already linearly varying OAM. The unquenching of the OAM at the $Z$-point when SOC is included is also clearly visible, together with the resulting change in the slope that originates from the corresponding contribution to the dipole moment Eq.~\ref{eq:d_z_from_OAM}. This correlation can also be observed in the panel showing the center of mass $\bar{z}=\int_{\textrm{supercell}}z |\psi(k)|^2$ of the Bloch-functions, which is proportional to the dipole moment around the same reference point.
 
 When we compare this first valence band with the third valence band, shown in the right panel of Fig.~\ref{fig:Rashba_oamvseigvalv}, we can clearly see the previously discussed issues with the purely relativistic explanation. As stated before, we can note that not only the magnitude but also the sign of the prefactor in Eq.~\ref{eq:Rashba_form} is opposite for these two bands, showcased by the size of the splitting, and by the ordering of the spin-up vs the spin-down splitted part. This is because the character of the first and third valence bands are different. The first valence band is mostly coming from Te $j_{\frac{3}{2}}$ orbitals, whereas the third valence band is predominantly $j_{\frac{1}{2}}$. This causes the orientation of the OAM and SAM to be along eachother in the first band, and opposite for the third, as shown in Fig.~\ref{fig:Rashba_textures}. This then leads to the different ordering of the spin-split bands.
@@ -394,9 +377,6 @@ There is one last very interesting feature one can notice from Fig.~\ref{fig:Ras
 
 All these considerations lead to a very nontrivial SAM and OAM texture of the bands as we progress through the BZ.
 
-%Looking back to Eq.~(\ref{eq:hami}), we can identify three main mechanisms that can result in a large linear spin splitting in the band dispersion.
-  %The first is large OAM unquenching effect, resulting in a significant $\bm{l}(Z)$ which couples to $\bm{\sigma}(Z)$, causing a linear variation of the dipole energy through the first term of Eq.~(\ref{eq:dipfinal}). The second is a linear variation of OAM a constant SAM, and the third -- vice versa. 
-%In the topmost valence band the linear variations of the dipole and SAM are very small. This suggests that the origin of the giant Rashba-like splitting is the large linear variation of the OAM, caused by the coupling to the electric polarization through the dipole, together with the large atomic SOC which then couples to the nonzero SAM through $\lambda_{so} \bm{l} \cdot \bm{\sigma}$. In the third valence band, however, the variation of the OAM is less than that of the SAM, and the contribution due to the charge asymmetry plays a bigger role, making it hard to assign the splitting to a single contribution. 
 \begin{figure*}[h]
 \centering
 \IncludeGraphics[width=0.49\linewidth]{OAMvsK}

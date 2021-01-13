@@ -28,8 +28,8 @@ plot!([-10 for i = 1:length(bands_nsoc[1].k_points_cryst)])
 savefig(papersdir("Rashba", "Images", "band_windows.png"))
 
 
-
-
+DFWannier.write_xsf("test.xsf", wfuncs_nsoc[1], job_nsoc.structure, value_func = x -> sign(cos(x[1]))*abs(x[1]))
+map(x -> abs(x[1])<1e-3 ? SVector((0.0im)) : x, wfuncs_nsoc[1].values)
 # wfuncs_nsoc = WannierFunction[]
 # for i = 1:8
 #     push!(wfuncs1_soc, WannierFunction(wfuncs1[i].points, map(x-> SVector(x[1], 0.0), wfuncs1[i].values)))
