@@ -52,7 +52,34 @@ plot(plot(wbands_nsoc, bands_nsoc, fermi=fermi_nsoc, ylims=[-5.3, 5], legend=:to
 savefig(papersdir("Rashba", "Images", "wanvsdft.png"))
 
 
+L = zeros(Vec3{ComplexF64}, 16, 16)
+for (i1, w1) in enumerate(wfuncs_soc)
+    for (i2,w2) in enumerate(wfuncs_soc)
+        L[i1, i2] = DFW.calc_angmom(w1, w2, ustrip(job_soc.structure.atoms[1].position_cart), 2)
+    end
+end
+evec=wbands_soc[10].eigvec[95]
+bfunc = similar(wfuncs_soc[1])
+for (i, e) in enumerate(evec)
+    bfunc += e * wfuncs_soc[i]
+end
+DFW.calc_angmom(bfunc,bfunc, ustrip(job_soc.structure.atoms[1].position_cart), 3)
+evec' * map(x->x[3], L) * evec
 
+
+
+const smat = DFWannier.σx(2)
+for ib = 1:10
+evec = wbands_soc[ib].eigvec[95]
+bfunc = similar(wfuncs_soc[1])
+for (i, e) in enumerate(evec)
+    bfunc += e * wfuncs_soc[i]
+end
+write_xsf(datadir("Rashba","GeTe","SOC","bf_95_$ib.xsf"), bfunc, job_soc.structure) 
+end
+
+
+wbands_soc[4].eigvals[101]
 for i = 1:16
     DFW.write_xsf(joinpath(job1, "$i.xsf"), wfuncs1_soc[i], job1.structure, value_func = x -> abs(x[1]) > abs(x[2]) ? sign(real(x[1])) * norm(x) : sign(real(x[2]))*norm(x))
 end
