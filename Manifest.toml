@@ -652,10 +652,10 @@ deps = ["Random"]
 uuid = "9fa8497b-333b-5362-9e8d-4d0656e87820"
 
 [[GLAbstraction]]
-deps = ["FileIO", "FixedPointNumbers", "ModernGL", "Printf"]
+deps = ["FileIO", "FixedPointNumbers", "ModernGL", "Printf", "StaticArrays", "ThreadPools"]
 path = "../../../.julia/dev/GLAbstraction"
 uuid = "ca6e7d0a-b0c9-59ca-8aba-aebf11497e1c"
-version = "0.0.0"
+version = "0.1.0"
 
 [[GLFW]]
 deps = ["GLFW_jll"]
@@ -960,7 +960,7 @@ uuid = "2ee39098-c373-598a-b85f-a56591580800"
 version = "1.4.0"
 
 [[Landau]]
-deps = ["DiffResults", "ForwardDiff", "JuAFEM", "LinearAlgebra", "NearestNeighbors", "Reexport", "SparseArrays", "Tensors"]
+deps = ["DiffResults", "ForwardDiff", "JuAFEM", "LinearAlgebra", "NearestNeighbors", "Optim", "ProgressMeter", "Reexport", "Serialization", "SparseArrays", "Tensors"]
 path = "/home/ponet/.julia/dev/Landau"
 uuid = "5fb9f698-aa0b-11e8-3d94-87c774b35c7c"
 version = "0.1.0"
@@ -1345,7 +1345,7 @@ uuid = "f57f5aa1-a3ce-4bc8-8ab9-96f992907883"
 version = "0.3.5"
 
 [[PStdLib]]
-deps = ["InlineExports", "LinearAlgebra", "Parameters", "Reexport", "StaticArrays", "Statistics", "Unitful"]
+deps = ["DataStructures", "FileIO", "ImageIO", "InlineExports", "LinearAlgebra", "Parameters", "Reexport", "StaticArrays", "Statistics", "Unitful"]
 path = "/home/ponet/.julia/dev/PStdLib"
 uuid = "81de72d6-94f4-11e9-3d35-4feaf5d5fb7f"
 version = "0.0.0"

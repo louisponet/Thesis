@@ -2,8 +2,56 @@
 
 \section{Density Functional Theory \label{sec:DFT}}
 
+In order to study this effect in a quantitative manner, without relying on experiments to fit the model to, the bandstructure is simulated from first-principles.
+Density functional theory (DFT), originally envisioned in the seminal works of P. Hohenberg, W. Kohn and L. J. Sham \cite{Hohenberg1964,Kohn1965}, is a formalism very well suited for achieving this goal.
+We won't delve into the fine details in light of conciceness, resorting instead to a very high-level overview following the excellent introduction to the topic by R. Martin in Ref.~\cite{Martin2004}.
+On a rudementary level, DFT is built on top of three main theoretical pillars.
 
+The first pillar is the observation that any property of a system of interacting particles can be written as a functional of the ground-state density $n_0(\bm{r})$.
+This means that DFT is, in principle, an exact theory of many-body systems.
+Writing the Hamiltonian as
+\begin{equation}
+	\hat{\mathcal{H}} = -\frac{\hbar}{2m_e} \sum_i \nabla_i^2 + \sum_i V_{\rm ext}(\bm{r}_i) + \frac{1}{2}\sum_{i\neq j} \frac{e^2}{|\bm{r}_i - \bm{r}_j|},
+\end{equation}
+where the indices $i,j$ iterate over the electrons\footnote{The ionic terms are easily included and are not the core difficulty and thus omitted here.}, the statement is that $V_{\rm ext}$ is uniquely defined by $n_0(\bm{r})$, and vice versa.
+Thus, as soon as the ground-state density is found, the exact Hamiltonian of the system is known.
+This in turn allows one to find all other eigenstates of the system, exactly solving the problem in the process.
 
+The second pillar is formed by the ability to define a universal functional for the total energy of the system $E[n]$ in terms of the density $n(\bm{r})$, which is valid for any external potential $V_{\rm ext}$.
+The density that globally minimizes this functional is then equal to the ground-state density $n_0(\bm{r})$.
+
+In order to turn these foundational first two pillars into a practically usable framework, one needs to address the question of the form of the energy functional $E[n]$, leading us straight to the third pillar: the Kohn-Sham Ansatz \cite{Kohn1965}.
+In essence, this ansatz makes the assumption that the original many-body problem can be replaced by an auxiliary independent-particle problem, both having exactly the same ground-state density $n_0(\bm{r})$.
+This means that, theoretically speaking, calculations for the many-body problem can be exactly translated instead into calculations using independent-particle methods.
+It is found that a set of independent particle equations can thus be formulated, lumping all the cumbersome many-body terms together in the so-called ``exchange-correlation'' functional $E_{xc}[n]$.
+If the exact form of $E_{xc}[n]$ was known, DFT would lead to the exact solutions of the original many-body problem.
+The success of the DFT method from a numerical and quantitative point of view can be wholly attributed to the ability of finding local or semi-local approximations to this functional that manage to often reproduce quite well, in a mean-field kind of way, the original many-body problem.
+
+Bringing everything together, we can write down the total energy functional as:
+\begin{equation}
+	\label{eq:Rashba_kohnsham}
+	E_{KS} = T_s[n] + \int d\bm{r} V_{\rm ext}(\bm{r}) n(\bm{r}) + E_{\rm Hartree}[n] + E_{II} + E_{xc}[n],
+\end{equation}
+where $T_s$ is the independent-particle kinetic energy, $V_{\rm ext}$ the external potential due to the nuclei and any other external fields, $E_{II}$ the Coulomb interactions between the nuclei, and $E_{\rm Hartree}[n]$ denoting the classical Coulomb contributions:
+\begin{equation}
+	E_{\rm Hartree} = \frac{1}{2}\int d\bm{r}d\bm{r}' \frac{n(\bm{r})n(\bm{r}')}{|\bm{r} - \bm{r}'|}.
+\end{equation}
+
+The next question is how to perform the minimization in order to find the ground-state density $n_0$.
+In general, a self-consistent algorithm is used that iteratively constructs the energy contributions from the previous trial density $n_i$, diagonalizes the resulting Hamiltonian, and uses the found ground-state wavefunction to construct a new trial density $n_o$, after which the algorithm is repeated until $n_o$ is sufficiently close to $n_i$.
+This means that the energy terms which, according to the Hohenberg-Kohn theorems are uniquely defined by the density, did not change markedly w.r.t. the previous iteration, i.e. self-consistency between density and functional is reached.
+It can be shown that this process, at least, leads to a local minimum of the Kohn-Sham functional\ref{eq:Rashba_kohnsham}.
+The question of how to reach the global minimum of any function, let alone any functional, is from an entirely different caliber that we wish to avoid in this thesis. 
+
+There are many ways to numerically implement DFT, with variations depending mostly on the basis set of independent particle that is being used to construct the energy functional.
+Since we are interested in extended systems such as crystals, a plane-wave basis set comes very natural.
+In this case, both the envelope and unit-cell periodic part of the Bloch functions $\Ket{\psi^{\bm{k}}} = \eikr{r} \Ket{u^{\bm{k}}}$ are represented in terms of plane waves.
+
+To limit the size of the plane wave basis set that needs to be used, this package uses another approximation: the so-called Pseudopotentials that replace the exact ionic potentials.
+Again, a full description of pseudopotentials is out of scope of this thesis, but the main point is that they try to alleviate the requirement of including very fast oscillating plane waves (very high energy) in order to resolve the fast density oscillations that occur close to the ionic cores.
+Indeed the atomic states out of which Bloch functions are formed usually have one or many nodes close to the ionic cores.
+Pseudopotentials define a different potential for those cores in such a way that the wavefunctions match identically the exact ones outside the core region, but have less nodes and therefore a smoother density variation close to the cores.
+In most problems one is not interested in the exact form of the wavefunctions close to the core anyway.
 
 \section{Wannier Functions \label{sec:Wannier}}
 
@@ -159,5 +207,5 @@ To recover the bandstructure from this Hamiltonian can then be diagonalized by u
 H_{nm}^{\bm{k}} = [W^{\bm{k}\dagger} \tilde{H}_{nm}^{\bm{k}} W^{\bm{k}}]_{nm} = \delta_{nm} \varepsilon_{n}^{\bm{k}}.
 \end{equation}
 
-This concludes this very condensed introduction and overview of the use and construction of Wannier functions as a tool to aid in the theoretical understanding of the behavior of electrons in extended systems.
+This concludes our very condensed introduction and overview of the use and construction of Wannier functions as a tool to aid in the theoretical understanding of the behavior of electrons in extended systems.
 
