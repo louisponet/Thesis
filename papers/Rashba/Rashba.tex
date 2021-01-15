@@ -47,7 +47,7 @@ To investigate how these effects occur in GeTe, we utilize DFT followed by a Wan
 		{\bf Large Rashba splitting} (a) The band dispersion of the first valence band in GeTe around the $Z$-point of the Brillouin zone (see Fig.~\ref{fig:Rashba_BZBSDOS} for details). Two graphs show both non spin-orbit coupled (NSOC, blue), and spin-orbit coupled (SOC, red) case. The $u-d$ and $u'-d'$ labels designate the up and down spin-polarized bands, where the prime signifies that the orientation of the spin quantization axis depends on $\bm{k}$. b) Shifted parabolic energy leves due to Rashba splitting, and associated spin texture indicated by the arrows.}
 \end{figure}
 
-We finish with a conclusion on the origin of most observed Rashba-like phenomena \lp{could be better}.
+We finish with a conclusion on the origin of most observed Rashba-like phenomena.
 
 \section{Rashba-Bychkov Effect \label{sec:Rashba_relativistic}}
 %############################ NEW ############################
@@ -231,7 +231,7 @@ The second is due to the hybridization of the $s$ and $p_z$ orbitals (panel (a) 
 These two terms are reflected in the two terms that contribute to $\Theta$, and lead to a chiral, linear-in-$k$ texture of the OAM.
 Through the atomic SOC, this linear-in-$k$ OAM will couple to the spin and result in the final splitting with the Rashba-like form of Eq.~\ref{eq:Rashba_from_OAM}.
 
-There is one final term that contributes to the linear variation of OAM with $\bm{k}$, which is present due to the unquenching of the OAM at the high symmetry point (e.g. $|k|=0$) due to atomic SOC \ref{Park2011}.
+There is one final term that contributes to the linear variation of OAM with $\bm{k}$, which is present due to the unquenching of the OAM at the high symmetry point (e.g. $|k|=0$) due to atomic SOC~\cite{Park2011}.
 If the Bloch functions at $\bm{k}=0$ are written as a linear combination of WFs that have angular character of $p$-orbitals
 \begin{equation}
 \Ket{\psi} = \sum_{\bm{n},\alpha} c_\alpha \Ket{\alpha^{\bm{n}}},
@@ -305,29 +305,29 @@ The reciprocal space was sampled using a 6x6x6 Monkhorst-Pack grid\cite{Pack1977
 Afterwards we used the {\texttt Wannier90} package \cite{Mostofi2014AnFunctions} to perform the Wannierization as described in the theory Chapter \ref{sec:Wannier}, using projections on hydrogenic $s$- and $p$-orbitals for both Ge and Te ions as the initial guess.
 A 10x10x10 $k$-grid was used for the sampling of the BZ during the Wannierization. 
 
-\lp{look in the high throughput paper for a decent definition of the wannier band distance w.r.t the dft one!}
+% \lp{look in the high throughput paper for a decent definition of the wannier band distance w.r.t the dft one!}
 
 \section{Results and Discussion}
 
 The bands we will focus on most are the three topmost valence bands which consist mostly of Te $p$-orbitals, as can be seen from Fig.~\ref{fig:Rashba_bands_dos}(b).
-These demonstrate the largest spin-splitting suggesting that indeed the atomic SOC plays an important rule, seen as it is larger on Te compared to Ge.
+These demonstrate the largest spin-splitting suggesting that indeed the atomic SOC plays an important rule seen as it is larger on Te compared to Ge.
 If one were to fit the dispersion of the topmost band to Eq.~\ref{eq:Rashba_form}, a large prefactor $\alpha_R\approx 30.7$~eV$\cdot$\angstrom \cite{DiSante2013} is found.
-As discussed before, a purely relativistic effect would rather have a prefactor of $\alpha_R=10^{-6}$~eV.
+As discussed before, a purely relativistic effect would rather have a prefactor of $\alpha_R \approx 10^{-6}$~eV.
 
-Another hard to explain observation by purely relativistic means, is the orientation of the spin-polarization inside the different split bands.
+Another observation that is hard to explain by purely relativistic means, is the orientation of the spin-polarization inside the different split bands.
 It was found that depending on the band, the spin is oriented such that $\alpha_R$ in Eq.~\ref{eq:Rashba_form} is either negative or positive. 
-This has been confirmed experimentally\cite{Krempasky2015SurfaceSemiconductor}, and can only be explained through the OAM and atomic SOC mechanism, and depends on the value of the total angular momentum $j$.
-How exactly this manifests itself in our results will be discussed further down.
+This has been confirmed experimentally\cite{Krempasky2015SurfaceSemiconductor} and depends on the value of the total angular momentum $j$.
+This can only be explained through the OAM and atomic SOC mechanism, the manifestation of which in our results will be discussed further down.
 
 By Wannierizing the bands around the Fermi level, we can construct a tight-binding model in terms of Te and Ge $s$- and $p$-orbitals.
-The WFs for the spin-up Te orbitals thus obtained are displayed in Fig.~\ref{fig:Rashba_wannierfunctions}(a), spin-down have similar charge distributions.
+The WFs for the spin-up Te orbitals thus obtained are displayed in Fig.~\ref{fig:Rashba_wannierfunctions}(a), the spin-down orbitals have similar charge distributions.
 The total spread of the 16 spinor WFs is 53.4~\AA$^2$~.
 \begin{figure}[h]
 \IncludeGraphics[width=\linewidth]{Wannierfunctions.png}
 \caption{\label{fig:GeTe_wannierization}{\bf Wannier functions} a) The spin-up WFs of the orbitals around the Tellurium ion. The isosurface is constructed from the norm of the wavefunctions, with the coloration denoting the sign of the real part. b) The charge density in the central unit cell of the Bloch function of the top valence band, at $k=$ (0, 0.1, 0.9) in units of \AA$^{-1}$. The orbital angular momentum, polarization, and $k$-vector are shown by the red, blue, and green arrows, respectively. In each panel, the unit cell is shown by the wireframe, and the Te and Ge ions are yellow and grey, respectively.}
 \end{figure}
 
-The interpolation of the ab-initio bandstructure by the tight-binding model in terms of the WFs is shown in Fig.~\ref{fig:Rashba_wannierization}, which demonstrates that the Wannierization leads to a very good interpolation for the bands in the inner window, and the valence bands in particular. 
+The interpolation of the ab-initio bandstructure by the tight-binding model in terms of the WFs is shown in Fig.~\ref{fig:Rashba_wannierization}, which demonstrates that it agrees very well with the bands in the inner window, and the valence bands in particular. 
 \begin{figure}[h]
 \IncludeGraphics[width=\linewidth]{wanvsdft.png}
 \caption{\label{fig:Rashba_wannierization} Bandstructure interpolation by the tight-binding Hamiltonian in terms of the WFs for non-relativistic (a) and relativistic (b) calculations.}
@@ -340,14 +340,17 @@ By diagonalizing the tight-binding model, writing the BFs in terms of WFs
 we can use the contribution inside the central unit cell ($\bm{R} = \bm{0}$) to get an idea of the real space distribution of the BFs.
 An example is shown in Fig.~\ref{fig:Rashba_wannierfunctions}(b) for a BF along the $Z-A$ path in the BZ.
 Moreover, using this real space distribution, we can calculate the center of mass inside the unit cell and the OAM through $\hat{\bm{L}} = -\frac{i}{\hbar} (\bm{r} \times \bm{k})$, where in our calculations $\hbar = 1$.
+This way of calculating the OAM is the so-called atomic centered approximation, in the discussion below we focus on the OAM around the Te ion.
+From the modern theory of OAM~\cite{Thonhauser2011}~it was shown that there may be another itinerant contribution to the orbital angular momentum, which is not of importance in our description. 
 
 The dispersion, OAM, and SAM of the first valence band are shown in the left panel of Fig.~\ref{fig:Rashba_oamvseigvalv}. 
 Confirming our earlier derivation, we can see that non-zero, linearly varying OAM is formed along a $k$-path away from the high-symmetry $Z$-point.
 Moreover, the OAM is perpendicular to both the $z$-axis and the $k$ vector, as it should be from Eq.~\ref{eq:oam_from_k}, and can also be seen from panel (b) in Fig. \ref{fig:Rashba_wannierfunctions}.
 This leads e.g. to $l_y=0$ along the $A \to Z$ path, where only $k_y$ is nonzero.
-When atomic SOC is included (the orange and blue graphs), we see the spin-splitting that results from having the spin oriented either along or opposite to the already linearly varying OAM.
-The unquenching of the OAM at the $Z$-point when SOC is included is also clearly visible, together with the resulting change in the slope, as compared with the non-relativistic calculations (green graphs), that originates from the corresponding contribution to the dipole moment Eq.~\ref{eq:d_z_from_OAM}.
-This correlation can also be observed in the panel showing the center of mass $\bar{z}=\int_{\textrm{supercell}}d \bm{r} z |\psi^{\bm{k}}(r)|^2$ of the BFs, which is proportional to the dipole moment around the same reference point.
+When atomic SOC is included (the orange and blue graphs), we see the spin-splitting that results from having the spin oriented either along or opposite to the linearly varying OAM.
+The unquenching of the OAM at the $Z$-point when SOC is included is also clearly visible.
+This leads to a change in the slope of the linear varying OAM, as compared with the non-relativistic calculations (green graphs), that originates from the corresponding contribution to the dipole moment Eq.~\ref{eq:d_z_from_OAM}.
+This correlation between OAM, SAM and dipole moment can also be observed in the panel showing the center of mass $\bar{z}=\int_{\textrm{supercell}}d \bm{r} z |\psi^{\bm{k}}(r)|^2$ of the BFs, which is proportional to the dipole moment around the same reference point.
 
 When we compare this first valence band with the properties of the third valence band, shown in the right panel of Fig.~\ref{fig:Rashba_oamvseigvalv}, we can clearly see the previously discussed issues with the purely relativistic explanation.
 As stated before, we can note that not only the magnitude but also the sign of the prefactor in Eq.~\ref{eq:Rashba_form} is opposite for these two bands, showcased by the size of the splitting, and by the ordering of the spin-up vs the spin-down split bands.
@@ -408,7 +411,7 @@ All these considerations lead to a very nontrivial SAM and OAM texture of the ba
 
 We have explored the microscopic origin of the giant Rashba-like spin splitting in the band structure of bulk ferroelectric GeTe with high atomic SOC. We derived the form of the band dispersion in the Wannier representation, that relates the large spin splitting to the intricate interplay between OAM, atomic SOC, the crystal field and the electric polarization. It turns out that the crucial component, which is not present in the relativistic Rashba effect, is the emergence of a nonzero electric dipole of the Bloch functions due to their OAM. The quantitative analysis based on WFs and atomic-centered approximation confirms this mechanism in GeTe. We find a very good agreement between the proposed band dispersion, Eq.~(\ref{eq:hami}), and the dispersions of the first and third valence bands, where the effect manifests itself most clearly.
 
-Ultimately, the results suggest that (1) large ferroelectric polarization, (2) high atomic SOC, and (3) highly symmetric environment producing little OAM quenching could be the design rules for new materials with strong Rashba-like spin splitting. These materials could enable spintronic devices with the much needed electric control of spin polarization.
+Ultimately, the results suggest that (1) large ferroelectric polarization, (2) high atomic SOC, and (3) highly isotropic environment producing little OAM quenching could be the design rules for new materials with strong Rashba-like spin splitting. These materials could enable spintronic devices with the much needed electric control of spin polarization.
 
 \printbibliography
 

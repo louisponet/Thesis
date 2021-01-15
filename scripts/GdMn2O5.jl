@@ -164,7 +164,7 @@ for h in hsweep
     push!(e_LL, h[Etot][1].e)
 end
 
-plot(Hr, e_Gd_H, yguide="E (meV)", dpi=200, xguide="|H| (T)", label="Gd Zeeman", yguidefontsize=15,xguidefontsize=15, xtickfontsize=15, ytickfontsize=15, legendfontsize=15)
+plot(Hr, e_Gd_H, yguide="E (meV)", dpi=200, xguide="|H| (T)", label="Gd Zeeman", yguidefontsize=15,xguidefontsize=15, xtickfontsize=15, ytickfontsize=15, legendfontsize=10)
 plot!(Hr, e_L_H, label="L Zeeman")
 plot!(Hr, e_Gd_L.+60, label = L"\left[{\rm Gd} \leftrightarrow {\rm L}\right] + {\rm 60\,meV}")
 plot!(Hr, e_LL, label = L"{\rm L_1} \leftrightarrow {\rm L_2}")
