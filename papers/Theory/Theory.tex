@@ -1,8 +1,11 @@
 \chapter{Theory}
 
 \section{Density Functional Theory \label{sec:DFT}}
+Many physics in condensed matter originate from the electronic structure of the material under study.
+There are two main ways of performing quantitative theoretical studies in case.
+The first is to start from a tight-binding model that includes the most likely valence orbitals of the constituent ions\cite{Slater1954}, fitting it to experimental measurements such as angle resolved photoemission spectroscopy\cite{Serebryanaya1995}.
+A second, purely theoretical, possibility is to desribe the electronic structure entirely from first-principles, using only the ions and crystalline structure as the input. 
 
-In order to study this effect in a quantitative manner, without relying on experiments to fit the model to, the bandstructure is simulated from first-principles.
 Density functional theory (DFT), originally envisioned in the seminal works of P. Hohenberg, W. Kohn and L. J. Sham \cite{Hohenberg1964,Kohn1965}, is a formalism very well suited for achieving this goal.
 We won't delve into the fine details in light of conciceness, resorting instead to a very high-level overview following the excellent introduction to the topic by R. Martin in Ref.~\cite{Martin2004}.
 On a rudementary level, DFT is built on top of three main theoretical pillars.
@@ -57,7 +60,7 @@ In most problems one is not interested in the exact form of the wavefunctions cl
 
 In a lot of the work presented in this Thesis we construct simplified model Hamiltonians to try and describe the physics that are manifested real materials.
 For topics involving the electronic structure, either directly in describing the Rashba-splitting of energy bands in Chapter \ref{ch:Rashba}, or indirectly to parametrize the magnetic exchanges between localized spins as in Chapter \ref{ch:GdMn2O5}, tight-binding models are often the most appropriate tool.
-These are constructed by defining a localized, often atomic-like, set of orbitals which is repeated inside each unit cell, and the so-called hopping terms between them.
+These are constructed by defining a localized, often atomic-like, set of orbitals which is repeated inside each unit cell, and the so-called hopping terms between them \cite{Slater1954}.
 The first benefit of this simplification is that it makes the numerics of the problem more tractable, since a limited set of orbitals leads to small dimensions of the matrices that represent various operators.
 Secondly, the representation in terms of real-space localized wavefunctions, as compared with the extended Bloch functions (BFs) that diagonalize the Hamiltonian, often also leads to a more intuitive picture.
 There are two main methods that are used to construct the tight-binding Hamiltonian.
