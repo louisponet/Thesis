@@ -116,7 +116,7 @@ This hybridization will be discussed in further detail in the context of a toy T
 We can thus arrive to the conclusion that, while these contributions are allowed and therefore present in inversion broken systems, they will contribute very little to the linear spin splitting due to the tiny prefactors (i.e. $\lambda \approx 10^{-6}$eV) involved.
 It was thought for a long time that at interfaces, where the uniform $\bm{\nabla}V$ in $V_2$ can be relatively big, the spin-splitting could be explained from this purely relativistic argument, but even there the contributions we discussed up to now are generally much smaller than what is observed in reality. 
 
-We thus need to seek a different explanation for the large splittings that are observed, especially for those in bulk materials, which brings us to the rest of this Chapter in which it will be shown that the combination of electrostatics with strong atomic SOC ($V_3$ in Eq.~\ref{Rashba_unk_Vs}) can lead to the observed behavior.
+We thus need to seek a different explanation for the large splittings that are observed, especially for those in bulk materials, which brings us to the rest of this Chapter in which it will be shown that the combination of electrostatics with strong atomic SOC ($V_3$ in Eq.~\ref{eq:Rashba_unk_Vs}) can lead to the observed behavior.
 This will lead to a similar second order perturbative effect as in the second term of Eq.~\ref{eq:kp_expansion}, but where the relativistic $V_1$ is substituted by a contribution from electrostatics, which is not plagued by the small relativistic prefactor.
 
 \section{Orbital Rashba Effect}
@@ -343,6 +343,13 @@ Moreover, using this real space distribution, we can calculate the center of mas
 This way of calculating the OAM is the so-called atomic centered approximation, in the discussion below we focus on the OAM around the Te ion.
 From the modern theory of OAM~\cite{Thonhauser2011}~it was shown that there may be another itinerant contribution to the orbital angular momentum, which is not of importance in our description. 
 
+\begin{figure*}[h]
+\centering
+\IncludeGraphics[width=0.49\linewidth]{OAMvsK}
+\IncludeGraphics[width=0.49\linewidth]{OAMvsK2.png}
+\caption{\label{fig:Rashba_oamvseigvalv}Comparison between the real-space observables and energy dispersion in (a) the first and (b) third valence band. The values are plotted in function of the relative distance from the $Z$ point $\bm{k}_r = \bm{k} - \bm{k}_Z$, towards the A and U points. The green graphs denote the values before turning on atomic SOC, whereas the orange and blue graphs denote the two spin-split bands.}
+\end{figure*}
+
 The dispersion, OAM, and SAM of the first valence band are shown in the left panel of Fig.~\ref{fig:Rashba_oamvseigvalv}. 
 Confirming our earlier derivation, we can see that non-zero, linearly varying OAM is formed along a $k$-path away from the high-symmetry $Z$-point.
 Moreover, the OAM is perpendicular to both the $z$-axis and the $k$ vector, as it should be from Eq.~\ref{eq:oam_from_k}, and can also be seen from panel (b) in Fig. \ref{fig:Rashba_wannierfunctions}.
@@ -350,7 +357,14 @@ This leads e.g. to $l_y=0$ along the $A \to Z$ path, where only $k_y$ is nonzero
 When atomic SOC is included (the orange and blue graphs), we see the spin-splitting that results from having the spin oriented either along or opposite to the linearly varying OAM.
 The unquenching of the OAM at the $Z$-point when SOC is included is also clearly visible.
 This leads to a change in the slope of the linear varying OAM, as compared with the non-relativistic calculations (green graphs), that originates from the corresponding contribution to the dipole moment Eq.~\ref{eq:d_z_from_OAM}.
-This correlation between OAM, SAM and dipole moment can also be observed in the panel showing the center of mass $\bar{z}=\int_{\textrm{supercell}}d \bm{r} z |\psi^{\bm{k}}(r)|^2$ of the BFs, which is proportional to the dipole moment around the same reference point.
+This correlation between OAM, SAM and dipole moment can also be observed in the top left panels of Fig.~\ref{fig:Rashba_oamvseigvalv} of showing the center of mass $\bar{z}=\int_{\textrm{supercell}}d \bm{r} z |\psi^{\bm{k}}(r)|^2$ of the BFs, which is proportional to the dipole moment around the same reference point.
+
+Due to the existence of two atoms inside the primitive unit cell, another manifestation of this mechanism arises through the overlap of $p_x$ and $p_y$ on Te and $s$ and $p_z$ on Ge.
+This leads to a dipole as can be seen from the variation of the charge density of the BFs as we move away from the $Z$-point in Fig.~\ref{fig:Rashba_diffdens}.
+\begin{figure}[h]
+\IncludeGraphics[width=.7\columnwidth]{diffdens}
+\caption{\label{fig:Rashba_diffdens}The variation of the charge density of the Bloch function of the first valence band $\left.\frac{\partial |\psi(k)|^2}{\partial k}\right\rvert_{k=Z}$ away from $Z$ towards $A$. Te and Ge ions are in red and blue, respectively. The charge asymmetry around Ge showcases the nonzero dipole moment along $z$, which couples to the local electric field near Ge ion.}
+\end{figure}
 
 When we compare this first valence band with the properties of the third valence band, shown in the right panel of Fig.~\ref{fig:Rashba_oamvseigvalv}, we can clearly see the previously discussed issues with the purely relativistic explanation.
 As stated before, we can note that not only the magnitude but also the sign of the prefactor in Eq.~\ref{eq:Rashba_form} is opposite for these two bands, showcased by the size of the splitting, and by the ordering of the spin-up vs the spin-down split bands.
@@ -363,46 +377,37 @@ This is because the crystal field breaks rotationial symmetry causing the atomic
 
 All these considerations lead to a very nontrivial SAM and OAM texture of the bands as we progress through the BZ.
 
-\begin{figure*}[h]
-\centering
-\IncludeGraphics[width=0.49\linewidth]{OAMvsK}
-\IncludeGraphics[width=0.49\linewidth]{OAMvsK2.png}
-\caption{\label{fig:Rashba_oamvseigvalv}Comparison between the real-space observables and energy dispersion in (a) the first and (b) third valence band. The values are plotted in function of the relative distance from the $Z$ point $\bm{k}_r = \bm{k} - \bm{k}_Z$, towards the A and U points. The green graphs denote the values before turning on atomic SOC, whereas the orange and blue graphs denote the two spin-split bands.}
-\end{figure*}
 
-\begin{figure}
-\IncludeGraphics[width=.7\columnwidth]{diffdens}
-\caption{\label{Fig:diffdens}The variation of the charge density of the Bloch function of the first valence band $\left.\frac{\partial |\psi(k)|^2}{\partial k}\right\rvert_{k=Z}$ away from $Z$ towards $A$. Te and Ge ions are in red and blue, respectively. The charge asymmetry around Ge showcases the nonzero dipole moment along $z$, which couples to the local electric field near Ge ion.}
-\end{figure}
 \begin{figure*}[t!]
   \subfloat[Lower 3rd valence band]{
     \centering
-    \IncludeGraphics[width=0.32\linewidth]{Ltexture5.png}
+    \IncludeGraphics[width=0.49\linewidth]{Ltexture5.png}
   }
   ~
   \subfloat[Upper 3rd valence band]{
     \centering
-    \IncludeGraphics[width=0.32\linewidth]{Ltexture6.png}
+    \IncludeGraphics[width=0.49\linewidth]{Ltexture6.png}
   }
-  ~
-  \subfloat[Zoom-in of (b)]{
-    \centering
-    \IncludeGraphics[width=0.34\linewidth]{Ltexture6small.png}
-  }\\
+  \\
   ~
   \subfloat[Lower 1st valence band]{
     \centering
-    \IncludeGraphics[width=0.32\linewidth]{Ltexture9.png}
+    \IncludeGraphics[width=0.49\linewidth]{Ltexture9.png}
   }
   ~
   \subfloat[Upper 1st valence band]{
     \centering
-    \IncludeGraphics[width=0.32\linewidth]{Ltexture10.png}
+    \IncludeGraphics[width=0.49\linewidth]{Ltexture10.png}
+  }\\
+  ~
+  \subfloat[Zoom-in of (b)]{
+    \centering
+    \IncludeGraphics[width=0.49\linewidth]{Ltexture6small.png}
   }
   ~
   \subfloat[Zoom-in of (d)]{
     \centering
-    \IncludeGraphics[width=0.34\linewidth]{Ltexture9small.png}
+    \IncludeGraphics[width=0.49\linewidth]{Ltexture9small.png}
   }
   \caption{\label{fig:Rashba_textures} OAM and SAM textures around the $Z$ point in the first and third valence bands of GeTe. The black and green arrows show the OAM and SAM textures, respectively. The length of the arrows was chosen separately for clarity in each figure and should thus not be compared. The color maps signify the energy of the bands, relative to the Fermi level. The small box around the $Z$ point indicates the area, magnified in panels (c) and (f). In the zoomed figures (c) and (f) one can observe the change or relative orientation between the SAM and OAM when moving away from the $Z$ point, signifying a change of character between $j=1/2$ and $j=3/2$.}
 \end{figure*}
