@@ -51,7 +51,7 @@ We finish with a conclusion on the origin of most observed Rashba-like phenomena
 
 \section{Rashba-Bychkov Effect \label{sec:Rashba_relativistic}}
 %############################ NEW ############################
-The first discovered, and most well known effect bearing the form of Eq.~\ref{eq:Rashba_form} is the Rashba-Bychkov effect, first derived in their seminal 1959 paper\cite{Rashba1959SymmetryAr}.
+The first discovered, and most well known effect bearing the form of Eq.~\ref{eq:Rashba_form} is the Rashba-Bychkov effect, first derived in their seminal 1959 paper \cite{Rashba1959SymmetryAr}.
 It is a purely relativistic effect that is derived from an expansion to second order in $1/c$, $c$ denoting the speed of light, of the electronic Dirac equation (where the Fouldy-Wouthuysen transformation was applied):
 
 \begin{equation}
@@ -141,7 +141,7 @@ The tight-binding model is defined on a 2D square layer with lattice parameter $
 These orbitals resemble the angular character of an $s$-orbital and three $p$-orbitals: $\Ket{s^{\bm{n}}}$, $\Ket{x^{\bm{n}}}$, $\Ket{y^{\bm{n}}}$, $\Ket{z^{\bm{n}}}$, where $\bm{n}$ denotes the unit-cell indices ($n_x$,$n_y$) to which the Wannier function belongs to.
 To simplify notation, we omit $\bm{0}$ in writing the WFs of the central unit cell.
 We furthermore assume that these orbitals have a Gaussian radial shape $\Sandwich{\bm{r}}{s_{\bm{n}}} = e^{-\frac{|\bm{r}-\bm{n}a|^2}{a_0}}$, $\Sandwich{\bm{r}}{\alpha_{\bm{n}}} = \alpha e^{-\frac{|\bm{r}-\bm{n}a|^2}{a_0}}$ with $\alpha = x, y, z$, and inner products implying integrals over space.
-The reason for choosing gaussians is to make solving the overlap integrals easier, changing to a different radial shape for the orbitals does not lead to any qualitative changes to the derivation below.
+The reason for choosing Gaussians is to make solving the overlap integrals easier, changing instead to a different radial shape for the orbitals does not lead to any qualitative changes to the derivation below.
 The bare tight-binding Hamiltonian is denoted as $\hat{H}_0$ and includes the usual hopping parameters due to overlap $t_{\alpha\beta}^{\bm{n}\bm{n}'} = \Bra{\alpha^{\bm{n}}}\frac{\hat{\bm{p}}^2}{2m} + \hat{V}\Ket{\beta^{\bm{n}'}}$.
 To mimick the inversion symmetry breaking in ferroelectric materials (i.e. with a polar space group), an electric field perpendicular to the layer ($z$ direction) is applied.
 This allows extra hopping terms associated with $\hat{H}_{isb} = e (\hat{\bm{d}}\cdot \bm{E})$, with $\hat{\bm{d}}$ the electric dipole moment:
@@ -227,7 +227,7 @@ An exaggerated demonstration for the case of $p_x + ip_z$ orbitals is shown in F
 \caption{\label{fig:Rashba_interference}Interference between orbitals with nonzero OAM. Three neighboring unit cells are displayed, each with the same $p_x + ip_z$ orbital (thus having nonzero $l_y$). The wave functions of the left and right unit cells have their phase rotated by the plane-wave part $e^{i k_x R_x}$. The amplitude and phase of the wave function are encoded with the length and polar angle of the arrows. It is clear from the resulting phases (red arrows) that there exists constructive interference on the bottom half of the material, and destructive interference at the top half, which leads to the intercell dipoles.}
 \end{figure}
 
-The second is due to the hybridization of the $s$ and $p_z$ orbitals (panel (a) in Fig.~\ref{fig:Rashba_overlapdip}), and the kinetic energy term between the $s$ and neighboring $p_x$ and $p_y$ orbitals\cite{Go2016}.
+The second is due to the hybridization of the $s$ and $p_z$ orbitals (panel (a) in Fig.~\ref{fig:Rashba_overlapdip}), and the kinetic energy term between the $s$ and neighboring $p_x$ and $p_y$ orbitals \cite{Go2016}.
 These two terms are reflected in the two terms that contribute to $\Theta$, and lead to a chiral, linear-in-$k$ texture of the OAM.
 Through the atomic SOC, this linear-in-$k$ OAM will couple to the spin and result in the final splitting with the Rashba-like form of Eq.~\ref{eq:Rashba_from_OAM}.
 
@@ -268,7 +268,7 @@ With the understanding that one can find Rashba like dispersions, coming not fro
 \caption{\label{fig:Rashba_crystal}{\bf Crystal structure of GeTe}~(a) Rhombohedral unit cell, with the polarization along the [111] direction in yellow. b) First Brillouin zone with the high-symmetry $k$-path that is under focus indicated by the blue lines.}
 \end{figure}
 At high temperatures GeTe has the standard rocksalt structure.
-When temperatures are lowered below $T_c \approx 720$~K\cite{DiSante2013}, a displacive phonon instability occurs, freezing in a $\bm{q} = 0$ phonon that shifts the central Te ion along the [111] direction\cite{Rabe1987}.
+When temperatures are lowered below $T_c \approx 720$~K \cite{DiSante2013}, a displacive phonon instability occurs, freezing in a $\bm{q} = 0$ phonon that shifts the central Te ion along the [111] direction \cite{Rabe1987}.
 The space group after this inversion symmetry breaking phase transition becomes R$3m$ (\#160 in International Tables), and a nonzero electric polarization along the $z$-direction develops as indicated by the yellow arrow in Fig.~\ref{fig:Rashba_crystal}(a). The first BZ for this low temperature structure is shown in panel (b), with the high-symmetry path under focus indicated by the blue line.
 
 
@@ -295,12 +295,12 @@ This means that from the point of view of our earlier derivation using the tight
 Moreover, since it is a bulk material, we can neglect the contributions from to the relativistic Rashba effects described in Sec.~\ref{sec:Rashba_relativistic}, due to the small potential gradients $\bm{\nabla}V$ resulting from the bulk ferroelectricity.
 
 \section{Methods}
-In the calculations presented here, we used the implementation in the {\texttt Quantum ESPRESSO} software package\cite{Giannozzi2009}.
+In the calculations presented here, we used the implementation in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}.
 In order to confirm the linear varying OAM even when spin-orbit is not included we performed non-relativistic, as well as fully relativistic DFT calculations.
 Both were performed using the Optimized Norm-conserving Vanderbilt Pseudo Potentials \cite{Hamann2013}, and a generalized-gradient approximation with Perdew-Burke-Enzerhof parametrization for the exchange-correlation functional \cite{Perdew1996}.
 Plane waves with an energy cutoff of 30 Ry were included, with a 120 Ry cutoff for the density.
 
-The reciprocal space was sampled using a 6x6x6 Monkhorst-Pack grid\cite{Pack1977} for the self-consistent calculations, using a total energy convergence threshold of $10^{-7}$Ry.
+The reciprocal space was sampled using a 6x6x6 Monkhorst-Pack grid \cite{Pack1977} for the self-consistent calculations, using a total energy convergence threshold of $10^{-7}$Ry.
 
 Afterwards we used the {\texttt Wannier90} package \cite{Mostofi2014AnFunctions} to perform the Wannierization as described in the theory Chapter \ref{sec:Wannier}, using projections on hydrogenic $s$- and $p$-orbitals for both Ge and Te ions as the initial guess.
 A 10x10x10 $k$-grid was used for the sampling of the BZ during the Wannierization. 
@@ -316,7 +316,7 @@ As discussed before, a purely relativistic effect would rather have a prefactor 
 
 Another observation that is hard to explain by purely relativistic means, is the orientation of the spin-polarization inside the different split bands.
 It was found that depending on the band, the spin is oriented such that $\alpha_R$ in Eq.~\ref{eq:Rashba_form} is either negative or positive. 
-This has been confirmed experimentally\cite{Krempasky2015SurfaceSemiconductor} and depends on the value of the total angular momentum $j$.
+This has been confirmed experimentally \cite{Krempasky2015SurfaceSemiconductor} and depends on the value of the total angular momentum $j$.
 This can only be explained through the OAM and atomic SOC mechanism, the manifestation of which in our results will be discussed further down.
 
 By Wannierizing the bands around the Fermi level, we can construct a tight-binding model in terms of Te and Ge $s$- and $p$-orbitals.
