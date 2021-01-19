@@ -58,4 +58,4 @@ for i = 0.1:0.1:10
     push!(energies, F(new_dofs, m))
 end
 plot(energies)
-r
+barrier=(maximum(energies)-minimum(energies))*1e-20/mp.ysize/mp.zsize
