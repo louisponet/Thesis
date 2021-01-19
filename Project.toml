@@ -1,6 +1,7 @@
 name = "Thesis"
 
 [deps]
+BSON = "fbb218c0-5317-5bc6-957e-2ee96dd4b1f0"
 BTO = "5fb9f698-aa0b-11e8-3d94-87c774b35c7b"
 CrSDW = "dc637f32-2dd5-11e9-17d4-3d77e321c8d7"
 DFControl = "1e31e15d-4957-550d-a244-318eced754ae"
