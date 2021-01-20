@@ -306,30 +306,33 @@ Due to the complexity of the model, and the interaction of the strain with the t
 
 \section{Methods}
 To solve the model, we have to compute and minimize the free energy density in Eq.~\ref{eq:BTO_energy}, which is written in terms of the values and gradients of two order parameters $P$ and $u$.
-In the coninuum formulation, these are defined for each point in space and are thus sometimes referred to as fields.
-There is, therefore, another name that is commonly found in the literature to refer to these types of models: phase field models.
-Our task is thus to find the values of these two fields at each point in the geometry under study, that minimize the total free energy of the system, which will be the equilibrium configuration of the system.
+In the coninuum formulation, these are defined for each point in space and are thus sometimes referred to as fields, leading to another name that is commonly found in the literature to refer to these types of models: phase field models.
+Our task is to minimize the total free energy, which can be calculated by integrating Eq.~\ref{eq:BTO_energy} over the geometry volume.
+The values of the $P$ and $u$ fields that minimize this total free energy will then be the equilibrium configuration of the system.
 
-In order to do this, an integration over the system volume has to be performed. In the continuum formulation this is just $F[P,u]=\int_V d\bm{r} f(\bm{P}(\bm{r}),\bm{u}(\bm{r}))$.
-However, due to the complexity of Eq.~\ref{eq:BTO_energy}, and the non homogeneous situation that occurs when a tip is applied, we will have to perform this integration numerically.
-The Finite Elements method (FEM) provides a framework to do exactly that, making it one of the most used methods to numerically solve mathematical and physical models on a systems at larger lengthscales.
+The integration in the continuum formulation can be written as $F[P,u]=\int_V d\bm{r} f(\bm{P}(\bm{r}),\bm{u}(\bm{r}))$.
+We perform this integration numerically, due to the complexity of Eq.~\ref{eq:BTO_energy} and the non homogeneous situation that occurs when a tip is applied.
+The Finite Elements method (FEM) provides a framework to do exactly that.
+It's ability to handle complex geometries and large lengthscales makes it one of the most used methods to numerically solve mathematical and physical models.
 In light of trying to be self-contained, we will give a short introduction to the topic based on Ref.~\cite{Biner}.
 
 A fundamental building block of this method is the isoparametric representation.
-In this representation, the geometry is divided into a set of elements that obey certain connectivity requirements, e.g. in Fig.~\ref{fig:BTO_fem}(a) a 2D geometry is divided into triangular elements.
+In this representation, the geometry is divided into a set of elements that obey certain connectivity requirements, the main one being that each node must be connected to the same number of neighbor nodes.
+An often used element for 2D are triangles as shown in Fig.~\ref{fig:BTO_fem}(a).
 We will use this case as an example out of simplicity.
-A global-to-local coordinate transformation is then performed by using functions that define the shape of the element (shape functions).
+A global-to-local coordinate transformation is then performed by using shape functions that define the morphology of the element.
 With the global coordinates of the nodes of the elements, any coordinate inside the element can be written as
 \begin{align}
 x(\zeta, \eta) &= \sum_i^n N_i(\zeta, \eta) x_i\\
 y(\zeta, \eta) &= \sum_i^n N_i(\zeta, \eta) y_i,
 \end{align}
-and the same can be done for functions $f$:
+and functions $f$ are interpolated as:
 \begin{equation}
 	f(\zeta, \eta) = \sum_i^n N_i(\zeta, \eta) f_i.
 \end{equation}
 In these equations, $i$ iterates through the $n$ nodes of the element, and $\zeta$ and $\eta$ are the axes of the local coordinate system.
-From these equations it is clear that each node has a separate shape function. They have to be chosen in such a way that they follow certain conditions:
+It is clear that each node has a separate shape function.
+They have to be chosen in such a way that they follow certain conditions:
 \begin{itemize}
 	\item Interpolation condition: $N_i$ is 1 at node $i$ and zero at the other nodes.
 	\item Local support condition: $N_i$ vanishes at each edge that does not contain $i$.
@@ -343,14 +346,15 @@ Since we need the derivatives of the $P$ and $u$ fields in order to calculate th
 	\frac{\partial f}{\partial \zeta} &= \sum_i^n \frac{\partial N_i}{\partial \zeta} \cdot f_i \\
 	\frac{\partial f}{\partial \eta}  &= \sum_i^n \frac{\partial N_i}{\partial \eta} \cdot f_i.
 \end{align}
-In the numerical implementation, these derivatives are found for each element by first writing the Jacobian with partial derivatives of the global coordinates $x$ and $y$ w.r.t the local ones $\zeta$ and $\eta$ and then performing an inversion.
-This also includes calculating the determinant of the Jacobian, which can be used to calculate the area or volume of the element.
+In the numerical implementation, these derivatives are found for each element by first computing the Jacobian with partial derivatives of the global coordinates $x$ and $y$ w.r.t the local ones $\zeta$ and $\eta$ and then performing an inversion.
+This requires calculating the determinant of the Jacobian, which can also be used to calculate the area or volume of the element.
 
 Using these definitions, one can select certain points, the so-called quadrature points, inside each element at which the function values for the $P$ and $u$ fields are interpolated from their values at the nodes.
-These can then be filled into the free energy density Eq.~\ref{eq:BTO_energy} to approximate the contribution of the volume inside the element to the total free energy.
-The values of the fields at the nodes are therefore the degrees of freedom of our model. 
-A big bonus of this framework is that gradients of the fields can be evaluated purely locally, inside each element, through the use of the interpolation method and field values at the nodal points (see Eq.~\ref{eq:BTO_derivatives}).
-It also allows for a great flexibility through the density of the chosen grid, the morphology of the elements, and the order of interpolating functions used, although we do not exploit these.
+Filling them into the free energy density Eq.~\ref{eq:BTO_energy} leads to an approximation of the contribution of the volume inside each element to the total free energy.
+The total free energy is then calculated as the sum over all these contributions. 
+The nodal values of the fields are therefore the degrees of freedom of our model. 
+A big bonus of the isoparametric representation, applied in this way, is that gradients of the fields can be evaluated purely locally, inside each element, through the use of the interpolation method and field values at the nodal points (see Eq.~\ref{eq:BTO_derivatives}).
+It also allows for a great flexibility through the density of the chosen grid, the morphology of the elements, and the order of interpolating functions used.
 
 \begin{figure}
 	\begin{subfigure}{0.49\textwidth}
@@ -377,7 +381,7 @@ The uniform mesh is largely motivated by implementation complexity, since we use
 Another reason for the uniform grid, is that this mimics numerically the Peierls-Nabarro barriers that are created by the lattice.
 As will be discussed further below, these pin the wall to a certain degree and should be taken into account for the simulation to be realistic.
 
-The last bulding block for the simulation is a way to optimize the fields in order to reach the equilibrium condition at minimum energy, both with and without applied tip.
+The last building block for the simulation is a way to optimize the fields in order to reach the equilibrium condition at minimum energy, both with and without applied tip.
 To achieve this we use the Conjugate Gradient method \cite{Hestenes1952,Hager2005} as implemented in the package \href{https://github.com/JuliaNLSolvers/Optim.jl}{Optim.jl}.
 It's an iterative scheme that uses the gradient and previous step to decide on the next step direction. 
 This requires us to determine the partial derivatives of the total energy in terms of all the degrees of freedom, i.e. the value of each component of $P$ and $u$ at the node points of the mesh.
@@ -385,7 +389,7 @@ We chose to use a forward automatic differentiation scheme as implemented in \hr
 
 Using the parameters from previous ab-initio results \cite{Marton2010} and reported in Tab.~\ref{tab:BTO_param}, we first optimized the equilibrium situation for both a uniform domain and a single domain wall, the result of which is shown in Fig.~\ref{fig:BTO_wall}.
 A gaussian force field, $\frac{a}{\sigma \sqrt{2\pi}}e^{-\frac{(x-x_0)^2}{2\sigma^2}}$ with $\sigma = 1 \cdot 10^{-9}$ representing the diameter of the contact area and $a = 1 \cdot 10^{-18} \frac{eV}{nm^3}$, was then applied at various positions $x_0$ throughout both geometries.
-The uniform domain simulation is used as a measure of the finite-size effects that are inherently present in our simulations due to the long rangedness of strain and non-infinite geometry.
+The uniform domain simulation is used as a measure of the finite-size effects that are inherently present in our simulations due to the long rangedness of strain and non-infinite geometry since we use open boundary conditions.
 
 This causes the indentation at the center of the geometry for a single domain to be less than the one when the tip is applied off-center, due to less material being present to support the force.
 The effect this has on the simulations is shown in Fig.~\ref{fig:BTO_domain_strain}.
@@ -407,35 +411,44 @@ In this case, however, we are to some extent saved by a spurious numerical effec
 This was investigated by Marton in Ref.~\cite{Marton2018} for the case of BTO.
 It boils down to the fact that through the approximated interpolation of the fields, it is numerically favorable to situate the center of the wall at a node, rather than inside an element.
 In this way the simulation avoids sampling the paraelectric state, which is at the top of the double-well potential that results from the Landau part $f_l$ of the energy in Eq.~\ref{eq:BTO_energy}, and causes the non-zero $P$ in the domains.
-When the wall is forced to move accross the grid due to the applied tip, the simulation is forced to overcome this high-energy configuration in order to jump between equilibrium positions.
+When the wall is forced to move accross the grid due to the applied tip, it is forced to overcome this high-energy configuration in order to jump between equilibrium positions.
 This in turn causes the numerical Peierls-Nabarro barrier.
 
-We found that when the elementsize is 0.5 nm, the wall is too strongly pinned and never moves towards the tip, even if it's applied very close to it.
-Using elements of 0.3 nm alleviates this issue and leads to a behavior that is more in line with the experimental observations.
 \section{Results}
+Since we implemented our own version of the finite element method, we perform some consistency checks with previous calculations.
 
-The first check to verify our method was the DW energy, comparing it to the first-principles calculations in Ref.~\cite{Padilla1996}.
-There a wall energy of 16 mJ/m$^2$ was found, very close to the value we find of 15.2 mJ/m$^2$.
-This indicates that the elementsize is adequate to describe the energetics of the wall.
+The DW energy we obtain is 15.2 mJ/m$^2$, very close to the value of 16 mJ/m$^2$ found from a first-principles calculation in Ref.~\cite{Padilla1996}.
+We furthermore verified that it is not influenced by the size of the numerical geometry, or the density of the mesh, indicating that the numerics of our method do not influence energetics of the static wall.
 To confirm the existence and behavior of the numerical Peierls-Nabarro barrier, we performed simulations where first the wall was optimized, and then rigidly shifted inside the grid.
-The difference in energy
+The results are shown in Fig.~\ref{fig:BTO_peierls_nabarro}.
+\begin{figure}[h!]
+	\IncludeGraphics{peierls_nabarro.png}
+	\caption{\label{fig:BTO_peierls_nabarro}{\bf Numerical Peierls-Nabarro barriers.} a) The evolution of the barrier when the wall is shifted with $\delta_w$ away from the original position at 0. The periodicity of the lattice is mimicked by the barriers, where the distance between maxima is given by the elementsize. It is also clear that large element sizes lead to larger barriers. b) The evolution of the barrier height with elementsize.}
+\end{figure}
+For all elementsizes, the barriers are very close to the harmonic shape of the real Peierls-Nabarro barriers. The larger the elementsize, the larger the energy and periodicity of the barriers.
+In the following we chose the elementsize to be 0.3 nm, offering a good balance between amount of pinning and computational cost. 
+A demonstration of the breathing mode is shown in Fig.~\ref{fig:BTO_breathing}, where the absolute value for the polarization is shown under the application of a tip with varying force.
+We can see that the wall indeed widens slightly when higher forces are applied. It is a small effect, however, and we found that the force applied by the tip to cause significant widening is much larger than the experimental one.
 
-We chose to use open boundary conditions\lp{maybe try with periodic too}.
-
-When using finite element methods, it's important to verify to what extent the results are influenced by finite size effects and other numerical considerations.
-
-
-Furthermore, due to the computational cost, it is desirable to use as small geometries as possible.
-
-In order to get an idea of how robust this behavior is w.r.t. the numerical parameters we show the relative 
-
-Multiple geometries and element sizes were tested in order to verify that the results were not too much influenced by these numerical parameters which. 
+We now turn to the domain wall sliding.
+For this, we applied the tip force field at various distances away from the wall.
 The softening is estimated as the ratio of the surface deformation between the domain and the wall.
+Two sets of simulations were performed, one for which the bottom of the wall was kept fixed, to mimick the bending behavior, and one where we let the wall as a whole slide freely.
+The results of the former are shown in Fig.~\ref{fig:BTO_bending_sim}.
+\begin{figure}[h!]
+	\IncludeGraphics{2D_bending}
+	\caption{\label{fig:BTO_bending_sim}{\bf Bending Wall} Simulations where the bottom of the wall is kept fixed to the equilibrium without a tip. In each panel, the coloring indicates the position where the tip is aplied to the sample. a) Surface profile of the wall. b) Polarization distribution at the surface. c) Deformation of the surface after applying the tip. d) Maximum absolute value of the deformation in (c). e) Relative stiffness depending on where the tip is applied.}
+\end{figure}
+As seen in Fig.~\ref{fig:BTO_bending_sim}(e) and Fig.~\ref{fig:BTO_sliding_sim}(e), and predicted by the above statements, the wall is softest not in the center, but rather at the point where $u'$ or $\varepsilon_{xz}$ is highest.
+This leads to the highest force applied to the wall that either makes it bend or slide.
+Comparing the two simulation protocols, we can also see that when the wall is allowed to slide, the region where softening takes place is much wider, and the extent of the softening is higher.
+The real situation is a combination of these two. Due to the relatively small $z$ dimension that we used for our simulations (20 nm), as compared with the sample in the experiment (0.3 cm), bending the wall is a lot more difficult in our simulations.
+The wall therefore probably appears as rigidly sliding towards the tip inside the 70 nm in-plane region around the wall, for a depth up to 20 nm.
+However, due to the bending that happens for larger lengthscales along the $z$-direction, the wall moves back towards the equilibrium position when the tip moves too far away from it.
 
-As seen in Fig.~\ref{fig:BTO_theory}(a), and predicted by the above statements, the wall is softest not in the center, but rather at the point where $u'$ or $\varepsilon_{xz}$ is highest.
-The breathing mode can be observed from Fig.~\ref{fig:BTO_breathing}, where the polarization throughout the geometry at different values of the z-coordinate is displayed.
-Close to the surface, at $z=5$ nm, the wall is markedly wider when the tip is applied, a result of the presence of the breathing mode.
-Since this is not possible in the domain, this contributes to the softness of the wall itself.
+We claim that this behavior is the main source of the observed softening.
+
+
 \begin{figure}
 	\IncludeGraphics{breathing.png}
 	\caption{{\bf Breathing mode.} \label{fig:BTO_breathing}}
@@ -444,6 +457,8 @@ Since this is not possible in the domain, this contributes to the softness of th
 	\IncludeGraphics{theory}
 	\caption{\label{fig:BTO_theory}}
 \end{figure}
+
+\section{Conclusions}
 
 
 \printbibliography

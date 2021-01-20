@@ -87,7 +87,7 @@ sim = SimParams(tipradius = 10e-9, forceconstant = 2.0e29,  gtol=1e-5, centers =
 m, dofs  = simmodel(mp, sim);
 res = optimize(m)
 m.dofs .= res.minimizer
-
+m.dofs.=res.minimizer
 tree = BTO.Landau.BallTree(m)
 force = zeros(length(m.dofs))
 minfunc = generate_minizing_function(sim,
