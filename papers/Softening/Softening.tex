@@ -2,146 +2,184 @@
 
 
 \section{Introduction}
-So far, the focus of this work was largely on the behavior of, and interaction between various orders in uniform domains.
-A thorough understanding of these physics is of fundamental importance, since it provides the building blocks for more complex scenarios.
-Reality, however, presents to us almost exclusively this greater complexity.
-The reason is that while going through a phase transition with an associated spontaneous symmetry breaking, different parts of the material which are separated in space will separately choose one of the degenerate states with different values of the order parameters.
-One could argue that second order phase transitions can theoretically happen coherently throughout the entire system, were it not for two main issues.
-The first is a general one, it requires the assumption that the crystals are completely uniform and without defects, and that the temperature variation happens at an infinitely slow rate.
-Secondly, in the specific case of ferroelectrics\footnote{Similar magnetic depolarizing fields show up for Ferromagnets, which is one of the limiting factors for the data density in magnetic storage.}, the creation of regions with spontaneous ferroelectric polarization leads to an electric depolarizing field at their surface.
-Neighboring domains will therefore preferably be formed having opposing polarizations to compensate this field.
-These are separated by domain walls (DWs) in which the order parameter interpolates between the two values of the neighboring domains.
-It may be the case that multiple order parameters vary accross a DW, due to their coupling to the primary one (the one that causes the phase transition). 
-In ferroelectrics, the DW interpolates the polarization and, depending on the domains, the elastic strain tensor.
-DWs in ferroelectrics are usually indentified by the angle by which the polarization vector changes accross it.
-For example, a 180$^\circ$ degree DW (the focus of the chapter) separates domains with completely anti-parallel polarization vectors.
-The strain tensor that is coupled to the square of the polarization, as will discussed later, therefore does not change accross this DW.
-Other types of DW like e.g. 90$^\circ$ DWs will instead separate domains with different strain textures, which are referred to as twin-domains, and the DWs as twin-domain walls \cite{Cao1991,Marton2010}.
-In many ferroelectrics multiple orientations of the polarization are degenerate, leading to all kinds of domain walls \cite{Hu1998,Marton2010}.
+We have so far studied the behavior of ordered materials under the assumption of perfect homogeneity.
+This forms the base for understanding the more complex, inhomogeneous, scenarios that appear in reality.
+The origin of the inhomogeneity lies in the energy equivalence of different states, indentified by different values of the order parameter.
+Indeed, the energy potential that is associated with the phase transition that leads to the ordered state has generally multiple degenerate minima.
+Each of these has its own distinct value for the primary order parameter (OP), which are thus equivalent from the energetic point of view.
+For example, we saw previously that in GdMn$_2$O$_5$ there are two primary OPs, $\bm{L}_1$ and $\bm{L}_2$, describing the antiferromagnetic orders of the two Mn chains.
+It was shown there that four symmetry related combinations of these OPs lead to the same energy.
+In Chromium a similar antiferromagnetic OP has two energy equivalent values.
+During a phase transition in a large system, regions that are separated in space will each individually acquire one of these values for the OP.
+Such regions are referred to as domains, with the narrow boundaries between them called domain walls (DWs), inside of which the OP is interpolated.
+In principle one could argue that second order phase transitions can happen coherently throughout the entire system, thus restoring the homogeneity.
+This has three requirements, though, none of which can be met in reality.
+The first is that the crystal is completely uniform and without defects, which is manifestly impossible due to the finite size of the samples leading to surface regions that are different from the bulk.
+The second requirement is that if the phase transition happens due to a decrease in temperature, this decrease has to happen homogeneously throughout the sample, and at an infinitely slow rate.
+This is ofcourse not possible in any real experiment.
+Lastly, in the case of ferromagnetic or ferroelectric materials, the nonzero OP leads to depolarizing fields at the domain surface (see Fig.~\ref{fig:BTO_depolarizing_schematic}).
+These favor an antiparallel orientation of the polarization in neighboring domains, making it energetically impossible to have a single uniform domain when the sample size increases.
+\begin{figure}[h]
+	\IncludeGraphics{depolarizing_schematic}
+	\caption{\label{fig:BTO_depolarizing_schematic}{\bf Depolarizing fields.} a) A single domain. b) At a domain wall between two domains with opposite polarization. In both panels the dipoles are shown by the ovals leading to the polarization denoted by the yellow arrows. The associated depolarizing electric fields are shown by the red arrows. The orienation of these fields is such that for the single domain in panel (a) the depolarizing energy is large compared with that of the two domains in panel (b).}    
+\end{figure}
+It is, therefore, clear that the study of DWs is important for the accurate description of real materials on larger lengthscales. 
 
-The inherent difference between DWs and the domains has led to a great deal of research interest, both from the fundamental and technological point of view.
-Their thickness and interfacial energy play an important role in the kinetics and fatigue mechanisms associated with switching in ferroelectric materials. 
+Together with the inherent difference between DWs and domains, this has indeed led to a great deal of research interest, both from the fundamental and technological point of view.
+We focus here on the DWs that are present in ferroelectric materials.
+Originally, most of the research was focused on understanding the DW dynamics, since ferroelectric domain switching is mainly a result of DW movement.
+The reason for this can be understood from the following energetic argument.
+When an external electric field is applied to the sample, it turns out that it is more favorable for the DWs to move in order to grow the favored domains\footnote{Domains with the polarization along the electric field.}, rather than uniformly rotating the polarization in the domain as a whole.
+The latter requires overcoming the prohibitively large energy barrier that separates different orientations of the polarization \cite{Tagantsev2010}.
+This relatively low energy cost associated with the DW movement will also turn out to be one of the main contributors to the softening effect which is the main subject of this Chapter.
 
-The physics that govern the region of the DW is usually richer than that of the domains, since the system is locally forced to not be the energetic minimum.
-This is often associated with a local inversion of the curvature of the energy potential, leading to a potential softening of the order parameters \cite{Scott2012}.
-DWs are a lower dimensional object embedded in a three dimentional medium, which can have a myriad of interesting consequences which can potentially be exploited technologically \cite{Salje2016}.
-One example is in ferroelectric information storage devices, where the small size is beneficial for information density, and ease of manipulation of their position allows for a great degree of flexibility.
-This low energy penalty associated with shifting the DW will come back as one of the main contributors to the effect discussed in the chapter.
-The materials that are commonly used technologically are those that can harbor charged conducting DWs, separating the manifestly nonconductive domains.
-These can be created or destroyed at will by applying electric fields, increasing or decreasing the conductivity of the device.
-This conductivity can in turn be probed, effectively reading back the ``data'' that was previously written \lp{citation}.
+Due to the scaling down of technological devices into the nanoscale realm, the focus has more and more shifted towards the DWs themselves as the subject of study, rather than just as being the boundaries between domains.
+The physics that govern the region of the DW is usually richer than that of the domains. One of the reasons is that the OP is locally forced away from the energetic minimum.
+In the case of a double well potential (or so-called mexican hat potential), associated with many second order phase transitions, the OP at the center of the wall is at the top of the barrier.
+The curvature of the energy potential is inverted at this top, which has been argued to make perturbing the OP easier at the DW \cite{Scott2012}.
+The bandstructure is also different in the wall compared with the domains, due to the local structural differences.
+This can lead to enhanced conductivity, photovoltages, and current rectification \cite{Huyan2019}.
 
-While this kind of technological promise has driven much of the research of DWs towards their electronic properties, the coupling between electric polarization and internal strain puts the spotlight on their mechanical characteristics.
-This field is much less developed and has many unanswered questions.
-It has been shown that ferroelectric-ferroelastic (ferroelastic walls separate domains with differing strain textures) DWs can be moved by applying stress \cite{Schneider2001}.
-This is not surprising since the different strain textures couple differently to the mechanical perturbation, causing a force imbalance and associated movement of the separating DW.
-More interesting, perhaps, is the fact that the polarization itself can also be influenced by purely mechanical means, for example by the flexoelectric effect, with energy density:
+In the extreme case, certain DWs can even become conductive, opening the door to very promising technological applications \cite{Seidel2009}.
+One example is in information storage devices, where the small size of the DWs is beneficial for the information density.
+It was shown by Seidel et al. that by applying electric fields between opposing electrodes, the conducting DWs can be created or destroyed at will. This is used to write the ``data'', changing  the conductivity of the device in well-defined increments.
+Probing the conductivity is then equivalent to reading the ``data''. 
+
+While this kind of technological promise has driven much of the research of DWs towards their electronic properties, interest for their mechanical characteristics has increased in more recent years.
+This field is much less developed and has many outstanding questions.
+
+Before continuing, it is useful to first define the elastic strain tensor $\varepsilon$ as the symmetric gradient of the deformation $u$:
 \begin{equation}
-	f_{fl} = \frac{1}{2}f_{jklm}(\varepsilon_{jk}\partial_mP_l-P_l\partial_m\varepsilon_{jk}),
+\varepsilon_{ij} = \frac{1}{2}(\partial_i u_j + \partial_j u_i),
 \end{equation}
-where repeated indices are summed over, $\varepsilon_{jk} = \frac{1}{2}(\partial_j u_k + \partial_k u_j)$ denotes the elastic strain associated with displacement $u$ and $P$ the ferroelectric polarization.
-An applied strain gradient will then appear as an internal electric field $E_{j} = \frac{1}{2}f_{jklm}\partial_k\varepsilon_{lm}$, coupling to the dipoles that constitute $P_l$.
-While this effect is generally small (i.e. the elements of the flexoelectric tensor $f_{jklm}$ are small), it scales inversely with the size of the sample, meaning that it becomes increasingly more important at the nanoscale of current state of the art electronic devices.
-Thus, using a tip to apply a strain gradient to the surface of a ferroelectric material allows one to mechanically write domain patterns and DWs at will \cite{Lu2012}.
-
-These developments have slowly increased the research into the mechanical properties of these materials in recent years.
-Here we focus on the mechanical properties of purely ferroelectric 180$^\circ$ DWs.
-As it turns out, these walls appear mechanically softer than the domains they separate.
-A similar softening has been previously observed and studied for ferroelastic DWs \cite{Lee2003,Scott2012}, but purely ferroelectric DWs have largely flown under the radar of mechanical studies.
-One reason is that the size of ferroelectric domain walls is on the order of a couple of unit cells, and was thus perceived too small to be detected with mechanical means, seen as tip contact areas are generally at least 100 unit cells.
-As it turns out, however, there is a strain texture associated with these DWs, which extends much further than the region in which the primary order parameter changes.
-This can qualitatively be understood by considering the electrostriction energy density
+where the indices $i,j$ iterate through $x, y, z$.
+The vector $\bm{u}(\bm{r})$ relates points $\bm{r}$ in the reference structure to $\bm{r} + \bm{u}(\bm{r})$ in the deformed structure.
+The strain arises in ferroelectric materials as a secondary OP due to the electrostrictive coupling to the polarization $P$.
+Its contribution to the free energy density can be written as:
 \begin{equation}
-f_{q}=-\frac{1}{2}\varepsilon_{jk}q_{jklm}P_{l}P_{m},\label{eq:qpp},
+	f_{q}=-q_{ijkl}\varepsilon_{ij}P_{k}P_{l},\label{eq:qpp},
 \end{equation}
-which causes domains to be stretched along the direction of $P$.
-No such stress exists inside the wall itself, since $P=0$, leading to an indentation with an associated long range strain texture, because sharp changes in the strain are very unfavorable from an elastic point of view.
-This structural texture associated with the DW can be picked up mechanically by the applied tips and ultimately allows one to make the observations that are the subject of this Chapter.
+where $q$ denotes the strength of the coupling, the indices $i, j, k, l$ again iterate through $x, y, z$ and Einstein summation over repeated indices is performed.
+The longitudinal part, $q_{iiii} \varepsilon_{ii} (P_i)^2$, leads to the largest contribution to the strain, causing the material to stretch along $P_i$.
+Due to the high degree of symmetry in crystals, many equivalent orientations of $P$ are possible, each with an associated strain. The DWs separating these are equally numerous, and have a distinct strain texture due to the variation of $P$ accross the DW.
+For example, a 180$^\circ$ degree DW separates domains with completely anti-parallel $P$ vectors.
+Due to the square dependence on $P$ of the energy in Eq.~\ref{eq:qpp}, $\varepsilon$ will be identical in both domains. Still, the different value of $P$ inside the wall versus in the domains will cause a local variation of $\varepsilon$. More precisely, the strain is diminished at the wall due to $P=0$, leading to an indentation at the surface of the sample.
+As we will thoroughly discuss below, this local variation lies at the heart of the mechanical softening of the 180$^\circ$ DW.
+
+Other types of DW such as 90$^\circ$ DWs instead separate domains with different strain textures, which are referred to as twin-domains, and are separated by twin or ferroelastic DWs.
+See Refs.~\cite{Cao1991,Hu1998,Marton2010} for a more in-depth study of the possible domains and domain walls in ferroelectrics.
+
+The mechanical properties of ferroelectric DWs are not only of fundamental, but also of technological interest.
+It has been shown that ferroelectric-ferroelastic DWs can be moved by applying stress \cite{Schneider2001}.
+This may not be so surprising, since the different strain textures of the domains interact differently with the mechanical perturbation, causing a force imbalance on the DW and an associated movement.
+More interesting, perhaps, is the fact that the polarization can be directly influenced with mechanical means, for example through the flexoelectric effect, whose contribution to the energy density can be written as:
+\begin{equation}
+	\label{eq:BTO_flexoelectricity}
+	f_{fl} = \frac{1}{2}\Gamma_{ijkl}(\varepsilon_{ij}\partial_kP_l-P_l\partial_k\varepsilon_{ij}),
+\end{equation}
+where $\Gamma_{ijkl}$ is the flexoelectric tensor.
+An applied strain gradient $\partial_j\varepsilon_{kl}$ will thus appear as an effective internal electric field $E_{i} = -\frac{\partial f}{\partial P_i} = -\frac{1}{2}\Gamma_{ijkl}\partial_j\varepsilon_{kl}$, coupling directly to $P_i$.
+While this effect is generally small (i.e. the $\Gamma_{ijkl}$ are small), the size of strain gradients scales inversely with the size of the sample, meaning that it becomes increasingly more important at the nanoscale of current state of the art electronic devices.
+Thus, using a tip in contact with the material to apply such a strain gradient allows one to mechanically write domain patterns and DWs at will \cite{Lu2012,Abdollahi2015, Cordero-Edwards2017,Cordero-Edwards2019}.
+
+In this Chapter we discuss the mechanical softening of 180$^\circ$, purely ferroelectric DWs.
+A similar softening has been previously observed and studied for ferroelastic DWs \cite{Lee2003,Scott2012}, but purely ferroelectric DWs have largely flown under the radar of such mechanical studies.
+One reason is that the width of 180$^\circ$ DWs is on the order of a couple of unit cells (5 - 20 \AA \cite{Zhirnov1959}), and since they don't separate domains with different strains, they were perceived too small to be detected with mechanical means.
+This is because these studies usually involve the application of a tip to the surface of the sample, and the contact area of such a tip is at least 100 unit cells.
+As mentioned before, however, even 180$^\circ$ DWs have a distinct strain texture associated to them, which extends much further than the narrow region in which the polarization reverses.
+This texture can be picked up mechanically by the applied tip and ultimately allows one to make the observations that are the subject of this Chapter, and will be discussed in the next section.
+Afterwards, we continue with a small overview of the crystalline properties of BaTiO$_3$, an archetypical example of a ferroelectric perovskite.
+This is followed by a detailed theoretical study and numerical simulation of the experimental observations, and finally a conclusion summarizing the results.
 
 \section{Experimental}
-Before going into the theoretical details that describe the physics of this problem, we describe the experiments performed by the group of Prof. Catalan that were the impetus of this research.
-In order to determine the generality of the softening of ferroelectric DWs, three single crystal samples were characterized mechanically: LiNbO$_3$, BaTiO$_3$ and PbTiO$_3$ \cite{Stefani2020}. Since all show the same behavior, we focus on the specific case of BaTiO$_3$, showcased in Fig.~\ref{fig:BTO_experiment}.
+In this section we summarize the experiments performed by the group of Prof. Catalan that were the impetus of this research \cite{Stefani2020}.
+In order to determine the generality of the DW softening, three single crystal samples were studied: LiNbO$_3$, BaTiO$_3$ and PbTiO$_3$. It was found that all three show the same behavior, allowing us to focus on BaTiO$_3$ (BTO).
+The results of the experimental measurements are shown in Fig.~\ref{fig:BTO_experiment}.
 
-To determine the domain structure of the sample, piezoresponce force microscopy (PFM)\cite{Harnagea2001} was used, the results of which are displayed in Fig.~\ref{fig:BTO_experiment}(a,c).
-Multiple types of domains can be identified inside the sample.
-In the region shown in panels (a,b), domains with out-of plane ($c$-direction) polarization separated by mostly straight 180$^\circ$ DWs are found.
-Panels (c-f) demonstrate a more complex region where bubble domains with out-of-plane ferroelectric polarization appear as well as domains with in-plane polarization along the $a$-direction.
-The 90$^\circ$ boundary between the region with out-of-plane polarization and in-plane polarization is an example of a so-called $a$-$c$ twin wall, separating domains with different polarization as well as strain texture.
+Piezoresponce force microscopy (PFM)\cite{Harnagea2001} was used to determine the domain structure of the sample, displayed in panels (a) and (c).
+Multiple types of domains can be identified: in the region shown in panels (a,b) domains with out-of plane ($c$-direction) polarization are found, whereas panels (c-f) display a more complex region with both out-of-plane and in-plane ($a$-direction) polarization.
+The top left portion of these latter panels demonstrates the existence of bubble domains with out-of-plane polarization and curved 180$^\circ$ DWs.
+The bottom right portion shows an area with in-plane domains separated by straight 180$^\circ$ DWs.
+On the boundary between these two regions we find a 90$^\circ$ DW, which is different from 180$^\circ$ DWs because it separates domains with different polarization as well as strain.
+These walls are often referred to in the literature as twin walls, separating so-called twin domains. 
 
 \begin{figure}
 	\IncludeGraphics{experimental}
-	\caption{\label{fig:BTO_experiment} {\bf Experimental Measurements} Two regions of the BTO sample are imaged. Panels (a,b) show a region with mostly straight DWs, panels (c-f) show a more complex region with bubble domains, and a twin-wall separating the left region with out-of-plane polarization from the diagonal region with in-plane polarization (along the $a$-direction). Panels (a,c) show the PFM phase, panel (d) the out-of-plane PFM amplitude, and (f) shows a schematic representation the polarization reconstructed from these measurements. Panels (b,e) show the CRFM measurements, demonstrating softer DW regions (brown) and stiffer domains (purple). Image taken from Ref.~\cite{Stefani2020}.}
+	\caption{\label{fig:BTO_experiment} {\bf Experimental Measurements} Two regions of the BTO sample are characterized. Panels (a,b) show a region with mostly straight DWs. Panels (c-f) show a more complex region with bubble domains, and a twin-wall separating the top left area with out-of-plane polarization from the bottome right area with in-plane polarization (along the $a$-direction). Panels (a,c) show the PFM phase, panel (d) the out-of-plane PFM amplitude, and panel (f) displays a schematic representation of the polarization, reconstructed from these measurements. Panels (b,e) show the CRFM measurements, demonstrating softer DW regions (brown) and stiffer domains (purple).}
 \end{figure}
 
 In order to probe the spatial variation of the stiffness of the sample, measurements based on contact resonance frequency microscopy (CRFM) were performed.
-This technique is based on scanning probe microscopy where an atomic force microscopy tip on a cantilever is brought into contact with the surface of the sample (see Fig.~\ref{fig:BTO_crystal}(b) for a pictorial representation).
+This technique is based on scanning probe microscopy where an atomic force microscopy tip is placed on a cantilever and is brought into contact with the surface of the sample (see Fig.~\ref{fig:BTO_experimental_schematic} for a pictorial representation).
+\begin{figure}
+	\IncludeGraphics{experimental_schematic}
+	\caption{\label{fig:BTO_experimenta_schematic} {\bf Schematic of the CRFM setup.} a) The tip is placed on a cantilever and brought into contact with the sample surface. The combined cantilever-surface system acts as a series of two springs, with spring constants indicated by $k_{\rm tip}$ and $k_{\rm sample}$, respectively. b) A pictorial representation of the 180$^\circ$ domain wall. The polarization direction is indicated by the arrows, and up and down domains are colored blue and red, respectively. The increased depth of indentation at the wall indicates the softening effect.}
+\end{figure}
 The maximal mechanical load was 20 micro Newtons, and the surface contact of the tip is estimated to be 7 nm.
-The combined system of the cantilever and the sample then acts as a series of springs, whose resonance frequence can be measured as a probe of the local stiffness under the tip~\cite{Rabe2000}.
-Through Hooke's law it is known that the resonance frequency of a linear spring is given by $\omega = \sqrt{\frac{k}{m}}$, thus when the sample has a higher stiffness $k$, it leads to a higher resonance frequency measured by the tip.
-Using this method, the only limit on spatial resolution is the scanning speed, or the duration of the experiment.
-The result is shown in Fig.~\ref{fig:BTO_experiment}(b,e).
+The combined system of the cantilever and the sample then acts as a series of springs, whose resonance frequence can be measured as a probe of the local stiffness of the sample~\cite{Rabe2000}.
+In a nutshell, Hooke's law states that the resonance frequency of a linear spring is given by $\omega = \sqrt{\frac{k}{m}}$, thus when the sample has a higher stiffness $k$, it leads to a higher resonance frequency of the tip-sample spring.
+A map of the local stiffness of the sample is then created by scanning the tip across the sample while measuring this resonance frequency, as shown in Fig.~\ref{fig:BTO_experiment}(b,e).
+The only limiting factor of the spatial resolution is the scanning speed and total duration of the experiment.  
 A clear contrast can be observed between soft areas (brown) close to the wall and harder areas (purple) inside the domains, with an apparent reduction of the stiffness by $\approx 19\%$ at the walls.
 
+The experimental observations hint at the strain texture that is associated with the ferroelectric DWs as a large contributor to the softening.
+The softer regions (brown in Fig.~\ref{fig:BTO_experiment}(b,e)) extend up to 70 nm away from the DWs, much farther than the width of the region wherein the polarization reverses (a couple of unit cells, or 5 - 20 \AA \cite{Zhirnov1959}).
+This argument is strengthened by the fact that the soft regions are even more pronounced around the bubble DWs in panel (e) than around the straight DWs in panel (b).
+Indeed it is known that strain textures of round DWs decay as a power-law as compared with the exponential decay away from straight DWs \cite{Landau1960}, whereas the lengthscale associated with the reversal of the polarization remains the same for both types of DW.
 
-Already from these measurements it is clear that the origin of the softening must be found in the strain texture of the wall, rather than the polarization itself.
-This is because the polarization reversal occurs fully within a couple of nm, whereas the width of the soft region around the wall is $\sim$ 70 nm.
-We can moreover see that, comparing panels (b) and (e) in Fig.~\ref{fig:BTO_experiment}, the soft region is significantly wider for the bubble domains as compared with those of the straight walls.
-Since strain textures associated with the round DWs are significantly larger than those of straight DWs, with the strain decaying only by a power-law in the round walls, rather than exponentially away from a straight wall \cite{Landau1960}.
-This provides another argument for the strain playing a key role.
-
-By comparing the results of multiple measurements, it was checked that the measurements did not change the domain distribution, excluding the possibility of mechanically induced ferroelectric switching.
-This could happen through the flexoelectric coupling between the tip induced strain gradient and the polarization, and has been proposed as a mechanism for voltage-free mechanical reading and writing of polarization~\cite{Cordero-Edwards2017,Cordero-Edwards2019,Abdollahi2015}.
-Moreover, the tip is conductive and always in contact with the surface, ensuring charge neutrality, thus also excluding any electrical excitation.
+In order to verify that the application of the tip to the surface does not change the domain morphology, up to 10 sequential measurements were performed, the results of which did not show a significant variation.
+As mentioned in the introduction, it is possible to switch the polarization mechanically through the flexoelectric effect (see Eq.\ref{eq:BTO_flexoelectricity}), but the tip needs to be applied with much greater force than in these experiments.
+Finally, the CRFM tip is conductive and grounded in a short-circuit configuration during the measurements, allowing for polarization charge screening.
 
 This concludes the overview of the experimental measurements performed by C. Stefani et al. in Ref.~\cite{Stefani2020} that lie at the base of this Chapter.
+We now turn to a short summary of BTO.
 
 \section{Barium Titanate}
-Before turning to the theory and simulations that we used in order to investigate the experimental observations, we start with a short summary of the most important proberties of BTO.
 As mentioned previously, BTO is not special from the point of view of the DW softening, and all 180$^\circ$ ferroelectric DWs should demonstrate the same behavior.
 
-BaTiO$_3$ is chosen since it is a well studied classic example of an ABO$_3$ perovskite.
+BaTiO$_3$ is chosen here because it is a well studied archetypical example of an ABO$_3$ perovskite.
 It has a ferroelectric polarization $P \approx 30 \times 10^5 \mu $C/m$^2$ at room temperature \cite{Mason1948, VonHippel1950, Ghosez1994}.
 Due to its excellent dielectric, piezoelectric and photorefractive properties, it can be found in many devices like capacitors \cite{American1963}, electromechanical transducers \cite{Schofield1957} and nonlinear optics \cite{Ramakanth2015}.
 
-Starting from the cubic paraelectric $Pm3m$ phase at high temperature, it undergoes phase transitions at 393\,K, 273\,K and 183\,K to the ferroelectric tetragonal $P4mm$ (shown in Fig.~\ref{fig:BTO_crystal}), orthorhombic $Amm2$ and rhombohedral $R3m$ phases, respectively \cite{Mason1948, VonHippel1950, Marton2010}.
-The microscopic origin of the ferroelectricity in BTO has previously been studied with variational DFT calculations \cite{Ghosez1995}, uncovering the intricate role that hybridization between Ti and O orbitals plays in the effect.
+The crystalline structure of BTO is shown in Fig.~\ref{fig:BTO_crystal}.
+Starting from the cubic paraelectric $Pm3m$ phase at high temperature (panel (a)), it undergoes phase transitions at 393\,K, 273\,K and 183\,K to the ferroelectric tetragonal $P4mm$ (panel (b)), orthorhombic $Amm2$ and rhombohedral $R3m$ phases, respectively \cite{Mason1948, VonHippel1950, Marton2010}.
+The microscopic origin of the ferroelectricity in BTO has previously been studied with variational DFT calculations \cite{Ghosez1995}, uncovering the intricate role that the hybridization between Ti and O orbitals plays.
 This leads to the Born effective charges of the Ti and O ions to be quite different from what would be expected from a purely ionic picture.
-The Born effective charge tensor $Z^*_{\kappa, \gamma\alpha}$ is defined in terms of the change in polarization in direction $\gamma$ that occurs due to a periodic displacement $\delta$ of atom $\kappa$ in the direction $\alpha$:
+The Born effective charge tensor $Z^*_{\kappa, \gamma\alpha}$ is defined in terms of the change in polarization in direction $\gamma$ that occurs due to an infinitesimal periodic displacement $\delta$ of atom $\kappa$ in the direction $\alpha$:
 \begin{equation}
 Z^*_{\kappa, \gamma\alpha} = Z_{\kappa} \delta_{\gamma\alpha} + \Delta Z_{\kappa, \gamma\alpha}.
 \end{equation}
 There are thus two contributions: $Z_{\kappa}$ is the ionic charge of the atom, and $\Delta Z_{\kappa, \gamma\alpha}$ is the electronic screening that results from the displacement.
-$Z_{\kappa}$ should then be +2 for Ba, +4 for Ti and -2 for O, if the electron charge is taken to be -1.
-From the DFT calculations it was found that the electronic contribution due to screening effects is quite significant, especially for Ti ($Z^* = 7.29$) and O ($Z^*_{||} = -5.75$), for a displacement along the Ti--O bond.
-These large electronic contributions stem from the varying degree of hybridization between O $2p$ and Ti $3d$ orbitals as the atoms are displaced.
+$Z_{\kappa}$ is then equal to +2 for Ba, +4 for Ti and -2 for O, if the electron charge is taken to be -1.
+From the DFT calculations it was found that the electronic contribution $\Delta Z_{\kappa, \gamma\alpha}$ due to screening effects is quite significant.
+This leads to the total Born effective charges for Ti and O to be $Z^* = 7.29$, and $Z^*_{||} = -5.75$, respectively.
+The $||$ in the latter denotes that the value was calculated for a movement of the oxygen along the O--Ti bond.
+These large electronic contributions stem from the strong variation of the hybridization between O $2p$ and Ti $3d$ orbitals as the atoms are displaced.
 For further details, see Ref.~\cite{Ghosez1995}.
 
-All experiments were performed at room temperature, so we focus on the tetragonal phase as displayed in Fig.~\ref{fig:BTO_crystal}.
+All experiments were performed at room temperature, so we focus on the tetragonal phase shown in Fig.~\ref{fig:BTO_crystal}(b).
 \begin{figure}[h]
 	\IncludeGraphics{crystal.png}
-	\caption{\label{fig:BTO_crystal}{\bf Sample Morphology.} a) Crystal structure of BaTiO$_3$, with central Ti atom, O octahedron and surround Ba ions. The arrows denote the ionic shifts that lead to the ferroelectricity. b) Schematic representation of the 180$^\circ$ DW with applied tip and resulting deformation. The out-of-plane polarization is shown by the arrows.}
+	\caption{\label{fig:BTO_crystal}{\bf Crystal structure.} a) Crystal structure of BaTiO$_3$ in the paraelectric phase ($Pm3m$). b) Unit cell of the tetragonal phase ($P4mm$) with the associated polarization. The atoms are color coded with Ti atoms in blue, Ba in green and O in red. The Oxygen octahedra around Ti are displayed as the shaded polygons.}
 \end{figure}
 
 \section{Theory}
-Three possible mechanisms to explain the softening of ferroelectric domain walls were put forward by Tsuji et al. \cite{Tsuji2005}: the existence of defects (oxygen vacancies) which can accumulate inside DWs, a reduced depolarization energy due to piezoelectricity, and the existence of domain-wall localized phonon modes (e.g. sliding and breathing). We will discuss each of these contributions, with a detailed investigation into the last one.
+Three possible mechanisms to explain the softening of ferroelectric DWs were put forward by Tsuji et al. \cite{Tsuji2005}: the accumulation of defects (oxygen vacancies) at DWs, a reduced depolarization energy created by piezoelectricity at the DWs, and the existence of DW localized phonon modes (e.g. sliding and breathing). We will discuss each of these contributions, with a more detailed investigation into the last one.
 
-A thorough theoretical investigation on the behavior of defects in BTO DWs was done by Xiao et al. in Ref.~\cite{Xiao2005}.
-It was shown there that a large accumulation of defects was found to exist at 90$^\circ$ DWs, but that no such accumulation is present in 180$^\circ$ domain walls.
-Analyzing more carefully the experimental measurements in Fig.~\ref{fig:BTO_experiment}, we can indeed confirm this absence of defects in the 180$^\circ$ DWs.
-The nature of defects is such that the extent to which they are present depends on the quality of the sample and can vary from region to region.
-This means that if they were of importance for the softening of 180$^\circ$ DWs, the resonance frequency, and by proxy the effective stiffness, should vary from wall to wall in Fig.~\ref{fig:BTO_experiment}(b,e).
+A thorough theoretical study on the behavior of defects in BTO DWs was done by Xiao et al. in Ref.~\cite{Xiao2005}.
+It was shown there that a large accumulation of defects was found to exist at 90$^\circ$ DWs, but not in 180$^\circ$ DWs.
+Looking again at the experimental measurements in Fig.~\ref{fig:BTO_experiment}(b,e,f) we can make an argument that confirms this claim.
+The density of defects depends on the quality of the sample and generally varies from region to region.
+This means that if they were of importance for the softening, the resonance frequency and effective stiffness, should vary from wall to wall in Fig.~\ref{fig:BTO_experiment}(b,e).
 However, no such variations are found.
-Furthermore, the supposed mechanism for softening due to defects is a weakening of the interatomic bonds caused by the defects.
-This should be fairly isotropic, or at least orthotropic, in the tetragonal phase since in BTO it is fairly close to the parent cubic structure.
-The softening effect should thus not depend on the orientation of the polarization.
-Focusing on Fig.~\ref{fig:BTO_experiment}(c-f), we have access to a region of the sample where both in-plane and out-of-plane polarization cases are present.
-This region is small enough such that variations of the quality of the sample and density of defects can be assumed to be small.
-We can see that the softening is present for the 180$^\circ$ DWs that separate domains with out-of plane polarization like in the bubbles domains on the top-left part of panel (e).
-When the walls spill over into the $a$-domain with in-plane polarization on the bottom right half of (e), the contrast between wall and domain disappears.
-We can thus exclude defects as a contributing factor to the DW softening.
+Furthermore, the supposed mechanism for softening due to defects is a weakening of the interatomic bonds.
+This should be fairly isotropic, or at least orthotropic, in the tetragonal phase of BTO since it is close to the parent cubic structure.
+Defect mediated softening should thus not depend on the orientation of the polarization.
+However, if we compare in Fig.~\ref{fig:BTO_experiment}(e) the stiffness signatures of the 180$^\circ$ DWs with out-of-plane polarization, and those with in-plane polarization, we see that only the former demonstrate the softening.
+This region of the sample is small enough so that variations in the quality of the sample and the defect density are small.
+From these two arguments, we can safely exclude defects as a contributing factor to the DW softening.
 
-The contribution from the reduction in depolarization energy at the DW, however, can not be neglected \cite{Tsuji2005,Stefani2020}.
-When the tip is applied to the sample, it causes a non-uniform pressure field at the surface.
+The second mechanism that could lead to softening can not be neglected, however \cite{Tsuji2005,Stefani2020}.
+When the tip is applied to the sample it causes a non-uniform pressure field at the surface, which leads to a non-uniform change in the polarization due to piezoelectricity. 
 Such a pressure field applied to a piezoelectric material (all ferroelectrics are piezoelectric) will lead to a change in the polarization.
 Since the field and resulting variation to the polarization is not homogeneous, bound charges will be created, i.e. $\bm{\nabla} \cdot \bm{P} \neq 0$.
 These bound charges create a depolarizing field that interacts with the rest of the sample, meaning that a higher depolarizing field leads to a higher increase in energy due to the tip, and thus a higher effective stiffness.
@@ -172,7 +210,7 @@ The two most obvious ones are the sliding and breathing modes, which can be exci
 
 Before giving a detailed description of these modes, we turn to the theory that we will use throughout the remainder of the chapter. 
 A continuum Ginzburg-Landau-Devonshire (GLD) model \cite{Zhirnov1959,L.N.Bulaevskii1963,Marton2010} was chosen due to the mesoscopic lengthscales that are involved.
-One could argue that this simplification is detrimental to the description of the very sharp domain walls, sporting a width on the order of a couple of unit cells (5-20 \AA) \cite{Zhirnov1959}.
+One could argue that this simplification is detrimental to the description of the very sharp domain walls, sporting a width on the order of a couple of unit cells (5 - 20 \AA) \cite{Zhirnov1959}.
 Especially to describe the movement of the DW, which will be shown to be one of the major contributors to the softening, it is necessary to take into account the Peierls-Nabarro (PN) barriers that exist due to the lattice structure.
 Naively, it seems that only atomistic first-principles calculations manage to reproduce these accurately \cite{Meyer2002}, since in a perfect continuum picture no such barriers exist.
 However, as we will touch on in further detail when the simulation technique is discussed, a numerical analogue to these inter-cell barriers appears due to the discretization of the sample geometry \cite{Marton2018}.  
@@ -406,28 +444,40 @@ When the wall is forced to move accross the grid due to the applied tip, it is f
 This in turn causes the numerical PN barrier.
 
 \section{Results}
-Since we implemented our own version of the finite element method, we perform some consistency checks with previous calculations.
+Since we implemented our own version of the finite element method, we perform some consistency checks with previous calculations before turning to the softening simulations.
 
 The DW energy we obtain is 15.2 mJ/m$^2$, very close to the value of 16 mJ/m$^2$ found from a first-principles calculation in Ref.~\cite{Padilla1996}.
 We furthermore verified that it is not influenced by the size of the numerical geometry, or the density of the mesh, indicating that the numerics of our method do not influence energetics of the static wall.
-To confirm the existence and behavior of the numerical PN barrier, we performed simulations where first the wall was optimized, and then rigidly shifted inside the grid.
-The results are shown in Fig.~\ref{fig:BTO_numerical_effects}(c,d).
-\begin{figure}[h!]
-	\IncludeGraphics{numerical_effects.png}
-	\caption{\label{fig:BTO_numerical_effects}{\bf Numerical effects.} a) Maximum indent by the applied tip, depending on where it is applied and the $x$-dimension of the geometry $L_x$. b) Visual demonstration of the asymmetric deformation and $\varepsilon_{zz}$ due to open boundary conditions. The tip is applied at the edge of the sample. c) The evolution of the PN barrier when the wall is shifted with $\delta_w$ away from the original position at 0. The periodicity of the lattice is mimicked by the barriers, where the distance between maxima is given by the elementsize. It is also clear that large element sizes lead to larger barriers. d) The evolution of the PN barrier height with elementsize.}
-\end{figure}
-the smaller $L_x$ results in a larger difference of the indentation at the edge of the  geometry versus in the center. Since this simulation is for a domain the tip should result in an identical indentiation no matter where it is applied. It is also clear that when the geometry is smaller, the central indentation is also larger due to less total material supporting the tip. 
 
+One undesirable numerical effect that appears, is the increased indentation at the edges of the geometry, as compared with the ones in the center.
+It is shown in Fig.~\ref{fig:BTO_numerical_effects}(a,b).
+If we simulate a domain, and apply the tip at various points of the sample we indeed see that the further away from the center, the higher the indentation.
+This is a direct result from the open boundary conditions we chose to use, leading to less material at the edges to support the tip.
+To compensate for this spurious contribution, we added the differences with the domain simulation where the tip was applied to the center, leveling out the indentation originating from the finite-size effect.
 
+Finally, to confirm the existence and behavior of the numerical PN barriers, we performed simulations where we rigidly shifted the wall from its central position inside the grid.
+Each step the energy was then calculated in order to get an indication of the numerical PN barriers of our mesh.
+The results for different meshsizes are shown in Fig.~\ref{fig:BTO_numerical_effects}(c,d).
 For all elementsizes, the barriers are very close to the harmonic shape of the real Peierls-Nabarro barriers. The larger the elementsize, the larger the energy and periodicity of the barriers.
 In the following we chose the elementsize to be 0.3 nm, offering a good balance between amount of pinning and computational cost. 
-A demonstration of the breathing mode is shown in Fig.~\ref{fig:BTO_breathing_sliding}(a), where the absolute value for the polarization is shown under the application of a tip with varying force.
-We can see that the wall indeed widens slightly when higher forces are applied. It is a small effect, however, and we found that the force applied by the tip to cause significant widening is much larger than the experimental one.
-We now turn to the domain wall sliding.
-For this, we applied the tip force field at various distances away from the wall. In order to minimize the impact of the numerics, more specifically the sampling due to the discretization, we always centered the tip exactly at a mesh node.
-The softening is estimated as the ratio of the surface deformation between the domain and the wall.
-Two sets of simulations were performed, one for which the bottom of the wall was kept fixed, to mimick the bending behavior, and one where we let the wall as a whole slide freely.
-The results of the former are shown in Fig.~\ref{fig:BTO_bending_sim}.
+\begin{figure}[h!]
+	\IncludeGraphics{numerical_effects.png}
+	\caption{\label{fig:BTO_numerical_effects}{\bf Numerical effects.} a) Maximum indent by the applied tip, depending on where it is applied and the $x$-dimension of the geometry $L_x$. b) Visual demonstration of the asymmetric deformation and $\varepsilon_{zz}$ due to open boundary conditions. The tip is applied at the edge of the sample. c) The evolution of the PN barrier when the wall is shifted with $\delta_w$ away from the original position at 0. The periodicity of the lattice is mimiced by the barriers, where the distance between maxima is given by the elementsize. It is also clear that large element sizes lead to larger barriers. d) The evolution of the PN barrier height with elementsize.}
+\end{figure}
+
+
+We now turn to the DW localized modes to reproduce the experimentally observed softening.
+First we demonstrate the influence of the breathing mode, shown in Fig.~\ref{fig:BTO_breathing_sliding}(a).
+The absolute value of the polarization is used as an indication of the DW width, and a tip was applied to the center of the wall with varying force.
+We can see that the wall indeed widens slightly when higher forces are applied.
+It is a small effect, however, and we found that the force applied by the tip to cause significant widening is much larger than the experimental one.
+
+As discussed in the Theory section, the domain wall sliding mode is most likely to cause the DW softening.
+To mimic the experimental conditions, we applied the tip force field at various distances away from the wall. In order to minimize the impact of the numerics, more specifically the sampling of the force field, we always centered the tip exactly at a mesh node.
+This leads to the total force applied by the tip to be identical, no matter where it is applied.
+The relative softening is then estimated as the ratio of the surface deformation between the domain and the wall.
+Two sets of simulations were performed, one for which the bottom of the wall was kept fixed, to mimic the bending behavior, and one where we let the wall as a whole slide freely.
+The results of the former are shown in Fig.~\ref{fig:BTO_bending_sim}, and of the latter in Fig.~\ref{fig:BTO_sliding_sim}.
 \begin{figure}[h!]
 	\IncludeGraphics{2D_bending}
 	\caption{\label{fig:BTO_bending_sim}{\bf Bending Wall} Simulations where the bottom of the wall is kept fixed to the equilibrium without a tip. In each panel, the coloring indicates the position where the tip is aplied to the sample. a) Surface profile of the wall. b) Polarization distribution at the surface. c) Deformation of the surface after applying the tip. d) Maximum absolute value of the deformation in (c). e) Relative stiffness depending on where the tip is applied. f) Strain profile when tip is too far from wall to make it bend. g) When the tip is close enough, the wall will bend. In panels (f, g) the vertical white line denotes the equilibrium position of the wall, and the dashed its position after the tip is applied.}
@@ -438,13 +488,13 @@ The results of the former are shown in Fig.~\ref{fig:BTO_bending_sim}.
 \end{figure}
 As seen in Fig.~\ref{fig:BTO_bending_sim}(e) and Fig.~\ref{fig:BTO_sliding_sim}(e), and predicted by the above statements, the wall is softest not in the center, but rather at the point where $u'$ or $\varepsilon_{xz}$ is highest.
 This leads to the highest force applied to the wall that either makes it bend or slide.
-Comparing the two simulation protocols, we can also see that when the wall is allowed to slide, the region where softening takes place is much wider, and the extent of the softening is higher.
+Comparing the two simulation protocols, we can also see that when the wall is allowed to slide, the region where the softening takes place is much wider, and the mount of softening is higher.
+We find a maximum softening of about 20\% compared to the domain, which is remarkably close to the experimental measurements.
 The real situation is a combination of these two. Due to the relatively small $z$ dimension that we used for our simulations (20 nm), as compared with the sample in the experiment (0.3 cm), bending the wall is a lot more difficult in our simulations.
-The wall therefore probably appears as rigidly sliding towards the tip inside the 70 nm in-plane region around the wall, for a depth up to 20 nm.
-However, due to the bending that happens for larger lengthscales along the $z$-direction, the wall moves back towards the equilibrium position when the tip moves too far away from it.
+The wall therefore most likely appears as rigidly sliding towards the tip inside the 70 nm in-plane region around the wall, for a depth up to 20 nm.
+However, due to the bending on larger lengthscales along the $z$-direction, the wall will move back towards the equilibrium position when the tip moves too far away from it.
 
 We claim that this behavior is the main source of the observed softening.
-
 
 \section{Conclusions}
 In this chapter we have shown how, based on experimental observations, purely ferroelectric 180$^\circ$ DWs appear mechanically softer than the domains they separate.
@@ -453,8 +503,8 @@ This is the sliding or bending mode associated with the homonymous DW motion.
 By subsequently performing finite-element method simulations based on a continuum Ginzburg-Landau-Devonshire model, we confirmed numerically that this effect is present and leads to substantial softening. 
 
 It is an interesting example of the described fundamentally different behavior of DWs as compared with the domains.
-Also from the technological it could have real impact, since purely mechanical reading is possible.
+It could have real impact on the technological side, since purely mechanical reading is possible.
 This was previously attempted through flexoelectricity and the reading of different polarization domains as an analogue to up and down bits, but the contrast between them is too small \cite{Cordero-Edwards2017}.
-Domain walls could offer an improved distinguishability due to their contrast with the domains. One could therefore envision a device where the wall denotes a one bit, and the domain a zero. Writing a domain wall through electric excitations and afterwards probing them mechanically could lead to increased efficiency.
-
-\printbibliography
+Domain walls could offer an improved distinguishability through mechanical means due to their contrast with the domains.
+One could therefore envision a device where the wall denotes a one bit, and the domain a zero.
+Writing a domain wall through electric excitations and afterwards probing them mechanically could lead to increased efficiency.

@@ -2,7 +2,7 @@
 \documentclass[12pt,a4paper,makeidx,oneside]{phdthesis}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,xcolor}
-\usepackage[backend=biber,refsection=chapter]{biblatex}
+\usepackage[backend=biber]{biblatex}
 \usepackage[margin=30mm]{geometry}
 % \renewcommand{\baselinestretch}{1.5} 
 % \usepackage{cancel}
@@ -16,6 +16,10 @@
 % \usepackage{tikz}
 \usepackage{bm}
 \usepackage{fancyhdr}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,decorations.pathmorphing}
+
 % \usepackage{natbib}
 \usepackage{hyperref}
 \addbibresource{./Introduction/bib.bib}
@@ -105,19 +109,29 @@
 \begin{document}
 \frontmatter
 \chapter*{Abstract}
-Theoretical condensed matter research is plagued by a fundamental issue of complexity. The sheer amount of degrees of freedom in a material on any technologically relevant scale is overwhelming (e.g. $\sim10^{23}$ electrons per cm$^3$), and makes it impossible to describe the quantum mechanical wavefunction exactly.
+Theoretical condensed matter research is plagued by a fundamental issue of complexity. The sheer amount of degrees of freedom in a material of any technologically relevant scale is overwhelming (e.g. $\sim10^{23}$ electrons per cm$^3$), and make it impossible to describe the quantum mechanical wavefunction exactly.
+%\lp{there is some more nice things along this line in Wen}.
+%This forces researchers in the field to make approximations, as to make the problem tractable, while still capturing the essential physics resulting in the effects under investigation.
+The way to make progress with this undertaking has always been to try and isolate the parts of the system that play the biggest role in the effects under investigation, while neglecting those that only lead to more complexity.
 
-The Hamiltonian plays a central role in the description of crystals, the subject of this thesis. It can be decomposed into various parts, and their interactions. Depending on the physics under scrutiny it then often suffices to solve only one of those parts.
-This can be either because the energy scales and associated timescales that govern the constituents are very different, or because the interactions between them are small.
-One example, often put into practice, is the separation of electronic and phononic (lattice) degrees of freedom, leading to the well-known Born-Oppenheimer approximation, decoupling their respective motion.
-Another is the often neglected spin-orbit coupling, due to the tiny prefactor associated with its relativistic origin.
+As is well known, every quantum mechanical system is governed fundamentally by its Hamiltonian. One could go so far as to say that if we would be able to exactly calculate all of the eigenvectors and eigenvalues of the Hamiltonian describing the material under study, the field of condensed matter would be completed. This is ofcourse impossible for reasons stated before.
+The full Hamiltonian can be decomposed into contributions from all parts of the system, and interactions between those parts.
+It is then quite straightforward to separate these into different energy scales, or through $\Ket{\psi(t)} = e^{-i \frac{\mathcal{H}t}{\hbar}}\Ket{\psi(0)}$, different characteristic timescales.
+There are two alleys along which one can proceed to simplify the problem. When the interactions between these parts are negligible, the two subsystems can be decoupled and solved separately.
+This is, for example, the case in materials for which the relativistic spin-orbit coupling can be ignored, decoupling completely the spin and charge sectors of the Hamiltonian.
+The second way is when the interaction is not negligible, but the time scales are so different that for the description of the slow varying subsystem, the interaction with the fast moving one can be described by an average, time independent one, so-called mean-field approximations.
+Vice versa, the slow moving subsystem can be taken as static for the description of the fast moving one.
+An example of this is the well-known Born-Oppenheimer approximation that assumes the reaction of the electrons to displacements of the ions inside the material to be instantaneous.
 
-Solving these subproblems then allows for progress to be made in understanding the physics that governs them.
-However, there will inevitably be systems for which this interaction is not small and leads to fascinating new physics that manifestly depends on both subsystems combined.
-In this thesis we focus on these cases and how they arise in functional materials, with the occasional eye towards applications in technology.
+Applying approximations like these systematically, allows to identify and approximately solve the important parts in order to describe many phenomena that present themselves in condensed matter.
+They form the backbone and starting point for further investigations gradually including more complexity to describe increasingly complex physics.
 
+This Thesis will discuss effects that depend crucially on these, usually negligible, interactions between two relatively well-understood subsystems.
+The three main interactions that will be discussed are: relativistic spin-orbit coupling (SOC), coupling charge and spin sectors of the Hamiltonian; Heisenberg magnetic exchange striction, coupling spins to atomic displacements (phonons); and electrostriction, where electric polarization leads to an associated strain texture.
+
+These interactions are studied in functional materials, with the occasional eye towards applications in technology.
 The reason why these cross-order couplings can be interesting for technological applications, is that often one of the orders is more robust with respect to perturbations, and therefore more long-lived, but also harder to control efficiently.
-By exploiting the cross-order coupling in certain materials, one could potentially control the long lived order by applying perturbations to the more easily controllable order.
+By exploiting the cross-order coupling, one could potentially control the robust order through perturbations on the coupled one in a more efficient manner.
 
 In giant Rashba effect systems, the coupling between spin and ferroelectric order leads to a linear spin-splitting of the band structure, whose sign depends on the orientation of the ferroelectric polarization.
 We show that, rather than the relativistic Rashba effect, a combination of electrostatics and atomic spin-orbit coupling lies at the origin of the large splitting.
@@ -130,9 +144,9 @@ This allows us to predict the sequence of optical pulses to be applied to the ma
 
 And finally, the coupling between ferroelectricity and strain in BaTiO$_3$ leads to a softening at purely ferroelectric domain walls, allowing for some mechanical control of the position of this wall.
 
-We utilize both theoretical and computational tools to understand the nature of these interactions, how they lead to cross-order coupling in these materials, and how this then translates into the experimentally observed behavior.
-% \chapter*{Acknowledgements}
-% \Include{Publications}
+We utilize both theoretical and computational tools to understand the nature of these interactions, how they lead to cross-order coupling in these materials, and how this ultimately translates into the experimentally observed behavior.
+\chapter*{Acknowledgements}
+\Include{Publications}
 \setcounter{tocdepth}{1}
 \tableofcontents
 \mainmatter
@@ -142,4 +156,5 @@ We utilize both theoretical and computational tools to understand the nature of 
 % \Include{GdMn2O5}
 % \Include{Cr}
 \Include{Softening}
+\printbibliography{references}
 \end{document}
