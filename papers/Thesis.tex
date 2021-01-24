@@ -1,8 +1,8 @@
 %
-\documentclass[12pt,a4paper,makeidx,oneside]{phdthesis}
+\documentclass[phd, titlesmallcaps,copyrightpage,foronline]{SNSthesis}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,xcolor}
-\usepackage[backend=biber]{biblatex}
+% \usepackage[backend=biber]{biblatex}
 \usepackage[margin=30mm]{geometry}
 % \renewcommand{\baselinestretch}{1.5} 
 % \usepackage{cancel}
@@ -22,12 +22,33 @@
 
 % \usepackage{natbib}
 \usepackage{hyperref}
-\addbibresource{./Introduction/bib.bib}
-\addbibresource{./Theory/bib.bib}
-\addbibresource{./GdMn2O5/bib.bib}
-\addbibresource{./Rashba/bib.bib}
-\addbibresource{./Softening/bib.bib}
-\addbibresource{./Cr/bib.bib}
+\usepackage[english]{babel}
+\addto{\captionsenglish}{\renewcommand{\bibname}{References}}
+
+
+
+\usepackage[linesnumbered,ruled]{algorithm2e}
+\SetAlgoCaptionSeparator{}	% remove colon in caption
+\makeatletter
+\newenvironment{namedalgorithm}[1]{%
+	\medskip
+	\renewcommand{\algocf@algocfref}{#1}% update algorithm name
+	\SetNlSty{textbf}{}{\enspace} % manual spacing after line-numbers (revtex)
+	\DontPrintSemicolon % remove semicolon
+	\begin{algorithm}[H] %
+	}{\end{algorithm}%
+	\medskip}
+\makeatother
+
+% Extractable work
+\usepackage[percent]{overpic}
+
+% \addbibresource{./Introduction/bib.bib}
+% \addbibresource{./Theory/bib.bib}
+% \addbibresource{./GdMn2O5/bib.bib}
+% \addbibresource{./Rashba/bib.bib}
+% \addbibresource{./Softening/bib.bib}
+% \addbibresource{./Cr/bib.bib}
 
 %to be used in main text
 \newcommand{\ket}[1]{$\left|#1\right\rangle$}
@@ -97,17 +118,49 @@
     \includegraphics[#1]{\GraphicsPath #2}}   
 
 % \usetikzlibrary{shapes,arrows,decorations.pathmorphing}
+\newcommand{\thesistitle}{Interplay between complex orders in functional materials}
+\newcommand{\name}{Louis Ponet}
+\newcommand{\email}{louis.ponet@iit.it; louis.ponet@sns.it}
 
-\title{
-	{Interplay between complex orders in functional materials}\\
-	{\large Department of Nanosciences, Scuola Normale Superiore di Pisa}\\
-	{\large Quantum Materials Theory, Istituto Italiano di Tecnologia}}
+\ifpdf
+    \pdfinfo { 
+              % /Title  (\thesistitle)
+              /Title  (Interplay between complex orders in functional materials)
+               /Creator (pdflatex) % probably this
+               /Producer (LaTeX with hyperref) % something like this
+               /Author (\name \email)
+               %/CreationDate (D:20100204000000)  %format D:YYYYMMDDhhmmss
+               % if /CreationDate is left out it will default to the file creation date
+               /Keywords (Physics)}
+    \pdfcatalog { /PageMode (/UseOutlines) /OpenAction (fitbh)  }
+\fi
 
-\author{Louis Ponet}
+
+
+
+% 	{\large Department of Nanosciences, Scuola Normale Superiore di Pisa}\\
+% 	{\large Quantum Materials Theory, Istituto Italiano di Tecnologia}}
+
+% \author{Louis Ponet}
 \date{today}
 
 \begin{document}
 \frontmatter
+
+% acknowledgements, titlepage, abstract, list of publications
+\title{\thesistitle}
+
+\ifthenelse{\boolean{foronline}}{
+  \author{\href{mailto:\email}{\name}}
+  \department{Scienze}
+}{
+  \author{\name}
+  \department{Scienze}
+}
+
+
+\titlepage
+
 \chapter*{Abstract}
 Theoretical condensed matter research is plagued by a fundamental issue of complexity. The sheer amount of degrees of freedom in a material of any technologically relevant scale is overwhelming (e.g. $\sim10^{23}$ electrons per cm$^3$), and make it impossible to describe the quantum mechanical wavefunction exactly.
 %\lp{there is some more nice things along this line in Wen}.
@@ -150,11 +203,13 @@ We utilize both theoretical and computational tools to understand the nature of 
 \setcounter{tocdepth}{1}
 \tableofcontents
 \mainmatter
-% \Include{Introduction}
-% \Include{Theory}
-% \Include{Rashba}
-% \Include{GdMn2O5}
-% \Include{Cr}
+\Include{Introduction}
+\Include{Theory}
+\Include{Rashba}
+\Include{GdMn2O5}
+\Include{Cr}
 \Include{Softening}
-\printbibliography{references}
+\backmatter
+\bibliography{references}
+\printindex
 \end{document}

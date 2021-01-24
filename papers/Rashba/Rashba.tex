@@ -3,7 +3,7 @@
 \newcommand{\Eikr}{e^{i\bm{k}\cdot\bm{r}}}
 \chapter{Spin-momentum locking in high spin-orbit coupled ferroelectrics \label{ch:Rashba}}
 \section{Introduction}
-% Bulk ferroelectrics with large atomic spin-orbit coupling allow for electric control of spin-polarized states~\cite{DiSante2013,Ishizaka2011,Kim2014, Liebmann2016, Krempasky2015SurfaceSemiconductor}, allowing for the switching of the spin texture by an externally applied electric field. 
+% Bulk ferroelectrics with large atomic spin-orbit coupling allow for electric control of spin-polarized states~\cite{DiSante2013,Ishizaka2011,Kim2014, Liebmann2016, Krempasky2015}, allowing for the switching of the spin texture by an externally applied electric field. 
 % The underlying mechanism is, however, not well understood.
 % Note: Not sure we should really focus on technology, also it's not particularly clear it wants to use both spin and charge, rather than just spin.
 % The research area of spintronics aims to supersede standard electronics by using both the spin and charge degree of freedom of the carriers for information processing and storage. %\sa{https://doi.org/10.1146/annurev-conmatphys-070909-104123}
@@ -18,7 +18,7 @@ Inversion symmetry breaking together with SOC results in a linear energy splitti
 Due to the definite spin-polarization of these bands, current carriers \footnote{holes in the case of Fig.~\ref{fig:Rashba_intro_dispersion}} traveling through the material will tend to align their spins to this spin-polarization.
 As we discuss in more detail in the following, the direction of the spin polarization depends on the orientation and strength of the electric field $\bm{E}$.
 In ferroelectrics, an internal field results from polarization $P$ and associated electric dipole moments, allowing it to be tuned and switched by an external electric field.
-These spin-polarized states have been observed both experimentally \cite{Ishizaka2011,Liebmann2016,Krempasky2015SurfaceSemiconductor}, and from {\it ab-initio} density functional theory (DFT) simulations \cite{DiSante2013}.
+These spin-polarized states have been observed both experimentally \cite{Ishizaka2011,Liebmann2016,Krempasky2015}, and from {\it ab-initio} density functional theory (DFT) simulations \cite{DiSante2013}.
 It is, however, often not well understood and misattributed what the underlying microscopic mechanisms are that lead to the observed splitting.
 
 We start by investigating multiple origins of this $\bm{k}$ and $\bm{E}$ dependent spin-splitting. The discussed energy contributions all arise due to the Hamiltonian of form
@@ -316,7 +316,7 @@ As discussed before, a purely relativistic effect would rather have a prefactor 
 
 Another observation that is hard to explain by purely relativistic means, is the orientation of the spin-polarization inside the different split bands.
 It was found that depending on the band, the spin is oriented such that $\alpha_R$ in Eq.~\ref{eq:Rashba_form} is either negative or positive. 
-This has been confirmed experimentally \cite{Krempasky2015SurfaceSemiconductor} and depends on the value of the total angular momentum $j$.
+This has been confirmed experimentally \cite{Krempasky2015} and depends on the value of the total angular momentum $j$.
 This can only be explained through the OAM and atomic SOC mechanism, the manifestation of which in our results will be discussed further down.
 
 By Wannierizing the bands around the Fermi level, we can construct a tight-binding model in terms of Te and Ge $s$- and $p$-orbitals.
@@ -324,7 +324,7 @@ The WFs for the spin-up Te orbitals thus obtained are displayed in Fig.~\ref{fig
 The total spread of the 16 spinor WFs is 53.4~\AA$^2$~.
 \begin{figure}[h]
 \IncludeGraphics[width=\linewidth]{Wannierfunctions.png}
-\caption{\label{fig:GeTe_wannierization}{\bf Wannier functions} a) The spin-up WFs of the orbitals around the Tellurium ion. The isosurface is constructed from the norm of the wavefunctions, with the coloration denoting the sign of the real part. b) The charge density in the central unit cell of the Bloch function of the top valence band, at $k=$ (0, 0.1, 0.9) in units of \AA$^{-1}$. The orbital angular momentum, polarization, and $k$-vector are shown by the red, blue, and green arrows, respectively. In each panel, the unit cell is shown by the wireframe, and the Te and Ge ions are yellow and grey, respectively.}
+\caption{\label{fig:Rashba_wannierfunctions}{\bf Wannier functions} a) The spin-up WFs of the orbitals around the Tellurium ion. The isosurface is constructed from the norm of the wavefunctions, with the coloration denoting the sign of the real part. b) The charge density in the central unit cell of the Bloch function of the top valence band, at $k=$ (0, 0.1, 0.9) in units of \AA$^{-1}$. The orbital angular momentum, polarization, and $k$-vector are shown by the red, blue, and green arrows, respectively. In each panel, the unit cell is shown by the wireframe, and the Te and Ge ions are yellow and grey, respectively.}
 \end{figure}
 
 The interpolation of the ab-initio bandstructure by the tight-binding model in terms of the WFs is shown in Fig.~\ref{fig:Rashba_wannierization}, which demonstrates that it agrees very well with the bands in the inner window, and the valence bands in particular. 
@@ -414,6 +414,6 @@ All these considerations lead to a very nontrivial SAM and OAM texture of the ba
 
 \section{Conclusions}
 
-We have explored the microscopic origin of the giant Rashba-like spin splitting in the band structure of bulk ferroelectric GeTe with high atomic SOC. We derived the form of the band dispersion in the Wannier representation, that relates the large spin splitting to the intricate interplay between OAM, atomic SOC, the crystal field and the electric polarization. It turns out that the crucial component, which is not present in the relativistic Rashba effect, is the emergence of a nonzero electric dipole of the Bloch functions due to their OAM. The quantitative analysis based on WFs and atomic-centered approximation confirms this mechanism in GeTe. We find a very good agreement between the proposed band dispersion, Eq.~(\ref{eq:hami}), and the dispersions of the first and third valence bands, where the effect manifests itself most clearly.
+We have explored the microscopic origin of the giant Rashba-like spin splitting in the band structure of bulk ferroelectric GeTe with high atomic SOC. We derived the form of the band dispersion in the Wannier representation, that relates the large spin splitting to the intricate interplay between OAM, atomic SOC, the crystal field and the electric polarization. It turns out that the crucial component, which is not present in the relativistic Rashba effect, is the emergence of a nonzero electric dipole of the Bloch functions due to their OAM. The quantitative analysis based on WFs and atomic-centered approximation confirms this mechanism in GeTe. We find a very good agreement between the proposed band dispersion, Eq.~\ref{eq:Rashba_hami}, and the dispersions of the first and third valence bands, where the effect manifests itself most clearly.
 
 Ultimately, the results suggest that (1) large ferroelectric polarization, (2) high atomic SOC, and (3) highly isotropic environment producing little OAM quenching could be the design rules for new materials with strong Rashba-like spin splitting. These materials could enable spintronic devices with the much needed electric control of spin polarization.
