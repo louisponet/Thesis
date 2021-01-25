@@ -8,16 +8,39 @@
 % Note: Not sure we should really focus on technology, also it's not particularly clear it wants to use both spin and charge, rather than just spin.
 % The research area of spintronics aims to supersede standard electronics by using both the spin and charge degree of freedom of the carriers for information processing and storage. %\sa{https://doi.org/10.1146/annurev-conmatphys-070909-104123}
 %
-The research field of spintronics aims to understand the behavior of spins inside materials, and translate this understanding into active control of these degrees of freedom for possible technological applications \cite{Joshi2016}.
+The research field of spintronics aims to understand the behavior of spins inside materials, and translate this understanding into the ability to actively control these degrees of freedom for possible technological applications \cite{Joshi2016}.
 Many devices have been theorized, for example, spin field-effect transistors (spin-FET)\cite{Datta1990}, and storage devices which utilize spin-current and associated spin-transfer torque to efficiently manipulate magnetic domains \cite{Kent2015}, both in ferromagnets \cite{Nunez2011}, and antiferromagnets \cite{Jungwirth2016}.
 In spite of fundamental interest and potential for applications, the actual realization of these spin-FET devices has been rather elusive.
-One of the main culprits for the limited success to date is that the devices require very granular, ideally electric, control of the spin.
-This is often precluded by the widely separated energy scales and weak coupling between magnetic and charge degrees of freedom.
-One class of materials that can allow for such electric control of spin-polarized states are the ferroelectric semiconductors with large atomic spin-orbit coupling (SOC) \cite{Picozzi2014,DiSante2013,Ishizaka2011,Kim2014}.
-Inversion symmetry breaking together with SOC results in a linear energy splitting of spin-polarized bands, manifested in the bulk band structure as a conical intersection surrounding a time-reversal symmetric point of the Brillouin Zone (BZ) (see Fig.~\ref{fig:Rashba_intro_dispersion}).
+One of the main culprits for this limited success is that the envisioned devices require very granular, ideally electric, control of the spin.
+
+This is not straightforward, since the only direct coupling between the spins of the current carriers and the electric field is through relativistic effects. When an electron moves through an electric field, this field is rather perceived as a magnetic field, in the electron's co-moving frame. This magnetic field can be written as
+\begin{equation}
+	\bm{B} = - \frac{\bm v \times \bm E}{c^2},
+\end{equation}
+where $\bm v$ denotes the velocity of the electron, $\bm E$ the electric field, and $c$ the speed of light.
+The spin of the electron will interact with this magnetic field through the Zeeman energy $H_Z = -\frac{g_s\mu_B}{\hbar} \bm \sigma$, where $g_s \approx 2$, $\mu_B$ is the Bohr magneton and $\bm \sigma$ is the spin of the electron.
+The spins will thus start to precess around $\bm B$ created by the applied $\bm E$, and eventually align with it.
+However, in nearly all real materials, the speed $\bm v$ of the current carriers is so low, and the applied electric fields so small, that the $c^2$ in the denominator completely overpowers the numerator, leading ultimately to a tiny effect.
+One class of materials for which the carrier speeds are relatively high are the topological insulators \cite{Kane2005a,Novoselov2005,CastroNeto2009,Fu2007,Fu2006,Pesin2012}.
+In these materials, a peculiar band structure effect leads to Dirac cones and Dirac points. They get their name from the necessity of using the Dirac equation in order to accurately describe the relativistic behavior of electrons (and holes) at these points.
+It turns out that due to the band structure peculiarities, electrons (and holes) appear to have zero effective mass leading to a large Fermi velocity, on the order of \SI{10e6}m/s$^2$ for graphene \cite{Novoselov2005}.   
+However, even in this case, the influence of external electric fields on the carriers' spin is extremely limited.
+Indeed, for a field strength of 1 V/nm, the size of the magnetic field $\bm B$ that results from Eq.~\ref{eq:Rashba_B} is only on the order of \SI{1e-2} T, leading to a Zeeman energy of the spins of only \SI{1e-3} meV.
+This is all to say that such a direct electric control of the spins is quite infeasible.
+
+Leveraging the properties of particular materials, on the other hand, does lead to the sought after electric control, albeit indirectly.
+One class of such materials are the ferroelectric semiconductors with large atomic spin-orbit coupling (SOC) \cite{Picozzi2014,DiSante2013,Ishizaka2011,Kim2014}.
+Spin-orbit coupling is essentially identical to the previously discussed effect.
+The ``atomic'' denotion refers to the manifestation of this effect due to the potential (and electric fields) around the atomic cores.
+
+The breaking of inversion symmetry in these materials leads to an internal electric field.
+However, contrary to the tiny effect expected from the above arguments, a sizeable linear energy splitting between spin-polarized states can appear in these materials \cite{DiSante2013}.
+This splitting manifests itself in the bandstructure as conical intersections surrounding time-reversal symmetric points of the Brillouin Zone (BZ) (see Fig.~\ref{fig:Rashba_intro_dispersion}).
+These points are special in the sense that by applying the time-reversal operator to the wavevector ($\bm k \rightarrow \bm {-k}$), they are brought to opposing points of the BZ that are separated by a reciprocal lattice translation, and are thus equivalent.\lp{if time make a figure}
+Since time-reversal reverses the spin, this means that both up and down spin states are equivalent at these points, leading to the intersection demonstrated in Fig.~\ref{fig:Rashba_intro_dispersion}.
+
 Due to the definite spin-polarization of these bands, current carriers \footnote{holes in the case of Fig.~\ref{fig:Rashba_intro_dispersion}} traveling through the material will tend to align their spins to this spin-polarization.
-As we discuss in more detail in the following, the direction of the spin polarization depends on the orientation and strength of the electric field $\bm{E}$.
-In ferroelectrics, an internal field results from polarization $P$ and associated electric dipole moments, allowing it to be tuned and switched by an external electric field.
+Since the sign of the electric field that leads to the spin-splitting is a result of the orientation of the ferroelectric polarization, it can be reversed by the application of a sufficiently strong external electric field (to reverse the polarization of the material).
 These spin-polarized states have been observed both experimentally \cite{Ishizaka2011,Liebmann2016,Krempasky2015}, and from {\it ab-initio} density functional theory (DFT) simulations \cite{DiSante2013}.
 It is, however, often not well understood and misattributed what the underlying microscopic mechanisms are that lead to the observed splitting.
 

@@ -1,6 +1,7 @@
-echo papers/Softening/Softening.tex
+echo papers/Rashba/Rashba.tex
 find papers/ -name "*.tex"
 echo scripts/wip.jl
 echo scripts/plots.jl
 find src/ -name "*.jl"
+echo papers/references.bib
 echo proj.files
