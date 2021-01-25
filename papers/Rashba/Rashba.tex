@@ -32,31 +32,36 @@ Leveraging the properties of particular materials, on the other hand, does lead 
 One class of such materials are the ferroelectric semiconductors with large atomic spin-orbit coupling (SOC) \cite{Picozzi2014,DiSante2013,Ishizaka2011,Kim2014}.
 Spin-orbit coupling is essentially identical to the previously discussed effect.
 The ``atomic'' denotion refers to the manifestation of this effect due to the potential (and electric fields) around the atomic cores.
+The atomic potentials are much greater than those from applied external fields, and the electrons have a much higher momenta close to the ionic cores.
+Consequently, the spin-orbit coupling in atoms can lead to significant consequences and is one of the main drivers of the effect discussed in this Chapter.
+This will be discussed in much greater detail in the next section.
 
-The breaking of inversion symmetry in these materials leads to an internal electric field.
-However, contrary to the tiny effect expected from the above arguments, a sizeable linear energy splitting between spin-polarized states can appear in these materials \cite{DiSante2013}.
-This splitting manifests itself in the bandstructure as conical intersections surrounding time-reversal symmetric points of the Brillouin Zone (BZ) (see Fig.~\ref{fig:Rashba_intro_dispersion}).
-These points are special in the sense that by applying the time-reversal operator to the wavevector ($\bm k \rightarrow \bm {-k}$), they are brought to opposing points of the BZ that are separated by a reciprocal lattice translation, and are thus equivalent.\lp{if time make a figure}
-Since time-reversal reverses the spin, this means that both up and down spin states are equivalent at these points, leading to the intersection demonstrated in Fig.~\ref{fig:Rashba_intro_dispersion}.
+Because of the ferroelectricity, and inversion symmetry breaking, an internal electric field is generated through the dipoles associated with the polarization.
+Combined with the high atomic SOC, a sizeable linear energy splitting between spin-polarized states can appear in these materials \cite{DiSante2013}, contrary to the tiny effect described above.
+This $k$ dependent splitting manifests itself in the bandstructure as conical intersections surrounding time-reversal (TR) invariant points of the Brillouin Zone (BZ) (see Fig.~\ref{fig:Rashba_intro_dispersion}).
+These points are special in the sense that the Kramers degeneracy \cite{Kramerstheorem} is enforced through the translational symmetry of the lattice, rather than by inversion symmetry.
+If we take a spin up Bloch state at such a TR invariant point, by applying the time-reversal operator to the wavevector ($\bm k \rightarrow \bm {-k}$, $\bm \sigma \rightarrow -\bm \sigma$), it is brought to a point on the opposite side of the BZ, and can be translated back to the original point through a reciprocal lattice translation.
+Since the system obeys both TR symmetry and translational symmetry, this down spin state has to have the same energy as the original up spin state, enforcing the Kramers degeneracy.
+So, even though the inversion symmetry brakes the Kramers degeneracy at general $k$-points, leading to the spin splitting, it is still present at these TR invariant points, leading to the intersection of cones in Fig.~\ref{fig:Rashba_intro_dispersion}.
 
 Due to the definite spin-polarization of these bands, current carriers \footnote{holes in the case of Fig.~\ref{fig:Rashba_intro_dispersion}} traveling through the material will tend to align their spins to this spin-polarization.
-Since the sign of the electric field that leads to the spin-splitting is a result of the orientation of the ferroelectric polarization, it can be reversed by the application of a sufficiently strong external electric field (to reverse the polarization of the material).
-These spin-polarized states have been observed both experimentally \cite{Ishizaka2011,Liebmann2016,Krempasky2015}, and from {\it ab-initio} density functional theory (DFT) simulations \cite{DiSante2013}.
-It is, however, often not well understood and misattributed what the underlying microscopic mechanisms are that lead to the observed splitting.
+Since the sign of the electric field creating the spin-splitting is a result of the orientation of the ferroelectric polarization, it can be reversed through the application of a sufficiently strong external electric field.
+The spin-polarized states have been observed both experimentally \cite{Ishizaka2011,Liebmann2016,Krempasky2015} and in {\it ab-initio} density functional theory (DFT) simulations \cite{DiSante2013}.
+It is, however, often not well understood what the underlying microscopic mechanisms are that lead to the observed large splitting.
 
-We start by investigating multiple origins of this $\bm{k}$ and $\bm{E}$ dependent spin-splitting. The discussed energy contributions all arise due to the Hamiltonian of form
+We start by investigating multiple contributions to the $\bm{k}$ dependent spin-splitting, and comment on their respective magnitudes and symmetry requirements. 
+All lead to an energy term of the form:
 \begin{equation}
 	\label{eq:Rashba_form}
-	H_R(\bm{k}) = \alpha_R \frac{\bm{E}}{|\bm{E}|} \cdot (\bm{k} \times \hat{\bm{\sigma}}),
+	H_R(\bm{k}) = \alpha_R \frac{\bm{E}}{|\bm{E}|} \cdot (\bm{k} \times \bm{\sigma}),
 \end{equation}
-where $\hat{\bm{\sigma}}$ is the electron spin operator, and $\bm{E}$ the electric field.
-It will turn out that multiple microscopic effects can lead to contributions of this form, some of these are well known, others are more obscure.
-The magnitude of the contribution depends on these microscopics, namely whether the effect is purely relativistic or rather a combination of relativistic and electrostatic terms.
+with $\bm{\sigma}$ denoting the electron spin operator, and $\bm{E}$ the electric field.
+Some of the microscopic effects that will be discussed are well known, while others are more obscure.
+We will see that the more obscure ones actually dominate in most cases, and that the largest contributions stem from a combination of electrostatic and relativistic effects.
 
-Certain materials demonstrate an exceedingly big splitting, for example in Germanium Telluride (GeTe) as can be seen in Fig.~\ref{fig:Rashba_intro_dispersion}.
-We therefore use this material as the main illustration throughout this chapter.
-To investigate how these effects occur in GeTe, we utilize DFT followed by a Wannierization in order to get an idea of the local, real-space, properties of the Bloch functions around the time reversal symmetric points of the BZ where the linear splitting occurs.
-
+As a hallmark example of materials that demonstrate a large spin-splitting, we focus in this Chapter on Germanium Telluride (GeTe).
+Its dispersion is exactly the one we used to demonstrate the conical shape of the bandstructure, displayed Fig.~\ref{fig:Rashba_intro_dispersion}.
+To investigate how the microscopic effects manifest themselves in GeTe, we use DFT followed by a Wannierization in order to gain access to the local, real-space, properties of the Bloch functions.
 \begin{figure}[h]
 	\begin{subfigure}[b]{0.49\textwidth}
 	\caption{}
@@ -70,18 +75,18 @@ To investigate how these effects occur in GeTe, we utilize DFT followed by a Wan
 		{\bf Large Rashba splitting} (a) The band dispersion of the first valence band in GeTe around the $Z$-point of the Brillouin zone (see Fig.~\ref{fig:Rashba_bands_dos} for details). Two graphs show both non spin-orbit coupled (NSOC, blue), and spin-orbit coupled (SOC, red) case. The $u-d$ and $u'-d'$ labels designate the up and down spin-polarized bands, where the prime signifies that the orientation of the spin quantization axis depends on $\bm{k}$. b) Shifted parabolic energy leves due to Rashba splitting, and associated spin texture indicated by the arrows.}
 \end{figure}
 
-We finish with a conclusion on the origin of most observed Rashba-like phenomena.
+We finish with a conclusion, summarizing the observations and make the claim that the linear spin-splitting attributed to the relativistic Rashba effect is almost exclusively a result of different effects. 
 
 \section{Rashba-Bychkov Effect \label{sec:Rashba_relativistic}}
 %############################ NEW ############################
-The first discovered, and most well known effect bearing the form of Eq.~\ref{eq:Rashba_form} is the Rashba-Bychkov effect, first derived in their seminal 1959 paper \cite{Rashba1959SymmetryAr}.
-It is a purely relativistic effect that is derived from an expansion to second order in $1/c$, $c$ denoting the speed of light, of the electronic Dirac equation (where the Fouldy-Wouthuysen transformation was applied):
-
+Before turning to the less well known effects, we summarize the main points of the original Rashba-Bychkov effect, first derived in their seminal 1959 paper \cite{Rashba1959SymmetryAr}.
+It is a purely relativistic effect that can be derived from a second order expansion of the Dirac-equation in small parameter $1/c$:
 \begin{equation}
 	\label{eq:Rashba_dirac}
-	\mathcal{H} \Ket{\psi} = \left[\frac{\bm{p}^2}{2m} - e V - \frac{e \hbar}{4m^2c^2}(\bm{\sigma}\cdot[\bm{\nabla}V \times \bm{p}]) - \frac{\hbar^2}{8m^2c^2} \Delta V - \frac{\bm{p}^4}{8m^3c^2}\right]\Ket{\psi} = E\Ket{\psi}
+	\mathcal{H} \Ket{\psi} = \left[\frac{\bm{p}^2}{2m} - e V - \frac{e \hbar}{4m^2c^2}(\bm{\sigma}\cdot[\bm{\nabla}V \times \bm{p}]) + \frac{\bm{p}^2}{8m^2c^2} V - \frac{\bm{p}^4}{8m^3c^2}\right]\Ket{\psi} = E\Ket{\psi}
 \end{equation}
-where $\psi$ is a two component spinor, $V$ denotes the electric potential, $\bm{\sigma}$ a vector of Pauli-matrices $(\sigma_x, \sigma_y, \sigma_z)$, $m$ and $e$ the electron mass and charge respectively, and $\bm{p}$ the canonical momentum.
+where $\Ket{\psi}$ is a two component spinor, $V$ denotes the electric potential, $\bm{\sigma}$ a vector of Pauli-matrices $(\sigma_x, \sigma_y, \sigma_z)$, $m$ and $e$ the electron mass and charge, respectively.
+$\bm \nabla = (\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial }{\partial z})$ denotes spatial derivatives, and $\bm{p} = -i\hbar \bm \nabla$ the canonical momentum.
 The first two terms are the non-relativistic part of the Hamiltonian, the third one represents the SOC, the fourth is known as the Darwin effect and the fifth is the relativistic correction to the effective electron mass. 
 As is common in literature, we introduce the spin-orbit coupling constant $\lambda = \frac{e \hbar}{4m^2c^2}$.
 In a crystal with a perodic potential $V(\bm{r})$, the electronic wavefunctions are Bloch wavefunctions $\BlochKet{n} = \eikr{r} \Ket{\unkr{n}{k}}$, where $u_n$ denotes the cell-periodic part, and $n$ is the band index.
