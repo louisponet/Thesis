@@ -18,7 +18,7 @@ This is not straightforward, since the only direct coupling between the spins of
 	\bm{B} = - \frac{\bm v \times \bm E}{c^2},
 \end{equation}
 where $\bm v$ denotes the velocity of the electron, $\bm E$ the electric field, and $c$ the speed of light.
-The spin of the electron will interact with this magnetic field through the Zeeman energy $H_Z = -\frac{g_s\mu_B}{\hbar} \bm \sigma$, where $g_s \approx 2$, $\mu_B$ is the Bohr magneton and $\bm \sigma$ is the spin of the electron.
+The spin of the electron will interact with this magnetic field through the Zeeman energy $H_Z = -\frac{g_s\mu_B}{\hbar} \bm{\sigma}$, where $g_s \approx 2$, $\mu_B$ is the Bohr magneton and $\bm{\sigma}$ is the spin of the electron.
 The spins will thus start to precess around $\bm B$ created by the applied $\bm E$, and eventually align with it.
 However, in nearly all real materials, the speed $\bm v$ of the current carriers is so low, and the applied electric fields so small, that the $c^2$ in the denominator completely overpowers the numerator, leading ultimately to a tiny effect.
 One class of materials for which the carrier speeds are relatively high are the topological insulators \cite{Kane2005a,Novoselov2005,CastroNeto2009,Fu2007,Fu2006,Pesin2012}.
@@ -40,7 +40,7 @@ Because of the ferroelectricity, and inversion symmetry breaking, an internal el
 Combined with the high atomic SOC, a sizeable linear energy splitting between spin-polarized states can appear in these materials \cite{DiSante2013}, contrary to the tiny effect described above.
 This $k$ dependent splitting manifests itself in the bandstructure as conical intersections surrounding time-reversal (TR) invariant points of the Brillouin Zone (BZ) (see Fig.~\ref{fig:Rashba_intro_dispersion}).
 These points are special in the sense that the Kramers degeneracy \cite{Kramerstheorem} is enforced through the translational symmetry of the lattice, rather than by inversion symmetry.
-If we take a spin up Bloch state at such a TR invariant point, by applying the time-reversal operator to the wavevector ($\bm k \rightarrow \bm {-k}$, $\bm \sigma \rightarrow -\bm \sigma$), it is brought to a point on the opposite side of the BZ, and can be translated back to the original point through a reciprocal lattice translation.
+If we take a spin up Bloch state at such a TR invariant point, by applying the time-reversal operator to the wavevector ($\bm k \rightarrow \bm {-k}$, $\bm{\sigma} \rightarrow -\bm{\sigma}$), it is brought to a point on the opposite side of the BZ, and can be translated back to the original point through a reciprocal lattice translation.
 Since the system obeys both TR symmetry and translational symmetry, this down spin state has to have the same energy as the original up spin state, enforcing the Kramers degeneracy.
 So, even though the inversion symmetry brakes the Kramers degeneracy at general $k$-points, leading to the spin splitting, it is still present at these TR invariant points, leading to the intersection of cones in Fig.~\ref{fig:Rashba_intro_dispersion}.
 
@@ -72,7 +72,7 @@ To investigate how the microscopic effects manifest themselves in GeTe, we use D
 	\IncludeGraphics{cone.png}
 	\end{subfigure}
 	\caption{\label{fig:Rashba_intro_dispersion}
-		{\bf Large Rashba splitting} (a) The band dispersion of the first valence band in GeTe around the $Z$-point of the Brillouin zone (see Fig.~\ref{fig:Rashba_bands_dos} for details). Two graphs show both non spin-orbit coupled (NSOC, blue), and spin-orbit coupled (SOC, red) case. The $u-d$ and $u'-d'$ labels designate the up and down spin-polarized bands, where the prime signifies that the orientation of the spin quantization axis depends on $\bm{k}$. b) Shifted parabolic energy leves due to Rashba splitting, and associated spin texture indicated by the arrows.}
+		{\bf Large Rashba splitting} a) The band dispersion of the first valence band in GeTe around the $Z$-point of the Brillouin zone (see Fig.~\ref{fig:Rashba_bands_dos} for details). The blue and red graphs shows the non-relativistic (NSOC) and relativistic (SOC) bandstructure, respectively. The $u-d$ and $u'-d'$ labels designate the up and down spin-polarized bands, where the prime signifies that the orientation of the spin quantization axis depends on $\bm{k}$. b) Intersecting conical energy surface due to the spin-splitting. The spin texture is indicated by the arrows. This chiral spin-texture is what leads to the changing up-down spin axis.}
 \end{figure}
 
 We finish with a conclusion, summarizing the observations and make the claim that the linear spin-splitting attributed to the relativistic Rashba effect is almost exclusively a result of different effects. 
@@ -83,15 +83,24 @@ Before turning to the less well known effects, we summarize the main points of t
 It is a purely relativistic effect that can be derived from a second order expansion of the Dirac-equation in small parameter $1/c$:
 \begin{equation}
 	\label{eq:Rashba_dirac}
-	\mathcal{H} \Ket{\psi} = \left[\frac{\bm{p}^2}{2m} - e V - \frac{e \hbar}{4m^2c^2}(\bm{\sigma}\cdot[\bm{\nabla}V \times \bm{p}]) + \frac{\bm{p}^2}{8m^2c^2} V - \frac{\bm{p}^4}{8m^3c^2}\right]\Ket{\psi} = E\Ket{\psi}
+	H \Ket{\psi} = \left[\frac{\bm{p}^2}{2m} - e V - \frac{e \hbar}{4m^2c^2}(\bm{\sigma}\cdot[\bm{\nabla}V \times \bm{p}]) + \frac{\bm{p}^2}{8m^2c^2} V - \frac{\bm{p}^4}{8m^3c^2}\right]\Ket{\psi} = E\Ket{\psi}
 \end{equation}
 where $\Ket{\psi}$ is a two component spinor, $V$ denotes the electric potential, $\bm{\sigma}$ a vector of Pauli-matrices $(\sigma_x, \sigma_y, \sigma_z)$, $m$ and $e$ the electron mass and charge, respectively.
-$\bm \nabla = (\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial }{\partial z})$ denotes spatial derivatives, and $\bm{p} = -i\hbar \bm \nabla$ the canonical momentum.
+$\bm \nabla = (\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial }{\partial z})$ denotes spatial derivatives, and $\bm{p} = -i\hbar \bm{\nabla}$ the canonical momentum.
 The first two terms are the non-relativistic part of the Hamiltonian, the third one represents the SOC, the fourth is known as the Darwin effect and the fifth is the relativistic correction to the effective electron mass. 
 As is common in literature, we introduce the spin-orbit coupling constant $\lambda = \frac{e \hbar}{4m^2c^2}$.
-In a crystal with a perodic potential $V(\bm{r})$, the electronic wavefunctions are Bloch wavefunctions $\BlochKet{n} = \eikr{r} \Ket{\unkr{n}{k}}$, where $u_n$ denotes the cell-periodic part, and $n$ is the band index.
-In the following we drop $\bm{r}$ in the wavefunctions, and inner products are assumed to be integrated over all space.
-To obtain the eigenvalue equation for $\Ket{\unk{n}{k}}$, we insert $\BlochKet{n}$ in Eq.~\ref{eq:Rashba_dirac}, and carry out the differentiation $\bm{p} \, \Eikr\Ket{\unk{n}{k}} = \Eikr(\bm{p} + \bm{k})\Ket{\unk{n}{k}}$, and similarly substitute $\bm{p}^2 \rightarrow (\bm{p}+\bm{k})^2$.
+The potential $V(\bm r)$ is periodic in a crystal, leading to eigenstates given by the Bloch wavefunctions $\BlochKetr{n} = \eikr{r} \Ket{\unkr{n}{k}}$, where $\Ket{\unkr{n}{k}}$ denotes the cell-periodic part, $\eikr{r}$ the envelope function, and $n$ the band index.
+In the following we drop $\bm{r}$ in the wavefunctions, and inner products correspond to an integration over all space:
+
+\begin{equation}
+	\Sandwich{\phi_n^{\bm{k}}}{\psi_m^{\bm{k}'}} = \int d\bm{r} e^{-i (\bm k - \bm k') \cdot \bm r} u_n^{\bm k }(\bm r)^* u_m^{\bm k'}(\bm r).
+\end{equation}
+
+To obtain the eigenvalue equation for $\Ket{\unk{n}{k}}$, we insert $\BlochKet{n}$ in Eq.~\ref{eq:Rashba_dirac}, and carry out the differentiation
+\begin{equation}
+\bm{p} \, \Eikr\Ket{\unk{n}{k}} = -i \hbar \bm \nabla \Eikr\Ket{\unk{n}{k}} = \Eikr(\bm p + \hbar \bm k)\Ket{\unk{n}{k}},
+\end{equation}
+and similarly substitute $\bm{p}^2 \rightarrow (\bm{p}+\bm{k})^2$.
 This leads to the following equation for $\Ket{\unk{n}{k}}$:
 \begin{align}
 	\label{eq:Rashba_unk_Vs}
