@@ -98,10 +98,11 @@ In the following we drop $\bm{r}$ in the wavefunctions, and inner products corre
 
 To obtain the eigenvalue equation for $\Ket{\unk{n}{k}}$, we insert $\BlochKet{n}$ in Eq.~\ref{eq:Rashba_dirac}, and carry out the differentiation
 \begin{equation}
+	\label{eq:Rashba_momentum}
 \bm{p} \, \Eikr\Ket{\unk{n}{k}} = -i \hbar \bm \nabla \Eikr\Ket{\unk{n}{k}} = \Eikr(\bm p + \hbar \bm k)\Ket{\unk{n}{k}},
 \end{equation}
-and similarly substitute $\bm{p}^2 \rightarrow (\bm{p}+\bm{k})^2$.
-This leads to the following equation for $\Ket{\unk{n}{k}}$:
+and similarly substitute $\bm{p}^2 \rightarrow (\bm{p}+\hbar \bm{k})^2$.
+This leads to the following equations for $\Ket{\unk{n}{k}}$:
 \begin{align}
 	\label{eq:Rashba_unk_Vs}
 	E_n \Ket{\unk{n}{k}} =& \left(V_0 + V_1  +  V_2 + V_3 \right) \Ket{\unk{n}{k}} \\
@@ -110,13 +111,14 @@ This leads to the following equation for $\Ket{\unk{n}{k}}$:
 	V_2^{\bm{k}} =& -\lambda \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{k}) \\
 	V_3^{\bm{k}} =& -\lambda \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{p}).
 \end{align}
-We neglected the last two terms of Eq.~\ref{eq:Rashba_dirac} since they are exceedingly small and don't contribute to the linear form of Eq.~\ref{eq:Rashba_form}.
+We neglected the last two terms of Eq.~\ref{eq:Rashba_dirac} since they are exceedingly small and do not contribute to the linear $k$-dependent energy of the form in Eq.~\ref{eq:Rashba_form}.
 
-Before turning to a $\bm{k} \cdot \bm{p}$ perturbative expansion of the above equations, we would like to address the question of which electric fields $\bm{\nabla}V$ will contribute to $V_2$ and $V_3$, i.e. that the former is the well-known first-order Rashba-Bychkov term, whereas the latter represents the atomic SOC.
-Both terms originate from the partial application of the third contribution in Eq.~\ref{eq:Rashba_dirac}.
-To do this, we separate $\bm{\nabla}V$ into two contributions, one coming from the potential wells created by the atoms, and another originating from the internal field created by the ferroelectric polarization (it is assumed that no external fields are applied):
+Before turning to a $\bm{k} \cdot \bm{p}$ expansion of the above equations, we take a moment to address which electric fields $\bm{\nabla}V$ will contribute to $V_2$ and which to $V_3$.
+It will turn out that the former is the well-known first-order Rashba-Bychkov term, whereas the latter leads to the atomic SOC.
+Both terms originate from the application of Eq.~\ref{eq:Rashba_momentum} to the third contribution in Eq.~\ref{eq:Rashba_dirac}.
+To do this, we separate $\bm E = \bm{\nabla}V$ into two contributions, the first coming from the potential wells around the atoms ($E_{\rm at}$), and the second originating from the internal field due to the polarization ($E_{\rm P}$)\footnote{We assume here that no external fields are applied, these can be included trivially by summing them to the internal field.}:
 \begin{equation}
-	\bm{\nabla} V = \bm{E} = \bm{E}_{at} + \bm{E}_{P}
+	\bm{\nabla} V = \bm{E} = \bm{E}_{\rm at} + \bm{E}_{\rm P}
 \end{equation}
 These contributions, together with the two parts of the Bloch functions (i.e. the cell periodic $\unkr{n}{k}$, and envelope function $\eikr{r}$) are pictorially shown in Fig.~\ref{fig:Efield_cell_drawing}. 
 \begin{figure}[h]
@@ -175,7 +177,7 @@ We now proceed by giving a pedagogical derivation of these mechanisms based on a
 
 \subsection{Tight-Binding model}
 The tight-binding model is defined on a 2D square layer with lattice parameter $a$, one atom per unit cell, and four Wannier orbitals centered on that atom.
-These orbitals resemble the angular character of an $s$-orbital and three $p$-orbitals: $\Ket{s^{\bm{n}}}$, $\Ket{x^{\bm{n}}}$, $\Ket{y^{\bm{n}}}$, $\Ket{z^{\bm{n}}}$, where $\bm{n}$ denotes the unit-cell indices ($n_x$,$n_y$) to which the Wannier function belongs to.
+These orbitals resemble the angular character of an $s$-orbital and three $p$-orbitals: $\Ket{s^{\bm{n}}}$, $\Ket{x^{\bm{n}}}$, $\Ket{y^{\bm{n}}}$, $\Ket{z^{\bm{n}}}$, where $\bm{n}$ denotes the unit cell indices ($n_x$,$n_y$) to which the Wannier function belongs to.
 To simplify notation, we omit $\bm{0}$ in writing the WFs of the central unit cell.
 We furthermore assume that these orbitals have a Gaussian radial shape $\Sandwich{\bm{r}}{s_{\bm{n}}} = e^{-\frac{|\bm{r}-\bm{n}a|^2}{a_0}}$, $\Sandwich{\bm{r}}{\alpha_{\bm{n}}} = \alpha e^{-\frac{|\bm{r}-\bm{n}a|^2}{a_0}}$ with $\alpha = x, y, z$, and inner products implying integrals over space.
 The reason for choosing Gaussians is to make solving the overlap integrals easier, changing instead to a different radial shape for the orbitals does not lead to any qualitative changes to the derivation below.
