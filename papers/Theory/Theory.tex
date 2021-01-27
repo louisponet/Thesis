@@ -79,7 +79,7 @@ The main question to answer then becomes how to define a such a set of localized
 From here on out, we omit the $\bm{r}$ in the wavefunctions and inner products are assumed to be an integration over all space.
 There are many ways to do this, but the most natural one in this case is that of the Wannier functions (WFs) \cite{Wannier1937}.
 
-We will here give a short recap of the excellent review done by Marzari et. al. \cite{Marzari2012}, starting with the most clear case of a single isolated band $n$ with BFs $\BlochKet{n}$ (see red window in Fig.~\ref{fig:Theory_blochvswan}(b)), where the BF can be written as a straightforward discrete Fourier transform of the WF: 
+We will here give a short recap of the excellent reviews by Marzari et. al. \cite{Marzari2003,Marzari2012}, starting with the most clear case of a single isolated band $n$ with BFs $\BlochKet{n}$ (see red window in Fig.~\ref{fig:Theory_blochvswan}(b)), where the BF can be written as a straightforward discrete Fourier transform of the WF: 
 \begin{equation}
 	\label{eq:Theory_1bandwan}
 	\BlochKet{n} = \eikr{r} \unkKet{n}{k} = \sum_{\bm{R}} \eikr{R} \WanKet{n}{R},
@@ -129,10 +129,11 @@ Traces performed over such an isolated set of bands are invariant w.r.t. to thes
 Choosing a decent gauge in this case becomes a necessity in order to extract well localized WFs.
 This is because composite band manifolds, in general, will harbor crossings and degeneracies where the BFs become non-analytic and thus the variation of the periodic parts $\unkr{n}{k}$ will not be smooth in the variation over $\bm{k}$.
 This is an issue, since it is a well known fact that only smooth functions in reciprocal space lead to well localized ones in real space when the inverse Fourier transform is performed.
-Indeed, in Eq.~\ref{eq:Theory_wanfourier}, only for smoothly varying $\unkr{n}{k}$ will there be a cancellation of the terms from the fast varying exponent $\eikr{R}$ when $\bm{R}$ becomes large.
+Indeed, in Eq.~\eqref{eq:Theory_wanfourier}, only for smoothly varying $\unkr{n}{k}$ will there be a cancellation of the terms from the fast varying exponent $\eikr{R}$ when $\bm{R}$ becomes large.
 It is thus important to choose a gauge at each $k$-point such that the rotated wavefunctions $\tildeBlochKet{n}$ vary as smoothly as possible, which will ultimately lead to the WFs that are as localized as possible\footnote{It can be proved that these WFs will be exponentially localized in the case of normal insulators.}. 
 The localization functional can be written down in the real space WF basis as
 \begin{equation}
+	\label{eq:Theory_spread}
 	\Omega =\sum_n \WanBra{n}{0}r^2\WanKet{n}{0} - \left|\WanBra{n}{0}\bm{r}\WanKet{n}{0}\right|^2.
 \end{equation}
 This can be split up into a gauge-invariant and gauge-dependent part
@@ -173,7 +174,7 @@ The most prevalent two are to use another projection based method, or one that a
 We utilize the latter in this work.
 It is based on finding the $V_{nm}^{\bm{k}}$ that lead to the maximal overlap of the selected subspaces with their neighbors at each $k$-point.
 As discussed before, this smoothness in reciprocal space translates into the subspace as a whole being more localized in real space.
-Indeed, it can be shown \cite{Marzari2012} that this intrinsic smoothness is exactly what $\Omega_I$ measures in Eq.~\ref{eq:Theory_omegaI}. 
+Indeed, it can be shown \cite{Marzari2012} that this intrinsic smoothness is exactly what $\Omega_I$ measures in Eq.~\eqref{eq:Theory_omegaI}. 
 Following this disentanglement procedure, we can apply the procedures described for the isolated manifold of bands to ultimately lead to the WFs which are very well localized.
 In many cases, it is also desirable to adapt the algorithm in such a way that the BFs constituting the bands inside a ``frozen'' energy window are exactly interpolated by the resulting WF base and tight-binding Hamiltonian.
 

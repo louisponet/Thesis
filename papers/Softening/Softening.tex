@@ -66,7 +66,7 @@ where $q_{ijkl}$ denotes the strength of the coupling, the indices $i, j, k, l$ 
 The longitudinal part, $q_{iiii} \varepsilon_{ii} (P_i)^2$, leads to the largest contribution to the strain, causing the material to stretch along $P_i$.
 Due to the high degree of symmetry in crystals, many equivalent orientations of $P$ are possible, each with an associated strain. The DWs separating these are equally numerous, and have a distinct strain texture due to the variation of $P$ accross the DW.
 For example, a 180$^\circ$ degree DW separates domains with completely anti-parallel $P$ vectors.
-Due to the square dependence on $P$ of the energy in Eq.~\ref{eq:qpp}, $\varepsilon$ will be identical in both domains. Still, the different value of $P$ inside the wall versus in the domains will cause a local variation of $\varepsilon$. More precisely, the strain is diminished at the wall due to $P=0$, leading to an indentation at the surface of the sample.
+Due to the square dependence on $P$ of the energy in Eq.~\eqref{eq:qpp}, $\varepsilon$ will be identical in both domains. Still, the different value of $P$ inside the wall versus in the domains will cause a local variation of $\varepsilon$. More precisely, the strain is diminished at the wall due to $P=0$, leading to an indentation at the surface of the sample.
 As we will thoroughly discuss below, this local variation lies at the heart of the mechanical softening of the 180$^\circ$ DW.
 
 Other types of DW such as 90$^\circ$ DWs instead separate domains with different strain textures, which are referred to as twin-domains, and are separated by twin or ferroelastic DWs.
@@ -235,7 +235,7 @@ This leads to the well known Euler-Lagrange equations \cite{Cao1991, Marton2010}
 \end{align}
 where $P_{i,j} = \partial_j P_i$ and the last equation is a result of the stress-free mechanical equilibrium condition.
 
-In the one-dimensional case of a single domain with uniform $P_z$ (which we write $P$ in the following) and $\varepsilon_{zz}$ (written as $\varepsilon$) and no external forces, Eq.~\ref{eq:BTO_euler} reduces to  
+In the one-dimensional case of a single domain with uniform $P_z$ (which we write $P$ in the following) and $\varepsilon_{zz}$ (written as $\varepsilon$) and no external forces, Eq.~\eqref{eq:BTO_euler} reduces to  
 \begin{align}
 	\frac{\partial f}{\partial \varepsilon} &= 0 \Leftrightarrow \varepsilon = \frac{qP^2}{C}\label{eq:BTO_e0},\\
 	\frac{\partial f}{\partial P^2} &= 0 = \alpha_1 + (2 \alpha_{11} - \frac{q^2}{C})P^2 + 3\alpha_{111}P^4 \\
@@ -256,10 +256,10 @@ or, making the same assumptions as above (only $P_z$ and $\varepsilon_{zz}$), we
 	\tilde{C} = C - \frac{q^2}{2\left(\alpha_{11}^2 - 3 \alpha_{111}\left(\alpha_1  - \frac{q^2 P^2}{C}\right)\right)}.
 \end{equation}
 Again filling in all the parameters, we find an effective stiffness $\tilde{C}_d = 0.778 \,C$ in the domain.
-At the wall $P$ is zero, so that if the energy penalty for shear strain is not considered, $\varepsilon_{zz} = 0.0$, which would in turn lead to an effective stiffness of $\tilde{C}_w = 0.642 \, C = 0.82\, \tilde{C}_d$, according to Eq.~\ref{eq:BTO_domainC}.
+At the wall $P$ is zero, so that if the energy penalty for shear strain is not considered, $\varepsilon_{zz} = 0.0$, which would in turn lead to an effective stiffness of $\tilde{C}_w = 0.642 \, C = 0.82\, \tilde{C}_d$, according to Eq.~\eqref{eq:BTO_domainC}.
 While this looks like a triumph for the theory (since the experimental measurements found a $19\%$ softer wall), in reality the shear elastic constants $C_{44}$ and compatibility relations lead to a nonzero strain $\varepsilon_{zz}$ at the wall.
 From our simulations we find that $\varepsilon_{zz}$ at the surface of the wall has a value of around 40\% of the one in the domain.
-Filling this value into Eq.~\ref{eq:BTO_domainC} leads to $\tilde{C}_w = 0.79 \, C = 1.01 \tilde{C}_d$, i.e. using this naive argument, the wall is actually stiffer than the domain.
+Filling this value into Eq.~\eqref{eq:BTO_domainC} leads to $\tilde{C}_w = 0.79 \, C = 1.01 \tilde{C}_d$, i.e. using this naive argument, the wall is actually stiffer than the domain.
 The strain texture is shown in Fig.~\ref{fig:BTO_wall}(b).
 Simulations with a very narrow tip confirm this result, which can thus not explain the experimentally observed softening.
 
@@ -347,7 +347,7 @@ The sliding mode, shown in Fig.~\ref{fig:BTO_breathing_sliding}(b), instead desc
 \end{figure}
 
 This brings us, finally, to what we claim as the main contributor of the softening effect.
-Indeed, closer inspection of the energy terms in Eq.~\ref{eq:BTO_energy} leads to the conclusion that no energy penalties are incurred by the sliding motion in the perfect continuum case.
+Indeed, closer inspection of the energy terms in Eq.~\eqref{eq:BTO_energy} leads to the conclusion that no energy penalties are incurred by the sliding motion in the perfect continuum case.
 When the tip is then applied in an area where the strain texture associated with the wall is present, the wall will try to move towards the tip in order to achieve mechanical equilibrium.
 This is because the tensile strain caused by the electrostriction $f_q$ is opposite to the compressive force applied by the tip.
 To restore mechanical equilibrium, the material needs to balance these two forces.
@@ -383,18 +383,18 @@ This is probably due to pinning by defects, the Peierls-Nabarro barriers, or the
 Due to the complexity of the model, and the interaction of the strain with the tip, we forfeit the hunt for a purely analytical description and instead proceed with numerical simulations to verify the above statements.
 
 \section{Methods}
-There are generally two ways of minimizing the total free energy $F$: either through solving the system of Euler-Lagrange equations in Eq.~\ref{eq:BTO_euler}, or by direct minimization of $F$.
+There are generally two ways of minimizing the total free energy $F$: either through solving the system of Euler-Lagrange equations in Eq.~\eqref{eq:BTO_euler}, or by direct minimization of $F$.
 Both are completely equivalent on a mathematical level, but require different numerical implementations.
 In our code, we choose the latter.
 Moreover, since minimizing $\varepsilon$ directly requires to carefully consider compatibility conditions between the different elements (so that the material does not break)\cite{Marton2007}, we choose to use the displacement $u$ instead.
-This means we rewrite the equations in Eq.~\ref{eq:BTO_energy} by filling in $\varepsilon_{ij} = \frac{1}{2}(\partial_i u_j + \partial_j u_i)$.
+This means we rewrite the equations in Eq.~\eqref{eq:BTO_energy} by filling in $\varepsilon_{ij} = \frac{1}{2}(\partial_i u_j + \partial_j u_i)$.
 
-To solve the model, we thus have to compute and minimize the total free energy by integrating the density (Eq.~\ref{eq:BTO_energy}) over the entire system.
+To solve the model, we thus have to compute and minimize the total free energy by integrating the density (Eq.~\eqref{eq:BTO_energy}) over the entire system.
 The density is written in terms of the values and gradients of the two order parameters $P$ and $u$.
 In the coninuum formulation, these are defined at each point in space and are thus sometimes referred to as fields, with the models referred to as phase field model.
 Finding the values of $P$ and $u$ that minimize the total free energy $F[P,u]=\int_V d\bm{r} f(\bm{P}(\bm{r}),\bm{u}(\bm{r}))$ then leads to equilibrium configuration of the system.
 
-We perform this integration numerically, due to the complexity of Eq.~\ref{eq:BTO_energy} and the non homogeneous situation that occurs when a tip is applied.
+We perform this integration numerically, due to the complexity of Eq.~\eqref{eq:BTO_energy} and the non homogeneous situation that occurs when a tip is applied.
 The Finite Elements method (FEM) provides a framework to do exactly that.
 It's ability to handle complex geometries and large length scales makes it one of the most well-established methods to numerically solve mathematical and physical models.
 In light of trying to be self-contained, we will give a short introduction to the topic based on Ref.~\cite{Biner}.
@@ -435,10 +435,10 @@ This inversion also requires calculating the determinant of the Jacobian, which 
 
 Certain points, called quadrature points, are then selected inside each element.
 The function values for the $P$ and $u$ fields are then interpolated at these points using their values at the nodes of the element.
-Filling them into the free energy density Eq.~\ref{eq:BTO_energy} then leads to an approximation of the contribution of each element to the total free energy, which is then found by summation. 
+Filling them into the free energy density Eq.~\eqref{eq:BTO_energy} then leads to an approximation of the contribution of each element to the total free energy, which is then found by summation. 
 The nodal values of the fields are therefore the variables of our model. 
-A big bonus of the isoparametric representation, applied in this way, is that gradients of the fields can be evaluated purely locally, inside each element (see Eq.~\ref{eq:BTO_derivatives}).
-It also allows for a great flexibility through the density of the chosen grid, the morphology of the elements, and the order of the interpolating functions that are used in Eq.~\ref{eq:BTO_funcinterp}.
+A big bonus of the isoparametric representation, applied in this way, is that gradients of the fields can be evaluated purely locally, inside each element (see Eq.~\eqref{eq:BTO_derivatives}).
+It also allows for a great flexibility through the density of the chosen grid, the morphology of the elements, and the order of the interpolating functions that are used in Eq.~\eqref{eq:BTO_funcinterp}.
 
 \begin{figure}[h!]
 	\IncludeGraphics{fem}
@@ -479,7 +479,7 @@ We are thus faced with the commonly reappearing issue of having to simulate phys
 In this case, however, we are to some extent saved by a spurious numerical effect that mimics the naturally occuring Peierls-Nabarro barrier.
 This was investigated by Marton in Ref.~\cite{Marton2018} for the case of BTO.
 It boils down to the fact that through the approximated interpolation of the fields, it is numerically favorable to situate the center of the wall at a node, rather than inside an element.
-In this way the simulation avoids sampling the paraelectric state, which is at the top of the double-well potential of Landau part $f_l$ of the energy in Eq.~\ref{eq:BTO_energy}, and causes the non-zero $P$ in the domains.
+In this way the simulation avoids sampling the paraelectric state, which is at the top of the double-well potential of Landau part $f_l$ of the energy in Eq.~\eqref{eq:BTO_energy}, and causes the non-zero $P$ in the domains.
 When the wall is forced to move accross the grid due to the applied tip, it is forced to overcome this high-energy configuration in order to transition between equilibrium positions.
 This in turn causes the numerical analogue of the Peierls-Nabarro barrier.
 
