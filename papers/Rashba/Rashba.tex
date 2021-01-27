@@ -415,7 +415,7 @@ The Wannier interpolation of the ab-initio bandstructure is shown in Fig.~\ref{f
 \caption{\label{fig:Rashba_wannierization}{\bf Wannier interpolation.} Bandstructure interpolation by the Tight-Binding Hamiltonian in terms of the Wannier functions for non-relativistic (a) and relativistic (b) calculations.}
 \end{figure}
 We the use the set of localized orbitals $\Ket{\alpha}$, to calculate the real space operators that are of importance for the mechanism we are trying to confirm, namely the dipole matrix elements and OAM.
-We will use the center of mass $\Bra{\alpha} \hat{\bm r} \Ket{\beta}$ as an indication of the local dipoles of the Bloch functions\footnote{We do this because we are mainly interested in the variation of the dipoles of the Bloch functions away from the $Z$ point, rather than their well-defined values. Indeed it has been shown that the definition of the electric dipoles in a crystalline environment requires some care. For further details we refer to the works on the {\it Modern Theory of Polarization} \cite{King-Smith1993,Vanderbilt1993,Resta1998, Spaldin2012,Vanderbilt18}.}
+We will use the center of mass $\Bra{\alpha} \hat{\bm r} \Ket{\beta}$ as an indication of the local dipoles of the Bloch functions\footnote{We do this because we are mainly interested in the variation of the dipoles of the Bloch functions away from the $Z$ point, rather than their well-defined values. Indeed it has been shown that the definition of the electric dipoles in a crystalline environment requires some care. For further details we refer to the works on the {\it Modern Theory of Polarization} \cite{King-Smith1993,Vanderbilt1993,Resta1998, Spaldin2012,Vanderbilt18}.}.
 The OAM can be calculated as
 \begin{equation}
 	\label{eq:Rashba_OAM}
@@ -423,18 +423,18 @@ The OAM can be calculated as
 \end{equation}
 where we take $\hbar = 1$ in our calculations.
 We will focus on the OAM around the Te ion, since it has the largest atomic SOC, and is most prevalent in the valence bands. This means that in Eq.~\eqref{eq:Rashba_OAM} we take $\hat{\bm r}$ to be the relative distance to the center of Te.
-This is only the local contribution to the OAM. In certain solids there may also exist an itinerant conctribution, which is not of importance for the mechanism that we are studying here. We refer the inclined reader to the works on the {\it Modern Theory of Orbital Magnetization} in Refs.~\cite{Thonhauser2005OrbitalInsulators,Ceresoli2006OrbitalMetals,Thonhauser2011,Vanderbilt18}.
-
+This is only the local contribution to the OAM. In certain solids there may also exist an itinerant contribution, which is not of importance for the mechanism that we are studying here. We refer the inclined reader to the works on the {\it Modern Theory of Orbital Magnetization} in Refs.~\cite{Thonhauser2005OrbitalInsulators,Ceresoli2006OrbitalMetals,Thonhauser2011,Vanderbilt18}.
 We also calculated the spin operator $\hat{\bm \sigma}$ between the orbitals.
 % With these operator elements calculated in the real-space representation, we can Fourier transform them into $k$ space, similar to the Hamiltonian.
 
 The Bloch functions can be written as a linear combination of the Fourier transforms of the Wannier functions:
 \begin{equation}
+	\label{eq:Rashba_blochfromwan}
 	\BlochKet{n} = \sum_{\alpha} c_{\alpha, n}^{\bm{k}}\sum_{\bm{R}} \eikr{R}\Ket{\alpha^{\bm R}},
 \end{equation}
 where the $c_{\alpha,n}^{\bm{k}}$ can be found by diagonalizing $H^{\bm k}$. As an example of such a Bloch function constructed from Wannier functions, we have depicted the density inside the central unit cell of the top valence band at $\bm k = (0, 0.1, 0.9)$ in units of \AA$^{-1}$ in Fig.~\ref{fig:Rashba_wannierfunctions}(b).
 
-This allows us to calculate the OAM of the Bloch functions as
+Using Eq.~\ref{eq:Rashba_blochfromwan} allows us to calculate the OAM of the Bloch functions as
 \begin{equation}
 \bm{L}^{\bm k} = \BlochBra{n} \hat{\bm L} \BlochKet{n} = \sum_{\alpha,\beta}\left(c_{\alpha,n}^{\bm k}\right)^* c_{\beta,n}^{\bm k}\sum_{\bm{R}, \bm R'}e^{i \bm k \cdot (\bm R' - \bm R)}\Bra{\alpha^{\bm R}}\hat{\bm L} \Ket{\beta^{\bm R'}}.
 \end{equation}
@@ -442,39 +442,39 @@ Since we are only interested in the OAM around the Te atom, and the Wannier func
 \begin{equation}
 \bm{L}^{\bm k} = \BlochBra{n} \hat{\bm L} \BlochKet{n} =\sum_{\bm{R}} \sum_{\alpha,\beta}\left(c_{\alpha,n}^{\bm k}\right)^* c_{\beta,n}^{\bm k}\Bra{\alpha^{\bm 0}}\hat{\bm L} \Ket{\beta^{\bm 0}}.
 \end{equation}
-Similar expressions can be found for the spin and dipole operators. The inner part of the $\sum_{\bm R}$ is what we refer to as the ``local'' property of the Bloch function, i.e. inside one unit cell. Reaching back to our example Bloch function in Fig.~\ref{fig:Rashba_wannierfunctions}(b), we have represented its OAM by the red vector. Note the donut shape of the charge density, a recurrent theme among orbitals with nonzero OAM. Compared with the densities of the Wannier functions shown in panel (a), this donut shape has a higher electrostatic energy due to the interaction with the charges on the neighboring Ge ions. Still, the atomic SOC and the dipole mechanism favors this shape with its nonzero OAM. 
+Similar expressions can be found for the spin and center of mass of the Bloch functions. The term inside the sum $\sum_{\bm R}$ is an example of what we refer to as a ``local'' property of the Bloch function, i.e. inside one unit cell. Reaching back to the Bloch function displayed Fig.~\ref{fig:Rashba_wannierfunctions}(b), we have represented its OAM by the red vector. Note the donut-like shape of the charge density, a recurrent theme among orbitals with nonzero OAM. Compared with the densities of the Wannier functions shown in panel (a), this donut shape has a higher electrostatic energy due to the interaction with the charges on the neighboring Ge ions. Still, the atomic SOC and the dipole mechanism favors this shape for its nonzero OAM. 
 
-The calculated local properties of the Bloch functions are shown in Fig.~\ref{fig:Rashba_oamvseigvalv}(a,b) for the first and third valence band, respectively. SAM in the figure refers to the spin angular momentum.
+The calculated local properties of the Bloch functions are shown in Fig.~\ref{fig:Rashba_oamvseigvalv}(a,b) for the first and third valence band, respectively. SAM in the figure and the following discussion refers to the spin angular momentum.
 \begin{figure}[h!]
 	\centering
 \IncludeGraphics[width=0.65\linewidth]{OAMvsK}
 \caption{\label{fig:Rashba_oamvseigvalv}{\bf Local properties of the Bloch functions.} Comparison between the real-space properties and energy dispersion in (a) the first and (b) third valence band. The values are plotted in function of the relative distance from the $Z$ point $\bm{k}_r = \bm{k} - \bm{k}_Z$, along the $A \rightarrow Z \rightarrow U$ path shown in Fig.~\ref{fig:Rashba_crystal}(b). The green graphs denote the values for non-relativistic calculations, whereas the orange and blue graphs denote the values of the two spin-split bands as a result of fully-relativistic calculations.}
 \end{figure}
 \\\\
-Many interesting local features of the Bloch functions can be seen in these figures, which we will now discuss in detail.
+Many interesting local features of the Bloch functions can be observed in these figures, which we will now discuss in detail.
 
-The main confirmation of the claim that OAM is the root cause for the large splitting can found in the panels that depict $L_x$ and $L_y$, namely the green graphs. These are the results of calculations without relativistic effects, which can be verified from the panels that depict the eigenvalues, colored in the same way.
+The main confirmation of the claim that OAM is at the root of the large splitting can found in the panels that depict $L_x$ and $L_y$, namely the green graphs. These green colored graphs are the result of calculations without relativistic effects included, which can be verified from the panels that depict the eigenvalues, colored in the same way.
 There is a clear linear variation of the OAM as $\bm k$ varies away from the $Z$ point, even though no atomic SOC is included.
-The only explanation for this unquenching are the contributions in Eqs.~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
-Moreover, $k_x$ remains zero along the $A$--$Z$ and we can observe that only $L_x$ develops through the nonzero $k_y$. Only along when $k_x$ is nonzero along the $Z$--$U$ $k$ path does $L_y$ show up. This is fully consistent with the expressions in Eqs.~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
+The only explanation for this unquenching are the contributions derived in Eqs.~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
+Moreover, $k_x$ remains zero along the $A$--$Z$, and we can observe that only $L_x$ develops due to the nonzero $k_y$. Only when $k_x$ is nonzero, along the $Z$--$U$ path, does $L_y$ show up. This is fully consistent with the expressions for $L_x$ and $L_y$ in Eqs.~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
 
-If we then include fully-relativistic effects, thus also including the atomic SOC, we can see that an additional unquenching of the OAM happens.
+If we then include fully-relativistic effects, thus also including the atomic SOC, we can see that an additional unquenching of the OAM shows up.
 This leads to a nearly constant shift of the OAM with opposite signs for the two subbands, and is the sole contributor to the unquenching at the TR invariant $Z$ point.
 The second part of the linear variation of the OAM was discussed in Eq.~\eqref{eq:d_z_from_OAM}. It was shown there that it results from the combination of the linear $\bm k$ due to the first order expansion of $\eikr{R}$, and a nonzero OAM at the TR invariant point.
 We can find the signature of this contribution in the change of the linear slope of the OAM for the fully-relativistic calculations compared with the one resulting from the non-relativistic calculations.
 This is especially clear for the third valence band shown in Fig.~\ref{fig:Rashba_oamvseigvalv}(b).
 
-The most convincing argument, perhaps, can be found in the top left panels that depict the variation of the center of mass of the Bloch functions. Indeed, not only does it change when $\bm k$ is moved way from the $Z$ point, it changes differently for the two spin-split bands, as their OAM is shifted oppossite to one another.
-As an example we have depicted the charge variation of the Bloch functions of the first valence band in Fig.~\ref{fig:Rashba_diffdens}, displaying a clearly the development of a dipole. 
+The most convincing argument, perhaps, can be extracted from the top left panels that depict the variation of the center of mass of the Bloch functions. Indeed, not only does it change when $\bm k$ is moved way from the $Z$ point, it changes differently for the two spin-split bands, as their OAM is shifted oppossite to one another.
+As an example we have depicted the charge variation of the Bloch functions of the first valence band in Fig.~\ref{fig:Rashba_diffdens}, displaying clearly how the dipole develops.
 \\\\
 Lastly, we would like to comment on the OAM and SAM textures of the first and third valence band.
-From their values at the $Z$ point (see Fig.~\ref{fig:Rashba_oamvseigvalv}), we can clearly see that they have a different total angular momentum $j$.
-In the first valence band the SAM and OAM are aligned at $Z$, leading us to conclude that it is the $j_{3/2}$ band. The opposite orientation in the third valence band then gives away that this is one of the two $j_{1/2}$ bands, the second valence band being the other.
-This has been confirmed experimentally \cite{Krempasky2015}.
-The much smaller splitting and the opposite orientation of the OAM and SAM in the third valence band compared with the first band seems to indicate that the two mechanisms described above are working against each other in this band.
+From their values at the $Z$ point (see Fig.~\ref{fig:Rashba_oamvseigvalv}), we can clearly see that these bands have a different total angular momentum $j$.
+In the first valence band the SAM and OAM are aligned at $Z$, allowing us to conclude that it is the $j_{3/2}$ band. The opposite orientation in the third valence band then gives away that this is one of the two $j_{1/2}$ bands, with the second valence band being the other.
+These observations have also been confirmed experimentally \cite{Krempasky2015}.
+The much smaller splitting and the opposite orientation of the OAM and SAM in the third valence band compared with the first band seems to indicate that the two OAM based mechanisms described throughout this Chapter are working against each other in this band.
 The OAM and SAM texture for the first and third valence band are shown for the whole BZ in Fig.~\ref{fig:Rashba_textures}.
-The zoom onto the $Z$ point in panels (c, f) reveals one last very peculiar feature: the relative orientations of the OAM and SAM reverses in a very narrow region around the $Z$ point.
-This draws the attention to the inclusion of $H_R$ in Eq.~\eqref{eq:Rashba_hami} breaks threefold symmetry and results in $j$ not being a good quantum number anymore. This causes a highly non trivial SAM and OAM texture to be present in these two subbands, both varying considerably throughout the BZ. 
+The zoom onto the $Z$ point in panels (c, f) reveals one last very peculiar feature: the relative orientations of the OAM and SAM reverse in a very narrow region around the $Z$ point.
+This draws the attention to the inclusion of $H_R$ in Eq.~\eqref{eq:Rashba_hami}, which breaks threefold symmetry and results in $j$ not being a good quantum number anymore. This causes a highly non trivial SAM and OAM texture to be present in these two subbands, with both textures varying considerably throughout the BZ. 
 % From the modern theory of OAM~\cite{Thonhauser2011}~it was shown that there may be another itinerant contribution to the orbital angular momentum, which is not of importance in our description. 
 
 
@@ -517,11 +517,28 @@ This draws the attention to the inclusion of $H_R$ in Eq.~\eqref{eq:Rashba_hami}
     \centering
     \IncludeGraphics[width=0.49\linewidth]{Ltexture9small.png}
   }
-  \caption{\label{fig:Rashba_textures}{\bf OAM and SAM in the BZ.} The textures of BFs around the $Z$ point are shown for the first and third valence bands of GeTe. The black and green arrows show the OAM and SAM textures, respectively. The length of the arrows was chosen separately for clarity in each figure and should thus not be compared. The color maps signify the energy of the bands, relative to the Fermi level. The small box around the $Z$ point indicates the area, magnified in panels (c) and (f). In the zoomed figures (c) and (f) one can observe the change or relative orientation between the SAM and OAM when moving away from the $Z$ point, signifying a change of character between $j=1/2$ and $j=3/2$. Figure taken from Ref.~\cite{Ponet2018}}
+  \caption{\label{fig:Rashba_textures}{\bf OAM and SAM in the BZ.} The textures of BFs around the $Z$ point are shown for the first and third valence bands of GeTe. The black and green arrows show the OAM and SAM textures, respectively. The length of the arrows was chosen separately for clarity in each figure and should thus not be compared. The color maps signify the energy of the bands, relative to the Fermi level. The small box around the $Z$ point indicates the area, magnified in panels (c) and (f). In the zoomed figures (c) and (f) one can observe the change or relative orientation between the SAM and OAM when moving away from the $Z$ point, signifying a change of character between $j=1/2$ and $j=3/2$.}
 \end{figure*}
 
 \section{Conclusions}
-
-We have explored the microscopic origin of the giant Rashba-like spin-splitting in the band structure of bulk ferroelectric GeTe with high atomic SOC. We derived the form of the band dispersion in the Wannier representation, that relates the large spin-splitting to the intricate interplay between OAM, atomic SOC, the crystal field and the electric polarization. It turns out that the crucial component, which is not present in the relativistic Rashba effect, is the emergence of a nonzero electric dipole of the Bloch functions due to their OAM. The quantitative analysis based on Wannier functions and atomic-centered approximation confirms this mechanism in GeTe. We find a very good agreement between the proposed band dispersion, Eq.~\eqref{eq:Rashba_hami}, and the dispersions of the first and third valence bands, where the effect manifests itself most clearly.
-
-Ultimately, the results suggest that (1) large ferroelectric polarization, (2) high atomic SOC, and (3) highly isotropic environment producing little OAM quenching could be the design rules for new materials with strong Rashba-like spin-splitting. These materials could enable spintronic devices with the much needed electric control of spin polarization.
+To conclude this Chapter, we take a step back and summarize the original problem, proposed solution and numerical investigation of the large Rashba-like spin-splitting in bulk ferroelectric materials.
+\\\\
+The impetus of this research was the observation that the linear spin-splitting that occurs in these bulk materials is orders of magnitude larger than what can be explained by relativistic effects.
+Moreover, a closer inspection led to the conclusion that the splitting is heavily influenced by the character of the bands, resulting in a different orientation and size of the splitting in each band.
+To substantiate these claims, we investigated the original derivation that leads to the relativistic Rashba-effect, and discussed why it fails to explain the observations.
+\\\\
+We then continued with a study of the proposed alternative mechanism, based on the combination of orbital angular momentum, electrostatics and atomic SOC.
+Through the use of a toy Tight-Binding model, we identified two contributing factors to this mechanism, both originating from the unquenching of OAM. The first is due to the development of nonzero dipoles when OAM is unquenched at nonzero $k$, and the second is caused by the unquenching due to the atomic SOC.
+Combining these terms led us to the newly proposed Rashba-like effective Hamiltonian in Eq.~\ref{eq:Rashba_hami}.
+\\\\
+After identifying the possible underlying mechanism we proceeded with a numerical investigation into the effect, with Germanium Telluride as the chosen test case.
+This choice was made because the bands that show a very large spin-splitting are formed by $s$ and $p$ orbitals which were the ones used in the derivation of the Tight-Binding model.
+\\\\
+By studying the local properties of the Bloch functions that constitute the spin-split bands, we confirmed our claim that the origin of the splitting is the OAM based mechanism, rather than the purely-relativistic one.
+The generality of our derivation and remarkable consistency with the behavior in GeTe, leads us to believe that similar linear spin-splittings in ferroelectric solids are almost exclusively the result of the OAM based mechanism.
+\\\\
+Finally, we make some suggestions as to what might be the design rules to maximize the Rashba-like spin-splitting.
+Since the internal electric field directly determines the size of the OAM unquenching, the first goal is to maximize the ferroelectric polarization.
+Furthermore, due to the role of the atomic SOC in converting the linearly unquenched OAM into a spin-splitting, a material constituted by heavy ions with large atomic SOC is desirable.
+And finally: to maximize the unquenching of the OAM, a highly isotropic environment that minimizes the electrostatic penalty of having nonzero OAM is beneficial.
+Finding a material that achieves these three goals could enable more performant spintronic devices with the much needed electric control of spin polarization.
