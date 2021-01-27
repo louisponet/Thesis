@@ -9,7 +9,7 @@
 % The research area of spintronics aims to supersede standard electronics by using both the spin and charge degree of freedom of the carriers for information processing and storage. %\sa{https://doi.org/10.1146/annurev-conmatphys-070909-104123}
 %
 The research field of spintronics aims to understand the behavior of spins inside materials, and translate this understanding into the ability to actively control these degrees of freedom for possible technological applications \cite{Joshi2016}.
-Many devices have been theorized, for example, spin field-effect transistors (spin-FET)\cite{Datta1990}, and storage devices which utilize spin-current and associated spin-transfer torque to efficiently manipulate magnetic domains \cite{Kent2015}, both in ferromagnets \cite{Nunez2011}, and antiferromagnets \cite{Jungwirth2016}.
+Many devices have been theorized, for example, spin field-effect transistors (spin-FET)\cite{Datta1990}, and storage devices  which utilize spin-current and associated spin-transfer torque to efficiently manipulate magnetic domains \cite{Kent2015}, both in ferromagnets \cite{Nunez2011}, and antiferromagnets \cite{Nunez2006TheorySemiconductors,Nunez2006TheoryMetals, Jungwirth2016}.
 In spite of fundamental interest and potential for applications, the actual realization of these spin-FET devices has remained rather elusive.
 One of the main culprits for this limited success is that the envisioned devices require very granular, ideally electric, control of the spin of the current carriers.
 \\\\
@@ -434,7 +434,7 @@ The Bloch functions can be written as a linear combination of the Fourier transf
 \end{equation}
 where the $c_{\alpha,n}^{\bm{k}}$ can be found by diagonalizing $H^{\bm k}$. As an example of such a Bloch function constructed from Wannier functions, we have depicted the density inside the central unit cell of the top valence band at $\bm k = (0, 0.1, 0.9)$ in units of \AA$^{-1}$ in Fig.~\ref{fig:Rashba_wannierfunctions}(b).
 
-Using Eq.~\ref{eq:Rashba_blochfromwan} allows us to calculate the OAM of the Bloch functions as
+Using Eq.~\eqref{eq:Rashba_blochfromwan} allows us to calculate the OAM of the Bloch functions as
 \begin{equation}
 \bm{L}^{\bm k} = \BlochBra{n} \hat{\bm L} \BlochKet{n} = \sum_{\alpha,\beta}\left(c_{\alpha,n}^{\bm k}\right)^* c_{\beta,n}^{\bm k}\sum_{\bm{R}, \bm R'}e^{i \bm k \cdot (\bm R' - \bm R)}\Bra{\alpha^{\bm R}}\hat{\bm L} \Ket{\beta^{\bm R'}}.
 \end{equation}
@@ -529,7 +529,7 @@ To substantiate these claims, we investigated the original derivation that leads
 \\\\
 We then continued with a study of the proposed alternative mechanism, based on the combination of orbital angular momentum, electrostatics and atomic SOC.
 Through the use of a toy Tight-Binding model, we identified two contributing factors to this mechanism, both originating from the unquenching of OAM. The first is due to the development of nonzero dipoles when OAM is unquenched at nonzero $k$, and the second is caused by the unquenching due to the atomic SOC.
-Combining these terms led us to the newly proposed Rashba-like effective Hamiltonian in Eq.~\ref{eq:Rashba_hami}.
+Combining these terms led us to the newly proposed Rashba-like effective Hamiltonian in Eq.~\eqref{eq:Rashba_hami}.
 \\\\
 After identifying the possible underlying mechanism we proceeded with a numerical investigation into the effect, with Germanium Telluride as the chosen test case.
 This choice was made because the bands that show a very large spin-splitting are formed by $s$ and $p$ orbitals which were the ones used in the derivation of the Tight-Binding model.
