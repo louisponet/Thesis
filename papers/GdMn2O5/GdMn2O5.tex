@@ -167,7 +167,7 @@ In order to return the system to its original configuration another up--down cyc
 Second, this four-state loop is fully deterministic, meaning that when multiple such double cycles are applied, the system tracks close to exactly the same $P_b$ loop every time.
 \\\\
 If we ignore for a brief moment the low-angle behavior displayed in our Fig.~\ref{fig:GdMn2O5_experiment1}(a), and replace it with the earlier observed polarization reversal of Fig.~1 in Ref.~\cite{Lee13}, i.e. following the 1--4 branch in panel (b), we can imagine the four-state switching as an interpolation between the high and low angle switching regimes.
-This is a very important observation and leads to one of the main results of this work: the topological nature of the magnetoelectric switching in this material.
+This is a very important observation and will lead to one of the main results of this work: the topological nature of the magnetoelectric switching in this material.
 \\\\
 Turning now to the measurements displayed in Fig.~\ref{fig:GdMn2O5_experiment2}, we find that the four-state loop does not depend on the sign of $\phi_H$ (compare panels (a,b)).
 From the two panels in (c), displaying measurements with $\phi_H$ along the magic angle, but at two different temperatures (15 K and 4 K), we can observe that the four-state hysteresis loop only appear at low temperatures.
@@ -181,48 +181,58 @@ These features could be the subject of further research, here we choose to focus
 % This novel four-state switching is the focus of this chapter, and is found to originate from a unidirectional rotational motion of the spins, a sort of microscopic magnetic analogue to the crankshaft in a car, converting the linear back--and--forth variation of the magnetic field into spin rotations.
 
 \section{Modeling}
-In order to describe the physics at play we use a classical model Hamiltonian with eight Gd spins whose orientations are described by unit vectors $\bm{S}_i, i=1..8$, two AFM order parameters $\bm{L}_\alpha, \alpha=1,2$ (also unit vectors) for the two Mn chains inside the magnetic unit cell, and the slave order parameter $P_b$ for the ferroelectric polarization component, see Fig~\ref{fig:GdMn2O5_unit_cell}.
-Using $\bm{L}_\alpha$ to describe the chains amounts to taking the rigid $L$ approximation, i.e. all spins in each chain are assumed to be perfectly AFM ordered, such that in a given chain $\bm{S}_i = L, \bm{S}_{i+1} = - \bm{L}$.
+In order to describe the puzzling experimantal observations we construct a semi classical model with eight Gd spins and two AFM order parameters that describe the Mn chains.
+The Gd spins are described by unit vectors $\bm{S}_i, i=1..8$, and we denote the two AFM order parameters as $\bm{L}_\alpha, \alpha=1,2$ (also unit vectors). See Fig~\ref{fig:GdMn2O5_unit_cell} for further details.
+Furthermore, the electric polarization is represented by the slave order parameter $P_b$.
+Using a single $\bm{L}_\alpha$ to describe the orientation of all the Mn ions in a chain assumes that their spins are perfectly AFM ordered, i.e. $\bm{S}_i = L, \bm{S}_{i+1} = - \bm{L}$.
 This simplification is justified by the large intrachain AFM exchanges, compared with the relatively small exchanges between the two chains.
-A further simplification we adopt here is to confine all spins to the $ab$-plane. It was experimentally shown that indeed the $c$-direction acts as the magnetic hard-axis, and that the magnetic order is repeated along the crystalline $c$-direction~\cite{Lee13}.
-This lowers the dimensionality of the problem from 3D to 2D, with a single angle for every Gd spin and Mn chain as the remaining degrees of freedom, thus greatly simplifying the numerical complexity.
-Since all spins and AFM order parameters are taken to be unit vectors, their real sizes are implicitely included in the model parameters.
 
-The first step in order to derive the correct Hamiltonian that governs the system using these order parameters is to convert the microscopic Hamiltonian in terms of the individual Mn spins inside the chains to one that uses the AFM order parameters $\bm{L}_\alpha$.
-More specifically we include energy contributions due to small spin cantings, i.e. small deviations away from the perfect collinear intrachain spin configuration, as shown in Fig.~\ref{fig:GdMn2O5_canting}.
+A further simplification we adopt here is to confine all spins to the $ab$-plane.
+It was shown experimentally that indeed the $c$-direction acts as the magnetic hard-axis, and that the magnetic order is repeated along the crystalline $c$-direction~\cite{Lee13}.
+This lowers the dimensionality of the problem from 3D to 2D, with a single angle for every Gd spin and Mn chain as the remaining degrees of freedom, thus greatly simplifying the numerical complexity.
+Since all spins and AFM order parameters are taken as unit vectors, their sizes are implicitely included in the model parameters.
+\\\\
+The first step in order to derive the effective Hamiltonian in terms of the above order parameters is to convert the microscopic interactions of the individual Mn spins into the effective interactions of the $\bm{L}_\alpha$.
+More specifically, we include energy contributions due to small spin cantings away from the perfect collinear intrachain spin configuration, as showcased in Fig.~\ref{fig:GdMn2O5_canting}.
 
 \begin{figure*}[h]
     \centering
     \IncludeGraphics[width=\linewidth]{canting}
-	\caption{{\bf Energy contributions due to spin canting.} Zeeman (a) and Heisenberg exchange (b) energy gains when Mn spins (black arrows) are canted slightly by angle $\delta \theta$. In each panel the dashed teal arrows signify the canted spins, compared with the perfect collinear configuration. In the Zeeman term (a) the spins inside one chain are canted slightly towards the field (red), leading to a weak ferromagnetic moment that couples to it, thus gaining Zeeman energy. The interchain vs intrachain AFM exchange is optimized through a small canting of the two neighboring ferromagnetically aligned spins that invevitably arise due to the geometric frustration.\label{fig:GdMn2O5_canting}}
+	\caption{{\bf Energy contributions due to spin canting.} a) The Zeeman contribution due to the weak ferromagnetic moment along the field (H, red arrow), as a result of the spin canting. b) The contribution due to Heisenberg exchange when previously parallel Mn spins are canted towards a more AFM alignment. This is a direct result of the geometric frustration. The collinear configuration is denoted by the black arrows, with the dashed teal arrows showing the orientation due to the slight canting by the angle $\delta \theta$. \label{fig:GdMn2O5_canting}}
 \end{figure*}
 
-The Zeeman energy of two neighboring spins $\pmb{\sigma}_{i}$ and $\pmb{\sigma}_{i+1}$ in a chain reads
+Starting with the contribution due to the Zeeman energy when a magnetic field is applied, we can write 
 \begin{equation}
-	E_Z = -g \mu_b \bm{H} \cdot (\pmb{\sigma}_i + \pmb{\sigma}_{i+1})\nonumber.
+	E_Z = -g \mu_B \bm{H} \cdot (\pmb{\sigma}_i + \pmb{\sigma}_{i+1})\nonumber,
 \end{equation}
-Obviously no energy gain is possible for perfectly collinear spins, however, if the spins inside a chain cant slightly towards the applied field (Fig.~\ref{fig:GdMn2O5_canting}(a)), a weak ferromagnetic moment is created that will couple to the magnetic field.
-To describe this contribution, an expansion in small canting angle $\delta \theta$ away from the collinear configuration can be performed:
-\begin{align}
-	E &= \Jpar \cos(2\delta \theta) - g \mu_b H \left[\cos(\theta_L - \theta_H + \delta \theta) + \cos(\theta_L + 180^\circ - \theta_H - \delta \theta)\right],\nonumber\\
-	&= \Jpar \left( 1+2\delta\theta^2 \right) - 2 g \mu_b H \sin(\theta_L - \theta_H)\delta\theta \label{eq:GdMn2O5_zeeman_exp},
-\end{align}
-where $\Jpar$ is the intrachain magnetic exchange coefficient, $\theta_L$ ($\theta_H$) the angle between the $a$-axis and $L$ ($H$).
-Minimizing with respect to $\delta \theta$ leads to
-\begin{align}
-	\frac{\partial E}{\partial \delta \theta} = 0 &= 4 \Jpar \delta \theta - 2 g \mu_b H \sin(\theta_L - \theta_H) \nonumber\\
-	&\Leftrightarrow \nonumber\\
-	\delta \theta &= \frac{g\mu_b H \sin(\theta_L - \theta_H)}{2 \Jpar}.\nonumber
-\end{align}
-Inserting this expression for $\delta \theta$ back into Eq.~\eqref{eq:GdMn2O5_zeeman_exp}, and keeping only the first order terms, we obtain the following expression for the gain in Zeeman energy when the spins cant:
-\begin{align}
-	E_Z &= -\frac{g^2\mu_b^2 H^2 \sin(\theta_L - \theta_H)^2}{\Jpar} = -\frac{g^2\mu_b^2 H^2 \left(1 - \cos(\theta_L - \theta_H)^2\right)}{\Jpar} \nonumber\\
-	&=\frac{g^2\mu_b^2}{\Jpar}\left((\bm{H}\cdot\bm{L})^2 - H^2\right)\nonumber
-\end{align}
-This energy gain is maximized when $\bm{L}$ is oriented perpendicular to $\bm{H}$, which is exactly what happens in the well-known spin-flop transition, where a strong enough magnetic field, applied along the easy-axis of an AFM system will cause a sudden flip of the spins away from the easy-axis when the gain of the Zeeman energy through canting overcomes the lost easy-axis anisotropy energy. This spin-flopped situation with the AFM order perpendicular to $\bm{H}$ is shown in Fig.~\ref{fig:GdMn2O5_canting}(a).
+where $g \approx 2$, $\mu_B$ denotes the Bohr magneton, and $\sigma_i$ and $\sigma_{i+1}$ two neighboring Mn spins inside a chain. 
+Obviously, no energy gain is possible for perfectly antiparallel spins since then $(\pmb{\sigma}_i + \pmb{\sigma}_{i+1})=0$.
 
-An additional energy contribution due to small opposite canting in both chains originates from the geometric frustration, as shown in Fig.~\ref{fig:GdMn2O5_canting}(b). This causes the interchain AFM exchange energies with coefficient $\Jperp$ to not completely cancel out, and leads to a small energy gain.
-Adopting a similar strategy as above, this can be written down as
+However, if both spins cant slightly towards the applied field, a weak ferromagnetic moment is created that will couple to the magnetic field (see Fig.~\ref{fig:GdMn2O5_canting}(a)).
+To include this contribution, we perform an expansion in the small canting angle $\delta \theta$ away from the collinear configuration:
+\begin{align}
+	E &= \Jpar \cos(2\delta \theta) - g \mu_B H \left[\cos(\theta_L - \theta_H + \delta \theta) + \cos(\theta_L + 180^\circ - \theta_H - \delta \theta)\right],\nonumber\\
+	&= \Jpar \left( 1+2\delta\theta^2 \right) - 2 g \mu_B H \sin(\theta_L - \theta_H)\delta\theta \label{eq:GdMn2O5_zeeman_exp},
+\end{align}
+where $\Jpar$ denotes the intrachain magnetic exchange coefficient, and $\theta_L$ ($\theta_H$) the angle between $L$ ($H$) and the $a$-axis.
+Minimizing with respect to $\delta \theta$ then leads to
+\begin{align}
+	\frac{\partial E}{\partial \delta \theta} = 0 &= 4 \Jpar \delta \theta - 2 g \mu_B H \sin(\theta_L - \theta_H) \nonumber\\
+	&\Leftrightarrow \nonumber\\
+	\delta \theta &= \frac{g\mu_B H \sin(\theta_L - \theta_H)}{2 \Jpar}.\nonumber
+\end{align}
+Inserting this expression for $\delta \theta$ back into Eq.~\eqref{eq:GdMn2O5_zeeman_exp}, and keeping only the first order terms, we obtain the following expression for the Zeeman contribution through spin canting:
+\begin{align}
+	E_Z &= -\frac{g^2\mu_B^2 H^2 \sin(\theta_L - \theta_H)^2}{\Jpar} = -\frac{g^2\mu_B^2 H^2 \left(1 - \cos(\theta_L - \theta_H)^2\right)}{\Jpar} \nonumber\\
+	&=\frac{g^2\mu_B^2}{\Jpar}\left((\bm{H}\cdot\bm{L})^2 - H^2\right)\nonumber
+\end{align}
+This energy gain is maximized when $\bm{L}$ is oriented perpendicular to $\bm{H}$ leading to $\bm L \cdot \bm H = 0$, which is exactly what happens in the well-known spin-flop transition.
+There, through the application of a strong enough magnetic field along the easy-axis of an AFM system, sudden flip of the spins away from the easy-axis occurs as soon as the gain from the Zeeman energy overcomes the lost easy-axis anisotropy energy. This spin-flopped state, with the AFM order perpendicular to $\bm{H}$, is exactly the one displayed in Fig.~\ref{fig:GdMn2O5_canting}(a).
+\\\\
+An additional energy contribution is a result of the geometric frustration which forces certain spins in the two chains to be parallel to each other, as shown by the two rightmost arrows in Fig.~\ref{fig:GdMn2O5_canting}(b).
+This is very unfavorable for the interchain AFM exchange with coefficient $\Jperp$, again leading to some gained energy if these spins cant slightly towards a more AFM alignment.
+\\\\
+Adopting a similar strategy as above, this contribution can be derived starting from
 \begin{equation}
 	E_{ic} = 2 \Jpar \cos(\delta \theta) + \Jperp \left(\cos(\theta_1 + \delta \theta - \theta_2) - \cos(\theta_1 - \theta_2 -\delta \theta)\right),
 \end{equation}
@@ -239,26 +249,36 @@ Substituting $\delta \theta$ into Eq.~\eqref{eq:GdMn2O5_Eic_exp}, while keeping 
 \begin{equation}
 	E_{ic} = -\frac{\Jperp^2}{\Jpar}\sin(\theta_1 - \theta_2)^2 =  \frac{\Jperp^2}{\Jpar}(\cos(\theta_1 - \theta_2) - 1) = \frac{\Jperp^2}{\Jpar}(\bm{L}_1 \cdot \bm{L}_2)^2 - \frac{\Jperp^2}{\Jpar},
 \end{equation}
-where the last contribution is a constant, merely causing a shift in the energy, and can thus be omitted.
-The maximum gain in energy ($\frac{\Jperp^2}{\Jpar}$) is achieved when the chains are oriented perpendicular to eachother.
-It is clear that these two terms compete with eachother and the easy-axis anisotropy energy $-K_L\sum_\alpha(\bm{L}_\alpha\cdot \bm{n}_\alpha)^2$.
-Bringing together the three terms results in the contribution to the Hamiltonian that originates from the chains:
+where the last contribution is a constant, merely causing a shift in the energy, and can thus be omitted in our numerical simulations.
+The maximum gain in energy ($\frac{\Jperp^2}{\Jpar}$) is achieved when the chains are oriented perpendicular to each other ($\bm L_1 \cdot \bm L_2 = 0$).
+\\\\
+These two contributions (Zeeman and Heisenberg exchange) compete with each other, and with the easy-axis anisotropy energy
+\begin{equation}
+	E_{ea} = -K_L\sum_\alpha(\bm{L}_\alpha\cdot \bm{n}_\alpha)^2,
+\end{equation}
+where $K_L$ denotes the strength of the easy-axis anisotropy, and $\bm n_\alpha$ denote the orientation of the easy axes:
+$\bm{n}_1=\left(\cos(\theta_n), \sin(\theta_n)\right)$ and $\bm{n}_2=\left(\cos(-\theta_n), \sin(-\theta_n)\right)$ with $\theta_n = \rm{23.4}^\circ$.
+These are the fourfold axes of the pyramidally coordinated Mn ions, aligned with the long edges of the cyan chains in Fig.~\ref{fig:GdMn2O5_unit_cell}(a).
+\\\\
+Bringing everything together leads us to the contribution to the effective Hamiltonian that originates from the chains:
 \begin{equation}
 	H_L = \gamma(\bm{L}_1\cdot \bm{L}_2)^2
-    +\sum_{\alpha}\chi^{-1}((\bm{H}\cdot \bm{L}_\alpha)^2-H^2)
+    +\sum_{\alpha}\chi((\bm{H}\cdot \bm{L}_\alpha)^2-H^2)
     -K_L\sum_\alpha(\bm{L}_\alpha\cdot \bm{n}_\alpha)^2\label{eq:GdMn2O5_hami_1},
 \end{equation}
-with $\gamma = \frac{\Jperp^2}{\Jpar}$, $\chi^{-1} = \frac{g^2\mu_b^2}{\Jpar}$, and $K_L$ the easy-axis anisotropy w.r.t. easy axes $\bm{n}_1=$(cos($\theta_n$), sin($\theta_n$)) and $\bm{n}_2=$(cos(-$\theta_n$), sin(-$\theta_n$)) with $\theta_n = \rm{23.4}^\circ$. These are the fourfold axes of the pyramidally coordinated Mn ions inside each chain.
-
-The next step is to find the combination of cross-order coupling terms that transform as the unit representation of the symmetry group of the system, leaving the energy invariant under all the symmetry operations as required.
-To this end the following generators of the paramagnetic high symmetry P$bam$ phase are used:
+with $\gamma = \frac{\Jperp^2}{\Jpar}$, and $\chi = \frac{g^2\mu_B^2}{\Jpar}$. 
+\\\\
+The next step is to find the combination of cross-order coupling terms between $\bm S_i$ and $\bm L_\alpha$ that transform as the unit representation of the symmetry group of the system.
+This combination of energy terms will then be invariant under all the symmetry operations of the system as is required.
+In order to achieve this, we first list the generators of the paramagnetic parent P$bam$ phase:
 \begin{align}
 	I &: (x, y, z) \rightarrow (-x, -y, -z)\\
 	2_z &: (x, y, z) \rightarrow (-x, -y, z)\\
 	2_y &: (x, y, z) \rightarrow (\frac{1}{2} - x, \frac{1}{2} + y, z)
 \end{align}
-$I$ and $2_z$ are the same symmetry operations in the 2D case. Next, a doubling of the unit cell is necessary to fit the overall AFM state. This leads to an additional symmetry operation for the translation along the $a$-axis $a: (x, y, z) \rightarrow (x + a, y, z)$ when the spins are not taken into account, and a halving of the fractional translation $2_y: (x, y, z) \rightarrow (\frac{1}{4} - x, \frac{1}{2}+y, z)$.
-In effect, applying these symmetry operations to the degrees of freedom, bearing in mind the AFM spin transformation of the chains between the two halves of the magnetic unit cell, leads to the following transformation table:
+$I$ and $2_z$ are the same symmetry operations in the 2D case we are solving.
+Next, a doubling of the unit cell is necessary to fit the overall AFM state, leading to an additional symmetry operation for the translation along the $a$-axis $a: (x, y, z) \rightarrow (x + a, y, z)$ (not taking spins into account), and a halving of the fractional translation $2_y: (x, y, z) \rightarrow (\frac{1}{4} - x, \frac{1}{2}+y, z)$.
+In effect, applying these symmetry operations to the degrees of freedom, bearing in mind the spin flip when transforming the chains between the two halves of the magnetic unit cell, leads to the following transformation table:
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|lllllllllll|}
@@ -270,13 +290,13 @@ a & $S_5$ & $S_6$ & $S_7$ & $S_8$ & $S_1$ & $S_2$ & $S_3$ & $S_4$ & -$L_1$ & -$L
 \end{tabular}
 \end{table}\\\\
 We start with the Heisenberg exchange terms between the Gd spins ($\bm{S}_i$) and the Mn chains ($\bm{L}_1$ and $\bm{L}_2$), with the effective exchange constants $v_1$ and $v_2$.
-The former (latter) couples each Gd spin with the chain that harbors the closest (furthest) Mn ion.
-Starting from terms with $\bm{S}_1$ and $\bm{S}_2$, taking into account the above table of transformations, the following sets of terms can be identified:
+The former (latter) couples each Gd spin with the chain that harbors the closest (furthest) Mn ion. See the yellow arrows in Fig.~\ref{fig:GdMn2O5_unit_cell}(a) for a schematic depiction of these exchange paths.
+Starting from terms with $\bm{S}_1$ and $\bm{S}_2$, and taking the above table of transformations into account, we can identify the following sets of terms:
 \begin{align}
 	\bm{S}_1\cdot(v_1 \bm{L}_2 + v_2 \bm{L}_1) \xrightarrow{I} \bm{S_8}\cdot(v_1 \bm{L}_2 - v_2 \bm{L}_1) \xrightarrow{a} \bm{S_4} \cdot (- v_1 \bm{L}_2 + v_2 \bm{L}_1) \xrightarrow{I} \bm{S_5} \cdot (-v_1 \bm{L}_2 - v_2 \bm{L}_1), \nonumber\\
 	\bm{S}_2\cdot(v_1 \bm{L}_1 + v_2 \bm{L}_2) \xrightarrow{I} \bm{S_7}\cdot(-v_1 \bm{L}_1 + v_2 \bm{L}_2) \xrightarrow{a} \bm{S_3} \cdot (v_1 \bm{L}_1 - v_2 \bm{L}_2) \xrightarrow{I} \bm{S_6} \cdot (-v_1 \bm{L}_1 - v_2 \bm{L}_2).
 \end{align}
-The sum of all these contributions transforms according to the identity representation, leading to the contribution:
+The combined sum of them transforms according to the identity representation, leading to the following contribution to the total Hamiltonian:
 \begin{align}
     H_{LS} =& (\bm{S}_1 - \bm{S}_5) \cdot (v_1 \bm{L}_2 + v_2 \bm{L}_1) + (\bm{S}_2 - \bm{S}_6) \cdot (v_1 \bm{L}_1 + v_2 \bm{L}_2) + \nonumber \\ &(\bm{S}_3 - \bm{S}_7) \cdot (v_1 \bm{L}_1 - v_2 \bm{L}_2) + (\bm{S}_4 - \bm{S}_8) \cdot (-v_1 \bm{L}_2 + v_2 \bm{L}_1).
 \end{align}
@@ -288,14 +308,64 @@ A similar process can be applied starting from $P_b \, \bm{S_1}\cdot(\beta_2 \bm
     &+(\bm{S}_3-\bm{S}_7)(\beta_2 \bm{L}_2 - \beta_3 \bm{L}_1) +
     (\bm{S}_4-\bm{S}_8)(\beta_2 \bm{L}_1 - \beta_3 \bm{L}_2)],
 \end{align}
-where the interaction with an external electric field $E_b$ was also included. 
-Three further terms coming purely from the Gd spins can be identified:
+where the facultative interaction of $P_b$ with an external electric field $E_b$ was also included. 
+We can identify three final terms that originate purely from the Gd spins:
 \begin{equation}
-     H_S=\frac{1}{2}(g \mu_B)^2\sum_{i\neq j}\left(\frac{\bm{S}_i\cdot \bm{S}_j}{r_{ij}^3}-3\frac{(\bm{S}_i\cdot \bm{r}_{ij})(\bm{S}_j\cdot \bm{r}_{ij})}{r_{ij}^5}\right) - \sum_i\left( K_S(\bm{N}_i\cdot \bm{S}_i)^2 + g\mu_\mathrm{B} \bm{H} \cdot \bm{S}_i\right) 
+     H_S=\frac{1}{2}(g \mu_B)^2\sum_{i\neq j}\left(\frac{\bm{S}_i\cdot \bm{S}_j}{r_{ij}^3}-3\frac{(\bm{S}_i\cdot \bm{r}_{ij})(\bm{S}_j\cdot \bm{r}_{ij})}{r_{ij}^5}\right) - \sum_i\left( K_S(\bm{N}_i\cdot \bm{S}_i)^2 + g\mu_\mathrm{B} \bm{H} \cdot \bm{S}_i\right). 
 \end{equation}
-The first describes the magnetodipolar interaction between Gd spins, which could be relatively large due to the size of the spins and relative proximity to the neighbors. In the numerical simulations these interactions were restricted to their five nearest neighbors, including periodic images. Adding further neighbors did not lead to qualitative differences in the results. The term with $K_S$ denotes the easy-axis anisotropy for the Gd ions, this time with anisotropy axes $\bm{N}_i$ which are unit vectors having alternating angles $\pm 12^\circ$ with respect to the $a$-direction. $K_S$ is significantly smaller than $K_L$ due to the isotropic environment and valence configuration of the Gd ions.
+The first describes the magnetodipolar interaction between Gd spins, which could be relatively large due to the size of the spins and relative proximity to the neighbors.
+In the numerical simulations these interactions were restricted to their five nearest neighbors, including periodic images.
+Adding further neighbors did not lead to qualitative differences in the results.
+The term with $K_S$ denotes the easy-axis anisotropy for the Gd ions, this time with anisotropy axes $\bm{N}_i$ which are unit vectors having alternating angles $\pm 12^\circ$ with respect to the $a$-axis.
+$K_S$ is significantly smaller than $K_L$ due to the isotropic environment and valence configuration of the Gd ions.
 The final term denotes the Zeeman energy of the Gd ions in the external magnetic field $\bm{H}$.
+\\\\
+To conclude this section, we gather all the terms in our effective Hamiltonian:
+\begin{multline}
+    \label{eq:GdMn2O5_model}
+    H=\gamma(\bm{L}_1\cdot \bm{L}_2)^2 +\sum_{\alpha}\chi((\bm{H}\cdot \bm{L}_\alpha)^2-H^2)\\
+    -K_L\sum_\alpha(\bm{L}_\alpha\cdot \bm{n}_\alpha)^2 -\sum_i\left( K_S(\bm{N}_i\cdot \bm S_i)^2+ g\mu_\mathrm{B} \bm{H} \cdot \bm{S}_i\right) \\
+    %\sum_{i,j}J_{ij} \s_i\cdot \s_j 
+    + \frac{1}{2}(g \mu_B)^2\sum_{i\neq j}\left(\frac{\bm S_i\cdot \bm S_j}{r_{ij}^3}-3\frac{(\bm S_i\cdot \bm{r}_{ij})(\bm S_j\cdot \bm{r}_{ij})}{r_{ij}^5}\right)
+     \\+ \sum_{i,\alpha}V_{i\alpha}\bm{S}_i\cdot \bm{L}_\alpha \\
+    -P_b[8 \beta_1 (\bm{L}_1\cdot \bm{L}_2)+(\bm{S}_1-\bm{S}_5)(\beta_2 \bm{L}_2 + \beta_3 \bm{L}_1) \\+ (\bm{S}_2-\bm{S}_6)(\beta_2 \bm{L}_1 + \beta_3 \bm{L}_2)
+    + (\bm{S}_3-\bm{S}_7)(\beta_2 \bm{L}_2 - \beta_3 \bm{L}_1) \\
+    +(\bm{S}_4-\bm{S}_8)(\beta_2 \bm{L}_1 - \beta_3 \bm{L}_2)]
+    + P_b^2/2.
+\end{multline}
 
+\section{Methods}
+Before continuing with the results and a discussion of the physics, we comment briefly on the numerical side of this Chapter.\\\\
+The first question to address is what model parameters to use in conjunction with the Hamiltonian in Eq.~\eqref{eq:GdMn2O5_model}.
+This is not particularly straightforward, since our model is phenomenological, and the order parameters and interactions arise from a combination of the microscopic ones.
+One could formulate, instead, a model in terms of all the microscopic degrees of freedom, i.e. all the spins of both Gd and Mn ions.
+Not only would that lead to a more computationally demanding model, the increased complexity makes developing an intuitive understanding that much harder\footnote{As we will see, even this model leads to very intricate behavior that is hard to disentangle and rationalize fully}.
+That means that calculating the coefficients from first-principles calculations is very hard, if not impossible. Even in the case of a fully microscopic spin model, it is not well-known in general how to acquire a correct set of exchange parameters from DFT.
+In any case, we chose here to rather make physically inspired initial guesses for the model parameters, after which we further refined these in order to best reproduce the experimental behavior.
+\\\\
+We know, for example, that the Gd -- Mn magnetic exchange parameter towards the closest chain is larger than towards the other ($v_1>v_2$), and that the order of magnitude for this energy contribution is a couple of meV.
+Furthermore, we mentioned a couple of times already that the single-ion anisotropy energy for Gd is expected to be small due to the isotropic envirnment and valence configuration with completely quenched orbital angular momentum.
+Instead, the single-ion anisotropy of the Mn ions and, by proxy, the chains is again on the order of a couple of meV.
+Lastly, due to the large intrachain $\Jpar$ and small interchain $\Jperp$ magnetic exchanges, we know that $\gamma = \frac{\Jperp^2}{\Jpar}$ and $\chi = \frac{\Jpar}{g^2\mu_B^2}$ are very small.
+\\\\
+Taking all these considerations into account, we found that the following model parameters reproduce the observations of the experiments well:  
+$v_1 = 7.9$~meV, $v_2 = 0.15$~meV, $K_L = 1.1$~meV, $K_S = 0.09$~meV, $\gamma = 0.05$~meV, $\chi=0.01$~meV$^{-1}$.
+The parameters for the exchange striction were then chosen to fit the experimental hysteresis loop as well as possible:
+${\beta_1 = 0.06\,\mu}$C/cm$^2$, $\beta_2 = 0.06\:\mu$C/cm$^2$, $\beta_3 = 0.04\:\mu$C/cm$^2$.
+\\\\
+However, these parameters are by no means a requirement for the overarching behavior to exist. As we will show in greater detail in the following section, more specifically in the context of the discussion on the topological nature of the switching, a great deal of freedom exists in choosing these parameters, if the only requirement is to reproduce the three switching regimes.
+This lies at the heart of our claim that this effect might exist in other materials, since neither the model nor the parameters depend greatly on the microscopic details of GdMn$_2$O$_5$. 
+\\\\
+The next question is how to simulate the experimental set-up, which is, in contrast with the question of the model parameters, much easier to answer.
+Since the behavior only shows up at temperatures below $\sim$ 4 K, is remarkably deterministic, and through the application of slow varying fields, we simulated the process as a series of simple minimization problems.
+This entails taking one of the degenerate starting configurations, increasing the field, minimizing the new situation, applying a further increased field, and so on, thus tracking the local minimum at all steps.
+It is quite remarkable that by performing this relatively simple process, purely based on optimizing the energetics, leads to the observed behavior.
+This is another indication of the topological nature of the switching behavior.
+As we will show more explicitely below, it is sort of an extreme variant of the behavior of Thouless charge pumps, and especially of the recent realization in ultracold gases. \cite{Rice82,Thouless1982,Thouless83,Lohse16,Nakajima16, Atala13}.
+It is extreme in the sense that it requires no tunneling whatsoever, which is at the core of the fully deterministic behavior.
+\\\\
+
+We now turn to a discussion of the results obtained from the simulations of the effective spin Hamiltonian Eq.~\eqref{eq:GdMn2O5_model}.
 
 \section{Results and discussion}
 
@@ -333,18 +403,6 @@ Since the exerimentally observed behavior occurs at such a low temperature, and 
 	\caption{{\bf Energy Surfaces.} The evolution of the energy surface during field sweep at +10$^\circ$ is displayed, with the white dots in the top left panel denoting the four degenerate minima. If the field would be applied along -10$^\circ$, horizontal gutters would form.\label{fig:GdMn2O5_heatmap}}
 \end{figure*}
 
-In order to proceed, however, we have to choose a set of model parameters. This is not particularly straightforward, since our model is phenomenological, and the order parameters and interactions arise from a combination of the microscopic ones.
-One could formulate, instead, a model in terms of all the microscopic degrees of freedom, i.e. all the spins of both Gd and Mn ions.
-Not only would that lead to a more computationally demanding model, the increased complexity makes developing an intuitive understanding that much harder.
-That means that calculating the coefficients from first-principles calculations is very hard, if not impossible.
-What we chose to do here is to rather make physically inspired initial guesses for the model parameters, after which we further refine these in order to best reproduce the experimental behavior.
-We know, for example, that the Gd - Mn magnetic exchange parameter towards the closest chain is larger than towards the other ($v_1>v_2$), and that the order of magnitude for this energy contribution is a couple of meV.
-Furthermore, the single-ion anisotropy energy for Gd is known to be very small, whereas the one of the Mn chains is again on the order of a couple of meV.
-Lastly, due to the large intrachain $\Jpar$ and small interchain $\Jperp$ magnetic exchanges, we know that $\gamma = \frac{\Jperp^2}{\Jpar}$ and $\chi = \frac{\Jpar}{g^2\mu_b^2}$ are very small.
-Taking all these considerations into account, we finally arrive at the model parameters:  
-$v_1 = 7.9$~meV, $v_2 = 0.15$~meV, $K_L = 1.1$~meV, $K_S = 0.09$~meV, $\gamma = 0.05$~meV, $\chi=0.01$~meV$^{-1}$.
-The parameters for the exchange striction were then chosen to fit the experimental hysteresis loop as well as possible:
-${\beta_1 = 0.06\,\mu}$C/cm$^2$, $\beta_2 = 0.06\:\mu$C/cm$^2$, $\beta_3 = 0.04\:\mu$C/cm$^2$.
 
 The result of the earlier described simulation procedure, together with these model parameters, is shown in Fig.~\ref{fig:GdMn2O5_theory}, where the lower panels (d-f) show the path that the system tracks through the $\phi_{L_1}$,$\phi_{L_2}$ energy landscape as the field is cycled, at the three values of $\phi_{\rm H}$ of panels (a-c).
 The background energy surfaces are chosen to reflect how the barriers at an intermediate field value inside the hysteresis region differ depending on $\phi_{\rm H}$.
@@ -484,19 +542,19 @@ S_6$ and $S_7$ as the variables in the model. We also neglect the easy axis anis
 This leaves us with the following Hamiltonian, combining two parts, one with the dipolar terms $H_{dip}$ and another with all the other terms $H'$:
 \begin{align}
 	H &= H' + H_{dip} \\
-	H' &= v_1(\mathbf{S}_2 + \mathbf{S}_3 - (\mathbf{S}_6 + \mathbf{S}_7))\cdot\mathbf{L}_1 \nonumber\\
-	&- g \mu_b (\mathbf{S}_2 + \mathbf{S}_3 + \mathbf{S}_6 + \mathbf{S}_7) \cdot \mathbf{H} \nonumber\\
-	&+ K_L (\mathbf{L}_1 \cdot \mathbf{n})^2 \nonumber\\
-	H_{dip} &= \frac{1}{2}(g \mu_B)^2\sum_{i\neq j}\left(\frac{\mathbf{S}_i\cdot \mathbf{S}_j}{r_{ij}^
-3}-3\frac{(\mathbf{S}_i\cdot \mathbf{r}_{ij})(\mathbf{S}_j\cdot \mathbf{r}_{ij})}{r_{ij}^5}\right)\nonumber.
+	H' &= v_1(\bm{S}_2 + \bm{S}_3 - (\bm{S}_6 + \bm{S}_7))\cdot\bm{L}_1 \nonumber\\
+	&- g \mu_B (\bm{S}_2 + \bm{S}_3 + \bm{S}_6 + \bm{S}_7) \cdot \bm{H} \nonumber\\
+	&+ K_L (\bm{L}_1 \cdot \bm{n})^2 \nonumber\\
+	H_{dip} &= \frac{1}{2}(g \mu_B)^2\sum_{i\neq j}\left(\frac{\bm{S}_i\cdot \bm{S}_j}{r_{ij}^
+3}-3\frac{(\bm{S}_i\cdot \bm{r}_{ij})(\bm{S}_j\cdot \bm{r}_{ij})}{r_{ij}^5}\right)\nonumber.
 \end{align}
 Due to the symmetries of this model and the geometry of the material we end up with two copies of one spin in the first half of the magnetic unit cell and one in the second half of the unit cell, with the chain in between (see Fig.~\ref{fig:GdMn2O5_simple_model}).
 This necessitates $S_2 = S_3$ and $S_6 = S_7$, and thus allows us to consider one of the two copies. Again, we keep only nearest-neighbor magnetodipolar terms, and arrive to
 \begin{align}
-	H' &= 2v_1(\mathbf{S}_3 - \mathbf{S}_6)\cdot\mathbf{L}_1 - 2g \mu_b (\mathbf{S}_3 + \mathbf{S}_6) 
-\cdot \mathbf{H} \\
-	&+ K_L (\mathbf{L}_1 \cdot \mathbf{n})^2 \nonumber\\
-	H_{dip} &= (g \mu_B)^2\left(\frac{\mathbf{S}_3\cdot \mathbf{S}_6}{r_{36}^3}-3\frac{(\mathbf{S}_3\cdot \mathbf{r}_{36})(\mathbf{S}_6\cdot \mathbf{r}_{36})}{r_{36}^5}\right)\nonumber,
+	H' &= 2v_1(\bm{S}_3 - \bm{S}_6)\cdot\bm{L}_1 - 2g \mu_B (\bm{S}_3 + \bm{S}_6) 
+\cdot \bm{H} \\
+	&+ K_L (\bm{L}_1 \cdot \bm{n})^2 \nonumber\\
+	H_{dip} &= (g \mu_B)^2\left(\frac{\bm{S}_3\cdot \bm{S}_6}{r_{36}^3}-3\frac{(\bm{S}_3\cdot \bm{r}_{36})(\bm{S}_6\cdot \bm{r}_{36})}{r_{36}^5}\right)\nonumber,
 \end{align}
 as a minimal model that still demonstrates the crankshaft-like behavior.
 
