@@ -136,7 +136,7 @@ In these plots, we have denoted the four discussed states by the labels 1-4. The
 \begin{figure}
     \centering
     \IncludeGraphics{exp_plusvsminus.png}
-\caption{ \label{fig:GdMn2O5_experiment2} {\bf Angle and temperature dependence of the four-state switching.} By comparing panels (a) and (b) we can see that the sign of the field angle $\phi_H$ does not matter for the four-state switching. c) Temperature dependence of the switching hysteresis at the magic angle. Above 4 K (upper panel) the more usual two-state hysteresis is observed, whereas below 4 K (lower panel) the four-state behavior starts to arise. The states, colors and arrows are indicated in the same way as in Fig.~\ref{Fig:GdMn2O5_experiment1}.}
+\caption{ \label{fig:GdMn2O5_experiment2} {\bf Angle and temperature dependence of the four-state switching.} By comparing panels (a) and (b) we can see that the sign of the field angle $\phi_H$ does not matter for the four-state switching. c) Temperature dependence of the switching hysteresis at the magic angle. Above 4 K (upper panel) the more usual two-state hysteresis is observed, whereas below 4 K (lower panel) the four-state behavior starts to arise. The states, colors and arrows are indicated in the same way as in Fig.~\ref{fig:GdMn2O5_experiment1}.}
 \end{figure}
 
 
@@ -174,7 +174,7 @@ From the two panels in (c), displaying measurements with $\phi_H$ along the magi
 For higher temperatures a more usual two-state loop is found, similar to the high angle loop in panel (c) of Fig.~\ref{fig:GdMn2O5_experiment1}.
 \\\\
 To conclude this section we would like to comment that we focus on the overall switching behavior, i.e. we ignore the many interesting details that can be found by careful study of the $P_b$ graphs.
-For example, in Fig.~\ref{fig:experiment1}(b) one can find three distinct steps that appear around 5 T during the 1 $\rightarrow$ 2 and 3 $\rightarrow$4 switching.
+For example, in Fig.~\ref{fig:GdMn2O5_experiment1}(b) one can find three distinct steps that appear around 5 T during the 1 $\rightarrow$ 2 and 3 $\rightarrow$4 switching.
 These steps are, however, absent at the same field magnitude, when the system is on the 2$\rightarrow$3 and 4$\rightarrow$1 branch.
 Their origin might be related to a transition, on an ionic level, to states with higher Gd spin, or it might be related to the spins in the Mn chains rotating individually, rather than in unison as we will assume in our model.
 These features could be the subject of further research, here we choose to focus on unravelling the main behavior of the four-state loop flanked in $\phi_H$ parameter-space by two more usual two-state switching loops.
@@ -356,13 +356,13 @@ ${\beta_1 = 0.06\,\mu}$C/cm$^2$, $\beta_2 = 0.06\:\mu$C/cm$^2$, $\beta_3 = 0.04\
 However, these parameters are by no means a requirement for the overarching behavior to exist. As we will show in greater detail in the following section, more specifically in the context of the discussion on the topological nature of the switching, a great deal of freedom exists in choosing these parameters, if the only requirement is to reproduce the three switching regimes.
 This lies at the heart of our claim that this effect might exist in other materials, since neither the model nor the parameters depend greatly on the microscopic details of GdMn$_2$O$_5$. 
 \\\\
-The next question is how to simulate the experimental set-up, which is, in contrast with the question of the model parameters, much easier to answer.
+The next question is how to simulate the experimental set-up, which is, in contrast to the question about the model parameters, much easier to answer.
 Since the behavior only shows up at temperatures below $\sim$ 4 K, is remarkably deterministic, and through the application of slow varying fields, we simulated the process as a series of simple minimization problems.
-This entails taking one of the degenerate starting configurations, increasing the field, minimizing the new situation, applying a further increased field, and so on, thus tracking the local minimum at all steps.
-It is quite remarkable that by performing this relatively simple process, purely based on optimizing the energetics, leads to the observed behavior.
+This entails taking one of the degenerate starting configurations, increasing the field, minimizing the energy, applying a further increased field, and so on, thus tracking the local minimum at all steps.
+It is quite remarkable that performing this relatively simple process, purely based on optimizing the energetics of the system, leads to a faithful reproduction of the observed behavior.
 This is another indication of the topological nature of the switching behavior.
 As we will show more explicitely below, it is sort of an extreme variant of the behavior of Thouless charge pumps, and especially of the recent realization in ultracold gases. \cite{Rice82,Thouless1982,Thouless83,Lohse16,Nakajima16, Atala13}.
-It is extreme in the sense that it requires no tunneling whatsoever, which is at the core of the fully deterministic behavior.
+It is extreme in the sense that it requires no tunneling whatsoever, which forms the core of the fully deterministic behavior.
 \\\\
 
 We now turn to a discussion of the results obtained from the simulations of the effective spin Hamiltonian Eq.~\eqref{eq:GdMn2O5_model}.
@@ -403,19 +403,18 @@ Since the exerimentally observed behavior occurs at such a low temperature, and 
 	\caption{{\bf Energy Surfaces.} The evolution of the energy surface during field sweep at +10$^\circ$ is displayed, with the white dots in the top left panel denoting the four degenerate minima. If the field would be applied along -10$^\circ$, horizontal gutters would form.\label{fig:GdMn2O5_heatmap}}
 \end{figure*}
 
-
 The result of the earlier described simulation procedure, together with these model parameters, is shown in Fig.~\ref{fig:GdMn2O5_theory}, where the lower panels (d-f) show the path that the system tracks through the $\phi_{L_1}$,$\phi_{L_2}$ energy landscape as the field is cycled, at the three values of $\phi_{\rm H}$ of panels (a-c).
 The background energy surfaces are chosen to reflect how the barriers at an intermediate field value inside the hysteresis region differ depending on $\phi_{\rm H}$.
 
 Our model thus reproduces the experimentally observed four-state switching around the magic angle, $\phi_{\rm H}^\ast  = 10^\circ$, (Fig.~\ref{fig:GdMn2O5_theory}(b)) and the switching between states 1 and 2 with close values of $P_b$ for $\phi_{\rm H} > \phi_{\rm H}^\ast$  (Fig.~\ref{fig:GdMn2O5_theory}(c)).
-For small $\phi_{\rm H}$, as mentioned before, our simulations show the transition between states 1 and 4 accompanied by the polarization reversal (Fig.~\ref{fig:GdMn2O5_theory}(a)), similar to the behavior in Ref.~\cite{Lee13}, instead of the observed $1\leftrightarrow2$ switching of Fig.~\ref{fig:GdMn2O5_experiment}(a). 
+For small $\phi_{\rm H}$, as mentioned before, our simulations show the transition between states 1 and 4 accompanied by the polarization reversal (Fig.~\ref{fig:GdMn2O5_theory}(a)), similar to the behavior in Ref.~\cite{Lee13}, instead of the observed $1\leftrightarrow2$ switching of Fig.~\ref{fig:GdMn2O5_experiment1}(a). 
 This discrepancy may be related to a thermally activated transition between states 1 and 2, which are closer in the order-parameter space than states 1 and 4.
 \begin{figure}[b!]
     \IncludeGraphics[width=0.9\linewidth]{Pb_3panels_heatmaps}
     %\includegraphics[width=\linewidth]{fig/L1L2_heatmap.png}
     \caption{\label{fig:GdMn2O5_theory}{\bf Simulation of magnetoelectric behaviour.}
     (a-c) Evolution of electric polarization $P_b$ during the magnetic field sweep cycle for various magnetic field orientations. 
-   In each panel, the changes of the curve color indicate the same progression of the sweep cycle as Fig~\ref{fig:GdMn2O5_experiment}. The four-state switching is seen for the field at the magic orientation. 
+   In each panel, the changes of the curve color indicate the same progression of the sweep cycle as Fig~\ref{fig:GdMn2O5_experiment1}. The four-state switching is seen for the field at the magic orientation. 
     The insets indicate the corresponding switching paths and winding numbers.
     (d-f) Trajectories (in green) in the space of the N\'eel vectors orientations, $(\phi_{\rm L_1},\phi_{\rm L_2})$, through the field sweep cycles in different regimes. The color map shows the energy landscape in the vicinity of the switching fields. 
 }
