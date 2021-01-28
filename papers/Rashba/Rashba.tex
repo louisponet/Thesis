@@ -402,19 +402,19 @@ The only Rashba term that plays a role along the $A$ --$Z$ -- $U$ path is of the
 since $\bm E = (0, 0, E)$ and the size of the field is included in $\alpha_R$ if we use the form of Eq.~\eqref{eq:Rashba_form}.
 \\\\
 The proposed mechanism is a result of the real space properties of the Bloch functions, making a description in terms of localized Wannier functions the ideal tool for our investigation.
-The Wannierization as described in Section \ref{sec:Wannier} provides us with a set of localized Te and Ge $s$ and $p$ orbitals, and a Tight-Binding model from which we can interpolate the bandstructure.
+The Wannierization as described in Section \ref{sec:Wannier} provides us with a set of localized $s$ and $p$ orbitals situated on Te and Ge, and a Tight-Binding model from which we can interpolate the bandstructure.
 The densities of the Wannier functions for the spin-up Te orbital are displayed in Fig.~\ref{fig:Rashba_wannierfunctions}(a), with the spin-down orbitals having similar charge distributions.
 The combined spread of the 16 spinor Wannier functions\footnote{4x2 for the Te ion and 4x2 for the Ge ion.} is 53.4~\AA$^2$ (see Eq.~\eqref{eq:Theory_spread} for details).
 \begin{figure}[h]
 \IncludeGraphics[width=\linewidth]{Wannierfunctions.png}
 \caption{\label{fig:Rashba_wannierfunctions}{\bf Wannier functions} a) The spin-up Wannier functions of the orbitals around the Tellurium ion. The isosurface is constructed from the norm of the wavefunctions, with the coloration denoting the sign of the real part. b) The charge density in the central unit cell of the Bloch function of the top valence band, at $k=$ (0, 0.1, 0.9) in units of \AA$^{-1}$. The orbital angular momentum, polarization, and $k$ vector are shown by the red, blue, and green arrows, respectively. In each panel, the unit cell is shown by the wireframe, and the Te and Ge ions are yellow and grey, respectively.}
 \end{figure}
-The Wannier interpolation of the ab-initio bandstructure is shown in Fig.~\ref{fig:Rashba_wannierization}, which demonstrates a close agreement between the interpolated and ab-initio bands in the chosen window, the valence bands in particular. 
+The Wannier interpolation of the ab-initio bandstructure is shown in Fig.~\ref{fig:Rashba_wannierization}, which demonstrates a close agreement between the interpolated and ab-initio bands in the chosen window, and the valence bands in particular. 
 \begin{figure}[h]
 \IncludeGraphics[width=\linewidth]{wanvsdft.png}
 \caption{\label{fig:Rashba_wannierization}{\bf Wannier interpolation.} Bandstructure interpolation by the Tight-Binding Hamiltonian in terms of the Wannier functions for non-relativistic (a) and relativistic (b) calculations.}
 \end{figure}
-We the use the set of localized orbitals $\Ket{\alpha}$, to calculate the real space operators that are of importance for the mechanism we are trying to confirm, namely the dipole matrix elements and OAM.
+We then use the set of localized orbitals $\Ket{\alpha}$, to calculate the real space operators that are of importance for the mechanism we are trying to confirm, namely the dipole matrix elements and OAM.
 We will use the center of mass $\Bra{\alpha} \hat{\bm r} \Ket{\beta}$ as an indication of the local dipoles of the Bloch functions\footnote{We do this because we are mainly interested in the variation of the dipoles of the Bloch functions away from the $Z$ point, rather than their well-defined values. Indeed it has been shown that the definition of the electric dipoles in a crystalline environment requires some care. For further details we refer to the works on the {\it Modern Theory of Polarization} \cite{King-Smith1993,Vanderbilt1993,Resta1998, Spaldin2012,Vanderbilt18}.}.
 The OAM can be calculated as
 \begin{equation}
@@ -452,12 +452,12 @@ The calculated local properties of the Bloch functions are shown in Fig.~\ref{fi
 \end{figure}
 \\\\
 Many interesting local features of the Bloch functions can be observed in these figures, which we will now discuss in detail.
-
+\\\\
 The main confirmation of the claim that OAM is at the root of the large splitting can found in the panels that depict $L_x$ and $L_y$, namely the green graphs. These green colored graphs are the result of calculations without relativistic effects included, which can be verified from the panels that depict the eigenvalues, colored in the same way.
 There is a clear linear variation of the OAM as $\bm k$ varies away from the $Z$ point, even though no atomic SOC is included.
 The only explanation for this unquenching are the contributions derived in Eqs.~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
-Moreover, $k_x$ remains zero along the $A$--$Z$, and we can observe that only $L_x$ develops due to the nonzero $k_y$. Only when $k_x$ is nonzero, along the $Z$--$U$ path, does $L_y$ show up. This is fully consistent with the expressions for $L_x$ and $L_y$ in Eqs.~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
-
+Moreover, $k_x$ remains zero along the $A$--$Z$ path, and we can observe that only $L_x$ develops due to the nonzero $k_y$. Only when $k_x$ is nonzero, along the $Z$--$U$ path, does $L_y$ show up. This is fully consistent with the expressions for $L_x$ and $L_y$ in Eqs.~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
+\\\\
 If we then include fully-relativistic effects, thus also including the atomic SOC, we can see that an additional unquenching of the OAM shows up.
 This leads to a nearly constant shift of the OAM with opposite signs for the two subbands, and is the sole contributor to the unquenching at the TR invariant $Z$ point.
 The second part of the linear variation of the OAM was discussed in Eq.~\eqref{eq:d_z_from_OAM}. It was shown there that it results from the combination of the linear $\bm k$ due to the first order expansion of $\eikr{R}$, and a nonzero OAM at the TR invariant point.
@@ -540,5 +540,5 @@ The generality of our derivation and remarkable consistency with the behavior in
 Finally, we make some suggestions as to what might be the design rules to maximize the Rashba-like spin-splitting.
 Since the internal electric field directly determines the size of the OAM unquenching, the first goal is to maximize the ferroelectric polarization.
 Furthermore, due to the role of the atomic SOC in converting the linearly unquenched OAM into a spin-splitting, a material constituted by heavy ions with large atomic SOC is desirable.
-And finally: to maximize the unquenching of the OAM, a highly isotropic environment that minimizes the electrostatic penalty of having nonzero OAM is beneficial.
+And finally: to maximize the unquenching of the OAM, a highly isotropic crystalline environment that minimizes the electrostatic penalty of having nonzero OAM is beneficial.
 Finding a material that achieves these three goals could enable more performant spintronic devices with the much needed electric control of spin polarization.
