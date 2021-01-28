@@ -142,9 +142,12 @@
 
         \vfill
         \vspace{1cm}
-         \noindent \textsc{Candidate} \hfill \textsc{Supervisors} \par
+         \noindent \textsc{Candidate} \hfill \textsc{Thesis Advisor} \par
         \smallskip
         \noindent {\@author} \hfill {Dr. Sergey Artyukhin} \par
+        \smallskip
+        \noindent \hfill \textsc{Internal Supervisor}\par
+        \smallskip
         \noindent \hfill {Prof. Giuseppe La Rocca} \par
         
     \vfill
