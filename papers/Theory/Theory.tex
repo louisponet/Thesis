@@ -1,17 +1,221 @@
 \chapter{Theory}
-\section{Spin-orbit coupling}
-\section{Wannier Functions}
 
-	In a lot of the work presented in this Thesis we construct models to describe the physics that result in a certain effect in real materials.
-	These models are most of the time defined in terms of a limited set of local atomic-like orbitals, since these offer the most intuitive understanding most of the time, and the biggest contribution to particular effects can often be traced back to only a limited subset of all the orbitals.
+\section{Density Functional Theory \label{sec:DFT}}
+Many of the physics in condensed matter originates from the electronic structure of the material under study.
+There are two main ways of performing quantitative theoretical studies in case.
+The first is to start from a tight-binding model that includes the most likely valence orbitals of the constituent ions \cite{Slater1954}, fitting it to experimental measurements such as angle resolved photoemission spectroscopy~\cite{Damascelli2004}.
+A second, purely theoretical, possibility is to desribe the electronic structure entirely from first-principles, using only the ions and crystalline structure as the input. 
 
-	If we want to apply these models to real materials to get not only qualitative, but also quantitative results, we need to perform a fit to either experimentally obtained values, or first-principles simulations.
-	The most feasible way is usually the latter, which requires us to find a bridge between the plane waves that are used in a lot of first-principles DFT codes, and the localized basis set of that the model is built from.
+Density functional theory (DFT), originally envisioned in the seminal works of P. Hohenberg, W. Kohn and L. J. Sham \cite{Hohenberg1964,Kohn1965}, is a formalism very well suited for achieving this goal.
+We won't delve into the fine details in light of conciceness, resorting instead to a very high-level overview following the excellent introduction to the topic by R. Martin in Ref.~\cite{Martin2004}.
+On a rudementary level, DFT is built on top of three main theoretical pillars.
 
-	Wannier functions offer a rigorous and flexible solution to this question, rewriting the Bloch functions as a discrete Fourier transform of (exponentially) localized, cell-periodic wavefunctions.
+The first pillar is the observation that any property of a system of interacting particles can be written as a functional of the ground-state density $n_0(\bm{r})$.
+This means that DFT is, in principle, an exact theory of many-body systems.
+Writing the Hamiltonian as
+\begin{equation}
+	\hat{\mathcal{H}} = -\frac{\hbar}{2m_e} \sum_i \nabla_i^2 + \sum_i V_{\rm ext}(\bm{r}_i) + \frac{1}{2}\sum_{i\neq j} \frac{e^2}{|\bm{r}_i - \bm{r}_j|},
+\end{equation}
+where the indices $i,j$ iterate over the electrons\footnote{The ionic terms are easily included and are not the core difficulty and thus omitted here.}, the statement is that $V_{\rm ext}$ is uniquely defined by $n_0(\bm{r})$, and vice versa.
+Thus, as soon as the ground-state density is found, the exact Hamiltonian of the system is known.
+This in turn allows one to find all other eigenstates of the system, exactly solving the problem in the process.
 
-	This construction is flexible in the sense that it is not unique. Bloch functions have a gauge freedom at each k value, which in turn will have an effect on the Wannier functions.
-	One gauge that is commonly used is the one that localized the functions as much as possible, leading to the so-called Maximally Localized Wannier Functions (MLWF).
-	Other gauges can be chosen such that the obtained functions have certain symmetries or have maximum similarity to atomic orbitals.
+The second pillar is formed by the ability to define a universal functional for the total energy of the system $E[n]$ in terms of the density $n(\bm{r})$, which is valid for any external potential $V_{\rm ext}$.
+The density that globally minimizes this functional is then equal to the ground-state density $n_0(\bm{r})$.
 
+In order to turn these foundational first two pillars into a practically usable framework, one needs to address the question of the form of the energy functional $E[n]$, leading us straight to the third pillar: the Kohn-Sham Ansatz \cite{Kohn1965}.
+In essence, this ansatz makes the assumption that the original many-body problem can be replaced by an auxiliary independent-particle problem, both having exactly the same ground-state density $n_0(\bm{r})$.
+This means that, theoretically speaking, calculations for the many-body problem can be exactly translated instead into calculations using independent-particle methods.
+It is found that a set of independent particle equations can thus be formulated, lumping all the cumbersome many-body terms together in the so-called ``exchange-correlation'' functional $E_{xc}[n]$.
+If the exact form of $E_{xc}[n]$ was known, DFT would lead to the exact solutions of the original many-body problem.
+The success of the DFT method from a numerical and quantitative point of view can be wholly attributed to the ability of finding local or semi-local approximations to this functional that manage to often reproduce quite well, in a mean-field kind of way, the original many-body problem.
+
+Bringing everything together, we can write down the total energy functional as:
+\begin{equation}
+	\label{eq:Rashba_kohnsham}
+	E_{KS} = T_s[n] + \int d\bm{r} V_{\rm ext}(\bm{r}) n(\bm{r}) + E_{\rm Hartree}[n] + E_{II} + E_{xc}[n],
+\end{equation}
+where $T_s$ is the independent-particle kinetic energy, $V_{\rm ext}$ the external potential due to the nuclei and any other external fields, $E_{II}$ the Coulomb interactions between the nuclei, and $E_{\rm Hartree}[n]$ denoting the classical Coulomb contributions:
+\begin{equation}
+	E_{\rm Hartree} = \frac{1}{2}\int d\bm{r}d\bm{r}' \frac{n(\bm{r})n(\bm{r}')}{|\bm{r} - \bm{r}'|}.
+\end{equation}
+
+The next question is how to perform the minimization in order to find the ground-state density $n_0$.
+In general, a self-consistent algorithm is used that iteratively constructs the energy contributions from the previous trial density $n_i$, diagonalizes the resulting Hamiltonian, and uses the found ground-state wavefunction to construct a new trial density $n_o$, after which the algorithm is repeated until $n_o$ is sufficiently close to $n_i$.
+This means that the energy terms which, according to the Hohenberg-Kohn theorems are uniquely defined by the density, did not change markedly w.r.t. the previous iteration, i.e. self-consistency between density and functional is reached.
+It can be shown that this process, at least, leads to a local minimum of the Kohn-Sham functional\ref{eq:Rashba_kohnsham}.
+The question of how to reach the global minimum of any function, let alone any functional, is from an entirely different caliber that we wish to avoid in this thesis. 
+
+There are many ways to numerically implement DFT, with variations depending mostly on the basis set of independent particle that is being used to construct the energy functional.
+Since we are interested in extended systems such as crystals, a plane-wave basis set comes very natural.
+In this case, both the envelope and unit-cell periodic part of the Bloch functions $\Ket{\psi^{\bm{k}}} = \eikr{r} \Ket{u^{\bm{k}}}$ are represented in terms of plane waves.
+
+To limit the size of the plane wave basis set that needs to be used, this package uses another approximation: the so-called Pseudopotentials that replace the exact ionic potentials.
+Again, a full description of pseudopotentials is out of scope of this thesis, but the main point is that they try to alleviate the requirement of including very fast oscillating plane waves (very high energy) in order to resolve the fast density oscillations that occur close to the ionic cores.
+Indeed the atomic states out of which Bloch functions are formed usually have one or many nodes close to the ionic cores.
+Pseudopotentials define a different potential for those cores in such a way that the wavefunctions match identically the exact ones outside the core region, but have less nodes and therefore a smoother density variation close to the cores.
+In most problems one is not interested in the exact form of the wavefunctions close to the core anyway.
+
+\section{Wannier Functions \label{sec:Wannier}}
+
+In a lot of the work presented in this Thesis we construct simplified model Hamiltonians.
+Not only does this make the problem more easily solvable, the reduced complexity often also leads to an increased understanding of the effects at play.
+For topics that involve the electronic structure, such as the large Rashba-splitting of energy bands discussed in Chapter \ref{ch:Rashba}, a tight-binding model is often the most appropriate tool.
+% or indirectly to parametrize the magnetic exchanges between localized spins as in Chapter \ref{ch:GdMn2O5}, .
+These models have appeared in various forms throughout history, originally proposed by Bloch \cite{Bloch1929}, and sometimes also referred to as the {\it linear combination of atomic orbitals} method \cite{Slater1954}.
+This last description hints at how they are constructed.
+First, a set of real space orbitals are defined inside the unit cell which are repeated throughout the system to construct the full basis.
+The elements of the Hamiltonian are then constructed by considering the overlap integrals between the orbitals.
+These are often referred to as {\it hopping parameters}, since when written in a second quantized form, they describe the process of annihilating an electron on one orbital and creating it on another. 
+Fourier transforming and diagonalizing this periodic Hamiltonian then leads to the Bloch functions and electronic band structure of the crystal.
+By exploiting the symmetries of the crystal and the basis orbitals, one can then fit a selected number of variables to an experiment in order to calculate the hopping parameters.
+This method of constructing the tight-binding model is mostly used for analytical descriptions, or as a semi-empirical method.
+
+Another way of constructing such a model is by extracting the localized orbitals and hopping parameters from a first-principles based simulation such as DFT.
+In thesis we favor the latter since it is more flexible, not depending on experiments while still providing quantitative results.
+This also allows for an easy comparison of multiple materials in order to better understand how certain physics manifest themselves in different cases. 
+
+The main question to answer then becomes how to define a such a set of localized orbitals, when most simulations for periodic systems handle extended BFs $\Ket{\psi^{\bm{k}}(\bm{r})} = \eikr{r} \Ket{u^{\bm{k}}(\bm{r})}$, where $\bm{k}$ denotes a wavevector in the first Brillouin zone (BZ), $\eikr{r}$ the plane wave envelope function, and $\Ket{\unkr{n}{k}}$ the cell-periodic part (see the left panel of Fig.~\ref{fig:Theory_blochvswan}(a), taken from Ref.~\cite{Marzari2012}).
+From here on out, we omit the $\bm{r}$ in the wavefunctions and inner products are assumed to be an integration over all space.
+There are many ways to do this, but the most natural one in this case is that of the Wannier functions (WFs) \cite{Wannier1937}.
+
+We will here give a short recap of the excellent reviews by Marzari et. al. \cite{Marzari2003,Marzari2012}, starting with the most clear case of a single isolated band $n$ with BFs $\BlochKet{n}$ (see red window in Fig.~\ref{fig:Theory_blochvswan}(b)), where the BF can be written as a straightforward discrete Fourier transform of the WF: 
+\begin{equation}
+	\label{eq:Theory_1bandwan}
+	\BlochKet{n} = \eikr{r} \unkKet{n}{k} = \sum_{\bm{R}} \eikr{R} \WanKet{n}{R},
+\end{equation}
+with $\unkrKet{n}{k}$ the periodic part of the BF, $\WanKet{n}{R}$ the localized WF centered in the unit cell defined by lattice vector $\bm{R}$, and $n$ the band index.
+The comparison between BFs and WFs is made in Fig.~\ref{fig:Theory_blochvswan}.
+\begin{figure}
+	\begin{subfigure}{0.49\textwidth}
+		\caption{}
+		\IncludeGraphics{blochvswan.png}
+	\end{subfigure}
+	\begin{subfigure}{0.49\textwidth}
+		\caption{}
+		\IncludeGraphics{wanwindows.png}
+	\end{subfigure}
+	\caption{\label{fig:Theory_blochvswan} a) A comparison between Bloch functions (left) and Wannier functions (right). The green line in the left panel denotes the envelope function $\eikr{r}$. This images was taken from Ref.~\cite{Marzari2012}. b) Bandstructure of semiconductor GeTe, demonstrating three cases for Wannierization: red is a single disconnected band, green shows a disconnected composite manifold of connected bands, blue shows the situation when bands need to be disentangled.}
+\end{figure}
+When $k=0$ we can see that the periodic part of the BF $\unkr{n}{k}$ is simply the sum over the WFs centered at different unit cells.
+In the case of $k \neq 0$, similar to how the envelope part modulates the periodic part of the BF, the contribution of each WF to the total sum needs to be modulated in a discrete way through $\eikr{R}$.
+
+The inverse Fourier transform over the BF in the first Brillouin Zone (BZ) can then be performed in order to generate the localized WFs,
+\begin{equation}
+	\label{eq:Theory_wanfourier}
+	\WanKet{n}{R} = \frac{V}{(2\pi)^3} \int_{BZ} d \bm{k} \inveikr{R} \BlochKet{n},
+\end{equation}
+where $V$ denotes the real-space volume of the unit cell.
+In these and following equations, the normalization convention is used such that $\int_V d\bm{r}\BraKet{\Blochr{n}} = 1$.
+As can be seen from the right panel in Fig.~\ref{fig:Theory_blochvswan}, WFs centered in different unit cells are shifted copies of one another.
+
+One of the most useful properties of the WFs lies in the realization that, through the gauge freedom at each $\bm{k}$ of the BF\footnote{The solution to Schr\"odinger equation does not determine uniquely its phase.}, the shape of the WFs is not unique:
+\begin{align}
+	\BlochKet{n} &\Rightarrow \tildeBlochKet{n} = e^{i \phi_n^{\bm{k}}} \BlochKet{n} \\
+	\WanKet{n}{R} &\Rightarrow \tildeWanKet{n}{R} = \frac{V}{(2\pi)^3} \int_{BZ} d \bm{k} e^{-i (\bm{k} \cdot \bm{R} + \phi_n^{\bm{k}})} \BlochKet{n},
+\end{align}
+This means that by varying $\phi_n^{\bm{k}}$ we can adapt the WF basis to the needs of the particular problem under investigation.
+In the case of a single isolated band this is a bonafide luxury exploitable to simplify the task at hand.
+However, in pretty much all practical problems, it are groups of bands that we are interested in.
+The simplest case is when these form a composite manifold that is detached from other bands, such as the green valence bands in Fig.~\ref{fig:Theory_blochvswan}(b).
+
+It is natural to generalize the notion of the single band gauge transformation (in that case amounting to a single free phase), to this manifold of states:
+\begin{equation}
+	\tildeBlochKet{m} = \sum_m U_{nm}^{\bm{k}} \BlochKet{n}.
+\end{equation}
+Here $n,m$ are band indices enumerating the bands inside the composite manifold and the tilde is used to distinguish $\tildeBlochKet{m}$ from the BFs.
+These transformed states are no longer eigenstates of the Hamiltonian if $U_{nm}^{\bm{k}}$ has off-diagonal elements.
+Traces performed over such an isolated set of bands are invariant w.r.t. to these gauge transformations, leading to the invariance of observables such as the Hamiltonian which lies at the core of the ability to isolate and focus on this subproblem.
+Choosing a decent gauge in this case becomes a necessity in order to extract well localized WFs.
+This is because composite band manifolds, in general, will harbor crossings and degeneracies where the BFs become non-analytic and thus the variation of the periodic parts $\unkr{n}{k}$ will not be smooth in the variation over $\bm{k}$.
+This is an issue, since it is a well known fact that only smooth functions in reciprocal space lead to well localized ones in real space when the inverse Fourier transform is performed.
+Indeed, in Eq.~\eqref{eq:Theory_wanfourier}, only for smoothly varying $\unkr{n}{k}$ will there be a cancellation of the terms from the fast varying exponent $\eikr{R}$ when $\bm{R}$ becomes large.
+It is thus important to choose a gauge at each $k$-point such that the rotated wavefunctions $\tildeBlochKet{n}$ vary as smoothly as possible, which will ultimately lead to the WFs that are as localized as possible\footnote{It can be proved that these WFs will be exponentially localized in the case of normal insulators.}. 
+The localization functional can be written down in the real space WF basis as
+\begin{equation}
+	\label{eq:Theory_spread}
+	\Omega =\sum_n \WanBra{n}{0}r^2\WanKet{n}{0} - \left|\WanBra{n}{0}\bm{r}\WanKet{n}{0}\right|^2.
+\end{equation}
+This can be split up into a gauge-invariant and gauge-dependent part
+\begin{align}
+	\Omega &= \Omega_I + \tilde\Omega,  \\
+	\Omega_I &= \sum_n \left[\WanBra{n}{0} r^2 \WanKet{n}{0} - \sum_{m,\bm{R}} \left| \WanBra{m}{R} \bm{r} \WanKet{n}{0}\right|^2\right] \label{eq:Theory_omegaI}\\
+	\tilde\Omega &= \sum_n \sum_{m,\bm{R} \neq n,\bm{0}} \left|\WanBra{m}{R} \bm{r} \WanKet{n}{0}\right|^2.
+\end{align}
+For a set of isolated bands it thus suffices to minimize the gauge-dependent part in order to find the  unique set of maximally localized Wannier functions (MLFW) that consitute these bands \cite{Kunes2004, Marzari2012}.
+We transform the position dependent operators into reciprocal space as \cite{Blount1962}
+\begin{equation}
+\WanBra{n}{R}\bm{r}\WanKet{m}{0} = i \frac{V}{(2\pi)^3}\int d\bm{k} \eikr{R}\unkBra{n}{k} \bm{\nabla}_{\bm{k}} \unkKet{m}{k}
+\end{equation}
+and
+\begin{equation}
+\WanBra{n}{R}r^2\WanKet{m}{0} = -\frac{V}{(2\pi)^3}\int d\bm{k} \eikr{R}\unkBra{n}{k} \bm{\nabla}_{\bm{k}}^2 \unkKet{m}{k}.
+\end{equation}
+By then minimizing $\tilde\Omega$ in terms of different gauge transformations $U_{nm}^{\bm{k}}$ applied to the $\unkKet{n}{k}$, we can find a set of MLFW. 
+
+If maximal localization is not the goal, tweaking the $U_{nm}^{\bm{k}}$ allows for the generation of WFs with other desirable characteristics in a way that, e.g., they obey certain ionic-site symmetries.
+This can be achieved by projecting onto atomic-like orbitals, which can be very useful in gaining a further understanding in terms of orbitals with definite and known properties.
+More details on the different construction methods and can be found in Ref.~\cite{Marzari2012}.
+
+Up to now we discussed the case of an isolated set of bands.
+However, in many cases such a set does not exist in the region of interest.
+This leads to sets of bands which are termed to be {\it entangled}, since they are connected to bands that lie outside this energy range (see the blue bands in Fig.~\ref{fig:Theory_blochvswan}(b)).
+If we are seeking $J$ WFs, we thus need to somehow select, at each $k$-point, $J$ states $\tildeBlochKet{n}$ from a bigger set $J^{\bm{k}}$, that can then be used in the above described localization procedure:
+\begin{equation}
+	\tildeBlochKet{n} = \sum_{m=1}^{J^{\bm{k}}}V_{nm}^{\bm{k}} \BlochKet{m}.
+\end{equation}
+The matrices $V_{nm}^{\bm{k}}$ are generally speaking rectangular with dimension $J\times J^{\bm{k}}$, since they transform a set of $J^{\bm{k}}$ wavefunctions into a smaller one with only $J$ wavefunctions.
+This leads to a two-step procedure where first a subspace is selected for each $k$-point, followed by the final gauge selection to arrive at the localized basis of WFs.
+\begin{equation}
+	\WanKet{n}{R} = \frac{V}{(2\pi)^3} \int_{BZ} d\bm{k} e^{-i \bm{k} \cdot \bm{R}} \sum_{m=1}^J U^{nm}_{\bm{k}} \sum_{l=1}^{J^{\bm{k}}} V_{ml}^{\bm{k}} \BlochKet{l}
+\end{equation}
+There are again many ways to do this subspace selection (or {\it disentanglement}).
+The most prevalent two are to use another projection based method, or one that again focuses on minimizing the real space spread of the WFs.
+We utilize the latter in this work.
+It is based on finding the $V_{nm}^{\bm{k}}$ that lead to the maximal overlap of the selected subspaces with their neighbors at each $k$-point.
+As discussed before, this smoothness in reciprocal space translates into the subspace as a whole being more localized in real space.
+Indeed, it can be shown \cite{Marzari2012} that this intrinsic smoothness is exactly what $\Omega_I$ measures in Eq.~\eqref{eq:Theory_omegaI}. 
+Following this disentanglement procedure, we can apply the procedures described for the isolated manifold of bands to ultimately lead to the WFs which are very well localized.
+In many cases, it is also desirable to adapt the algorithm in such a way that the BFs constituting the bands inside a ``frozen'' energy window are exactly interpolated by the resulting WF base and tight-binding Hamiltonian.
+
+In the previous equations a continuous integration over the BZ was performed for the fourier transform from BFs to WFs, however, in reality a discrete $k$-grid and Fourier transform is used.
+To keep close to the continuous case, the Fourier transform pair is then defined as
+\begin{align}
+	\tildeBlochKet{n} &= \sum_{\bm{R}} \eikr{R} \WanKet{n}{R},\label{eq:Theory_wantok}\\
+	\WanKet{n}{R} &= \frac{1}{N}\sum_{\bm{k}} \inveikr{R} \tildeBlochKet{n},
+\end{align}
+where $N$ denotes the number of unit cells in the periodic supercell in real space, or the number of $k$-points in the discrete mesh over the BZ.
+This discretization enforces periodic boundary conditions on the BFs over this supercell, meaning that the WFs in this definition also have this supercell periodicity.
+The localization criterion then means that inside the supercell the WFs are localized.
+If the interpolation is continuous, the supercell is infinite, restoring the earlier definitions and original notion of WFs.
+
+The final process to extract a tight-binding Hamiltonian in a WF basis, starting from an ab-initio DFT simulation, can thus be summarized as follows:
+\begin{enumerate}
+	\item perform a self-consistent DFT calculation in order to find the ground state density and BFs over a discrete $k$-mesh to be used in the Wannierization
+	\item find which trial orbitals (e.g. atomic-like) are most suitable for the bands or problem under investigation. This can be done for example by perfoming a projected density of states calculation.
+	\item select an inner ``frozen'' window with the most important bands, and, if entangled, and an outer window from which to disentangle $J$-dimensional subspaces for each $k$-point
+	\item use a projection on the trial orbitals as the initial guess and then optimize the smoothness of the subspaces as a whole to find $V_{ml}^{\bm{k}}$ matrices to identify the $J$-dimensional subspaces.
+	\item find the final gauges $U_{nm}^{\bm{k}}$ in order to minimize the spread of each of the $J$ WFs.
+\end{enumerate}
+
+Further details on the Wannierization process can be found in Ref.~\cite{Marzari2012}, and specific details on the implementation in the Wannier90 package used throughout this work can be found in Ref.~\cite{Mostofi2014AnFunctions}.
+
+When the $U^{\bm{k}}$ and $V^{\bm{k}}$ matrices are found, any property $f(\bm{k})$ defined on the $k$-mesh in terms of the BFs used in the first-principles calculation can be transformed into $F(\bm{R})$ in the Wannier representation.
+Since the WFs are well localized, $F(\bm{R})$ tends to decay rapidly with $|\bm{R}|$.
+It is important to realize that, depending on the coarseness of the $k$-grid used in the first-principles calculation, $F(\bm{R})$ can only be calculated for limited values of $|\bm{R}|$, spanning the supercell defined by the discretization of the BZ.
+Using these short-ranged real-space $F(\bm{R})$, it is then possible to interpolate the values of $f(\bm{k})$ by performing the inverse procedure. This allows to efficiently calculate $f(\bm{k})$ on a finer $k$-mesh compared with the one used in the first-principles calculations, provided the WFs are well localized inside the supercell defined by the original coarse $k$-mesh.
+This efficient interpolation is one of the great advantages of using this technique, since the basis, and thus dimensions of the matrices, is much lower than that used in the first-principles calculation (e.g. many plane waves).
+
+The main quantity we will use this interpolation for is the Hamiltonian:
+\begin{equation}
+	\label{eq:Theory_waninterp}
+	\tilde{H}_{nm}^{\bm{k}} = \tildeBlochBra{n} H \tildeBlochKet{m} = \sum_{\bm{R}} \eikr{R} \WanBra{n}{0}H\WanKet{n}{R},
+\end{equation}
+where the tilde is used to distinguish the $k$-space wavefunctions from BFs, and $\WanKet{n}{R}$ denote the WFs centered at unit cell identified by lattice translation $\bm{R}$.
+To recover the bandstructure from this Hamiltonian can then be diagonalized by unitary transformations $W^{\bm{k}}$ such that
+\begin{equation}
+H_{nm}^{\bm{k}} = [W^{\bm{k}\dagger} \tilde{H}_{nm}^{\bm{k}} W^{\bm{k}}]_{nm} = \delta_{nm} \varepsilon_{n}^{\bm{k}}.
+\end{equation}
+
+This concludes our very condensed introduction and overview of the use and construction of Wannier functions as a tool to aid in the theoretical understanding of the behavior of electrons in extended systems.
 

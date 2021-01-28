@@ -1,38 +1,114 @@
 %
-\documentclass[10pt,a4paper]{book}
+\documentclass[phd, titlesmallcaps,copyrightpage,foronline]{SNSthesis}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,xcolor}
-\usepackage[backend=biber,refsection=chapter]{biblatex}
+% \usepackage[backend=biber]{biblatex}
+\usepackage[margin=30mm]{geometry}
+% \renewcommand{\baselinestretch}{1.5} 
 % \usepackage{cancel}
 \usepackage{siunitx}
 \usepackage{graphicx}
 % \usepackage{smartdiagram}
 \usepackage{subcaption}
 % \usepackage[caption=false]{subfig}
-\captionsetup[subfigure]{labelformat=brace}
+\captionsetup[subfigure]{labelformat=brace,position=top,singlelinecheck=off,justification=raggedright}
 % \usepackage[normalem]{ulem}
 % \usepackage{tikz}
 \usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage{cleveref}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,decorations.pathmorphing}
+
 % \usepackage{natbib}
 \usepackage{hyperref}
-\addbibresource{./GdMn2O5/bib.bib}
-\addbibresource{./Rashba/bib.bib}
-\addbibresource{./Softening/bib.bib}
-\addbibresource{./Cr/bib.bib}
+\usepackage[english]{babel}
+\addto{\captionsenglish}{\renewcommand{\bibname}{References}}
+
+
+
+\usepackage[linesnumbered,ruled]{algorithm2e}
+\SetAlgoCaptionSeparator{}	% remove colon in caption
+\makeatletter
+\newenvironment{namedalgorithm}[1]{%
+	\medskip
+	\renewcommand{\algocf@algocfref}{#1}% update algorithm name
+	\SetNlSty{textbf}{}{\enspace} % manual spacing after line-numbers (revtex)
+	\DontPrintSemicolon % remove semicolon
+	\begin{algorithm}[H] %
+	}{\end{algorithm}%
+	\medskip}
+\makeatother
+
+% Extractable work
+\usepackage[percent]{overpic}
+
+% \addbibresource{./Introduction/bib.bib}
+% \addbibresource{./Theory/bib.bib}
+% \addbibresource{./GdMn2O5/bib.bib}
+% \addbibresource{./Rashba/bib.bib}
+% \addbibresource{./Softening/bib.bib}
+% \addbibresource{./Cr/bib.bib}
 
 %to be used in main text
-\newcommand{\ket}[1]{$\left|#1\right\rangle$}
+% \newcommand{\ket}[1]{$\left|#1\right\rangle$}
+% \newcommand{\bra}[1]{$\langle #1\rvert$}
+\newcommand{\ket}[1]{$|#1\rangle$}
 \newcommand{\bra}[1]{$\langle #1\rvert$}
 
 %To be used within math env
 \newcommand{\Ket}[1]{\left|#1\right\rangle}
-\newcommand{\Bra}[1]{\langle #1\rvert}
+\newcommand{\Bra}[1]{\left\langle #1\right\rvert}
+\newcommand{\BraKet}[1]{\left\langle #1\rvert #1\right\rangle}
+\newcommand{\Sandwich}[2]{\left\langle #1\rvert #2\right\rangle}
+% \newcommand{\Ket}[1]{|#1\rangle}
+% \newcommand{\Bra}[1]{\langle #1\rvert}
+% \newcommand{\BraKet}[1]{\langle #1\rvert #1\rangle}
+% \newcommand{\Sandwich}[2]{\langle #1\rvert #2\rangle}
 
 \newcommand{\kpoint}{$\bold{K}$ }
 \newcommand{\Kpoint}{$\bold{K'}$ }
 \newcommand{\gpoint}{$\bold{\Gamma}$}
 
 \newcommand{\angstrom}{\mbox{\normalfont\AA} }
+% Commands for Kets and Bras
+\newcommand{\Wan}[2]{w_{#1}^{\bm{#2}}}
+\newcommand{\tildeWan}[2]{\tilde{w}_{#1}^{\bm{#2}}}
+\newcommand{\WanKetr}[2]{\Ket{\Wan{#1}{#2}(\bm{r})}}
+\newcommand{\tildeWanKetr}[2]{\Ket{\tildeWan{#1}{#2}(\bm{r})}}
+\newcommand{\WanKet}[2]{\Ket{\Wan{#1}{#2}}}
+\newcommand{\tildeWanKet}[2]{\Ket{\tildeWan{#1}{#2}}}
+\newcommand{\WanBrar}[2]{\Bra{\Wan{#1}{#2}(\bm{r})}}
+\newcommand{\tildeWanBrar}[2]{\Bra{\tildeWan{#1}{#2}(\bm{r})}}
+\newcommand{\WanBra}[2]{\Bra{\Wan{#1}{#2}}}
+\newcommand{\tildeWanBra}[2]{\Bra{\tildeWan{#1}{#2}}}
+
+\newcommand{\Bloch}[1]{\psi_{#1}^{\bm{k}}}
+\newcommand{\tildeBloch}[1]{\tilde{\psi}_{#1}^{\bm{k}}}
+
+\newcommand{\BlochKet}[1]{\Ket{\Bloch{#1}}}
+\newcommand{\tildeBlochKet}[1]{\Ket{\tildeBloch{#1}}}
+\newcommand{\BlochBra}[1]{\Bra{\Bloch{#1}}}
+\newcommand{\tildeBlochBra}[1]{\Bra{\tildeBloch{#1}}}
+
+\newcommand{\Blochr}[1]{\psi_{#1}^{\bm{k}}(\bm{r})}
+\newcommand{\tildeBlochr}[1]{\tilde{\psi}_{#1}^{\bm{k}}(\bm{r})}
+
+\newcommand{\BlochKetr}[1]{\Ket{\Blochr{#1}}}
+\newcommand{\tildeBlochKetr}[1]{\Ket{\tildeBlochr{#1}}}
+\newcommand{\BlochBrar}[1]{\Bra{\Blochr{#1}}}
+\newcommand{\tildeBlochBrar}[1]{\Bra{\tildeBlochr{#1}}}
+
+\newcommand{\unkr}[2]{u_{#1}^{\bm{#2}}(\bm{r})}
+\newcommand{\unk}[2]{u_{#1}^{\bm{#2}}}
+
+\newcommand{\unkrBra}[2]{\Bra{\unkr{#1}{#2}}}
+\newcommand{\unkrKet}[2]{\Ket{\unkr{#1}{#2}}}
+\newcommand{\unkBra}[2]{\Bra{\unk{#1}{#2}}}
+\newcommand{\unkKet}[2]{\Ket{\unk{#1}{#2}}}
+
+\newcommand{\inveikr}[1]{e^{-i \bm{k}\cdot \bm{#1}}}
+\newcommand{\eikr}[1]{e^{i \bm{k}\cdot \bm{#1}}}
 
 %For editing
 \newcommand{\sa}[1]{{\color{violet}[#1]}}
@@ -48,31 +124,73 @@
     \includegraphics[#1]{\GraphicsPath #2}}   
 
 % \usetikzlibrary{shapes,arrows,decorations.pathmorphing}
+\newcommand{\thesistitle}{Interplay between complex orders in functional materials}
+\newcommand{\name}{Louis Ponet}
+\newcommand{\email}{louis.ponet@iit.it; louis.ponet@sns.it}
 
-\title{
-	{Interplay between complex orders in functional materials}\\
-	{\large Department of Nanosciences, Scuola Normale Superiore di Pisa}\\
-	{\large Quantum Materials Theory, Istituto Italiano di Tecnologia}}
+\ifpdf
+    \pdfinfo { 
+              % /Title  (\thesistitle)
+              /Title  (Interplay between complex orders in functional materials)
+               /Creator (pdflatex) % probably this
+               /Producer (LaTeX with hyperref) % something like this
+               /Author (\name \email)
+               %/CreationDate (D:20100204000000)  %format D:YYYYMMDDhhmmss
+               % if /CreationDate is left out it will default to the file creation date
+               /Keywords (Physics)}
+    \pdfcatalog { /PageMode (/UseOutlines) /OpenAction (fitbh)  }
+\fi
 
-\author{Louis Ponet}
+
+
+
+% 	{\large Department of Nanosciences, Scuola Normale Superiore di Pisa}\\
+% 	{\large Quantum Materials Theory, Istituto Italiano di Tecnologia}}
+
+% \author{Louis Ponet}
 \date{today}
 
 \begin{document}
+\frontmatter
+
+% acknowledgements, titlepage, abstract, list of publications
+\title{\thesistitle}
+
+\ifthenelse{\boolean{foronline}}{
+  \author{\href{mailto:\email}{\name}}
+  \department{Scienze}
+}{
+  \author{\name}
+  \department{Scienze}
+}
+
+
+\titlepage
 
 \chapter*{Abstract}
-Theoretical condensed matter research is plagued by a fundamental issue of complexity. The sheer amount of degrees of freedom in a material on any technologically relevant scale is overwhelming (e.g. $\sim10^{23}$ electrons per cm$^3$), and makes it impossible to describe the quantum mechanical wavefunction exactly.
+Theoretical condensed matter research is plagued by a fundamental issue of complexity. The sheer amount of degrees of freedom in a material of any technologically relevant scale is overwhelming (e.g. $\sim10^{23}$ electrons per cm$^3$), and make it impossible to describe the quantum mechanical wavefunction exactly.
+%\lp{there is some more nice things along this line in Wen}.
+%This forces researchers in the field to make approximations, as to make the problem tractable, while still capturing the essential physics resulting in the effects under investigation.
+The way to make progress with this undertaking has always been to try and isolate the parts of the system that play the biggest role in the effects under investigation, while neglecting those that only lead to more complexity.
 
-The Hamiltonian plays a central role in the description of crystals, the subject of this thesis. It can be decomposed into various parts, and their interactions. Depending on the physics under scrutiny it then often suffices to solve only one of those parts.
-This can be either because the energy scales and associated timescales that govern the constituents are very different, or because the interactions between them are small.
-One example, often put into practice, is the separation of electronic and phononic (lattice) degrees of freedom, leading to the well-known Born-Oppenheimer approximation, decoupling their respective motion.
-Another is the often neglected spin-orbit coupling, due to the tiny prefactor associated with its relativistic origin.
+As is well known, every quantum mechanical system is governed fundamentally by its Hamiltonian. One could go so far as to say that if we would be able to exactly calculate all of the eigenvectors and eigenvalues of the Hamiltonian describing the material under study, the field of condensed matter would be completed. This is ofcourse impossible for reasons stated before.
+The full Hamiltonian can be decomposed into contributions from all parts of the system, and interactions between those parts.
+It is then quite straightforward to separate these into different energy scales, or through $\Ket{\psi(t)} = e^{-i \frac{\mathcal{H}t}{\hbar}}\Ket{\psi(0)}$, different characteristic timescales.
+There are two alleys along which one can proceed to simplify the problem. When the interactions between these parts are negligible, the two subsystems can be decoupled and solved separately.
+This is, for example, the case in materials for which the relativistic spin-orbit coupling can be ignored, decoupling completely the spin and charge sectors of the Hamiltonian.
+The second way is when the interaction is not negligible, but the time scales are so different that for the description of the slow varying subsystem, the interaction with the fast moving one can be described by an average, time independent one, so-called mean-field approximations.
+Vice versa, the slow moving subsystem can be taken as static for the description of the fast moving one.
+An example of this is the well-known Born-Oppenheimer approximation that assumes the reaction of the electrons to displacements of the ions inside the material to be instantaneous.
 
-Solving these subproblems then allows for progress to be made in understanding the physics that govern them.
-However, there will inevitably be systems for which this interaction is not small and leads to fascinating new physics that manifestly depends on both subsystems combined.
-In this thesis we focus on these cases and how they arise in functional materials, with the occasional eye towards applications in technology.
+Applying approximations like these systematically, allows to identify and approximately solve the important parts in order to describe many phenomena that present themselves in condensed matter.
+They form the backbone and starting point for further investigations gradually including more complexity to describe increasingly complex physics.
 
+This Thesis will discuss effects that depend crucially on these, usually negligible, interactions between two relatively well-understood subsystems.
+The three main interactions that will be discussed are: relativistic spin-orbit coupling (SOC), coupling charge and spin sectors of the Hamiltonian; Heisenberg magnetic exchange striction, coupling spins to atomic displacements (phonons); and electrostriction, where electric polarization leads to an associated strain texture.
+
+These interactions are studied in functional materials, with the occasional eye towards applications in technology.
 The reason why these cross-order couplings can be interesting for technological applications, is that often one of the orders is more robust with respect to perturbations, and therefore more long-lived, but also harder to control efficiently.
-By exploiting the cross-order coupling in certain materials, one could potentially control the long lived order by applying perturbations to the more easily controllable order.
+By exploiting the cross-order coupling, one could potentially control the robust order through perturbations on the coupled one in a more efficient manner.
 
 In giant Rashba effect systems, the coupling between spin and ferroelectric order leads to a linear spin-splitting of the band structure, whose sign depends on the orientation of the ferroelectric polarization.
 We show that, rather than the relativistic Rashba effect, a combination of electrostatics and atomic spin-orbit coupling lies at the origin of the large splitting.
@@ -85,17 +203,21 @@ This allows us to predict the sequence of optical pulses to be applied to the ma
 
 And finally, the coupling between ferroelectricity and strain in BaTiO$_3$ leads to a softening at purely ferroelectric domain walls, allowing for some mechanical control of the position of this wall.
 
-We utilize both theoretical and computational tools to understand the nature of these interactions, how they lead to cross-order coupling in these materials, and how this then translates into the experimentally observed behavior.
-% \chapter*{Acknowledgements}
-% \tableofcontents
-
+We utilize both theoretical and computational tools to understand the nature of these interactions, how they lead to cross-order coupling in these materials, and how this ultimately translates into the experimentally observed behavior.
+\chapter*{Acknowledgements}
+\Include{Publications}
+\setcounter{tocdepth}{1}
+\tableofcontents
+\mainmatter
 % \Include{Introduction}
-% % \Include{Theory}
-% \chapter{Charge order and spin-momentum locking in high spin-orbit coupled ferroelectrics}
-% \Include{Rashba}
-\Include{GdMn2O5}
+
+% \Include{Theory}
+\Include{Rashba}
+% \Include{GdMn2O5}
+% \Include{Cr}
+
 % \Include{Softening}
-\Include{Cr}
-% \chapter{Strong coupling and ultrafast control of charge and spin density waves in elemental Chromium}
-% \subfile{chapters/chromium_sdw_cdw.tex}
+\backmatter
+\bibliography{references}
+\printindex
 \end{document}

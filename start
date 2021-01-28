@@ -1,12 +1,5 @@
 #!/bin/fish
-
-dev "
-cd papers
-hook global ModeChange .*:insert:.* %{nop %sh{rm /home/ponet/Documents/PhD/Thesis/papers/*aux
-rm /home/ponet/Documents/PhD/Thesis/papers/*/*aux
-pdflatex -output-directory /home/ponet/Documents/PhD/Thesis/papers /home/ponet/Documents/PhD/Thesis/papers/Thesis.tex > /dev/null 2>&1 < /dev/null &} }
-"
-# dev "
-# cd papers
-# hook global ModeChange .*:insert:.* %{nop %sh{rm /home/ponet/Documents/PhD/Thesis/papers/*aux} }
-# "
+evince Thesis.pdf &
+while sleep 2
+	find ./ -name '*.tex' | entr -s 'pdflatex -halt-on-error -output-dir /home/ponet/Documents/PhD/Thesis/papers /home/ponet/Documents/PhD/Thesis/papers/Thesis.tex'
+ end

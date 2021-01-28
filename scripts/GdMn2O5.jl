@@ -16,7 +16,7 @@ l  = Ledger(physical_model())
 rad2deg(l[L][2].ϕ)
 optimize!(l, Spin, L, Pb)
 const start = 3.0
-const stop  = 5.0
+const stop  = 5.5
 const len   = 120
 const Hr    = H_sweep_range(start, stop, len)
 const hsweep = generate_Hsweep_states(l, 10, Hr)
@@ -137,3 +137,42 @@ Entity(l, GdMn2O5.VisualizationSettings(Gd_color=GdMn2O5.Gl.BLACK, Mn_color=GdMn
 dio = Diorama(l)
 expose(dio)
 dio.loop
+
+#%%
+
+e_Gd_H = []
+e_L_H = []
+e_LL = []
+e_LK = []
+e_Gd_L= []
+
+for h in hsweep
+    h[Etot][1].e = 0.0
+    update(E_Gd_H(), h)
+    push!(e_Gd_H, h[Etot][1].e)
+    h[Etot][1].e = 0.0
+    update(E_L_H(), h)
+    push!(e_L_H, h[Etot][1].e)
+    h[Etot][1].e = 0.0
+    update(Gd.E_Gd_L(), h)
+    push!(e_Gd_L, h[Etot][1].e)
+    h[Etot][1].e = 0.0
+    update(E_L_easy(), h)
+    push!(e_LK, h[Etot][1].e)
+    h[Etot][1].e = 0.0
+    update(Gd.E_LL(), h)
+    push!(e_LL, h[Etot][1].e)
+end
+
+plot(Hr, e_Gd_H, yguide="E (meV)", dpi=200, xguide="|H| (T)", label="Gd Zeeman", yguidefontsize=15,xguidefontsize=15, xtickfontsize=15, ytickfontsize=15, legendfontsize=10)
+plot!(Hr, e_L_H, label="L Zeeman")
+plot!(Hr, e_Gd_L.+60, label = L"\left[{\rm Gd} \leftrightarrow {\rm L}\right] + {\rm 60\,meV}")
+plot!(Hr, e_LL, label = L"{\rm L_1} \leftrightarrow {\rm L_2}")
+plot!(Hr, e_LK, label = "L easy-axis anisotropy")
+savefig(papersdir("GdMn2O5/Images/energy_contributions.png"))
+#%%
+
+
+
+
+

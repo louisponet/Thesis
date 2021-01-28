@@ -2,39 +2,87 @@
 using DrWatson
 quickactivate(@__DIR__)
 using Revise
+using DFControl
 using DFWannier
 const DFW = DFWannier
 using LinearAlgebra
 using Plots
 using LaTeXStrings
 using FileIO
+pyplot()
 #%%
 ## GeTe
-cd(datadir("Rashba/GeTe"))
-job1 = DFJob(datadir("Rashba/GeTe/NSOC"))
-wfuncs1 = load(joinpath(job1, "wfuncs.jld2"))["wfuncs"]
-wfuncs1_soc = WannierFunction[]
-for i = 1:8
-    push!(wfuncs1_soc, WannierFunction(wfuncs1[i].points, map(x-> SVector(x[1], 0.0), wfuncs1[i].values)))
-    push!(wfuncs1_soc, WannierFunction(wfuncs1[i].points, map(x-> SVector(0.0, x[1]), wfuncs1[i].values)))
-end
-job = DFJob(datadir("Rashba/GeTe/SOC"))
+# cd(datadir("Rashba/GeTe"))
+job_nsoc = DFJob(datadir("Rashba/GeTe/NSOC"))
+bands_nsoc = readbands(job_nsoc)
+fermi_nsoc = readfermi(job_nsoc)
+hami_nsoc = readhami(job_nsoc)
+wfuncs_nsoc = load(joinpath(job_nsoc, "wfuncs.jld2"))["wfuncs"]
+wbands_nsoc = wannierbands(hami_nsoc, bands_nsoc)
+# plot(wbands_nsoc, bands_nsoc, ylims=[-2.1, 16])
+p = plot(job_nsoc, -5.3, 5, 0.1, dpi=200, layout = grid(1, 2, widths=(0.7,0.3)))
+plot!(p[1], xticks = ([1, 101, 201], ["A", "Z", "U"]))
+plot!(p[2], legendfontsize = 10)
+plot(bands_nsoc[11:20], fermi=fermi_nsoc, ylims=[-12.5,6], dpi=200, color=hcat([[:red for i=1:2];[:green for i =1:3];[:blue for i =1:5]]...), xticks = ([1, 101, 201], ["A", "Z", "U"]), title=nothing, xtickfontsize=15, ytickfontsize=15, yguidefontsize=15)
+plot!([-10 for i = 1:length(bands_nsoc[1].k_points_cryst)])
+savefig(papersdir("Rashba", "Images", "band_windows.png"))
 
+
+DFWannier.write_xsf("test.xsf", wfuncs_nsoc[1], job_nsoc.structure, value_func = x -> sign(cos(x[1]))*abs(x[1]))
+map(x -> abs(x[1])<1e-3 ? SVector((0.0im)) : x, wfuncs_nsoc[1].values)
+# wfuncs_nsoc = WannierFunction[]
+# for i = 1:8
+#     push!(wfuncs1_soc, WannierFunction(wfuncs1[i].points, map(x-> SVector(x[1], 0.0), wfuncs1[i].values)))
+#     push!(wfuncs1_soc, WannierFunction(wfuncs1[i].points, map(x-> SVector(0.0, x[1]), wfuncs1[i].values)))
+# end
+
+job_soc = DFJob(datadir("Rashba/GeTe/SOC"))
 bands_soc = readbands(job_soc)
-bands = readbands(job)
-fermi = readfermi(job)
+fermi_soc = readfermi(job_soc)
+hami_soc = readhami(job_soc)
+wfuncs_soc = load(joinpath(job_soc, "wfuncs.jld2"))["wfuncs"]
+Sx_soc, Sy_soc, Sz_soc = DFW.readspin(job_soc)
+wbands_soc = wannierbands(hami_soc, bands_soc)
+p = plot(job_soc, -5.3, 5, 0.1, dpi=200, layout = grid(1, 2, widths=(0.7,0.3)))
+plot!(p[1], xticks = ([1, 101, 201], ["A", "Z", "U"]))
+plot!(p[2], legendfontsize = 10)
+savefig(papersdir("Rashba", "Images", "SOC_dos.png"))
+plot(bands_soc, fermi=fermi_soc, ylims=[-12.5,5])
+plot(plot(wbands_nsoc, bands_nsoc, fermi=fermi_nsoc, ylims=[-5.3, 5], legend=:topright), plot(wbands_soc, bands_soc, fermi=fermi_soc, ylims=[-5.3, 5]), dpi=200, title = "",xticks = ([1, 101, 201], ["A", "Z", "U"]))
+savefig(papersdir("Rashba", "Images", "wanvsdft.png"))
 
-wfuncs = load(joinpath(job, "wfuncs.jld2"))["wfuncs"]
+
+L = zeros(Vec3{ComplexF64}, 16, 16)
+for (i1, w1) in enumerate(wfuncs_soc)
+    for (i2,w2) in enumerate(wfuncs_soc)
+        L[i1, i2] = DFW.calc_angmom(w1, w2, ustrip(job_soc.structure.atoms[1].position_cart), 2)
+    end
+end
+evec=wbands_soc[10].eigvec[95]
+bfunc = similar(wfuncs_soc[1])
+for (i, e) in enumerate(evec)
+    bfunc += e * wfuncs_soc[i]
+end
+DFW.calc_angmom(bfunc,bfunc, ustrip(job_soc.structure.atoms[1].position_cart), 3)
+evec' * map(x->x[3], L) * evec
+
+
+
+const smat = DFWannier.σx(2)
+for ib = 1:10
+evec = wbands_soc[ib].eigvec[95]
+bfunc = similar(wfuncs_soc[1])
+for (i, e) in enumerate(evec)
+    bfunc += e * wfuncs_soc[i]
+end
+write_xsf(datadir("Rashba","GeTe","SOC","bf_95_$ib.xsf"), bfunc, job_soc.structure) 
+end
+
+
+wbands_soc[4].eigvals[101]
 for i = 1:16
     DFW.write_xsf(joinpath(job1, "$i.xsf"), wfuncs1_soc[i], job1.structure, value_func = x -> abs(x[1]) > abs(x[2]) ? sign(real(x[1])) * norm(x) : sign(real(x[2]))*norm(x))
 end
-wfuncs = load(joinpath(job, "wfuncs.jld2"))["wfuncs"]
-wfuncs_soc = load(joinpath(job_soc, "wfuncs.jld2"))["wfuncs"]
-hami = readhami(job)
-hami_soc = readhami(job_soc)
-wbands = wannierbands(hami, bands)
-wbands_soc = wannierbands(hami_soc, bands_soc)
-plot(bands_soc,  wbands_soc, fermi=fermi_soc, ylims=[-5,5])
 wbands[5].eigvec[101]
 t = similar(wfuncs[1])
 Lx, Ly, Lz = zeros(ComplexF64, 8, 8), zeros(ComplexF64, 8, 8), zeros(ComplexF64, 8, 8)
@@ -174,7 +222,7 @@ plot(abs.(getindex.(wbands[5].eigvec[90:110],1)))
 plot!(abs.(getindex.(wbands[6].eigvec[90:110],1)))
 
 
-
+## Potentials figure
 #%%
 using DrWatson
 quickactivate(@__DIR__)
