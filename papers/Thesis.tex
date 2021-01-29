@@ -151,73 +151,73 @@
 \date{today}
 
 \begin{document}
-\frontmatter
+% \frontmatter
 
-% acknowledgements, titlepage, abstract, list of publications
-\title{\thesistitle}
+% % acknowledgements, titlepage, abstract, list of publications
+% \title{\thesistitle}
 
-\ifthenelse{\boolean{foronline}}{
-  \author{\href{mailto:\email}{\name}}
-  \department{Scienze}
-}{
-  \author{\name}
-  \department{Scienze}
-}
+% \ifthenelse{\boolean{foronline}}{
+%   \author{\href{mailto:\email}{\name}}
+%   \department{Scienze}
+% }{
+%   \author{\name}
+%   \department{Scienze}
+% }
 
 
-\titlepage
+% \titlepage
 
-\chapter*{Abstract}
-Theoretical condensed matter research is plagued by a fundamental issue of complexity. The sheer amount of degrees of freedom in a material of any technologically relevant scale is overwhelming (e.g. $\sim10^{23}$ electrons per cm$^3$), and make it impossible to describe the quantum mechanical wavefunction exactly.
-%\lp{there is some more nice things along this line in Wen}.
-%This forces researchers in the field to make approximations, as to make the problem tractable, while still capturing the essential physics resulting in the effects under investigation.
-The way to make progress with this undertaking has always been to try and isolate the parts of the system that play the biggest role in the effects under investigation, while neglecting those that only lead to more complexity.
+% \chapter*{Abstract}
+% Theoretical condensed matter research is plagued by a fundamental issue of complexity. The sheer amount of degrees of freedom in a material of any technologically relevant scale is overwhelming (e.g. $\sim10^{23}$ electrons per cm$^3$), and make it impossible to describe the quantum mechanical wavefunction exactly.
+% %\lp{there is some more nice things along this line in Wen}.
+% %This forces researchers in the field to make approximations, as to make the problem tractable, while still capturing the essential physics resulting in the effects under investigation.
+% The way to make progress with this undertaking has always been to try and isolate the parts of the system that play the biggest role in the effects under investigation, while neglecting those that only lead to more complexity.
 
-As is well known, every quantum mechanical system is governed fundamentally by its Hamiltonian. One could go so far as to say that if we would be able to exactly calculate all of the eigenvectors and eigenvalues of the Hamiltonian describing the material under study, the field of condensed matter would be completed. This is ofcourse impossible for reasons stated before.
-The full Hamiltonian can be decomposed into contributions from all parts of the system, and interactions between those parts.
-It is then quite straightforward to separate these into different energy scales, or through $\Ket{\psi(t)} = e^{-i \frac{\mathcal{H}t}{\hbar}}\Ket{\psi(0)}$, different characteristic timescales.
-There are two alleys along which one can proceed to simplify the problem. When the interactions between these parts are negligible, the two subsystems can be decoupled and solved separately.
-This is, for example, the case in materials for which the relativistic spin-orbit coupling can be ignored, decoupling completely the spin and charge sectors of the Hamiltonian.
-The second way is when the interaction is not negligible, but the time scales are so different that for the description of the slow varying subsystem, the interaction with the fast moving one can be described by an average, time independent one, so-called mean-field approximations.
-Vice versa, the slow moving subsystem can be taken as static for the description of the fast moving one.
-An example of this is the well-known Born-Oppenheimer approximation that assumes the reaction of the electrons to displacements of the ions inside the material to be instantaneous.
+% As is well known, every quantum mechanical system is governed fundamentally by its Hamiltonian. One could go so far as to say that if we would be able to exactly calculate all of the eigenvectors and eigenvalues of the Hamiltonian describing the material under study, the field of condensed matter would be completed. This is ofcourse impossible for reasons stated before.
+% The full Hamiltonian can be decomposed into contributions from all parts of the system, and interactions between those parts.
+% It is then quite straightforward to separate these into different energy scales, or through $\Ket{\psi(t)} = e^{-i \frac{\mathcal{H}t}{\hbar}}\Ket{\psi(0)}$, different characteristic timescales.
+% There are two alleys along which one can proceed to simplify the problem. When the interactions between these parts are negligible, the two subsystems can be decoupled and solved separately.
+% This is, for example, the case in materials for which the relativistic spin-orbit coupling can be ignored, decoupling completely the spin and charge sectors of the Hamiltonian.
+% The second way is when the interaction is not negligible, but the time scales are so different that for the description of the slow varying subsystem, the interaction with the fast moving one can be described by an average, time independent one, so-called mean-field approximations.
+% Vice versa, the slow moving subsystem can be taken as static for the description of the fast moving one.
+% An example of this is the well-known Born-Oppenheimer approximation that assumes the reaction of the electrons to displacements of the ions inside the material to be instantaneous.
 
-Applying approximations like these systematically, allows to identify and approximately solve the important parts in order to describe many phenomena that present themselves in condensed matter.
-They form the backbone and starting point for further investigations gradually including more complexity to describe increasingly complex physics.
+% Applying approximations like these systematically, allows to identify and approximately solve the important parts in order to describe many phenomena that present themselves in condensed matter.
+% They form the backbone and starting point for further investigations gradually including more complexity to describe increasingly complex physics.
 
-This Thesis will discuss effects that depend crucially on these, usually negligible, interactions between two relatively well-understood subsystems.
-The three main interactions that will be discussed are: relativistic spin-orbit coupling (SOC), coupling charge and spin sectors of the Hamiltonian; Heisenberg magnetic exchange striction, coupling spins to atomic displacements (phonons); and electrostriction, where electric polarization leads to an associated strain texture.
+% This Thesis will discuss effects that depend crucially on these, usually negligible, interactions between two relatively well-understood subsystems.
+% The three main interactions that will be discussed are: relativistic spin-orbit coupling (SOC), coupling charge and spin sectors of the Hamiltonian; Heisenberg magnetic exchange striction, coupling spins to atomic displacements (phonons); and electrostriction, where electric polarization leads to an associated strain texture.
 
-These interactions are studied in functional materials, with the occasional eye towards applications in technology.
-The reason why these cross-order couplings can be interesting for technological applications, is that often one of the orders is more robust with respect to perturbations, and therefore more long-lived, but also harder to control efficiently.
-By exploiting the cross-order coupling, one could potentially control the robust order through perturbations on the coupled one in a more efficient manner.
+% These interactions are studied in functional materials, with the occasional eye towards applications in technology.
+% The reason why these cross-order couplings can be interesting for technological applications, is that often one of the orders is more robust with respect to perturbations, and therefore more long-lived, but also harder to control efficiently.
+% By exploiting the cross-order coupling, one could potentially control the robust order through perturbations on the coupled one in a more efficient manner.
 
-In giant Rashba effect systems, the coupling between spin and ferroelectric order leads to a linear spin-splitting of the band structure, whose sign depends on the orientation of the ferroelectric polarization.
-We show that, rather than the relativistic Rashba effect, a combination of electrostatics and atomic spin-orbit coupling lies at the origin of the large splitting.
+% In giant Rashba effect systems, the coupling between spin and ferroelectric order leads to a linear spin-splitting of the band structure, whose sign depends on the orientation of the ferroelectric polarization.
+% We show that, rather than the relativistic Rashba effect, a combination of electrostatics and atomic spin-orbit coupling lies at the origin of the large splitting.
 
-The coupling between magnetism and ferroelectricity in multiferroic GdMn$_2$O$_5$ leads to a never before observed four-state hysteresis loop for the ferroelectric polarization, which depends on the magnitude, angle and history of the applied magnetic field.
-As we will show, this four-state hysteresis loop is accompanied by a full 360$^\circ$ rotation of spins in the material, which resembles the crankshaft of a car, converting the linear back-and-forth motion of the magnetic field into a rotational motion of the spins.
+% The coupling between magnetism and ferroelectricity in multiferroic GdMn$_2$O$_5$ leads to a never before observed four-state hysteresis loop for the ferroelectric polarization, which depends on the magnitude, angle and history of the applied magnetic field.
+% As we will show, this four-state hysteresis loop is accompanied by a full 360$^\circ$ rotation of spins in the material, which resembles the crankshaft of a car, converting the linear back-and-forth motion of the magnetic field into a rotational motion of the spins.
 
-In a thin film of elemental Chromium, the ultrafast dynamics of a spin density wave, coupled to a slower varying charge density wave, allows for a high degree of control of the latter through excitations of the former.
-This allows us to predict the sequence of optical pulses to be applied to the material in order to follow closely an enveloping signal function.
+% In a thin film of elemental Chromium, the ultrafast dynamics of a spin density wave, coupled to a slower varying charge density wave, allows for a high degree of control of the latter through excitations of the former.
+% This allows us to predict the sequence of optical pulses to be applied to the material in order to follow closely an enveloping signal function.
 
-And finally, the coupling between ferroelectricity and strain in BaTiO$_3$ leads to a softening at purely ferroelectric domain walls, allowing for some mechanical control of the position of this wall.
+% And finally, the coupling between ferroelectricity and strain in BaTiO$_3$ leads to a softening at purely ferroelectric domain walls, allowing for some mechanical control of the position of this wall.
 
-We utilize both theoretical and computational tools to understand the nature of these interactions, how they lead to cross-order coupling in these materials, and how this ultimately translates into the experimentally observed behavior.
-\chapter*{Acknowledgements}
-\Include{Publications}
-\setcounter{tocdepth}{1}
-\tableofcontents
-\mainmatter
+% We utilize both theoretical and computational tools to understand the nature of these interactions, how they lead to cross-order coupling in these materials, and how this ultimately translates into the experimentally observed behavior.
+% \chapter*{Acknowledgements}
+% \Include{Publications}
+% \setcounter{tocdepth}{1}
+% \tableofcontents
+% \mainmatter
 % \Include{Introduction}
 
 % \Include{Theory}
-\Include{Rashba}
+% \Include{Rashba}
 % \Include{GdMn2O5}
 % \Include{Cr}
 
 % \Include{Softening}
-\backmatter
-\bibliography{references}
-\printindex
+% \backmatter
+% \bibliography{references}
+% \printindex
 \end{document}
