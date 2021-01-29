@@ -8,9 +8,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1021.5165mm"
-   height="592.98389mm"
-   viewBox="0 0 1021.5165 592.98389"
+   width="1024.5984mm"
+   height="641.53516mm"
+   viewBox="0 0 1024.5984 641.53516"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
@@ -21,35 +21,47 @@
   <defs
      id="defs2">
     <rect
-       x="568.40695"
+       x="662.29816"
+       y="-91.399933"
+       width="502.88379"
+       height="78.916306"
+       id="rect2159" />
+    <rect
+       x="199.84906"
+       y="-82.616615"
+       width="361.67728"
+       height="69.61573"
+       id="rect2153" />
+    <rect
+       x="568.40692"
        y="228.511"
        width="113.78556"
        height="105.63952"
        id="rect2147" />
     <marker
-       style="overflow:visible;"
+       style="overflow:visible"
        id="Arrow1Lend"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow1Lend"
        inkscape:isstock="true">
       <path
-         transform="scale(0.8) rotate(180) translate(12.5,0)"
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path1834" />
     </marker>
     <rect
-       x="327.28713"
-       y="47.805883"
+       x="327.28714"
+       y="47.805882"
        width="110.23137"
-       height="70.934416"
+       height="70.934418"
        id="rect1661" />
     <rect
        x="104.49782"
        y="-0.20159461"
-       width="28.493144"
+       width="28.493143"
        height="27.69466"
        id="rect7142" />
     <rect
@@ -96,9 +108,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="1392.7043"
-     inkscape:cy="1447.6604"
+     inkscape:zoom="0.175"
+     inkscape:cx="-217.535"
+     inkscape:cy="826.87432"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -111,20 +123,24 @@
      showguides="true"
      inkscape:guide-bbox="true">
     <sodipodi:guide
-       position="703.40265,288.49829"
+       position="706.48446,291.99263"
        orientation="0,-1"
        id="guide6899" />
     <sodipodi:guide
-       position="571.06259,305.8773"
+       position="574.1444,309.37164"
        orientation="0,1"
        id="guide7207"
        inkscape:label=""
        inkscape:locked="false"
        inkscape:color="rgb(0,0,255)" />
     <sodipodi:guide
-       position="870.76415,158.67091"
+       position="873.84597,162.16525"
        orientation="0,-1"
        id="guide1506" />
+    <sodipodi:guide
+       position="889.3476,599.68547"
+       orientation="0,-1"
+       id="guide2167" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -142,15 +158,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-103.75131,1.4019614)">
-    <path
-       style="fill:none;stroke:#00c6fd;stroke-width:1.29644;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 691.85537,590.77215 154.9031,-66.80729 39.03124,80.12141 185.37109,-78.90073 39.8488,77.60216"
-       id="path882-2-2-8-6"
-       inkscape:connector-curvature="0"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200"
-       sodipodi:nodetypes="ccccc" />
+     transform="translate(-100.66951,46.458893)">
     <path
        style="fill:none;stroke:#00c6fd;stroke-width:1.29644;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 137.90067,303.08364 14.70103,32.26075"
@@ -7872,7 +7880,7 @@ QmCC
        width="109.36111"
        height="107.95"
        preserveAspectRatio="none"
-       style="image-rendering:optimizeQuality;stroke:#ff1500;fill:none;stroke-opacity:1"
+       style="fill:none;stroke:#ff1500;stroke-opacity:1;image-rendering:optimizeQuality"
        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATYAAAEyCAYAAABwLfy/AAAWa3pUWHRSYXcgcHJvZmlsZSB0eXBl
 IGV4aWYAAHja7ZtXdiM5lG3/MYoeArwZDuxaPYM3/N4HQSklpa3K+nypEkmRQQRwzTGIKLP/3/8e
 8z/8yyVEE1OpueVs+RdbbL7zotrnX7+Pzsb7eP+F/HrlPr9vgn+91HPQkc8HNT/P7u391xfenl3n
@@ -8336,5 +8344,37 @@ JEmSFpZ/Ar6AQKl2+wuiAAAAAElFTkSuQmCC
        transform="translate(24.084012,-21.072042)"><tspan
          x="568.40625"
          y="275.33059"><tspan>H</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text2151"
+       style="font-size:42.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect2153);"
+       transform="translate(78.114217,38.897993)"><tspan
+         x="199.84961"
+         y="-45.162138"><tspan
+           style="shape-inside:url(#rect2153)">Low field</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text2157"
+       style="font-size:42.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect2159);"
+       transform="translate(116.1401,39.649835)"><tspan
+         x="662.29883"
+         y="-53.945341"><tspan
+           style="shape-inside:url(#rect2159)">High field</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#00c6fd;stroke-width:1.29644;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 690.72408,589.27319 155.43027,-64.0738 27.06633,63.54671"
+       id="path882-7-5-3-5-0-6-6-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#00c6fd;stroke-width:1.29644;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 925.78369,589.80255 1124.6195,500.6989"
+       id="path882-7-5-3-5-6-93-0-2-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>
