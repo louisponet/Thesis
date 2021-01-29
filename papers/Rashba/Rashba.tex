@@ -33,13 +33,13 @@ This is all to say that such a direct electric control of the spins is quite inf
 Leveraging the properties of particular materials, on the other hand, does lead to the sought after electric control, albeit indirectly.
 One group of such materials are the ferroelectric semiconductors with large atomic spin-orbit coupling (SOC) \cite{Picozzi2014,DiSante2013,Ishizaka2011,Kim2014}.
 Spin-orbit coupling is essentially identical to the previously discussed effect.
-The ``atomic'' denotion refers to the manifestation of this effect due to the potential (and electric fields) around the atomic cores.
+The ``atomic'' denotation refers to the manifestation of this effect due to the potential (and electric fields) around the atomic cores.
 These potentials are much greater than those that can be achieved with external fields, and the electrons have a large momentum close to the ionic cores.
 Consequently, the spin-orbit coupling in atoms can lead to significant contributions and is one of the main drivers of the effect discussed in this Chapter.
 How exactly will be the topic of the Theory section.
 \\\\
 Because of the ferroelectricity due to inversion symmetry breaking, an internal electric field is generated through the dipoles that are associated with the polarization.
-Combined with the high atomic SOC, a sizeable linear energy splitting between spin-polarized states can appear in these materials \cite{DiSante2013}, contrary to the tiny effect described above.
+Combined with the high atomic SOC, a sizable linear energy splitting between spin-polarized states can appear in these materials \cite{DiSante2013}, contrary to the tiny effect described above.
 This $k$ dependent splitting manifests itself in the bandstructure as conical intersections surrounding time-reversal (TR) invariant points of the Brillouin Zone (BZ) (see Fig.~\ref{fig:Rashba_intro_dispersion}).
 These points are special in the sense that the Kramers degeneracy \cite{Kramerstheorem} is enforced through the translational symmetry of the lattice, rather than by the usual inversion symmetry.
 If we take a spin up Bloch state at such a TR invariant point and apply the time-reversal operator ($\bm k \rightarrow \bm {-k}$, $\bm{\sigma} \rightarrow -\bm{\sigma}$), it is brought to a point on the opposite side of the BZ, and can be translated back to the starting point through a reciprocal lattice translation ($-\bm k + \bm G = \bm k$). The translation does not change the spin, however.
@@ -47,7 +47,7 @@ The resulting spin down state thus has to have the same energy as the original u
 This enforces the Kramers degeneracy.
 So, even though the broken inversion symmetry destroys the Kramers degeneracy at general $k$ points, which allows for the spin-splitting, it is still present at these TR invariant points, ultimately resulting in the intersection of cones depicted in Fig.~\ref{fig:Rashba_intro_dispersion}.
 \\\\
-Due to the definite spin-polarization of the nondegenerate bands, current carriers \footnote{holes in the case of Fig.~\ref{fig:Rashba_intro_dispersion}} traveling through the material will tend to align their spins to this spin-polarization.
+Due to the definite spin-polarization of the non-degenerate bands, current carriers \footnote{holes in the case of Fig.~\ref{fig:Rashba_intro_dispersion}} traveling through the material will tend to align their spins to this spin-polarization.
 Since the sign of the electric field creating the spin-splitting is a result of the orientation of the ferroelectric polarization, it can be reversed through the application of a sufficiently strong external electric field.
 The spin-polarized states have been observed both experimentally \cite{Ishizaka2011,Liebmann2016,Krempasky2015} and in {\it ab-initio} density functional theory (DFT) simulations \cite{DiSante2013, Kim2014, Picozzi2014}.
 It is, however, often not well understood what the underlying microscopic mechanisms are that lead to the observed large splitting.
@@ -208,7 +208,7 @@ with $\alpha = x, y, z$.
 The reason for choosing Gaussians is to make solving the overlap integrals easier.
 Using any other radial shape does not lead to qualitative changes.
 The bare Tight-Binding Hamiltonian is denoted as $\hat{H}_0$ and includes the usual hopping parameters due to overlap $t_{\alpha\beta}^{\bm{n}_1\bm{n}_2} = \Bra{\alpha^{\bm{n}_1}}\frac{\hat{\bm{p}}^2}{2m} + \hat{V}\Ket{\beta^{\bm{n}_2}}$.
-To mimick the inversion symmetry breaking in ferroelectric materials, i.e. with a polar space group, an electric field is applied perpendicular to the layer, the $z$-direction in this case.
+To mimic the inversion symmetry breaking in ferroelectric materials, i.e. with a polar space group, an electric field is applied perpendicular to the layer, the $z$-direction in this case.
 This allows for additional hopping terms, associated with $\hat{H}_{\rm isb} = e (\hat{\bm{d}}\cdot \bm{E})$, where $\hat{\bm{d}}$ is the electric dipole moment:
 \begin{align}
 	\label{eq:dipole}
@@ -377,13 +377,13 @@ Since Te is significantly heavier than Ge, its atomic SOC is much larger. This w
 The largest linear spin-splitting due to the inversion symmetry breaking is observed around the TR invariant $Z$ point of the BZ, along the plane perpendicular to the [111] direction.
 The $Z-\Gamma$ path does not show any splitting because the electric field is along the $z$-direction, and thus only a variation of $k_x$ and $k_y$ will lead to a linear splitting, as previously discussed.
 
-The situation in GeTe thus closely mimics the toy model we descussed in Section~\ref{sec:tb_model}.
+The situation in GeTe thus closely mimics the toy model we discussed in Section~\ref{sec:tb_model}.
 Moreover, since the splitting is observed for the bulk band structure, we can rule out the contribution from the relativistic Rashba effect described in Section~\ref{sec:Rashba_relativistic} because of the small potential gradients $\bm{\nabla}V$.
 
 \section{Methods}
-We utilize ab-initio DFT calculations as implementated in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}.
+We utilize ab-initio DFT calculations as implemented in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}.
 In order to confirm the linear varying OAM even when spin-orbit is not included we performed non-relativistic, as well as fully relativistic DFT calculations.
-Both were performed using the Optimized Norm-conserving Vanderbilt Pseudo Potentials \cite{Hamann2013}, and a generalized-gradient approximation with Perdew-Burke-Enzerhof parametrization for the exchange-correlation functional \cite{Perdew1996}.
+Both were performed using the Optimized Norm-conserving Vanderbilt Pseudo Potentials \cite{Hamann2013}, and a generalized-gradient approximation \cite{Perdew1993} with Perdew-Burke-Enzerhof parametrization for the exchange-correlation functional \cite{Perdew1996}.
 Plane waves with an energy up to 30 Ry were included, with a 120 Ry cutoff for the density.
 
 The reciprocal space was sampled using a 6x6x6 Monkhorst-Pack grid \cite{Pack1977} for the self-consistent calculations, using a total energy convergence threshold of $10^{-7}$Ry.
@@ -459,12 +459,12 @@ The only explanation for this unquenching are the contributions derived in Eqs.~
 Moreover, $k_x$ remains zero along the $A$--$Z$ path, and we can observe that only $L_x$ develops due to the nonzero $k_y$. Only when $k_x$ is nonzero, along the $Z$--$U$ path, does $L_y$ show up. This is fully consistent with the expressions for $L_x$ and $L_y$ in Eqs.~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
 \\\\
 If we then include fully-relativistic effects, thus also including the atomic SOC, we can see that an additional unquenching of the OAM shows up.
-This leads to a nearly constant shift of the OAM with opposite signs for the two subbands, and is the sole contributor to the unquenching at the TR invariant $Z$ point.
+This leads to a nearly constant shift of the OAM with opposite signs for the two sub bands, and is the sole contributor to the unquenching at the TR invariant $Z$ point.
 The second part of the linear variation of the OAM was discussed in Eq.~\eqref{eq:d_z_from_OAM}. It was shown there that it results from the combination of the linear $\bm k$ due to the first order expansion of $\eikr{R}$, and a nonzero OAM at the TR invariant point.
 We can find the signature of this contribution in the change of the linear slope of the OAM for the fully-relativistic calculations compared with the one resulting from the non-relativistic calculations.
 This is especially clear for the third valence band shown in Fig.~\ref{fig:Rashba_oamvseigvalv}(b).
 
-The most convincing argument, perhaps, can be extracted from the top left panels that depict the variation of the center of mass of the Bloch functions. Indeed, not only does it change when $\bm k$ is moved way from the $Z$ point, it changes differently for the two spin-split bands, as their OAM is shifted oppossite to one another.
+The most convincing argument, perhaps, can be extracted from the top left panels that depict the variation of the center of mass of the Bloch functions. Indeed, not only does it change when $\bm k$ is moved way from the $Z$ point, it changes differently for the two spin-split bands, as their OAM is shifted opposite to one another.
 As an example we have depicted the charge variation of the Bloch functions of the first valence band in Fig.~\ref{fig:Rashba_diffdens}, displaying clearly how the dipole develops.
 \\\\
 Lastly, we would like to comment on the OAM and SAM textures of the first and third valence band.
@@ -474,7 +474,7 @@ These observations have also been confirmed experimentally \cite{Krempasky2015}.
 The much smaller splitting and the opposite orientation of the OAM and SAM in the third valence band compared with the first band seems to indicate that the two OAM based mechanisms described throughout this Chapter are working against each other in this band.
 The OAM and SAM texture for the first and third valence band are shown for the whole BZ in Fig.~\ref{fig:Rashba_textures}.
 The zoom onto the $Z$ point in panels (c, f) reveals one last very peculiar feature: the relative orientations of the OAM and SAM reverse in a very narrow region around the $Z$ point.
-This draws the attention to the inclusion of $H_R$ in Eq.~\eqref{eq:Rashba_hami}, which breaks threefold symmetry and results in $j$ not being a good quantum number anymore. This causes a highly non trivial SAM and OAM texture to be present in these two subbands, with both textures varying considerably throughout the BZ. 
+This draws the attention to the inclusion of $H_R$ in Eq.~\eqref{eq:Rashba_hami}, which breaks threefold symmetry and results in $j$ not being a good quantum number anymore. This causes a highly non trivial SAM and OAM texture to be present in these two sub bands, with both textures varying considerably throughout the BZ. 
 % From the modern theory of OAM~\cite{Thonhauser2011}~it was shown that there may be another itinerant contribution to the orbital angular momentum, which is not of importance in our description. 
 
 

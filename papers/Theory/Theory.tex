@@ -1,14 +1,25 @@
 \chapter{Theory}
 
 \section{Density Functional Theory \label{sec:DFT}}
-Many of the physics in condensed matter originates from the electronic structure of the material under study.
-There are two main ways of performing quantitative theoretical studies in case.
-The first is to start from a tight-binding model that includes the most likely valence orbitals of the constituent ions \cite{Slater1954}, fitting it to experimental measurements such as angle resolved photoemission spectroscopy~\cite{Damascelli2004}.
-A second, purely theoretical, possibility is to desribe the electronic structure entirely from first-principles, using only the ions and crystalline structure as the input. 
+Many of the physics in condensed matter originates from the behavior of electrons inside materials, i.e. the electronic structure.
+If we are after a quantitative description, two general ways of proceeding are possible. 
+\\\\
+The first is to formulate an analytical model whose parameters are subsequently fitted to experimental observations. 
+In this case, the Tight-Binding method is a prime example that is often used in condensed matter for its flexibility and simplicity.
 
-Density functional theory (DFT), originally envisioned in the seminal works of P. Hohenberg, W. Kohn and L. J. Sham \cite{Hohenberg1964,Kohn1965}, is a formalism very well suited for achieving this goal.
-We won't delve into the fine details in light of conciceness, resorting instead to a very high-level overview following the excellent introduction to the topic by R. Martin in Ref.~\cite{Martin2004}.
-On a rudementary level, DFT is built on top of three main theoretical pillars.
+The starting point of any Tight-Binding model are the orbitals that are used as the basis-set.
+In electronic problems, one often uses the valence orbitals of the constituent ions \cite{Slater1954}.
+The Hamiltonian can then be constructed as a set of hopping parameters between these orbitals, where the symmetries of the problem are used to limit the set of independent parameters.
+These hopping parameters are termed this way because in a second quantization formulation they denote the energetics of the process of annihilating an electron on the first orbital and creating it on the second.
+This ``hops'' the electron between the two.
+The limited set of model parameters can then be fitted to experimental measurements such as angle resolved photoemission spectroscopy~\cite{Damascelli2004}.
+\\\\
+The topic of this section, however, is the second way of calculating the electronic structure, i.e. from first principles, using only the ions and crystalline structure as the input. 
+While historically there have multiple methods of achieving this (e.g. Hartree-Fock), we here focus specifically on the density-functional-theory (DFT) method.
+Ever since its theoretical inception in the sixties in the seminal works of P. Hohenberg, W. Kohn and L. J. Sham  \cite{Hohenberg1964,Kohn1965}, and especially after later numerical developments that have turned it into a highly efficient and predictive method \cite{Hamann1979,Louie1982,Vanderbilt1990,Joubert1999,Perdew1985,Perdew1986,Perdew1993}, it has been one of the prime tools in a condensed matter theorist's toolbox.
+
+We won't delve into the fine details in light of conciceness, resorting instead to a very high-level overview following the excellent introduction by R. Martin in Ref.~\cite{Martin2004}.
+On a rudimentary level, DFT is built on top of three main theoretical pillars.
 
 The first pillar is the observation that any property of a system of interacting particles can be written as a functional of the ground-state density $n_0(\bm{r})$.
 This means that DFT is, in principle, an exact theory of many-body systems.

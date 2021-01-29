@@ -17,10 +17,10 @@ Due to exchange striction, this SDW then causes a periodic lattice distortion (P
 The SDW thermalizes on very short timescales (below 100 fs), since it is constituted by electrons \cite{Nicholson2016}.
 The dynamics of the PLD is instead related to the motion of massive ions and is therefore much slower, with generally a ps characteristic timescale.
 The system as a whole only reaches full equilibrium with the substrate after nanoseconds \cite{Singer2015prb}. 
-By using ultrafast pump-probe experiments that have a sub picosecond resolution, these PLD dynamics can be studied and, more imporantly, controlled very precisely through excitation of the much faster responding SDW.
+By using ultrafast pump-probe experiments that have a sub picosecond resolution, these PLD dynamics can be studied and, more importantly, controlled very precisely through excitation of the much faster responding SDW.
 
 In this chapter we explore and investigate the additional possibilities opened up by applying a sequence of optical excitations spaced at various points in time.
-We start by demonstrating the experimental observations made by applying not one, but two optical pulses to the SDW, and how their spacing changes drastically the responce of the probed PLD.
+We start by demonstrating the experimental observations made by applying not one, but two optical pulses to the SDW, and how their spacing changes drastically the response of the probed PLD.
 This showcases the additional complexity and control achieved over the standard single pump-probe experiments that were performed previously \cite{Singer2015prb, Singer2015prb}. 
 Among various possibilities, this additional control allows for the suppression of the intermediate nonequilibrium state thus reproducing adiabatic transitions on much faster timescales than would be possible without this control.
 This is termed ``shortcuts to adiabaticity'' in quantum technology \cite{Torrontegui2013,Deffner2014,Zhou2017}.
@@ -95,7 +95,7 @@ This supports the assumption made above that through the use of a thin film, the
 % In materials where SDW are formed, this magnetostriction will lead to PLD leading to strain waves. 
 
 In order to model the effect that the two photon pulses have on the material, we split it up into multiple thermodynamic subsystems.
-The first consists of the electronic degrees of freedom, including the SDW, which thermalize very quickly amongst themselves due to the strong electron-electron interactions.
+The first consists of the electronic degrees of freedom, including the SDW, which thermalize very quickly among themselves due to the strong electron-electron interactions.
 This allows us to assign a temperature $T_L$ to it, where $L$ is used to denote the SDW order parameter, as will be discussed further below.
 The timescale for this thermalization was measured by high-resolution ARPES to be below 100 fs~\cite{Nicholson2016}.
 
@@ -114,7 +114,7 @@ This process can be described by the so-called two temperature model:
 with $k$ the heat transfer rate, $C_L$ and $C_b$ the heat capacities of the electronic degrees of freedom and of the bath, respectively.
 The dots signify time derivatives.
 As one could expect, we find that the heat capacity of the bath is larger than that of the electronic system by an order of magnitude.
-Finally, the heat injected by the pulses is modelled by a Gaussian $Q_{ph}(t) = A e^{\frac{-(t - \tau)^2}{\xi^2}}$, with $A$ the strength, $\xi$ the duration and $\tau$ the time delay.
+Finally, the heat injected by the pulses is modeled by a Gaussian $Q_{ph}(t) = A e^{\frac{-(t - \tau)^2}{\xi^2}}$, with $A$ the strength, $\xi$ the duration and $\tau$ the time delay.
 \\\\
 The changes to $T_L$ through heating and subsequent cooling affects the SDW amplitude $L$ and indirectly the PLD one $y$, as described by a Landau-type theory~\cite{Khomskii2010}.
 These order parameters are related to the Fourier component of the SDW with wavevector $q$, i.e. $L = S_q$, and to the acoustic phonon amplitude $y = u_{2q}$.
@@ -125,7 +125,7 @@ This leads to the following expression for the total free energy:
 	F(L, y, T_L) = \frac{\alpha}{2}(T_L - T_N) L^2 + \frac{\beta}{4} L^4 - g L^2 y + \frac{\rho y_0^2 \omega_0^2}{2} y^2 + \frac{b}{4} y^4,
 \end{equation}
 where $L$, $y$ and $T_L$ are the time dependent variables.
-The double well potential that causes the SDW phase transition is characterised by the coefficients $\alpha$ and $\beta$,  and critical temperature $T_N$ below which the SDW order sets in.
+The double well potential that causes the SDW phase transition is characterized by the coefficients $\alpha$ and $\beta$,  and critical temperature $T_N$ below which the SDW order sets in.
 The coupling between $L$ and $y$ due to exchange striction is described by term with $g$.
 Only even orders of $L$ appear in the free energy, since the energy is time reversal even, but $L$ is time reversal odd.
 The PLD order parameter $y$ with density $\rho$ is described by the harmonic oscillator potential with frequency $\omega_0$ and displacement amplitude $y_0$.
@@ -146,7 +146,7 @@ This can be achieved by solving $\frac{\partial F}{\partial L} = 0$, leading to:
 		0 & T_L > T_N
 	\end{cases}
 \end{equation}
-The time evolution of the system can then described using the Langrangian:
+The time evolution of the system can then described using the Lagrangian:
 \begin{equation}
     \mathcal{L}(L, y, \dot{y}, t) = \frac{m_y \dot{y}(t)^2}{2} - F(L, y, t),
 \end{equation}
@@ -165,14 +165,14 @@ One obvious remark can be made here: to be completely exact, the energy dissipat
 However, the case can be made that since this is only a single mode, its contribution to the heating of the bath will be negligible compared with the one due to the thermalization with the electronic degrees of freedom.
 
 \section{Methods}
-To solve the time evolution of $L$ and $y$ through the differential equations in Eqs.~\ref{eq:Cr_euler_lagrange} we used the numerical integration methods implemented in the \href{https://github.com/SciML/DifferentialEquations.jl}{DifferentialEquations.jl} package~\cite{rackauckas2017differentialequations}. More specifically the Tsit5 algorithm was used, which has adaptive timestepping to capture the sharp optical pulses.
+To solve the time evolution of $L$ and $y$ through the differential equations in Eqs.~\ref{eq:Cr_euler_lagrange} we used the numerical integration methods implemented in the \href{https://github.com/SciML/DifferentialEquations.jl}{DifferentialEquations.jl} package~\cite{rackauckas2017differentialequations}. More specifically the Tsit5 algorithm was used, which has adaptive time stepping to capture the sharp optical pulses.
 Originally, the dynamics were fully solved both for $L$ and $y$, but it was confirmed during the fitting process that the dynamics of $L$ are indeed significantly faster than those of $y$.
 Solving dynamics with significantly different timescales is in general hard from the numerical point of view, meaning that taking $L$ to be always at the minimum of the potential makes solving the equations much easier.
 For all simulations, the starting temperature of the bath was fixed at 115 K, and the thin film value for $T_N$ was taken, i.e. 290 K which is slightly lower than the bulk Cr Ne\'el temperature of $\sim$ 308 K.
 \\\\
 Most parameters of the model were not perfectly known a priori and thus had to be fitted to the experimental measurements.
 To aid with the fitting, judicious choices for the starting values of some parameters were be made.
-For example, it was known that the opticial pulse width $\tau$ was around 40 fs, the oscillation frequency of the PLD $\omega_0 \approx$ 14 THz or equivalently had a period of around 450 fs.
+For example, it was known that the optical pulse width $\tau$ was around 40 fs, the oscillation frequency of the PLD $\omega_0 \approx$ 14 THz or equivalently had a period of around 450 fs.
 We also know that the second pulse had a fluency of around 80\% that of the first.
 Furthermore, from previous experiments, the ratio between the heat capacities for the bath and electronic degrees of freedom, $\frac{c_b}{c_L}$, was determined to be around 7 \cite{Nicholson2016}, and that the heat transfer rate is around 42 $\times$ 10$^{16}$ W/m$^3$ K \cite{Hostetler1999}.
 \\\\
@@ -183,11 +183,11 @@ The numerical optimization was done through the \href{https://github.com/JuliaNL
 
 \begin{figure}[h]
 \IncludeGraphics{exp_fits.pdf}
-\caption{\label{fig:Cr_theoretical_fit} {\bf Comparison of theoretical fit vs Experiment.} The smoothened experimental measurements are shown by the blue graph, and the theoretical fit by the orange graph, in each panel. Panels (a) and (b) show two examples of fits when the interference is not fully destructive, whereas in panels (c) and (d) the quenching is much stronger.}
+\caption{\label{fig:Cr_theoretical_fit} {\bf Comparison of theoretical fit vs Experiment.} The smoothed experimental measurements are shown by the blue graph, and the theoretical fit by the orange graph, in each panel. Panels (a) and (b) show two examples of fits when the interference is not fully destructive, whereas in panels (c) and (d) the quenching is much stronger.}
 \end{figure}
 \section{Results and Discussion \label{sec:Cr_results}}
 The experimental results we use as a basis to fit our model are shown in Fig.~\ref{fig:Cr_experimental}.
-We took eleven representative experiments, which can be thought of as horizontal slices of Fig.~\ref{fig:Cr_experimental}(a), in order to fit the model parameters to get the best total fit accross all datasets, allowing only the pulse fluence to fluctuate between sets.
+We took eleven representative experiments, which can be thought of as horizontal slices of Fig.~\ref{fig:Cr_experimental}(a), in order to fit the model parameters to get the best total fit across all datasets, allowing only the pulse fluence to fluctuate between sets.
 The parameters that were found are
 \begin{align}
 	\alpha &= \SI{1.6e7} {\rm \frac{J}{K\, m^3}},\, \beta = \SI{1.55e11} {\rm \frac{J}{m^3}},\, g = \SI{1.1e3}{\rm \frac{J}{m^3}}, \\
@@ -195,7 +195,7 @@ The parameters that were found are
 	\gamma_y &= \SI{1.4e-9}{\rm \frac{J}{m^3}}, \, C_L = \SI{1.4e4}{\rm \frac{J}{m^3\,K}},\, C_b = 7.57\,C_L,\\
 	k &= \SI{3.74e17} {\rm \frac{W}{m^3\cdot K}},\, \xi = 40\,{\rm fs},\,A = \SI{2.86e6}{\rm \frac{J}{m^3}}
 \end{align}
-The results of this fitting procedure is shown in Fig.~\ref{fig:Cr_theoretical_fit}, demonstrating an excellent agreement between the theory and experiment, accross the board.
+The results of this fitting procedure is shown in Fig.~\ref{fig:Cr_theoretical_fit}, demonstrating an excellent agreement between the theory and experiment, across the board.
 \begin{figure}[h]
 	\begin{subfigure}{0.5\textwidth}
 		\IncludeGraphics{energy_surface_L.pdf}
@@ -213,9 +213,9 @@ While the temperature $T_L$ decreases again, $L$ and the minimum of the potentia
 The oscillation of $y$ remains for quite a long time while this shift is occurring, since the damping is not particularly large (of the order of 4 ps) compared with the cooling rate of the SDW ($T_L$).
 \\\\
 This already presents us with the first hint at the benefit of indirectly exciting the PLD through the SDW.
-This can be understood through a thought experiment of a hypotethical system for which the the PLD is the primary order parameter, with associated double well potential similar, and no other coupled order parameters exist.
+This can be understood through a thought experiment of a hypothetical system for which the the PLD is the primary order parameter, with associated double well potential similar, and no other coupled order parameters exist.
 The only possibility to excite an oscillation in this case is by heating up the system above the critical temperature.
-This would change the shape of the hypotethical energy potential, shifting its minimum to 0, and again due to the slow dynamics an oscillation would occur.
+This would change the shape of the hypothetical energy potential, shifting its minimum to 0, and again due to the slow dynamics an oscillation would occur.
 However, as with any normal oscillator, the value of the PLD would never exceed the starting value during the oscillation, as the thermalization, and restoration of the potential will occur on much longer timescales.
 
 Here, however, due to the relatively fast thermalization of the SDW with the bath, the potential surface for $y$ recovers on a faster timescale than it would on its own, leading to a relative movement of the potential opposite to the movement of $y$ itself.
@@ -234,7 +234,7 @@ The maximal change in the value of $L$, and thus the potential surface for $y$, 
 It is then important to keep this initial shift of the potential for $y$ in place until $y$ crosses the minimum, converting as much potential energy into kinetic energy.
 This can be done by heating $L$ slightly above $T_N$, where the additional heat and finite cooling rate will keep the potential shift present until $y$ passes through the minimum, gaining the most momentum.
 Fig.~\ref{fig:Cr_maximum_amp} demonstrates this strategy, with the peaks of $T_L$ in red indicating that $T_L$ exceeds $T_N$.
-Exactly at this point, $L$ should start to recondense causing the potential surface of $y$ to start moving in the opposite direction to its movement, which in the end supplies it with additional momentum, as was described above.
+Exactly at this point, $L$ should start to re-condense causing the potential surface of $y$ to start moving in the opposite direction to its movement, which in the end supplies it with additional momentum, as was described above.
 Since the sign of $L$ does not matter for the position of the potential energy surface of $y$, it can only cause a shift in one direction, meaning that, similar to someone pushing a swing, the ideal intervals for the subsequent pulses are close to multiples of the period of $y$, if the goal is achieving the maximum oscillation amplitude.
 The optimal number of periods between pulses depends on the cooling rate of $L$, and damping rate of $y$.
 The former influences how much $T_L$ can cool back down within one period and thus the size of the maximum kinetic energy gain of $y$, while the latter is the main source of kinetic energy loss. From our simulations, unless the damping is really negligible, it is always best to supply a set of pulses at each oscillation period of $y$.
@@ -242,7 +242,7 @@ The results in Fig.~\ref{fig:Cr_maximum_amp} showcase this situation, where the 
 With the damping rate of $y$ taken as the one fitted to the experiment, the maximal amplitude thus achieved is about 450\% the original value, quite a remarkable increase.  
 \begin{figure}
 	\IncludeGraphics{maximumamplitude.pdf}
-	\caption{\label{fig:Cr_maximum_amp} {\bf Two schemes for achieving maximum amplitude.} a) One set of pulses is applied within each period. b) One set of pulses every two periods. The damping is clearly the limiting factor and warrants as many pulses per timeframe in order to achieve the maximum amplitude. In both figures, the envelope function is at 450\% the original magnitude.}
+	\caption{\label{fig:Cr_maximum_amp} {\bf Two schemes for achieving maximum amplitude.} a) One set of pulses is applied within each period. b) One set of pulses every two periods. The damping is clearly the limiting factor and warrants as many pulses per time frame in order to achieve the maximum amplitude. In both figures, the envelope function is at 450\% the original magnitude.}
 \end{figure}
 \\\\
 We can go one step further, however, and design a pulse train such that the oscillation amplitude follows a particular ``signal'' envelope function, demonstrating the incredibly high degree of control over the PLD that this coupled system allows for.  
