@@ -12,7 +12,7 @@ using PStdLib.Images
 pyplot()
 #%%
 
-l  = Ledger(physical_model())
+l  = Ledger(best_model())
 rad2deg(l[L][2].ϕ)
 optimize!(l, Spin, L, Pb)
 const start = 3.0
@@ -126,15 +126,16 @@ scatter!(plts[1], [ϕ1_r[67], ϕ1_r[67+75], ϕ1_r[67+75], ϕ1_r[67]],[ϕ2_r[81],
         xlims          = [0,2π],
         aspect_ratio   = 1,
          framestyle=:box, legend=false)
-savefig(plts[1], "GdMn2O5/Images/field_heatmap1.png")
-clip_image("GdMn2O5/Images/field_heatmap1.png")
+savefig(plts[1], "GdMn2O5/Images/field_heatmap_1.png")
+clip_image("GdMn2O5/Images/field_heatmap_1.png")
 plts[2]
 plot(plts...)
 findfirst(x->x==π, ϕ1_r)
 #%%
-Entity(l, GdMn2O5.VisualizationSettings(Gd_color=GdMn2O5.Gl.BLACK, Mn_color=GdMn2O5.Gl.BLACK, spin_arrow_thickness=0.08f0, spin_arrow_length=0.8f0, Gd_sphere_radius=0.4f0, Mn_text_offset=Vec3f0(0.4,0.4,0.0), Gd_text_offset=Vec3f0(1.4,1.4,0.0)))
-
+Entity(l, GdMn2O5.VisualizationSettings(Gd_color=GdMn2O5.Gl.GREEN, spin_arrow_thickness=0.08f0, spin_arrow_length=0.8f0, Gd_sphere_radius=0.4f0, Mn_text_offset=Vec3f0(0.4,0.4,0.0), Gd_text_offset=Vec3f0(1.4,1.4,0.0)))
+l[H][1].ϕ = deg2rad(10)
 dio = Diorama(l)
+dio[GdMn2O5.OptimizationSettings][1].continuous = true
 expose(dio)
 dio.loop
 
@@ -143,6 +144,7 @@ dio.loop
 e_Gd_H = []
 e_L_H = []
 e_LL = []
+e_L2H2 = []
 e_LK = []
 e_Gd_L= []
 
@@ -162,6 +164,9 @@ for h in hsweep
     h[Etot][1].e = 0.0
     update(Gd.E_LL(), h)
     push!(e_LL, h[Etot][1].e)
+    h[Etot][1].e = 0.0
+    update(Gd.E_L2H2(), h)
+    push!(e_L2H2, h[Etot][1].e)
 end
 
 plot(Hr, e_Gd_H, yguide="E (meV)", dpi=200, xguide="|H| (T)", label="Gd Zeeman", yguidefontsize=15,xguidefontsize=15, xtickfontsize=15, ytickfontsize=15, legendfontsize=10)
@@ -169,7 +174,11 @@ plot!(Hr, e_L_H, label="L Zeeman")
 plot!(Hr, e_Gd_L.+60, label = L"\left[{\rm Gd} \leftrightarrow {\rm L}\right] + {\rm 60\,meV}")
 plot!(Hr, e_LL, label = L"{\rm L_1} \leftrightarrow {\rm L_2}")
 plot!(Hr, e_LK, label = "L easy-axis anisotropy")
-savefig(papersdir("GdMn2O5/Images/energy_contributions.png"))
+plot!(Hr, e_L2H2, label = "L2H2")
+plot(e_LL.+e_LK.+e_Gd_L .+ e_L2H2)
+
+
+# savefig(papersdir("GdMn2O5/Images/energy_contributions.png"))
 #%%
 
 

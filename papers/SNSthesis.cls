@@ -37,7 +37,7 @@
 \ProcessOptions\relax
 
 % load the book class using a4paper
-\LoadClass[11pt,a4paper]{book}
+\LoadClass[12pt,a4paper]{book}
 
 % give the header a bit more room for fancyhdr below
 % otherwise LaTeX will spew on each page

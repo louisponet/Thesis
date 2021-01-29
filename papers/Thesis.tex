@@ -1,10 +1,10 @@
 %
-\documentclass[phd, titlesmallcaps,copyrightpage,foronline]{SNSthesis}
+\documentclass[phd, titlesmallcaps,copyrightpage,foronline,oneside]{SNSthesis}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,xcolor}
 % \usepackage[backend=biber]{biblatex}
-\usepackage[margin=30mm]{geometry}
-% \renewcommand{\baselinestretch}{1.5} 
+% \usepackage[margin=30mm]{geometry}
+% \renewcommand{\baselinestretch}{1.5}
 % \usepackage{cancel}
 \usepackage{siunitx}
 \usepackage{graphicx}
@@ -209,14 +209,14 @@ We utilize both theoretical and computational tools to understand the nature of 
 \setcounter{tocdepth}{1}
 \tableofcontents
 \mainmatter
-% \Include{Introduction}
+\Include{Introduction}
 
-% \Include{Theory}
+\Include{Theory}
 \Include{Rashba}
-% \Include{GdMn2O5}
-% \Include{Cr}
+\Include{GdMn2O5}
+\Include{Cr}
 
-% \Include{Softening}
+\Include{Softening}
 \backmatter
 \bibliography{references}
 \printindex
