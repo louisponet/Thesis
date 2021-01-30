@@ -34,8 +34,8 @@ Leveraging the properties of particular materials, on the other hand, does allow
 One group of such materials are the ferroelectric semiconductors with large atomic spin-orbit coupling (SOC) \cite{Picozzi2014,DiSante2013,Ishizaka2011,Kim2014}.
 Spin-orbit coupling is essentially identical to the previously discussed effect.
 The ``atomic'' denotation refers to the manifestation of this effect as a result of the potential (and electric fields) around the atomic cores.
-These potentials are much greater than those that can be achieved with external fields, and the electrons moreover have a large momentum close to the ionic cores.
-Consequently, the spin-orbit coupling in atoms can lead to significant contributions and is one of the main drivers of the effect discussed in this Chapter.
+These potentials are much greater than those that can be achieved with external fields, and the electrons, moreover, have a large momentum close to the ionic cores.
+Consequently, the SOC in atoms can lead to significant contributions and is one of the main drivers of the effect discussed in this Chapter.
 How exactly will be the topic of the Theory Section~\ref{sec:Rashba_Theory}.
 \\\\
 Because of the ferroelectricity due to inversion symmetry breaking, an internal electric field is generated through the dipoles that are associated with the polarization.
@@ -74,7 +74,7 @@ We finish with a conclusion that summarizes the observations and where we make t
 \section{Theory \label{sec:Rashba_Theory}}
 In this Section we handle the theoretical underpinning of the observed large spin-splitting, building up the arguments in favor of the orbital angular momentum (OAM) as the enabler of the main underlying mechanism.
 We start with an overview of the original derivation that leads to the fully relatistic Rashba-effect in order to argue why it might not be able to explain the observed spin-splitting behavior.
-We then continue with a close study on the proposed alternative OAM based mechanism, and investigate the two main contributions: one that arises through electrostatics, and another that is the result of atomic spin-orbit coupling.
+We then continue with a close study on the proposed alternative OAM based mechanism, and investigate the two main contributions: one that arises through electrostatics, and another that is the result of atomic SOC.
 We will see that these latter two mechanisms manage to explain the characteristics of the large linear spin-dependent dispersion of the Bloch Functions.
 During the discussion we will utilize a 2D Tight-Binding Model as a concrete example.
 
@@ -89,7 +89,7 @@ It is a purely relativistic effect that can be derived from a second order expan
 where $\Ket{\psi}$ is a two component spinor, $V$ denotes the electric potential, $\bm{\sigma}$ a vector of Pauli-matrices $(\sigma_x, \sigma_y, \sigma_z)$, and $m$ and $e$ the electron mass and charge, respectively.
 $\bm \nabla = (\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial }{\partial z})$ denotes spatial derivatives, and $\bm{p} = -i\hbar \bm{\nabla}$ the canonical momentum.
 The first two terms in Eq.~\eqref{eq:Rashba_dirac} are the non-relativistic part of the Hamiltonian, the third one represents the SOC, the fourth is known as the Darwin effect and the fifth is the relativistic correction to the effective electron mass. 
-As is common in the literature, we introduce the spin-orbit coupling constant $\lambda = \frac{e \hbar}{4m^2c^2}$.
+As is common in the literature, we introduce the SOC constant $\lambda = \frac{e \hbar}{4m^2c^2}$.
 The potential $V(\bm r)$ is periodic in a crystal, leading to eigenstates given by the Bloch wavefunctions $\BlochKetr{n} = \eikr{r} \Ket{\unkr{n}{k}}$, where $\Ket{\unkr{n}{k}}$ denotes the cell-periodic part, $\eikr{r}$ the envelope function, and $n$ the band index.
 In the following we drop $\bm{r}$ in the wavefunctions, and inner products correspond to an integration over all space:
 
@@ -97,7 +97,7 @@ In the following we drop $\bm{r}$ in the wavefunctions, and inner products corre
 	\Sandwich{\phi_n^{\bm{k}}}{\psi_m^{\bm{k}'}} = \int d\bm{r} e^{-i (\bm k - \bm k') \cdot \bm r} u_n^{\bm k }(\bm r)^* u_m^{\bm k'}(\bm r).
 \end{equation}
 
-To obtain the eigenvalue equation for $\Ket{\unk{n}{k}}$, we insert $\BlochKet{n}$ in Eq.~\eqref{eq:Rashba_dirac}, and carry out the differentiation
+To obtain the eigenvalue equation for $\Ket{\unk{n}{k}}$, we insert $\BlochKet{n}$ in Eq.~\eqref{eq:Rashba_dirac}, carry out the differentiation
 \begin{equation}
 	\label{eq:Rashba_momentum}
 \bm{p} \, \Eikr\Ket{\unk{n}{k}} = -i \hbar \bm \nabla \Eikr\Ket{\unk{n}{k}} = \Eikr(\bm p + \hbar \bm k)\Ket{\unk{n}{k}},
@@ -133,9 +133,9 @@ Focusing first on $V^{\bm k}_2$:
 	\label{eq:Rashba_purerel}
 	V^{\bm k}_2 = -\lambda \bm{\sigma} \cdot \left[ (\bm E_a + \bm E_P) \times \bm{k}\right],
 \end{equation}
-we can see from the figure that the contribution of the atomic potential, $\bm E_a$, is zero since it is odd throughout the unit cell, whereas $\bm k$ is a constant.
+we can observe in the figure that the contribution of the atomic potential, $\bm E_a$, is zero since it is odd throughout the unit cell, whereas $\bm k$ is a constant.
 On the contrary, $\bm E_P$ is uniform throughout the unit cell, leading to a nonzero contribution.
-However, both $\bm E_P$ and $\bm k$ are generally small, meaning that $V^{\bm k}_2$ is also exceedingly small due to the tiny spin-orbit coupling constant $\lambda$ (usually $V^{\bm k}_2 \sim$ \SI{e-6}eV).
+However, both $\bm E_P$ and $\bm k$ are generally small, meaning that $V^{\bm k}_2$ is also exceedingly small due to the tiny SOC constant $\lambda$ (usually $V^{\bm k}_2 \sim$ \SI{e-6}eV).
 \\\\
 Following a similar train of thought for $V^{\bm k}_3$:
 \begin{equation}
@@ -143,16 +143,16 @@ Following a similar train of thought for $V^{\bm k}_3$:
 \end{equation}
 we find that $\bm p$ applied to the periodic $\Ket{\unk{n}{k}}$ part of the Bloch function is odd throughout the unit cell, and the contribution from $\bm E_P$ is zero.
 The shape of the atomic potential is such that $\bm E_a$ is also odd throughout the unit cell so that its contribution to $V^{\bm k}_3$ does not vanish.
-Moreover, due to the size of the atomic potential, $\bm E_a \gg \bm E_P$, and similarly $\bm p\,\Ket{\unk{n}{k}} \gg \bm k$, meaning that $V^{\bm k}_3$ tends to contribute much more to the total energy than $V^{\bm k}_2$.
+Moreover, because of the size and shape of the atomic potential, $\bm E_a \gg \bm E_P$, and similarly $\bm p\,\Ket{\unk{n}{k}} \gg \bm k$, meaning that $V^{\bm k}_3$ tends to contribute much more to the total energy than $V^{\bm k}_2$.
 
 As it turns out, $V^{\bm k}_3$ is exactly the energy term that describes the atomic SOC, which is known to not be negligible for heavier ions.
-This term by itself does not lead any linear spin-splitting, however.
-We saw that $V_2^{\bm k}$ does have the correct form of Eq.~\eqref{eq:Rashba_form}, and we therefore identify it as the first contribution to the purely relativistic Rashba spin-splitting.
+This term by itself does not lead any linear $k$ dependent spin-splitting, however.
+We saw that $V_2^{\bm k}$, however, does have the correct form of Eq.~\eqref{eq:Rashba_form}, and we thus identify it as the first contribution to the purely relativistic Rashba spin-splitting.
 \\\\
 In order to obtain the second contribution, we perform a $\bm k \cdot \bm p$ expansion of Eq.~\eqref{eq:Rashba_unk_Vs} around a TR invariant point of the BZ.
 Without loss of generality we choose this point to be the gamma point: $\bm{k}_\Gamma = (0, 0)$.
 As we mentioned in the introduction, the spin up and spin down bands are necessarily degenerate at such a TR invariant point, and we take $E^{\sigma}_n(\Gamma) = 0$.
-We furthermore denote the periodic parts of the corresponding Bloch functions as $\Ket{u_n, \sigma}$, where we have omitted $\bm k$ to distinguish the $\Ket{u_n}$ at $\Gamma$ from the $\Ket{\unk{n}{k}}$ at a general $k$ point.
+Furthermore, we denote the periodic parts of the corresponding Bloch functions as $\Ket{u_n, \sigma}$, where we have omitted $\bm k$ to distinguish the $\Ket{u_n}$ at $\Gamma$ from the $\Ket{\unk{n}{k}}$ at a general $k$ point.
 
 % The Kramers degeneracy of the up and down spin states is broken due to the loss of inversion symmetry and inclusion of the SOC terms ($V_2$,$V_3$), this degeneracy will be lifted for $\bm{k}$ points which are not TR invariant.
 % It is important to realize that the orientation of spin axis of the eigenstates of Eq.~\eqref{eq:Rashba_unk_Vs} depends on the direction of both $\bm{k}$ and $\bm{P}$, as will become clear later.
@@ -163,19 +163,19 @@ Expanding then Eq.~\eqref{eq:Rashba_unk_Vs} in small $\bm{k}$, while keeping ter
 	E_n^{\sigma}(\bm{k}) =& -\lambda \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{k}) + \\
 		& \sum_{m \neq n}\frac{\hbar}{m}\frac{\Bra{u_n,\sigma} \bm k \cdot \bm p \Ket{u_m, \sigma}\Bra{u_m, \sigma} V_3^{\bm{k}} \Ket{u_n, \sigma} + h.c.}{E_n^{\sigma} - E_m^{\sigma}}.\nonumber
 \end{align}
-The first term at the right hand side is just the earlier discussed $V^{\bm k}_2$.
+The first term at the right hand side is equal to the earlier discussed $V^{\bm k}_2$.
 We know that the atomic SOC ($V^{\bm k}_3$) is much larger than $V^{\bm{k}}_2$, leading to the same order of magnitude for both terms on the right hand side of Eq.~\eqref{eq:kp_expansion}, even though the second is of a higher order in the perturbation theory.
 
 A requirement for the second term to be nonzero is that $u_n$ and $u_m$ have different parity along the spatial direction defined by $\bm{k}$, since otherwise $\Bra{u_n} k_x \partial_x + k_y \partial_y + k_z \partial_z \Ket{u_m} = 0$.
 One example could be a $p_y$ orbital and a $s$-$p_z$ hybridized one, which would be created by an electric polarization along the $z$-axis.
-How exactly this hybridization arises will be discussed in further detail below in Section~\ref{sec:tb_model}, in the context of a Tight Binding model.
+How exactly this hybridization arises will be discussed in further detail below in Section~\ref{sec:tb_model}, in the context of a Tight-Binding model.
 The combination of the two linear-in-$\bm{k}$ terms in Eq.~\eqref{eq:kp_expansion} can be regarded as the fully relativistic Rashba-effect.
 \\\\
 In summary, we have given the derivation of the relativistic Rashba-effect starting from the Dirac equation applied to the Bloch functions, followed by a $\bm k \cdot \bm p$ expansion.
 By carefully considering the microscopics we have found that both contributions have a similar order of magnitude of typically $10^{-6}$ eV.
 This leads us to the conclusion that the purely relativistic effect can not explain the observed spin-splitting which is around 0.3 eV in GeTe, especially since this splitting appears in the bulk band structure where no large interface contributions to the electric field play a role.
 
-In the remainder of this Chapter, we will therefore focus on a different origin to the effect, one that lies in the combination of electrostatic effects with the strong atomic SOC.
+In the remainder of this Chapter, we will thus focus on a different origin to the effect, one that lies in the combination of electrostatic effects with the strong atomic SOC.
 These electrostatics are a result of the creation of dipoles by Bloch functions with nonzero OAM, which we describe in the following section. 
 % \lp{What about nagaosa?}
 \subsection{Orbital Rashba Effect}
@@ -190,29 +190,29 @@ In an attempt to alleviate this confusion we will try to disentangle them and gi
 % \\\\
 One of the reasons why OAM is often overlooked in crystals is that, ignoring atomic SOC, it is usually completely quenched.
 This is because OAM is associated with a particular charge distribution which interacts with the charge of the surrounding ions.
-In most cases the most favorable charge distribution in this regard leads to orbitals with zero OAM, like the $p_x$, $p_y$ and $p_z$ orbitals in the case of $L=1$, where $\hat{L} = \hat{\bm r} \times \hat{\bm p}$ denotes the OAM operator.
-The reason why this process is referred to as the ``quenching'' of OAM, is that in isolated atoms the atomic SOC generates favors orbitals with maximum OAM to maximize the energy gain through $\hat{H}_{\rm SOC} = \lambda \hat{\bm \sigma} \cdot \hat{\bm L}$, which leads to one of the Hund's rules.
+In most cases the most favorable charge distribution in this regard leads to orbitals with zero OAM, like the $p_x$, $p_y$ and $p_z$ orbitals in the case of $L=1$, where $\hat{L} = \hat{\bm r} \times \hat{\bm p}$ denotes the OAM operator~\cite{Ballhausen}.
+The reason why this process is referred to as the ``quenching'' of OAM, is that in isolated atoms the atomic SOC favors orbitals with maximum OAM to maximize the energy gain through $\hat{H}_{\rm SOC} = \lambda \hat{\bm \sigma} \cdot \hat{\bm L}$, which leads to one of the Hund's rules.
 \\\\
 We will show that there are two mechanisms that lead to the unquenching of OAM: the atomic SOC, and the electrostatic interaction due to the associated dipoles.
 The former leads to a small OAM even at TR invariant points, while the latter results in a linearly varying chiral OAM as $\bm k$ is varied away from the TR invariant point.
-This chirality of the OAM texture turns out to be very similar to the chirality of the spin texture that results from the purely relativistic Rashba terms (see Fig.~\ref{fig:Rashba_intro_dispersion}).
+This chirality of the OAM texture turns out to be very similar to the chirality of the spin texture that results from the purely relativistic Rashba terms (see Fig.~\ref{fig:Rashba_intro_dispersion} and Eq.~\eqref{eq:kp_expansion}).
 Both the unquenching mechanisms contribute to the linear part of the energy dispersion.
-Furthermore, the sign of the linear slope will be found to depend on the orientation of the electron's spin relative to its OAM\footnote{Positive for parallel orientation of the spin and OAM and negative for antiparallel orientation.}.
+Furthermore, the sign of the linear slope of the dispersion will be found to depend on the orientation of the electron's spin relative to its OAM\footnote{Positive for parallel orientation of the spin and OAM and negative for antiparallel orientation.}, resulting finally in the spin-splitting.
 \\\\
-We now proceed with a pedagogical derivation of these effects, based on a Tight-Binding model \cite{Petersen2000,Kim2014,Go2016}. This is an extension to our earlier work in Ref.~\cite{Ponet2018}.
+We now proceed with a pedagogical derivation of the electrostatic contribution, based on a Tight-Binding model \cite{Bloch1929,Slater1954,Petersen2000,Kim2014,Go2016}. This is an extension to our earlier work in Ref.~\cite{Ponet2018}.
 
 \subsubsection{Electrostatics \label{sec:tb_model}}
-The model is defined on a 2D square lattice with lattice parameter $a$, one atom per unit cell, and four orbitals centered on that atom.
+We define the Tight-Binding model on a 2D square lattice with lattice parameter $a$, one atom per unit cell, and four orbitals centered on that atom.
 They resemble the angular character of an $s$ orbital and the three $p$ orbitals: $\Ket{s^{\bm{n}}}$, $\Ket{x^{\bm{n}}}$, $\Ket{y^{\bm{n}}}$, $\Ket{z^{\bm{n}}}$, where $\bm{n}$ denotes the unit cell indices ($n_x$,$n_y$) to which the orbital belongs to.
 To simplify notation, we omit $\bm{n} = (0, 0)$ when writing the orbitals of the central unit cell.
-We furthermore assume that these orbitals have a Gaussian radial shape:
+Furthermore, we assume that these orbitals have a Gaussian radial shape:
 \begin{align}
 	\Sandwich{\bm{r}}{s_{\bm{n}}} &= \left(\frac{2}{\pi a_0^2}\right)^{3/4}e^{-\left(\frac{|\bm{r}-\bm{n}a|}{a_0}\right)^2},\\
 \Sandwich{\bm{r}}{\alpha_{\bm{n}}} &= (\alpha - a\bm n)\left(\frac{2}{\pi a_0^2}\right)^{3/4}\left(\frac{8}{2a_0^2}\right) e^{-\left(\frac{|\bm{r}-\bm{n}a|}{a_0}\right)^2},
 \end{align}
 with $\alpha = x, y, z$.
-The reason for choosing Gaussians is to make solving the overlap integrals easier.
-Using any other radial shape does not lead to qualitative changes.
+The reason for choosing Gaussians is to make solving the overlap integrals easier when we calculate the hopping parameters in this basis.
+Using any other radial shape does not lead to qualitative differences.
 The bare Tight-Binding Hamiltonian is denoted as $\hat{H}_0$ and includes the usual hopping parameters due to overlap $t_{\alpha\beta}^{\bm{n}_1\bm{n}_2} = \Bra{\alpha^{\bm{n}_1}}\frac{\hat{\bm{p}}^2}{2m} + \hat{V}\Ket{\beta^{\bm{n}_2}}$.
 To mimic the inversion symmetry breaking in ferroelectric materials, i.e. with a polar space group, an electric field is applied perpendicular to the layer, the $z$-direction in this case.
 This allows for additional hopping terms, associated with $\hat{H}_{\rm isb} = e (\hat{\bm{d}}\cdot \bm{E})$, where $\hat{\bm{d}}$ is the electric dipole moment:
@@ -232,19 +232,19 @@ Fig.~\ref{fig:Rashba_overlapdip} shows pictorially how the electric dipoles appe
 \IncludeGraphics[width=\linewidth]{overlapdip.png}\caption{\label{fig:Rashba_overlapdip} {\bf Overlap dipoles.} (a) On-site dipole from $\Ket{s}$ and $\Ket{z}$ hybridization, (b) Dipole due to overlap of shifted $\Ket{p}$ orbitals, the dashed line indicates a unit cell boundary.}
 \end{figure}
 \\\\
-The internal field $E_z$ caused by the electric polarization is usually small, warranting a perturbative approach where $\hat{H}_{\rm isb}$ is the perturbation applied to $\hat{H}_0$.
+The internal field $E_z$ caused by the electric polarization is usually small, warranting a perturbative approach where $\hat{H}_{\rm isb}$ is the perturbation on top of $\hat{H}_0$.
 This leads to the first type of hybridization, i.e. between the $\Ket{s}$ and $\Ket{z}$ orbitals in the central unit cell:
 \begin{align}
 	\Ket{\tilde{z}} &= \Ket{z} + \frac{a_0}{2}\frac{e E_z}{\varepsilon_z - \varepsilon_s}\Ket{s},\\
 	\Ket{\tilde{s}}   &= \Ket{s} +\frac{a_0}{2}\frac{e E_z}{\varepsilon_s - \varepsilon_z}\Ket{z},
 \end{align}
-where $\varepsilon_s = \Bra{s} \hat{H}_0 \Ket{s}$ and $\varepsilon_z = \Bra{z} \hat{H}_0 \Ket{z}$.
+where $\varepsilon_s = \Bra{s} \hat{H}_0 \Ket{s}$ and $\varepsilon_z = \Bra{z} \hat{H}_0 \Ket{z}$. A pictorial representation of this hybridization is shown in Fig.~\ref{fig:Rashba_overlapdip}(a).
 \\\\
 Before continuing with a $\bm k \cdot \bm p$ expansion, we write the elements of $\hat{H}_0$ between the hybrid $\Ket{\tilde{z}}$ orbital and the shifted $\Ket{x^{\bm n}}$, $\Ket{y^{\bm y}}$ orbitals:
 \begin{align}
-	\Bra{\tilde{z}} \hat{H}_0 \Ket{x^{\bm{n}}} &=\frac{a_0}{2} \frac{e E_z}{\varepsilon_z - \varepsilon_s}\Bra{s} \frac{\hat{\bm{p}}^2}{2m} \Ket{x^{\bm{n}}}\\
-	&= \frac{\hbar^2}{m a_0^2}\frac{e E_z \theta_z^n}{(\varepsilon_z - \varepsilon_s)} \left[5 - \left(\frac{a |\bm{n}|}{a_0}\right)^2\right]n_x,\\
-	\Bra{\tilde{z}} \hat{H}_0 \Ket{y^{\bm{n}}} &=\frac{\hbar^2}{m a_0^2} \frac{e E_z\theta_z^n}{(\varepsilon_z - \varepsilon_s)}\left[5 - \left(\frac{a |\bm{n}|}{a_0}\right)^2\right]n_y.
+	\Bra{\tilde{z}} \hat{H}_0 \Ket{x^{\bm{n}}} &=\frac{a_0}{2} \frac{e E_z}{\varepsilon_z - \varepsilon_s}\Bra{s} \frac{\hat{\bm{p}}^2}{2m} \Ket{x^{\bm{n}}}\label{eq:Rashba_momentum_dip}\\
+	&= \frac{\hbar^2}{m a_0^2}\frac{e E_z \theta_z^n}{(\varepsilon_z - \varepsilon_s)} \left[5 - \left(\frac{a |\bm{n}|}{a_0}\right)^2\right]n_x,\label{eq:Rashba_momentum_dip1}\\
+	\Bra{\tilde{z}} \hat{H}_0 \Ket{y^{\bm{n}}} &=\frac{\hbar^2}{m a_0^2} \frac{e E_z\theta_z^n}{(\varepsilon_z - \varepsilon_s)}\left[5 - \left(\frac{a |\bm{n}|}{a_0}\right)^2\right]n_y\label{eq:Rashba_momentum_dip2}.
 \end{align}
 The contribution from the cell periodic $\hat{V}$ is zero.
 \\\\
@@ -263,12 +263,12 @@ Filling these functions into the expression for the total Hamiltonian, similar t
 where the $\bm n$ denote that these are the elements of $\hat{H}_0$ and $\hat{H}_{\rm isb}$ between orbitals shifted relative to each other by $\bm n$ lattice constants.
 % keeping only the $\sin(\bm{k}\cdot\bm{n})$ part of the exponent since the $\cos(\bm{k}\cdot\bm{n})$ part does not result in linear-in-$k$ terms, in the small $\bm{k}$ expansion below we keep only these linear-in-$k$ terms.
 \\\\
-Using these ingredients, and assuming that the Bloch functions at $\bm k = \bm 0$ are formed from $\Ket{x}$, $\Ket{y}$, $\Ket{\tilde{z}}$ and $\Ket{\tilde{s}}$ orbitals through Eq.~\eqref{eq:Rashba_wantok}, we can formulate the $\bm k \cdot \bm p$ expansion:
+Using these ingredients, and assuming that the eigenstates at $\bm k = \bm 0$ are formed from the Bloch functions of $\Ket{x}$, $\Ket{y}$, $\Ket{\tilde{z}}$ and $\Ket{\tilde{s}}$ orbitals as in Eq.~\eqref{eq:Rashba_wantok}, we can formulate the $\bm k \cdot \bm p$ expansion:
 \begin{equation}
 	\Ket{\alpha^{\bm{k}}}=\Ket{\alpha^{\bm 0}} + \sum_{\beta \neq \alpha} \frac{\Bra{\beta^{\bm 0}} \hat{H}_0^{\bm{k}} + \hat{H}_{\rm isb}^{\bm{k}} \Ket{\alpha^{\bm 0}}}{\varepsilon_{\alpha} - \varepsilon_{\beta}} \Ket{\beta^{\bm 0}}.
 \end{equation}
 In the further equations we omit the $\bm{k}=\bm 0$ superscripts.
-Gathering the linear-in-$k$ terms from the expansion of $\eikr{n}$ in Eq.~\eqref{eq:Rashba_wantokH}, and writing $\varepsilon_p = \Bra{x} \hat{H}_0 \Ket{x} = \Bra{y} \hat{H}_0 \Ket{y}$, we find:
+Gathering the linear-in-$\bm k$ terms from the expansion of $\eikr{n}$ in Eq.~\eqref{eq:Rashba_wantokH}, and writing $\varepsilon_p = \Bra{x} \hat{H}_0 \Ket{x} = \Bra{y} \hat{H}_0 \Ket{y}$, we find:
 \begin{align}
 	\Ket{x^{\bm{k}}} &= \Ket{x} + i \Theta \frac{k_x}{\varepsilon_p - \varepsilon_{\tilde{z}}}\Ket{\tilde{z}}, \\
 	\Ket{y^{\bm{k}}} &= \Ket{y} + i \Theta \frac{k_y}{\varepsilon_p - \varepsilon_{\tilde{z}}}\Ket{\tilde{z}},\\
@@ -292,18 +292,17 @@ These expressions for $\hat{\bm{L}}$ can be filled into the atomic SOC energy $\
 	\label{eq:Rashba_from_OAM}
 	\varepsilon^{\bm{k}} = \frac{2 \lambda \Theta}{\varepsilon_{\tilde{z}}-\varepsilon_p}(\bm{k} \times \bm{\sigma}).
 \end{equation}
-which has the chiral form of the Rashba term in Eq.~\eqref{eq:Rashba_form}. Similar expressions can be found for the $\Ket{x^{\bm k}}$ and $\Ket{y^{\bm k}}$ Bloch functions.
-We want to emphasize here again that the only influence of the Gaussian radial shape is in the form of the prefactor in front of $e E_z$ in the definition of $\Theta$.
-Other choices do not influence the results qualitatively.
+which has the same chiral form of the Rashba term in Eq.~\eqref{eq:Rashba_form}.
+We want to emphasize here again that the only influence of the Gaussian radial shape is through the prefactor in front of $e E_z$ in the definition of $\Theta$.
+Other choices do not lead to different qualitative results.
 \\\\
-In summary, this qualitative derivation using a toy Tight Binding model has led us to the first two contributions to the Orbital Rashba Effect, reflected in the two terms in the expression for $\Theta$:
+In summary, this qualitative derivation using a toy Tight-Binding model has led us to the first two contributions to the Orbital Rashba Effect, reflected in the two terms in the expression for $\Theta$:
 \begin{equation}
 \Theta = -\frac{a_0^2 \pi}{a^3}\left(a_0^2 + \frac{\hbar^2}{m(\varepsilon_z - \varepsilon_s)}\right) e E_z.
 \end{equation}
-Both originate from the inversion symmetry breaking electric field that enables additional hopping terms $H_{\rm isb}$.
-This term favors hybridized orbitals with nonzero OAM due to their nonzero dipoles. 
+Both originate from the inversion symmetry breaking electric field that enables additional hopping terms $H_{\rm isb}$, favoring hybridized orbitals with nonzero OAM due to their nonzero dipoles. 
 The first contribution came from the direct overlap dipoles between shifted $\Ket{x^{\bm n}}$ and $\Ket{y^{\bm n}}$ orbitals with the $\Ket{z}$ orbital (panel (b) in Fig.~\ref{fig:Rashba_overlapdip})\cite{Petersen2000}.
-The second was due to the hybridization of the $\Ket{s^{\bm 0}}$ and $\Ket{z^{\bm 0}}$ orbitals (panel (a) in Fig.~\ref{fig:Rashba_overlapdip}), and the kinetic energy term between the $\Ket{s^{\bm 0}}$ and neighboring $\Ket{x^{\bm n}}$ and $\Ket{y^{\bm n}}$ orbitals \cite{Go2016}.
+The second was found to originate from the hybridization of the $\Ket{s^{\bm 0}}$ and $\Ket{z^{\bm 0}}$ orbitals (panel (a) in Fig.~\ref{fig:Rashba_overlapdip}), and the kinetic energy term between the $\Ket{s^{\bm 0}}$ and neighboring $\Ket{x^{\bm n}}$ and $\Ket{y^{\bm n}}$ orbitals in Eqs.~\eqref{eq:Rashba_momentum_dip}-\eqref{eq:Rashba_momentum_dip2}\,\cite{Go2016}.
 It was found that both terms lead to a chiral texture of the OAM that varies linearly with $\bm k$.
 Through the atomic SOC, this linear-in-$\bm k$ OAM then couples to the spin which results in the final splitting with the Rashba-like form of Eq.~\eqref{eq:Rashba_from_OAM}.
 % An exaggerated demonstration for the case of $p_x + ip_z$ orbitalWe the use sshe in Fig.~\ref{fig:Rashba_interference}.
@@ -312,26 +311,26 @@ Through the atomic SOC, this linear-in-$\bm k$ OAM then couples to the spin whic
 \caption{\label{fig:Rashba_interference}{\bf Interference between orbitals with nonzero OAM.} Three neighboring unit cells are displayed, each with the same $p_x + ip_z$ orbital (thus having nonzero $l_y$). The wave functions of the left and right unit cells have their phase rotated by the plane-wave part $e^{i k_x R_x}$. The amplitude and phase of the wave function are encoded with the length and polar angle of the arrows. It is clear from the resulting phases (red arrows) that there exists constructive interference on the bottom half of the material, and destructive interference at the top half, which leads to the intercell dipoles.}
 \end{figure}
 \\\\
-There is one other term that contributes to the linear variation of OAM with $\bm{k}$.
+There is one other term that contributes to the linear variation of OAM with $\bm{k}$ that originates from the atomic SOC.
 
 \subsubsection{Atomic Spin-Orbit Coupling}
-As mentioned previously, the atomic SOC leads to a degree of unquenching of the OAM at the TR invariant $k$ point, e.g. $|k|=0$~\cite{Park2011,Park2012,Park2015}.
-If we write the Bloch functions at this point as a linear combination of $p$-like orbitals
+As mentioned previously, the atomic SOC leads to a degree of unquenching of the OAM, even at a TR invariant $k$ point, e.g. $|k|=0$~\cite{Park2011,Park2012,Park2015}.
+If we write the eigenstate of a given band at this point as a linear combination of $p$-like Bloch functions\footnote{Remember that $\eikr{0}{n}=1$.}:
 \begin{equation}
 \Ket{\psi} = \sum_{\bm{n},\alpha} c_\alpha \Ket{\alpha^{\bm{n}}},
 \end{equation}
-the general formula for the OAM operators in terms of these $c_\alpha$ becomes
+the general formula for the OAM of this Bloch function with coefficients $c_\alpha$ becomes
 \begin{equation}
-	\hat{L}_{\gamma}= i \epsilon_{\alpha \beta \gamma} c^*_\alpha c_\beta,
+	L_{\gamma}= i \epsilon_{\alpha \beta \gamma} c^*_\alpha c_\beta,
 \end{equation}
 where $\alpha,\beta,\gamma$ designate $x,y,z$.
 
-Thus, to gain energy through $\hat{H}_{\rm soc} = \lambda \bm L \cdot \bm \sigma$, the orbitals at the high-symmetry point will be a linear combination of the $p$ orbitals that leads to Bloch functions with some nonzero OAM.
-Through Hund's rule, we know that for isolated atoms this leads to orbitals with maximum total angular momentum.
-However, as discussed before, the associated charge distribution is unfavorable with respect to the electrostatic repulsion from the charge around neighboring ions.
-Nonetheless, the balance between these two effects leads to a small unquenching of the OAM at the TR-invariant $k$ point. 
+Thus, to gain energy through $H_{\rm soc} = \lambda \bm L \cdot \bm \sigma$, the eigenstates at the high-symmetry point will be a linear combination of the $p$ orbitals that leads to Bloch functions with some nonzero OAM.
+Through Hund's rule, we know that for isolated atoms this results in orbitals with maximum total angular momentum.
+However, as discussed before, the associated charge distribution is unfavorable with respect to the electrostatic repulsion from the charge around neighboring ions, the so-called {\it crystal field}~\cite{Ballhausen}.
+Nonetheless, the balance between the quenching due to the crystal field and the unquenching due to atomic SOC results in orbitals with nonzero OAM at the TR invariant $k$ point. 
 \\\\
-Performing then another expansion in terms of small $k$ we find
+Performing then another expansion in terms of small $\bm k$ we find:
 \begin{align}
 	\Ket{\psi^{\bm{k}}} =& \sum_{\bm{n},\alpha} c_\alpha^{\bm{k}} \eikr{n} \Ket{\alpha^{\bm{n}}}\\
 	=& \sum_{\bm{n},\alpha} \left(c_\alpha^{\bm 0} + \bm{k}\left.\frac{\partial c_\alpha^{\bm{k}}}{\partial \bm{k}}\right\rvert_{\bm{k}=0} \right)\left(1 + i\bm{k}\cdot\bm{n}\right)\Ket{\alpha^{\bm{n}}}\label{eq:Rashba_unqexp}.
@@ -346,18 +345,17 @@ The new term originates from $ic_\alpha \bm k \cdot \bm n$ in Eq.~\eqref{eq:Rash
 	=&\frac{a_0^4 \pi}{a^3}(L_y k_x - L_x k_y) e E_z,
 \end{align}
 where we used the definitions of $\hat{H}_{\rm isb}$ in Eq.~\eqref{eq:dipole}, and we remind the reader that $L_x$ and $L_y$ are the values of $\hat{L}_x$ and $\hat{L}_y$ of the Bloch function at $\bm k = \bm 0$.
-These expressions show us that, due to ${\hat{H}_{soc} = \lambda \hat{\bm{L}}\cdot\hat{\bm{\sigma}}}$ and $\hat{H}_{\rm isb} = e E_z d_z$, an additional Rashba-like term appears in the energy dispersion, due to the creation of orbitals with nonzero $L_y$ and $L_x$ at the high-symmetry point.
+These expressions show us that, due to ${\hat{H}_{soc} = \lambda \hat{\bm{L}}\cdot\hat{\bm{\sigma}}}$ and $\hat{H}_{\rm isb} = e E_z \hat{d}_z$, an additional term with the Rashba form in Eq.~\eqref{eq:Rashba_form} appears in the energy dispersion due to the creation of orbitals with nonzero $L_y$ and $L_x$ at the high-symmetry point.
 \\\\
-Combining the linear--in--$\bm k$ terms found in the previous sections, we can arrive to the following effective Rashba Hamiltonian:
+Combining the linear--in--$\bm k$ terms found in the previous sections, we arrive at the following effective Rashba Hamiltonian:
 \begin{equation}
 	\label{eq:Rashba_hami}
 	H_R^{\bm k} = e \bm{E}_P\cdot \left[c_1(\bm{L}^{\bm 0} \times \bm k) + c_2 (\bm \sigma \times \bm k) \right],
 \end{equation}
 where $\bm{E}_P$ denotes the internal electric field from the polarization.
-$c_1$ is a result of the atomic SOC driven unquenching at $\bm k = \bm 0$.
-The combined effect of the relativistic term of Eq.~\eqref{eq:Rashba_purerel} and the overlap dipoles leading to Eq.~\eqref{eq:Rashba_from_OAM} results in $c_2$.
+$c_1$ is a result of the atomic SOC driven unquenching at $\bm k = \bm 0$, and the combined effect of the relativistic term in Eq.~\eqref{eq:Rashba_purerel} and the overlap dipoles leading to Eq.~\eqref{eq:Rashba_from_OAM} results in $c_2$.
 \\\\
-With this qualitative understanding we now turn to a concrete example that behaves very similarly to the above toy model, GeTe.
+With this qualitative understanding we now turn to a concrete example of the large Rashba-like spin-splitting: GeTe.
 
 \section{Germanium Telluride}
 \begin{figure}[h]
@@ -383,7 +381,7 @@ Since Te is significantly heavier than Ge, its atomic SOC is much larger. This w
 The largest linear spin-splitting due to the inversion symmetry breaking is observed around the TR invariant $Z$ point of the BZ, along the plane perpendicular to the [111] direction.
 The $Z-\Gamma$ path does not show any splitting because the electric field is along the $z$-direction, and thus only a variation of $k_x$ and $k_y$ will lead to a linear splitting, as previously discussed.
 
-The situation in GeTe thus closely mimics the toy model we discussed in Section~\ref{sec:tb_model}.
+The situation in GeTe thus closely mimics the toy model we discussed in Section~\ref{sec:tb_model}, and should also harbor the unquenching effect due to atomic SOC on the heavy Te.
 Moreover, since the splitting is observed for the bulk band structure, we can rule out the contribution from the relativistic Rashba-effect described in Section~\ref{sec:Rashba_relativistic} because of the small potential gradients $\bm{\nabla}V$.
 
 \section{Methods}

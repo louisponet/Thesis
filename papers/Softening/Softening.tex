@@ -288,7 +288,7 @@ From these two arguments, we can safely exclude defects as a contributing factor
 \subsection{Piezoelectricity}
 The second mechanism that could lead to softening can not be neglected, however \cite{Tsuji2005,Stefani2020}.
 When the tip is applied to the sample it causes a non-uniform pressure field at the surface.
-It is larger at the center of the contact region and smaller at the edges, and furthermore decays into the material.
+It is larger at the center of the contact region and smaller at the edges, and decays into the material.
 This in turn leads to a non-uniform strain which causes a non-uniform polarization through the piezoelectricity $\partial_l P_i \sim e_{ijk} \partial_l \varepsilon_{jk}$, where $e_{ijk}$ are the piezoelectric coefficients.
 Since the polarization is constituted by electric dipoles, their non-uniform distribution causes bound charges.
 The tip thus effectively creates internal depolarizing fields, similar to how bound charges at the surface of domains lead to depolarizing fields, as was discussed in the introduction (see Fig.~\ref{fig:BTO_depolarizing_schematic}). 
@@ -483,7 +483,7 @@ This in turn causes the numerical analogue of the Peierls-Nabarro barrier.
 Since we implemented our own version of the Finite Element Method, we first performed some consistency checks with previous calculations before turning to the simulations of the DW softening.
 
 The DW energy we obtained is 15.2 mJ/m$^2$, very close to the value of 16 mJ/m$^2$ previously found from a first-principles calculation in Ref.~\cite{Padilla1996}.
-We furthermore verified that it is not influenced by the size of the numerical geometry or the density of the mesh, indicating that the numerics of our method does not influence energetics of the static wall.
+Furthermore, We furthermore verified that it is not influenced by the size of the numerical geometry or the density of the mesh, indicating that the numerics of our method does not influence energetics of the static wall.
 
 To furthermore confirm the existence and consistent behavior of the numerical Peierls-Nabarro barriers, we performed simulations where we rigidly shifted the wall from its central position inside the grid, similar to the procedure followed in Ref.~\cite{Marton2018}.
 The energy was then calculated at each step in order to get an indication of the numerical Peierls-Nabarro barriers of our mesh.
