@@ -33,7 +33,7 @@ A thin film (28 nm) of Cr was used, supporting around seven periods of the SDW w
 The experimental procedure is depicted schematically in Fig.~\ref{fig:Cr_schematic}(b). 
 \begin{figure}[h]
 	\IncludeGraphics{schematic}
-\caption{\label{fig:Cr_schematic}{\bf Experimental methods} a) Pictorial representation and experimental measurement of the Bragg peaks probed by XFEL. b) Schematic of ultrafast manipulation of interacting orders in Cr. Pump pulses at $t=\tau_1,\tau_2$ partially melt $L$ that supports $y$, which leads to oscillations of $y$, probed by the XFEL in (a). The heat from pump pulses is eventually transferred to the heat bath.}
+\caption{\label{fig:Cr_schematic}{\bf Experimental methods} a) Pictorial representation and experimental measurement of the Bragg peaks probed by XFEL. b) Schematic of ultrafast manipulation of interacting orders in Cr. Pump pulses at $t=\tau_1,\tau_2$ partially melt the SDW ($L$) that supports the PLD ($y$), leading to oscillations of the latter which are probed by the XFEL in (a). The heat from pump pulses is eventually transferred from the SDW to the heat bath.}
 \end{figure}
 The film was illuminated by two sequential 40 fs optical pulses at times $\tau_1$ and $\tau_2$, heating up the electronic subsystem and the SDW which is part of it.
 The film thickness was chosen to be smaller than the optical skin-depth of Cr, meaning that the pulses excite the entire volume of the sample in a homogeneous fashion.
@@ -45,10 +45,10 @@ Phase information of the PLD with respect to the film interfaces can be obtained
 This is because the PLD is pinned at the film boundaries, so that the positions of their Bragg peaks coincide \cite{Singer2015prb}.
 By tracking the evolution of these peaks in time, both phase and amplitude information of the PLD oscillation that occurs when the SDW is (partially) melted by the optical pulses can be obtained.
 The results of these measurements are displayed in Fig.~\ref{fig:Cr_experimental}.
-\begin{figure}[h]
+\begin{figure}
 	\centering
 \IncludeGraphics{experimental}
-\caption{\label{fig:Cr_experimental}{\bf Pump-Pump delay dependent interference.} a) Experimental map of PLD amplitude before and after excitation of two pulses with a fluence of 1.45 mJ/cm$^2$. The green box highlights the area of lower amplitude of $L$ when $T_L$ exceeds $T_N$ due to concurrent pulses. The blue and purple lines demonstrate the pump-pump delays for which destructive interference (blue, panel (c)), or destructive interference (purple, panel (d)) occurs. b) Same as (a) but with the second pulse half the intensity of the first.  c) Destructive interference when $\tau_2 - \tau_1 = 620$ fs. d) Constructive interference when $\tau_2 - \tau_1 = 845$ fs. In both panels (c) and (d), the dashed red line marks the arrival time of second pulse. The dots denote the experimental measured values, and the graphs the theoretical simulations (see Fig.~\ref{fig:Cr_theoretical_fit} for further details). Panels (e, f) show experiments with the same pump-pump delays as (d,c), but with fluences of 9.5 mJ/cm$^2$ and 4.7 mJ/cm$^2$ for the first and second pump, respectively.}
+\caption{\label{fig:Cr_experimental}{\bf Pump-Pump delay dependent interference.} a) Experimental map of PLD amplitude before and after excitation of two pulses with a fluence of 1.45 mJ/cm$^2$. The green box highlights the area of lower oscillation amplitude of $y$ when $T_L$ exceeds $T_N$ due to concurrent pulses. The blue and purple lines demonstrate the pump-pump delays for which destructive interference (blue, panel (c)), or destructive interference (purple, panel (d)) occurs. b) Same as (a) but with the second pulse half the intensity of the first.  c) Destructive interference when $\tau_2 - \tau_1 = 620$ fs. d) Constructive interference when $\tau_2 - \tau_1 = 845$ fs. In both panels (c) and (d), the dashed red line marks the arrival time of second pulse. The dots denote the experimental measured values, and the graphs the theoretical simulations (see Fig.~\ref{fig:Cr_theoretical_fit} for further details). Panels (e, f) show experiments with the same pump-pump delays as (d,c), but with fluences of 9.5 mJ/cm$^2$ and 4.7 mJ/cm$^2$ for the first and second pump, respectively.}
 \end{figure}
 \\\\
 The acoustic phonon associated with the PLD oscillation has a wavevector normal to the material surface and an oscillation period of approximately 450 fs.
@@ -181,9 +181,9 @@ This is needed because when the sharp pulse arrives at 0 ps, some energy already
 The error of the solution $\tilde{x}$ w.r.t. the experimental measurements $x$ is then estimated as the mean square sum $err = \sum_{i=1}^n \frac{(x_i - \tilde{x}_i)^2}{n}$, where $i$ denote the indices of the measurement points.
 The numerical optimization was done through the \href{https://github.com/JuliaNLSolvers/Optim.jl}{Optim.jl} package ~\cite{mogensen2018optim}, where it was found that the Nelder-Mead simplex algorithm \cite{Nelder1965} works best for this very non-linear problem.
 
-\begin{figure}[h]
+\begin{figure}
 \IncludeGraphics{exp_fits.pdf}
-\caption{\label{fig:Cr_theoretical_fit} {\bf Comparison of theoretical fit vs Experiment.} The smoothed experimental measurements are shown by the blue graph, and the theoretical fit by the orange graph, in each panel. Panels (a) and (b) show two examples of fits when the interference is not fully destructive, whereas in panels (c) and (d) the quenching is much stronger.}
+\caption{\label{fig:Cr_theoretical_fit} {\bf Demonstration of the quality of the theoretical fit.} The smoothed experimental measurements and theoretical fits are indicated in each panel by the blue and orange graphs, respectively. Panels (a) and (b) show two examples when the interference is not fully destructive, whereas in panels (c) and (d) the quenching is much stronger.}
 \end{figure}
 \section{Results and Discussion \label{sec:Cr_results}}
 The experimental results we use as a basis to fit our model are shown in Fig.~\ref{fig:Cr_experimental}.
@@ -196,14 +196,10 @@ The parameters that were found are
 	k &= \SI{3.74e17} {\rm \frac{W}{m^3\cdot K}},\, \xi = 40\,{\rm fs},\,A = \SI{2.86e6}{\rm \frac{J}{m^3}}
 \end{align}
 The results of this fitting procedure is shown in Fig.~\ref{fig:Cr_theoretical_fit}, demonstrating an excellent agreement between the theory and experiment, across the board.
-\begin{figure}[h]
-	\begin{subfigure}{0.5\textwidth}
-		\IncludeGraphics{energy_surface_L.pdf}
-	\end{subfigure}
-	\begin{subfigure}{0.5\textwidth}
-		\IncludeGraphics{energy_surface_y.pdf}
-	\end{subfigure}
-	\caption{\label{fig:Cr_energy_surfaces}{\bf Time evolution of the energy surfaces of $L$ and $y$.} The trajectory of each order parameter is shown in black. The time evolution of the energy surface is calculated by keeping one of the order parameters at the value at a given time, while varying the other.}
+\begin{figure}
+	\centering
+	\IncludeGraphics[width=0.9\textwidth]{L_y_energy.png}
+	\caption{\label{fig:Cr_energy_surfaces}{\bf Time evolution of the energy surfaces of $L$ and $y$.} The trajectory of each order parameter is indicated by the black graph. The energy surface in panel a (b) is calculated by varying L (y) at each time step, while keeping y (L) at the value of the trajectory. The fast dynamics of L is reflected by the tracking of its minimum at all times.}
 \end{figure}
 \\\\
 To get a deeper understanding of the underlying effect, we look at the evolution of the free energy surfaces for both order parameters, shown in Fig.~\ref{fig:Cr_energy_surfaces}.
@@ -213,7 +209,7 @@ While the temperature $T_L$ decreases again, $L$ and the minimum of the potentia
 The oscillation of $y$ remains for quite a long time while this shift is occurring, since the damping is not particularly large (of the order of 4 ps) compared with the cooling rate of the SDW ($T_L$).
 \\\\
 This already presents us with the first hint at the benefit of indirectly exciting the PLD through the SDW.
-This can be understood through a thought experiment of a hypothetical system for which the the PLD is the primary order parameter, with associated double well potential similar, and no other coupled order parameters exist.
+This can be understood through a thought experiment of a hypothetical system for which the the PLD is the primary order parameter with associated double well potential, and no other coupled order parameters.
 The only possibility to excite an oscillation in this case is by heating up the system above the critical temperature.
 This would change the shape of the hypothetical energy potential, shifting its minimum to 0, and again due to the slow dynamics an oscillation would occur.
 However, as with any normal oscillator, the value of the PLD would never exceed the starting value during the oscillation, as the thermalization, and restoration of the potential will occur on much longer timescales.
@@ -233,17 +229,13 @@ First we discuss the strategy to achieve maximal amplitude.
 The maximal change in the value of $L$, and thus the potential surface for $y$, can be achieved by heating it all the way to $T_N$.
 It is then important to keep this initial shift of the potential for $y$ in place until $y$ crosses the minimum, converting as much potential energy into kinetic energy.
 This can be done by heating $L$ slightly above $T_N$, where the additional heat and finite cooling rate will keep the potential shift present until $y$ passes through the minimum, gaining the most momentum.
-Fig.~\ref{fig:Cr_maximum_amp} demonstrates this strategy, with the peaks of $T_L$ in red indicating that $T_L$ exceeds $T_N$.
+Fig.~\ref{fig:Cr_control}(a) demonstrates this strategy, with the peaks of $T_L$ in red indicating that $T_L$ exceeds $T_N$.
 Exactly at this point, $L$ should start to re-condense causing the potential surface of $y$ to start moving in the opposite direction to its movement, which in the end supplies it with additional momentum, as was described above.
 Since the sign of $L$ does not matter for the position of the potential energy surface of $y$, it can only cause a shift in one direction, meaning that, similar to someone pushing a swing, the ideal intervals for the subsequent pulses are close to multiples of the period of $y$, if the goal is achieving the maximum oscillation amplitude.
 The optimal number of periods between pulses depends on the cooling rate of $L$, and damping rate of $y$.
 The former influences how much $T_L$ can cool back down within one period and thus the size of the maximum kinetic energy gain of $y$, while the latter is the main source of kinetic energy loss. From our simulations, unless the damping is really negligible, it is always best to supply a set of pulses at each oscillation period of $y$.
-The results in Fig.~\ref{fig:Cr_maximum_amp} showcase this situation, where the heat capacity of the bath was artificially increased to infinity to mimic a possible strongly cooled regime which would be ideal for maximizing the oscillation amplitude.
+The results in Fig.~\ref{fig:Cr_control}(b) showcase this situation, where the heat capacity of the bath was artificially increased to infinity to mimic a possible strongly cooled regime which would be ideal for maximizing the oscillation amplitude.
 With the damping rate of $y$ taken as the one fitted to the experiment, the maximal amplitude thus achieved is about 450\% the original value, quite a remarkable increase.  
-\begin{figure}
-	\IncludeGraphics{maximumamplitude.pdf}
-	\caption{\label{fig:Cr_maximum_amp} {\bf Two schemes for achieving maximum amplitude.} a) One set of pulses is applied within each period. b) One set of pulses every two periods. The damping is clearly the limiting factor and warrants as many pulses per time frame in order to achieve the maximum amplitude. In both figures, the envelope function is at 450\% the original magnitude.}
-\end{figure}
 \\\\
 We can go one step further, however, and design a pulse train such that the oscillation amplitude follows a particular ``signal'' envelope function, demonstrating the incredibly high degree of control over the PLD that this coupled system allows for.  
 To limit the dimensionality of the manifold of possible solutions, we formulate the rules:
@@ -253,15 +245,15 @@ To limit the dimensionality of the manifold of possible solutions, we formulate 
 	\item The first pulse group only has a single pulse, which fixes the required fluence
 	\item The maximum allowed pulses per group is fixed
 \end{itemize}
-Adhering to these rules, we tested this procedure on different envelope functions, showcased in Fig.~\ref{fig:Cr_control}.
+Adhering to these rules, we tested this procedure on different envelope functions, showcased in Fig.~\ref{fig:Cr_control}(c,d).
 The groups of pulses can be fitted sequentially, since the later pulses do not influence the oscillation caused by the earlier ones.
 As in the maximum amplitude simulations, the assumption of an infinite $C_b$ was made here.
 This is done so the equilibrium position of $L$ does not change.
 Otherwise a general downwards slope of the oscillation of $y$ would result, as seen from the lower final equilibrium positions of $y$ in panels (a,b) of Fig.~\ref{fig:Cr_theoretical_fit}.
 The results demonstrate how a carefully chosen pulse train enables indirect, but close to optimal control of the PLD order parameter.
 \begin{figure}
-	\IncludeGraphics{fits.pdf}
-	\caption{\label{fig:Cr_control} {\bf Two examples of optimal control.} a) One period of a sinusoid followed by a sawtooth with the same width and height. b) Gaussian followed by an exponential and inverse exponential.}
+	\IncludeGraphics{envelope.png}
+	\caption{\label{fig:Cr_control} {\bf Pulse train design.} a), b) Two possible schemes to maximize the oscillation amplitude. In a) pulses were applied each period, whereas in b) only every other period. c), d) Two examples of perfect control. In a) the envelop was taken as one period of a sinusoid followed by a sawtooth with the same width and height. In d) the envelope is a Gaussian followed by an exponential and inverse exponential.}
 \end{figure}
 
 \section{Conclusions}

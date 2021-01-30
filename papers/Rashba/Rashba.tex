@@ -118,7 +118,7 @@ A pictorial representation of this situation is shown in Fig.~\ref{fig:Efield_ce
 with $\bm E_{\rm a}$ resulting from the atomic potentials and $\bm E_{\rm P}$ the field associated with the polarization\footnote{We have assumed that no external fields are applied, these can be included trivially by summing them to the internal field.}.
 \begin{figure}[h]
 ~\centering
-\IncludeGraphics[width=\linewidth]{Rashba_potentials.png}\caption{\label{fig:Efield_cell_drawing}{\bf Potentials and wavefunctions inside the unit cell.} Pictorial representation of the different electric potentials ($V$, surfaces) and fields ($E$, arrows) in a 2D square lattice. The blue spheres represent the atoms, which produce the spherically symmetric red potential $V_a$ and field $\bm E_a$. The purple plane denotes the potential $V_p$ with resulting field $\bm E_p$, associated with the polarization. The green and yellow surfaces depict the cell periodic and envelope part of the Bloch function $u_n(k)$ and $e^{ikx}$, respectively. $\bm k$ and $\bm p_u$ denote the crystalline and canonical momentum of the Bloch function.
+\IncludeGraphics[width=\linewidth]{Rashba_potentials.png}\caption{\label{fig:Efield_cell_drawing}{\bf Potentials and wavefunctions inside the unit cell.} Pictorial representation of the different electric potentials ($V$, surfaces) and fields ($E$, arrows) in a 2D square lattice. The blue spheres represent the atoms, which produce the spherically symmetric red potential $V_a$ and field $\bm E_a$. The purple plane denotes the potential $V_p$ associated with the polarization, and the resulting field $\bm E_p$. The green and yellow surfaces depict the cell periodic and envelope part of the Bloch function $\unkKet{n}{k}$ and $e^{ik_x r_x}$, respectively. The vectors $\bm k$ and $\bm p_u$ denote the crystalline and canonical momentum of the Bloch function.
 The former results from the envelope function, and the latter from the periodic part, see Eq.~\eqref{eq:Rashba_momentum}.}
 \end{figure}
 \\\\
@@ -223,7 +223,7 @@ The other terms of $\hat{H}_{\rm isb}$ are zero.
 Fig.~\ref{fig:Rashba_overlapdip} shows pictorially how the electric dipoles appear as a result of the overlap between the orbitals. 
 \begin{figure}[t]
 ~\centering
-\IncludeGraphics[width=\linewidth]{overlapdip.png}\caption{\label{fig:Rashba_overlapdip} {\bf Overlap dipoles.} (a) On-site dipole from $\Ket{s}$ and $\Ket{z}$ hybridization, (b) Dipole due to overlap of shifted $\Ket{p}$ orbitals, the dashed line signifies a unit cell boundary.}
+\IncludeGraphics[width=\linewidth]{overlapdip.png}\caption{\label{fig:Rashba_overlapdip} {\bf Overlap dipoles.} (a) On-site dipole from $\Ket{s}$ and $\Ket{z}$ hybridization, (b) Dipole due to overlap of shifted $\Ket{p}$ orbitals, the dashed line indicates a unit cell boundary.}
 \end{figure}
 \\\\
 The internal field $E_z$ caused by the electric polarization is usually small, warranting a perturbative approach where $\hat{H}_{\rm isb}$ is the perturbation applied to $\hat{H}_0$.
@@ -372,7 +372,7 @@ In the calculations reported below, we used a unit cell with lattice parameter $
 This makes the unit cell slightly larger than the experimental one, which has a volume of 53.3~\AA$^3$~\cite{Serebryanaya1995}.
 The Te ion is shifted by 0.25~\AA~ away from the center of the unit cell.
 
-The valence (conduction) bands around the Fermi level are formed mostly by $s$- and $p$ orbitals from the Te (Ge) ion.
+The valence (conduction) bands around the Fermi level are formed mostly by $s$ and $p$ orbitals from the Te (Ge) ion.
 Since Te is significantly heavier than Ge, its atomic SOC is much larger. This will become important since we saw from the toy model that the size of the atomic SOC influences the orbital contribution to the Rashba-effect. 
 The largest linear spin-splitting due to the inversion symmetry breaking is observed around the TR invariant $Z$ point of the BZ, along the plane perpendicular to the [111] direction.
 The $Z-\Gamma$ path does not show any splitting because the electric field is along the $z$-direction, and thus only a variation of $k_x$ and $k_y$ will lead to a linear splitting, as previously discussed.
@@ -389,7 +389,7 @@ Plane waves with an energy up to 30 Ry were included, with a 120 Ry cutoff for t
 The reciprocal space was sampled using a 6x6x6 Monkhorst-Pack grid \cite{Pack1977} for the self-consistent calculations, using a total energy convergence threshold of $10^{-7}$Ry.
 
 Afterwards we used the {\texttt Wannier90} package \cite{Mostofi2014AnFunctions} to perform the Wannierization as described in the theory Chapter \ref{sec:Wannier}.
-As the initial guess we used projections onto hydrogenic $s$- and $p$ orbitals for both Ge and Te ions, since as mentioned before, they are the main constituents of the bands around the Fermi level.
+As the initial guess we used projections onto hydrogenic $s$ and $p$ orbitals for both Ge and Te ions, since as mentioned before, they are the main constituents of the bands around the Fermi level.
 A 10x10x10 $k$ grid was used for the sampling of the BZ during the Wannierization. 
 
 \section{Results and Discussion}
@@ -405,13 +405,13 @@ The proposed mechanism is a result of the real space properties of the Bloch fun
 The Wannierization as described in Section \ref{sec:Wannier} provides us with a set of localized $s$ and $p$ orbitals situated on Te and Ge, and a Tight-Binding model from which we can interpolate the bandstructure.
 The densities of the Wannier functions for the spin-up Te orbital are displayed in Fig.~\ref{fig:Rashba_wannierfunctions}(a), with the spin-down orbitals having similar charge distributions.
 The combined spread of the 16 spinor Wannier functions\footnote{4x2 for the Te ion and 4x2 for the Ge ion.} is 53.4~\AA$^2$ (see Eq.~\eqref{eq:Theory_spread} for details).
-\begin{figure}[h]
-\IncludeGraphics[width=\linewidth]{Wannierfunctions.png}
+\begin{figure}
+\IncludeGraphics{Wannierfunctions.png}
 \caption{\label{fig:Rashba_wannierfunctions}{\bf Wannier functions} a) The spin-up Wannier functions of the orbitals around the Tellurium ion. The isosurface is constructed from the norm of the wavefunctions, with the coloration denoting the sign of the real part. b) The charge density in the central unit cell of the Bloch function of the top valence band, at $k=$ (0, 0.1, 0.9) in units of \AA$^{-1}$. The orbital angular momentum, polarization, and $k$ vector are shown by the red, blue, and green arrows, respectively. In each panel, the unit cell is shown by the wireframe, and the Te and Ge ions are yellow and grey, respectively.}
 \end{figure}
 The Wannier interpolation of the ab-initio bandstructure is shown in Fig.~\ref{fig:Rashba_wannierization}, which demonstrates a close agreement between the interpolated and ab-initio bands in the chosen window, and the valence bands in particular. 
-\begin{figure}[h]
-\IncludeGraphics[width=\linewidth]{wanvsdft.png}
+\begin{figure}
+\IncludeGraphics{wanvsdft.png}
 \caption{\label{fig:Rashba_wannierization}{\bf Wannier interpolation.} Bandstructure interpolation by the Tight-Binding Hamiltonian in terms of the Wannier functions for non-relativistic (a) and relativistic (b) calculations.}
 \end{figure}
 We then use the set of localized orbitals $\Ket{\alpha}$, to calculate the real space operators that are of importance for the mechanism we are trying to confirm, namely the dipole matrix elements and OAM.
@@ -445,10 +445,10 @@ Since we are only interested in the OAM around the Te atom, and the Wannier func
 Similar expressions can be found for the spin and center of mass of the Bloch functions. The term inside the sum $\sum_{\bm R}$ is an example of what we refer to as a ``local'' property of the Bloch function, i.e. inside one unit cell. Reaching back to the Bloch function displayed Fig.~\ref{fig:Rashba_wannierfunctions}(b), we have represented its OAM by the red vector. Note the donut-like shape of the charge density, a recurrent theme among orbitals with nonzero OAM. Compared with the densities of the Wannier functions shown in panel (a), this donut shape has a higher electrostatic energy due to the interaction with the charges on the neighboring Ge ions. Still, the atomic SOC and the dipole mechanism favors this shape for its nonzero OAM. 
 
 The calculated local properties of the Bloch functions are shown in Fig.~\ref{fig:Rashba_oamvseigvalv}(a,b) for the first and third valence band, respectively. SAM in the figure and the following discussion refers to the spin angular momentum.
-\begin{figure}[h!]
+\begin{figure}
 	\centering
 \IncludeGraphics[width=0.65\linewidth]{OAMvsK}
-\caption{\label{fig:Rashba_oamvseigvalv}{\bf Local properties of the Bloch functions.} Comparison between the real-space properties and energy dispersion in (a) the first and (b) third valence band. The values are plotted in function of the relative distance from the $Z$ point $\bm{k}_r = \bm{k} - \bm{k}_Z$, along the $A \rightarrow Z \rightarrow U$ path shown in Fig.~\ref{fig:Rashba_crystal}(b). The green graphs denote the values for non-relativistic calculations, whereas the orange and blue graphs denote the values of the two spin-split bands as a result of fully-relativistic calculations.}
+\caption{\label{fig:Rashba_oamvseigvalv}{\bf Local properties of the Bloch functions.} a),b) Comparison between the real-space properties and energy dispersion in the first and third valence band, respectively. The values are plotted in function of the relative distance from the $Z$ point $\bm{k}_r = \bm{k} - \bm{k}_Z$, along the $A \rightarrow Z \rightarrow U$ path shown in Fig.~\ref{fig:Rashba_crystal}(b). The green graphs denote the values for non-relativistic calculations, whereas the orange and blue graphs denote the values of the two spin-split bands as a result of fully-relativistic calculations.}
 \end{figure}
 \\\\
 Many interesting local features of the Bloch functions can be observed in these figures, which we will now discuss in detail.
@@ -466,6 +466,11 @@ This is especially clear for the third valence band shown in Fig.~\ref{fig:Rashb
 
 The most convincing argument, perhaps, can be extracted from the top left panels that depict the variation of the center of mass of the Bloch functions. Indeed, not only does it change when $\bm k$ is moved way from the $Z$ point, it changes differently for the two spin-split bands, as their OAM is shifted opposite to one another.
 As an example we have depicted the charge variation of the Bloch functions of the first valence band in Fig.~\ref{fig:Rashba_diffdens}, displaying clearly how the dipole develops.
+\begin{figure}
+	\centering
+\IncludeGraphics[width=.7\columnwidth]{diffdens}
+\caption{\label{fig:Rashba_diffdens}{\bf Bloch function dipole.} The variation of the charge density of the Bloch function of the first valence band $\left.\frac{\partial |\psi(k)|^2}{\partial k}\right\rvert_{k=Z}$ away from $Z$ towards $A$. Te and Ge ions are in red and grey, respectively. The charge asymmetry around Ge showcases the nonzero dipole moment along $z$, which couples to the local electric field near Ge ion.}
+\end{figure}
 \\\\
 Lastly, we would like to comment on the OAM and SAM textures of the first and third valence band.
 From their values at the $Z$ point (see Fig.~\ref{fig:Rashba_oamvseigvalv}), we can clearly see that these bands have a different total angular momentum $j$.
@@ -473,52 +478,24 @@ In the first valence band the SAM and OAM are aligned at $Z$, allowing us to con
 These observations have also been confirmed experimentally \cite{Krempasky2015}.
 The much smaller splitting and the opposite orientation of the OAM and SAM in the third valence band compared with the first band seems to indicate that the two OAM based mechanisms described throughout this Chapter are working against each other in this band.
 The OAM and SAM texture for the first and third valence band are shown for the whole BZ in Fig.~\ref{fig:Rashba_textures}.
-The zoom onto the $Z$ point in panels (c, f) reveals one last very peculiar feature: the relative orientations of the OAM and SAM reverse in a very narrow region around the $Z$ point.
+The zoom onto the $Z$ point in Fig.~\ref{fig:Rashba_textures_small} reveals one last very peculiar feature of the BFs: the relative orientations of the OAM and SAM reverse in a very narrow region around the $Z$ point.
 This draws the attention to the inclusion of $H_R$ in Eq.~\eqref{eq:Rashba_hami}, which breaks threefold symmetry and results in $j$ not being a good quantum number anymore. This causes a highly non trivial SAM and OAM texture to be present in these two sub bands, with both textures varying considerably throughout the BZ. 
 % From the modern theory of OAM~\cite{Thonhauser2011}~it was shown that there may be another itinerant contribution to the orbital angular momentum, which is not of importance in our description. 
 
 
 % Due to the existence of two atoms inside the primitive unit cell, another manifestation of this mechanism arises through the overlap of $p_x$ and $p_y$ on Te and $s$ and $p_z$ on Ge.
 % This leads to a dipole as can be seen from the variation of the charge density of the BFs as we move away from the $Z$ point in Fig.~\ref{fig:Rashba_diffdens}.
-\begin{figure}[h]
-\IncludeGraphics[width=.7\columnwidth]{diffdens}
-\caption{\label{fig:Rashba_diffdens}{\bf Bloch function dipole.} The variation of the charge density of the Bloch function of the first valence band $\left.\frac{\partial |\psi(k)|^2}{\partial k}\right\rvert_{k=Z}$ away from $Z$ towards $A$. Te and Ge ions are in red and blue, respectively. The charge asymmetry around Ge showcases the nonzero dipole moment along $z$, which couples to the local electric field near Ge ion. Figure taken from Ref.~\cite{Ponet2018}}
+
+\begin{figure}
+	\centering
+	\IncludeGraphics[width=.9\columnwidth]{OAM_SAM_texture.png}
+  \caption{\label{fig:Rashba_textures}{\bf OAM and SAM in the BZ.} Panels (a-d) show the OAM (black arrows) and SAM (green arrows) textures of the bands indicated by the same labels in the top panel. In each panel a scaling factor for the length of the arrows was chosen for clarity. The color maps indicate the energy of the bands relative to the Fermi level. The small box around the $Z$ point indicates the area magnified in Fig.~\ref{fig:Rashba_textures_small}.}
 \end{figure}
-
-
-\begin{figure*}[t!]
-  \subfloat[Lower 3rd valence band]{
-    \centering
-    \IncludeGraphics[width=0.49\linewidth]{Ltexture5.png}
-  }
-  ~
-  \subfloat[Upper 3rd valence band]{
-    \centering
-    \IncludeGraphics[width=0.49\linewidth]{Ltexture6.png}
-  }
-  \\
-  ~
-  \subfloat[Lower 1st valence band]{
-    \centering
-    \IncludeGraphics[width=0.49\linewidth]{Ltexture9.png}
-  }
-  ~
-  \subfloat[Upper 1st valence band]{
-    \centering
-    \IncludeGraphics[width=0.49\linewidth]{Ltexture10.png}
-  }\\
-  ~
-  \subfloat[Zoom-in of (b)]{
-    \centering
-    \IncludeGraphics[width=0.49\linewidth]{Ltexture6small.png}
-  }
-  ~
-  \subfloat[Zoom-in of (d)]{
-    \centering
-    \IncludeGraphics[width=0.49\linewidth]{Ltexture9small.png}
-  }
-  \caption{\label{fig:Rashba_textures}{\bf OAM and SAM in the BZ.} The textures of BFs around the $Z$ point are shown for the first and third valence bands of GeTe. The black and green arrows show the OAM and SAM textures, respectively. The length of the arrows was chosen separately for clarity in each figure and should thus not be compared. The color maps signify the energy of the bands, relative to the Fermi level. The small box around the $Z$ point indicates the area, magnified in panels (c) and (f). In the zoomed figures (c) and (f) one can observe the change or relative orientation between the SAM and OAM when moving away from the $Z$ point, signifying a change of character between $j=1/2$ and $j=3/2$.}
-\end{figure*}
+\begin{figure}
+	\centering
+	\IncludeGraphics[width=.9\columnwidth]{textures_small.png}
+  \caption{\label{fig:Rashba_textures_small}{\bf Zoom of OAM and SAM around Z.} a) Zoom of panel (b) in Fig.~\ref{fig:Rashba_textures}. b) Zoom of panel (c) in Fig.~\ref{fig:Rashba_textures}.  These two zooms were chosen because they highlight the changing character most clearly. It is reflected in the change of the relative orientations of the OAM and SAM, i.e. the black and green arrows.}
+\end{figure}
 
 \section{Conclusions}
 To conclude this Chapter, we take a step back and summarize the original problem, proposed resolution and numerical investigation of the large Rashba-like spin-splitting in bulk ferroelectric materials.
