@@ -313,7 +313,7 @@ Through the atomic SOC, this linear-in-$\bm k$ OAM then couples to the spin whic
 \\\\
 There is one other term that contributes to the linear variation of OAM with $\bm{k}$ that originates from the atomic SOC.
 
-\subsubsection{Atomic Spin-Orbit Coupling}
+\subsubsection{Atomic Spin-Orbit Coupling \label{sec:Rashba_SOC_part}}
 As mentioned previously, the atomic SOC leads to a degree of unquenching of the OAM, even at a TR invariant $k$ point, e.g. $|k|=0$~\cite{Park2011,Park2012,Park2015}.
 If we write the eigenstate of a given band at this point as a linear combination of $p$-like Bloch functions\footnote{Remember that $\eikr{0}{n}=1$.}:
 \begin{equation}
@@ -373,27 +373,26 @@ The first BZ for this low temperature structure is shown in panel (b), with the 
 \caption{\label{fig:Rashba_bands_dos}{\bf Bandstructure of GeTe.} a) Non-relativistic calculation. b) Fully-relativistic calculation. In both panels the bandstructure was colored according to the contribution of the constituent orbitals, as indicated in the flanking density of state plots. The bands that have larger $s$ character are located 5 eV below the shown window.}
 \end{figure}
 In the calculations reported below, we used a unit cell with lattice parameter $a=$4.28~\AA, leading to a volume of 53.4~\AA$^3$.
-This makes the unit cell slightly larger than the experimental one, which has a volume of 53.3~\AA$^3$~\cite{Serebryanaya1995}.
+This makes the unit cell near identical to the experimental one, which has a volume of 53.3~\AA$^3$~\cite{Serebryanaya1995}.
 The Te ion is shifted by 0.25~\AA~ away from the center of the unit cell.
 
-The valence (conduction) bands around the Fermi level are formed mostly by $s$ and $p$ orbitals from the Te (Ge) ion.
-Since Te is significantly heavier than Ge, its atomic SOC is much larger. This will become important since we saw from the toy model that the size of the atomic SOC influences the orbital contribution to the Rashba-effect. 
-The largest linear spin-splitting due to the inversion symmetry breaking is observed around the TR invariant $Z$ point of the BZ, along the plane perpendicular to the [111] direction.
-The $Z-\Gamma$ path does not show any splitting because the electric field is along the $z$-direction, and thus only a variation of $k_x$ and $k_y$ will lead to a linear splitting, as previously discussed.
+The valence (conduction) bands around the Fermi level are mainly formed by $s$ and $p$ orbitals from the Te (Ge) ion.
+Since Te is significantly heavier than Ge, its atomic SOC is much larger. This will become important since we saw from the toy model that the size of the atomic SOC directly influences the size of the orbital contributions to the spin-splitting, which is observed around the TR invariant $Z$ point of the BZ, along the plane perpendicular to the [111] direction.
+The $Z-\Gamma$ path does not display any splitting because the electric field is along the $z$-direction, causing only  $k_x$ and $k_y$ to contribute to the linear splitting, as previously in Section~\ref{sec:tb_model}.
 
-The situation in GeTe thus closely mimics the toy model we discussed in Section~\ref{sec:tb_model}, and should also harbor the unquenching effect due to atomic SOC on the heavy Te.
-Moreover, since the splitting is observed for the bulk band structure, we can rule out the contribution from the relativistic Rashba-effect described in Section~\ref{sec:Rashba_relativistic} because of the small potential gradients $\bm{\nabla}V$.
+The situation in GeTe thus closely mimics the toy model we discussed in Section~\ref{sec:tb_model}, and should also harbor the unquenching effect due to atomic SOC on the heavy Te leading to the contribution discussed in Section~\ref{sec:Rashba_SOC_part}.
+Moreover, since the splitting is observed for the bulk band structure, we can rule out the contribution due to the relativistic Rashba-effect described in Section~\ref{sec:Rashba_relativistic} because of the small internal electric field that is associated with the polarization.
 
 \section{Methods}
-We utilize ab-initio DFT calculations as implemented in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}.
-In order to confirm the linear varying OAM even when spin-orbit is not included we performed non-relativistic, as well as fully relativistic DFT calculations.
-Both were performed using the Optimized Norm-conserving Vanderbilt Pseudo Potentials \cite{Hamann2013}, and a generalized-gradient approximation \cite{Perdew1993} with Perdew-Burke-Enzerhof parametrization for the exchange-correlation functional \cite{Perdew1996}.
+We utilize ab-initio DFT calculations as implemented in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}, in order to study the bandstructure in GeTe.
+We performed both fully-relativistic and non-relativistic calculations, the latter in order to verify that a linearly varying chiral OAM texture shows up even without including atomic SOC.
+Both calculations usedthe Optimized Norm-conserving Vanderbilt Pseudo Potentials \cite{Hamann2013}, and a generalized-gradient approximation \cite{Perdew1993} with Perdew-Burke-Enzerhof parametrization for the exchange-correlation functional \cite{Perdew1996}.
 Plane waves with an energy up to 30 Ry were included, with a 120 Ry cutoff for the density.
 
-The reciprocal space was sampled using a 6x6x6 Monkhorst-Pack grid \cite{Pack1977} for the self-consistent calculations, using a total energy convergence threshold of $10^{-7}$Ry.
+The reciprocal space was sampled using a 6x6x6 Monkhorst-Pack grid \cite{Pack1977} for the self-consistent calculations, with the convergence determined by a total energy variation of below $10^{-7}$ Ry between successive iterations.
 
 Afterwards we used the {\texttt Wannier90} package \cite{Mostofi2014AnFunctions} to perform the Wannierization as described in the theory Chapter \ref{sec:Wannier}.
-As the initial guess we used projections onto hydrogenic $s$ and $p$ orbitals for both Ge and Te ions, since as mentioned before, they are the main constituents of the bands around the Fermi level.
+As the initial guess we used projections onto hydrogenic $s$ and $p$ orbitals for both Ge and Te ions, since they are the main constituents of the bands around the Fermi level, as mentioned earlier.
 A 10x10x10 $k$ grid was used for the sampling of the BZ during the Wannierization. 
 
 \section{Results and Discussion}
