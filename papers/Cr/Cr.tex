@@ -168,7 +168,7 @@ However, the case can be made that since this is only a single mode, its contrib
 To solve the time evolution of $L$ and $y$ through the differential equations in Eqs.~\ref{eq:Cr_euler_lagrange} we used the numerical integration methods implemented in the \href{https://github.com/SciML/DifferentialEquations.jl}{DifferentialEquations.jl} package~\cite{rackauckas2017differentialequations}. More specifically the Tsit5 algorithm was used, which has adaptive time stepping to capture the sharp optical pulses.
 Originally, the dynamics were fully solved both for $L$ and $y$, but it was confirmed during the fitting process that the dynamics of $L$ are indeed significantly faster than those of $y$.
 Solving dynamics with significantly different timescales is in general hard from the numerical point of view, meaning that taking $L$ to be always at the minimum of the potential makes solving the equations much easier.
-For all simulations, the starting temperature of the bath was fixed at 115 K, and the thin film value for $T_N$ was taken, i.e. 290 K which is slightly lower than the bulk Cr Ne\'el temperature of $\sim$ 308 K.
+For all simulations, the starting temperature of the bath was fixed at 115 K, and the thin film value of $T_N$ was taken, i.e. 290 K which is slightly lower than the bulk Cr Ne\'el temperature of $\sim$ 308 K.
 \\\\
 Most parameters of the model were not perfectly known a priori and thus had to be fitted to the experimental measurements.
 To aid with the fitting, judicious choices for the starting values of some parameters were be made.
@@ -208,8 +208,7 @@ This in turn leads to a rapid shift of the minimum of the single-well potential 
 While the temperature $T_L$ decreases again, $L$ and the minimum of the potential for $y$ shift back towards their original equilibrium position.
 The oscillation of $y$ remains for quite a long time while this shift is occurring, since the damping is not particularly large (of the order of 4 ps) compared with the cooling rate of the SDW ($T_L$).
 \\\\
-This already presents us with the first hint at the benefit of indirectly exciting the PLD through the SDW.
-This can be understood through a thought experiment of a hypothetical system for which the the PLD is the primary order parameter with associated double well potential, and no other coupled order parameters.
+This already presents us with the first hint at the benefit of indirectly exciting the PLD through the SDW, which we clarify through the use of a thought experiment of a hypothetical system for which the PLD is the primary order parameter with associated double well potential, and with no other coupled order parameters.
 The only possibility to excite an oscillation in this case is by heating up the system above the critical temperature.
 This would change the shape of the hypothetical energy potential, shifting its minimum to 0, and again due to the slow dynamics an oscillation would occur.
 However, as with any normal oscillator, the value of the PLD would never exceed the starting value during the oscillation, as the thermalization, and restoration of the potential will occur on much longer timescales.
