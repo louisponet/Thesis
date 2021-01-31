@@ -40,10 +40,10 @@ How exactly will be the topic of the Theory Section~\ref{sec:Rashba_Theory}.
 \\\\
 Because of the ferroelectricity due to inversion symmetry breaking, an internal electric field is generated through the dipoles that are associated with the polarization.
 Combined with the high atomic SOC, a sizable linear energy splitting between spin-polarized states can appear in these materials \cite{DiSante2013}, contrary to the tiny effect described above.
-This $k$ dependent splitting manifests itself in the bandstructure as conical intersections surrounding time-reversal (TR) invariant points of the Brillouin Zone (BZ) (see Fig.~\ref{fig:Rashba_intro_dispersion}).
+This $k$ dependent splitting manifests itself in the bandstructure as conical intersections surrounding time-reversal (T) invariant points of the Brillouin Zone (BZ) (see Fig.~\ref{fig:Rashba_intro_dispersion}).
 These points are special in the sense that the Kramers degeneracy \cite{Kramerstheorem} is enforced through the translational symmetry of the lattice, rather than by the usual inversion symmetry.
-If we take a spin up Bloch state at such a TR invariant point and apply the time-reversal operator ($\bm k \rightarrow \bm {-k}$, $\bm{\sigma} \rightarrow -\bm{\sigma}$), it is brought to a point on the opposite side of the BZ, and can be translated back to the starting point through a reciprocal lattice translation ($-\bm k + \bm G = \bm k$). The translation does not change the spin, however, and the resulting spin down state thus has to have the same energy as the original up spin state, since the system obeys both TR symmetry and translational symmetry.
-So, even though the broken inversion symmetry destroys the Kramers degeneracy at general $k$ points, which is what allows for the spin-splitting in the first place, it is still present at these TR invariant points, ultimately resulting in the intersecting cones depicted in Fig.~\ref{fig:Rashba_intro_dispersion}.
+If we take a spin up Bloch state at such a T invariant point and apply the time-reversal operator ($\bm k \rightarrow \bm {-k}$, $\bm{\sigma} \rightarrow -\bm{\sigma}$), it is brought to a point on the opposite side of the BZ, and can be translated back to the starting point through a reciprocal lattice translation ($-\bm k + \bm G = \bm k$). The translation does not change the spin, however, and the resulting spin down state thus has to have the same energy as the original up spin state, since the system obeys both T symmetry and translational symmetry.
+So, even though the broken inversion symmetry destroys the Kramers degeneracy at general $k$ points, which is what allows for the spin-splitting in the first place, it is still present at these T invariant points, ultimately resulting in the intersecting cones depicted in Fig.~\ref{fig:Rashba_intro_dispersion}.
 \\\\
 Due to the definite spin-polarization of the non-degenerate bands, current carriers \footnote{holes in the case of Fig.~\ref{fig:Rashba_intro_dispersion}} traveling through the material will tend to align their spins to this spin-polarization.
 Since the sign of the electric field creating the spin-splitting is a result of the orientation of the ferroelectric polarization, it can be reversed through the application of a sufficiently strong external electric field, which allows for the electrical manipulation of the carriers' spins.
@@ -149,12 +149,12 @@ As it turns out, $V^{\bm k}_3$ is exactly the energy term that describes the ato
 This term by itself does not lead any linear $k$ dependent spin-splitting, however.
 We saw that $V_2^{\bm k}$, however, does have the correct form of Eq.~\eqref{eq:Rashba_form}, and we thus identify it as the first contribution to the purely relativistic Rashba spin-splitting.
 \\\\
-In order to obtain the second contribution, we perform a $\bm k \cdot \bm p$ expansion of Eq.~\eqref{eq:Rashba_unk_Vs} around a TR invariant point of the BZ.
+In order to obtain the second contribution, we perform a $\bm k \cdot \bm p$ expansion of Eq.~\eqref{eq:Rashba_unk_Vs} around a T invariant point of the BZ.
 Without loss of generality we choose this point to be the gamma point: $\bm{k}_\Gamma = (0, 0)$.
-As we mentioned in the introduction, the spin up and spin down bands are necessarily degenerate at such a TR invariant point, and we take $E^{\sigma}_n(\Gamma) = 0$.
+As we mentioned in the introduction, the spin up and spin down bands are necessarily degenerate at such a T invariant point, and we take $E^{\sigma}_n(\Gamma) = 0$.
 Furthermore, we denote the periodic parts of the corresponding Bloch functions as $\Ket{u_n, \sigma}$, where we have omitted $\bm k$ to distinguish the $\Ket{u_n}$ at $\Gamma$ from the $\Ket{\unk{n}{k}}$ at a general $k$ point.
 
-% The Kramers degeneracy of the up and down spin states is broken due to the loss of inversion symmetry and inclusion of the SOC terms ($V_2$,$V_3$), this degeneracy will be lifted for $\bm{k}$ points which are not TR invariant.
+% The Kramers degeneracy of the up and down spin states is broken due to the loss of inversion symmetry and inclusion of the SOC terms ($V_2$,$V_3$), this degeneracy will be lifted for $\bm{k}$ points which are not T invariant.
 % It is important to realize that the orientation of spin axis of the eigenstates of Eq.~\eqref{eq:Rashba_unk_Vs} depends on the direction of both $\bm{k}$ and $\bm{P}$, as will become clear later.
 % This means that for each $\bm{k}$ point, the actual orientation of the up and down spins varies.
 Expanding then Eq.~\eqref{eq:Rashba_unk_Vs} in small $\bm{k}$, while keeping terms linear in $\bm{k}$ and up to second order in $1/c$, we find:
@@ -182,7 +182,7 @@ These electrostatics are a result of the creation of dipoles by Bloch functions 
 Until relatively recently, the exact role that the OAM plays in the Rashba-like linear spin-splitting was not well understood. Even now, there seems to be some confusion on how the many different mechanisms interact.   
 In an attempt to alleviate this confusion we will try to disentangle them and give a pedagogical description based on the works in Refs.~\cite{Petersen2000,Park2011,Park2012,Kim2014,Park2015,Go2016}.
 \\\\
-% As mentioned before, Bloch functions at non TR invariant points can have nonzero OAM.
+% As mentioned before, Bloch functions at non T invariant points can have nonzero OAM.
 % Through the overlap of the cell periodic parts, this generates inter-cell dipoles that in turn interact with any electric field such as the one associated with the polarization.
 % The inverse effect then results in the generation of Bloch functions with nonzero OAM.
 % This OAM then couples to the spin of the electrons throught the atomic SOC, leading to a splitting with the size determined (in part) by the weight of the ion around which the OAM develops.
@@ -194,7 +194,7 @@ In most cases the most favorable charge distribution in this regard leads to orb
 The reason why this process is referred to as the ``quenching'' of OAM, is that in isolated atoms the atomic SOC favors orbitals with maximum OAM to maximize the energy gain through $\hat{H}_{\rm SOC} = \lambda \hat{\bm \sigma} \cdot \hat{\bm L}$, which leads to one of the Hund's rules.
 \\\\
 We will show that there are two mechanisms that lead to the unquenching of OAM: the atomic SOC, and the electrostatic interaction due to the associated dipoles.
-The former leads to a small OAM even at TR invariant points, while the latter results in a linearly varying chiral OAM as $\bm k$ is varied away from the TR invariant point.
+The former leads to a small OAM even at T invariant points, while the latter results in a linearly varying chiral OAM as $\bm k$ is varied away from the T invariant point.
 This chirality of the OAM texture turns out to be very similar to the chirality of the spin texture that results from the purely relativistic Rashba terms (see Fig.~\ref{fig:Rashba_intro_dispersion} and Eq.~\eqref{eq:kp_expansion}).
 Both the unquenching mechanisms contribute to the linear part of the energy dispersion.
 Furthermore, the sign of the linear slope of the dispersion will be found to depend on the orientation of the electron's spin relative to its OAM\footnote{Positive for parallel orientation of the spin and OAM and negative for antiparallel orientation.}, resulting finally in the spin-splitting.
@@ -314,7 +314,7 @@ Through the atomic SOC, this linear-in-$\bm k$ OAM then couples to the spin whic
 There is one other term that contributes to the linear variation of OAM with $\bm{k}$ that originates from the atomic SOC.
 
 \subsubsection{Atomic Spin-Orbit Coupling \label{sec:Rashba_SOC_part}}
-As mentioned previously, the atomic SOC leads to a degree of unquenching of the OAM, even at a TR invariant $k$ point, e.g. $|k|=0$~\cite{Park2011,Park2012,Park2015}.
+As mentioned previously, the atomic SOC leads to a degree of unquenching of the OAM, even at a T invariant $k$ point, e.g. $|k|=0$~\cite{Park2011,Park2012,Park2015}.
 If we write the eigenstate of a given band at this point as a linear combination of $p$-like Bloch functions\footnote{Remember that $\eikr{0}{n}=1$.}:
 \begin{equation}
 \Ket{\psi} = \sum_{\bm{n},\alpha} c_\alpha \Ket{\alpha^{\bm{n}}},
@@ -328,7 +328,7 @@ where $\alpha,\beta,\gamma$ designate $x,y,z$.
 Thus, to gain energy through $H_{\rm soc} = \lambda \bm L \cdot \bm \sigma$, the eigenstates at the high-symmetry point will be a linear combination of the $p$ orbitals that leads to Bloch functions with some nonzero OAM.
 Through Hund's rule, we know that for isolated atoms this results in orbitals with maximum total angular momentum.
 However, as discussed before, the associated charge distribution is unfavorable with respect to the electrostatic repulsion from the charge around neighboring ions, the so-called {\it crystal field}~\cite{Ballhausen}.
-Nonetheless, the balance between the quenching due to the crystal field and the unquenching due to atomic SOC results in orbitals with nonzero OAM at the TR invariant $k$ point. 
+Nonetheless, the balance between the quenching due to the crystal field and the unquenching due to atomic SOC results in orbitals with nonzero OAM at the T invariant $k$ point. 
 \\\\
 Performing then another expansion in terms of small $\bm k$ we find:
 \begin{align}
@@ -377,7 +377,7 @@ This makes the unit cell near identical to the experimental one, which has a vol
 The Te ion is shifted by 0.25~\AA~ away from the center of the unit cell.
 
 The valence (conduction) bands around the Fermi level are mainly formed by $s$ and $p$ orbitals from the Te (Ge) ion.
-Since Te is significantly heavier than Ge, its atomic SOC is much larger. This will become important since we saw from the toy model that the size of the atomic SOC directly influences the size of the orbital contributions to the spin-splitting, which is observed around the TR invariant $Z$ point of the BZ, along the plane perpendicular to the [111] direction.
+Since Te is significantly heavier than Ge, its atomic SOC is much larger. This will become important since we saw from the toy model that the size of the atomic SOC directly influences the size of the orbital contributions to the spin-splitting, which is observed around the T invariant $Z$ point of the BZ, along the plane perpendicular to the [111] direction.
 The $Z-\Gamma$ path does not display any splitting because the electric field is along the $z$-direction, causing only  $k_x$ and $k_y$ to contribute to the linear splitting, as previously in Section~\ref{sec:tb_model}.
 
 The situation in GeTe thus closely mimics the toy model we discussed in Section~\ref{sec:tb_model}, and should also harbor the unquenching effect due to atomic SOC on the heavy Te leading to the contribution discussed in Section~\ref{sec:Rashba_SOC_part}.
@@ -452,7 +452,7 @@ The calculated local properties of the Bloch functions are shown in Fig.~\ref{fi
 \begin{figure}
 	\centering
 \IncludeGraphics[width=0.65\linewidth]{OAMvsK}
-\caption{\label{fig:Rashba_oamvseigvalv}{\bf Local properties of the Bloch functions.} a),b) Comparison between the real space properties and energy dispersion in the first and third valence band, respectively. The values are plotted in function of the relative distance to the $Z$ point $|\bm{k}_r| = |\bm{k} - \bm{k}_Z|$, along the $A \rightarrow Z \rightarrow U$ path shown in Fig.~\ref{fig:Rashba_crystal}(b). The green graphs denote the values of  non-relativistic calculations, whereas the orange and blue graphs denote the values of the two spin-split bands resulting from the fully-relativistic calculations.}
+\caption{\label{fig:Rashba_oamvseigvalv}{\bf Local properties of the Bloch functions.} a),b) Comparison between the real space properties and energy dispersion in the first and third valence band, respectively. The values are plotted in function of the relative distance to the $Z$ point $|\bm{k}_r| = |\bm{k} - \bm{k}_Z|$, along the $A \rightarrow Z \rightarrow U$ path shown in Fig.~\ref{fig:Rashba_crystal}(b). The green graphs denote the values of non-relativistic calculations, whereas the orange and blue graphs denote the values of the two spin-split bands resulting from the fully-relativistic calculations.}
 \end{figure}
 \\\\
 Many interesting local features of the Bloch functions can be observed in these figures, which we will now discuss in detail.
@@ -463,8 +463,8 @@ The only possible explanation for this unquenching is due to the expressions der
 Moreover, $k_x$ remains zero along the $A$--$Z$ path, and we can observe that only $L_x$ develops due to the nonzero $k_y$. Only when $k_x$ is nonzero, along the $Z$--$U$ path, does $L_y$ show up. This dependence on $k_x$ and $k_y$ is fully consistent with the expressions for $L_x$ and $L_y$ in Eqs.~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
 \\\\
 If we then include fully-relativistic effects, thus also including the atomic SOC, we can see that an additional unquenching of the OAM shows up.
-This leads to a nearly constant shift of the OAM with opposite signs for the two sub bands, and is the sole contributor to the unquenching at the TR invariant $Z$ point.
-How this unquenching leads to the second contribution of the linearly varying OAM was discussed in Eq.~\eqref{eq:d_z_from_OAM}. It was shown there that it results from the combination of the linear $\bm k$ due to the first order expansion of $\eikr{R}$, and a nonzero OAM at the TR invariant point.
+This leads to a nearly constant shift of the OAM with opposite signs for the two sub bands, and is the sole contributor to the unquenching at the T invariant $Z$ point.
+How this unquenching leads to the second contribution of the linearly varying OAM was discussed in Eq.~\eqref{eq:d_z_from_OAM}. It was shown there that it results from the combination of the linear $\bm k$ due to the first order expansion of $\eikr{R}$, and a nonzero OAM at the T invariant point.
 We can find the signature of this contribution in the change of the linear slope of the OAM for the fully-relativistic calculations compared with the one resulting from the non-relativistic calculations.
 This is especially clear for the third valence band shown in Fig.~\ref{fig:Rashba_oamvseigvalv}(b).
 \\\\
