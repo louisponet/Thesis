@@ -1,7 +1,7 @@
 \newcommand{\Unkr}{u_n(\bm{k}, \bm{r})}
 % \renewcommand{\eikr}{$e^{i\bm{k}\cdot\bm{r}}$}
 \newcommand{\Eikr}{e^{i\bm{k}\cdot\bm{r}}}
-\chapter{Spin-momentum locking in high spin-orbit coupled ferroelectrics \label{ch:Rashba}}
+\chapter{Spin-momentum locking in ferroelectrics with strong spin-orbit coupling\label{ch:Rashba}}
 \section{Introduction}
 % Bulk ferroelectrics with large atomic spin-orbit coupling allow for electric control of spin-polarized states~\cite{DiSante2013,Ishizaka2011,Kim2014, Liebmann2016, Krempasky2015}, allowing for the switching of the spin texture by an externally applied electric field. 
 % The underlying mechanism is, however, not well understood.
@@ -169,7 +169,7 @@ We know that the atomic SOC ($V^{\bm k}_3$) is much larger than $V^{\bm{k}}_2$, 
 A requirement for the second term to be nonzero is that $u_n$ and $u_m$ have different parity along the spatial direction defined by $\bm{k}$, since otherwise $\Bra{u_n} k_x \partial_x + k_y \partial_y + k_z \partial_z \Ket{u_m} = 0$.
 One example could be a $p_y$ orbital and a $s$-$p_z$ hybridized one, which would be created by an electric polarization along the $z$-axis.
 How exactly this hybridization arises will be discussed in further detail below in Section~\ref{sec:tb_model}, in the context of a Tight-Binding model.
-The combination of the two linear-in-$\bm{k}$ terms in Eq.~\eqref{eq:kp_expansion} can be regarded as the fully relativistic Rashba-effect.
+The combination of the two linear-in-$\bm{k}$ terms in Eq.~\eqref{eq:kp_expansion} can be regarded as the fully relativistic Rashba-effect~\cite{Bahramy2011}.
 \\\\
 In summary, we have given the derivation of the relativistic Rashba-effect starting from the Dirac equation applied to the Bloch functions, followed by a $\bm k \cdot \bm p$ expansion.
 By carefully considering the microscopics we have found that both contributions have a similar order of magnitude of typically $10^{-6}$ eV.
@@ -229,7 +229,7 @@ The other terms of $\hat{H}_{\rm isb}$ are zero.
 Fig.~\ref{fig:Rashba_overlapdip} shows pictorially how the electric dipoles appear as a result of the overlap between the orbitals. 
 \begin{figure}[t]
 ~\centering
-\IncludeGraphics[width=\linewidth]{overlapdip.png}\caption{\label{fig:Rashba_overlapdip} {\bf Overlap dipoles.} (a) On-site dipole from $\Ket{s}$ and $\Ket{z}$ hybridization, (b) Dipole due to overlap of shifted $\Ket{p}$ orbitals, the dashed line indicates a unit cell boundary.}
+\IncludeGraphics[width=\linewidth]{overlapdip.png}\caption{\label{fig:Rashba_overlapdip} {\bf Overlap dipoles.} a) On-site dipole from $\Ket{s}$ and $\Ket{z}$ hybridization, b) Dipole due to overlap of shifted $\Ket{p}$ orbitals, the dashed line indicates a unit cell boundary.}
 \end{figure}
 \\\\
 The internal field $E_z$ caused by the electric polarization is usually small, warranting a perturbative approach where $\hat{H}_{\rm isb}$ is the perturbation on top of $\hat{H}_0$.
@@ -384,14 +384,14 @@ The situation in GeTe thus closely mimics the toy model we discussed in Section~
 Moreover, since the splitting is observed for the bulk band structure, we can rule out the contribution due to the relativistic Rashba-effect described in Section~\ref{sec:Rashba_relativistic} because of the small internal electric field that is associated with the polarization.
 
 \section{Methods}
-We utilize ab-initio DFT calculations as implemented in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}, in order to study the bandstructure in GeTe.
+We utilize ab-initio DFT calculations~\ref{sec:DFT} as implemented in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}, in order to study the bandstructure in GeTe.
 We performed both fully-relativistic and non-relativistic calculations, the latter in order to verify that a linearly varying chiral OAM texture shows up even without including atomic SOC.
 Both calculations usedthe Optimized Norm-conserving Vanderbilt Pseudo Potentials \cite{Hamann2013}, and a generalized-gradient approximation \cite{Perdew1993} with Perdew-Burke-Enzerhof parametrization for the exchange-correlation functional \cite{Perdew1996}.
 Plane waves with an energy up to 30 Ry were included, with a 120 Ry cutoff for the density.
 
 The reciprocal space was sampled using a 6x6x6 Monkhorst-Pack grid \cite{Pack1977} for the self-consistent calculations, with the convergence determined by a total energy variation of below $10^{-7}$ Ry between successive iterations.
 
-Afterwards we used the {\texttt Wannier90} package \cite{Mostofi2014AnFunctions} to perform the Wannierization as described in the theory Chapter \ref{sec:Wannier}.
+Afterwards we used the {\texttt Wannier90} package \cite{Mostofi2014AnFunctions} to perform the Wannierization as described in Appendix~\ref{sec:Wannier}.
 As the initial guess we used projections onto hydrogenic $s$ and $p$ orbitals for both Ge and Te ions, since they are the main constituents of the bands around the Fermi level, as mentioned earlier.
 A 10x10x10 $k$ grid was used for the sampling of the BZ during the Wannierization. 
 
