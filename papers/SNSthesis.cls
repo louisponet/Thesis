@@ -136,8 +136,9 @@
             \\[0.1in] \large{2019/2020}}
             \\
 	 \vspace{3cm}
-        \includegraphics[width=0.35\columnwidth]{logos/SNSlogo.png}
-           \\[0.1in]  \textsc{\large{Scuola Normale Superiore}}
+        \includegraphics[width=0.72\columnwidth]{logos/itt.jpg}
+           \\[0.1in]  \textsc{\large{Scuola Normale Superiore,\\ Istituto Italiano di Tecnologia}}
+           % \\[0.1in]  \textsc{\large{Scuola Normale Superiore}}
     \end{center}
 
         \vfill
