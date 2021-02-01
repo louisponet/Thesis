@@ -357,7 +357,7 @@ The parameters for the exchange striction were then chosen to fit the experiment
 ${\beta_1 = 0.06\,\mu}$C/cm$^2$, $\beta_2 = 0.06\:\mu$C/cm$^2$, $\beta_3 = 0.04\:\mu$C/cm$^2$.
 \\\\
 However, these parameters are by no means a requirement for the overarching behavior to exist. As we will show in greater detail in the following section, more specifically in the context of the discussion on the topological nature of the switching, a great deal of freedom exists in choosing these parameters, if the only requirement is to reproduce the three switching regimes.
-This lies at the heart of our claim that this effect might exist in other materials, since neither the model nor the parameters depend greatly on the microscopic details of GdMn$_2$O$_5$. 
+This lies at the heart of our claim that this effect might exist in other materials, since neither the model itself nor its parameters depend greatly on the microscopic details of GdMn$_2$O$_5$. 
 \\\\
 The next question is how to simulate the experimental set-up, which is, in contrast to the question about the model parameters, much easier to answer.
 Since the behavior only shows up at temperatures below $\sim$ 4 K, is remarkably deterministic, and is a result of quasi-statically applied magnetic fields, we simulated it as a series of simple minimization problems.
@@ -372,19 +372,15 @@ We now turn to a discussion of the results obtained from the simulations of the 
 
 \section{Results and discussion}
 \begin{figure}
-    \IncludeGraphics[width=0.9\linewidth]{Pb_3panels_heatmaps}
-    %\includegraphics[width=\linewidth]{fig/L1L2_heatmap.png}
-    \caption{\label{fig:GdMn2O5_theory}{\bf Simulation of magnetoelectric behavior.}
-    (a-c) Evolution of electric polarization $P_b$ during the magnetic field sweep cycle for the three angle dependent regimes. 
-   In each panel, the changes of the curve color indicate the same progression of the sweep cycle as in Fig~\ref{fig:GdMn2O5_experiment1}. The four-state switching is seen for the field at the magic orientation. 
-    The insets indicate the corresponding switching paths and winding numbers (see Section~\ref{sec:GdMn2O5_topology}).
-    (d-f) Trajectories (in white) in the space angles $(\phi_{\rm L_1},\phi_{\rm L_2})$, through the field sweep cycles in different regimes. The color map shows the energy landscape in the vicinity of the switching fields. 
+    \IncludeGraphics{Pb_3panels}
+    \caption{\label{fig:GdMn2O5_theory}{\bf Simulation of the angle dependent magnetoelectric switching.}
+    The evolution of electric polarization $P_b$ during the magnetic field sweep cycle is depicted for the low (a), magic (b), and high (c) angle regimes. 
+   In each panel, the four states and field cycle progression are marked in the same way as in Fig~\ref{fig:GdMn2O5_experiment1}. The four states hysteresis loop is observed for the field at the magic orientation in panel (b). 
+    The insets indicate the sequence of states visited during the cycle for each regime, and winding numbers (see Section~\ref{sec:GdMn2O5_topology} for further details on the latter).
 }
 \end{figure}
-
-The results of the earlier described simulation procedure are showcased in Fig.~\ref{fig:GdMn2O5_theory}.
-
-Let us first focus on panels (a-c), corresponding to the same three regimes displayed in panels (a-c) of the experimental Figure~\ref{fig:GdMn2O5_experiment1}, which demonstrate that our simulations reproduce the experimental observations well (taking the right hand side of Fig.~\ref{fig:GdMn2O5_experiment1}(a) for the low angle regime).
+The magnetoelectric switching simulations that result from the earlier described simulation procedure are showcased in Fig.~\ref{fig:GdMn2O5_theory}, displaying the same three regimes as the experimental results in Figure~\ref{fig:GdMn2O5_experiment1}.
+It is clear that we are able to reproduce the same three regimes (taking the right hand side of Fig.~\ref{fig:GdMn2O5_experiment1}(a) for the low angle regime).
 % We can identify the reversal of the polarization in the low angle regime, toggling between states 1 and 4, the small variation of $P_b$ for the high angle regime, toggling between states 1 and 2, and finally the magic angle regime where the four states are cycled through sequentially.
 The insets in each panel depict schematically the states that are visited by the system during the field sweeps.
 
@@ -412,7 +408,7 @@ The angles $\phi_{L_1}$ and $\phi_{L_2}$ that describe in part the state of the 
 These symmetry operations are indicated by the black arrows in the top left panel in Fig.~\ref{fig:GdMn2O5_heatmap}.
 \begin{figure*}[h!]
 	\centering
-	\IncludeGraphics[width=\textwidth]{field_heatmap1}
+	\IncludeGraphics{field_heatmap1}
 	\caption{{\bf Energy surfaces in terms of $(\phi_{L_1}, \phi_{L_2})$ for $\phi_H =+10^\circ$.} The shaded dots denote the four degenerate minima. The full white dot corresponds to the example situation discussed in the main text. An indication of its trajectory during a double up--down field sweep is given by the shaded lines. The two black arrows denote the time-reversal (T) and inversion (I) operations.\label{fig:GdMn2O5_heatmap}}
 \end{figure*}
 \\\\
@@ -460,14 +456,20 @@ Notice that at the point where the system moves to state 2, i.e. when the barrie
 When the field is lowered, the barrier 23 lowers faster than 12, causing the system to progress to state 3.
 A similar process then brings state 3$\rightarrow$4$\rightarrow$1 during the next up--down field sweep, since the barriers 34 and 12  (14 and 23) are related by the inversion transformation and  $E_{34} = E_{12}$ ($E_{41} = E_{23}$) (see the effect of {\it I} in Fig.\ref{fig:GdMn2O5_heatmap} for a visual confirmation of this statement).
 From this analysis it is clear that indeed the barriers evolve asymmetrically when the field changes.
-This is not surprising seen as the states at the top of the barriers\footnote{They are a combination of the states on either side of the barrier.} that flank a given minimum are in no way related by symmetry.
+This is not surprising seen as the states at the top of the barriers\footnote{They are an interpolation between the states on either side of the barrier.} that flank a given minimum are in no way related by symmetry.
 
 Interestingly, this evolution of the potential energy surface is equivalent to that of a Thouless charge pump, in particular, the one induced by circular motion in the two-dimensional parameter space of the Rice-Mele model~\cite{Rice82} recently realized in ultra-cold gases \cite{Lohse16,Nakajima16,Atala13}.
 \\\\
-Combining the demonstration of the asymmetric evolution of the barriers in Fig.~\ref{fig:GdMn2O5_neb}, with the earlier discussion on the energy surfaces shown in Fig.~\ref{fig:GdMn2O5_heatmap} and the angle dependent trajectories displayed in Fig.~\ref{fig:GdMn2O5_theory}(d-f) leads us to the following conclusion.
-When the field is applied at a low angle, the barrier between states 1 and 4 is always lower than between states 1 and 2, causing a 1$\rightarrow$4$\rightarrow$1 sequence as in Fig.~\ref{fig:GdMn2O5_theory}(a).
-Conversely, when the field is applied at a high angle, the barrier towards state 2 is always lower than towards state 4, leading to the 1$\rightarrow$2$\rightarrow$1 toggling shown in Fig.~\ref{fig:GdMn2O5_theory}(c).
-There then has to exist a crossover angle where a combination of the two appears, leading in this case to the unidirectional cycling between 1$\rightarrow$2$\rightarrow$3$\rightarrow$4 as depicted in Figs.~\ref{fig:GdMn2O5_theory}(b), ~\ref{fig:GdMn2O5_heatmap}, and \ref{fig:GdMn2O5_neb}(a).
+Combining the demonstration of the asymmetric evolution of the barriers in Fig.~\ref{fig:GdMn2O5_neb}, with the earlier discussion on the energy surfaces shown in Fig.~\ref{fig:GdMn2O5_heatmap}, leads us to the following conclusion, visualized in Fig.~\ref{fig:GdMn2O5_trajectories}.
+If the field is applied at a low angle, the barrier between states 1 and 4 is always lower than the one between states 1 and 2, leading to a 1$\rightarrow$4$\rightarrow$1 sequence as in Fig.~\ref{fig:GdMn2O5_theory}(a) and \ref{fig:GdMn2O5_trajectories}(a).
+Conversely, when the field is applied at a high angle, the barrier towards state 2 is always lower than the one towards state 4, leading to the 1$\rightarrow$2$\rightarrow$1 toggling shown in Fig.~\ref{fig:GdMn2O5_theory}(c) and \ref{fig:GdMn2O5_trajectories}(c).
+There then has to exist a crossover angle where a combination of the two appears, leading in this case to the unidirectional cycling between 1$\rightarrow$2$\rightarrow$3$\rightarrow$4 as depicted in Figs.~\ref{fig:GdMn2O5_theory}(b),~\ref{fig:GdMn2O5_trajectories}(b), and more detailed in Figs.~\ref{fig:GdMn2O5_heatmap}, and \ref{fig:GdMn2O5_neb}(a).
+\begin{figure}
+    \IncludeGraphics{heatmaps_trajectories}
+    \caption{\label{fig:GdMn2O5_trajectories}{\bf Angle dependence of the trajectory through $(\phi_{\rm L_1},\phi_{\rm L_2})$ space.}
+    The trajectories of the system through $(\phi_{\rm L_1},\phi_{\rm L_2})$ space during the field sweep cycle are displayed in white for the low, magic and high angle regimes in panels (a),(b) and (c), respectively. The background color maps display the energy landscape at a field strength chosen to highlight the differences between the three regimes (see the black box for a demonstration in the different barrier hights). 
+}
+\end{figure}
 \\\\
 %
 To hint at the origin of the asymmetric barrier evolution from a theoretical point of view, we can perform a simple Taylor expansion for the barrier energies 12, 23 at a field strength $H^*$ when $E_{12} = E_{23}$, as depicted in Fig.~\ref{fig:GdMn2O5_neb}(b).

@@ -384,7 +384,7 @@ The situation in GeTe thus closely mimics the toy model we discussed in Section~
 Moreover, since the splitting is observed for the bulk band structure, we can rule out the contribution due to the relativistic Rashba-effect described in Section~\ref{sec:Rashba_relativistic} because of the small internal electric field that is associated with the polarization.
 
 \section{Methods}
-We utilize ab-initio DFT calculations~\ref{sec:DFT} as implemented in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}, in order to study the bandstructure in GeTe.
+We utilize ab-initio DFT calculations (see Appendix~\ref{sec:DFT}) as implemented in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}, in order to study the bandstructure in GeTe.
 We performed both fully-relativistic and non-relativistic calculations, the latter in order to verify that a linearly varying chiral OAM texture shows up even without including atomic SOC.
 Both calculations usedthe Optimized Norm-conserving Vanderbilt Pseudo Potentials \cite{Hamann2013}, and a generalized-gradient approximation \cite{Perdew1993} with Perdew-Burke-Enzerhof parametrization for the exchange-correlation functional \cite{Perdew1996}.
 Plane waves with an energy up to 30 Ry were included, with a 120 Ry cutoff for the density.
@@ -418,7 +418,7 @@ The Wannier interpolation of the ab-initio bandstructure is shown in Fig.~\ref{f
 \caption{\label{fig:Rashba_wannierization}{\bf Wannier interpolation.} Bandstructure interpolation by the Tight-Binding Hamiltonian in terms of the Wannier functions for non-relativistic (a) and relativistic (b) calculations.}
 \end{figure}
 We then use the set of localized orbitals $\Ket{\alpha}$, to calculate the real space operators that are of importance for the mechanism we are trying to confirm, namely the dipole matrix elements and OAM.
-We will use the center of mass $\Bra{\alpha} \hat{\bm r} \Ket{\beta}$ as an indication of the local dipoles of the Bloch functions\footnote{We do this because we are mainly interested in the variation of the dipoles of the Bloch functions away from the $Z$ point, rather than their well-defined values. Indeed it has been shown that the definition of the electric dipoles in a crystalline environment requires some care. For further details we refer to the works on the {\it Modern Theory of Polarization} \cite{King-Smith1993,Vanderbilt1993,Resta1998, Spaldin2012,Vanderbilt18}.}.
+We will use the center of mass $\Bra{\alpha} \hat{\bm r} \Ket{\beta}$ as an indication of the local dipoles of the Bloch functions\footnote{We do this because we are mainly interested in the variation of the dipoles of the Bloch functions away from the $Z$ point, rather than their absolute values. Indeed it has been shown that the definition of the electric dipoles in a crystalline environment requires some care. For further details we refer to the works on the {\it Modern Theory of Polarization} \cite{King-Smith1993,Vanderbilt1993,Resta1998, Spaldin2012,Vanderbilt18}.}.
 The OAM can be calculated as:
 \begin{equation}
 	\label{eq:Rashba_OAM}
@@ -448,11 +448,16 @@ Since we are only interested in the OAM around the Te atom, and the Wannier func
 \end{equation}
 Similar expressions can be found for the spin and center of mass of the Bloch functions. The term inside the sum $\sum_{\bm R}$ is an example of what we refer to as a ``local'' property of the Bloch function, i.e. inside one unit cell. Reaching back to the Bloch function displayed Fig.~\ref{fig:Rashba_wannierfunctions}(b), we have represented its OAM by the red vector. Note the donut-like shape of the charge density, a recurrent theme among orbitals with nonzero OAM. Compared with the densities of the Wannier functions shown in panel (a), this donut shape has a higher electrostatic energy due to the interaction with the charges on the neighboring Ge ions. Still, the atomic SOC and the dipole mechanism favor this shape for its nonzero OAM. 
 
-The calculated local properties of the Bloch functions are shown in Fig.~\ref{fig:Rashba_oamvseigvalv}(a,b) for the first and third valence band, respectively. SAM in the figure and the following discussion refers to the spin angular momentum.
+The calculated local properties of the Bloch functions are shown in Fig.~\ref{fig:Rashba_oamvseigvalv1} and Fig.~\ref{fig:Rashba_oamvseigvalv2} for the first and third valence band, respectively.
 \begin{figure}
 	\centering
-\IncludeGraphics[width=0.65\linewidth]{OAMvsK}
-\caption{\label{fig:Rashba_oamvseigvalv}{\bf Local properties of the Bloch functions.} a),b) Comparison between the real space properties and energy dispersion in the first and third valence band, respectively. The values are plotted in function of the relative distance to the $Z$ point $|\bm{k}_r| = |\bm{k} - \bm{k}_Z|$, along the $A \rightarrow Z \rightarrow U$ path shown in Fig.~\ref{fig:Rashba_crystal}(b). The green graphs denote the values of non-relativistic calculations, whereas the orange and blue graphs denote the values of the two spin-split bands resulting from the fully-relativistic calculations.}
+\IncludeGraphics[width=\linewidth]{OAMvsK1}
+\caption{\label{fig:Rashba_oamvseigvalv1}{\bf Properties of the Bloch functions in the first valence band.} a) Center of mass in the unit-cell. b) Eigenvalues. (c-f) $L_x$, $S_x$, $L_y$ and $S_y$ around the Te ion, respectively. The values are plotted in function of the relative distance to the $Z$ point, $|\bm{k}_r| = |\bm{k} - \bm{k}_Z|$, along the $A \rightarrow Z \rightarrow U$ path shown in Fig.~\ref{fig:Rashba_crystal}. The green graphs denote the values of non-relativistic calculations, whereas the orange and blue graphs denote the values of the two spin-split bands resulting from the fully-relativistic calculations. See Fig.~\ref{fig:Rashba_bands_dos}(b) for the location of this first valence band in the band structure.}
+\end{figure}
+\begin{figure}
+	\centering
+\IncludeGraphics[width=\linewidth]{OAMvsK2}
+\caption{\label{fig:Rashba_oamvseigvalv2}{\bf Properties of the Bloch functions in the third valence band.} The panels depict the same properties as Fig.~\ref{fig:Rashba_oamvseigvalv1}, but for the third valence band (see Fig.~\ref{fig:Rashba_bands_dos}(b)).}
 \end{figure}
 \\\\
 Many interesting local features of the Bloch functions can be observed in these figures, which we will now discuss in detail.
@@ -466,7 +471,7 @@ If we then include fully-relativistic effects, thus also including the atomic SO
 This leads to a nearly constant shift of the OAM with opposite signs for the two sub bands, and is the sole contributor to the unquenching at the T invariant $Z$ point.
 How this unquenching leads to the second contribution of the linearly varying OAM was discussed in Eq.~\eqref{eq:d_z_from_OAM}. It was shown there that it results from the combination of the linear $\bm k$ due to the first order expansion of $\eikr{R}$, and a nonzero OAM at the T invariant point.
 We can find the signature of this contribution in the change of the linear slope of the OAM for the fully-relativistic calculations compared with the one resulting from the non-relativistic calculations.
-This is especially clear for the third valence band shown in Fig.~\ref{fig:Rashba_oamvseigvalv}(b).
+This is especially clear for the third valence band shown in Fig.~\ref{fig:Rashba_oamvseigvalv2}.
 \\\\
 The most convincing argument, perhaps, can be extracted from the top left panels that depict the variation of the center of mass of the Bloch functions. Indeed, not only does it change when $\bm k$ is moved way from the $Z$ point, it changes differently for the two spin-split bands, as their OAM is shifted opposite to one another.
 As an example,  we have depicted the charge variation of the Bloch functions of the first valence band in Fig.~\ref{fig:Rashba_diffdens}, demonstrating clearly how the dipole develops.
@@ -476,8 +481,8 @@ As an example,  we have depicted the charge variation of the Bloch functions of 
 \caption{\label{fig:Rashba_diffdens}{\bf Bloch function dipole.} The variation of the charge density of the Bloch function of the first valence band $\left.\frac{\partial |\psi(k)|^2}{\partial k}\right\rvert_{k=Z}$ away from $Z$ towards $A$. Te and Ge ions are in red and grey, respectively. The charge asymmetry around Ge showcases the nonzero dipole moment along $z$, which couples to the local electric field near Ge ion.}
 \end{figure}
 \\\\
-Lastly, we would like to comment on the OAM and SAM textures of the first and third valence band.
-From their values at the $Z$ point (see Fig.~\ref{fig:Rashba_oamvseigvalv}), we can clearly see that these bands have a different total angular momentum $j$.
+Lastly, we would like to comment on the OAM and spin textures of the first and third valence band.
+From their values at the $Z$ point (see Fig.~\ref{fig:Rashba_oamvseigvalv1}(c-f) and Fig.~\ref{fig:Rashba_oamvseigvalv2}(c-f)), we can clearly see that these bands have a different total angular momentum $j$.
 In the first valence band the SAM and OAM are aligned at $Z$, allowing us to conclude that it is the $j_{3/2}$ band. The opposite orientation in the third valence band then gives away that this is one of the two $j_{1/2}$ bands, with the second valence band being the other.
 These observations have also been confirmed experimentally \cite{Krempasky2015,Krempasky2020}.
 The much smaller splitting and the opposite orientation of the OAM and SAM in the third valence band compared with the first band seems to indicate that the two OAM based mechanisms described throughout this Chapter are working against each other in this band.
