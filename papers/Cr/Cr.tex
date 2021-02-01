@@ -103,48 +103,47 @@ This supports our previous claim that the optical pulses excite the thin film ho
 
 In order to model the effect that the two photon pulses have on the material, we split it up into multiple thermodynamic subsystems.
 The first consists of the electronic degrees of freedom, including the SDW, which thermalize very quickly among themselves due to the strong electron-electron interactions.
-This allows us to assign a temperature $T_L$ to it, where $L$ is used to denote the SDW order parameter, as will be discussed further below.
-The timescale for this thermalization was measured by high-resolution ARPES to be below 100 fs~\cite{Nicholson2016}.
+The timescale for this thermalization was measured by high-resolution ARPES to be below 100 fs~\cite{Nicholson2016}, allowing us to assign a temperature $T_L$ to it, where $L$ is used to denote the SDW order parameter, as will be discussed further below.
 
 The second subsystem is that of the lattice phonons which act as a heat bath.
 In this case, we exclude the mode that describes the PLD oscillation, since it is not thermal on the timescales we are interested in. As was mentioned before, its characteristic timescale is on the order of picoseconds rather than the femtosecond timescales of the electronic SDW.
-Again, the phonon bath interacts strongly within itself allowing us to assign a second temperature $T_b$ to it.
+
+Similarly to the electrons, the phonon bath interacts strongly within itself allowing us to assign a second temperature $T_b$ to it.
 The interaction between the electrons at $T_L$ and the bath at $T_b$ is what leads to the heat transfer between them, resulting in an equilibration between the two subsystems within 1 ps.
 We thus assume that the PLD mode is completely detached from the other phonons, instead only interacting strongly with the SDW order parameter $L$ (see below). 
 \\\\
-This process can be described by the so-called two temperature model:
+The evolution of the temperatures can be described by the so-called two temperature model:
 \begin{align}
 	\label{eq:Cr_twotemp}
 	C_L \dot{T}_L &= -k(T_L(t) - T_b(t)) + Q_{ph}(t) \\
 	C_b \dot{T}_b &= -k(T_b(t) - T_L(t)),\nonumber
 \end{align}
-with $k$ the heat transfer rate, $C_L$ and $C_b$ the heat capacities of the electronic degrees of freedom and of the bath, respectively.
+with $k$ the heat transfer rate, and $C_L$, $C_b$ the heat capacities of the electronic degrees of freedom and of the bath, respectively.
 The dots signify time derivatives.
-As one could expect, we find that the heat capacity of the bath is larger than that of the electronic system by an order of magnitude.
+As one could expect, we find that the heat capacity of the bath is larger than that of the electronic system by an order of magnitude, as will be confirmed when we detail the model parameters in the Methods Section~\cite{sec:Cr_Methods}.
 Finally, the heat injected by the pulses is modeled by a Gaussian $Q_{ph}(t) = A e^{\frac{-(t - \tau)^2}{\xi^2}}$, with $A$ the strength, $\xi$ the duration and $\tau$ the time delay.
 \\\\
 The changes to $T_L$ through heating and subsequent cooling affects the SDW amplitude $L$ and indirectly the PLD one $y$, as described by a Landau-type theory~\cite{Khomskii2010}.
 These order parameters are related to the Fourier component of the SDW with wavevector $q$, i.e. $L = S_q$, and to the acoustic phonon amplitude $y = u_{2q}$.
-The phonon mode is the second harmonic ($2q$) of the SDW because the exchange striction only acts on the magnitude of the spins, and not the phase, so that during one period of the SDW oscillation two periods of the PLD occur.
-This leads to the following expression for the total free energy:
+The phonon mode is the second harmonic ($2q$) of the SDW because the exchange striction only acts on the magnitude of the spins, not on the phase, so that during one period of the SDW oscillation two periods of the PLD occur.
+This leads to the following expression for the free energy:
 \begin{equation}
 	\label{eq:Cr_landau}
-	F(L, y, T_L) = \frac{\alpha}{2}(T_L - T_N) L^2 + \frac{\beta}{4} L^4 - g L^2 y + \frac{\rho y_0^2 \omega_0^2}{2} y^2 + \frac{b}{4} y^4,
+	f(L, y, T_L) = \frac{\alpha}{2}(T_L - T_N) L^2 + \frac{\beta}{4} L^4 - g L^2 y + \frac{\rho y_0^2 \omega_0^2}{2} y^2 + \frac{b}{4} y^4,
 \end{equation}
 where $L$, $y$ and $T_L$ are the time dependent variables, and all coefficients are positive.
 The double well potential that causes the SDW phase transition is characterized by the coefficients $\alpha$ and $\beta$,  and critical temperature $T_N$ below which the SDW order sets in.
-The coupling between $L$ and $y$ due to exchange striction is described by term with $g$.
+The coupling between $L$ and $y$ due to exchange striction is described by the term with $g$.
 Only even orders of $L$ appear in the free energy, since the energy is time reversal even, but $L$ is time reversal odd.
-The PLD order parameter $y$ with density $\rho$ is described by the harmonic oscillator potential with frequency $\omega_0$ and displacement amplitude $y_0$.
-$y$ has a zero equilibrium value in the absence of $L$, since it is not the primary order parameter.
+The PLD order parameter $y$ with density $\rho$ is described by the harmonic oscillator potential with frequency $\omega_0$ and displacement amplitude $y_0$, and has a vanishing equilibrium value in the absence of $L$, since it is not the primary order parameter.
 The fourth order term $\frac{b}{4}y^4$ is only included to provide a better fit to some of the anharmonic features observed by the experiment.
-It is not needed in order to bound the energy potential in terms of $y$, as would be required if $y$ was the primary order parameter with a negative second order coefficient, like in the case of $L$.
-It is the interaction with the primary order parameter $L$ that provides the ``force'' $f = -dF/dy = gL^2$ to move $y$ up in its own harmonic potential, leading to the nonzero equilibrium value.
+It is not needed in order to bound the energy potential in terms of $y$, as would be required if $y$ was the primary order parameter with a negative second order coefficient $a$, like in the case of $\alpha(T-T_N)$ for $L$.
+It is the interaction with the primary order parameter $L$ that provides the ``force'' $F = -df/dy = gL^2$ to move $y$ up in its own harmonic potential, leading ultimately to the nonzero equilibrium value.
 While this sounds trivial, this concept is key in order to understand the observed behavior.
 
 As mentioned before, the dynamics of $L$ are much faster than those of $y$.
-In writing down the Lagrangian of the system we therefore choose to take it to be always at its instantaneous minimum in the potential of Eq.~\eqref{eq:Cr_landau}, characterized at each time by the value of $y$ and $T_L$.
-This can be achieved by solving $\frac{\partial F}{\partial L} = 0$, leading to:
+In writing down the Lagrangian of the system we therefore choose to take $L$ to be always at its instantaneous minimum in the potential of Eq.~\eqref{eq:Cr_landau}, characterized at each time by the values of $y$ and $T_L$.
+This can be achieved by solving $\frac{\partial f}{\partial L} = 0$, leading to:
 \begin{equation}
 	\label{eq:Cr_L0}
 	L(t) =
@@ -155,23 +154,23 @@ This can be achieved by solving $\frac{\partial F}{\partial L} = 0$, leading to:
 \end{equation}
 The time evolution of the system can then described using the Lagrangian:
 \begin{equation}
-    \mathcal{L}(L, y, \dot{y}, t) = \frac{m_y \dot{y}(t)^2}{2} - F(L, y, t),
+    \mathcal{L}(L, y, \dot{y}, t) = \frac{m_y \dot{y}(t)^2}{2} - f(L, y, t),
 \end{equation}
 with associated Euler-Lagrange equation for $y$:
 \begin{equation}
     \frac{\partial \mathcal{L}}{\partial y} - \frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{y}} = \gamma_y \dot{y}
 \end{equation}
 where $\gamma_y$ denotes the damping parameter for $y$.
-Substituting Eq.~\eqref{eq:Cr_landau} for $F$ leads to 
+Substituting Eq.~\eqref{eq:Cr_landau} for $f$ leads to 
 \begin{equation}
 	\label{eq:Cr_euler_lagrange}
 	    \rho y_0^2 \Ddot{y} = -\rho y_0^2 \omega_0^2 y  - b y^3 - \gamma_y \dot{y} + gL^2.
 \end{equation}
-This equation, together with Eqs.~\ref{eq:Cr_twotemp} describing the temperature evolution of the SDW ($T_L$) under influence of the optical pulses, fully describes the dynamics that are experimentally observed.
+This equation, together with Eqs.~\ref{eq:Cr_twotemp} describing the temperature evolution of the SDW ($T_L$) under influence of the optical pulses, fully describes the dynamics of the coupled system.
 One obvious remark can be made here: to be completely exact, the energy dissipated through the damping term $\gamma_y$ in Eq.~\eqref{eq:Cr_euler_lagrange} should be absorbed into the phonon bath and thus influence $T_b$.
-However, the case can be made that since this is only a single mode, its contribution to the heating of the bath will be negligible compared with the one due to the thermalization with the electronic degrees of freedom.
+However, the case can be made that since this is only a single mode, its contribution to the heating of the bath will be negligible compared with the one as a result of the thermalization with the electronic degrees of freedom.
 
-\section{Methods}
+\section{Methods \label{sec:Cr_Methods}}
 To solve the time evolution of $L$ and $y$ through the differential equations in Eqs.~\ref{eq:Cr_euler_lagrange} we used the numerical integration methods implemented in the \href{https://github.com/SciML/DifferentialEquations.jl}{DifferentialEquations.jl} package~\cite{rackauckas2017differentialequations}. More specifically the Tsit5 algorithm was used, which has adaptive time stepping to capture the sharp optical pulses.
 Originally, the dynamics were fully solved both for $L$ and $y$, but it was confirmed during the fitting process that the dynamics of $L$ are indeed significantly faster than those of $y$.
 Solving dynamics with significantly different timescales is in general hard from the numerical point of view, meaning that taking $L$ to be always at the minimum of the potential makes solving the equations much easier.
