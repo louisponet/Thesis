@@ -47,8 +47,13 @@ By tracking the evolution of these peaks in time, both phase and amplitude infor
 The results of these measurements are displayed in Fig.~\ref{fig:Cr_experimental}.
 \begin{figure}
 	\centering
-\IncludeGraphics{experimental}
-\caption{\label{fig:Cr_experimental}{\bf Pump-Pump delay dependent interference.} a) Experimental map of PLD amplitude before and after excitation of two pulses with a fluence of 1.45 mJ/cm$^2$. The green box highlights the area of lower oscillation amplitude of $y$ when $T_L$ exceeds $T_N$ due to concurrent pulses. The blue and purple lines demonstrate the pump-pump delays for which destructive interference (blue, panel (c)), or destructive interference (purple, panel (d)) occurs. b) Same as (a) but with the second pulse half the intensity of the first.  c) Destructive interference when $\tau_2 - \tau_1 = 620$ fs. d) Constructive interference when $\tau_2 - \tau_1 = 845$ fs. In both panels (c) and (d), the dashed red line marks the arrival time of second pulse. The dots denote the experimental measured values, and the graphs the theoretical simulations (see Fig.~\ref{fig:Cr_theoretical_fit} for further details). Panels (e, f) show experiments with the same pump-pump delays as (d,c), but with fluences of 9.5 mJ/cm$^2$ and 4.7 mJ/cm$^2$ for the first and second pump, respectively.}
+\IncludeGraphics{experimental1}
+\caption{\label{fig:Cr_experimental}{\bf Pump-Pump delay dependent interference.} a) Experimental map of PLD amplitude before and after excitation of two pulses with a fluence of 1.45 mJ/cm$^2$. The green box highlights the area of lower oscillation amplitude of $y$ when $T_L$ exceeds $T_N$ due to concurrent pulses. The blue and purple lines demonstrate the pump-pump delays for which constructive or destructive interference occurs, respectively. b) Destructive interference when $\tau_2 - \tau_1 = 620$ fs, corresponding by the horizontal slice of panel (a) marked by the blue line. c) Constructive interference when $\tau_2 - \tau_1 = 845$ fs, corresponding to the purple slice in panel (a). In both panels (c) and (d), the dashed red line marks the arrival time of second pulse. The dots denote the experimentally measured values, and the graphs the theoretical simulations (see Fig.~\ref{fig:Cr_theoretical_fit} for further details). Panels (e, f) show experiments with the same pump-pump delays as (d,c), but with fluences of 9.5 mJ/cm$^2$ and 4.7 mJ/cm$^2$ for the first and second pump, respectively.}
+\end{figure}
+\begin{figure}
+	\centering
+\IncludeGraphics[width=0.78\textwidth]{experimental2}
+\caption{\label{fig:Cr_experimental}{\bf Interference dependence on pulse fluence.} a) Map of the PLD amplitude before and after excitation by two pulses with fluences $W_1=W_2=1.45$mJ/cm$^2$. b) Map of the PLD amplitude before and after excitation by two pulses with fluences $W_1=1.45$mJ/cm$^2$ and $W_2=0.7$mJ/cm$^2$ demonstrating the diminished influence of the second pulse. c) Amplitude of the PLD in the ``constructive'' and ``destructive'' pump-pump delay conditions, similar to panels (c, d) of Fig.~\ref{fig:Cr_experimental}, but for fluences $W_1 = 9.5$ mJ/cm$^2$ and $W_2 = 4.8$ mJ/cm$^2$. The dashed red line marks the arrival time of second pulse. In these measurements the SDW is fully melted by the first pulse, and the timing of the second pulse has almost no influence on the behavior.}
 \end{figure}
 \\\\
 The acoustic phonon associated with the PLD oscillation has a wavevector normal to the material surface and an oscillation period of approximately 450 fs.
@@ -142,7 +147,7 @@ This can be achieved by solving $\frac{\partial F}{\partial L} = 0$, leading to:
 	\label{eq:Cr_L0}
 	L(t) =
 	\begin{cases}
-		\pm \sqrt{\frac{- \alpha (T_L - T_c) + 2 g y}{\beta}} & T_L <= T_N\\
+		\pm \sqrt{\frac{- \alpha (T_L - T_N) + 2 g y}{\beta}} & T_L <= T_N\\
 		0 & T_L > T_N
 	\end{cases}
 \end{equation}
@@ -203,7 +208,7 @@ The results of this fitting procedure is shown in Fig.~\ref{fig:Cr_theoretical_f
 \end{figure}
 \\\\
 To get a deeper understanding of the underlying effect, we look at the evolution of the free energy surfaces for both order parameters, shown in Fig.~\ref{fig:Cr_energy_surfaces}.
-The characteristic double well potential for $L\neq0$ equilibrium is clearly visible, and as expected, when the pulses hit and $T_L$ increases in the term $\alpha(T_L-T_c)L^2$ of Eq.~\eqref{eq:Cr_landau}, we see that the potential flattens causing the the minimum of $L$ to change very quickly, as discussed above.
+The characteristic double well potential for $L\neq0$ equilibrium is clearly visible, and as expected, when the pulses hit and $T_L$ increases in the term $\alpha(T_L-T_N)L^2$ of Eq.~\eqref{eq:Cr_landau}, we see that the potential flattens causing the the minimum of $L$ to change very quickly, as discussed above.
 This in turn leads to a rapid shift of the minimum of the single-well potential for $y$, causing an oscillation of $y$ due to its relatively slow dynamics.
 While the temperature $T_L$ decreases again, $L$ and the minimum of the potential for $y$ shift back towards their original equilibrium position.
 The oscillation of $y$ remains for quite a long time while this shift is occurring, since the damping is not particularly large (of the order of 4 ps) compared with the cooling rate of the SDW ($T_L$).
@@ -217,7 +222,7 @@ Here, however, due to the relatively fast thermalization of the SDW with the bat
 This relative movement transfers additional momentum to $y$ as the SDW is cooling down and the potential is being restored, leading ultimately to a higher oscillation amplitude, even when only a single pulse is applied.
 This was observed experimentally in previous measurements by A. Singer's group and reported in Ref.~\cite{Singer2015prl}. 
 \\\\
-One final remark to make w.r.t. to the behavior after a single pulse, is that since it is the magnitude of $L$ which is the driver of the energy surface of $y$, the effect is most pronounced when $L$ is close to $T_c$ because a small change in temperature causes a large variation of the equilibrium position of $L$ as shown by the square root temperature dependence in Eq.~\eqref{eq:Cr_L0}.    
+One final remark to make w.r.t. to the behavior after a single pulse, is that since it is the magnitude of $L$ which is the driver of the energy surface of $y$, the effect is most pronounced when $L$ is close to $T_N$ because a small change in temperature causes a large variation of the equilibrium position of $L$ as shown by the square root temperature dependence in Eq.~\eqref{eq:Cr_L0}.    
 \\\\
 Having multiple pulses that can rapidly change the potential surface for $y$ opens up many additional possibilities, allowing for constructive interference (Fig.~\ref{fig:Cr_theoretical_fit}(a-b)) or, by shifting the potential surface in the same direction as the movement of $y$, for a complete destructive interference (see Fig.~\ref{fig:Cr_theoretical_fit}(c-d)).
 This can be leveraged further by applying a train of pulses in order to guide the PLD oscillation along any desirable envelope function.
