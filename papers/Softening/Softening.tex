@@ -191,13 +191,13 @@ We therefore turn our attention to the GLD model.
 The free energy density in terms of the primary OP for the ferroelectric polarization $P$ and elastic strain slave OP $\varepsilon_{ij} = \frac{1}{2}(\partial_i u_j + \partial_j u_i)$ can be written as:
 \begin{eqnarray}\label{eq:BTO_energy}
 &&f = f_{L}+f_{G}+f_{c}+f_{q}+f_{fl},\\
-&&f_{L} = \alpha_{ij}(T)P_iP_l + \alpha_{ijkl}(T)P_{i}P_{j}P_{k}P_{l} + \alpha_{ijklmn} P_i P_j P_k P_l P_m P_n,\\
+&&f_{L} = \alpha_{ij}(T)P_iP_j + \alpha_{ijkl}(T)P_{i}P_{j}P_{k}P_{l} + \alpha_{ijklmn} P_i P_j P_k P_l P_m P_n,\\
 &&f_{G} = \frac{1}{2}G_{ijkl}\partial_i P_j\partial_k P_l,\\
 &&f_{c} = \frac{1}{2}C_{ijkl}\varepsilon_{ij}\varepsilon_{kl},\\
 &&f_{q}= - q_{ijkl}\varepsilon_{ij}P_{k}P_{l},\\
-&&f_{fl}=\frac{1}{2}f_{ijkl}(\varepsilon_{ij}\partial_k P_l - P_k\partial_l\varepsilon_{ij}),
+&&f_{fl}=\frac{1}{2}\Gamma_{ijkl}(\varepsilon_{ij}\partial_k P_l - P_k\partial_l\varepsilon_{ij}),
 \end{eqnarray}
-where $\partial_i$ signify spatial derivatives, and the indices enumerate ${x,y,z}$ with an implied summation over repeated ones.
+where all coefficients are positive, $\partial_i$ signify spatial derivatives, and the indices enumerate ${x,y,z}$ with an implied summation over repeated ones.
 The first term is the Landau free energy which describes the phase transition and formation of the ferroelectic polarization $P$.
 Both the second and fourth order coefficients $\alpha_{ij}$ and $\alpha_{ijkl}$ are temperature dependent, and switch sign at the phase transition temperature.
 This means that a sixth order term with $\alpha_{ijklmn}$ has to be included in order to bound $P$ below the transition temperature.
