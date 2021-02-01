@@ -28,61 +28,63 @@ After developing a phenomenological model, and fitting its parameters to reprodu
 We also comment on the characteristics of the model in order to gain a deeper understanding of what lies at the heart of this extended control. 
 
 \section{Experimental methods}
-Before focusing on the theoretical modeling of the interacting SDW and PLD, we summarize the experimental techniques employed by A. Singer's group and the results that we are seeking to explain.
-A thin film (28 nm) of Cr was used, supporting around seven periods of the SDW with a N\'eel temperature $T_N$ of 290 K, slightly lower than in the bulk where $T_N\approx$ 308 K.
-The experimental procedure is depicted schematically in Fig.~\ref{fig:Cr_schematic}(b). 
+Before focusing on the theoretical modeling of the interacting SDW and PLD, we summarize the experimental techniques employed by A. Singer's group and the resulting measurements that we are seeking to explain.
+A thin film (28 nm) of Cr was used, supporting around seven periods of the SDW with a N\'eel temperature $T_N$ of 290 K, slightly lower than the bulk value of 308 K.
+The experimental procedure is depicted schematically in Fig.~\ref{fig:Cr_schematic}(a). 
 \begin{figure}[h]
 	\IncludeGraphics{schematic}
-\caption{\label{fig:Cr_schematic}{\bf Experimental methods} a) Pictorial representation and experimental measurement of the Bragg peaks probed by XFEL. b) Schematic of ultrafast manipulation of interacting orders in Cr. Pump pulses at $t=\tau_1,\tau_2$ partially melt the SDW ($L$) that supports the PLD ($y$), leading to oscillations of the latter which are probed by the XFEL in (a). The heat from pump pulses is eventually transferred from the SDW to the heat bath.}
+\caption{\label{fig:Cr_schematic}{\bf Experimental methods} a) Schematic of the experimental setup where two optical pump pulses are applied to the SDW at $t=\tau_1,\tau_2$, leading to an oscillation of the PLD which is probed through the XFEL. The heat from the pulses is subsequently transferred from the SDW to the heat bath, cooling down the SDW. b) Pictorial representation and experimental measurement of the Bragg peaks and Laue fringes associated with the thin film and PLD, probed by the XFEL.}
 \end{figure}
-The film was illuminated by two sequential 40 fs optical pulses at times $\tau_1$ and $\tau_2$, heating up the electronic subsystem and the SDW which is part of it.
-The film thickness was chosen to be smaller than the optical skin-depth of Cr, meaning that the pulses excite the entire volume of the sample in a homogeneous fashion.
-The PLD, which is a result of exchange striction as mentioned before, is probed through the intensity of the associated Bragg peaks by an x-ray free-electron laser (XFEL)\cite{Singer2015prb, Singer2015prl}, as shown in Fig.~\ref{fig:Cr_schematic}(a).\\\\
-XFELs allow for high peak selectivity, enabling it to resolve narrow and intense satellite Bragg peaks.
-This in turn makes accurate measurements on thin films accessible, even if they are deposited on thick substrates.
-The scattering intensity of the Bragg peak, highlighted by the red box in Fig.~\ref{fig:Cr_schematic}(a), is directly proportional to the magnitude of the PLD.
-Phase information of the PLD with respect to the film interfaces can be obtained by measuring the interference between the PLD Bragg peaks, and the Bragg peaks that are a result of the film thickness.
-This is because the PLD is pinned at the film boundaries, so that the positions of their Bragg peaks coincide \cite{Singer2015prb}.
-By tracking the evolution of these peaks in time, both phase and amplitude information of the PLD oscillation that occurs when the SDW is (partially) melted by the optical pulses can be obtained.
-The results of these measurements are displayed in Fig.~\ref{fig:Cr_experimental}.
+The film was illuminated by two sequential 40 fs optical pulses at times $\tau_1$ and $\tau_2$, heating up the electronic subsystem and, consequently, the SDW.
+The film thickness was chosen to be smaller than the optical skin-depth of Cr, meaning that the pulses excite the entire volume of the sample homogeneously.
+\\\\
+The PLD is pinned by the boundary conditions of the thin film, enforcing a half-integer number of periods along the depth of our sample.
+Since the PLD describes displacements of the Cr ions, its amplitude can be directly probed by measuring the intensity of the corresponding Laue fringe with an X-Ray Free-Electron Laser (XFEL), \cite{Singer2015prb, Singer2015prl}, as shown in Fig.~\ref{fig:Cr_schematic}(b).
+The high peak selectivity that is achievable by XFELs allows us to resolve very narrow Bragg peaks or Laue fringes. 
+This in turn makes accurate measurements on thin films accessible, even if they are deposited on thick substrates whose Bragg peaks would normally overpower the thin film signatures.
+The scattering intensity of the fringe associated with the PLD is highlighted by the red box in Fig.~\ref{fig:Cr_schematic}(b).
+Due to the pinning of the PLD to the boundaries of the thin film, its phase can be obtained from the interference between its corresponding peaks and those that originate from the thin film geometry \cite{Singer2015prb}.
+This allows us to track the time evolution of the amplitude and phase of the PLD, giving us access to its dynamics that appear as a result of the applied pulses to the SDW.
+
+The sets of measurements that form the starting point for our further investigation are displayed in Figs.~\ref{fig:Cr_experimental1},~\ref{fig:Cr_experimental2}.
+It is important to realize that the SDW order is not directly accessible through these measurements. In effect, this means that we are studying the excitation caused to the PLD because of its coupling with the externally perturbed SDW.
 \begin{figure}
 	\centering
 \IncludeGraphics{experimental1}
-\caption{\label{fig:Cr_experimental}{\bf Pump-Pump delay dependent interference.} a) Experimental map of PLD amplitude before and after excitation of two pulses with a fluence of 1.45 mJ/cm$^2$. The green box highlights the area of lower oscillation amplitude of $y$ when $T_L$ exceeds $T_N$ due to concurrent pulses. The blue and purple lines demonstrate the pump-pump delays for which constructive or destructive interference occurs, respectively. b) Destructive interference when $\tau_2 - \tau_1 = 620$ fs, corresponding by the horizontal slice of panel (a) marked by the blue line. c) Constructive interference when $\tau_2 - \tau_1 = 845$ fs, corresponding to the purple slice in panel (a). In both panels (c) and (d), the dashed red line marks the arrival time of second pulse. The dots denote the experimentally measured values, and the graphs the theoretical simulations (see Fig.~\ref{fig:Cr_theoretical_fit} for further details). Panels (e, f) show experiments with the same pump-pump delays as (d,c), but with fluences of 9.5 mJ/cm$^2$ and 4.7 mJ/cm$^2$ for the first and second pump, respectively.}
+\caption{\label{fig:Cr_experimental1}{\bf Pump-Pump delay dependent interference.} a) Experimental map of PLD amplitude before and after excitation of two pulses with a fluence of 1.45 mJ/cm$^2$. The green box highlights the area of lower oscillation amplitude of $y$ when $T_L$ exceeds $T_N$ due to concurrent pulses. The blue and purple lines demonstrate the pump-pump delays for which constructive or destructive interference occurs, respectively. b) Destructive interference when $\tau_2 - \tau_1 = 620$ fs, corresponding by the horizontal slice of panel (a) marked by the blue line. c) Constructive interference when $\tau_2 - \tau_1 = 845$ fs, corresponding to the purple slice in panel (a). In both panels (c) and (d), the dashed red line marks the arrival time of second pulse. The dots denote the experimentally measured values, and the graphs the theoretical simulations (see Fig.~\ref{fig:Cr_theoretical_fit} for further details). Panels (e, f) show experiments with the same pump-pump delays as (d,c), but with fluences of 9.5 mJ/cm$^2$ and 4.7 mJ/cm$^2$ for the first and second pump, respectively.}
 \end{figure}
 \begin{figure}
 	\centering
 \IncludeGraphics[width=0.78\textwidth]{experimental2}
-\caption{\label{fig:Cr_experimental}{\bf Interference dependence on pulse fluence.} a) Map of the PLD amplitude before and after excitation by two pulses with fluences $W_1=W_2=1.45$mJ/cm$^2$. b) Map of the PLD amplitude before and after excitation by two pulses with fluences $W_1=1.45$mJ/cm$^2$ and $W_2=0.7$mJ/cm$^2$ demonstrating the diminished influence of the second pulse. c) Amplitude of the PLD in the ``constructive'' and ``destructive'' pump-pump delay conditions, similar to panels (c, d) of Fig.~\ref{fig:Cr_experimental}, but for fluences $W_1 = 9.5$ mJ/cm$^2$ and $W_2 = 4.8$ mJ/cm$^2$. The dashed red line marks the arrival time of second pulse. In these measurements the SDW is fully melted by the first pulse, and the timing of the second pulse has almost no influence on the behavior.}
+\caption{\label{fig:Cr_experimental2}{\bf Interference dependence on pulse fluence.} a) Map of the PLD amplitude before and after excitation by two pulses with fluences $W_1=W_2=1.45$mJ/cm$^2$. b) Similar to (a) but with fluences $W_1=1.45$mJ/cm$^2$ and $W_2=0.7$mJ/cm$^2$, demonstrating the diminished influence of the second pulse. c) Amplitude of the PLD in the ``constructive'' and ``destructive'' pump-pump delay conditions, similar to panels (c, d) of Fig.~\ref{fig:Cr_experimental}, but for fluences $W_1 = 9.5$ mJ/cm$^2$ and $W_2 = 4.8$ mJ/cm$^2$. The dashed red line marks the arrival time of second pulse. In these measurements the SDW is fully melted by the first pulse, and the timing of the second pulse has almost no influence on the behavior.}
 \end{figure}
 \\\\
-The acoustic phonon associated with the PLD oscillation has a wavevector normal to the material surface and an oscillation period of approximately 450 fs.
-The heat exchange rate between the lattice acting as a thermal bath and the electrons is quite high, leading to a thermalization between the two subsystems within a picosecond after heating.
-The pulses deposit some heat into the system, which leads to an overall increase of temperature due to the finite heat capacity.
-However, in the experiments performed here, the fluence of the two pulses was kept low enough such that the final temperature only increased by around 45 K, thus not exceeding the N\'eel temperature.
-This leads to a partial recovery of the SDW and eventually the PLD, as can be seen by the non-zero oscillation equilibrium at the end of the measurements in Fig.~\ref{fig:Cr_experimental}(a-d).
-The damping time of the PLD is around 3 ps.
-Further thermalization of the Cr lattice with the substrate occurs on the nanosecond timescale, beyond the timescale of these experiments.
-It is important to realize that the SDW order is not directly accessible through these kinds of measurements. In effect, this means that we are studying the excitation caused to the PLD due to its coupling with the SDW which is in turn externally perturbed.
+We can observe that the PLD has an oscillation time period of approximately 450 fs, and a damping time of around 3 ps.
+In panel (a) of Fig.~\ref{fig:Cr_experimental1}, the very dark vertical band of troughs around probe delay $t = 0$ followed by a less dark band of throughs in the next period, indicates the fast restoration of the oscillation equilibrium. 
+This means that the heat transfer rate between the electrons that constitute the SDW and the bath is relatively high, leading to a thermalization between the two within a picosecond after heating.
+This partially restores the SDW which in turn leads to the partial restoration of the oscillation equilibrium.
+Further thermalization between the Cr lattice and the substrate occurs on a nanosecond timescale, beyond the scope of these experiments.
+Furthermore, we find that the system as a whole (bath and electrons) heats by approximately 45 K as a result of the pulses, which is reflected in the diminished final amplitude of the PLD.
+However, since this amplitude is nonzero, we can deduce that the final temperature of the system is below the N\'eel temperature of the SDW.
 \\\\
-The most interesting observation is that by changing the timing of the second pulse $\tau_2$, the dynamics of the PLD can be controlled to a high degree.
-This is demonstrated in Fig.~\ref{fig:Cr_experimental}(b,c), where two experiments with different pulse-pulse delays are displayed.
-As shown in panel (b), it is possible to fully quench the oscillation of the PLD, or its amplitude can instead be increased as in panel (c), depending on the time delay between the two pulses.
-These two behaviors are termed as destructive and constructive interference, respectively.
-Panel (a) of Fig.~\ref{fig:Cr_experimental} shows a more complete visualization of the influence of the delay between the two optical pulses (vertical axis), where the horizontal bands with low amplitude signify the destructive interference and those with high amplitude the constructive case.
+The most interesting observation is that, by changing the timing of the second pulse $\tau_2$, the dynamics of the PLD can be controlled to a high degree, as showcased in Fig.~\ref{fig:Cr_experimental1}(a).
+It is possible to fully quench the oscillation of the PLD, or its amplitude can instead be increased by the second pulse.
+The horizontal bands display periodically alternating regions of these two behaviors, termed as destructive and constructive interference.
+Two representative horizontal slices are taken and displayed in Fig.~\ref{fig:Cr_experimental1}(b,c), demonstrating destructive and constructive interference, respectively. 
 \\\\
-The maximum PLD amplitude that is reached in the experiments, after the second pulse is 150\% of the original amplitude.
-This is significantly higher than the excitation amplitudes associated with the conventional displacive excitation mechanism, where the ratio is about one \cite{Singer2015prl,Zeiger1992}. 
-When the second pulse arrives before the SDW had time to cool down, the maximum oscillation amplitude is lowered as can be seen from the horizontal band around $\tau_2 - \tau_1 = 0$ ps in Fig.~\ref{fig:Cr_experimental}(a), highlighted by the green box.
-As will be further discussed below, this signifies that the SDW temperature exceeds $T_N$.
+The maximum PLD amplitude that is reached after the second pulse is 150\% of the original value.
+This is significantly higher than the excitation amplitudes associated with the conventional displacive excitation mechanism, which leads to a ratio of around one \cite{Singer2015prl,Zeiger1992}. 
+Furthermore, if the second pulse arrives before the SDW had time to cool down, a smaller maximum oscillation amplitude is achieved, as can be seen from the horizontal band around $\tau_2 - \tau_1 = 0$ ps, and highlighted by the green box, in Fig.~\ref{fig:Cr_experimental1}(a).
+As will be further discussed below, this indicates that the combined fluence of the two pulses was high enough to raise the temperature of the SDW above $T_N$.
 \\\\
-Experiments performed at higher fluence, i.e. such that the SDW gets heated and stays above $T_N$ from a single pulse, demonstrate that the second pulse does not impact the oscillation of the PLD, and the influence of its timing is completely lost, as can be seen from Fig.~\ref{fig:Cr_experimental}(e,f).
-If control is the goal, it is thus important that the SDW is allowed to cool down below $T_N$, before exciting it again.
-The SDW order parameter varies the most with temperature when it is close to the critical point where it has a square root temperature dependence, increasing the pulse efficiency.
-These considerations will be discussed in greater detail in the results and discussion Section~\ref{sec:Cr_results}.
+The influence of the pulse's fluence is detailed in Fig.~\ref{fig:Cr_experimental2}.
+Experiments performed with a high fluence initial pulse, cause the SDW to heat up and remain above $T_N$ for the entirety of the experiment, demonstrating that the impact of the second pulse in this case is completely lost. Indeed, varying its timing changes nothing to the oscillation of the PLD, as can be seen from Fig.~\ref{fig:Cr_experimental2}(c).
+If control is the goal, it is thus important that the SDW is allowed to cool down below $T_N$ before exciting it again.
+The SDW order parameter, furthermore, depends strongest on temperature when it is close to the critical point where it varies as the square root, thus increasing the pulse efficiency in that temperature region.
+These considerations will be discussed in greater detail in Section~\ref{sec:Cr_results}, after the theoretical description is given.
 \\\\
-Finally, these measurements demonstrate the absence of topological defects by the absence of a widening of the satellite peak associated with the PLD, as compared with the peaks of the material itself.
-This supports the assumption made above that through the use of a thin film, the optical pulses excite the material homogeneously. 
+Finally, the measurements demonstrate an absence of topological defects since the satellite fringe associated with the PLD does not widen compared to the peak associated with the sample itself.
+This supports our previous claim that the optical pulses excite the thin film homogeneously. 
 \section{Theory}
 % \lp{some explanation of Peierls instabilities etc, the things that cause the SDW in the first place?}
 
@@ -187,8 +189,8 @@ The error of the solution $\tilde{x}$ w.r.t. the experimental measurements $x$ i
 The numerical optimization was done through the \href{https://github.com/JuliaNLSolvers/Optim.jl}{Optim.jl} package ~\cite{mogensen2018optim}, where it was found that the Nelder-Mead simplex algorithm \cite{Nelder1965} works best for this very non-linear problem.
 
 \begin{figure}
-\IncludeGraphics{exp_fits.pdf}
-\caption{\label{fig:Cr_theoretical_fit} {\bf Demonstration of the quality of the theoretical fit.} The smoothed experimental measurements and theoretical fits are indicated in each panel by the blue and orange graphs, respectively. Panels (a) and (b) show two examples when the interference is not fully destructive, whereas in panels (c) and (d) the quenching is much stronger.}
+\IncludeGraphics{exp_fits.png}
+\caption{\label{fig:Cr_theoretical_fit} {\bf Demonstration of the quality of the theoretical fit.} a) The smoothed experimental measurements and theoretical fits are indicated in each panel by the blue and orange graphs, respectively. b) Demonstration of the equivalence between the experimental (left) and simulated (right) PLD amplitude map.}
 \end{figure}
 \section{Results and Discussion \label{sec:Cr_results}}
 The experimental results we use as a basis to fit our model are shown in Fig.~\ref{fig:Cr_experimental}.
@@ -263,11 +265,14 @@ The results demonstrate how a carefully chosen pulse train enables indirect, but
 \section{Conclusions}
 In this chapter we discussed the effects of cross-order coupling beyond quasi-static phenomena.
 The results show that the coupling between the SDW and PLD through exchange striction in Chromium is another prime example of cross-order control, where in this case the perturbation applied by optical pulses to the SDW leads to an excitation in the PLD mode.
-Moreover, the slower dynamics of the PLD compared to the SDW opens up new behavior and additional dynamic control that would not be possible without the coupling.
+Moreover, the slower dynamics of the PLD compared to the SDW opens up new behavior and additional dynamical control that would not be possible without the coupling.
 If the PLD would have dynamics on the same timescale as the SDW, changing its potential through exciting the latter would not be very impactful since it would follow the minimum of the potential as fast as the excited SDW would change it.
-
-As demonstrated by both the experiments and the theory, this allows for either increasing the oscillation amplitude dramatically (up to 450\% the original value), or destroy it at a moment's notice, allowing for a shortcut to adiabaticity where the final state is at higher temperature than the original one.
-
+\\\\
+Through the use of a relatively simple model, we were able to reproduce the experimental observations to an incredible degree, as demonstrated by the quality of the fits in Fig.~\ref{fig:Cr_theoretical_fit}.
+Together with the remarkable indirect control through the SDW, this model allowed us to design a train of pulses in order to either maximize the PLD oscillation amplitude (up to 450\%), or even make it follow a give envelope function (see Fig.~\ref{fig:Cr_control}.
+The control also allows for the destruction of the PLD oscillation at a moment's notice, leading to a possible shortcut to adiabaticity where the final state is at higher temperature than the original one.
+\\\\
+Such a control would not have been possible through the direct exciation of the PLD mode, and is thus another clear demonstration of the many benefits that coupled orders might present.
 Whether this can be directly exploited for technological remains a question, seen as XFELs are rather large.
 However, this behavior through coupled order parameters may be a promising route to a robust coherent control.
 We hope that our understanding, and the demonstration of perfect control in Cr could open the road to finding other similar situations with more technologically viable properties.   
