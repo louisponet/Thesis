@@ -5,24 +5,25 @@
 We have so far studied the behavior of ordered materials under the assumption of perfect homogeneity.
 This forms the base for understanding the more complex inhomogeneous scenarios that appear in reality because of the spontaneous symmetry breaking that occurs at the phase transition temperature $T_c$.
 
-We can associate an order parameter (OP) that describes the order that develops as a result of this symmetry breaking. It is thus zero above $T_c$ and nonzero below.
-The energy potential for the OP obeys the same symmetries as the parent structure, and will thus have as many degenerate minima as the dimensionality of the transformation operator that describes the broken symmetry.
-Each of these minima are associated with a different direction of the OP, and can be transformed into each other by applying the symmetry operator. 
-The symmetry related orientations of the OP are thus completely equivalent from an energetic point of view.
-
-For example, we saw previously that in GdMn$_2$O$_5$ there are two primary OPs, $\bm{L}_1$ and $\bm{L}_2$, describing the antiferromagnetic order inside each Mn chain.
-It was shown that there are four combinations of these that have the same energy, and can be transformed into each other by the time-reversal and inversion symmetry operators (see Fig.~\ref{fig:GdMn2O5_heatmap}). 
-In Chromium a similar antiferromagnetic OP has two energy equivalent values, again related by time-reversal symmetry.
-
+We can associate an order parameter (OP) with the order that develops as a result of this symmetry breaking. It is thus zero above $T_c$ and nonzero below.
+The energy potential for the OP obeys the same symmetries as the parent structure, and will thus have as many degenerate minima as the dimensions of the transformation operator that describes the broken symmetry.
+Each of these minima are associated with a different direction of the OP which can be transformed into each other by applying this operator.
 During a phase transition in a large system, regions that are separated in space will each individually acquire one of these equivalent values of the OP.
 Such regions are referred to as domains, with the narrow boundaries between them called domain walls (DWs) inside of which the OP is interpolated.
 
-There are some ways to achieve a completely homogeneous situation. One example is through poling, where an external field is applied during the phase transition to coax the system towards one of the orientations of the OP.
+We already encountered examples of such OPs: in GeTe the ferroelectric polarization describes the order of the electric dipoles inside the crystal; in GdMn$_2$O$_5$ we found two primary OPs, $\bm{L}_1$ and $\bm{L}_2$, describing the antiferromagnetic order inside each Mn chain, and one slave order parameter $P_b$ that denotes the resulting polarization; in Chromium we discussed a similar antiferromagnetic OP with, in that case, an associated peridioc lattice displacement.
+
+In the case of GdMn$_2$O$_5$ we have shown that there are four combinations of the primary OPs that have the same energy, and how they can be transformed into each other by the time-reversal and inversion symmetry operators (see Fig.~\ref{fig:GdMn2O5_heatmap}). 
+In Chromium the antiferromagnetic OP has two energy equivalent values, again related by time-reversal symmetry and visualized in Fig.~\ref{fig:Cr_energy_surfaces}(a).
+\\\\
+Turning back to the question of inhomogeneity, domains, and DWs.
+There are, actually, some ways to achieve a completely homogeneous situation, even in relatively large systems.
+One example is through poling, where an external field is applied during the phase transition to coax the system towards one of the orientations of the OP.
 Another is through expelling the DWs in the sample by keeping it close to the phase transition.
 This happens because at the DWs the OP is forced away from the minimum, making them energetically less favorable than a uniform domain.
-Consequently, by keeping the system close to the phase transition for an extended period, it is sometimes possible to expel the DWs from the material.
+Consequently, by keeping the system close to the phase transition for an extended period, it is sometimes possible to expel them from the material.
 
-In the case of ferromagnetic or ferroelectric materials, this is process is usually limited by the depolarizing fields that develop at the domain surface (see Fig.~\ref{fig:BTO_depolarizing_schematic}).
+In the case of ferromagnetic or ferroelectric materials, the homogeneity is usually limited by the depolarizing fields that develop at the domain surface (see Fig.~\ref{fig:BTO_depolarizing_schematic}).
 These favor an antiparallel orientation of the OP in neighboring domains, making it energetically highly unfavorable, and ultimately impossible, to have a single uniform domain when the sample size increases.
 \begin{figure}[h]
 	\IncludeGraphics{depolarizing_schematic}
@@ -67,7 +68,7 @@ Its contribution to the free energy density can be written as:
 	f_{q}=-q_{ijkl}\varepsilon_{ij}P_{k}P_{l},
 \end{equation}
 where $q_{ijkl}$ denotes the strength of the coupling, the indices $i, j, k, l$ again iterate through $x, y, z$, and Einstein summation over repeated indices is implied.
-The longitudinal part, $q_{iiii} \varepsilon_{ii} (P_i)^2$, leads to the largest contribution to the strain, causing a tensile strain ($\varepsilon_{ii}>0$) and a stretching of the material along $P_i$.
+The longitudinal part, $q_{iiii} \varepsilon_{ii} (P_i)^2$, leads to the largest contribution to the strain, causing a tensile strain ($\varepsilon_{ii}>0$) and a stretching of the material along $P_i$~\cite{Marton2010}.
 
 Due to the high degree of symmetry in crystals, many equivalent orientations of $P$ are possible, each with an associated strain. The DWs separating these are equally numerous, and have a distinct strain texture due to the variation of $P$ across the DW.
 
@@ -229,7 +230,6 @@ For example $C_{xxxx} = C_{yyyy} = C_{zzzz}$, and $C_{xyxy} = C_{yxyx} = C_{yzyz
 \end{tabular}
 \caption{{\bf GLD model parameters.} Voigt notation \cite{Voigt} is used to limit the amount of indices, e.g. $C_{11} = C_{zzzz}$, $C_{12} = C_{xxzz}$ and $C_{44}= C_{xzxz}$.  All parameters are reported in SI units, and T = 300 in the simulations.\label{tab:BTO_param}}
 \end{table}
-
 To find the static equilibrium state in the most general sense, the integrated free energy $F[P,\varepsilon] = \int d^3x \,f[P(x), \varepsilon(x)])$ needs to be minimized, for which the variational method can be used.
 This leads to the well-known Euler-Lagrange equations \cite{Cao1991, Marton2010}:
 \begin{align}
@@ -238,8 +238,12 @@ This leads to the well-known Euler-Lagrange equations \cite{Cao1991, Marton2010}
 	\frac{\partial}{\partial x_j}\frac{\partial f}{\partial \varepsilon_{ij}} = 0,
 \end{align}
 where $P_{i,j} = \partial_j P_i$ and the last equation is a result of the stress-free mechanical equilibrium condition.
-
-In the one-dimensional case of a single domain with uniform $P_z$ (which we write $P$ in the following) and $\varepsilon_{zz}$ (written as $\varepsilon$) and no external forces, Eq.~\eqref{eq:BTO_euler} reduces to  
+\\\\
+We our analysis of the model with the one-dimensional case of a single domain with uniform $P_z$ (which we write $P$ in the following) and $\varepsilon_{zz}$ (written as $\varepsilon$) and no external forces, for which Eq.~\ref{eq:BTO_energy} reduces to:
+\begin{equation}
+	f = \alpha_1 P^2 + \alpha_{11} P^4 + \alpha_{111} P^6 - q_{11} \varepsilon P^2,
+\end{equation}
+and Eq.~\eqref{eq:BTO_euler} subsequently leads to:  
 \begin{align}
 	\frac{\partial f}{\partial \varepsilon} &= 0 \Leftrightarrow \varepsilon = \frac{qP^2}{C}\label{eq:BTO_e0},\\
 	\frac{\partial f}{\partial P^2} &= 0 = \alpha_1 + (2 \alpha_{11} - \frac{q^2}{C})P^2 + 3\alpha_{111}P^4 \\
@@ -401,8 +405,9 @@ Its ability to handle complex geometries and large length scales makes it one of
 Using the parameters from previous ab-initio results \cite{Marton2010} and reported in Tab.~\ref{tab:BTO_param}, we first optimized the equilibrium situation for both a uniform domain and a single domain wall. The result of the latter is shown in Fig.~\ref{fig:BTO_wall}.
 A Gaussian force field, $\frac{a}{\sigma \sqrt{2\pi}}e^{-\frac{(x-x_{\rm tip})^2}{2\sigma^2}}$ with $\sigma = 1 \cdot 10^{-9}$ representing the contact radius and $a = 1 \cdot 10^{-18} \frac{eV}{nm^3}$, was then applied at various positions $x_{\rm tip}$ throughout both geometries.
 
-The single domain simulation is used to gauge the influence of finite-size effects that are inherently present in our open boundary condition simulations.
-If the tip is applied to the side of a geometry with a single domain, it deforms more than when it is applied to the center because there is less material on one of the sides of the tip to support it (see Fig.~\ref{fig:BTO_numerical_effects}(a,b)).
+The single domain simulation is used to gauge the influence of finite-size effects that are inherently present in our open boundary condition simulations, using a geometry of finite dimensions $(L_x, L_y, L_z)$.
+If the tip is applied to the side of the geometry, in the case of a single domain, it deforms more than when it is applied to the center because there is less material on one of the sides of the tip to support it.
+We have tested the extent to which this contributes to our simulations, as demonstrated in Fig.~\ref{fig:BTO_numerical_effects}(a) for different lengths $L_x$ of the geometry. As one could expect, the effect is most influential in cases with a small geometry.
 Since this is nonphysical, we use the domain simulation to calculate the amount of such spurious additional deformation, and compensate for it in the DW simulation assuming that the finite-size effect is identical since the geometry is the same in both cases.
 \\\\
 To conclude this section, we would like to comment on the issue of the Peierls-Nabarro barriers \cite{Peierls1940,Nabarro1947}, since they are of great influence on the movement of the DW.
@@ -432,7 +437,7 @@ The barriers are very close to the harmonic shape of the real Peierls-Nabarro ba
 In the following simulations, we chose the element size to be 0.3 nm which offers a good balance between the amount of pinning and the computational cost. 
 \begin{figure}[h!]
 	\IncludeGraphics{numerical_effects.png}
-	\caption{\label{fig:BTO_numerical_effects}{\bf Numerical effects.} a) Maximum indentation of the domain by the applied tip, depending on its center along the $x$-dimension of the geometry with size $L_x$. b) Visual demonstration of the asymmetric deformation and $\varepsilon_{zz}$ due to open boundary conditions, where the tip is applied close to the edge of the sample. c) The evolution of the energy when the wall is shifted with $\delta_w$ away from the original position at 0. This mimics the Peierls-Nabarro barriers of the crystal. The periodicity of the lattice is mimicked by mesh, where the distance between barrier maxima is given by the element size. It is also clear that large element sizes lead to larger barriers. d) The dependence of the Peierls-Nabarro barrier height on the element size.}
+	\caption{\label{fig:BTO_numerical_effects}{\bf Numerical effects.} a) Maximum indentation of the domain by the applied tip, depending on its center along the $x$-dimension of the geometry with length $L_x$. b) Visual demonstration of the asymmetric deformation and $\varepsilon_{zz}$ due to open boundary conditions, where the tip is applied close to the edge of the sample. c) The evolution of the energy when the wall is shifted with $\delta_w$ away from the original position at 0. This mimics the Peierls-Nabarro barriers of the crystal. The periodicity of the lattice is mimicked by mesh, where the distance between barrier maxima is given by the element size. It is also clear that large element sizes lead to larger barriers. d) The dependence of the Peierls-Nabarro barrier height on the element size.}
 \end{figure}
 \\\\
 We now turn to the DW localized modes.
