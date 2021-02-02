@@ -27,7 +27,7 @@ This is termed ``shortcuts to adiabaticity'' in quantum technology \cite{Torront
 After developing a phenomenological model, and fitting its parameters to reproduce the two pump-probe experiments, we utilize it to design a train of pulses such that the PLD oscillation follows a particular envelope function.
 We also comment on the characteristics of the model in order to gain a deeper understanding of what lies at the heart of this extended control. 
 
-\section{Experimental methods}
+\section{Experimental methods and results \label{sec:Cr_experiment}}
 Before focusing on the theoretical modeling of the interacting SDW and PLD, we summarize the experimental techniques employed by A. Singer's group and the resulting measurements that we are seeking to explain.
 A thin film (28 nm) of Cr was used, supporting around seven periods of the SDW with a N\'eel temperature $T_N$ of 290 K, slightly lower than the bulk value of 308 K.
 The experimental procedure is depicted schematically in Fig.~\ref{fig:Cr_schematic}(a). 
@@ -171,48 +171,48 @@ One obvious remark can be made here: to be completely exact, the energy dissipat
 However, the case can be made that since this is only a single mode, its contribution to the heating of the bath will be negligible compared with the one as a result of the thermalization with the electronic degrees of freedom.
 
 \section{Methods \label{sec:Cr_Methods}}
-To solve the time evolution of $L$ and $y$ through the differential equations in Eqs.~\ref{eq:Cr_euler_lagrange} we used the numerical integration methods implemented in the \href{https://github.com/SciML/DifferentialEquations.jl}{DifferentialEquations.jl} package~\cite{rackauckas2017differentialequations}. More specifically the Tsit5 algorithm was used, which has adaptive time stepping to capture the sharp optical pulses.
+To solve the time evolution of $L$ and $y$ through the differential equations in Eqs.~\ref{eq:Cr_euler_lagrange}, we used the numerical integration methods implemented in the \href{https://github.com/SciML/DifferentialEquations.jl}{DifferentialEquations.jl} package~\cite{rackauckas2017differentialequations}. More specifically, the Tsit5 algorithm was used, which has adaptive time stepping to capture the sharp optical pulses.
 Originally, the dynamics were fully solved both for $L$ and $y$, but it was confirmed during the fitting process that the dynamics of $L$ are indeed significantly faster than those of $y$.
-Solving dynamics with significantly different timescales is in general hard from the numerical point of view, meaning that taking $L$ to be always at the minimum of the potential makes solving the equations much easier.
-For all simulations, the starting temperature of the bath was fixed at 115 K, and the thin film value of $T_N$ was taken, i.e. 290 K which is slightly lower than the bulk Cr Ne\'el temperature of $\sim$ 308 K.
+Solving dynamics with significantly different timescales is in general hard from the numerical point of view, meaning that taking $L$ to be always at the minimum of the potential makes solving the equations numerically much easier.
+The starting temperature of the bath was fixed at 115 K in all simulations, and the thin film value of $T_N$ was taken, i.e. 290 K which is slightly lower than the bulk Cr Ne\'el temperature of $\sim$ 308 K.
 \\\\
 Most parameters of the model were not perfectly known a priori and thus had to be fitted to the experimental measurements.
 To aid with the fitting, judicious choices for the starting values of some parameters were be made.
-For example, it was known that the optical pulse width $\tau$ was around 40 fs, the oscillation frequency of the PLD $\omega_0 \approx$ 14 THz or equivalently had a period of around 450 fs.
-We also know that the second pulse had a fluency of around 80\% that of the first.
-Furthermore, from previous experiments, the ratio between the heat capacities for the bath and electronic degrees of freedom, $\frac{c_b}{c_L}$, was determined to be around 7 \cite{Nicholson2016}, and that the heat transfer rate is around 42 $\times$ 10$^{16}$ W/m$^3$ K \cite{Hostetler1999}.
+For example, it was known that the optical pulse width $\tau$ was around 40 fs, and that the oscillation frequency of the PLD $\omega_0 \approx$ 14 THz or equivalently had a period of around 450 fs.
+Furthermore, from previous experiments, the ratio between the heat capacities for the bath and electronic degrees of freedom, $\frac{c_b}{c_L}$, was determined to be around 7 \cite{Nicholson2016}, and the heat transfer rate around 42 $\times$ 10$^{16}$ W/m$^3$ K \cite{Hostetler1999}.
 \\\\
-The time evolution of the system was then solved, for each set of trial parameters, on an interval from -2 ps to 8 ps, where the lower bound is chosen so that the numerical integration starts from a completely equilibrium initial condition.
-This is needed because when the sharp pulse arrives at 0 ps, some energy already enters the system slightly before 0 ps due to the Gaussian shape.
+The time evolution of the system was then solved for each set of trial parameters on an interval from -2 ps to 8 ps, where the lower bound is chosen so that the numerical integration starts from a completely equilibrium initial condition.
+This is necessary because when the sharp pulse arrives at 0 ps, some energy already enters the system slightly before 0 ps due to the Gaussian shape.
 The error of the solution $\tilde{x}$ w.r.t. the experimental measurements $x$ is then estimated as the mean square sum $err = \sum_{i=1}^n \frac{(x_i - \tilde{x}_i)^2}{n}$, where $i$ denote the indices of the measurement points.
-The numerical optimization was done through the \href{https://github.com/JuliaNLSolvers/Optim.jl}{Optim.jl} package ~\cite{mogensen2018optim}, where it was found that the Nelder-Mead simplex algorithm \cite{Nelder1965} works best for this very non-linear problem.
+The numerical optimization was done through the \href{https://github.com/JuliaNLSolvers/Optim.jl}{Optim.jl} package ~\cite{mogensen2018optim}, where we found that the Nelder-Mead simplex algorithm \cite{Nelder1965} works best for this very non-linear problem.
 
 \begin{figure}
 \IncludeGraphics{exp_fits.png}
 \caption{\label{fig:Cr_theoretical_fit} {\bf Demonstration of the quality of the theoretical fit.} a) The smoothed experimental measurements and theoretical fits are indicated in each panel by the blue and orange graphs, respectively. b) Demonstration of the equivalence between the experimental (left) and simulated (right) PLD amplitude map.}
 \end{figure}
 \section{Results and Discussion \label{sec:Cr_results}}
-The experimental results we use as a basis to fit our model are shown in Fig.~\ref{fig:Cr_experimental}.
-We took eleven representative experiments, which can be thought of as horizontal slices of Fig.~\ref{fig:Cr_experimental}(a), in order to fit the model parameters to get the best total fit across all datasets, allowing only the pulse fluence to fluctuate between sets.
-The parameters that were found are
+The experimental measurements we use as a basis to fit our model were discussed in Section~\ref{sec:Cr_experiment}, and shown in Fig.~\ref{fig:Cr_experimental1}.
+We took eleven representative experiments, which can be thought of as horizontal slices of Fig.~\ref{fig:Cr_experimental1}(a), in order to fit the model parameters to get the best total fit across all datasets, allowing only the pulse fluence to fluctuate between sets.
+
+The parameters that were thus found are
 \begin{align}
 	\alpha &= \SI{1.6e7} {\rm \frac{J}{K\, m^3}},\, \beta = \SI{1.55e11} {\rm \frac{J}{m^3}},\, g = \SI{1.1e3}{\rm \frac{J}{m^3}}, \\
 	\frac{\omega_0}{2\pi} &= 2.24\, {\rm THz},\, b = \SI{1.1e12} {\rm \frac{J}{m^3}},\, \rho = 7150 {\rm \frac{kg}{m^3}},\, y_0 = \SI{0.5e-12} {\rm m},\\
 	\gamma_y &= \SI{1.4e-9}{\rm \frac{J}{m^3}}, \, C_L = \SI{1.4e4}{\rm \frac{J}{m^3\,K}},\, C_b = 7.57\,C_L,\\
 	k &= \SI{3.74e17} {\rm \frac{W}{m^3\cdot K}},\, \xi = 40\,{\rm fs},\,A = \SI{2.86e6}{\rm \frac{J}{m^3}}
 \end{align}
-The results of this fitting procedure is shown in Fig.~\ref{fig:Cr_theoretical_fit}, demonstrating an excellent agreement between the theory and experiment, across the board.
+The results of this fitting procedure is shown in Fig.~\ref{fig:Cr_theoretical_fit}, demonstrating an excellent agreement between the theory and experiment across the board.
 \begin{figure}
 	\centering
 	\IncludeGraphics[width=0.9\textwidth]{L_y_energy.png}
-	\caption{\label{fig:Cr_energy_surfaces}{\bf Time evolution of the energy surfaces of $L$ and $y$.} The trajectory of each order parameter is indicated by the black graph. The energy surface in panel a (b) is calculated by varying L (y) at each time step, while keeping y (L) at the value of the trajectory. The fast dynamics of L is reflected by the tracking of its minimum at all times.}
+	\caption{\label{fig:Cr_energy_surfaces}{\bf Time evolution of the energy surfaces of $L$ and $y$.} The trajectory of each order parameter is indicated by the black graph. The energy surface in panel a (b) is calculated by varying L (y) at each time step, while keeping y (L) at the value corresponding to the trajectory. The fast dynamics of L is reflected by the trajectory tracking its minimum at all times.}
 \end{figure}
 \\\\
 To get a deeper understanding of the underlying effect, we look at the evolution of the free energy surfaces for both order parameters, shown in Fig.~\ref{fig:Cr_energy_surfaces}.
-The characteristic double well potential for $L\neq0$ equilibrium is clearly visible, and as expected, when the pulses hit and $T_L$ increases in the term $\alpha(T_L-T_N)L^2$ of Eq.~\eqref{eq:Cr_landau}, we see that the potential flattens causing the the minimum of $L$ to change very quickly, as discussed above.
-This in turn leads to a rapid shift of the minimum of the single-well potential for $y$, causing an oscillation of $y$ due to its relatively slow dynamics.
-While the temperature $T_L$ decreases again, $L$ and the minimum of the potential for $y$ shift back towards their original equilibrium position.
-The oscillation of $y$ remains for quite a long time while this shift is occurring, since the damping is not particularly large (of the order of 4 ps) compared with the cooling rate of the SDW ($T_L$).
+The characteristic double well potential for $L\neq0$ equilibrium is clearly visible at throughout the simulation.
+As expected, we can observe that, when the pulses hit and $T_L$ rapidly increases, the potential for $L$ varies as rapidly, leading in turn to a quick shift of the minimum of the single-well potential for $y$, which ultimately results in an oscillation of $y$ due to its relatively slow dynamics.
+While the temperature $T_L$ decreases again, $L$, and consequently the minimum of the potential for $y$, shift back towards their original equilibrium position.
+However, the oscillation of $y$ remains for quite a long time during this shift, since the damping is not particularly large (of the order of 4 ps) compared with the cooling rate of the SDW ($T_L$).
 \\\\
 This already presents us with the first hint at the benefit of indirectly exciting the PLD through the SDW, which we clarify through the use of a thought experiment of a hypothetical system for which the PLD is the primary order parameter with associated double well potential, and with no other coupled order parameters.
 The only possibility to excite an oscillation in this case is by heating up the system above the critical temperature.
@@ -220,45 +220,52 @@ This would change the shape of the hypothetical energy potential, shifting its m
 However, as with any normal oscillator, the value of the PLD would never exceed the starting value during the oscillation, as the thermalization, and restoration of the potential will occur on much longer timescales.
 
 Here, however, due to the relatively fast thermalization of the SDW with the bath, the potential surface for $y$ recovers on a faster timescale than it would on its own, leading to a relative movement of the potential opposite to the movement of $y$ itself.
-This relative movement transfers additional momentum to $y$ as the SDW is cooling down and the potential is being restored, leading ultimately to a higher oscillation amplitude, even when only a single pulse is applied.
+This relative movement transfers additional momentum to $y$ as the SDW is cooling down, and the potential is being restored, leading ultimately to a higher oscillation amplitude, even when only a single pulse is applied.
 This was observed experimentally in previous measurements by A. Singer's group and reported in Ref.~\cite{Singer2015prl}. 
 \\\\
-One final remark to make w.r.t. to the behavior after a single pulse, is that since it is the magnitude of $L$ which is the driver of the energy surface of $y$, the effect is most pronounced when $L$ is close to $T_N$ because a small change in temperature causes a large variation of the equilibrium position of $L$ as shown by the square root temperature dependence in Eq.~\eqref{eq:Cr_L0}.    
+We want to reiterate that, since it is the magnitude of $L$ which is the driver of the energy surface of $y$, the effect is most pronounced when $L$ is close to $T_N$ because a small change in temperature causes a large variation of the equilibrium position of $L$ as shown by the square root temperature dependence in Eq.~\eqref{eq:Cr_L0}.    
 \\\\
-Having multiple pulses that can rapidly change the potential surface for $y$ opens up many additional possibilities, allowing for constructive interference (Fig.~\ref{fig:Cr_theoretical_fit}(a-b)) or, by shifting the potential surface in the same direction as the movement of $y$, for a complete destructive interference (see Fig.~\ref{fig:Cr_theoretical_fit}(c-d)).
-This can be leveraged further by applying a train of pulses in order to guide the PLD oscillation along any desirable envelope function.
+Having multiple such pulses that can rapidly change the potential surface for $y$ opens up many additional possibilities, allowing for constructive interference (Fig.~\ref{fig:Cr_theoretical_fit}(a-b)) or, by shifting the potential surface in the same direction as the movement of $y$, for a complete destructive interference (see Fig.~\ref{fig:Cr_theoretical_fit}(c-d)).
 \\\\
-We now investigate exactly what can be achieved with a longer pulse train.
+This behavior can be leveraged further by applying a train of pulses, for which we now investigate exactly what can be achieved.
+Two goals will be investigated: maximizing the oscillation amplitude, and designing the pulse train so that the envelope of the oscillation perfectly tracks a given signal function. 
 \\\\
-First we discuss the strategy to achieve maximal amplitude.
+% First we discuss the strategy to achieve maximal amplitude.
 The maximal change in the value of $L$, and thus the potential surface for $y$, can be achieved by heating it all the way to $T_N$.
 It is then important to keep this initial shift of the potential for $y$ in place until $y$ crosses the minimum, converting as much potential energy into kinetic energy.
-This can be done by heating $L$ slightly above $T_N$, where the additional heat and finite cooling rate will keep the potential shift present until $y$ passes through the minimum, gaining the most momentum.
-Fig.~\ref{fig:Cr_control}(a) demonstrates this strategy, with the peaks of $T_L$ in red indicating that $T_L$ exceeds $T_N$.
-Exactly at this point, $L$ should start to re-condense causing the potential surface of $y$ to start moving in the opposite direction to its movement, which in the end supplies it with additional momentum, as was described above.
-Since the sign of $L$ does not matter for the position of the potential energy surface of $y$, it can only cause a shift in one direction, meaning that, similar to someone pushing a swing, the ideal intervals for the subsequent pulses are close to multiples of the period of $y$, if the goal is achieving the maximum oscillation amplitude.
+This can be done by heating $L$ slightly above $T_N$, where the additional heat and finite cooling rate will keep the potential shift present for long enough.
+Fig.~\ref{fig:Cr_control}(a) demonstrates this part of the strategy, with the peaks of $T_L$ in red indicating that $T_L$ exceeds $T_N$.
+Exactly at this point, $L$ should start to re-condense causing the potential surface of $y$ to start moving in the opposite direction to $y$'s movement, which in the end supplies it with additional momentum, as was described above.
+Since the sign of $L$ does not matter for the position of the minimum for $y$, it can only cause a shift in one direction, meaning that, similar to someone pushing a swing, the ideal intervals for the subsequent pulses are close to multiples of the period of $y$.
 The optimal number of periods between pulses depends on the cooling rate of $L$, and damping rate of $y$.
-The former influences how much $T_L$ can cool back down within one period and thus the size of the maximum kinetic energy gain of $y$, while the latter is the main source of kinetic energy loss. From our simulations, unless the damping is really negligible, it is always best to supply a set of pulses at each oscillation period of $y$.
-The results in Fig.~\ref{fig:Cr_control}(b) showcase this situation, where the heat capacity of the bath was artificially increased to infinity to mimic a possible strongly cooled regime which would be ideal for maximizing the oscillation amplitude.
+The former influences how much $T_L$ can cool back down within one period of $y$, and thus the size of the maximum kinetic energy gain of $y$ through subsequent heating of $T_L$, while the latter is the main source of kinetic energy loss.
+From our simulations, unless the damping is really negligible, it is always most beneficial to supply a pulse at each oscillation period of $y$.
+The results in Fig.~\ref{fig:Cr_control}(a,b) demonstrate this. In panel (a) a pulse was applied at each  period, whereas in (b) every other period. 
+We artificially increased the heat capacity of the bath to infinity to mimic a possible strongly cooled regime, which would be ideal for maximizing the oscillation amplitude.
 With the damping rate of $y$ taken as the one fitted to the experiment, the maximal amplitude thus achieved is about 450\% the original value, quite a remarkable increase.  
 \\\\
-We can go one step further, however, and design a pulse train such that the oscillation amplitude follows a particular ``signal'' envelope function, demonstrating the incredibly high degree of control over the PLD that this coupled system allows for.  
-To limit the dimensionality of the manifold of possible solutions, we formulate the rules:
+We can go one step further, however, and design a pulse train such that the oscillation amplitude follows a particular ``signal'' envelope function, demonstrating the incredibly high degree of control over the PLD that this coupled system could allow for.  
+To limit the dimensionality of the manifold of possible solutions, we formulated the following rules:
 \begin{itemize}
-	\item Each pulse has a fixed fluence
-	\item Pulses are grouped in sets per period of PLD oscillation
-	\item The first pulse group only has a single pulse, which fixes the required fluence
-	\item The maximum allowed pulses per group is fixed
+	\item Each pulse has a fixed fluence.
+	\item Pulses are grouped in sets per period of PLD oscillation.
+	\item The first pulse group only has a single pulse, which fixes the required fluence.
+	\item The maximum allowed pulses per group is fixed.
 \end{itemize}
-Adhering to these rules, we tested this procedure on different envelope functions, showcased in Fig.~\ref{fig:Cr_control}(c,d).
+We then tested this procedure on different envelope functions, showcased in Fig.~\ref{fig:Cr_control}(c,d).
 The groups of pulses can be fitted sequentially, since the later pulses do not influence the oscillation caused by the earlier ones.
 As in the maximum amplitude simulations, the assumption of an infinite $C_b$ was made here.
-This is done so the equilibrium position of $L$ does not change.
-Otherwise a general downwards slope of the oscillation of $y$ would result, as seen from the lower final equilibrium positions of $y$ in panels (a,b) of Fig.~\ref{fig:Cr_theoretical_fit}.
+This is done so the oscillation equilibrium of $y$ does not change because of the heating due to the pulses.
 The results demonstrate how a carefully chosen pulse train enables indirect, but close to optimal control of the PLD order parameter.
+
+To comment on the experimental viability of such a pulse train we can make the following remarks.
+The time resolution that can be achieved with the optical pulses used in our experiments is on the order of the pulse width, i.e. 40 fs. There exist other optical lasers that have widths down to a few fs, which could allow for the required accurate time positioning of the pulses.
+Moreover, through the use of prisms, a high fluence pulse can be split into many smaller pulses, which can in turn be controlled by the opening or closing of apertures.
+
+This is all to say that technically speaking such pulse trains can be generated, and we are hopeful that such experiments can be performed in the future.
 \begin{figure}
 	\IncludeGraphics{envelope.png}
-	\caption{\label{fig:Cr_control} {\bf Pulse train design.} a), b) Two possible schemes to maximize the oscillation amplitude. In a) pulses were applied each period, whereas in b) only every other period. c), d) Two examples of perfect control. In a) the envelop was taken as one period of a sinusoid followed by a sawtooth with the same width and height. In d) the envelope is a Gaussian followed by an exponential and inverse exponential.}
+	\caption{\label{fig:Cr_control} {\bf Pulse train design.} a), b) Two possible schemes to maximize the oscillation amplitude. In (a) pulses were applied each period, whereas in (b) only every other period. c), d) Two examples of perfect control. In (c) the envelop was taken as one period of a sinusoid followed by a sawtooth with the same width and height. In (d) the envelope consists of a Gaussian followed by an exponential and inverse exponential.}
 \end{figure}
 
 \section{Conclusions}

@@ -52,7 +52,7 @@ These formulae are at the core of the method, i.e. by minimizing the total energ
 To do this, most practical implementations use a self-consistent algorithm which iteratively constructs the energy contributions from the previous trial density $n_i$, diagonalizes the resulting Hamiltonian, and uses the eigenstate with the lowest energy to construct a new trial density $n_o$, after which the algorithm is repeated until $n_o$ is sufficiently close to $n_i$. Equivalently, this means that $E[n_i] \approx E[n_o]$ through the Hohenberg-Kohn theorems, i.e. self-consistency between the density and resulting $V_{\rm ext}$ is reached.
 It can be shown that this process leads to, at least, a local minimum of the Kohn-Sham functional~\eqref{eq:Theory_kohnsham}.
 The question of how to reach the global minimum of any function, let alone any functional, is from an entirely different caliber that we wish to avoid in this Thesis.
-In the vast majority of practical cases no matter what starting density is used, the final self-consistent density will be that of the ground-state. Indeed, many practical codes initialize the density as completely random. 
+In the vast majority of practical cases no matter what starting density is used, the final self-consistent density will be that of the ground-state. Indeed, many practical codes initialize the density completely randomly. 
 \\\\
 There are many ways to numerically implement DFT, with the basis set used to construct the Hamiltonian being the main differentiating factor.
 Since we are interested in extended systems such as crystals, a plane-wave basis set comes very natural.
