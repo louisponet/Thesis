@@ -102,13 +102,20 @@ This texture can be picked up mechanically by the applied tip and ultimately all
 Afterwards, we continue with a small overview of the crystalline properties of BaTiO$_3$, an archetypal example of a ferroelectric perovskite.
 This is followed by a detailed theoretical study and numerical simulation of the experimental observations, and finally a conclusion summarizing the results.
 
-\section{Experimental}
+\section{Experimental methods and results}
 In this section we summarize the experiments performed by the group of Prof. Catalan that were the impetus of this research \cite{Stefani2020}.
 In order to determine the generality of the DW softening, three single crystal samples were studied: LiNbO$_3$, BaTiO$_3$ and PbTiO$_3$. It was found that all three show the same behavior, allowing us to focus on BaTiO$_3$ (BTO).
 The results of the experimental measurements are shown in Fig.~\ref{fig:BTO_experiment}.
 
 Piezoresponce force microscopy (PFM)\cite{Harnagea2001} was used to determine the domain structure of the sample, displayed in panels (a) and (c).
-Multiple types of domains can be identified: in the region shown in panels (a,b) domains with out-of plane ($c$-direction) polarization are found, whereas panels (c-f) display a more complex region with both out-of-plane and in-plane ($a$-direction) polarization.
+In PFM, the mechanical response of an applied electrically conductive tip is measured when an AC voltage is applied to the sample.
+Because of the piezoelectricity that is present in any ferroelectric material, this AC field leads to a periodic expansion and contraction of the sample, which is detected through the deflection of a laser beam that shines on the cantilever that holds the tip.
+As we will discuss further below (see \ref{sec:BTO_piezoelectricity}), the piezoelectric coefficients have different signs for the up versus down polarized domains, meaning that the phase of the oscillation can be measured as a probe for the orientation of the polarization.
+These phases are exactly what is shown in panels (a,c) in Fig.~\ref{fig:BTO_experiment}. The amplitude of the oscillation gives an idea on the absolute value of the polarization, which leads to the darker regions of the DWs in panel (d) of the same figure.
+Since the PFM measurements are performed for an out--of--plane direction, the signature of the in--plane polarization in the bottom right domain of panels (c-f) in Fig.~\ref{fig:experiment} is rather a measure of the noise of the technique rather than an actual orientation of the polarization.
+In order to accurately map the in--plane polarized domains, one would have to use PFM in a perpendicular configuration, however we are mostly interested in the out--of--plane polarization domains so these latter were omitted in these experiments.
+\\\\
+Turning back to the analysis of the domains, we can identify multiple different kinds: in the region shown in panels (a,b) domains with out-of plane ($c$-direction) polarization are found, whereas panels (c-f) display a more complex region with both out-of-plane and in-plane ($a$-direction) polarization.
 The top left portion of these latter panels demonstrates the existence of bubble domains with out-of-plane polarization and curved 180$^\circ$ DWs.
 The bottom right portion shows an area with in-plane domains separated by straight 180$^\circ$ DWs.
 On the boundary between these two regions we find a 90$^\circ$ twin DW, which is different from 180$^\circ$ DWs because it separates domains with different polarization as well as strain.
@@ -168,7 +175,7 @@ For further details, see Ref.~\cite{Ghosez1995}.
 All experiments were performed at room temperature, so we focus on the tetragonal phase shown in Fig.~\ref{fig:BTO_crystal}(b).
 \begin{figure}[h]
 	\IncludeGraphics{crystal.png}
-	\caption{\label{fig:BTO_crystal}{\bf Crystal structure.} a) Crystal structure of BaTiO$_3$ in the paraelectric phase ($Pm3m$). b) Unit cell of the tetragonal phase ($P4mm$) with the associated polarization. The atoms are color coded with Ti atoms in blue, Ba in green and O in red. The Oxygen octahedra around Ti are displayed as the shaded polygons.}
+	\caption{\label{fig:BTO_crystal}{\bf Crystal structure of BaTiO$_3$.} a) Paraelectric $Pm3m$ phase. b) Unit cell of the tetragonal $P4mm$ phase with the associated polarization in yellow. The Oxygen octahedra around Ti are displayed as the shaded polygons.}
 \end{figure}
 
 \section{Theory}
@@ -289,7 +296,7 @@ However, if we compare in Fig.~\ref{fig:BTO_experiment}(e) the stiffness signatu
 This region of the sample is small enough so that variations in the quality of the sample and the defect density are small.
 From these two arguments, we can safely exclude defects as a contributing factor to the DW softening.
 
-\subsection{Piezoelectricity}
+\subsection{Piezoelectricity \label{sec:BTO_piezoelectricity}}
 The second mechanism that could lead to softening can not be neglected, however \cite{Tsuji2005,Stefani2020}.
 When the tip is applied to the sample it causes a non-uniform pressure field at the surface.
 It is larger at the center of the contact region and smaller at the edges, and decays into the material.
