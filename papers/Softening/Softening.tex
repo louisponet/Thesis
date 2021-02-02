@@ -188,7 +188,7 @@ The model that we use is based on the developments in Refs.~\cite{Zhirnov1959,L.
 We chose a continuum model because of the mesoscopic length scales that are involved with the problem.
 One could argue that this simplification is detrimental for the description of the very sharp DWs.
 %, sporting a width on the order of a couple of unit cells (5 - 20 \AA) \cite{Zhirnov1959}.
-Especially to describe the movement of the DW it is necessary to take the Peierls-Nabarro barriers into account that exist due to the lattice structure.
+Especially to describe the movement of the DW, it is necessary to take the Peierls-Nabarro barriers into account that exist due to the lattice structure.
 Naively, it seems that only atomistic first-principles based calculations manage to reproduce these accurately \cite{Meyer2002}, since in a perfect continuum picture no such barriers exist.
 However, as we will touch on in further detail when the simulation technique is discussed, a numerical analogue to these inter-cell barriers appears \cite{Marton2018}.
 
@@ -395,33 +395,33 @@ This is probably due to pinning by defects, the Peierls-Nabarro barriers, or the
 Due to the complexity of the model, and the interaction of the strain with the tip, we forfeit the hunt for a purely analytical description and instead proceed with numerical simulations to verify the above statements.
 
 \section{Methods}
-There are generally two ways of minimizing the total free energy $F$: either through solving the system of Euler-Lagrange equations in Eq.~\eqref{eq:BTO_euler}, or by direct minimization of $F$.
+There are generally speaking two ways of minimizing the total free energy $F=\int_V d\bm{r} f$ of the system with volume $V$: either through solving the system of Euler-Lagrange equations in Eq.~\eqref{eq:BTO_euler}, or by direct minimization of $F$.
 Both are completely equivalent on a mathematical level, but require different numerical implementations.
-In our code, we choose the latter.
-Moreover, since minimizing $\varepsilon$ directly requires to carefully consider compatibility conditions between the different elements (so that the material does not break)\cite{Marton2007}, we choose to use the displacement $u$ instead.
+In our code, we chose the latter.
+Moreover, since minimizing $F$ w.r.t $\varepsilon$ requires a careful consideration of the compatibility conditions between the different elements (so that the material does not break)\cite{Marton2007}, we chose to use the displacement $u$ instead.
 This means we rewrite the equations in Eq.~\eqref{eq:BTO_energy} by filling in $\varepsilon_{ij} = \frac{1}{2}(\partial_i u_j + \partial_j u_i)$.
 
-To solve the model, we thus have to compute and minimize the total free energy by integrating the free density (Eq.~\eqref{eq:BTO_energy}), written in terms of the values and gradients of the two order parameters $P$ and $u$, over the entire system.
-In the continuum formulation, these have a value at each point in space and are thus sometimes referred to as fields, with the models thus referred to as phase field models.
+To solve the model, we thus have to compute and minimize this total free energy by integrating the free density in Eq.~\eqref{eq:BTO_energy}, written in terms of the values and gradients of the two order parameters $P$ and $u$, over the entire system.
+In the continuum formulation, these have a value at each point in space and are thus sometimes referred to as fields, with the resulting models often referred to as phase field models.
 Finding the values of $P$ and $u$ that minimize the total free energy $F[P,u]=\int_V d\bm{r} f(\bm{P}(\bm{r}),\bm{u}(\bm{r}))$ then leads to equilibrium configuration of the system.
 
-We perform this integration numerically, due to the complexity of Eq.~\eqref{eq:BTO_energy} and the non homogeneous situation that occurs when a tip is applied.
+We perform this integration numerically, due to the complexity of Eq.~\eqref{eq:BTO_energy} and the highly heterogeneous situation that occurs when a tip is applied.
 The Finite Elements Method (FEM) provides a framework to do exactly that.
-Its ability to handle complex geometries and large length scales makes it one of the most well-established methods to numerically solve realistic mathematical and physical models.
+Its ability to handle complex geometries and large length scales makes it one of the most well-established methods to numerically solve realistic mathematical and physical models (see Appendix ~\ref{ch:FEM} for further details).
 \\\\
 Using the parameters from previous ab-initio results \cite{Marton2010} and reported in Tab.~\ref{tab:BTO_param}, we first optimized the equilibrium situation for both a uniform domain and a single domain wall. The result of the latter is shown in Fig.~\ref{fig:BTO_wall}.
 A Gaussian force field, $\frac{a}{\sigma \sqrt{2\pi}}e^{-\frac{(x-x_{\rm tip})^2}{2\sigma^2}}$ with $\sigma = 1 \cdot 10^{-9}$ representing the contact radius and $a = 1 \cdot 10^{-18} \frac{eV}{nm^3}$, was then applied at various positions $x_{\rm tip}$ throughout both geometries.
 
 The single domain simulation is used to gauge the influence of finite-size effects that are inherently present in our open boundary condition simulations, using a geometry of finite dimensions $(L_x, L_y, L_z)$.
 If the tip is applied to the side of the geometry, in the case of a single domain, it deforms more than when it is applied to the center because there is less material on one of the sides of the tip to support it.
-We have tested the extent to which this contributes to our simulations, as demonstrated in Fig.~\ref{fig:BTO_numerical_effects}(a) for different lengths $L_x$ of the geometry. As one could expect, the effect is most influential in cases with a small geometry.
+We have tested the extent to which this contributes to our simulations, as demonstrated in Fig.~\ref{fig:BTO_numerical_effects}(a) for different lengths $L_x$ of the geometry. As one could expect, the effect is most influential in simulations with a small geometry.
 Since this is nonphysical, we use the domain simulation to calculate the amount of such spurious additional deformation, and compensate for it in the DW simulation assuming that the finite-size effect is identical since the geometry is the same in both cases.
 \\\\
 To conclude this section, we would like to comment on the issue of the Peierls-Nabarro barriers \cite{Peierls1940,Nabarro1947}, since they are of great influence on the movement of the DW.
 In essence, they are a result of the non-homogeneity of the crystalline lattice on the unit-cell length scale.
 This causes the DW to have a preferred center inside the unit-cells, usually either on the edge or in the middle.
-A thorough study from first-principles was performed by Meyer et al. \cite{Meyer2002}, where it was correctly stated that only by using this degree of granularity, one can achieve quantitative results.
-The purely continuum GLD model we use does not account for the Peierls-Nabarro barriers, as we discussed previously, making the DW sliding completely penalty free, which is at odds with the real behavior.
+A thorough study from first-principles was performed by Meyer et al. \cite{Meyer2002}, where it was correctly stated that only by using this degree of granularity, one can achieve quantitative ab-initio results.
+The purely continuum GLD model we use does not account for the physical Peierls-Nabarro barriers, as we discussed previously, making the DW sliding completely penalty free, which is at odds with the behavior in real materials.
 We are thus faced with the commonly reappearing issue of requiring to simulate physics that occur at different length scales.
 
 In this case, however, we are to some extent saved by a spurious numerical effect that mimics the naturally occurring Peierls-Nabarro barriers.
