@@ -1,6 +1,6 @@
 \chapter{Coupling between spin and lattice in Chromium \label{ch:CrSDW}}
 \section{Introduction}
-In all previous chapters, we discussed situations for which the order parameters were static, or at least at instantaneous equilibrium.
+In all previous Chapters, we discussed situations for which the order parameters were static, or at least at instantaneous equilibrium.
 For GeTe, the polarization and resulting spin splitting were fixed.
 Even though the thermal excitation of polar phonons can lead to a non-trivial dynamical splitting in the bandstructure, on the slower phonon timescale electrons can still be assumed to be at the instantaneous equilibrium with the ionic potential \cite{Monserrat2017}.
 This is because, as alluded to before, the electronic dynamics is generally many orders of magnitude faster than the atomic ones, meaning that the Born-Oppenheimer approximation remains valid.
@@ -19,7 +19,7 @@ The dynamics of the PLD is instead related to the motion of massive ions and is 
 The system as a whole only reaches full equilibrium with the substrate after nanoseconds \cite{Singer2015prb}. 
 By using ultrafast pump-probe experiments that have a sub picosecond resolution, these PLD dynamics can be studied and, more importantly, controlled very precisely through excitation of the much faster responding SDW.
 
-In this chapter we explore and investigate the additional possibilities opened up by applying a sequence of optical excitations spaced at various points in time.
+In this Chapter we explore and investigate the additional possibilities opened up by applying a sequence of optical excitations spaced at various points in time.
 We start by demonstrating the experimental observations made by applying not one, but two optical pulses to the SDW, and how their spacing changes drastically the response of the probed PLD.
 This showcases the additional complexity and control achieved over the standard single pump-probe experiments that were performed previously \cite{Singer2015prb, Singer2015prb}. 
 Among various possibilities, this additional control allows for the suppression of the intermediate nonequilibrium state thus reproducing adiabatic transitions on much faster timescales than would be possible without this control.
@@ -186,10 +186,6 @@ This is necessary because when the sharp pulse arrives at 0 ps, some energy alre
 The error of the solution $\tilde{x}$ w.r.t. the experimental measurements $x$ is then estimated as the mean square sum $err = \sum_{i=1}^n \frac{(x_i - \tilde{x}_i)^2}{n}$, where $i$ denote the indices of the measurement points.
 The numerical optimization was done through the \href{https://github.com/JuliaNLSolvers/Optim.jl}{Optim.jl} package ~\cite{mogensen2018optim}, where we found that the Nelder-Mead simplex algorithm \cite{Nelder1965} works best for this very non-linear problem.
 
-\begin{figure}
-\IncludeGraphics{exp_fits.png}
-\caption{\label{fig:Cr_theoretical_fit} {\bf Demonstration of the quality of the theoretical fit.} a) The smoothed experimental measurements and theoretical fits are indicated in each panel by the blue and orange graphs, respectively. b) Demonstration of the equivalence between the experimental (left) and simulated (right) PLD amplitude map.}
-\end{figure}
 \section{Results and Discussion \label{sec:Cr_results}}
 The experimental measurements we use as a basis to fit our model were discussed in Section~\ref{sec:Cr_experiment}, and shown in Fig.~\ref{fig:Cr_experimental1}.
 We took eleven representative experiments, which can be thought of as horizontal slices of Fig.~\ref{fig:Cr_experimental1}(a), in order to fit the model parameters to get the best total fit across all datasets, allowing only the pulse fluence to fluctuate between sets.
@@ -202,6 +198,10 @@ The parameters that were thus found are
 	k &= \SI{3.74e17} {\rm \frac{W}{m^3\cdot K}},\, \xi = 40\,{\rm fs},\,A = \SI{2.86e6}{\rm \frac{J}{m^3}}
 \end{align}
 The results of this fitting procedure is shown in Fig.~\ref{fig:Cr_theoretical_fit}, demonstrating an excellent agreement between the theory and experiment across the board.
+\begin{figure}
+\IncludeGraphics[width=0.9\textwidth]{exp_fits.png}
+\caption{\label{fig:Cr_theoretical_fit} {\bf Demonstration of the quality of the theoretical fit.} a) The smoothed experimental measurements and theoretical fits are indicated in each panel by the blue and orange graphs, respectively. b) Demonstration of the equivalence between the experimental (left) and simulated (right) PLD amplitude map.}
+\end{figure}
 \begin{figure}
 	\centering
 	\IncludeGraphics[width=0.9\textwidth]{L_y_energy.png}
@@ -244,6 +244,10 @@ The results in Fig.~\ref{fig:Cr_control}(a,b) demonstrate this. In panel (a) a p
 We artificially increased the heat capacity of the bath to infinity to mimic a possible strongly cooled regime, which would be ideal for maximizing the oscillation amplitude.
 With the damping rate of $y$ taken as the one fitted to the experiment, the maximal amplitude thus achieved is about 450\% the original value, quite a remarkable increase.  
 \\\\
+\begin{figure}
+	\IncludeGraphics[width=0.9\textwidth]{envelope.png}
+	\caption{\label{fig:Cr_control} {\bf Pulse train design.} a), b) Two possible schemes to maximize the oscillation amplitude. In (a) pulses were applied each period, whereas in (b) only every other period. c), d) Two examples of perfect control. In (c) the envelop was taken as one period of a sinusoid followed by a sawtooth with the same width and height. In (d) the envelope consists of a Gaussian followed by an exponential and inverse exponential.}
+\end{figure}
 We can go one step further, however, and design a pulse train such that the oscillation amplitude follows a particular ``signal'' envelope function, demonstrating the incredibly high degree of control over the PLD that this coupled system could allow for.  
 To limit the dimensionality of the manifold of possible solutions, we formulated the following rules:
 \begin{itemize}
@@ -263,13 +267,9 @@ The time resolution that can be achieved with the optical pulses used in our exp
 Moreover, through the use of prisms, a high fluence pulse can be split into many smaller pulses, which can in turn be controlled by the opening or closing of apertures.
 
 This is all to say that technically speaking such pulse trains can be generated, and we are hopeful that such experiments can be performed in the future.
-\begin{figure}
-	\IncludeGraphics{envelope.png}
-	\caption{\label{fig:Cr_control} {\bf Pulse train design.} a), b) Two possible schemes to maximize the oscillation amplitude. In (a) pulses were applied each period, whereas in (b) only every other period. c), d) Two examples of perfect control. In (c) the envelop was taken as one period of a sinusoid followed by a sawtooth with the same width and height. In (d) the envelope consists of a Gaussian followed by an exponential and inverse exponential.}
-\end{figure}
 
 \section{Conclusions}
-In this chapter we discussed the effects of cross-order coupling beyond quasi-static phenomena.
+In this Chapter we discussed the effects of cross-order coupling beyond quasi-static phenomena.
 The results show that the coupling between the SDW and PLD through exchange striction in Chromium is another prime example of cross-order control, where in this case the perturbation applied by optical pulses to the SDW leads to an excitation in the PLD mode.
 Moreover, the slower dynamics of the PLD compared to the SDW opens up new behavior and additional dynamical control that would not be possible without the coupling.
 If the PLD would have dynamics on the same timescale as the SDW, changing its potential through exciting the latter would not be very impactful since it would follow the minimum of the potential as fast as the excited SDW would change it.
