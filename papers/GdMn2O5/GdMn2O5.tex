@@ -9,7 +9,8 @@ The latter will align itself to the information storing magnetic domains on the 
 The resistivity of the stack then depends strongly on the mutual alignment of the pinned and soft magnets, as a result of the giant magnetoresistance.
 By applying a constant bias voltage to the read head, the magnetically stored information can be probed electrically through the measurement of the resulting current.
 Underlying this mechanism is the Stoner effect, causing the conducting states around the Fermi level of metallic magnets to have a well-defined spin polarization depending on the internal magnetization.
-If current flows through these metallic magnets, the carriers with aligned spins that exit the pinned magnet will be scattered strongly (leading to low conductivity) by the soft magnet if its magnetization is aligned antiparallel, and weakly when the magnetization of both is aligned (high conductivity).
+If current flows through these metallic magnets, the carriers with spins aligned to the pinned magnet will be scattered strongly by the soft magnet if the latter's magnetization is antiparallel to the former, leading to low conductivity.
+Conversely, when the magnetizations of the two magnets are aligned, the carriers will scatter weakly, which resuls in a high conductivity.
 This development led to a significant increase of the efficiency of hard drives.
 
 There remains, however, the issue of writing the information in the first place.
@@ -130,7 +131,7 @@ After discussing the complex behavior that arises from the model, we comment on 
 \begin{figure}
     \centering
     \IncludeGraphics[width=\textwidth]{fig_exp2.png}
-\caption{ \label{fig:GdMn2O5_experiment1} {\bf Experimental measurements of the electric polarization at 2.3 K.} a) Magnetic field applied at 1$^\circ$ which leads to a two-state hysteresis loop. The left panel shows the result of our measurements, whereas the right one shows previous measurements in Ref.~\cite{Lee13}. This behavior on the right panel is identical to our theoretical results. b) Magnetic field applied at 9$^\circ$, where the four-state hysteresis loop appears. c) Field applied at 15$^\circ$, again leading to a two-state hysteresis loop.  
+\caption{ \label{fig:GdMn2O5_experiment1} {\bf Experimental measurements of the ferroelectric polarization at 2.3 K.} a) Magnetic field applied at 1$^\circ$ which leads to a two-state hysteresis loop. The left panel shows the result of our measurements, whereas the right one shows previous measurements in Ref.~\cite{Lee13}. This behavior on the right panel is identical to our theoretical results. b) Magnetic field applied at 9$^\circ$, where the four-state hysteresis loop appears. c) Field applied at 15$^\circ$, again leading to a two-state hysteresis loop.  
 In these plots, we have denoted the four discussed states by the labels 1-4. The arrows and graph color denote the direction of magnetic field-change during the sweep, as indicated by the inset of panel (a).}
 \end{figure}
 \begin{figure}
@@ -183,7 +184,7 @@ Further research is required to solidify this statement, here we rather choose t
 \section{Modeling}
 In order to describe the puzzling experimental observations we construct a semi-classical model with eight Gd spins denoting the eight sublattice magnetizations, and two AFM order parameters that describe the Mn chains.
 The Gd spins are described by unit vectors $\bm{S}_i, i=1..8$, and we denote the two AFM order parameters as $\bm{L}_\alpha, \alpha=1,2$ (also unit vectors). See Fig~\ref{fig:GdMn2O5_unit_cell} for further details.
-Furthermore, the electric polarization is represented by the slave order parameter $P_b$.
+Furthermore, the ferroelectric polarization is represented by the slave order parameter $P_b$.
 Using a single $\bm{L}_\alpha$ to describe the orientation of all the Mn ions in a chain assumes that their spins are perfectly AFM ordered, i.e. $\bm{S}_i = L, \bm{S}_{i+1} = - \bm{L}$.
 This simplification is justified by the large intrachain AFM exchanges, compared with the relatively small exchanges between the two chains.
 
@@ -374,7 +375,7 @@ We now turn to a discussion of the results obtained from the simulations of the 
 \begin{figure}
     \IncludeGraphics{Pb_3panels}
     \caption{\label{fig:GdMn2O5_theory}{\bf Simulation of the angle dependent magnetoelectric switching.}
-    The evolution of electric polarization $P_b$ during the magnetic field sweep cycle is depicted for the low (a), magic (b), and high (c) angle regimes. 
+    The evolution of ferroelectric polarization $P_b$ during the magnetic field sweep cycle is depicted for the low (a), magic (b), and high (c) angle regimes. 
    In each panel, the four states and field cycle progression are marked in the same way as in Fig~\ref{fig:GdMn2O5_experiment1}. The four states hysteresis loop is observed for the field at the magic orientation in panel (b). 
     The insets indicate the sequence of states visited during the cycle for each regime, and winding numbers (see Section~\ref{sec:GdMn2O5_topology} for further details on the latter).
 }
@@ -526,7 +527,7 @@ Notice how all field cycling procedures depicted in panel (a) lead to the same s
 %
 Since the ferroelectric polarization $P_b$ is a direct result of the magnetic configuration, we briefly comment on how these different switching behaviors for the spin are translated in to the plots of the polarization in Fig.~\ref{fig:GdMn2O5_theory} and Fig.~\ref{fig:GdMn2O5_experiment1}.
 Most of the evolution of $P_b$ can be understood from the $\bm L_1 \cdot \bm L_2$ part. The contribution arising from the Gd--Mn exchange striction behaves similarly due to strong coupling between them ($v_1$), with an additional superposed contribution due to the slight rotations that the Gd spins perform away from the switching fields.
-At $\phi_{\rm H} = \pm 20^\circ$, both N\'eel vectors $\bm L_\alpha$ toggle between two directions in such a way that the angle between them and, hence, the electric polarization changes very little (Figs.~\ref{fig:GdMn2O5_regimes}(b,f),~\ref{fig:GdMn2O5_experiment1}(c), and~\ref{fig:GdMn2O5_theory}(c)). 
+At $\phi_{\rm H} = \pm 20^\circ$, both N\'eel vectors $\bm L_\alpha$ toggle between two directions in such a way that the angle between them and, hence, the ferroelectric polarization changes very little (Figs.~\ref{fig:GdMn2O5_regimes}(b,f),~\ref{fig:GdMn2O5_experiment1}(c), and~\ref{fig:GdMn2O5_theory}(c)). 
 On the other hand, at $\phi_{H}=0^\circ$, $\bm{L}_1$ and  $\bm{L}_2$ tilt in opposite directions. The resulting large variation of the angle between these two vectors gives rise to the two-state switching with the polarization reversal, as shown in Figs.~\ref{fig:GdMn2O5_regimes}(d),~\ref{fig:GdMn2O5_experiment1}(a), and ~\ref{fig:GdMn2O5_theory}(a). This suggests that the small-amplitude relative rotation of $\bm{L}_1$ and $\bm{L}_2$ is an electromagnon mode that could be excited by oscillating $H_a$ or $E_b$.
 On the boundary between the two extremes one of the $\bm L_\alpha$ toggles while the other performs the full 360$^\circ$ rotation, leading to the four-state polarization loops.
 %

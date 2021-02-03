@@ -94,13 +94,13 @@ More details on the different construction methods and can be found in Ref.~\cit
 \\\\
 Up to now we discussed the case of an isolated set of bands. In some cases such a set does not exist in the energy range of interest, and the bands are connected, or {\it entangled}, with the bands outside this range.
 An example of this case is shown by the blue bands in Fig.~\ref{fig:Theory_blochvswan}(b).
-If we are seeking $J$ WFs we then need to select $J$ states $\tildeBlochKet{n}$ at each $k$ point from a bigger set $J^{\bm{k}}$:
+If we are seeking $J$ WFs we then need to select $J$ states $\tildeBlochKet{n}$ at each $k$-point from a bigger set $J^{\bm{k}}$:
 \begin{equation}
 	\tildeBlochKet{n} = \sum_{m=1}^{J^{\bm{k}}}V_{nm}^{\bm{k}} \BlochKet{m}.
 \end{equation}
 These $\tildeBlochKet{n}$ can then be used in the previously described localization procedure.
 The matrices $V_{nm}^{\bm{k}}$ are in general rectangular with dimension $J\times J^{\bm{k}}$.
-This leads to a two-step procedure where first a subspace is selected for each $k$ point, followed by the final gauge selection to arrive at the localized basis of WFs:
+This leads to a two-step procedure where first a subspace is selected for each $k$-point, followed by the final gauge selection to arrive at the localized basis of WFs:
 \begin{equation}
 	\label{eq:Theory_fullwan}
 	\WanKet{n}{R} = \frac{V}{(2\pi)^3} \int_{BZ} d\bm{k} e^{-i \bm{k} \cdot \bm{R}} \sum_{m=1}^J U^{\bm{k}}_{nm} \sum_{l=1}^{J^{\bm{k}}} V_{ml}^{\bm{k}} \BlochKet{l}.
@@ -108,7 +108,7 @@ This leads to a two-step procedure where first a subspace is selected for each $
 There are again many ways to do this subspace selection (or {\it disentanglement}).
 The most prevalent two are by projection onto atomic-like orbitals, or by again minimizing the total spread of the WFs.
 We utilize the latter in this work.
-In this case, the maximal localization aims to find at each $k$ point the $V_{nm}^{\bm{k}}$ that leads to the maximal overlap of the selected subspace with its neighboring $k$ points.
+In this case, the maximal localization aims to find at each $k$-point the $V_{nm}^{\bm{k}}$ that leads to the maximal overlap of the selected subspace with its neighboring $k$-points.
 As discussed before, this smoothness in reciprocal space translates into the subspace as a whole being more localized in real space.
 Indeed, it can be shown \cite{Marzari2012} that this intrinsic smoothness is exactly what $\Omega_I$ measures in Eq.~\eqref{eq:Theory_omegaI}. 
 In many cases, it is desirable to adapt the algorithm so that the BFs of the bands inside a ``frozen'' energy window are exactly interpolated by the resulting WFs and associated Tight-Binding Hamiltonian.
@@ -121,7 +121,7 @@ In order to adhere closely to the continuous case, the discrete Fourier transfor
 	\tildeBlochKet{n} &= \sum_{\bm{R}} \eikr{R} \WanKet{n}{R},\label{eq:Theory_wantok}\\
 	\WanKet{n}{R} &= \frac{1}{N}\sum_{\bm{k}} \inveikr{R} \tildeBlochKet{n},
 \end{align}
-where $N$ denotes the number of unit cells in the periodic supercell in real space, equal to the number of $k$ points in the discrete mesh over the BZ.
+where $N$ denotes the number of unit cells in the periodic supercell in real space, equal to the number of $k$-points in the discrete mesh over the BZ.
 This discretization enforces periodic boundary conditions on the BFs over this supercell, meaning that the WFs in this definition also have this supercell periodicity.
 The localization criterion then means that inside the supercell the WFs are localized.
 If the mesh spacing tends to zero, the supercell tends to infinity, restoring the earlier definitions using continuous Fourier Transforms, and the original notion of WFs.
@@ -137,7 +137,7 @@ The final process to extract a Tight-Binding Hamiltonian in a WF basis, starting
 \begin{enumerate}
 	\item Perform a self-consistent DFT calculation in order to find the ground state density and BFs on a discrete $k$ mesh.
 	\item Define the $J$ trial orbitals (e.g. atomic-like) that are most suitable for the bands or problem under investigation. This can be done e.g. by perfoming a density of states calculation, projecting on the atomic orbitals.
-	\item Select an inner ``frozen'' window containing the most important bands, and, if entangled, an outer window from which to disentangle a $J$-dimensional subspace for each $k$ point.
+	\item Select an inner ``frozen'' window containing the most important bands, and, if entangled, an outer window from which to disentangle a $J$-dimensional subspace for each $k$-point.
 	\item Use a projection on the trial orbitals as the initial guess, followed by a minimization of $\Omega_I$ (Eq.~\eqref{eq:Theory_spread}) to find the $V_{ml}^{\bm{k}}$ matrices.
 	\item Find the final gauges $U_{nm}^{\bm{k}}$ in order to minimize the spread of each of the $J$ WFs.
 \end{enumerate}
