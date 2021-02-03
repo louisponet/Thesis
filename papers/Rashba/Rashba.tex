@@ -399,14 +399,14 @@ The situation in GeTe thus closely mimics the toy model we discussed in the elec
 Moreover, since the splitting is observed for the bulk band structure, we can rule out the contribution due to the relativistic Rashba-effect described in Section~\ref{sec:Rashba_relativistic} because of the small internal electric field that is associated with the polarization.
 
 \section{Methods}
-We utilize ab-initio DFT calculations (see Appendix~\ref{sec:DFT}) as implemented in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}, in order to study the band structure in GeTe.
+We utilize ab-initio DFT calculations (see Appendix~\ref{ch:DFT}) as implemented in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}, in order to study the band structure in GeTe.
 We performed both fully-relativistic and non-relativistic calculations, the latter in order to verify that a linearly varying chiral OAM texture shows up even without including atomic SOC.
 Both calculations used the Optimized Norm-conserving Vanderbilt Pseudo Potentials \cite{Hamann2013}, and a generalized-gradient approximation \cite{Perdew1993} with Perdew-Burke-Enzerhof parametrization for the exchange-correlation functional \cite{Perdew1996}.
 Plane waves with an energy up to 30 Ry were included, with a 120 Ry cutoff for the density.
 
 The reciprocal space was sampled using a 6x6x6 Monkhorst-Pack grid \cite{Pack1977} for the self-consistent calculations, with the convergence determined by a total energy variation of below $10^{-7}$ Ry between successive self-consistency iterations.
 
-Afterwards we used the {\texttt Wannier90} package \cite{Mostofi2014AnFunctions} to perform the Wannierization as described in Appendix~\ref{sec:Wannier}.
+Afterwards we used the {\texttt Wannier90} package \cite{Mostofi2014AnFunctions} to perform the Wannierization as described in Appendix~\ref{ch:Wannier}.
 As the initial guess we used projections onto hydrogenic $s$ and $p$ orbitals for both Ge and Te ions, since they are the main constituents of the bands around the Fermi level, as mentioned previously.
 A 10x10x10 $k$ grid was used for the sampling of the BZ during the Wannierization. 
 
@@ -420,7 +420,7 @@ The only Rashba term that plays a role along the $A$ --$Z$ -- $U$ path is of the
 since $\bm E = (0, 0, E)$, and the size of the field is included in $\alpha_R$ if we use the form of Eq.~\eqref{eq:Rashba_form}.
 \\\\
 The proposed mechanism is a result of the real space properties of the Bloch functions, making a description in terms of localized Wannier functions the ideal tool for our investigation.
-The Wannierization, as described in Section \ref{sec:Wannier}, provides us with a set of localized $s$- and $p$-like orbitals situated on Te and Ge, and a Tight-Binding model from which we can interpolate the band structure.
+The Wannierization, as described in Section \ref{ch:Wannier}, provides us with a set of localized $s$- and $p$-like orbitals situated on Te and Ge, and a Tight-Binding model from which we can interpolate the band structure.
 The densities of the Wannier functions for the spin-up Te orbital are displayed in Fig.~\ref{fig:Rashba_wannierfunctions}(a), with the spin-down orbitals having similar charge distributions.
 The combined spread of the 16 spinor Wannier functions\footnote{4x2 for the Te ion and 4x2 for the Ge ion.} is 53.4~\AA$^2$ (see Eq.~\eqref{eq:Theory_spread} for details).
 \begin{figure}
@@ -470,11 +470,6 @@ The calculated local properties of the Bloch functions are shown in Fig.~\ref{fi
 \IncludeGraphics[width=\linewidth]{OAMvsK1}
 \caption{\label{fig:Rashba_oamvseigvalv1}{\bf Properties of the Bloch functions in the first valence band.} a) Center of mass in the unit-cell. b) Eigenvalues. (c-f) $L_x$, $S_x$, $L_y$ and $S_y$ around the Te ion, respectively. The values are plotted in function of the relative distance to the $Z$ point, $|\bm{k}_r| = |\bm{k} - \bm{k}_Z|$, along the $A \rightarrow Z \rightarrow U$ path shown in Fig.~\ref{fig:Rashba_crystal}(b). The green graphs denote the values of non-relativistic calculations, whereas the orange and blue graphs denote those of the two spin-split bands resulting fully-relativistic calculations. See Fig.~\ref{fig:Rashba_bands_dos}(b) for the location of this first valence band in the band structure.}
 \end{figure}
-\begin{figure}
-	\centering
-\IncludeGraphics[width=\linewidth]{OAMvsK2}
-\caption{\label{fig:Rashba_oamvseigvalv2}{\bf Properties of the Bloch functions in the third valence band.} The panels depict the same properties as Fig.~\ref{fig:Rashba_oamvseigvalv1}, but for the third valence band (see number 3 in Fig.~\ref{fig:Rashba_bands_dos}(b)).}
-\end{figure}
 \\\\
 Many interesting local features of the Bloch functions can be observed in these figures, which we will now discuss in detail.
 \\\\
@@ -482,6 +477,11 @@ The main confirmation of our claim that OAM is at the root of the large splittin
 There is a clear linear variation of the OAM as $\bm k$ varies away from the $Z$ point, even though no atomic SOC is included.
 The only possible explanation for this unquenching can be found in expressions~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
 Moreover, $k_x$ remains zero along the $A$--$Z$ path, and we can observe that only $L_x$ develops due to the nonzero $k_y$. Only when $k_x$ is nonzero, along the $Z$--$U$ path, does $L_y$ show up. This dependence on $k_x$ and $k_y$ is fully consistent with the expressions for $L_x$ and $L_y$ in Eqs.~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
+\begin{figure}
+	\centering
+\IncludeGraphics[width=\linewidth]{OAMvsK2}
+\caption{\label{fig:Rashba_oamvseigvalv2}{\bf Properties of the Bloch functions in the third valence band.} The panels depict the same properties as Fig.~\ref{fig:Rashba_oamvseigvalv1}, but for the third valence band (see number 3 in Fig.~\ref{fig:Rashba_bands_dos}(b)).}
+\end{figure}
 \\\\
 If we then include fully-relativistic effects, thus also including the atomic SOC, we can see that an additional unquenching of the OAM shows up.
 This leads to a nearly constant shift of the OAM with opposite signs for the two sub bands, and is the sole contributor to the unquenching at the T-invariant $Z$ point.
