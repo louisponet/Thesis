@@ -1,6 +1,6 @@
-\chapter{Phase Field Modeling with the Finite Elements Method \label{ch:FEM}}
-In light of trying to be self-contained, we will give a short introduction into the methods used in simulating phase field models.
-The Finite Element Method constitutes a big part in these simulations, thus, in light of making this Thesis relatively self-contained, we give a short introduction to the topic based on Ref.~\cite{Biner}.
+\chapter{Phase Field Modeling with the Finite Elements Method \label{ch:Softening}}
+We give a short introduction into the methods we used in order to simulate phase field models such as the one in Chapter~\ref{ch:BTO}.
+The Finite Element Method constitutes a big part in these simulations, thus, in light of making this Thesis relatively self-contained, we give a short summary of the topic, based on Ref.~\cite{Biner}.
 \begin{figure}
 	\IncludeGraphics{fem}
 	\caption{\label{fig:BTO_fem}{\bf Finite Element Method.} a) Isoparametric local coordinate system for a triangular element. Image taken from Ref.~\cite{Biner}. b) 2D geometry spanned by triangular mesh demonstrating the flexibility of FEM meshes. Image taken from Ref.~\cite{2Dmesh}. c) Example of the geometry that is used in our simulations. d) Zoom in on the corner of the mesh shown in (c).}
@@ -34,29 +34,28 @@ They have to be chosen in such a way that they adhere to certain conditions:
 Since we need the derivatives of the $P$ and $u$ fields in order to calculate the free energy density, we perform the chain rule and find for any function $f$:
 \begin{align}
 	\label{eq:BTO_derivatives}
-	\frac{\partial f}{\partial \zeta} &= \sum_i^n \frac{\partial N_i}{\partial \zeta} \cdot f_i \\
+	\frac{\partial f}{\partial \zeta} &= \sum_i^n \frac{\partial N_i}{\partial \zeta} \cdot f_i, \\
 	\frac{\partial f}{\partial \eta}  &= \sum_i^n \frac{\partial N_i}{\partial \eta} \cdot f_i\nonumber.
 \end{align}
 In the numerical implementation, these derivatives are found for each element by first computing the Jacobian with the partial derivatives of the global coordinates $x$ and $y$ w.r.t the local ones $\zeta$ and $\eta$ and then performing an inversion.
 This inversion also requires calculating the determinant of the Jacobian, which can be reused to calculate the area or volume of the element to be used during the integration.
 
 Certain points, called quadrature points, are then selected inside each element.
-The function values of the $P$ and $u$ fields are then interpolated at these points using their values at the nodes of the element and the shape functions.
-Filling them into the free energy density Eq.~\eqref{eq:BTO_energy} results in an approximation of the contribution of each element to the total free energy, which is then found by summation. 
+The function values of the $P$ and $u$ fields are interpolated at these points using their values at the nodes of the element and the shape functions.
+Filling them into the free energy density, such as the one in Eq.~\eqref{eq:BTO_energy}, results in an approximation of the contribution of each element to the total free energy, which is then found by summation. 
 The nodal values of the fields are therefore the variables of our model. 
 A big bonus of the isoparametric representation, applied in this way, is that gradients of the fields can be evaluated purely locally, inside each element (see Eq.~\eqref{eq:BTO_derivatives}).
 It also allows for a great flexibility through the density of the chosen grid, the morphology of the elements, and the order of the interpolating shape functions $N_i$ that are used in Eq.~\eqref{eq:BTO_funcinterp}.
 
 We developed our own code in order to run the FEM simulations, based on the building blocks supplied by the \href{https://github.com/KristofferC/JuAFEM.jl}{JuAFEM.jl} package.
 We use a rectangular geometry uniformly spanned by tetrahedron elements, as shown in Fig.~\ref{fig:BTO_fem}(c,d).
-This choice is made since the uniform mesh mimics numerically the Peierls-Nabarro barriers that are created by the lattice of the crystal.
-As will be discussed further below, these pin the wall to a certain degree and should be taken into account for the simulation to be realistic.
+This choice is made since the uniform mesh mimics numerically the Peierls-Nabarro barriers that are present in any crystal due to the lattice.
 \\\\
-The last ingredient of the simulation is a way to optimize the fields in order to reach the equilibrium condition at minimum energy, both with and without applied tip.
+The last ingredient of the simulation is a way to optimize the fields in order to reach the equilibrium condition at minimum energy.
 To achieve this we use the Conjugate Gradient Method \cite{Hestenes1952,Hager2005} as implemented in the package Optim.jl \cite{mogensen2018optim}.
-It is an iterative scheme that uses the gradient and previous step to decide on the next step direction. 
+It is an iterative scheme that uses the gradient and previous step to choose the next step direction. 
 This requires us to determine the partial derivatives of the total energy in terms of all the degrees of freedom, i.e. the value of each component of $P$ and $u$ at the node points of the mesh.
 We chose to use a forward automatic differentiation scheme as implemented in ForwardDiff.jl \cite{RevelsLubinPapamarkou2016}, again for its remarkable simplicity and speed (as an idea, on a 24 core E5-2680 v3 server, the $\approx$ 3.5 million partial derivatives are computed in around 2 seconds).
-The core concept of this method lies in the realization that any computer program can be decomposed into elemental operations. By defining the derivatives of these, and by utilizing the chain rule, it is then possible to numerically generate the ``symbolically'' differentiated program numerically.
+The core concept of this method lies in the realization that any computer program can be decomposed into elemental operations. By defining the derivatives of these, and by utilizing the chain rule, it is then possible to generate the ``symbolically'' differentiated program numerically.
 The forward mode method in ForwardDiff.jl uses dual numbers that carry the information of both the value, as well as the residual value. These residuals accumulate the derivative values as the number flows through the operations of the program, which can be collected at the end to construct the partial derivatives.
 For further information see Ref.~\cite{Hoffmann2016}.
