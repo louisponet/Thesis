@@ -279,3 +279,93 @@ delete!(dio, arrow_entities
 dio.ledger.free_entities
 dio.ledger.components
 
+
+
+using Glimpse
+using ColorSchemes
+
+N = 10
+
+px(x, y, x0 = 0.0) = (x-x0) * exp(-sqrt((x-x0)^2 + y^2))
+py(x, y, x0 = 0.0) = y * exp(-sqrt((x-x0)^2 + y^2))
+px3(x, y, z, x0 = 0.0) = (x - x0) * exp(-sqrt((x-x0)^2 + y^2 +z^2))
+py3(x, y, z, x0 = 0.0) = z * exp(-sqrt((x-x0)^2 + y^2 + z^2))
+
+xrange = range(-2N,2N,length=600)
+yrange = range(-N,N, length=300)
+zrange = range(-N,N, length=300)
+px_orb1 = [px(x, y, 7) for x in xrange, y in yrange]'
+py_orb = [py(x, y) for x in xrange, y in yrange]'
+px_orb2 = [px(x, y, -7) for x in xrange, y in yrange]'
+
+p(K, r_part, args...) = exp(-1im*2pi * K)*(r_part * px(args...) + 1im*(1-r_part)*py(args...))
+p3(K, args...) = exp(-1im*2pi * K)* (px3(args...) + 1im*py3(args...))
+# p3(K, args...) = exp(-1im*2pi * K)* (px3(args...) +py3(args...))
+
+
+const K = 0.1
+const x0 = 4
+wfc  = [p3(0.0,  x, y, z) for x in xrange, y in yrange, z in zrange]
+
+
+wfc1 = [p3(K,  x, y, z,-x0) for x in xrange, y in yrange, z in zrange]
+wfc2 = [p3(-K,  x, y, z,x0) for x in xrange, y in yrange, z in zrange]
+sum(abs.(wfc1))
+sum(abs.(wfc))
+# dens = [(w = p3(K, x, y, z, -5) + p3(0.0, x, y, z) + p3(-K, x, y, z, 5); w' * w) * z for x in xrange, y in yrange, z in zrange]
+dens = [(w = p3(2K, x, y, z, -2x0) + p3(K, x, y, z, -x0) + p3(0.0, x, y, z) + p3(-K, x, y, z, x0) + p3(-2K, x, y, z, 2x0); abs(w)/sqrt(5)) * z for x in xrange, y in yrange, z in zrange]
+dio = Diorama()
+col = (x) ->Glimpse.RGBf0(get(ColorSchemes.rainbow, (angle(p3(0.0, x[1], x[2], x[3]))+ pi)/2pi))
+col1 = (x) ->Glimpse.RGBf0(get(ColorSchemes.rainbow, (angle(p3(K, x[1], x[2], x[3], -x0))+ pi)/2pi))
+col2 = (x) ->Glimpse.RGBf0(get(ColorSchemes.rainbow, (angle(p3(-K, x[1], x[2], x[3], x0))+ pi)/2pi))
+m = minimum(real.(dens))
+M = maximum(real.(dens))
+dipcol = (x) ->Glimpse.RGBf0(get(ColorSchemes.rainbow, (angle(p3(K, x[1], x[2], x[3], -x0) + p3(0.0, x[1], x[2], x[3]) + p3(-K, x[1], x[2], x[3], x0))+ pi)/2pi))
+# dipcol = (x) ->p3(K, x, y, z, -5) + p3(0.0, x, y, z) + p3(-K, x, y, z, 5) > 0 ? Glimpse.RGBf0(1.0,0.0,0.0) : Glimpse.RGBf0(0.0,0.0,1.0)
+grid = Glimpse.Grid([Point3f0(x, y, z) for x in xrange, y in yrange, z in zrange])
+
+Entity(dio, Glimpse.DensityGeometry(Float32.(abs.(wfc)), 0.30),Glimpse.Spatial(), grid, Glimpse.Alpha(1.0f0), Glimpse.Material(), Glimpse.FunctionColor(col))
+Entity(dio, Glimpse.DensityGeometry(Float32.(abs.(wfc1)), 0.30),Glimpse.Spatial(), grid, Glimpse.Alpha(1.0f0), Glimpse.Material(), Glimpse.FunctionColor(col1))
+Entity(dio, Glimpse.DensityGeometry(Float32.(abs.(wfc2)), 0.30),Glimpse.Spatial(), grid, Glimpse.Alpha(1.0f0), Glimpse.Material(), Glimpse.FunctionColor(col2))
+Entity(dio, Glimpse.DensityGeometry(Float32.(abs.(real.(dens))), 0.26),Glimpse.Spatial(), grid, Glimpse.Alpha(1.0f0), Glimpse.Material(), Glimpse.UniformColor(Glimpse.DEFAULT_COLOR), Glimpse.Alpha(0.6f0))
+
+dio[Glimpse.Camera3D].data[1].camerakind = Glimpse.Orthographic
+dio[Glimpse.Spatial][Entity(2)] = Glimpse.Spatial(position=Glimpse.Point3f0(200,-200,200))
+expose(dio)
+
+maximum(Float32.(abs.(wfc1)))
+
+dio.loop=nothing
+empty!(dio)
+empty!(dio.ledger.free_entities)
+
+k = 0.3
+t1 = [p(0, sqrt(2)/2, x, y) * p(0, sqrt(2)/2, x, y)' for x in xrange, y in yrange] 
+d1 = 30*[(p(k, sqrt(2)/2, x, y, -7)' * p(0, sqrt(2)/2, x, y) + p(-k, sqrt(2)/2, x, y,7)' * p(0, sqrt(2)/2, x, y)) *y for x in xrange, y in yrange]'
+sum(d1)
+k = -K
+d2 = 30*[(p(k, sqrt(2)/2, x, y, -7)' * p(0, sqrt(2)/2, x, y) + p(-k, sqrt(2)/2, x, y,7)' * p(0, sqrt(2)/2, x, y)) *y for x in xrange, y in yrange]'
+
+d1.+d2
+
+d1
+
+heatmap(xrange,yrange, real.(t1) )
+
+
+K = 0.1
+k = K
+d1 = 30*[((exp(-k*2π*1im/7) * (px(x, y, 7) + 1im*py(x, y, 7))+ exp(k*2π*1im/7) * (px(x, y, -7) + 1im*py(x, y, -7)) *(1im*py(x, y)+px(x, y))) + (exp(-k*2π*1im/7)*(1im*py(x, y, 7) + px(x, y, 7))  + exp(k*2π*1im/7)*(1im* py(x, y, -7) + px(x, y, -7))*(px(x,y) + 1im*py(x,y))))*y for x in xrange, y in yrange]'
+k = -K
+d2 = 30*[((exp(-k*2π*1im/7) * (px(x, y, 7) + 1im*py(x, y, 7))+ exp(k*2π*1im/7) * (px(x, y, -7) + 1im*py(x, y, -7)) *(1im*py(x, y)+px(x, y))) + (exp(-k*2π*1im/7)*(1im*py(x, y, 7) + px(x, y, 7))  + exp(k*2π*1im/7)*(1im* py(x, y, -7) + px(x, y, -7))*(px(x,y) + 1im*py(x,y))))*y for x in xrange, y in yrange]'
+
+heatmap(xrange, yrange, imag.(d1.+d2))
+
+K = 0.7
+k = K
+d3 = 30*[((exp(-k*2π*1im/7) * (px(x, y, 7) + 1im*py(x, y, 7))+ exp(k*2π*1im/7) * (px(x, y, -7) + 1im*py(x, y, -7)) *(1im*py(x, y)+px(x, y))) + (exp(-k*2π*1im/7)*(1im*py(x, y, 7) + px(x, y, 7))  + exp(k*2π*1im/7)*(1im* py(x, y, -7) + px(x, y, -7))*(px(x,y) + 1im*py(x,y))))*y for x in xrange, y in yrange]'
+k = -K
+d4 = 30*[((exp(-k*2π*1im/7) * (px(x, y, 7) + 1im*py(x, y, 7))+ exp(k*2π*1im/7) * (px(x, y, -7) + 1im*py(x, y, -7)) *(1im*py(x, y)+px(x, y))) + (exp(-k*2π*1im/7)*(1im*py(x, y, 7) + px(x, y, 7))  + exp(k*2π*1im/7)*(1im* py(x, y, -7) + px(x, y, -7))*(px(x,y) + 1im*py(x,y))))*y for x in xrange, y in yrange]'
+
+sum(d3 .+ d4 .- d2 .-d1)
+

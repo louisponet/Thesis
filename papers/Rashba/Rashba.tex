@@ -306,10 +306,6 @@ The second was found to originate from the hybridization of the $\Ket{s^{\bm 0}}
 It was found that both terms lead to a chiral texture of the OAM that varies linearly with $\bm k$.
 Through the atomic SOC, this linear-in-$\bm k$ OAM then couples to the spin which results in the final splitting with the Rashba-like form of Eq.~\eqref{eq:Rashba_from_OAM}.
 % An exaggerated demonstration for the case of $p_x + ip_z$ orbitalWe the use sshe in Fig.~\ref{fig:Rashba_interference}.
-% \begin{figure}
-% \IncludeGraphics[width=\linewidth]{interference.png}
-% \caption{\label{fig:Rashba_interference}{\bf Interference between orbitals with nonzero OAM.} Three neighboring unit cells are displayed, each with the same $p_x + ip_z$ orbital (thus having nonzero $l_y$). The wave functions of the left and right unit cells have their phase rotated by the plane-wave part $e^{i k_x R_x}$. The amplitude and phase of the wave function are encoded with the length and polar angle of the arrows. It is clear from the resulting phases (red arrows) that there exists constructive interference on the bottom half of the material, and destructive interference at the top half, which leads to the intercell dipoles.}
-% \end{figure}
 \\\\
 There is one other term that contributes to the linear variation of OAM with $\bm{k}$ that originates from the atomic SOC.
 
@@ -346,6 +342,16 @@ The new term originates from $ic_\alpha \bm k \cdot \bm n$ in Eq.~\eqref{eq:Rash
 \end{align}
 where we used the definitions of $\hat{H}_{\rm isb}$ in Eq.~\eqref{eq:dipole}, and we remind the reader that $L_x$ and $L_y$ are the values of $\hat{L}_x$ and $\hat{L}_y$ of the Bloch function at $\bm k = \bm 0$.
 These expressions show us that, due to ${\hat{H}_{soc} = \lambda \hat{\bm{L}}\cdot\hat{\bm{\sigma}}}$ and $\hat{H}_{\rm isb} = e E_z \hat{d}_z$, an additional term with the Rashba form in Eq.~\eqref{eq:Rashba_form} appears in the energy dispersion due to the creation of orbitals with nonzero $L_y$ and $L_x$ at the high-symmetry point.
+A visualization of how these orbitals with nonzero OAM lead to dipoles is shown in Fig.~\ref{fig:Rashba_interference}, where a demonstration is given using a $p_x + i p_z$ orbital, with OAM $L_y$.
+As we can see, when $k_x$ is varied away from 0, dipoles appear due to the interference between the rotated orbitals in the neighboring unit cells when the Bloch sum is performed.
+\begin{figure}
+	\centering
+\IncludeGraphics[width=0.65\linewidth]{piechart.png}
+\caption{\label{fig:Rashba_interference}{\bf Interference dipoles for Bloch functions with nonzero OAM.} Three neighboring unit cells along the $x$ direction are displayed, each with the same $p_x + ip_z$ orbital with nonzero $L_y$. The donut shaped isosurfaces denote the density of the orbitals, and the coloration of the surface indicates their phase. The dashed lines signify the unit cell boundary and $a_x$ the lattice constant. The blue isosurfaces show the density of the corresponding Bloch function $\sum_{n_x} e^{i k_x n_x} (p_x^{n_x} + ip_z^{n_x})$ for different $k_x$ values.
+a) $k_x$ = 0: the contributions to the dipole from the top of the unit-cell compensates the one originating from the bottom.
+b) $k_x$ = 0.1: the phases of the shifted orbitals constituting the total Bloch function neighboring are rotated by -0.2$\pi$ and +0.2$\pi$ for the left and right unit-cell, respectively. This is reflected in the rotated coloring of their surfaces. We see that the orbitals interfere constructively in the bottom half and destructively in the top half of the unit cells.
+c) $k_x$ = $\frac{\pi}{4}$: the phases are now rotated by $\pm \frac{\pi}{2}$, and total dipole is even more substantial than for panel (b).}
+\end{figure}
 \\\\
 Combining the linear--in--$\bm k$ terms found in the previous Sections, we arrive at the following effective Rashba Hamiltonian:
 \begin{equation}
