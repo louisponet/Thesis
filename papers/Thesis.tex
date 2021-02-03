@@ -168,51 +168,42 @@
 \titlepage
 
 \chapter*{Abstract}
-Theoretical condensed matter research is plagued by a fundamental issue of complexity. The sheer amount of degrees of freedom in a material of any technologically relevant scale is overwhelming (e.g. $\sim10^{23}$ electrons per cm$^3$), and make it impossible to describe the quantum mechanical wavefunction exactly.
-%\lp{there is some more nice things along this line in Wen}.
-%This forces researchers in the field to make approximations, as to make the problem tractable, while still capturing the essential physics resulting in the effects under investigation.
-The way to make progress with this undertaking has always been to try and isolate the parts of the system that play the biggest role in the effects under investigation, while neglecting those that only lead to more complexity.
+In an effort to reduce the sheer complexity associated with the many degrees of freedom encountered in Condensed Matter, it is beneficial to separate the full system under investigation into smaller subsystems.
+This separation is most often performed on the basis of energy and time scales, allowing one to focus on the subsystem with the energy scale of interest.
+Approximations for the influence of the decoupled subsystems can then be made treating them either as a smeared out average, leading to mean-field approximations, or as constant background potentials, resulting in adiabatic approximations. This procedure relies on the weak interaction, or coupling, between the subsystems.
+For example, in the case of the electron-phonon interaction, the influence of the electrons on the phonons, describing the displacements of the ions, can be approximated as an average charge field, with the fluctuations cancelling out on the time scales involved with the phonon dynamics.
+The electrons, on the other hand, experience the ionic potential as a constant background, remaining at the instantaneous ground-state with respect to it. This is, of course, the well-known Born-Oppenheimer or adiabatic approximation.
+When the interaction between the subsystems is non-negligible, however, these approximations can fail spectacularly.
+A prime example is superconductivity, where the electron-phonon coupling forms the linchpin for the exotic physics that is observed in these materials.
 
-As is well-known, every quantum mechanical system is governed fundamentally by its Hamiltonian. One could go so far as to say that if we would be able to exactly calculate all of the eigenvectors and eigenvalues of the Hamiltonian describing the material under study, the field of condensed matter would be completed. This is ofcourse impossible for reasons stated before.
-The full Hamiltonian can be decomposed into contributions from all parts of the system, and interactions between those parts.
-It is then quite straightforward to separate these into different energy scales, or through $\Ket{\psi(t)} = e^{-i \frac{\mathcal{H}t}{\hbar}}\Ket{\psi(0)}$, different characteristic timescales.
-There are two alleys along which one can proceed to simplify the problem. When the interactions between these parts are negligible, the two subsystems can be decoupled and solved separately.
-This is, for example, the case in materials for which the relativistic spin-orbit coupling can be ignored, decoupling completely the spin and charge sectors of the Hamiltonian.
-The second way is when the interaction is not negligible, but the time scales are so different that for the description of the slow varying subsystem, the interaction with the fast moving one can be described by an average, time independent one, so-called mean-field approximations.
-Vice versa, the slow moving subsystem can be taken as static for the description of the fast moving one.
-An example of this is the well-known Born-Oppenheimer approximation that assumes the reaction of the electrons to displacements of the ions inside the material to be instantaneous.
+In this Thesis we will investigate similar cases, where the interaction between the subsystems becomes as important as the other energetics that govern them.
+This leads to novel and unexpected behavior in these materials, which we study using analytical and numerical tools, often inspired by experimental measurements.
 
-Applying approximations like these systematically, allows to identify and approximately solve the important parts in order to describe many phenomena that present themselves in condensed matter.
-They form the backbone and starting point for further investigations gradually including more complexity to describe increasingly complex physics.
+In Chapter~\ref{ch:Rashba} we commence by investigating the underlying mechanisms that lead to the large Rashba-like spin-splitting in the electronic band structure of ferroelectric semiconductors with large atomic SOC.
+We uncover that, contrary to what is generally accepted, it is not the purely relativistic Rashba-Bychkov effect that lies at the core of this spin-splitting, but rather a combination of electrostatic effects with the appearance of a nonzero orbital angular momentum of the eigenstates.
 
-This Thesis will discuss effects that depend crucially on these, usually negligible, interactions between two relatively well-understood subsystems.
-The three main interactions that will be discussed are: relativistic spin-orbit coupling (SOC), coupling charge and spin sectors of the Hamiltonian; Heisenberg magnetic exchange striction, coupling spins to atomic displacements (phonons); and electrostriction, where ferroelectric polarization leads to an associated strain texture.
+This is followed in Chapter~\ref{ch:GdMn2O5} by a study on the very peculiar magnetoelectric switching that is observed in multiferroic GdMn$_2$O$_5$.
+Depending on the angle between the crystalline $a$ axis and an externally applied magnetic field, we uncover three distinct switching regimes for the ferroelectric polarization, one of which demonstrates a novel four-state hysteresis loop.
+Furthermore, this four-state regime displays a unidirectional 360$^\circ$ rotation of half the spins inside the material, during a double up--down sweep of the magnetic field.
+This unexpected behavior is a prime example of the additional behavior that can appear as a result of strongly coupled orders.
 
-These interactions are studied in functional materials, with the occasional eye towards applications in technology.
-The reason why these cross-order couplings can be interesting for technological applications, is that often one of the orders is more robust with respect to perturbations, and therefore more long-lived, but also harder to control efficiently.
-By exploiting the cross-order coupling, one could potentially control the robust order through perturbations on the coupled one in a more efficient manner.
+In Chapter~\ref{ch:CrSDW} the focus will be shifted towards the aspect of dynamical control with increased granularity, that can be achieved in systems with strongly coupled orders.
+We show that, in a thin film of elemental Chromium, an extremely precise control over a lattice vibration can be achieved through the excitations of a coupled spin density wave.
+By applying a carefully chosen set of optical pulses, this allows us to indirectly modulate the amplitude of the lattice vibration, increasing or destroying it in the process.
+We formulate and fit a Landau model based on the experimental measurements with two pulses, and speculate on the extended possibilities than could be achieved with a larger set of pulses. 
 
-In giant Rashba effect systems, the coupling between spin and ferroelectric order leads to a linear spin-splitting of the band structure, whose sign depends on the orientation of the ferroelectric polarization.
-We show that, rather than the relativistic Rashba effect, a combination of electrostatics and atomic spin-orbit coupling lies at the origin of the large splitting.
-
-The coupling between magnetism and ferroelectricity in multiferroic GdMn$_2$O$_5$ leads to a never before observed four-state hysteresis loop for the ferroelectric polarization, which depends on the magnitude, angle and history of the applied magnetic field.
-As we will show, this four-state hysteresis loop is accompanied by a full 360$^\circ$ rotation of spins in the material, which resembles the crankshaft of a car, converting the linear back-and-forth motion of the magnetic field into a rotational motion of the spins.
-
-In a thin film of elemental Chromium, the ultrafast dynamics of a spin density wave, coupled to a slower varying charge density wave, allows for a high degree of control of the latter through excitations of the former.
-This allows us to predict the sequence of optical pulses to be applied to the material in order to follow closely an enveloping signal function.
-
-And finally, the coupling between ferroelectricity and strain in BaTiO$_3$ leads to a softening at purely ferroelectric domain walls, allowing for some mechanical control of the position of this wall.
-
-We utilize both theoretical and computational tools to understand the nature of these interactions, how they lead to cross-order coupling in these materials, and how this ultimately translates into the experimentally observed behavior.
-\chapter*{Acknowledgements}
-\Include{Publications}
+Finally, We conclude this Thesis in Chapter~\ref{ch:Softening} by a systematic study of the implications on the mechanical properties of 180$^\circ$ ferroelectric domain walls in BaTiO$_3$, due to the interaction between strain and polarization.
+Surprisingly, these walls appear mechanically softer to a tip applied to the surface of the sample, even though they are not ferroelastic and thus do not separate domains with different strain textures.
+Based on the experimental observations and a numerical simulation, we uncover that the mechanical interaction between the tip and domain wall localized phonons explains the apparent softening.
+% \chapter*{Acknowledgements}
+% \Include{Publications}
 \setcounter{tocdepth}{1}
 \tableofcontents
 \mainmatter
-% \Include{Introduction}
+\Include{Introduction}
 
 % \Include{Rashba}
-\Include{GdMn2O5}
+% \Include{GdMn2O5}
 % \Include{Cr}
 
 % \Include{Softening}
@@ -221,6 +212,6 @@ We utilize both theoretical and computational tools to understand the nature of 
 % \Include{Wannier}
 % \Include{FEM}
 \backmatter
-\bibliography{references}
+% \bibliography{references}
 \printindex
 \end{document}
