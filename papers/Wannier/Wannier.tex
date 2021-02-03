@@ -10,25 +10,25 @@ The elements of the Hamiltonian are then calculated from the overlap integrals b
 \end{equation}
 where $\Ket{\alpha^{\bm i}}$ is the orbital $\alpha$ located on ionic site $i$ with center $\bm R_i$, and $t^{\bm i \bm j}_{\alpha \beta}$ the {\it hopping parameters} between the two orbitals, because they describe the process of annihilating an electron from orbital $\Ket{\beta^{\bm j}}$ and creating it on $\Ket{\alpha^{\bm i}}$.
 This Hamiltonian is periodic in the sense that if both $\Ket{\beta^{\bm j}}$ and $\Ket{\alpha^{\bm i}}$ are shifted by the same lattice translation, the hopping parameter will remain unchanged.
-Fourier transforming and diagonalizing the Hamiltonian then leads to the Bloch Functions and electronic band structure of the crystal \cite{Ashcroft}.
+Fourier transforming and diagonalizing the Hamiltonian then leads to the Bloch functions (BF) and electronic band structure of the crystal \cite{Ashcroft}.
 \\\\
-Another way of constructing such a model is by extracting the localized orbitals and hopping parameters from a first-principles based calculation such as DFT. In the Chapter that describes the Rashba spin-splitting in Germanium Telluride ~\ref{ch:Rashba} we opt for this method.
+Another way of constructing such a model is by extracting the localized orbitals and hopping parameters from a first-principles based calculation such as DFT. In Chapter~\ref{ch:Rashba} that describes the Rashba spin-splitting in Germanium Telluride, we opt for this method.
 This circumvents the need to perform many experiments in order to investigate the details of the band structure, and how certain effects are manifested in different materials. 
 
 The main question to answer then becomes how to define a such a set of localized orbitals starting from the extended BFs written in terms of the plane-wave basis set that is used in DFT.
-There are many ways to do this, but the most natural one in this case is by using a set of Wannier functions (WFs) \cite{Wannier1937} as the target localized basis.
+There are many ways to do this, but the most natural one in this case is by using a set of Wannier functions (WF) \cite{Wannier1937} as the target localized basis.
 
 We will here give a short recap of the excellent reviews by Marzari et. al. \cite{Marzari2003,Marzari2012}, starting with the most clear case of a single isolated band $n$ with BFs $\BlochKet{n}$ (see red window in Fig.~\ref{fig:Theory_blochvswan}(b)).
-The BF can be written in this case as a straightforward discrete Fourier transform of the WF: 
+The BF can then be written as a straightforward discrete Fourier transform of the WF: 
 \begin{equation}
 	\label{eq:Theory_1bandwan}
 	\BlochKet{n} = \eikr{r} \unkKet{n}{k} = \sum_{\bm{R}} \eikr{R} \WanKet{n}{R},
 \end{equation}
-with $\unkKet{n}{k}$ the periodic part of the BF, $\WanKet{n}{R}$ the localized WF centered in the unit cell defined by lattice vector $\bm{R}$, and $n$ the band index.
+with $\WanKet{n}{R}$ denoting the localized WF centered in the unit cell defined by lattice vector $\bm{R}$, and $n$ the band index.
 The comparison between BFs and WFs is made in Fig.~\ref{fig:Theory_blochvswan}.
 \begin{figure}
 	\IncludeGraphics{blochvswan.png}
-	\caption{\label{fig:Theory_blochvswan} a) A comparison between Bloch functions (left) and Wannier functions (right). The green graph in the left panel denotes the envelope function $\eikr{r}$, whereas the black one denotes the periodic part $\unkKet{n}{k}$. This image was taken from Ref.~\cite{Marzari2012}. b) Bandstructure of semiconductor GeTe, demonstrating three cases for Wannierization: red is a single disconnected band, green shows a disconnected composite manifold of connected bands, blue shows the situation when bands need to be disentangled.}
+	\caption{\label{fig:Theory_blochvswan} a) A comparison between Bloch functions (left) and Wannier functions (right). The green graph in the left panel denotes the envelope function $\eikr{r}$, whereas the black one denotes the periodic part $\unkKet{n}{k}$. This image was taken from Ref.~\cite{Marzari2012}. b) Bandstructure of semiconductor GeTe, demonstrating three cases for Wannierization: red is a single disconnected band, green shows a disconnected composite manifold of bands, blue shows the situation when bands need to be disentangled.}
 \end{figure}
 When $k=0$ we can see that $\unkKet{n}{k}$ is simply the sum over the WFs centered at different unit cells.
 In the case of $k \neq 0$, similar to how the envelope part modulates the periodic part of the BF, the contribution of each WF to the total sum needs to be modulated in a discrete way through $\eikr{R}$.
@@ -49,9 +49,9 @@ One of the most useful properties of the WFs lies in the realization that, throu
 \end{align}
 This means that by varying $\phi_n^{\bm{k}}$ we can adapt the WF basis in order for it to fulfill certain symmetries, or to localize the WFs as much as possible.
 \\\\
-In most practical problems we are interested in in groups of bands.
-The simplest case is when these form a composite manifold that is detached from other bands, such as the green valence bands in Fig.~\ref{fig:Theory_blochvswan}(b).
-It is useful to generalize the notion of the single band phase freedom $\phi_n^{\bm k}$ to a many-band gauge transformation:
+In most practical problems we are interested in in groups of bands, rather than just a single band.
+The easiest case is when these form a composite manifold that is detached from other bands, such as the green valence bands in Fig.~\ref{fig:Theory_blochvswan}(b).
+It is useful to generalize the notion of the single band phase freedom $\phi_n^{\bm k}$ to the many-band gauge transformation $U_{nm}^{\bm k}$:
 \begin{equation}
 	\label{eq:Theory_Umn}
 	\tildeBlochKet{m} = \sum_m U_{nm}^{\bm{k}} \BlochKet{n},
@@ -60,10 +60,10 @@ where $n,m$ enumerate the bands inside the composite manifold and the tilde is u
 We do this because these transformed states are no longer eigenstates of the Hamiltonian if $U_{nm}^{\bm{k}}$ has off-diagonal elements.
 Traces performed over such an isolated set of bands are invariant w.r.t. to these gauge transformations, leading to the invariance of observables such as the Hamiltonian which lies at the core of the ability to isolate and focus on this subproblem.
 Choosing a decent gauge in this case is a necessity in order to extract well localized WFs.
-This is because composite band manifolds will generally harbor crossings and degeneracies where the BFs become non-analytic making $\frac{\partial \unkr{n}{k}}{\partial \bm k}$ not smooth.
+This is because composite band manifolds will generally harbor band crossings and degeneracies where the BFs become non-analytic making $\frac{\partial \unkr{n}{k}}{\partial \bm k}$ not smooth.
 When the inverse Fourier transform is then performed on the BFs themselves, this non-smoothness will result in badly localized real-space WFs.
 Indeed, only for smoothly varying $\unkr{n}{k}$ will cancellations appear when $\bm{R}$ is large, due to the fast varying exponent $\eikr{R}$ in Eq.~\eqref{eq:Theory_wanfourier}.
-It is thus important to choose the $U_{mn}^{\bm k}$ in Eq.~\eqref{eq:Theory_Umn} so that the rotated wavefunctions $\tildeBlochKet{n}$ vary as smoothly as possible, which will ultimately lead to the WFs that are as localized as possible.
+It is thus important to choose the $U_{mn}^{\bm k}$ in Eq.~\eqref{eq:Theory_Umn} so that the rotated wavefunctions $\tildeBlochKet{n}$ vary as smoothly as possible, which will ultimately lead to the WFs that are as localized as possible when the inverse Fourier transform is performed.
 \\\\
 In order to quantify this localization of the WFs, a spread functional can be written as:
 \begin{equation}
@@ -73,10 +73,10 @@ In order to quantify this localization of the WFs, a spread functional can be wr
 which can be trivially split into a gauge-invariant and gauge-dependent part
 \begin{align}
 	\Omega &= \Omega_I + \tilde\Omega,  \\
-	\Omega_I &= \sum_n \left[\WanBra{n}{0} r^2 \WanKet{n}{0} - \sum_{m,\bm{R}} \left| \WanBra{m}{R} \bm{r} \WanKet{n}{0}\right|^2\right] \label{eq:Theory_omegaI}\\
+	\Omega_I &= \sum_n \left[\WanBra{n}{0} r^2 \WanKet{n}{0} - \sum_{m,\bm{R}} \left| \WanBra{m}{R} \bm{r} \WanKet{n}{0}\right|^2\right] \label{eq:Theory_omegaI},\\
 	\tilde\Omega &= \sum_{n,m} \sum_{\bm{R} \neq n,\bm{0}} \left|\WanBra{m}{R} \bm{r} \WanKet{n}{0}\right|^2.
 \end{align}
-For a set of isolated bands it thus suffices to minimize the gauge-dependent part in order to find the  unique set of maximally localized Wannier functions (MLFW)\footnote{It can be proved that these WFs will be exponentially localized in the case of normal insulators.} that consitute these bands \cite{Kunes2004, Marzari2012}.
+For a set of isolated bands it thus suffices to minimize the gauge-dependent part in order to find the  unique set of maximally localized Wannier functions (MLFW)\footnote{It can be proven that these WFs will be exponentially localized in the case of normal insulators.} that consitute these bands \cite{Kunes2004, Marzari2012}.
 
 We can then transform the position dependent operators into reciprocal space as \cite{Blount1962}:
 \begin{equation}
@@ -123,7 +123,7 @@ In order to adhere closely to the continuous case, the discrete Fourier transfor
 \end{align}
 where $N$ denotes the number of unit cells in the periodic supercell in real space, equal to the number of $k$-points in the discrete mesh over the BZ.
 This discretization enforces periodic boundary conditions on the BFs over this supercell, meaning that the WFs in this definition also have this supercell periodicity.
-The localization criterion then means that inside the supercell the WFs are localized.
+The localization criterion then means that the WFs are localized inside the supercell.
 If the mesh spacing tends to zero, the supercell tends to infinity, restoring the earlier definitions using continuous Fourier Transforms, and the original notion of WFs.
 \\\\
 After finding the $U^{\bm{k}}_{nm}$ and $V^{\bm{k}}_{nm}$ matrices of Eq.~\eqref{eq:Theory_fullwan}, any operator $\hat{f}^{\bm{k}}$ defined in terms of the BFs can be transformed into $\hat{F}^{\bm{R}}$ in the Wannier representation.
@@ -133,12 +133,12 @@ The values of $\hat{f}^{\bm{k}}$ can then be interpolated from $\hat{F}^{\bm{R}}
 This allows the efficient calculation of $\hat{f}^{\bm{k}}$ on a finer $k$ mesh than the one used in the DFT calculations, provided that the WFs are well localized inside the supercell.
 This efficient interpolation is one of the great advantages of using localized WFs, since the size of the WF basis, and thus dimensions of the matrices, is much lower than the one used in DFT (e.g. many plane waves).
 
-The final process to extract a Tight-Binding Hamiltonian in a WF basis, starting from an ab-initio DFT simulation, can thus be summarized as follows:
+The final process that we use in this Thesis to extract a Tight-Binding Hamiltonian in a WF basis, starting from an ab-initio DFT simulation, can thus be summarized as follows:
 \begin{enumerate}
 	\item Perform a self-consistent DFT calculation in order to find the ground state density and BFs on a discrete $k$ mesh.
 	\item Define the $J$ trial orbitals (e.g. atomic-like) that are most suitable for the bands or problem under investigation. This can be done e.g. by perfoming a density of states calculation, projecting on the atomic orbitals.
 	\item Select an inner ``frozen'' window containing the most important bands, and, if entangled, an outer window from which to disentangle a $J$-dimensional subspace for each $k$-point.
-	\item Use a projection on the trial orbitals as the initial guess, followed by a minimization of $\Omega_I$ (Eq.~\eqref{eq:Theory_spread}) to find the $V_{ml}^{\bm{k}}$ matrices.
+	\item Use a projection on the trial orbitals defined in (2) as the initial guess, followed by a minimization of $\Omega_I$ (Eq.~\eqref{eq:Theory_spread}) to find the $V_{ml}^{\bm{k}}$ matrices.
 	\item Find the final gauges $U_{nm}^{\bm{k}}$ in order to minimize the spread of each of the $J$ WFs.
 \end{enumerate}
 
