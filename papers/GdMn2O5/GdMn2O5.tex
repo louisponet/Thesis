@@ -383,62 +383,54 @@ We now turn to a discussion of the results obtained from these simulations of th
     The insets indicate the sequence of states visited during the cycle for each regime, and winding numbers (see Section~\ref{sec:GdMn2O5_topology} for further details on the latter).
 }
 \end{figure}
-The magnetoelectric switching simulations that result from the earlier described simulation procedure are showcased in Fig.~\ref{fig:GdMn2O5_theory}, displaying the same three regimes as the experimental results in Figure~\ref{fig:GdMn2O5_experiment1}.
-It is clear that we are able to reproduce the same three regimes (taking the right hand side of Fig.~\ref{fig:GdMn2O5_experiment1}(a) for the low angle regime).
-% We can identify the reversal of the polarization in the low angle regime, toggling between states 1 and 4, the small variation of $P_b$ for the high angle regime, toggling between states 1 and 2, and finally the magic angle regime where the four states are cycled through sequentially.
-The insets in each panel depict schematically the states that are visited by the system during the field sweeps.
+The magnetoelectric switching regimes of $P_b$ obtained from the simulations, are showcased in Fig.~\ref{fig:GdMn2O5_theory}, displaying the same three regimes as the experimental results in Figure~\ref{fig:GdMn2O5_experiment1}.
+Comparing the two figures demonstrates the close agreement between the two.\footnote{We compare the low angle regime with the right hand side of Fig.~\ref{fig:GdMn2O5_experiment1}(a).}.
+The insets in each panel of Fig.~\ref{fig:GdMn2O5_theory} depict schematically the sequence of states that is visited by the system during the field sweeps.
 
-As mentioned before, it appears that the magic angle regime (Fig.~\ref{fig:GdMn2O5_theory}(b)) is an interpolation between the low and high angle switching behaviors.
-At the start, it follows the high angle behavior moving 1$\rightarrow$2, then, mimicking the low angle behavior results in a reversal of the polarization on the 2$\rightarrow$3 branch, followed by an inversion symmetry partner of the high angle regime moving 3$\rightarrow$4 and finally another low angle-like reversal of the polarization, bringing the system from 4 back to the initial state 1. 
+As mentioned before, it appears that the magic angle regime (Fig.~\ref{fig:GdMn2O5_theory}(b)) is an interpolation between the low and high angle regimes.
+At the start, it follows the high angle behavior moving 1$\rightarrow$2, mimicking the low angle behavior then results in a reversal of the polarization on the 2$\rightarrow$3 branch, followed by an inversion symmetry partner of the high angle regime moving 3$\rightarrow$4 and finally another low angle-like reversal of the polarization, bringing the system from state 4 back to the initial state 1. 
 \\\\
-The trajectories through ($\phi_{L_1}$, $\phi_{L_2}$)-space, shown by the white lines in the bottom panels (d-f) of the same Figure, hint at the same conclusion.
-By connecting the trajectory of the low angle regime in (d) with the one at high angle in (f), and adding an inversion partner of both (i.e. one shifted by $\pi$ along $\phi_{L_1}$), we arrive at the trajectory of the magic angle regime in (e).
-The background energy surfaces are chosen to reflect how the barriers at an intermediate field value inside the hysteresis region differ depending on $\phi_H$.
-We will come back to these statements in the next Section, as they are quite crucial.
-\\\\
-In order to gain a deeper understanding of this peculiar behavior, we focus first on the energetics of the model as calculated by the simulations.
+In order to gain a deeper understanding of this peculiar behavior, we focus first on the energetics of the model, as calculated by the simulations.
 The intricacies of the energetics are ultimately what results in the deterministic, unidirectional, switching of the system.
 
 \subsection{Energetics}
 Before continuing, let us take a moment to recall some of the symmetries of the system, whose transformation properties were listed in Tab.~\ref{tab:GdMn2O5_symm} during the construction of the Hamiltonian.
-We focus on how the transformations due to inversion ($I$) and time-reversal ($T$) symmetry relate the angles of $\bm L_1$ and $\bm L_2$.
-The energy surfaces depicted in Fig.~\ref{fig:GdMn2O5_heatmap} in terms of these angles, for various field values $|H|$ when $\phi_H = +10^\circ$, may aid the reader in visualizing these symmetry operations.
-We observe there there are four degenerate energy minima, a result from the breaking of both symmetries in the low temperature phase.
-The angles $\phi_{L_1}$ and $\phi_{L_2}$ that describe in part the state of the system, can be transformed into one another through the relations:
+We focus on how the transformations due to inversion ($I$) and time-reversal ($T$) symmetry relate the angles of $\bm L_1$ and $\bm L_2$ ($\phi_{\bm L_1}$ and $\phi_{\bm L_2}$).
+The energy surfaces in terms of the angles are depicted in Fig.~\ref{fig:GdMn2O5_heatmap}, for a varying field with strength $|H|$ and angle $\phi_H = +10^\circ$.
+We observe that there are four degenerate energy minima, a result from the breaking of both $T$ and I symmetries in the low temperature phase.
+The angles $\phi_{L_1}$ and $\phi_{L_2}$, that describe in part the state of the system, can be transformed into each other through the relations:
 \begin{align}
 	I:\qquad &(\phi_{L_1}, \phi_{L_2}) \rightarrow (\phi_{L_1}+\pi, \phi_{L_2}),\\
 	T:\qquad &(\phi_{L_1}, \phi_{L_2})\rightarrow(\phi_{L_1}+\pi, \phi_{L_2}+\pi).
 \end{align}
-These symmetry operations are indicated by the black arrows in the top left panel in Fig.~\ref{fig:GdMn2O5_heatmap}.
+These symmetry operations are indicated by the black arrows in the top left and bottom right panels of Fig.~\ref{fig:GdMn2O5_heatmap}.
 \begin{figure*}[h!]
 	\centering
 	\IncludeGraphics{field_heatmap1}
-	\caption{{\bf Energy surfaces in terms of $(\phi_{L_1}, \phi_{L_2})$ for $\phi_H =+10^\circ$.} The shaded dots denote the four degenerate minima. The full white dot corresponds to the example situation discussed in the main text. An indication of its trajectory during a double up--down field sweep is given by the shaded lines. The two black arrows denote the time-reversal (T) and inversion (I) operations.\label{fig:GdMn2O5_heatmap}}
+	\caption{{\bf Energy surfaces in terms of $(\phi_{L_1}, \phi_{L_2})$ for $\phi_H =+10^\circ$.} The shaded dots denote the four degenerate minima, related by time-reversal ($T$) and inversion ($I$) symmetry operations indicated by the black arrows. The full white dot corresponds to the example situation discussed in the main text. An indication of its trajectory during a double up--down field sweep is given by the shaded lines.\label{fig:GdMn2O5_heatmap}}
 \end{figure*}
 \\\\
-When the strength of the magnetic field increases, we see that two long vertical ``valleys'' appear along the $\phi_{L_1}$ direction of the energy surface, separated by $\pi$ along $\phi_{L_2}$.
+When the strength of the magnetic field increases, we see that two long vertical ``valleys'' appear along the $\phi_{L_1}$-direction of the energy surface, separated by $\pi$ along $\phi_{L_2}$.
 We focus on the case where the initial state of the system corresponds to the top left minimum, indicated by the bright white dot in the top left panel, and a single up--down field sweep is applied.
-Following its trajectory, indicated by the shaded white lines, we find that the system flows from the original minimum to the one that is related by inversion symmetry.
+Following its trajectory, indicated by the shaded white lines, we find that the system first flows from the original minimum to the one that is related by inversion symmetry.
 This has rotated $\phi_{L_1}$ by $\pi$, while leaving $\phi_{L_2}$ unchanged.
 Through the $\bm L_1 \cdot \bm L_2$ part of the exchange striction, this causes the reversal of $P_b$, which is consistent with the inversion symmetry operation.
 The process we have described here corresponds to the first up--down cycle of the $P_b$ plot of Fig.~\ref{fig:GdMn2O5_theory}(b), i.e. the one that leads to the 1$\rightarrow$2$\rightarrow$3 branch.
 
-As it turns out, when the field is swept up and down a second time, the state progresses through the valley in the same direction, i.e. downwards through the edge at the bottom of the window, reappearing at the top, and finally landing in the original top left minimum.
+As it turns out, when the field is swept up and down a second time, the state progresses through the valley in the same direction, i.e. downwards through the edge at the bottom of the window, reappearing at the top, and finally landing in the original top left minimum (see Fig.~\ref{fig:GdMn2O5_heatmap}).
 This corresponds to the 3$\rightarrow$4$\rightarrow$1 branch of Fig.~\ref{fig:GdMn2O5_theory}(b).
-The exact trajectory that the system thus follows in ($\phi_{L_1}$,$\phi_{L_2}$) space is summarized in panel (e) of the same Figure.
 \\\\
 The sequence of states visited during this double up--down cycle of the field at $\phi_H = 10^\circ$, constitutes half of the possible configurations of the system (two low field and two high field states).
-The other half is related to the first by time-reversal symmetry as indicated by the diagonal black arrow in the top left panel of Fig.~\ref{fig:GdMn2O5_heatmap}.
-A similar trajectory through this valley on the right hand side of the energy surface would be followed if the initial state was one of the two zero field minima it harbors. 
+The other half is related to the first by time-reversal symmetry as indicated by the diagonal black arrow in the top left and bottom right panels of Fig.~\ref{fig:GdMn2O5_heatmap}.
+A similar trajectory through this valley on the right hand side of the energy surface would be followed if the initial state was in one of the two zero field minima it harbors. 
 We can thus conclude that the up--down cycling of the magnetic field at $\phi_H=10^\circ$ does not allow for a transition between the two valleys, and $\phi_{L_2}$ changes very little during the cycling process.
 \\\\
-From the trajectories shown in Fig.\ref{fig:GdMn2O5_theory}(d, f) for the two state regimes, i.e. the low and high angle regimes, respectively, we can deduce that no such unidirectional motion through the whole energy surface occurs when $\phi_H$ is away from the magic angle.
-This is rather puzzling since one would imagine that the minima behave in a similar way as in Fig.~\ref{fig:GdMn2O5_heatmap} they are required to obey the same symmetries.
+From these considerations, it seems that no such unidirectional trajectory is followed in the two state regimes (Fig.\ref{fig:GdMn2O5_theory}(a, c)) at low or high field angle $\phi_H$.
+This is rather puzzling since one would imagine that the minima behave in a similar way as in Fig.~\ref{fig:GdMn2O5_heatmap}, since they are required to obey the same symmetries.
 
 In fact, they do.
 \\\\
-However, and this is really the crux of the matter, the barriers between the minima do not. As it turns out, there are no symmetries that relate the barriers that flank a minimum from either side.
-This allows for them to change asymmetrically.
+However, and this is really the crux of the matter, the barriers between the minima do not. As it turns out, there are no symmetries that relate the barriers that flank a minimum from either side, allowing them to change asymmetrically.
 From our observations, it is the field angle $\phi_H$ that influences these asymmetric barriers, ultimately resulting in the three different switching regimes.
 \\\\
 We thus turn to a more careful investigation of the barriers, first by studying the results of Nudged Elastic Band simulations, displayed in Fig.~\ref{fig:GdMn2O5_neb}, followed by a simple theoretical argument.
@@ -446,8 +438,8 @@ We thus turn to a more careful investigation of the barriers, first by studying 
 \begin{figure}[h]
     \IncludeGraphics{neb}
     \caption{\label{fig:GdMn2O5_neb}{\bf Nudged Elastic Bands calculation.}
-    a) Evolution of transition barriers between states 1, 2, 3, 4 as the magnetic field is swept through the hysteresis region at $\phi_H = 10^\circ$. The plots are shifted vertically, and the model parameters were slightly altered for clarity. The latter increases the width of the hysteresis region. The curve colors encode the corresponding magnetic field strength. The blue circles and arrows show the trajectory of the energy minimum during the field sweeps.
-    b) The red square and corresponding schematic on the right shows the asymmetric evolution of the barrier 12 between states 2 and 1, and 23 between states 2 and 3, around the critical field $H^\ast$ where the barriers are of equal height.
+    a) Evolution of transition barriers between states 1, 2, 3, 4 as the magnetic field is swept through the hysteresis region at $\phi_H = 10^\circ$. The plots are shifted vertically, and the model parameters were slightly altered for clarity which increases the width of the hysteresis region. The curve colors encode the corresponding magnetic field strength. The blue circles and arrows show the trajectory of the energy minimum during the field sweeps.
+    b) Zoom of the corresponding dashed red box in panel (a), showing the asymmetric evolution of the barrier 12 between states 2 and 1, and 23 between states 2 and 3, around the critical field $H^\ast$ where the barriers are of equal height. The dashed black curve shows an example of the asymmetric barrier evolution discussed in the main text.
     }
 \end{figure}
 %
@@ -455,23 +447,23 @@ The Nudged Elastic Band calculations are a way to track how the low points of th
 Similar to the previous discussion, we track the evolution of the system starting in state 1, indicated at the far left of Fig.~\ref{fig:GdMn2O5_neb}(a).
 In the following we use {\it ij} to denote the energy barrier between states i and j.
 \\\\
-As the field increases (color change and vertical shift) the local minimum around state 1 becomes meta-stable when the barrier 12 between state 1 and 2 vanishes.
-Notice that at the point where the system moves to state 2, i.e. when the barrier 12 vanishes, the one between 14 is still present.
-When the field is lowered, the barrier 23 lowers faster than 12, causing the system to progress to state 3.
-A similar process then brings state 3$\rightarrow$4$\rightarrow$1 during the next up--down field sweep, since the barriers 34 and 12  (14 and 23) are related by the inversion transformation and  $E_{34} = E_{12}$ ($E_{41} = E_{23}$) (see the effect of {\it I} in Fig.\ref{fig:GdMn2O5_heatmap} for a visual confirmation of this statement).
+As the field increases (color change and vertical shift) the local minimum around state 1 becomes meta-stable when the barrier 12 between state 1 and 2 vanishes, moving the system towards state 2.
+Notice that the barrier between 14 is still present at that point.
+When the field is subsequently lowered, the barrier 23 lowers faster than 12, causing the system to progress to state 3.
+A similar process then brings state 3$\rightarrow$4$\rightarrow$1 during the next up--down field sweep, since the barriers 34 and 12  (14 and 23) are related by the inversion transformation and  $E_{34} = E_{12}$ ($E_{41} = E_{23}$) (see the effect of {\it I} in Fig.~\ref{fig:GdMn2O5_heatmap} for a visual confirmation of this statement).
 From this analysis it is clear that indeed the barriers evolve asymmetrically when the field changes.
 This is not surprising seen as the states at the top of the barriers\footnote{They are an interpolation between the states on either side of the barrier.} that flank a given minimum are in no way related by symmetry.
 
 Interestingly, this evolution of the potential energy surface is equivalent to that of a Thouless charge pump, in particular, the one induced by circular motion in the two-dimensional parameter space of the Rice-Mele model~\cite{Rice82} recently realized in ultra-cold gases \cite{Lohse16,Nakajima16,Atala13}.
 \\\\
 Combining the demonstration of the asymmetric evolution of the barriers in Fig.~\ref{fig:GdMn2O5_neb}, with the earlier discussion on the energy surfaces shown in Fig.~\ref{fig:GdMn2O5_heatmap}, leads us to the following conclusion, visualized in Fig.~\ref{fig:GdMn2O5_trajectories}.
-If the field is applied at a low angle, the barrier between states 1 and 4 is always lower than the one between states 1 and 2, leading to a 1$\rightarrow$4$\rightarrow$1 sequence as in Fig.~\ref{fig:GdMn2O5_theory}(a) and \ref{fig:GdMn2O5_trajectories}(a).
+For a system starting at state 1, if the field is applied at a low angle, the barrier between states 1 and 4 is always lower than the one between states 1 and 2, leading to a 1$\rightarrow$4$\rightarrow$1 sequence as in Fig.~\ref{fig:GdMn2O5_theory}(a) and \ref{fig:GdMn2O5_trajectories}(a).
 Conversely, when the field is applied at a high angle, the barrier towards state 2 is always lower than the one towards state 4, leading to the 1$\rightarrow$2$\rightarrow$1 toggling shown in Fig.~\ref{fig:GdMn2O5_theory}(c) and \ref{fig:GdMn2O5_trajectories}(c).
 There then has to exist a crossover angle where a combination of the two appears, leading in this case to the unidirectional cycling between 1$\rightarrow$2$\rightarrow$3$\rightarrow$4 as depicted in Figs.~\ref{fig:GdMn2O5_theory}(b),~\ref{fig:GdMn2O5_trajectories}(b), and more detailed in Figs.~\ref{fig:GdMn2O5_heatmap}, and \ref{fig:GdMn2O5_neb}(a).
 \begin{figure}
     \IncludeGraphics{heatmaps_trajectories}
     \caption{\label{fig:GdMn2O5_trajectories}{\bf Angle dependence of the trajectory through $(\phi_{\rm L_1},\phi_{\rm L_2})$ space.}
-    The trajectories of the system through $(\phi_{\rm L_1},\phi_{\rm L_2})$ space during the field sweep cycle are displayed in white for the low, magic and high angle regimes in panels (a),(b) and (c), respectively. The background color maps display the energy landscape at a field strength chosen to highlight the differences between the three regimes (see the black box for a demonstration in the different barrier hights). 
+    The trajectories of the system through $(\phi_{\rm L_1},\phi_{\rm L_2})$ space during the field sweep cycle are displayed in white for the low, magic and high angle regimes in panels (a),(b) and (c), respectively. The background color maps display the energy landscape at a field strength chosen to highlight the differences between the three regimes (see the black box for a demonstration of the different barrier heights). 
 }
 \end{figure}
 \\\\
@@ -487,7 +479,7 @@ Filling in $\frac{\partial E}{\partial H} = -M$, and subtracting the expressions
 \end{equation}
 where $M_{ij}$ denotes the value of the total magnetization for the state at barrier {\it ij}.
 This suggests that in the case of $\phi_H=10^\circ$ we have been discussing so far, $M_{23} < M_{12}$, which is confirmed by our simulations.
-Indeed, when $H<H^*$ as the field decreases, this leads to $E_{23} < E_{12}$ causing the system to move from state 2 to state 3.
+Indeed, starting at state 2, when $H<H^*$ as the field decreases, this leads to $E_{23} < E_{12}$ causing the system to move from state 2 to state 3.
 
 \subsection{Magnetic Configuration \label{sec:GdMn2O5_magnetic_configuration}}
 \begin{figure}[h!]
