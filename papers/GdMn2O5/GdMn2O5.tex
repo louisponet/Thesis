@@ -528,51 +528,49 @@ On the boundary between the two extremes one of the $\bm L_\alpha$ toggles while
 %
 %
 \subsection{Topology \label{sec:GdMn2O5_topology}}
-We have hinted a couple of times in this Chapter at the fact that the switching behavior carries some notion of topology with it.
+We have hinted multiple times throughout the previous Chapters at the topological nature of the switching behavior.
 We will sharpen our previous statements in this Section and comment on the generality and robustness of the observed behavior.
 \\\\
-Comparing the trajectories (white lines in Fig.~\ref{fig:GdMn2O5_theory}(d-f) and Fig.~\ref{fig:GdMn2O5_heatmap}) that describe the field evolution of the state, we see that it is confined to one of the vertical valleys, as discussed previously.
-This is true for all regimes. When $\phi_H = +10^\circ$, $\phi_{L_1}$ varies strongest, whereas for $\phi_H = -10^\circ$, $\phi_{L_2}$ varies the most, while the system as a whole remains inside the valley that hosts the original state, in both cases.
+Comparing the trajectories (white lines in Fig.~\ref{fig:GdMn2O5_trajectories} and Fig.~\ref{fig:GdMn2O5_heatmap}) that describe the field evolution of the state of the system, we see that it is confined to one of the vertical valleys, as discussed previously.
+This is the case for all possible switching regimes. When $\phi_H = +10^\circ$, $\phi_{L_1}$ varies strongest, whereas for $\phi_H = -10^\circ$, $\phi_{L_2}$ varies the most, while in both cases the system as a whole remains inside the valley that hosts the original state.
 
-In the two state regimes (Fig.~\ref{fig:GdMn2O5_theory}(d,f)), the system remains in the neighborhood of the starting point, with the trajectory contractible to a single point. 
-In the four state regime in Fig.~\ref{fig:GdMn2O5_theory}(e), as we have seen, the system progresses through the entire valley in a unidirectional sense, connecting the top and bottom edges, with $\bm{L}_1$ rotating a full $360^\circ$.
-
-In this case, the path can not be fully contracted in the same way which highlights its {\em  topologically distinct} nature compared to the other two regimes.
-Indeed, for such trajectories in the two-dimensional $(\phi_{\rm L1},\phi_{\rm L2})$ space with a torus topology, we can define a winding number $Q$ as:
+In the two state regimes (Fig.~\ref{fig:GdMn2O5_trajectories}(a, c)), the system remains in the neighborhood of the starting point, with the trajectory contractible to a single point, whereas in the four state regime in Fig.~\ref{fig:GdMn2O5_trajectories}(b), the system progresses through the entire valley in a unidirectional sense, connecting the top and bottom edges while $\bm{L}_1$ rotates a full $360^\circ$.
+In the latter case, the path can not be fully contracted to a single point, which highlights its {\em  topologically distinct} nature compared to the two state switching regimes.
+Indeed, in the $(\phi_{\rm L1},\phi_{\rm L2})$-space with a torus topology, we can assign a winding number $Q$ to such trajectories, defined as:
 \begin{equation}
 Q=\frac{1}{2\pi}\int_0^{t_0} dt (L_1^x\partial_t L_1^y - L_1^y \partial_t L_1^x) - (L_2^x\partial_t L_2^y - L_2^y \partial_t L_2^x),
 \end{equation}
 where the integral is taken over the time interval, $t_0$, during which the magnetic field is ramped up and down twice and the system is returned to its initial state.
-In the two state switching regimes, $Q  = 0$, whereas for the four state switching, $Q = 1$.
-This means that as long as the low and high angle regimes are present in a material (Fig~\ref{fig:GdMn2O5_theory} (d,f)), there will always exist a boundary region near the magic angle (Fig~\ref{fig:GdMn2O5_theory}(e)), interpolating between the two, and leading to the circular four state hysteresis.
+In the two state switching regimes, $Q  = 0$, whereas for the four state switching we find $Q = 1$.
+This means that as long as the low and high angle regimes are present in a material (Fig~\ref{fig:GdMn2O5_trajectories} (a,c)), there will always exist a boundary region near the magic angle that interpolates between the two (Fig~\ref{fig:GdMn2O5_trajectories}(b)), leading to the circular four state magnetoelectric switching loop.
 \\\\
 We finish this Section by demonstrating the generality of this behavior that results from its topological nature.
 
-The size and position of the $\phi_H$ interval for which the four state regime appears, depends on the details of the used parameters, but similarly to other topological boundaries (e.g. magnetic domain walls, topologically protected edge states in topological insulators), it can not be destroyed when the neighboring ``domains'' are present (high and low angle switching regimes).
+The size and position of the $\phi_H$ interval for which the four state regime appears, depends on the details of the model parameters, but similarly to other topological boundaries (e.g. magnetic domain walls, topologically protected edge states in topological insulators), it can not be destroyed when the neighboring ``domains'' are present (high and low angle switching regimes in this case).
 The influence of varying a single model parameter is demonstrated in Fig.~\ref{fig:GdMn2O5_windingvsparam}, where the blue and red regions correspond to the angles $\phi_H$ where the low and high angle regimes appear, respectively.
 Indeed, we see that for many parameters the four state region (displayed in grey) exists as the boundary between the regions of the two state regimes.
-One can also observe that the influence of some parameters is greater than others. For instance, taking $v_1=0.7$ meV dramatically increases the width of the four state switching region to the interval of [5.2$^\circ$, 17.6$^\circ$] for $\phi_H$.
-However, even at very high values of $v_1$ does the four state switching appear.
+One can also observe that the influence of some parameters is greater than others. For instance, taking $v_1=0.7$ meV dramatically increases the width of the four state switching region to the interval [5.2$^\circ$, 17.6$^\circ$] for $\phi_H$.
+However, even for very high values of $v_1$ does the four state switching appear.
 A small variation to $K_L$, the strength of the Mn single-ion anisotropy, on the other hand, leads to a significant change to the characteristics of the topologically protected region.
-This is not surprising, since the behavior of the Mn chains is very similar to that of the usual spin-flop transition, which crucially depends on the easy-axis anisotropy. This latter point will be discussed further in the next Section.
+This is not surprising, since the behavior of the Mn chains is very similar to that of the usual spin-flop transition, which crucially depends on the easy-axis anisotropy. This latter point will be expanded upon in the next Section.
 \begin{figure}
 	\IncludeGraphics{winding_modelparam.png}
-	\caption{\label{fig:GdMn2O5_windingvsparam} {\bf Magic Angle region.} The panels demonstrate the influence of selected model parameters on the magic angle region. In each panel only the parameter labeled on the vertical axis is varied, whereas the others are kept at the values reported in the Methods Section \ref{sec:GdMn2O5_methods}. All parameters are reported in units of meV. The blue and red regions denote the angles $\phi_H$ for which the low angle and high angle switching regimes appear, respectively. The grey boundary region is where the magic angle switching occurs, characterized by a winding number of 1, and is topologically protected by the neighboring regimes.}
+	\caption{\label{fig:GdMn2O5_windingvsparam} {\bf Magic Angle region.} The panels demonstrate the influence of selected model parameters on the magic angle region. In each panel only the parameter labeled on the vertical axis is varied, whereas the others are kept at the values reported in the Methods Section \ref{sec:GdMn2O5_methods}. All parameters are reported in units of meV. The blue and red regions denote the angles $\phi_H$ for which the low angle and high angle two state switching regimes appear, respectively. The grey boundary region is where the magic angle four state switching occurs, characterized by a winding number of 1, and is topologically protected by the neighboring regimes.}
 \end{figure}
 \\\\
 We have so far given a detailed description of the observed behavior, experimentally and from the simulations of our effective model.
 While the model reproduces the experiments remarkably well, and we have found that a combination of symmetries and energetics lies at the core of the peculiar switching behavior, one may wonder if this can be rationalized further.
-In attempt to do just this, we proceed in the following Section with some intuitive considerations of the behavior.
+In attempt to do just this, we proceed in the following Section with some intuitive considerations.
 
 \subsection{Intuition}
 First of all, we would like to point out the similarity of the behavior of $\bm L_1$ and $\bm L_2$ with the well-known spin-flop transition in antiferromagnets.
 As mentioned before around Eq.~\eqref{eq:GdMn2O5_Zeeman}, when a magnetic field is applied along the easy-axis of an antiferromagnetic material, the antiferromagnetic order will flip perpendicular to it when the field grows.
-This occurs when the Zeeman energy that can be gained through canting (see Eq.~\eqref{eq:GdMn2O5_Zeeman}) outweighs the penalty incurred from the misalignment with the easy axis.
+This occurs when the Zeeman energy that can be gained through canting outweighs the penalty incurred from the misalignment with the easy axis.
 
-The sudden flip is a result of a similar flattening of the energy potential as what happens in our case at the switching field. A visual representation of this flattening can be found in the energy surface displayed in the panel for a field magnitude $|H| = 4.33$ in Fig.~\ref{fig:GdMn2O5_heatmap}, where the valley has an almost uniform purple color.
-In such flat potentials, a small imbalance to one direction can lead to a big movement of the order parameter, which is exactly what leads to the sudden reorientation of the spins in a spin-flop transitions.
-In our case, a clear signature of these sudden variations is found in the jumps of $P_b$ in Fig.~\ref{fig:GdMn2O5_theory}(a-c) around the aforementioned field of $\sim$ 4 T.
-The remarkable difference of the behavior described here, compared to the vanilla spin-flop transition, is that a well defined flop direction is preferred. In spin-flops it makes no difference whether the system flops by $+90^\circ$ or $-90^\circ$. Here it does, and the ``flop direction'' of $\bm L_1$ or $\bm L_2$ is always the same.
+The sudden spin-flop is a result of a similar flattening of the energy potential as what happens in our case at the switching field. A visual representation of this flattening can be found in the energy surface displayed in the panel for a field magnitude $|H| = 4.33$ in Fig.~\ref{fig:GdMn2O5_heatmap}, where the valley has an almost uniform purple color.
+In such flat potentials, a small imbalance to one direction leads to a big movement of the order parameter, which is exactly what leads to the sudden reorientation of the spins in spin-flop transitions.
+In our case, a clear signature of these sudden variations is found in the jumps of $P_b$ in Fig.~\ref{fig:GdMn2O5_theory} around the aforementioned field of $\sim$ 4 T.
+The remarkable difference of the behavior described here, compared to the vanilla spin-flop transition, is that a well defined flop direction is preferred. In spin-flops it makes no difference whether the system flops by $+90^\circ$ or $-90^\circ$. Here it does, and the ``flop direction'' of $\bm L_1$ or $\bm L_2$ at the switching field strength is always the same.
 \\\\
 While further microscopic studies are needed to completely unravel the reason behind this, we suggest that this coaxing of the $\bm L$ is due to the exchange interaction with the Gd spins. We attempt to describe the idea by following the evolution of the two highlighted spins in Fig.~\ref{fig:GdMn2O5_4configs}.
 
@@ -581,7 +579,7 @@ Since the field is applied at an angle smaller than the $23.4^\circ$ angle of th
 
 When the chain then eventually flops with an 90$^\circ$ increment, the Gd spin reorients as to optimize the exchange with the chain.
 This leads to an alignment of the Gd spin that was originally at a positive relative angle w.r.t. the field ($\phi_{Gd}>10^\circ$), to now be at a negative relative angle ($\phi_{Gd}<10^\circ$).
-When the field subsequently decreases, the Gd rotates further in the same direction, towards negative angles, thus pulling the Mn chains towards one of the flop directions, leading to another 90$^\circ$ rotation (this time to align again with the easy axis anisotropy).
+When the field subsequently decreases, the Gd rotates further in the same direction, towards negative angles, thus pulling the Mn chains towards one of the flop directions, leading to another 90$^\circ$ rotation (this time the flop happens to align again with the easy axis anisotropy due to a diminished Zeeman energy gain through canting).
 
 %
 % \begin{figure}[h]
@@ -601,8 +599,8 @@ We hope that this intuitive picture shines some light on what might be happening
 
 \section{Simplified Model}
 Having modeled the topologically protected switching in  GdMn$_2$O$_5$ with all its complexity, one may wonder what the minimal requirements are to have a similar behavior where the spins rotate 360$^\circ$ while the applied field only oscillates along a single axis.
-It is clear from the spin configurations in Fig.~\ref{fig:GdMn2O5_spin_configs}, and from previous considerations, that the chain with Mn moments most parallel to the applied field does the full rotation, while the other chain merely toggles around its starting orientation. As mentioned before, the Gd spins mostly follow the behavior of the chain they are most strongly coupled to. This warrants an attempt to reproduced the behavior of the rotating spins using only a single Mn chain with Gd spins, coupled to it via $v_1$. 
-In the particular case where the magic angle is along $\phi_H = +10^\circ$, we therefore keep $L_1$, $S_2$, $S_3$, $S_6$ and $S_7$ as the remaining variables in the model.
+It is clear from the spin configurations in Fig.~\ref{fig:GdMn2O5_spin_configs}, and from previous considerations, that the chain with Mn moments most parallel to the applied field does the full rotation, while the other chain merely toggles around its starting orientation. As mentioned before, the Gd spins mostly follow the behavior of the chain they are most strongly coupled to. This warrants an attempt to reproduce the behavior of the rotating spins using only a single Mn chain with the Gd spins that are coupled to it via $v_1$. 
+In the particular case where the magic angle is along $\phi_H = +10^\circ$, we therefore keep $L_1$, $S_2$, $S_3$, $S_6$ and $S_7$ as the remaining variables in the model (see Fig.~\ref{fig:GdMn2O5_simplified_model}).
 Furthermore, we neglect the easy axis anisotropy of Gd spins because of its small contribution due to the isotropic environment of the Gd spins.
 This leaves us with the following Hamiltonian, combining two parts, one with the dipolar terms $H_{dip}$ and another with all the other terms, $H'$:
 \begin{align}
@@ -625,13 +623,13 @@ This leads us to the equations:
 as a minimal model that still demonstrates the crankshaft-like behavior.
 
 This minimal model embodies the intuitive explanation that we laid out in the previous Section, relying on the interaction between the two Gd spins and the magnetic field to push the AFM order into the positive direction at the switching field.
-When the chain flips, the exchange field from the Mn ions then pushes the Gd spins in the same positive direction, thus completing the first part of the cycle.
-During the second cycle the same consideration leads to the further positive rotation of the spins.
+When the chain flips, the exchange field from the Mn ions then pushes the Gd spins further in the same positive direction, thus completing the first part of the cycle.
+During the second cycle the same considerations lead to the continued positive rotation of the spins.
 
 
 \begin{figure}[b]
 	\IncludeGraphics[width=0.9\columnwidth]{simplified_model.png}
-	\caption{\label{fig:GdMn2O5_simple_model}{\bf Spins in the simplified model.} The zero field configuration of the spins that perform the full rotation (360$^\circ$), used in the simplified model \eqref{eq:GdMn2O5_simple_model}, and indicated by the arrows. Spins $S_6$ and $S_7$ are translated by $b$ and $2a$, respectively, from their original position in the second half of the cell for clarity. Due to the symmetry of the model and the geometry, the two clusters are copies of eachother, allowing the model to focus on the top right set, encased in the red box.}
+	\caption{\label{fig:GdMn2O5_simple_model}{\bf Spins in the simplified model.} The zero field configuration of the spins that perform the full rotation (360$^\circ$), used in the simplified model \eqref{eq:GdMn2O5_simple_model}, and indicated by the arrows. Spins $S_6$ and $S_7$ are translated for clarity by $b$ and $2a$, respectively, from their original position in the second half of the cell. Due to the symmetry of the model and the geometry, the two clusters are copies of eachother, allowin us to focus on the top right cluster, encased in the red box.}
 \end{figure}
 
 \section{Conclusions}
