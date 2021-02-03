@@ -344,37 +344,35 @@ To conclude this Section, we gather all the terms in our effective Hamiltonian:
 \end{multline}
 
 \section{Methods \label{sec:GdMn2O5_methods}}
-Before continuing with the results and a discussion of the physics, we comment briefly on the numerical side of this Chapter.\\\\
+Before continuing with the results and a discussion of the physics, we comment briefly on the numerical aspects of our simulations used throughout the rest of this Chapter.\\\\
 The first question to address is what model parameters to use in conjunction with the Hamiltonian in Eq.~\eqref{eq:GdMn2O5_model}.
 This is not particularly straightforward, since our model is phenomenological, and the order parameters and interactions arise from a combination of the microscopic ones.
-One could formulate, instead, a model in terms of all the microscopic degrees of freedom, i.e. all the spins of both Gd and Mn ions.
-Not only would that lead to a more computationally demanding model, the increased complexity makes developing an intuitive understanding that much harder\footnote{As we will see, even this model leads to very intricate behavior that is hard to disentangle and rationalize fully}.
+One could, instead, formulate a model in terms of all the microscopic degrees of freedom, i.e. all the spins of both Gd and Mn ions, which would not only lead to a more computationally demanding model, the increased complexity also makes developing an intuitive understanding much harder.
 That means that calculating the coefficients separately from first-principles is very hard, if not impossible. Even in the case of a fully microscopic spin model, it is not well-known in general how to acquire a correct set of exchange parameters from DFT.
-In any case, we chose here to rather make physically inspired initial guesses for the model parameters, after which we further refined these in order to best reproduce the experimental behavior.
+We thus opted to rather make physically inspired initial guesses for the model parameters, after which we further refined these in order to best reproduce the experimental behavior.
 \\\\
 We know, for example, that the Gd -- Mn magnetic exchange parameter towards the closest chain is larger than towards the other ($v_1>v_2$), and that the order of magnitude for this energy contribution is a few meV.
-Furthermore, we mentioned a few times already that the single-ion anisotropy energy for Gd is expected to be small due to the isotropic environment and valence configuration with completely quenched orbital angular momentum.
-Instead, the single-ion anisotropy of the Mn ions and, by proxy, the chains is again on the order of a few meV.
+Furthermore, as we mentioned a few times already, the single-ion anisotropy energy for Gd is expected to be small due to the isotropic environment and valence configuration with completely quenched orbital angular momentum.
+Instead, the single-ion anisotropy of the Mn ions and, by proxy, the chains, is again on the order of a few meV.
 Lastly, due to the large intrachain $\Jpar$ and small interchain $\Jperp$ magnetic exchanges, we know that $\gamma = \frac{\Jperp^2}{\Jpar}$ and $\chi = \frac{\Jpar}{g^2\mu_B^2}$ are very small.
 \\\\
 Taking all these considerations into account, we found that the following model parameters reproduce the observations of the experiments well:  
 $v_1 = 7.9$~meV, $v_2 = 0.15$~meV, $K_L = 1.1$~meV, $K_S = 0.09$~meV, $\gamma = 0.05$~meV, $\chi=0.01$~meV$^{-1}$.
-The parameters for the exchange striction were then chosen to fit the experimental hysteresis loop as well as possible:
+The parameters for the exchange striction were then also chosen to fit the experimental hysteresis loop as well as possible:
 ${\beta_1 = 0.06\,\mu}$C/cm$^2$, $\beta_2 = 0.06\:\mu$C/cm$^2$, $\beta_3 = 0.04\:\mu$C/cm$^2$.
 \\\\
-However, these parameters are by no means a requirement for the overarching behavior to exist. As we will show in greater detail in the following Section, more specifically in the context of the discussion on the topological nature of the switching, a great deal of freedom exists in choosing these parameters, if the only requirement is to reproduce the three switching regimes.
+However, these parameters are by no means a requirement for the overarching behavior to appear in our model. As we will show in greater detail in the Section discussing the topological nature of the switching behavior~\ref{sec:GdMn2O5_topology}, a great deal of freedom exists in choosing these parameters, if the only requirement is to reproduce the three switching regimes.
 This lies at the heart of our claim that this effect might exist in other materials, since neither the model itself nor its parameters depend greatly on the microscopic details of GdMn$_2$O$_5$. 
 \\\\
 The next question is how to simulate the experimental set-up, which is, in contrast to the question about the model parameters, much easier to answer.
 Since the behavior only shows up at temperatures below $\sim$ 4 K, is remarkably deterministic, and is a result of quasi-statically applied magnetic fields, we simulated it as a series of simple minimization problems.
 This entails taking one of the degenerate starting configurations, increasing the field by a small amount, minimizing the energy, applying a further increased field, and so on, thus tracking the local minimum at all steps.
-It is quite remarkable that performing this relatively simple process, purely based on optimizing the energetics of the system, leads to a faithful reproduction of the observed behavior.
-This is another indication of the topological nature of the switching behavior.
-As we will show more explicitly below, it is sort of an extreme variant of the behavior of Thouless charge pumps, and especially of their recent realization in ultra-cold gases. \cite{Rice82,Thouless1982,Thouless83,Lohse16,Nakajima16, Atala13}.
-It is extreme in the sense that it requires no tunneling whatsoever, which forms the core reason for the fully deterministic behavior.
+It is quite remarkable that performing this relatively simple process, purely based on optimizing the energetics of the system, leads to a faithful reproduction of the observed behavior, which is another indication of the topological nature of the switching behavior.
+As we will show more explicitly below, it is sort of an extreme variant of the behavior of Thouless charge pumps, and especially of their recent realization in ultra-cold gases \cite{Rice82,Thouless1982,Thouless83,Lohse16,Nakajima16, Atala13}.
+It is extreme in the sense that it requires no tunneling whatsoever, which forms the core reason behind the fully deterministic behavior.
 \\\\
 
-We now turn to a discussion of the results obtained from the simulations of the effective spin Hamiltonian Eq.~\eqref{eq:GdMn2O5_model}.
+We now turn to a discussion of the results obtained from these simulations of the effective spin Hamiltonian Eq.~\eqref{eq:GdMn2O5_model}.
 
 \section{Results and discussion \label{sec:GdMn2O5_results_discussion}}
 \begin{figure}
