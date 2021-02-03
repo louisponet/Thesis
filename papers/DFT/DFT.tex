@@ -2,12 +2,12 @@
 Many of the physics in condensed matter originates from the behavior of electrons inside materials, i.e. the electronic structure, which can be studied quantitatively in two ways.
 \\\\
 The first is to formulate an analytical model whose parameters are subsequently fitted to experimental observations. 
-In this case, the Tight-Binding method is a prime example that is often used in condensed matter for its flexibility and simplicity.
+In this case, the Tight-Binding method is a useful tool example that is often employed in condensed matter for its flexibility and simplicity.
 
 The starting point of any Tight-Binding model is the set of orbitals that are used as the basis.
-In electronic problems, one often uses the valence orbitals of the constituent ions \cite{Bloch1929,Slater1954}.
+In electronic problems, one often uses the valence orbitals of the constituent ions of the crystal \cite{Bloch1929,Slater1954}.
 The Hamiltonian can then be constructed as a set of hopping parameters between these orbitals, where the symmetries of the problem are used to limit the set of independent parameters.
-These hopping parameters are termed this way because in a second quantization formulation they denote the energetics of the process of annihilating an electron on the first orbital and creating it on the second.
+These hopping parameters are termed as such because they describe the energetics the process of annihilating an electron on the first orbital and creating it on the second.
 This ``hops'' the electron between the two.
 The limited set of model parameters can then be fitted to experimental measurements such as angle resolved photoemission spectroscopy~\cite{Damascelli2004}.
 \\\\
@@ -24,18 +24,18 @@ Writing the Hamiltonian as
 \begin{equation}
 	\hat{\mathcal{H}} = -\frac{\hbar}{2m_e} \sum_i \nabla_i^2 + \sum_i V_{\rm ext}(\bm{r}_i) + \frac{1}{2}\sum_{i\neq j} \frac{e^2}{|\bm{r}_i - \bm{r}_j|},
 \end{equation}
-where the indices $i,j$ iterate over the electrons\footnote{The ionic terms are easily included and are not the core difficulty and thus omitted here.}, the statement is that $V_{\rm ext}$ is uniquely defined by $n_0(\bm{r})$, and vice versa.
+where the indices $i,j$ iterate over the electrons\footnote{The ionic terms are easily included and are not the core difficulty and thus omitted here.}, the statement is that $V_{\rm ext}(\bm r)$ is uniquely defined by $n_0(\bm{r})$, and vice versa.
 Thus, as soon as the ground-state density is found, the exact Hamiltonian of the system is known.
-This in turn, theoretically speaking, allows one to find all other eigenstates of the system, fully characterizing the system.
+This in turn allows one to, theoretically speaking, find all other eigenstates of the system, fully characterizing the system.
 
-The second pillar is formed by the ability to define a universal functional for the total energy of the system $E[n]$ in terms of the density $n(\bm{r})$, which is valid for any external potential $V_{\rm ext}$.
+The second pillar is formed by the ability to define a universal functional for the total energy of the system $E[n]$ in terms of the density $n(\bm{r})$, which is valid for any external potential $V_{\rm ext}(\bm r)$.
 The density that globally minimizes this functional is then equal to the ground-state density $n_0(\bm{r})$.
 \\\\
 In order to turn these foundational first two pillars into a practically usable framework, one has to address the question of the form of the energy functional $E[n]$, leading us straight to the third pillar: the Kohn-Sham Ansatz \cite{Kohn1965}.
 In essence, this ansatz makes the assumption that the original many-body problem can be replaced by an auxiliary independent-particle problem, both having exactly the same ground-state density $n_0(\bm{r})$.
 This means that, theoretically speaking, calculations for the many-body problem can be exactly translated instead into calculations using independent-particle methods.
 It is found that a set of independent particle equations can thus be formulated, lumping all the cumbersome many-body exchange and correlation effects together into the so-called ``exchange-correlation'' functional $E_{xc}[n]$.
-If the exact form of $E_{xc}[n]$ were known, DFT would lead to the exact solutions of the original many-body problem.
+If the exact form of $E_{xc}[n]$ was known, DFT would lead to the exact solutions of the original many-body problem.
 The success of the DFT method from a numerical and quantitative point of view can be wholly attributed to the ability of finding local or semi-local approximations to this functional that manage to reproduce the original many-body problem quite well, using a mean-field description.
 \\\\
 Bringing everything together, we can write down the total energy functional of the auxiliary independent-particle system as:
@@ -51,13 +51,13 @@ These formulae are at the core of the method, i.e. by minimizing the total energ
 To do this, most practical implementations use a self-consistent algorithm which iteratively constructs the energy contributions from the previous trial density $n_i$, diagonalizes the resulting Hamiltonian, and uses the eigenstate with the lowest energy to construct a new trial density $n_o$, after which the algorithm is repeated until $n_o$ is sufficiently close to $n_i$. Equivalently, this means that $E[n_i] \approx E[n_o]$ through the Hohenberg-Kohn theorems, i.e. self-consistency between the density and resulting $V_{\rm ext}$ is reached.
 It can be shown that this process leads to, at least, a local minimum of the Kohn-Sham functional~\eqref{eq:Theory_kohnsham}.
 The question of how to reach the global minimum of any function, let alone any functional, is from an entirely different caliber that we wish to avoid in this Thesis.
-In the vast majority of practical cases no matter what starting density is used, the final self-consistent density will be that of the ground-state. Indeed, many practical codes initialize the density completely randomly. 
+In the vast majority of practical cases, no matter what starting density is used, the final self-consistent density will be that of the ground-state. Indeed, many practical codes initialize the density completely randomly. 
 \\\\
 There are many ways to numerically implement DFT, with the basis set used to construct the Hamiltonian being the main differentiating factor.
 Since we are interested in extended systems such as crystals, a plane-wave basis set comes very natural.
 We know that the eigenstates for the periodic potentials found in crystalline systems are Bloch Functions \cite{Ashcroft}:
 \begin{equation}
-	\Ket{\psi^{\bm{k}}_n} = \eikr{r} \Ket{u^{\bm{k}_n}},
+	\Ket{\psi^{\bm{k}}_n} = \eikr{r} \Ket{u^{\bm{k}}_n},
 \end{equation}
 where $\eikr{r}$ denotes the envelope function, and $\Ket{u^{\bm{k}}_n}$ the cell-periodic part (see left hand side of Fig.~\ref{fig:Theory_blochvswan}(a)), and $n$ the band index.
 Using a plane-wave basis $\Ket{\phi^{\bm G}}$ such that $\Sandwich{\bm{r}}{\phi^{\bm G}} = e^{i\bm G \cdot \bm r}$, we can write the Bloch Functions as:
@@ -69,19 +69,19 @@ By using these plane-wave basis functions, the energy contributions in Eq.~\eqre
 In practice one rather constructs the Hamiltonian of the system, and diagonalizes it in order to find the coefficients $c_n^{\bm G}$ in Eq.~\eqref{eq:Theory_bloch_plane} corresponding to the lowest eigenstates of the system (up to the Fermi level).
 A new trial density can then be constructed from these, which is used in the Hamiltonian of the next iteration, and so on until self-consistency is reached.
 \\\\
-One problem arises when using this plane-wave basis set, namely that close to the ionic cores $\Ket{u_n^{\bm k}}$ varies sharply in space, and plane-waves with high wavevector $\bm G$ are needed to resolve this sharp variation.
+One problem arises when using this plane-wave basis set, namely that close to the ionic cores $\Ket{u_n^{\bm k}}$ varies sharply in space, and fast oscillating plane-waves with high wavevector $\bm G$ are needed to resolve this sharp variation.
 This leads to a large basis set, and thus operators (such as the Hamiltonian) with large dimensions, making the calculations extremely expensive.
 \\\\
 To overcome this issue, another approximation is often used: the so-called Pseudopotentials that replace the exact ionic potentials \cite{Hamann1979,Louie1982,Vanderbilt1990,Joubert1999}.
-Pseudopotentials are defined in such a way that the wavefunctions match identically the exact ones (if real ionic potentials would be used) outside a chosen core region, but have less sharp variations inside the core region.
-Smoother wavefunctions can be described by plane-waves with lower wavevector, ultimately reducing drastically the size of the basis set used in the DFT calculations.
-Using the pseudopotential approximation generally results in good results for most properties that are of interest, since in many cases these properties do not depend on the exact shape of the wavefunctions close to the ionic cores.
+Pseudopotentials are defined in such a way that the wavefunctions match identically the exact ones (i.e. as a result of the real ionic potentials) outside a chosen core region around the ion, but have less sharp variations inside the core region.
+Smoother wavefunctions can be described by plane-waves with lower wavevector, ultimately reducing drastically the required size of the basis set used in the plane-wave based DFT calculations.
+Using the pseudopotential approximation generally leads to good results for most properties that are of interest, since in many cases these properties do not depend on the exact shape of the wavefunctions close to the ionic cores.
 \\\\
 While DFT offers impressive efficiency and predictive power for many materials, rationalizing the results obtained with it is often less trivial.
-This is mainly because of the large basis set that is used in the calculations, and the fact that a description in terms of extended plane-waves is often hard to grasp on an intuitive level.
-At the start of this Section we commented on the simplicity and flexibility that is offered by the use of Tight-Binding models.
+This is mainly because of the still relatively large basis set that is used in the calculations, and the fact that a description in terms of extended plane-waves is often hard to grasp on an intuitive level.
+At the start of this Appendix we commented on the simplicity and flexibility that is offered by the use of Tight-Binding models.
 There we saw that the parameters of these models can be fitted from experimental observations, which leads to an empirical method.
 
-However, one may wonder if instead of using angle resolved photoemission experiments as an input for the model, the results of a DFT calculation could be employed.
+However, one may wonder if, instead of using angle resolved photoemission experiments as an input for the model, the results of a DFT calculation could be employed.
 The DFT calculation would then act as a ``numerical experiment'', and the Tight-Binding model as a way to rationalize the behavior.
 The required bridge connecting the two can be formed by the Wannier functions and Wannierization, discussed in Appendix~\ref{sec:Wannier}. 
