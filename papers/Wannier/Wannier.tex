@@ -13,7 +13,7 @@ This Hamiltonian is periodic in the sense that if both $\Ket{\beta^{\bm j}}$ and
 Fourier transforming and diagonalizing the Hamiltonian then leads to the Bloch Functions and electronic band structure of the crystal \cite{Ashcroft}.
 \\\\
 Another way of constructing such a model is by extracting the localized orbitals and hopping parameters from a first-principles based calculation such as DFT. In the Chapter that describes the Rashba spin-splitting in Germanium Telluride ~\ref{ch:Rashba} we opt for this method.
-This circumvents the need to perform many experiments in order to investigate the details of the bandstructure, and how certain effects are manifested in different materials. 
+This circumvents the need to perform many experiments in order to investigate the details of the band structure, and how certain effects are manifested in different materials. 
 
 The main question to answer then becomes how to define a such a set of localized orbitals starting from the extended BFs written in terms of the plane-wave basis set that is used in DFT.
 There are many ways to do this, but the most natural one in this case is by using a set of Wannier functions (WFs) \cite{Wannier1937} as the target localized basis.
@@ -148,7 +148,7 @@ The main quantity we will use this interpolation for is the Hamiltonian:
 	\tilde{H}_{nm}^{\bm{k}} = \tildeBlochBra{n} H \tildeBlochKet{m} = \sum_{\bm{R}} \eikr{R} \WanBra{n}{0}H\WanKet{n}{R}.
 \end{equation}
 
-This Hamiltonian can then be diagonalized by unitary transformations $W^{\bm{k}}$ in order to recover the interpolated bandstructure of the $J$ bands in the chosen window:
+This Hamiltonian can then be diagonalized by unitary transformations $W^{\bm{k}}$ in order to recover the interpolated band structure of the $J$ bands in the chosen window:
 \begin{equation}
 H_{nm}^{\bm{k}} = [W^{\bm{k}\dagger} \tilde{H}_{nm}^{\bm{k}} W^{\bm{k}}]_{nm} = \delta_{nm} \varepsilon_{n}^{\bm{k}}.
 \end{equation}

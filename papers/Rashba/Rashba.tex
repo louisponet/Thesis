@@ -40,7 +40,7 @@ How exactly will be the topic of the Theory Section~\ref{sec:Rashba_Theory}.
 \\\\
 Because of the ferroelectricity due to inversion symmetry breaking, an internal electric field is generated through the dipoles that are associated with the polarization.
 Combined with the high atomic SOC, a sizable linear energy splitting between spin-polarized states can appear in these materials \cite{DiSante2013}, contrary to the tiny effect described above.
-This $\bm k$ dependent splitting manifests itself in the bandstructure as conical intersections surrounding time-reversal (T) invariant points of the Brillouin Zone (BZ) (see Fig.~\ref{fig:Rashba_intro_dispersion}).
+This $\bm k$ dependent splitting manifests itself in the band structure as conical intersections surrounding time-reversal (T) invariant points of the Brillouin Zone (BZ) (see Fig.~\ref{fig:Rashba_intro_dispersion}).
 These points are special in the sense that the Kramers degeneracy \cite{Kramerstheorem} is enforced through the translational symmetry of the lattice, rather than by the usual inversion symmetry.
 If we take a spin up Bloch state at such a T-invariant point and apply the time-reversal operator ($\bm k \rightarrow \bm {-k}$, $\bm{\sigma} \rightarrow -\bm{\sigma}$), it is brought to a point on the opposite side of the BZ, and can be translated back to the starting point through a reciprocal lattice translation ($-\bm k + \bm G = \bm k$). This translation does not change the spin, however, and the resulting spin down state thus has to have the same energy as the original up spin state, since the system obeys both T symmetry and translational symmetry.
 So, even though the broken inversion symmetry destroys the Kramers degeneracy at general $k$-points, which is what allows for the spin-splitting in the first place, it is still present at these T-invariant points, ultimately resulting in the intersecting cones depicted in Fig.~\ref{fig:Rashba_intro_dispersion}.
@@ -62,12 +62,12 @@ Some of these underlying effects are well-known, while others are more obscure.
 We will find that the more obscure ones actually dominate in most cases, and that the largest contributions stem from a combination of electrostatic and relativistic effects.
 \\\\
 As a hallmark example of ferroelectrics that demonstrate a large spin-splitting, we focus in the numerical portion of this Chapter on simulations performed for Germanium Telluride (GeTe).
-Its dispersion is exactly the one we used to demonstrate the conical shape of the bandstructure, displayed Fig.~\ref{fig:Rashba_intro_dispersion}(a).
+Its dispersion is exactly the one we used to demonstrate the conical shape of the band structure, displayed Fig.~\ref{fig:Rashba_intro_dispersion}(a).
 To investigate how the microscopic effects, identified in the Theory Section~\ref{sec:Rashba_Theory}, manifest themselves in GeTe, we use DFT followed by a Wannierization in order to gain access to the local, real space, properties of the Bloch functions.
 \begin{figure}[h]
 	\IncludeGraphics{intro_dispersion_svg.png}
 	\caption{\label{fig:Rashba_intro_dispersion}
-		{\bf Large Rashba splitting} a) The band dispersion of the first valence band in GeTe around the $Z$ point of the Brillouin zone (see Fig.~\ref{fig:Rashba_bands_dos} for details). The blue and red graphs show the non-relativistic (NSOC) and relativistic (SOC) bandstructure, respectively. The $u-d$ and $u'-d'$ labels designate the up and down spin-polarized bands, where the prime signifies that the orientation of the spin up--down axis depends on $\bm{k}$. b) Generic example of intersecting conical energy surfaces due to the linear spin-splitting. The spin texture is indicated by the arrows. This chiral spin texture is what leads to the changing orientation of the up-down spin axis.}
+		{\bf Large Rashba splitting} a) The band dispersion of the first valence band in GeTe around the $Z$ point of the Brillouin zone (see Fig.~\ref{fig:Rashba_bands_dos} for details). The blue and red graphs show the non-relativistic (NSOC) and relativistic (SOC) band structure, respectively. The $u-d$ and $u'-d'$ labels designate the up and down spin-polarized bands, where the prime signifies that the orientation of the spin up--down axis depends on $\bm{k}$. b) Generic example of intersecting conical energy surfaces due to the linear spin-splitting. The spin texture is indicated by the arrows. This chiral spin texture is what leads to the changing orientation of the up-down spin axis.}
 \end{figure}
 
 We finish with a conclusion that summarizes the observations and where we make the claim that the linear spin-splitting often attributed to the relativistic Rashba-effect is almost exclusively a result of the other effects we shall uncover.
@@ -384,7 +384,7 @@ The first BZ for this low temperature structure is shown in panel (b), with the 
 
 \begin{figure}[h!]
 	\IncludeGraphics[width=0.9\linewidth]{bands_dos.png}
-\caption{\label{fig:Rashba_bands_dos}{\bf Bandstructure of GeTe.} a) Non-relativistic calculation. b) Fully-relativistic calculation. In both panels the bandstructure was colored according to the contribution of the constituent orbitals, as indicated in the flanking density of state plots. The bands that have larger $s$ character are located 5 eV below the shown window.}
+\caption{\label{fig:Rashba_bands_dos}{\bf Bandstructure of GeTe.} a) Non-relativistic calculation. b) Fully-relativistic calculation. In both panels the band structure was colored according to the contribution of the constituent orbitals, as indicated in the flanking density of state plots. The bands that have larger $s$ character are located 5 eV below the shown window.}
 \end{figure}
 In the calculations reported below, we used a unit cell with lattice parameter $a=$4.28~\AA, leading to a volume of 53.4~\AA$^3$.
 This makes the unit cell near identical to the experimental one, which has a volume of 53.3~\AA$^3$~\cite{Serebryanaya1995}.
@@ -399,7 +399,7 @@ The situation in GeTe thus closely mimics the toy model we discussed in the elec
 Moreover, since the splitting is observed for the bulk band structure, we can rule out the contribution due to the relativistic Rashba-effect described in Section~\ref{sec:Rashba_relativistic} because of the small internal electric field that is associated with the polarization.
 
 \section{Methods}
-We utilize ab-initio DFT calculations (see Appendix~\ref{sec:DFT}) as implemented in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}, in order to study the bandstructure in GeTe.
+We utilize ab-initio DFT calculations (see Appendix~\ref{sec:DFT}) as implemented in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}, in order to study the band structure in GeTe.
 We performed both fully-relativistic and non-relativistic calculations, the latter in order to verify that a linearly varying chiral OAM texture shows up even without including atomic SOC.
 Both calculations used the Optimized Norm-conserving Vanderbilt Pseudo Potentials \cite{Hamann2013}, and a generalized-gradient approximation \cite{Perdew1993} with Perdew-Burke-Enzerhof parametrization for the exchange-correlation functional \cite{Perdew1996}.
 Plane waves with an energy up to 30 Ry were included, with a 120 Ry cutoff for the density.
@@ -420,14 +420,14 @@ The only Rashba term that plays a role along the $A$ --$Z$ -- $U$ path is of the
 since $\bm E = (0, 0, E)$, and the size of the field is included in $\alpha_R$ if we use the form of Eq.~\eqref{eq:Rashba_form}.
 \\\\
 The proposed mechanism is a result of the real space properties of the Bloch functions, making a description in terms of localized Wannier functions the ideal tool for our investigation.
-The Wannierization, as described in Section \ref{sec:Wannier}, provides us with a set of localized $s$- and $p$-like orbitals situated on Te and Ge, and a Tight-Binding model from which we can interpolate the bandstructure.
+The Wannierization, as described in Section \ref{sec:Wannier}, provides us with a set of localized $s$- and $p$-like orbitals situated on Te and Ge, and a Tight-Binding model from which we can interpolate the band structure.
 The densities of the Wannier functions for the spin-up Te orbital are displayed in Fig.~\ref{fig:Rashba_wannierfunctions}(a), with the spin-down orbitals having similar charge distributions.
 The combined spread of the 16 spinor Wannier functions\footnote{4x2 for the Te ion and 4x2 for the Ge ion.} is 53.4~\AA$^2$ (see Eq.~\eqref{eq:Theory_spread} for details).
 \begin{figure}
 \IncludeGraphics{Wannierfunctions.png}
 \caption{\label{fig:Rashba_wannierfunctions}{\bf Wannier functions} a) The spin-up Wannier functions of the orbitals around the Tellurium ion. The isosurface is constructed from the norm of the wavefunctions, with the coloration denoting the sign of the real part. b) The charge density in the central unit cell of the Bloch function of the top valence band, at $k=$ (0, 0.1, 0.9) \AA$^{-1}$. The OAM ($\bm L$), polarization ($\bm P$), and $\bm k$ vector are shown by the red, blue, and green arrows, respectively. In each panel, the unit cell is denoted by the wireframe, and the Te and Ge ions are yellow and grey, respectively.}
 \end{figure}
-The Wannier interpolation of the ab-initio bandstructure is shown in Fig.~\ref{fig:Rashba_wannierization}, which demonstrates a close agreement between the interpolated and ab-initio bands in the chosen window, and the valence bands in particular. 
+The Wannier interpolation of the ab-initio band structure is shown in Fig.~\ref{fig:Rashba_wannierization}, which demonstrates a close agreement between the interpolated and ab-initio bands in the chosen window, and the valence bands in particular. 
 \begin{figure}
 \IncludeGraphics{wanvsdft.png}
 \caption{\label{fig:Rashba_wannierization}{\bf Wannier interpolation.} Bandstructure interpolation by the Tight-Binding Hamiltonian in terms of the Wannier functions for non-relativistic (a) and relativistic (b) calculations.}

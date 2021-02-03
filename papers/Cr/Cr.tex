@@ -2,7 +2,7 @@
 \section{Introduction}
 In all previous Chapters, we discussed situations for which the order parameters were static, or at least at instantaneous equilibrium.
 For GeTe, the polarization and resulting spin splitting were fixed.
-Even though the thermal excitation of polar phonons can lead to a non-trivial dynamical splitting in the bandstructure, on the slower phonon timescale electrons can still be assumed to be at the instantaneous equilibrium with the ionic potential \cite{Monserrat2017}.
+Even though the thermal excitation of polar phonons can lead to a non-trivial dynamical splitting in the band structure, on the slower phonon timescale electrons can still be assumed to be at the instantaneous equilibrium with the ionic potential \cite{Monserrat2017}.
 This is because, as alluded to before, the electronic dynamics is generally many orders of magnitude faster than the atomic ones, meaning that the Born-Oppenheimer approximation remains valid.
 In the study on GdMn$_2$O$_5$, the changing magnetic structure and corresponding ferroelectric polarization was orders of magnitude faster than the slowly varying applied magnetic field, again allowing for an equilibrium description.
 This allows for further research into the dynamics of these effects, since they are certainly accessible by using faster varying magnetic fields.
@@ -22,8 +22,7 @@ By using ultrafast pump-probe experiments that have a sub picosecond resolution,
 In this Chapter we explore and investigate the additional possibilities opened up by applying a sequence of optical excitations spaced at various points in time.
 We start by demonstrating the experimental observations made by applying not one, but two optical pulses to the SDW, and how their spacing changes drastically the response of the probed PLD.
 This showcases the additional complexity and control achieved over the standard single pump-probe experiments that were performed previously \cite{Singer2015prb, Singer2015prb}. 
-Among various possibilities, this additional control allows for the suppression of the intermediate nonequilibrium state thus reproducing adiabatic transitions on much faster timescales than would be possible without this control.
-This is termed ``shortcuts to adiabaticity'' in quantum technology \cite{Torrontegui2013,Deffner2014,Zhou2017}.
+Among various possibilities, this additional control allows for the suppression of the intermediate nonequilibrium state thus reproducing adiabatic transitions on much faster timescales than would be possible without this control, which is termed ``shortcuts to adiabaticity'' in quantum technology \cite{Torrontegui2013,Deffner2014,Zhou2017}.
 After developing a phenomenological model, and fitting its parameters to reproduce the two pump-probe experiments, we utilize it to design a train of pulses such that the PLD oscillation follows a particular envelope function.
 We also comment on the characteristics of the model in order to gain a deeper understanding of what lies at the heart of this extended control. 
 
@@ -46,17 +45,17 @@ The scattering intensity of the fringe associated with the PLD is highlighted by
 Due to the pinning of the PLD to the boundaries of the thin film, its phase can be obtained from the interference between its corresponding peaks and those that originate from the thin film geometry \cite{Singer2015prb}.
 This allows us to track the time evolution of the amplitude and phase of the PLD, giving us access to its dynamics that appear as a result of the applied pulses to the SDW.
 
-The sets of measurements that form the starting point for our further investigation are displayed in Figs.~\ref{fig:Cr_experimental1},~\ref{fig:Cr_experimental2}.
+The sets of measurements that form the starting point for our further investigation are displayed in Figs.~\ref{fig:Cr_experimental1} and ~\ref{fig:Cr_experimental2}.
 It is important to realize that the SDW order is not directly accessible through these measurements. In effect, this means that we are studying the excitation caused to the PLD because of its coupling with the externally perturbed SDW.
 \begin{figure}
 	\centering
 \IncludeGraphics{experimental1}
-\caption{\label{fig:Cr_experimental1}{\bf Pump-Pump delay dependent interference.} a) Experimental map of PLD amplitude before and after excitation of two pulses with a fluence of 1.45 mJ/cm$^2$. The green box highlights the area of lower oscillation amplitude of the PLD when the temperature of the SDW exceeds $T_N$ due to concurrent pulses. b) Destructive interference when $\tau_2 - \tau_1 = 620$ fs, corresponding by the horizontal slice of panel (a) marked by the blue line. c) Constructive interference when $\tau_2 - \tau_1 = 845$ fs, corresponding to the purple slice in panel (a). In both panels (c) and (d), the dashed red line marks the arrival time of second pulse. The dots denote the experimentally measured values, and the graphs the theoretical simulations (see Fig.~\ref{fig:Cr_theoretical_fit} for further details).}
+\caption{\label{fig:Cr_experimental1}{\bf Pump-Pump delay dependent interference.} a) Experimental map of PLD amplitude before and after excitation of two pulses with a fluence of 1.45 mJ/cm$^2$. The green box highlights the area of lower oscillation amplitude of the PLD when the temperature of the SDW exceeds $T_N$ due to concurrent pulses. b) Destructive interference when $\tau_2 - \tau_1 = 620$ fs, corresponding to the horizontal slice of panel (a) marked by the blue line. c) Constructive interference when $\tau_2 - \tau_1 = 845$ fs, corresponding to the purple slice in panel (a). In both panels (b) and (c), the dashed red line marks the arrival time of second pulse. The dots denote the experimentally measured values, and the graphs the theoretical simulations (see Fig.~\ref{fig:Cr_theoretical_fit} for further details).}
 \end{figure}
 \begin{figure}
 	\centering
 \IncludeGraphics[width=0.78\textwidth]{experimental2}
-\caption{\label{fig:Cr_experimental2}{\bf Interference dependence on pulse fluence.} a) Map of the PLD amplitude before and after excitation by two pulses with fluences $W_1=W_2=1.45$mJ/cm$^2$. b) Similar to (a) but with fluences $W_1=1.45$mJ/cm$^2$ and $W_2=0.7$mJ/cm$^2$, demonstrating the diminished influence of the second pulse. c) Amplitude of the PLD in the constructive and destructive pump-pump delay conditions, similar to panels (b, c) of Fig.~\ref{fig:Cr_experimental1}, but for fluences $W_1 = 9.5$ mJ/cm$^2$ and $W_2 = 4.8$ mJ/cm$^2$. The dashed red line marks the arrival time of second pulse. In these measurements the SDW is fully melted by the first pulse, and the timing of the second pulse has almost no influence on the behavior.}
+\caption{\label{fig:Cr_experimental2}{\bf Interference dependence on pulse fluence.} a) Map of the PLD amplitude before and after excitation by two pulses with fluences $W_1=W_2=1.45$mJ/cm$^2$. b) Similar to (a) but with fluences $W_1=1.45$mJ/cm$^2$ and $W_2=0.7$mJ/cm$^2$, demonstrating the diminished influence of the second pulse. c) Amplitude of the PLD in the constructive and destructive pump-pump delay conditions, similar to panels (b, c) of Fig.~\ref{fig:Cr_experimental1}, but for fluences $W_1 = 9.5$ mJ/cm$^2$ and $W_2 = 4.8$ mJ/cm$^2$. The dashed red line marks the arrival time of second pulse. In these measurements the SDW is fully melted by the first pulse, and the timing of the second pulse has no influence on the behavior.}
 \end{figure}
 \\\\
 We can observe that the PLD has an oscillation time period of approximately 450 fs, and a damping time of around 3 ps.
@@ -67,7 +66,7 @@ Further thermalization between the Cr lattice and the substrate occurs on a nano
 Furthermore, we find that the system as a whole (bath and electrons) heats by approximately 45 K as a result of the pulses, which is reflected in the diminished final amplitude of the PLD.
 However, since this amplitude is nonzero, we can deduce that the final temperature of the system is below the N\'eel temperature of the SDW.
 \\\\
-The most interesting observation is that, by changing the timing of the second pulse $\tau_2$, the dynamics of the PLD can be controlled to a high degree, as showcased in Fig.~\ref{fig:Cr_experimental1}(a).
+The most interesting observation is that, by changing the timing of the second pulse $\tau_2$, the dynamics of the PLD can be controlled to a high degree, as demonstrated in Fig.~\ref{fig:Cr_experimental1}(a).
 It is possible to fully quench the oscillation of the PLD, or its amplitude can instead be increased by the second pulse.
 The horizontal bands display periodically alternating regions of these two behaviors, termed as ``destructive'' and ``constructive'' interference.
 Two representative horizontal slices are taken and displayed in Fig.~\ref{fig:Cr_experimental1}(b,c), demonstrating destructive and constructive interference, respectively. 
@@ -83,7 +82,7 @@ If control is the goal, it is thus important that the SDW is allowed to cool dow
 The SDW order parameter, furthermore, depends strongest on temperature when it is close to the critical point where it varies as the square root, thus increasing the pulse efficiency in that temperature region.
 These considerations will be discussed in greater detail in Section~\ref{sec:Cr_results}, after the theoretical description is given.
 \\\\
-Finally, the measurements demonstrate an absence of topological defects since the satellite fringe associated with the PLD does not widen compared to the peak associated with the sample itself.
+Finally, the measurements demonstrate an absence of topological defects since the satellite fringe associated with the PLD (Fig.~\ref{fig:Cr_schematic}(b)) does not widen compared to the peak associated with the sample itself.
 This supports our previous claim that the optical pulses excite the thin film homogeneously. 
 \section{Theory}
 % \lp{some explanation of Peierls instabilities etc, the things that cause the SDW in the first place?}
@@ -108,7 +107,7 @@ The timescale for this thermalization was measured by high-resolution ARPES to b
 The second subsystem is that of the lattice phonons which act as a heat bath.
 In this case, we exclude the mode that describes the PLD oscillation, since it is not thermal on the timescales we are interested in. As was mentioned before, its characteristic timescale is on the order of picoseconds rather than the femtosecond timescales of the electronic SDW.
 
-Similarly to the electrons, the phonon bath interacts strongly within itself allowing us to assign a second temperature $T_b$ to it.
+Similarly to the electrons, the phonon bath harbors strong interactions within itself allowing us to assign a second temperature $T_b$ to it.
 The interaction between the electrons at $T_L$ and the bath at $T_b$ is what leads to the heat transfer between them, resulting in an equilibration between the two subsystems within 1 ps.
 We thus assume that the PLD mode is completely detached from the other phonons, instead only interacting strongly with the SDW order parameter $L$ (see below). 
 \\\\
@@ -131,7 +130,7 @@ This leads to the following expression for the free energy:
 	\label{eq:Cr_landau}
 	f(L, y, T_L) = \frac{\alpha}{2}(T_L - T_N) L^2 + \frac{\beta}{4} L^4 - g L^2 y + \frac{\rho y_0^2 \omega_0^2}{2} y^2 + \frac{b}{4} y^4,
 \end{equation}
-where $L$, $y$ and $T_L$ are the time dependent variables, and all coefficients are positive.
+where $L$, $y$ and $T_L$ are the time dependent variables, and all coefficients are taken positive.
 The double well potential that causes the SDW phase transition is characterized by the coefficients $\alpha$ and $\beta$,  and critical temperature $T_N$ below which the SDW order sets in.
 The coupling between $L$ and $y$ due to exchange striction is described by the term with $g$.
 Only even orders of $L$ appear in the free energy, since the energy is time reversal even, but $L$ is time reversal odd.
@@ -150,7 +149,7 @@ This can be achieved by solving $\frac{\partial f}{\partial L} = 0$, leading to:
 	\begin{cases}
 		\pm \sqrt{\frac{- \alpha (T_L - T_N) + 2 g y}{\beta}} & T_L <= T_N\\
 		0 & T_L > T_N
-	\end{cases}
+	\end{cases}.
 \end{equation}
 The time evolution of the system can then described using the Lagrangian:
 \begin{equation}
@@ -158,7 +157,7 @@ The time evolution of the system can then described using the Lagrangian:
 \end{equation}
 with associated Euler-Lagrange equation for $y$:
 \begin{equation}
-    \frac{\partial \mathcal{L}}{\partial y} - \frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{y}} = \gamma_y \dot{y}
+    \frac{\partial \mathcal{L}}{\partial y} - \frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{y}} = \gamma_y \dot{y},
 \end{equation}
 where $\gamma_y$ denotes the damping parameter for $y$.
 Substituting Eq.~\eqref{eq:Cr_landau} for $f$ leads to 
@@ -166,7 +165,7 @@ Substituting Eq.~\eqref{eq:Cr_landau} for $f$ leads to
 	\label{eq:Cr_euler_lagrange}
 	    \rho y_0^2 \Ddot{y} = -\rho y_0^2 \omega_0^2 y  - b y^3 - \gamma_y \dot{y} + gL^2.
 \end{equation}
-This equation, together with Eqs.~\ref{eq:Cr_twotemp} describing the temperature evolution of the SDW ($T_L$) under influence of the optical pulses, fully describes the dynamics of the coupled system.
+This equation, together with Eqs.~\eqref{eq:Cr_twotemp} describing the temperature evolution of the SDW ($T_L$) under influence of the optical pulses, fully describes the dynamics of the coupled system.
 One obvious remark can be made here: to be completely exact, the energy dissipated through the damping term $\gamma_y$ in Eq.~\eqref{eq:Cr_euler_lagrange} should be absorbed into the phonon bath and thus influence $T_b$.
 However, the case can be made that since this is only a single mode, its contribution to the heating of the bath will be negligible compared with the one as a result of the thermalization with the electronic degrees of freedom.
 
@@ -205,18 +204,18 @@ The results of this fitting procedure is shown in Fig.~\ref{fig:Cr_theoretical_f
 \begin{figure}
 	\centering
 	\IncludeGraphics[width=0.9\textwidth]{L_y_energy.png}
-	\caption{\label{fig:Cr_energy_surfaces}{\bf Time evolution of the energy surfaces of $L$ and $y$.} The trajectory of each order parameter is indicated by the black graph. The energy surface in panel a (b) is calculated by varying L (y) at each time step, while keeping y (L) at the value corresponding to the trajectory. The fast dynamics of L is reflected by the trajectory tracking its minimum at all times.}
+	\caption{\label{fig:Cr_energy_surfaces}{\bf Time evolution of the energy surfaces of $L$ and $y$.} The trajectory of each order parameter is indicated by the black graph. The energy surface in panel a (b) is calculated by varying L (y) at each time step, while keeping y (L) at the value corresponding to the trajectory in panel b (a). The fast dynamics of L is reflected by the trajectory tracking its minimum at all times.}
 \end{figure}
 \\\\
 To get a deeper understanding of the underlying effect, we look at the evolution of the free energy surfaces for both order parameters, shown in Fig.~\ref{fig:Cr_energy_surfaces}.
-The characteristic double well potential for $L\neq0$ equilibrium is clearly visible at throughout the simulation.
-As expected, we can observe that, when the pulses hit and $T_L$ rapidly increases, the potential for $L$ varies as rapidly, leading in turn to a quick shift of the minimum of the single-well potential for $y$, which ultimately results in an oscillation of $y$ due to its relatively slow dynamics.
+The characteristic double well potential for $L\neq0$  is clearly visible throughout the simulation.
+As expected, we can observe that, when the pulses hit and $T_L$ rapidly increases, the potential for $L$ varies as rapidly, leading in turn to a quick shift of the minimum of the single well potential for $y$, which ultimately results in an oscillation of $y$ due to its relatively slow dynamics.
 While the temperature $T_L$ decreases again, $L$, and consequently the minimum of the potential for $y$, shift back towards their original equilibrium position.
 However, the oscillation of $y$ remains for quite a long time during this shift, since the damping is not particularly large (of the order of 4 ps) compared with the cooling rate of the SDW ($T_L$).
 \\\\
 This already presents us with the first hint at the benefit of indirectly exciting the PLD through the SDW, which we clarify through the use of a thought experiment of a hypothetical system for which the PLD is the primary order parameter with associated double well potential, and with no other coupled order parameters.
 The only possibility to excite an oscillation in this case is by heating up the system above the critical temperature.
-This would change the shape of the hypothetical energy potential, shifting its minimum to 0, and again due to the slow dynamics an oscillation would occur.
+This would change the shape of the hypothetical energy potential, shifting its minimum to 0, and again, due to the slow dynamics, an oscillation would occur.
 However, as with any normal oscillator, the value of the PLD would never exceed the starting value during the oscillation, as the thermalization, and restoration of the potential will occur on much longer timescales.
 
 Here, however, due to the relatively fast thermalization of the SDW with the bath, the potential surface for $y$ recovers on a faster timescale than it would on its own, leading to a relative movement of the potential opposite to the movement of $y$ itself.
@@ -233,7 +232,7 @@ Two goals will be investigated: maximizing the oscillation amplitude, and design
 % First we discuss the strategy to achieve maximal amplitude.
 The maximal change in the value of $L$, and thus the potential surface for $y$, can be achieved by heating it all the way to $T_N$.
 It is then important to keep this initial shift of the potential for $y$ in place until $y$ crosses the minimum, converting as much potential energy into kinetic energy.
-This can be done by heating $L$ slightly above $T_N$, where the additional heat and finite cooling rate will keep the potential shift present for long enough.
+This can be done by heating $L$ slightly above $T_N$, where the additional temperature and finite cooling rate will keep the potential shift present for long enough.
 Fig.~\ref{fig:Cr_control}(a) demonstrates this part of the strategy, with the peaks of $T_L$ in red indicating that $T_L$ exceeds $T_N$.
 Exactly at this point, $L$ should start to re-condense causing the potential surface of $y$ to start moving in the opposite direction to $y$'s movement, which in the end supplies it with additional momentum, as was described above.
 Since the sign of $L$ does not matter for the position of the minimum for $y$, it can only cause a shift in one direction, meaning that, similar to someone pushing a swing, the ideal intervals for the subsequent pulses are close to multiples of the period of $y$.
@@ -262,7 +261,7 @@ As in the maximum amplitude simulations, the assumption of an infinite $C_b$ was
 This is done so the oscillation equilibrium of $y$ does not change because of the heating due to the pulses.
 The results demonstrate how a carefully chosen pulse train enables indirect, but close to optimal control of the PLD order parameter.
 
-To comment on the experimental viability of such a pulse train we can make the following remarks.
+To comment on the experimental viability of such a pulse train, we can make the following remarks.
 The time resolution that can be achieved with the optical pulses used in our experiments is on the order of the pulse width, i.e. 40 fs. There exist other optical lasers that have widths down to a few fs, which could allow for the required accurate time positioning of the pulses.
 Moreover, through the use of prisms, a high fluence pulse can be split into many smaller pulses, which can in turn be controlled by the opening or closing of apertures.
 
@@ -275,10 +274,10 @@ Moreover, the slower dynamics of the PLD compared to the SDW opens up new behavi
 If the PLD would have dynamics on the same timescale as the SDW, changing its potential through exciting the latter would not be very impactful since it would follow the minimum of the potential as fast as the excited SDW would change it.
 \\\\
 Through the use of a relatively simple model, we were able to reproduce the experimental observations to an incredible degree, as demonstrated by the quality of the fits in Fig.~\ref{fig:Cr_theoretical_fit}.
-Together with the remarkable indirect control through the SDW, this model allowed us to design a train of pulses in order to either maximize the PLD oscillation amplitude (up to 450\%), or even make it follow a give envelope function (see Fig.~\ref{fig:Cr_control}.
-The control also allows for the destruction of the PLD oscillation at a moment's notice, leading to a possible shortcut to adiabaticity where the final state is at higher temperature than the original one.
+Together with the remarkable indirect control through the SDW, this model allowed us to design a train of pulses in order to either maximize the PLD oscillation amplitude (up to 450\%), or even make it follow a give envelope function (see Fig.~\ref{fig:Cr_control}).
+The control also allows for the destruction of the PLD oscillation at a moment's notice, leading to a possible shortcut to adiabaticity where the final state is at a higher temperature than the original one.
 \\\\
 Such a control would not have been possible through the direct exciation of the PLD mode, and is thus another clear demonstration of the many benefits that coupled orders might present.
-Whether this can be directly exploited for technological remains a question, seen as XFELs are rather large.
+Whether this can be directly exploited for technological means remains a question, seen as XFELs are rather large.
 However, this behavior through coupled order parameters may be a promising route to a robust coherent control.
 We hope that our understanding, and the demonstration of perfect control in Cr could open the road to finding other similar situations with more technologically viable properties.   
