@@ -1,6 +1,6 @@
-\chapter{Phase Field Modeling with the Finite Elements Method \label{ch:FEM}}
-We give a short introduction into the methods we used in order to simulate phase field models such as the one defined in Chapter~\ref{ch:Softening}, Eq.~\ref{eq:BTO_energy}.
-The Finite Element Method constitutes a big part in these simulations, thus, in light of making this Thesis relatively self-contained, we give a short summary of the topic, based on Ref.~\cite{Biner}.
+\chapter{Phase-Field Modeling with the Finite Elements Method \label{ch:FEM}}
+We give a short introduction to the methods we used in order to simulate phase-field models such as the one defined in Chapter~\ref{ch:Softening}, Eq.~\ref{eq:BTO_energy}.
+The Finite Element Method constitutes a big part of these simulations, thus, in light of making this Thesis relatively self-contained, we give a short summary of the topic, based on Ref.~\cite{Biner}.
 \begin{figure}
 	\IncludeGraphics{fem}
 	\caption{\label{fig:BTO_fem}{\bf Finite Element Method.} a) Isoparametric local coordinate system for a triangular element. Image taken from Ref.~\cite{Biner}. b) 2D geometry spanned by triangular mesh demonstrating the flexibility of FEM meshes. Image taken from Ref.~\cite{2Dmesh}. c) Example of the geometry that is used in our simulations. d) Zoom in on the corner of the mesh shown in (c).}
@@ -8,9 +8,9 @@ The Finite Element Method constitutes a big part in these simulations, thus, in 
 \\\\
 A fundamental building block is the isoparametric representation.
 In this representation, the geometry is divided into a set of elements that obey certain connectivity requirements, the main one being that each node must be connected to the same number of neighbor nodes.
-As an example we describe the often used triangular elements for 2D geometries, shown in Fig.~\ref{fig:BTO_fem}(a,b).
+As an example, we describe the often used triangular elements for 2D geometries, shown in Fig.~\ref{fig:BTO_fem}(a,b).
 A global-to-local coordinate transformation is then performed by using shape functions that define the morphology of the element.
-In the case of the triangle they are defined in terms of the edge lengths and angle between them. 
+In the case of the triangle, they are defined in terms of the edge lengths and angle between them. 
 Starting from the global coordinates of the nodes ($x_i$, $y_i$), any coordinate inside the element can be written as:
 \begin{align}
 x(\zeta, \eta) &= \sum_i^n N_i(\zeta, \eta) x_i,\\
@@ -22,7 +22,7 @@ and functions $f$ are similarly interpolated as:
 	f(\zeta, \eta) = \sum_i^n N_i(\zeta, \eta) f_i.
 \end{equation}
 In these equations, $i$ iterates through the $n$ nodes of the element, and $\zeta$ and $\eta$ are the axes of the local coordinate system (see Fig.~\ref{fig:BTO_fem}(a)).
-From these equations it is clear that each node has a separate shape function.
+From these equations, it is clear that each node has a separate shape function.
 They have to be chosen in such a way that they adhere to certain conditions:
 \begin{itemize}
 	\item Interpolation condition: $N_i$ is 1 at node $i$ and zero at the other nodes.
@@ -45,7 +45,7 @@ The function values of the $P$ and $u$ fields are interpolated at these points u
 Filling them into the free energy density, such as the one in Eq.~\eqref{eq:BTO_energy}, results in an approximation of the contribution of each element to the total free energy, which is then found by summation. 
 The nodal values of the fields are therefore the variables of our model. 
 A big bonus of the isoparametric representation, applied in this way, is that gradients of the fields can be evaluated purely locally, inside each element (see Eq.~\eqref{eq:BTO_derivatives}).
-It also allows for a great flexibility through the density of the chosen grid, the morphology of the elements, and the order of the interpolating shape functions $N_i$ that are used in Eq.~\eqref{eq:BTO_funcinterp}.
+It also allows for great flexibility through the density of the chosen grid, the morphology of the elements, and the order of the interpolating shape functions $N_i$ that are used in Eq.~\eqref{eq:BTO_funcinterp}.
 
 We developed our own code in order to run the FEM simulations, based on the building blocks supplied by the \href{https://github.com/KristofferC/JuAFEM.jl}{JuAFEM.jl} package.
 We use a rectangular geometry uniformly spanned by tetrahedron elements, as shown in Fig.~\ref{fig:BTO_fem}(c,d).
