@@ -1,37 +1,36 @@
 \chapter{Introduction}
 Theoretical Condensed Matter research is plagued by a fundamental issue of complexity. The sheer amount of degrees of freedom in a material of any technologically relevant scale is overwhelming (e.g. $\sim10^{23}$ electrons per cm$^3$), and make it impossible to describe the quantum mechanical wavefunction exactly.
-%\lp{there is some more nice things along this line in Wen}.
-%This forces researchers in the field to make approximations, as to make the problem tractable, while still capturing the essential physics resulting in the effects under investigation.
-The way to make progress with this undertaking has always been to try and isolate the parts of the system that play the biggest role in the effects under investigation, while neglecting those that only contribute to the complexity of the problem.
+The way to make progress with this undertaking has always been to try and isolate the parts of the system that play the biggest role in the effects under investigation while neglecting those that only contribute to the complexity of the problem.
 
 As is well-known, every quantum mechanical system is governed fundamentally by its Hamiltonian.
 One could be so bold as to claim that if all eigenvalues and eigenstates of the Hamiltonian describing any system were found, the field of Condensed Matter would be completed. This is, of course, impossible for reasons stated previously.
 
-In order work towards this ultimate goal, the full Hamiltonian can be decomposed into its constituent parts, and the interactions between them.
+In order to work towards this ultimate goal, the full Hamiltonian can be decomposed into its constituent parts and the interactions between them.
 If the latter are negligible, the subsystems can be fully decoupled and solved separately. In doing so, the notion of a hierarchy of energy scales can be introduced, allowing one's efforts to be focused on the subsystems that are most involved with the physics at the energy scales, or, through $\Ket{\psi(t)} = e^{-i \frac{\mathcal{H}t}{\hbar}}\Ket{\psi(0)}$, timescales of interest.
 \\\\
 To make these considerations more concrete in the context of this Thesis, two examples can be considered.
-First, in most materials there is a wide separation in energy between the charge and magnetic sectors of the Hamiltonian. The former, exemplified by the electronic structure of crystals, usually involves energy scales on the order of eV, whereas the latter tends to lead to contributions of a few meV.
+First, the charge and magnetic sectors of the Hamiltonian are often widely separated in many materials.
+The former, exemplified by the electronic structure of crystals, usually involves energy scales on the order of eV, whereas the latter tends to lead to contributions of a few meV.
 One of the interactions that couples the two is the relativistic spin-orbit interaction, which can often be ignored completely in the description of charge carriers in materials due to their low velocities.
 
 Second is the interaction between electrons and the ions of the crystal, whose displacements are described by phonons.
-While the potential that is associated with the ions is of great influence on the behavior of the electrons, their dynamics is so much slower that the electronic degrees of freedom can be assumed to be at the instantaneous ground state w.r.t. their centers.
+While the potential that is associated with the ions is of great influence on the behavior of the electrons, their dynamics are so much slower that the electronic degrees of freedom can be assumed to be at the instantaneous ground state w.r.t. their centers.
 To put it differently: the mass of the ions is so high and the elastic potential that governs their movement so small, that they appear as a constant background potential for the nimble electrons.
 This is, of course, the core idea behind the well-known Born-Oppenheimer approximation~\cite{Born1927}.
-Likewise, the influence of the electrons on the ions appears as a smeared out average, which leads to so-called mean field approximations.
-In most cases these considerations allow for a separated description of both systems.
+Likewise, the influence of the electrons on the ions appears as a smeared out average, which leads to so-called mean-field approximations.
+In most cases, these considerations allow for a separated description of both systems.
 However, there are exceptions when these approximations fail spectacularly with the prime example being superconductivity, where the coupling between electrons and phonons is not only non-negligible, it downright forms the linchpin for the exotic physics that is observed in these materials.
 \\\\
-This brings us to the subject matter of this Thesis, in which the focus will lie on similar such effects that depend crucially on these often negligible interactions between two relatively well-understood subsystems.
+This brings us to the subject matter of this Thesis, in which the focus will lie on similar effects that depend crucially on these often negligible interactions between two relatively well-understood subsystems.
 The three main interactions we investigate are: relativistic spin-orbit coupling (SOC), coupling the charge and spin sectors of the Hamiltonian; Heisenberg magnetic exchange striction, which couples spins to atomic displacements (phonons); and electrostriction, the interaction between ferroelectric polarization and strain.
 We will use a variety of analytical and numerical tools and techniques to unravel how these effects manifest themselves in real materials, often motivated by experimental observations.
 
 Aside from the fundamental interest, technological development has always been a strong driving force in condensed matter research. Here too does the focus on interactions between subsystems offer promising prospects, since it allows, in principle, for an influence over one subsystem by applying a perturbation to the other.
 More efficient or granular manipulation of magnetic order via spin currents, or even electric fields, is one example of the many benefits that can be enabled by strongly interacting orders.
 Breakthroughs in the understanding of condensed matter have historically led to leaps in technology, e.g. the dramatic increase in density and efficiency of hard disks after the discovery of the giant magnetoresistance effect.
-However, it is often not trivial to find materials where such cross-order interactions are large enough to be effictively exploited for technological applications.
-It is, therefore, crucial to gain an intimate insight into the governing physics of these interactions in order to eventually engineer materials and devices to maximally utilize them.
-In this Thesis we aim to accomplish just that by investigating a selection of real materials where the previously mentioned interactions lead to large, or unexpected, effects.
+However, it is often not trivial to find materials where such cross-order interactions are large enough to be effectively exploited for technological applications.
+It is, therefore, crucial to gain an intimate insight into the governing physics of these interactions to eventually engineer materials and devices to maximally utilize them.
+In this Thesis, we aim to accomplish just that by investigating a selection of real materials where the previously mentioned interactions lead to large, or unexpected, effects.
 \\\\
 As mentioned before, spin-orbit coupling is a relativistic interaction that can often be ignored in the study of the electronic structure in crystals.
 In materials with heavier constituent ions, it often becomes a requirement to treat this effect perturbatively, or even on an equal footing with the other contributions to the Hamiltonian.
@@ -40,7 +39,7 @@ This spin-splitting is usually attributed to the Rashba-Bychkov effect, which is
 However, as will be demonstrated in Chapter~\ref{ch:Rashba}, another effect must lie at the origin in order to fully explain  all the properties associated with the observed spin-splitting.
 We will show there that the effect is rather caused by a combination of the atomic spin-orbit coupling and the electrostatic interaction of the electron's orbital angular momentum with the ferroelectric polarization.
 From a technological standpoint, this large polarization-dependent spin-splitting can be used to generate spin-polarized currents, where the carriers' spin orientation can be reversed by a sufficiently large external electric field that reverses the ferroelectric polarization.
-This could be exploited, for example, in a device first dreamt up by Datta and Das \cite{Datta1990}, a spin based field-effect transistor.
+This could be exploited, for example, in a device first dreamt up by Datta and Das \cite{Datta1990}, a spin-based field-effect transistor.
 \\\\
 Chapter ~\ref{ch:GdMn2O5} continues with a study of GdMn$_2$O$_5$, a hallmark multiferroic material, where an inversion symmetry breaking magnetic configuration leads to a nonzero ferroelectric polarization through the Heisenberg exchange striction and geometric frustration.
 Since the magnetic and ferroelectric orders originate from the same underlying mechanism, they are coupled rather strongly in this multiferroic.
@@ -50,28 +49,28 @@ Moreover, we show that the novel four state loop is topologically different from
 GdMn$_2$O$_5$ is, therefore, another prime example where one coupled order can be influenced through the manipulation of the other.
 As will be shown, the behavior can be described by a relatively simple semi-classical spin model, with the four-state regime appearing for a surprisingly broad range of model parameters.
 Furthermore, we demonstrate that, in the four-state switching regime, half the spins perform a full 360$^\circ$ rotation as a result of two up--and--down sweeps of the external magnetic field.
-This is a microscopic analogue of the ``crankshaft'' in a car, converting the linear up--and--down motion of the magnetic field (the ``piston'') into a unidrectional motion of the spins (the ``driveshaft'').
-We will show that it is the evolution of the energy landscape that lies at the heart of this behavior is very similar to the on of a Thouless charge pump, more specifically to the one demonstrated in cold atom systems \cite{Lohse16}.
+This is a microscopic analog of the ``crankshaft'' in a car, converting the linear up--and--down motion of the magnetic field (the ``piston'') into a unidirectional motion of the spins (the ``driveshaft'').
+We will show that it is the evolution of the energy landscape that lies at the heart of this behavior is very similar to the one of a Thouless charge pump, more specifically to the one demonstrated in cold atom systems \cite{Lohse16}.
 The wealth of effects that emerge because of the combination of relatively well-understood model ingredients is a clear demonstration of an often reoccurring theme in condensed matter: more is different.  
 \\\\
 In Chapter~\ref{ch:CrSDW} the focus will be shifted towards the aspect of dynamical control with increased granularity as a result of the indirect perturbation of coupled orders.
 We use the control over a lattice vibration through the excitation of a coupled spin density wave (SDW) in a thin film of elemental Chromium as a case study.
-In this material, a nesting of the Fermi surface results in the stabilization of the SDW, which in turn will optimize bondlengths between antiferromagnetically coupled ions to maximize the gained magnetic exchange energy.
+In this material, a nesting of the Fermi surface results in the stabilization of the SDW, which in turn will optimize bond lengths between antiferromagnetically coupled ions to maximize the gained magnetic exchange energy.
 In essence, this leads to a shortening of bonds between ions with large spins, and a lengthening of those between small spins near the nodes of the SDW, causing a periodic lattice displacement (PLD) that can be probed using X-ray diffraction spectroscopy.
 By using optical pulses that excite the electronic subsystem forming SDW, we show that the resulting  decrease in its magnitude causes an oscillation of the phonon associated with the coupled PLD.
 The electronic subsystem then subsequently cools back down, partly restoring the SDW, while the phonon oscillation persists due to its slow dynamics and low damping.
-Even in the case of a single pulse does such an indirect excitation lead to an increased oscillation amplitude of the PLD phonon compared with the one achieved through more usual displacive mechanism.
+Even in the case of a single pulse does such an indirect excitation lead to an increased oscillation amplitude of the PLD phonon compared with the one achieved through the more usual displacive mechanism.
 More interestingly, we show that by applying a carefully designed sequence of pulses, an indirect, but incredibly granular, control can be achieved over the amplitude of the PLD phonon mode.
 We also show that using multiple pulses empowers much greater phonon excitation amplitudes than can be achieved with a single pulse.
 The very fast (essentially instantaneous) dynamics of the SDW and relatively strong coupling to the phonon mode with much slower dynamics, lies at the core of this behavior.
-While the technological relevance of this process is not immediately obvious, it does highlight the capabilities that a coupling between two orders with different dynamics can offer in terms of control, to the point where a pulse train can be designed using our model, such that the PLD oscillation follows a given envelope signal almost perfectly.
+While the technological relevance of this process is not immediately obvious, it does highlight the capabilities that the coupling between two orders with different dynamics can offer in terms of control, to the point where a pulse train can be designed using our model, such that the PLD oscillation follows a given envelope signal almost perfectly.
 \\\\
 We conclude this Thesis in Chapter~\ref{ch:Softening} by a systematic study of the implications on the mechanical properties of 180$^\circ$ ferroelectric domain walls in BaTiO$_3$, due to the interaction between strain and polarization.
 Surprisingly, these walls appear mechanically softer to an applied tip, even though they are not ferroelastic and thus do not separate domains with different strain textures.
 Indeed, in ferroelastic domain walls one domain would be favored over the other by the force applied through the tip, meaning that when the tip is applied to the wall, it would excite a soft sliding domain wall mode.
 This mode is not present in either of the ferroelastic domains and thus the ferroelastic domain wall would appear softer.
 In our case, however, we uncover that a similar spirited but fundamentally different mechanism lies at the heart of the mechanical softness in these purely ferroelectric 180$^\circ$ domain walls.
-Even though they are not ferroelastic, we find that a relatively long ranged strain texture still appears around them, which interacts mechanically with the applied tip.
-This in turn leads to a bending or sliding of the domain wall towards the tip, leading to a large deformation and thus an apparent softening.
+Even though they are not ferroelastic, we find that a relatively long-ranged strain texture still appears around them, which interacts mechanically with the applied tip.
+This in turn leads to bending or sliding of the domain wall towards the tip, leading to a large deformation and thus an apparent softening.
 
 Since certain ferroelectric domain walls are conductive, this could open the door to the efficient manipulation of conducting channels through the application of strain, which could be used in electronic devices.

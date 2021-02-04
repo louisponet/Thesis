@@ -4,39 +4,39 @@
 \section{Introduction}
 Efficient control and probing of robust order has historically been one of the main technological drivers for research in condensed matter.
 The hallmark example is the impact that the discovery of giant magnetoresistance has had on the efficiency of the read head in hard disks, by using direct electrical readout rather than a solenoid \cite{Baibich1988,Binasch1989,Tsymbal2001,Nunez2006TheoryMetals,Chappert2007}.
-This is achieved by constructing the read head as a multilayer sandwich composed of a pinned magnet, a non-magnetic metal and a soft magnet.
+This is achieved by constructing the read head as a multilayer sandwich composed of a pinned magnet, a non-magnetic metal, and a soft magnet.
 The latter will align itself to the information storing magnetic domains on the platter of the hard disk.
 The resistivity of the stack then depends strongly on the mutual alignment of the pinned and soft magnets, as a result of the giant magnetoresistance.
 By applying a constant bias voltage to the read head, the magnetically stored information can then be probed electrically through the measurement of the resulting current.
 Underlying this mechanism is the Stoner effect, causing the conducting states around the Fermi level of metallic magnets to have a well-defined spin polarization depending on the internal magnetization.
 If current flows through these metallic magnets, the carriers with spins aligned to the pinned magnet will be scattered strongly by the soft magnet if the latter's magnetization is antiparallel to the former, leading to low conductivity.
-Conversely, when the magnetizations of the two magnets are aligned, the carriers will scatter weakly, which resuls in a high conductivity.
+Conversely, when the magnetizations of the two magnets are aligned, the carriers will scatter weakly, which results in high conductivity.
 This development has led to a significant increase of the efficiency of hard drives.
 
 There remains, however, the issue of writing the information in the first place.
-In modern state-of-the art high density storage technologies, this is still done by applying an external magnetic field with an electromagnet to reorient the ferromagnetic domains. One can imagine this to be quite an inefficient process, both from the point of view of granularity (stray fields and non-locality of magnetic fields limit the minimum size of the domains), as from that of energy loss through heat dissipation.
+In modern state-of-the-art high-density storage technologies, this is still done by applying an external magnetic field with an electromagnet to reorient the ferromagnetic domains. One can imagine this to be quite an inefficient process, both from the point of view of granularity (stray fields and non-locality of magnetic fields limit the minimum size of the domains), as from that of energy loss through heat dissipation.
 Improving these Figures of Merit drives much of the current research in the field of spintronics, with promising applications like spin-transfer torque devices \cite{Nunez2006TheorySemiconductors,Nunez2006TheoryMetals,Nunez2011, Kent2015, Jungwirth2016}.
 These use an inverse effect to the one described above.
-First a current is created with carriers that have a well-defined orientation of the spin by using e.g. a pinned ferromagnet, as in the read head.
+First, a current is created with carriers that have a well-defined orientation of the spin by using e.g. a pinned ferromagnet, as in the read head.
 Subsequently, this current is forced through (or close to) a magnetic domain by the bias electric field.
 If the spin of the carriers and the magnetization of the domain are misaligned, strong scattering occurs which rotates the spin moments of the carriers.
 However, this will cause an opposite torque on the magnetization of the domain, due to the conservation of angular momentum. This transfer of torque is where the classification of {\it spin-transfer torque} devices originates from.
-If enough such spin-polarized current flows through the domain, its magnetization will eventually be reoriented along the spins of the incident carriers. This method circumvents the need of electromagnets to create a magnetic field by using circular currents, greatly increasing the efficiency and allowing for greater domain density.
+If enough such spin-polarized current flows through the domain, its magnetization will eventually be reoriented along the spins of the incident carriers. This method circumvents the need for electromagnets to create a magnetic field by using circular currents, greatly increasing the efficiency and allowing for greater domain density.
 \\\\
 It is clear that the longevity associated with magnetic order, combined with the ease and efficiency of manipulation through electrical means is highly desirable.
 This brings us to the topic of this Chapter, namely the magnetoelectric effect in multiferroic insulators.
 As the name implies, the magnetoelectric effect allows for the electric control of magnetic order or the magnetic control of ferroelectric polarization~\cite{Spaldin2019,Khomskii2009,Fiebig2005,Fiebig2016,Cheong2007}, the former being the most attractive from a technological point of view.
-In practice, however, the effectiveness of this cross-order control is often limited, and multiferroic materials are rare to begin with.
+In practice, however, the effectiveness of this cross-order control is often limited, and multiferroic materials are rare, to begin with.
 The reasons why are summarized briefly below, following the discussion of Khomskii in Ref.~\cite{Khomskii2009}.
 \\\\
 Two main classes of multiferroic materials can be identified: type-I and type-II multiferroics.
-In the former, the ferroelectric polarization and magnetic order stem from different origins, and are thus largely decoupled.
+In the former, the ferroelectric polarization and magnetic order stem from different origins and are thus largely decoupled.
 The latter, instead, develops ferroelectricity as a result of an inversion symmetry breaking magnetic configuration.
-In this case the two orders are coupled strongly, but the size of the ferroelectric polarization is often limited, and generally much lower than for type-I multiferroics.
+In this case, the two orders are coupled strongly, but the size of the ferroelectric polarization is often limited, and generally much lower than for type-I multiferroics.
 \\\\
 We use the ABO$_3$ perovskites with a magnetic transition metal B ion as an example in order to understand why multiferroics are so rare.
 Magnetic order is almost exclusively caused by partially filled valence shells, partially-filled $d$ shells in this case.
-Ferroelectricity, on the other hand can find its origin in various microscopic effects.
+Ferroelectricity, on the other hand, can find its origin in various microscopic effects.
 In many of them, the ferroelectricity is caused by an off-center shift of the B ion in the surrounding oxygen octahedron (see Chapter~\ref{ch:Softening} for a detailed discussion on ferroelectricity in BaTiO$_3$).
 This is due to the formation of strong covalent bonds between one (or three) oxygens and the B ion, using the latter's empty $d$ states. 
 While it is not fully understood why, the presence of any electrons in the $d$ shell of the B ion severely hampers this process which is one of the root causes for the rarity of multiferroicity in these materials, since magnetism requires at least some filling.
@@ -45,7 +45,7 @@ A more detailed study on the rarity of multiferroics was performed in Ref.~\cite
 One of the ways both orders can appear simultaneously is with A ions that have lone pairs (filled outer $s$ shell), e.g. BiFeO$_3$, where the Bi$^{3+}$ ion harbors such a lone pair, which is highly polarizable.
 When the temperature is lowered, this leads to an instability that favors the alignment of such pairs, causing the polarization in the ferroelectric phase of this material.
 The ordering temperatures for the ferroelectric and magnetic order are 1100 K and 643 K, respectively, with a polarization $P \sim$ 90$\mu$C/cm$^2$.
-BiFeO$_3$ is thus a clear example of a multiferroic material, however, the two orders have completely different origin and the cross-order coupling is thus extremely low.
+BiFeO$_3$ is thus a clear example of a multiferroic material, however, the two orders have completely different origins and the cross-order coupling is thus extremely low.
 Nonetheless, some more recent developments have shown promising ways to overcome the limited magnetoelectric coupling in BiFeO$_3$, allowing for a degree of control over weak ferromagnetic moments by an external electric field \cite{Heron14}. 
 For further details on the mechanisms of the ferroelectricity in the other type-I cases, either through charge ordering or tilting of the oxygen octahedra, we refer the reader back to Ref.~\cite{Khomskii2009}.
 \\\\
@@ -56,7 +56,7 @@ On the phenomenological side, the simplest Landau free energy one can write down
 \end{align}
 with $T$ denoting the temperature, $E$ the electric field, and $H$ the magnetic field.
 All coefficients are taken to be positive, such that below the ferroelectric (ferromagnetic) transition temperature $T_P$ ($T_M$) nonzero $P$ ($M$) develops.
-The lowest order symmetry-allowed term that couples $P$ and $M$ is $-gP^2M^2$, obeying both the time reversal and inversion symmetries of the parent structure above the transition temperatures $T_P$ and $T_M$.
+The lowest order symmetry-allowed term that couples $P$ and $M$ is $-gP^2M^2$, obeying both the time-reversal and inversion symmetries of the parent structure above the transition temperatures $T_P$ and $T_M$.
 Minimizing the energy with respect to both orders for $T<T_M,T_P$ and no applied external fields, leads to,
 \begin{align}
 	\frac{\partial F}{\partial P} = 0 \Leftrightarrow P^2 &= - a(T-T_P)/b + gM^2\\
@@ -64,20 +64,20 @@ Minimizing the energy with respect to both orders for $T<T_M,T_P$ and no applied
 \end{align}
 Both order parameters thus depend on the value of the other through the magnetoelectric coupling $g$. This leads to a change in one when an external field is applied to the other.
 As mentioned before, however, the different microscopic origins of both orders usually result in a tiny value of $g$.
-Indeed, the effective dielectric constant $\varepsilon$ of BiMnO$_3$ only displays a weak anomaly at the ferromagnetic transition temperature ($T_M$), and is only weakly affected by an external magnetic field, leading to a change of $\varepsilon$ at an external magnetic field of 9\,T of only 0.6\% compared with its value at zero field value.
+Indeed, the effective dielectric constant $\varepsilon$ of BiMnO$_3$ only displays a weak anomaly at the ferromagnetic transition temperature ($T_M$) and is only weakly affected by an external magnetic field, leading to a change of $\varepsilon$ at an external magnetic field of 9\,T of only 0.6\% compared with its value at zero-field value.
 This means that the electrical behavior of this material is almost impervious to an external magnetic field, a clear demonstration of the problems with cross-order control in type-I multiferroics.
 \\\\
 In an effort to improve this sought-after control, we turn to the type-II multiferroics.
 As mentioned before, the ferroelectricity in these materials is a result of the inversion breaking magnetic order that sets in below $T_N$.
 Due to the shared microscopic origin, the coupling between the magnetic and ferroelectric orders in these materials is generally much higher than for type-I multiferroics, leading to an increased magnetoelectric effect~\cite{Oh2014,Radaelli08Y}.
-However, one caveat is that in this case the ferroelectric polarization is much lower, since the associated distortions are a result of the force due to the weak magnetoelectric coupling\footnote{The order parameter describing the ferroelectric polarization is a pure slave order parameter, that would not develop on its own in these materials. It is only nonzero because of the appearance of the primary order parameter that describes the magnetic order below $T_N$ (i.e. there is no $T_{P}$).}.
-This leads to a much reduced effectiveness of external electric fields as a method of effective control of the magnetic order.  
+However, one caveat is that in this case, the ferroelectric polarization is much lower since the associated distortions are a result of the force due to the weak magnetoelectric coupling\footnote{The order parameter describing the ferroelectric polarization is a pure slave order parameter, that would not develop on its own in these materials. It is only nonzero because of the appearance of the primary order parameter that describes the magnetic order below $T_N$ (i.e. there is no $T_{P}$).}.
+This leads to a reduced effectiveness of external electric fields as a method of effective control of the magnetic order.  
 \\\\
 Here, we focus specifically on GdMn$_2$O$_5$ (see Fig.~\ref{fig:GdMn2O5_unit_cell}(a)) that demonstrates an exceptional tunability of the ferroelectric polarization through an applied magnetic field~\cite{Khomskii2009,Lee13}.
-The orthorhombic $R$Mn$_2$O$_5$ manganites have a very complex crystalline structure, which leads to a wealth of different phases depending on the temperature, rare-earth ion $R$, external magnetic field and even electric-field poling history~\cite{Chapon04, Chapon06, Blake05, Radaelli09,Radaelli08, Zheng2019}.
+The orthorhombic $R$Mn$_2$O$_5$ manganites have a very complex crystalline structure, which leads to a wealth of different phases depending on the temperature, rare-earth ion $R$, external magnetic field, and even electric-field poling history~\cite{Chapon04, Chapon06, Blake05, Radaelli09,Radaelli08, Zheng2019}.
 
 In the next Section, we first give a summary of the transitions and phases that are important for this Chapter, followed by a discussion on the experiments that were performed by our collaborators.
-Afterwards, we continue with a description of the system in terms of an effective spin Hamiltonian involving the Gd spins, and the AFM order parameters $\bm L$ describing the two Mn chains.
+Afterward, we continue with a description of the system in terms of an effective spin Hamiltonian involving the Gd spins, and the AFM order parameters $\bm L$ describing the two Mn chains.
 We demonstrate that our model reproduces the overall behavior observed by the experiments remarkably well, and discuss its energetic properties.
 After uncovering the source of the peculiar magnetoelectric switching, we shift our focus to the magnetic configuration, and how it changes because of the applied magnetic fields.
 Finally, we comment on the topological nature of the switching behavior and the generality of the model, and conclude with an intuitive argument and resulting simplified model in an attempt to further rationalize our observations. 
@@ -92,9 +92,8 @@ The magnetic unit cell is traversed by two antiferromagnetic (AFM) Mn chains, wh
 The Mn spins inside the chains lie mostly along the fourfold symmetry axis of the Mn$^{3+}$ pyramids, making angles of $\pm 23.4^\circ$ with the $a$-axis.
 \\\\
 \begin{figure}
-	% \centering
 	\IncludeGraphics[width=0.9\textwidth]{unit_cell.png}
-	\caption{\label{fig:GdMn2O5_unit_cell}{\bf Unit cell and magnetic configuration of GdMn$_2$O$_5$.} a) The magnetic unit cell with the zig-zag chains along the $a$-direction (cyan lines) denoting which Mn ions are linked by large AFM exchange, leading to the $\bm{L}_1$ and $\bm{L}_2$ N\'eel vectors used in the theoretical model (see Sec.~\ref{sec:GdMn2O5_Theory}). The boundary of the structural unit cell is marked by the black rectangle. The orange arrows denote the exchange paths between Gd and neighboring Mn ions in both chains, corresponding to $v_1$ and $v_2$ in the model. The two sources of the symmetric Heisenberg exchange striction are shown in (b) and (c). The black arrows indicate the zero field orientation of the spins, and the yellow and blue arrows denote the expanding and contracting bonds, respectively. The resulting polarization $P_b$ is shown by the large yellow arrow  in panel (a).}
+	\caption{\label{fig:GdMn2O5_unit_cell}{\bf Unit cell and magnetic configuration of GdMn$_2$O$_5$.} a) The magnetic unit cell with the zig-zag chains along the $a$-direction (cyan lines) denoting which Mn ions are linked by large AFM exchange, leading to the $\bm{L}_1$ and $\bm{L}_2$ N\'eel vectors used in the theoretical model (see Sec.~\ref{sec:GdMn2O5_Theory}). The boundary of the structural unit cell is marked by the black rectangle. The orange arrows denote the exchange paths between Gd and neighboring Mn ions in both chains, corresponding to $v_1$ and $v_2$ in the model. The two sources of the symmetric Heisenberg exchange striction are shown in (b) and (c). The black arrows indicate the zero-field orientation of the spins, and the yellow and blue arrows denote the expanding and contracting bonds, respectively. The resulting polarization $P_b$ is shown by the large yellow arrow  in panel (a).}
 \end{figure}
 The improper ferroelectricity is generated through the symmetric Heisenberg exchange striction due to the strong AFM exchanges combined with the geometric frustration of the Mn chains~\cite{Choi2008}.
 This frustration appears due to the odd number of AFM bonds in the Mn pentagons surrounding each Gd ion, similar to an AFM triangular lattice, which does not allow for all the AFM exchanges to be satisfied simultaneously (i.e. by having completely antiparallel spins on each AFM bond).
@@ -123,13 +122,12 @@ These lead to an additional increase of the electronic charge between the ions, 
 There is a second source of polarization in GdMn$_2$O$_5$, also due to the symmetric Heisenberg exchange striction, but this time between the spins of Gd and Mn~\cite{Lee13}.
 All the exchanges between Gd and the surrounding Mn ions are again AFM.
 A similar train of thought can then be followed as before, causing the bonds with parallel spins to extend and those with antiparallel spins to contract (see Fig.~\ref{fig:GdMn2O5_unit_cell}(c)).
-This contribution does not suffer from the same cancellation between ionic displacements and electronic charge due to correlation effects, and leads to the majority of the ferroelectric polarization.
+This contribution does not suffer from the same cancellation between ionic displacements and electronic charge due to correlation effects and leads to the majority of the ferroelectric polarization.
 
-Gd$^{3+}$ is special with respect to the other magnetic rare-earth ions in the $R$Mn$_2$O$_5$ family, because it has a very isotropic electronic configuration (4$f^7$), i.e. there is no unquenched orbital angular momentum and associated anisotropic charge distribution (as discussed profusely in the Rashba Chapter~\ref{ch:Rashba}). This means that the large spin (nominally $S=7/2$) can orient itself freely to optimize the magnetic interactions with its neighboring Mn atoms, without incurring any penalties through the atomic SOC combined with nonzero OAM.
+Gd$^{3+}$ is special compared with the other magnetic rare-earth ions in the $R$Mn$_2$O$_5$ family because it has a very isotropic electronic configuration (4$f^7$), i.e. there is no unquenched orbital angular momentum and associated anisotropic charge distribution (as discussed profusely in the Rashba Chapter~\ref{ch:Rashba}). This means that the large spin (nominally $S=7/2$) can orient itself freely to optimize the magnetic interactions with its neighboring Mn atoms, without incurring any penalties through the atomic SOC combined with nonzero OAM.
 This leads to a high magnetic susceptibility and associated magnetoelectric effect, surpassing the other $R$Mn$_2$O$_5$ compounds both in size and tunability of $P_b$, with a measured variation of up to 5000\,$\mu$ C/m$^2$ when a magnetic field is applied~\cite{Lee13}. 
 \\\\
 Now that the stage is set, we continue with a description of the puzzling experimental observations that motivated the study in this Chapter.
-%Even though the AFM intrachain superexchange interactions dominate over the AFM interchain interactions, there is nonetheless a geometric frustration due to the crystal structure, which can be seen most easily seen from the Mn pentagons surrouding the Gd atoms. This means that all AFM exchanges can not be satisfied at the same time, causing certain Mn bonds between the chains to have energetically unfavorable spin alignment. This leads to the first contribution to the ferroelectric polarization through Heisenberg exchange striction, lengthening bonds that have parallel spins and shortening those that have antiparallel ones.
 
 \section{Experimental methods and results}
 \begin{figure}
@@ -141,25 +139,25 @@ In these plots, we have denoted the four discussed states by the labels 1-4. The
 \begin{figure}
     \centering
     \IncludeGraphics{exp_plusvsminus.png}
-\caption{ \label{fig:GdMn2O5_experiment2} {\bf Angle and temperature dependence of the four-state switching.} By comparing panels (a) and (b) we can see that changing the sign of the field angle $\phi_H$ does not influence the four-state switching. c) Temperature dependence of the hysteresis loop at the magic angle. Above 4 K (upper panel) the more usual two-state hysteresis loop is observed, whereas below 4 K (lower panel) the four-state behavior starts to arise. The states, colors and arrows are indicated in the same way as in Fig.~\ref{fig:GdMn2O5_experiment1}.}
+\caption{ \label{fig:GdMn2O5 the_experiment2} {\bf Angle and temperature dependence of the four-state switching.} By comparing panels (a) and (b) we can see that changing the sign of the field angle $\phi_H$ does not influence the four-state switching. c) Temperature dependence of the hysteresis loop at the magic angle. Above 4 K (upper panel) the more usual two-state hysteresis loop is observed, whereas below 4 K (lower panel) the four-state behavior starts to arise. The states, colors and arrows are indicated in the same way as in Fig.~\ref{fig:GdMn2O5_experiment1}.}
 \end{figure}
 
 The measurements we present in this Section were performed in the group of A. Pimenov, on single crystal GdMn$_2$O$_5$ samples grown by S.-W. Cheong's group.
-Magnetic fields were applied under varying angles $\phi_H$ with respect to the crystalline $a$-axis, and swept up and down while tracking the evolution of $P_b$.
+Magnetic fields were applied under varying angles $\phi_H$ to the crystalline $a$-axis, and swept up and down while tracking the evolution of $P_b$.
 The results for such measurements at 2 K are displayed in Fig.~\ref{fig:GdMn2O5_experiment1}.
 Only positive fields were applied, but the behavior is identical for fields with opposite signs, as we will show later in Section~\ref{sec:GdMn2O5_magnetic_configuration}. 
 In previous experimental measurements, the magnetic field was only applied along the crystalline $a$-axis, i.e. $\phi_H = 0$~\cite{Lee13}.
 \\\\
 In the following we will refer to three distinct switching regimes: the low angle, ``magic'' angle, and high angle regime.
 They correspond to the values of $\phi_H$ shown in panels (a), (b), and (c) of Fig.~\ref{fig:GdMn2O5_experiment1}, respectively.
-Before delving into a detailed analysis of the experiments, we would like to point out that the low angle behavior shown in left side of panel (a) does not coincide with the behavior found in previous experiments in Ref.~\cite{Lee13} on the same sample, shown on the right.
+Before delving into a detailed analysis of the experiments, we would like to point out that the low angle behavior shown in the left side of panel (a) does not coincide with the behavior found in previous experiments in Ref.~\cite{Lee13} on the same sample, shown on the right.
 There it was found that when the field is applied along the $a$-axis, a two-state switching with a reversal of the polarization is observed, similar to the 1--4 branch in panel (b) of Fig.~\ref{fig:GdMn2O5_experiment1}.
 We are not quite sure what leads to this discrepancy between the measurements. It could be related to the poling history of the sample or some domain related behavior.
-This discrepancy is not that important in light of the current discussion, but it is nonetheless at odds with our theoretical findings which demonstrate a behavior similar to the previous measurements in Ref.~\cite{Lee13}. 
+This discrepancy is not that important in light of the current discussion, but it is nonetheless at odds with our theoretical findings which demonstrate behavior similar to the previous measurements in Ref.~\cite{Lee13}. 
 \\\\
 Turning back to the results shown in Fig.~\ref{fig:GdMn2O5_experiment1}, we can observe that the switching behavior changes significantly with $\phi_H$.
 In the high angle case, showcased in panel (c), we can observe a two-state switching loop, in which $P_b$ does not vary much but a clear jump appears around a field magnitude of 5 T.
-This signals a sudden change in the magnetic configuration of the system, since $P_b$ is a direct result of it.
+This signals a sudden change in the magnetic configuration of the system since $P_b$ is a direct result of it.
 The most peculiar, and completely novel, behavior can be found around the magic angle $\phi_H \sim 9^\circ$ in panel (b) of Fig.~\ref{fig:GdMn2O5_experiment1}.
 During the up-down-up-down field sweeps, we find that four different states are visited sequentially in this switching regime, with four different values of $P_b$.
 \\\\
@@ -168,25 +166,23 @@ At this stage, we would like to draw the attention of the reader to two facts.
 First, compared to the usual magnetoelectric switching with one low field state and one high field state, here a single up--down cycle of the field reverses the polarization, and correspondingly leads to a different final state.
 In order to return the system to its original configuration another up--down cycle is required.
 
-Second, this four-state loop is fully deterministic, meaning that when multiple such double cycles are applied, the system tracks close to exactly the same $P_b$ loop every time.
+Second, this four-state loop is fully deterministic, meaning that when multiple such double cycles are applied, the system tracks close to the same $P_b$ loop every time.
 \\\\
 If we ignore for a brief moment the low-angle behavior displayed in the left panel of Fig.~\ref{fig:GdMn2O5_experiment1}(a), and replace it with the behavior on the right~\cite{Lee13}, i.e. following the 1--4 branch in panel (b), we can imagine the four-state switching as an interpolation between the high and low angle switching regimes.
 This is a very important observation and will lead to one of the main results of this work: the topological nature of the magnetoelectric switching in this material.
 \\\\
 Turning now to the measurements displayed in Fig.~\ref{fig:GdMn2O5_experiment2}, we find that the four-state loop is not affected by a sign change of $\phi_H$ (compare panels (a,b)).
 From the two panels in (c), displaying measurements at 15 K and 4 K with $\phi_H$ along the magic angle, we can observe that the four-state hysteresis loop only appears at low temperatures.
-For higher temperatures a more usual two-state loop is found, similar to the high angle loop in panel (c) of Fig.~\ref{fig:GdMn2O5_experiment1}.
+For higher temperatures, a more usual two-state loop is found, similar to the high angle loop in panel (c) of Fig.~\ref{fig:GdMn2O5_experiment1}.
 \\\\
 To conclude this Section, we would like to point out that we focus on the overall switching behavior, i.e. we ignore the details that can be found by careful study of the $P_b$ graphs.
 For example, in Fig.~\ref{fig:GdMn2O5_experiment1}(b) one can observe three distinct steps that appear around 5 T during the 1$\rightarrow$2 and 3$\rightarrow$4 switching.
 These steps are, however, absent at the same field magnitude, when the system is on the 2$\rightarrow$3 and 4$\rightarrow$1 branch.
-%to a transition, on an ionic level, to states with higher Gd spin, or it might be related
 Their origin might be related to the spins in the Mn chains rotating individually, rather than in unison as we will assume in our model.
 Further research is required to solidify this statement, here we rather choose to focus on unraveling the main behavior of the four-state loop flanked in $\phi_H$ parameter-space by two more usual two-state switching loops.
-% This novel four-state switching is the focus of this Chapter, and is found to originate from a unidirectional rotational motion of the spins, a sort of microscopic magnetic analogue to the crankshaft in a car, converting the linear back--and--forth variation of the magnetic field into spin rotations.
 
 \section{Theory \label{sec:GdMn2O5_Theory}}
-In order to describe the puzzling experimental observations we construct a semi-classical model with eight Gd spins denoting the eight sublattice magnetizations, and two AFM order parameters that describe the Mn chains.
+In order to describe the puzzling experimental observations, we construct a semi-classical model with eight Gd spins denoting the eight sublattice magnetizations and two AFM order parameters that describe the Mn chains.
 The Gd spins are described by unit vectors $\bm{S}_i, i=1..8$, and we denote the two AFM order parameters as $\bm{L}_\alpha, \alpha=1,2$ (also unit vectors). See Fig~\ref{fig:GdMn2O5_unit_cell}(a) for further details.
 Furthermore, the ferroelectric polarization is represented by the slave order parameter $P_b$.
 Using a single $\bm{L}_\alpha$ to describe the orientation of all the Mn ions in a chain assumes that their spins are perfectly AFM ordered, i.e. $\bm{S}_i = L, \bm{S}_{i+1} = - \bm{L}$.
@@ -227,7 +223,7 @@ Minimizing with respect to $\delta \theta$ then leads to
 	&\Leftrightarrow \nonumber\\
 	\delta \theta &= \frac{g\mu_B H \sin(\theta_L - \theta_H)}{2 \Jpar}.
 \end{align}
-Inserting this expression for $\delta \theta$ back into Eq.~\eqref{eq:GdMn2O5_zeeman_exp}, and keeping only the first order terms, we obtain the following expression for the Zeeman contribution through spin canting:
+Inserting this expression for $\delta \theta$ back into Eq.~\eqref{eq:GdMn2O5_zeeman_exp}, and keeping only the first-order terms, we obtain the following expression for the Zeeman contribution through spin canting:
 \begin{align}
 	E_Z &= -\frac{g^2\mu_B^2 H^2 \sin(\theta_L - \theta_H)^2}{\Jpar} = -\frac{g^2\mu_B^2 H^2 \left(1 - \cos(\theta_L - \theta_H)^2\right)}{\Jpar}\nonumber\\
 	&=\frac{g^2\mu_B^2}{\Jpar}\left((\bm{H}\cdot\bm{L})^2 - H^2\right)\label{eq:GdMn2O5_Zeeman}.
@@ -323,9 +319,9 @@ We can identify three final terms that originate purely from the Gd spins:
      H_S=\frac{1}{2}(g \mu_B)^2\sum_{i\neq j}\left(\frac{\bm{S}_i\cdot \bm{S}_j}{r_{ij}^3}-3\frac{(\bm{S}_i\cdot \bm{r}_{ij})(\bm{S}_j\cdot \bm{r}_{ij})}{r_{ij}^5}\right) - \sum_i\left( K_S(\bm{N}_i\cdot \bm{S}_i)^2 + g\mu_\mathrm{B} \bm{H} \cdot \bm{S}_i\right). 
 \end{equation}
 The first describes the magneto-dipolar interaction between Gd spins, which could be relatively large due to the size of the Gd spins (nominally S=7/2) and relative proximity of the neighbors.
-In the numerical simulations these interactions were restricted to their five nearest neighbors, including periodic images.
+In the numerical simulations, these interactions were restricted to their five nearest neighbors, including periodic images.
 Adding further neighbors did not lead to qualitative differences in the results.
-The term with $K_S$ denotes the easy-axis anisotropy for the Gd ions, this time with anisotropy axes $\bm{N}_i$ which are unit vectors having alternating angles $\pm 12^\circ$ with respect to the $a$-axis.
+The term with $K_S$ denotes the easy-axis anisotropy for the Gd ions, this time with anisotropy axes $\bm{N}_i$ which are unit vectors having alternating angles $\pm 12^\circ$ to the $a$-axis.
 $K_S$ is significantly smaller than $K_L$ due to the isotropic environment and valence configuration of the Gd ions.
 The final term denotes the Zeeman energy of the Gd ions in the external magnetic field $\bm{H}$.
 \\\\
@@ -334,7 +330,6 @@ To conclude this Section, we gather all the terms in our effective Hamiltonian:
     \label{eq:GdMn2O5_model}
     H=\gamma(\bm{L}_1\cdot \bm{L}_2)^2 +\sum_{\alpha}\chi((\bm{H}\cdot \bm{L}_\alpha)^2-H^2)\\
     -K_L\sum_\alpha(\bm{L}_\alpha\cdot \bm{n}_\alpha)^2 -\sum_i\left( K_S(\bm{N}_i\cdot \bm S_i)^2+ g\mu_\mathrm{B} \bm{H} \cdot \bm{S}_i\right) \\
-    %\sum_{i,j}J_{ij} \s_i\cdot \s_j 
     + \frac{1}{2}(g \mu_B)^2\sum_{i\neq j}\left(\frac{\bm S_i\cdot \bm S_j}{r_{ij}^3}-3\frac{(\bm S_i\cdot \bm{r}_{ij})(\bm S_j\cdot \bm{r}_{ij})}{r_{ij}^5}\right)
      \\+ \sum_{i,\alpha}V_{i\alpha}\bm{S}_i\cdot \bm{L}_\alpha \\
     -P_b[8 \beta_1 (\bm{L}_1\cdot \bm{L}_2)+(\bm{S}_1-\bm{S}_5)(\beta_2 \bm{L}_2 + \beta_3 \bm{L}_1) \\+ (\bm{S}_2-\bm{S}_6)(\beta_2 \bm{L}_1 + \beta_3 \bm{L}_2)
@@ -362,10 +357,10 @@ The parameters for the exchange striction were then also chosen to fit the exper
 ${\beta_1 = 0.06\,\mu}$C/cm$^2$, $\beta_2 = 0.06\:\mu$C/cm$^2$, $\beta_3 = 0.04\:\mu$C/cm$^2$.
 \\\\
 However, these parameters are by no means a requirement for the overarching behavior to appear in our model. As we will show in greater detail in the Section discussing the topological nature of the switching behavior~\ref{sec:GdMn2O5_topology}, a great deal of freedom exists in choosing these parameters, if the only requirement is to reproduce the three switching regimes.
-This lies at the heart of our claim that this effect might exist in other materials, since neither the model itself nor its parameters depend greatly on the microscopic details of GdMn$_2$O$_5$. 
+This lies at the heart of our claim that this effect might exist in other materials since neither the model itself nor its parameters depend greatly on the microscopic details of GdMn$_2$O$_5$. 
 \\\\
 The next question is how to simulate the experimental set-up, which is, in contrast to the question about the model parameters, much easier to answer.
-Since the behavior only shows up at temperatures below $\sim$ 4 K, is remarkably deterministic, and is a result of quasi-statically applied magnetic fields, we simulated it as a series of simple minimization problems.
+Since the behavior only shows up at temperatures below $\sim$ 4 K, is remarkably deterministic and is a result of quasi-statically applied magnetic fields, we simulated it as a series of simple minimization problems.
 This entails taking one of the degenerate starting configurations, increasing the field by a small amount, minimizing the energy, applying a further increased field, and so on, thus tracking the local minimum at all steps.
 It is quite remarkable that performing this relatively simple process, purely based on optimizing the energetics of the system, leads to a faithful reproduction of the observed behavior, which is another indication of the topological nature of the switching behavior.
 As we will show more explicitly below, it is sort of an extreme variant of the behavior of Thouless charge pumps, and especially of their recent realization in ultra-cold gases \cite{Rice82,Thouless1982,Thouless83,Lohse16,Nakajima16, Atala13}.
@@ -380,30 +375,30 @@ We now turn to a discussion of the results obtained from these simulations of th
     \caption{\label{fig:GdMn2O5_theory}{\bf Simulation of the angle dependent magnetoelectric switching.}
     The evolution of ferroelectric polarization $P_b$ during the magnetic field sweep cycle is depicted for the low (a), magic (b), and high (c) angle regimes. 
    In each panel, the four-states and field cycle progression are marked in the same way as in Fig~\ref{fig:GdMn2O5_experiment1}. The four-states hysteresis loop is observed for the field at the magic orientation in panel (b). 
-    The insets indicate the sequence of states visited during the cycle for each regime, and winding numbers (see Section~\ref{sec:GdMn2O5_topology} for further details on the latter).
+    The insets indicate the sequence of states visited during the cycle for each regime and winding numbers (see Section~\ref{sec:GdMn2O5_topology} for further details on the latter).
 }
 \end{figure}
 The magnetoelectric switching regimes of $P_b$ obtained from the simulations, are showcased in Fig.~\ref{fig:GdMn2O5_theory}, displaying the same three regimes as the experimental results in Figure~\ref{fig:GdMn2O5_experiment1}.
-Comparing the two figures demonstrates the close agreement between the two.\footnote{We compare the low angle regime with the right hand side of Fig.~\ref{fig:GdMn2O5_experiment1}(a).}.
-The insets in each panel of Fig.~\ref{fig:GdMn2O5_theory} depict schematically the sequence of states that is visited by the system during the field sweeps.
+Comparing the two figures demonstrates the close agreement between the two.\footnote{We compare the low angle regime with the right-hand side of Fig.~\ref{fig:GdMn2O5_experiment1}(a).}.
+The insets in each panel of Fig.~\ref{fig:GdMn2O5_theory} depict schematically the sequence of states that are visited by the system during the field sweeps.
 
 As mentioned before, it appears that the magic angle regime (Fig.~\ref{fig:GdMn2O5_theory}(b)) is an interpolation between the low and high angle regimes.
 At the start, it follows the high angle behavior moving 1$\rightarrow$2, mimicking the low angle behavior then results in a reversal of the polarization on the 2$\rightarrow$3 branch, followed by an inversion symmetry partner of the high angle regime moving 3$\rightarrow$4 and finally another low angle-like reversal of the polarization, bringing the system from state 4 back to the initial state 1. 
 \\\\
-In order to gain a deeper understanding of this peculiar behavior, we focus first on the energetics of the model, as calculated by the simulations.
+To gain a deeper understanding of this peculiar behavior, we focus first on the energetics of the model, as calculated by the simulations.
 The intricacies of the energetics are ultimately what results in the deterministic, unidirectional, switching of the system.
 
 \subsection{Energetics}
 Before continuing, let us take a moment to recall some of the symmetries of the system, whose transformation properties were listed in Tab.~\ref{tab:GdMn2O5_symm} during the construction of the Hamiltonian.
 We focus on how the transformations due to inversion ($I$) and time-reversal ($T$) symmetry relate the angles of $\bm L_1$ and $\bm L_2$ ($\phi_{\bm L_1}$ and $\phi_{\bm L_2}$).
 The energy surfaces in terms of the angles are depicted in Fig.~\ref{fig:GdMn2O5_heatmap}, for a varying field with strength $|H|$ and angle $\phi_H = +10^\circ$.
-We observe that there are four degenerate energy minima, a result from the breaking of both $T$ and I symmetries in the low temperature phase.
+We observe that there are four degenerate energy minima, a result of the breaking of both $T$ and I symmetries in the low-temperature phase.
 The angles $\phi_{L_1}$ and $\phi_{L_2}$, that describe in part the state of the system, can be transformed into each other through the relations:
 \begin{align}
 	I:\qquad &(\phi_{L_1}, \phi_{L_2}) \rightarrow (\phi_{L_1}+\pi, \phi_{L_2}),\\
 	T:\qquad &(\phi_{L_1}, \phi_{L_2})\rightarrow(\phi_{L_1}+\pi, \phi_{L_2}+\pi).
 \end{align}
-These symmetry operations are indicated by the black arrows in the top left and bottom right panels of Fig.~\ref{fig:GdMn2O5_heatmap}.
+These symmetry operations are indicated by the black arrows in the top-left and bottom right panels of Fig.~\ref{fig:GdMn2O5_heatmap}.
 \begin{figure*}[h!]
 	\centering
 	\IncludeGraphics{field_heatmap1}
@@ -411,18 +406,18 @@ These symmetry operations are indicated by the black arrows in the top left and 
 \end{figure*}
 \\\\
 When the strength of the magnetic field increases, we see that two long vertical ``valleys'' appear along the $\phi_{L_1}$-direction of the energy surface, separated by $\pi$ along $\phi_{L_2}$.
-We focus on the case where the initial state of the system corresponds to the top left minimum, indicated by the bright white dot in the top left panel, and a single up--down field sweep is applied.
+We focus on the case where the initial state of the system corresponds to the top-left minimum, indicated by the bright white dot in the top-left panel, and a single up--down field sweep is applied.
 Following its trajectory, indicated by the shaded white lines, we find that the system first flows from the original minimum to the one that is related by inversion symmetry.
 This has rotated $\phi_{L_1}$ by $\pi$, while leaving $\phi_{L_2}$ unchanged.
 Through the $\bm L_1 \cdot \bm L_2$ part of the exchange striction, this causes the reversal of $P_b$, which is consistent with the inversion symmetry operation.
 The process we have described here corresponds to the first up--down cycle of the $P_b$ plot of Fig.~\ref{fig:GdMn2O5_theory}(b), i.e. the one that leads to the 1$\rightarrow$2$\rightarrow$3 branch.
 
-As it turns out, when the field is swept up and down a second time, the state progresses through the valley in the same direction, i.e. downwards through the edge at the bottom of the window, reappearing at the top, and finally landing in the original top left minimum (see Fig.~\ref{fig:GdMn2O5_heatmap}).
+As it turns out when the field is swept up and down a second time, the state progresses through the valley in the same direction, i.e. downwards through the edge at the bottom of the window, reappearing at the top, and finally landing in the original top-left minimum (see Fig.~\ref{fig:GdMn2O5_heatmap}).
 This corresponds to the 3$\rightarrow$4$\rightarrow$1 branch of Fig.~\ref{fig:GdMn2O5_theory}(b).
 \\\\
 The sequence of states visited during this double up--down cycle of the field at $\phi_H = 10^\circ$, constitutes half of the possible configurations of the system (two low field and two high field states).
-The other half is related to the first by time-reversal symmetry as indicated by the diagonal black arrow in the top left and bottom right panels of Fig.~\ref{fig:GdMn2O5_heatmap}.
-A similar trajectory through this valley on the right hand side of the energy surface would be followed if the initial state was in one of the two zero field minima it harbors. 
+The other half is related to the first by time-reversal symmetry as indicated by the diagonal black arrow in the top-left and bottom right panels of Fig.~\ref{fig:GdMn2O5_heatmap}.
+A similar trajectory through this valley on the right-hand side of the energy surface would be followed if the initial state was in one of the two zero-field minima it harbors. 
 We can thus conclude that the up--down cycling of the magnetic field at $\phi_H=10^\circ$ does not allow for a transition between the two valleys, and $\phi_{L_2}$ changes very little during the cycling process.
 \\\\
 From these considerations, it seems that no such unidirectional trajectory is followed in the two-state regimes (Fig.\ref{fig:GdMn2O5_theory}(a, c)) at low or high field angle $\phi_H$.
@@ -430,7 +425,7 @@ This is rather puzzling since one would imagine that the minima behave in a simi
 
 In fact, they do.
 \\\\
-However, and this is really the crux of the matter, the barriers between the minima do not. As it turns out, there are no symmetries that relate the barriers that flank a minimum from either side, allowing them to change asymmetrically.
+However, and this is the crux of the matter, the barriers between the minima do not. As it turns out, there are no symmetries that relate the barriers that flank a minimum from either side, allowing them to change asymmetrically.
 From our observations, it is the field angle $\phi_H$ that influences these asymmetric barriers, ultimately resulting in the three different switching regimes.
 \\\\
 We thus turn to a more careful investigation of the barriers, first by studying the results of Nudged Elastic Band simulations, displayed in Fig.~\ref{fig:GdMn2O5_neb}, followed by a simple theoretical argument.
@@ -439,7 +434,7 @@ We thus turn to a more careful investigation of the barriers, first by studying 
     \IncludeGraphics{neb}
     \caption{\label{fig:GdMn2O5_neb}{\bf Nudged Elastic Bands calculation.}
     a) Evolution of transition barriers between states 1, 2, 3, 4 as the magnetic field is swept through the hysteresis region at $\phi_H = 10^\circ$. The plots are shifted vertically, and the model parameters were slightly altered for clarity which increases the width of the hysteresis region. The curve colors encode the corresponding magnetic field strength. The blue circles and arrows show the trajectory of the energy minimum during the field sweeps.
-    b) Zoom of the corresponding dashed red box in panel (a), showing the asymmetric evolution of the barrier 12 between states 2 and 1, and 23 between states 2 and 3, around the critical field $H^\ast$ where the barriers are of equal height. The dashed black curve shows an example of the asymmetric barrier evolution discussed in the main text.
+    b) Zoom of the corresponding dashed red box in panel (a), showing the asymmetric evolution of barrier 12 between states 2 and 1, and 23 between states 2 and 3, around the critical field $H^\ast$ where the barriers are of equal height. The dashed black curve shows an example of the asymmetric barrier evolution discussed in the main text.
     }
 \end{figure}
 %
@@ -447,10 +442,10 @@ The Nudged Elastic Band calculations are a way to track how the low points of th
 Similar to the previous discussion, we track the evolution of the system starting in state 1, indicated at the far left of Fig.~\ref{fig:GdMn2O5_neb}(a).
 In the following we use {\it ij} to denote the energy barrier between states i and j.
 \\\\
-As the field increases (color change and vertical shift) the local minimum around state 1 becomes meta-stable when the barrier 12 between state 1 and 2 vanishes, moving the system towards state 2.
+As the field increases (color change and vertical shift) the local minimum around state 1 becomes meta-stable when barrier 12 between state 1 and 2 vanishes, moving the system towards state 2.
 Notice that the barrier between 14 is still present at that point.
-When the field is subsequently lowered, the barrier 23 lowers faster than 12, causing the system to progress to state 3.
-A similar process then brings state 3$\rightarrow$4$\rightarrow$1 during the next up--down field sweep, since the barriers 34 and 12  (14 and 23) are related by the inversion transformation and  $E_{34} = E_{12}$ ($E_{41} = E_{23}$) (see the effect of {\it I} in Fig.~\ref{fig:GdMn2O5_heatmap} for a visual confirmation of this statement).
+When the field is subsequently lowered, barrier 23 lowers faster than 12, causing the system to progress to state 3.
+A similar process then brings state 3$\rightarrow$4$\rightarrow$1 during the next up--down field sweep, since barriers 34 and 12  (14 and 23) are related by the inversion transformation and  $E_{34} = E_{12}$ ($E_{41} = E_{23}$) (see the effect of {\it I} in Fig.~\ref{fig:GdMn2O5_heatmap} for a visual confirmation of this statement).
 From this analysis it is clear that indeed the barriers evolve asymmetrically when the field changes.
 This is not surprising seen as the states at the top of the barriers\footnote{They are an interpolation between the states on either side of the barrier.} that flank a given minimum are in no way related by symmetry.
 
@@ -485,7 +480,7 @@ Indeed, starting at state 2, when $H<H^*$ as the field decreases, this leads to 
 \begin{figure}[h!]
     \centering
     \IncludeGraphics{4configs.png}
-    \caption{\label{fig:GdMn2O5_spin_configs}{\bf Magnetic configurations at $\phi_H =  10^\circ$.} The configurations corresponding to the four-states are labeled by the numbers in the top left corner of each panel. Gd ions are displayed in green, Mn in purple. The cyan lines highlight the orientation of the chains. A Mn ion of chain $L_1$ and neighboring Gd ion are highlighted by the red ellipse to demonstrate the 360$^\circ$ rotation in 90$^\circ$ increments.  }
+    \caption{\label{fig:GdMn2O5_spin_configs}{\bf Magnetic configurations at $\phi_H =  10^\circ$.} The configurations corresponding to the four-states are labeled by the numbers in the top-left corner of each panel. Gd ions are displayed in green, Mn in purple. The cyan lines highlight the orientation of the chains. An Mn ion of chain $L_1$ and neighboring Gd ion are highlighted by the red ellipse to demonstrate the 360$^\circ$ rotation in 90$^\circ$ increments.  }
     \label{fig:GdMn2O5_4configs}
 \end{figure}
 Now that we have a firm grasp on the energetics of the problem, we turn to an investigation of the behavior of the spins that results from it.
@@ -496,12 +491,11 @@ The Gd spins (green) align in largely antiferromagnetically with the closest Mn 
 This causes a roughly left--left--right--right sequence of the Gd spins along the $a$-axis at low field. 
 
 In the high field states 2 and 4, Mn spins are nearly orthogonal to the magnetic field, in order to maximize the gain on Zeeman energy (see Eq.~\eqref{eq:GdMn2O5_Zeeman}).
-The Gd spins in this case are again influenced mostly by the antiferromagnetic exchange with the nearest Mn ion, but they are tilted towards the field due to the Zeeman interaction.
+The Gd spins, in this case, are again influenced mostly by the antiferromagnetic exchange with the nearest Mn ion, but they are tilted towards the field due to the Zeeman interaction.
 The higher the strength of the applied field, the more will the Gd spins align with it.
 \\\\
 As could already be deduced from our earlier discussion on the trajectory through the ($\phi_{L_1}$, $\phi_{L_2}$) space (Fig.~\ref{fig:GdMn2O5_heatmap}), we can observe that the spins associated with $\bm L_1$ perform a unidirectional rotation during the up--down field sweeps.
 The Gd spins that are coupled strongest to this chain perform a similar rotational motion, but with less well-defined increments.
-% The spins of the other chain, $\bm L_2$ seem to only toggle between two-states, and a similar behavior can be observed for the Gd spins coupled most strongly to it.
 Indeed, focusing on the highlighted spins in Fig.~\ref{fig:GdMn2O5_4configs}, we see that the chains rotate with increments of around 90$^\circ$ between the states, performing a full 360$^\circ$ rotation by the time they arrive back at the original configuration.
 \begin{figure}
 	\IncludeGraphics{spin_configs}
@@ -520,13 +514,11 @@ These considerations are brought together in the left panels of Figure~\ref{fig:
 Notice how all field cycling procedures depicted in panel (a) lead to the same spin behavior.
 \\\\
 %
-Since the ferroelectric polarization $P_b$ is a direct result of the magnetic configuration, we briefly comment on how these different switching behaviors for the spin are translated in to the plots of the polarization in Fig.~\ref{fig:GdMn2O5_theory} and Fig.~\ref{fig:GdMn2O5_experiment1}.
+Since the ferroelectric polarization $P_b$ is a direct result of the magnetic configuration, we briefly comment on how these different switching behaviors for the spin are translated into the plots of the polarization in Fig.~\ref{fig:GdMn2O5_theory} and Fig.~\ref{fig:GdMn2O5_experiment1}.
 Most of the evolution of $P_b$ can be understood from the $\bm L_1 \cdot \bm L_2$ part. The contribution arising from the Gd--Mn exchange striction behaves similarly due to strong coupling between them ($v_1$), with an additional superposed contribution due to the slight rotations that the Gd spins perform away from the switching field strength $|H| \sim 5$ T.
 At $\phi_{\rm H} = \pm 20^\circ$, both N\'eel vectors $\bm L_\alpha$ toggle between two directions in such a way that the angle between them and, hence, the ferroelectric polarization changes very little (Figs.~\ref{fig:GdMn2O5_regimes}(b,f),~\ref{fig:GdMn2O5_experiment1}(c), and~\ref{fig:GdMn2O5_theory}(c)). 
 On the other hand, at $\phi_{H}=0^\circ$, $\bm{L}_1$ and  $\bm{L}_2$ tilt in opposite directions. The resulting large variation of the angle between these two vectors gives rise to the two-state switching with the polarization reversal (Figs.~\ref{fig:GdMn2O5_regimes}(d),~\ref{fig:GdMn2O5_experiment1}(a), and ~\ref{fig:GdMn2O5_theory}(a)). This suggests that the small-amplitude relative rotation of $\bm{L}_1$ and $\bm{L}_2$ is an electromagnon mode that could be excited by oscillating $H_a$ or $E_b$.
 On the boundary between the two extremes one of the $\bm L_\alpha$ toggles while the other performs the full 360$^\circ$ rotation, leading to the four-state polarization loops.
-%
-%
 \subsection{Topology \label{sec:GdMn2O5_topology}}
 We have hinted multiple times throughout the previous Chapters at the topological nature of the switching behavior.
 We will sharpen our previous statements in this Section and comment on the generality and robustness of the observed behavior.
@@ -546,7 +538,7 @@ This means that as long as the low and high angle regimes are present in a mater
 \\\\
 We finish this Section by demonstrating the generality of this behavior that results from its topological nature.
 
-The size and position of the $\phi_H$ interval for which the four-state regime appears, depends on the details of the model parameters, but similarly to other topological boundaries (e.g. magnetic domain walls, topologically protected edge states in topological insulators), it can not be destroyed when the neighboring ``domains'' are present (high and low angle switching regimes in this case).
+The size and position of the $\phi_H$ interval for which the four-state regime appears depends on the details of the model parameters, but similarly to other topological boundaries (e.g. magnetic domain walls, topologically protected edge states in topological insulators), it can not be destroyed when the neighboring ``domains'' are present (high and low angle switching regimes in this case).
 The influence of varying a single model parameter is demonstrated in Fig.~\ref{fig:GdMn2O5_windingvsparam}, where the blue and red regions correspond to the angles $\phi_H$ where the low and high angle regimes appear, respectively.
 Indeed, we see that for many parameters the four-state region (displayed in grey) exists as the boundary between the regions of the two-state regimes.
 One can also observe that the influence of some parameters is greater than others. For instance, taking $v_1=0.7$ meV dramatically increases the width of the four-state switching region to the interval [5.2$^\circ$, 17.6$^\circ$] for $\phi_H$.
@@ -555,12 +547,12 @@ A small variation to $K_L$, the strength of the Mn single-ion anisotropy, on the
 This is not surprising, since the behavior of the Mn chains is very similar to that of the usual spin-flop transition, which crucially depends on the easy-axis anisotropy. This latter point will be expanded upon in the next Section.
 \begin{figure}
 	\IncludeGraphics{winding_modelparam.png}
-	\caption{\label{fig:GdMn2O5_windingvsparam} {\bf Magic Angle region.} The panels demonstrate the influence of selected model parameters on the magic angle region. In each panel only the parameter labeled on the vertical axis is varied, whereas the others are kept at the values reported in the Methods Section \ref{sec:GdMn2O5_methods}. All parameters are reported in units of meV. The blue and red regions denote the angles $\phi_H$ for which the low angle and high angle two-state switching regimes appear, respectively. The grey boundary region is where the magic angle four-state switching occurs, characterized by a winding number of 1, and is topologically protected by the neighboring regimes.}
+	\caption{\label{fig:GdMn2O5_windingvsparam} {\bf Magic Angle region.} The panels demonstrate the influence of selected model parameters on the magic angle region. In each panel, only the parameter labeled on the vertical axis is varied, whereas the others are kept at the values reported in the Methods Section \ref{sec:GdMn2O5_methods}. All parameters are reported in units of meV. The blue and red regions denote the angles $\phi_H$ for which the low angle and high angle two-state switching regimes appear, respectively. The grey boundary region is where the magic angle four-state switching occurs, characterized by a winding number of 1, and is topologically protected by the neighboring regimes.}
 \end{figure}
 \\\\
 We have so far given a detailed description of the observed behavior, experimentally and from the simulations of our effective model.
 While the model reproduces the experiments remarkably well, and we have found that a combination of symmetries and energetics lies at the core of the peculiar switching behavior, one may wonder if this can be rationalized further.
-In attempt to do just this, we proceed in the following Section with some intuitive considerations.
+In an attempt to do just this, we proceed in the following Section with some intuitive considerations.
 
 \subsection{Intuition}
 First of all, we would like to point out the similarity of the behavior of $\bm L_1$ and $\bm L_2$ with the well-known spin-flop transition in antiferromagnets.
@@ -570,36 +562,22 @@ This occurs when the Zeeman energy that can be gained through canting outweighs 
 The sudden spin-flop is a result of a similar flattening of the energy potential as what happens in our case at the switching field. A visual representation of this flattening can be found in the energy surface displayed in the panel for a field magnitude $|H| = 4.33$ in Fig.~\ref{fig:GdMn2O5_heatmap}, where the valley has an almost uniform purple color.
 In such flat potentials, a small imbalance to one direction leads to a big movement of the order parameter, which is exactly what leads to the sudden reorientation of the spins in spin-flop transitions.
 In our case, a clear signature of these sudden variations is found in the jumps of $P_b$ in Fig.~\ref{fig:GdMn2O5_theory} around the aforementioned field of $\sim$ 4 T.
-The remarkable difference of the behavior described here, compared to the vanilla spin-flop transition, is that a well defined flop direction is preferred. In spin-flops it makes no difference whether the system flops by $+90^\circ$ or $-90^\circ$. Here it does, and the ``flop direction'' of $\bm L_1$ or $\bm L_2$ at the switching field strength is always the same.
+The remarkable difference of the behavior described here, compared to the vanilla spin-flop transition, is that a well-defined flop direction is preferred. In spin-flops it makes no difference whether the system flops by $+90^\circ$ or $-90^\circ$. Here it does, and the ``flop direction'' of $\bm L_1$ or $\bm L_2$ at the switching field strength is always the same.
 \\\\
 While further microscopic studies are needed to completely unravel the reason behind this, we suggest that this coaxing of the $\bm L$ is due to the exchange interaction with the Gd spins. We attempt to describe the idea by following the evolution of the two highlighted spins in Fig.~\ref{fig:GdMn2O5_4configs}.
 
 When the field is ramped up, the long Gd spin (S=7/2) orients itself to it, while the chain $\bm L_1$ remains relatively strongly pinned because of its high anisotropy.
 Since the field is applied at an angle smaller than the $23.4^\circ$ angle of the $\bm L_1$ easy axis, the force applied by the Gd spin to the chain pushes it towards one of the two flop directions.
 
-When the chain then eventually flops with an 90$^\circ$ increment, the Gd spin reorients as to optimize the exchange with the chain.
+When the chain then eventually flops with a 90$^\circ$ increment, the Gd spin reorients as to optimize the exchange with the chain.
 This leads to an alignment of the Gd spin that was originally at a positive relative angle w.r.t. the field ($\phi_{Gd}>10^\circ$), to now be at a negative relative angle ($\phi_{Gd}<10^\circ$).
 When the field subsequently decreases, the Gd rotates further in the same direction, towards negative angles, thus pulling the Mn chains towards one of the flop directions, leading to another 90$^\circ$ rotation (this time the flop happens to align again with the easy axis anisotropy due to a diminished Zeeman energy gain through canting).
 
-%
-% \begin{figure}[h]
-% 	\begin{subfigure}{\textwidth}
-%     \IncludeGraphics{energy_contributions_neb}
-% 	\end{subfigure}
-%     % \IncludeGraphics[width=\linewidth]{}
-%     %\includegraphics[width=\linewidth]{fig/L1L2_heatmap.png}
-%     \caption{\label{fig:GdMn2O5_neb}{\bf Energy evolution.}
-%     a) Evolution of transition barriers between states 1, 2, 3, 4 as the magnetic field at 10$^\circ$ to the $a$-axis is swept through the hysteresis region. The plots are shifted vertically, and magnetodipolar interactions were enhanced by a factor of 5.3 for clarity. This latter increases the width of the hysteresis region. The curve colors encode the corresponding magnetic field strength. The blue circles and arrows show the trajectory of the energy minimum due to field sweeps.
-%     b) The red square and corresponding schematic on the right shows the asymmetric evolution of the barrier from state 2 to 1, and from 2 to 3 around the critical field $H^\ast$ where the barriers are of equal height.
-%     c) The different contributions to the total energy. 
-%     Coordinated changes of the state energies and barrier asymmetry with magnetic field enable the topological behavior.
-%     }
-% \end{figure}
 We hope that this intuitive picture shines some light on what might be happening microscopically to cause the behavior, although we concede the claim that this is a complete microscopic explanation. We will give an additional demonstration of this intuitive argument in the context of a simplified model, derived in the next Section.
 
 \section{Simplified Model}
-Having modeled the topologically protected switching in  GdMn$_2$O$_5$ with all its complexity, one may wonder what the minimal requirements are to have a similar behavior where the spins rotate 360$^\circ$ while the applied field only oscillates along a single axis.
-It is clear from the spin configurations in Fig.~\ref{fig:GdMn2O5_spin_configs}, and from previous considerations, that the chain with Mn moments most parallel to the applied field does the full rotation, while the other chain merely toggles around its starting orientation. As mentioned before, the Gd spins mostly follow the behavior of the chain they are most strongly coupled to. This warrants an attempt to reproduce the behavior of the rotating spins using only a single Mn chain with the Gd spins that are coupled to it via $v_1$. 
+Having modeled the topologically protected switching in  GdMn$_2$O$_5$ with all its complexity, one may wonder what the minimal requirements are to have similar behavior where the spins rotate 360$^\circ$ while the applied field only oscillates along a single axis.
+It is clear from the spin configurations in Fig.~\ref{fig:GdMn2O5_spin_configs}, and previous considerations, that the chain with Mn moments most parallel to the applied field does the full rotation, while the other chain merely toggles around its starting orientation. As mentioned before, the Gd spins mostly follow the behavior of the chain they are most strongly coupled to. This warrants an attempt to reproduce the behavior of the rotating spins using only a single Mn chain with the Gd spins that are coupled to it via $v_1$. 
 In the particular case where the magic angle is along $\phi_H = +10^\circ$, we therefore keep $L_1$, $S_2$, $S_3$, $S_6$ and $S_7$ as the remaining variables in the model (see Fig.~\ref{fig:GdMn2O5_simple_model}).
 Furthermore, we neglect the easy axis anisotropy of Gd spins because of its small contribution due to the isotropic environment of the Gd spins.
 This leaves us with the following Hamiltonian, combining two parts, one with the dipolar terms $H_{dip}$ and another with all the other terms, $H'$:
@@ -624,18 +602,18 @@ as a minimal model that still demonstrates the crankshaft-like behavior.
 
 This minimal model embodies the intuitive explanation that we laid out in the previous Section, relying on the interaction between the two Gd spins and the magnetic field to push the AFM order into the positive direction at the switching field.
 When the chain flips, the exchange field from the Mn ions then pushes the Gd spins further in the same positive direction, thus completing the first part of the cycle.
-During the second cycle the same considerations lead to the continued positive rotation of the spins.
+During the second cycle, the same considerations lead to the continued positive rotation of the spins.
 
 
 \begin{figure}[b]
 	\IncludeGraphics[width=0.9\columnwidth]{simplified_model.png}
-	\caption{\label{fig:GdMn2O5_simple_model}{\bf Spins in the simplified model.} The zero field configuration of the spins that perform the full rotation (360$^\circ$), used in the simplified model \eqref{eq:GdMn2O5_simple_model}, and indicated by the arrows. Spins $S_6$ and $S_7$ are translated for clarity by $b$ and $2a$, respectively, from their original position in the second half of the cell. Due to the symmetry of the model and the geometry, the two clusters are copies of eachother, allowin us to focus on the top right cluster, encased in the red box.}
+	\caption{\label{fig:GdMn2O5_simple_model}{\bf Spins in the simplified model.} The zero-field configuration of the spins that perform the full rotation (360$^\circ$), used in the simplified model \eqref{eq:GdMn2O5_simple_model}, and indicated by the arrows. Spins $S_6$ and $S_7$ are translated for clarity by $b$ and $2a$, respectively, from their original position in the second half of the cell. Due to the symmetry of the model and the geometry, the two clusters are copies of each other, allowing us to focus on the top right cluster, encased in the red box.}
 \end{figure}
 
 \section{Conclusions}
 We have examined the very peculiar and novel magnetoelectric switching behavior in GdMn$_2$O$_5$, a hallmark multiferroic system.
 Based on the incredible experimental observations performed by our collaborators in A. Pimenov's group, we have constructed a semi-classical spin model in an attempt to reproduce the behavior.
-Not only was this attempt very succesful in mimicking the experimental observations, it also allowed us to gain a deeper insight into what causes the effect.
+Not only was this attempt very successful in mimicking the experimental observations, but it also allowed us to gain a deeper insight into what causes the effect.
 \\\\
 We identified three separate polarization switching regimes that occur for different values of the angle $\phi_H$ that the applied magnetic field makes with the $a$-axis of the crystal.
 Accordingly, we termed these the low angle, high angle, and magic angle switching regimes, the latter fully deserving its designation due to the novel four-state double hysteresis loop that it leads to.
@@ -645,12 +623,12 @@ This physics is a prime example of the often recurring theme in condensed matter
 \\\\
 Since the four-state switching regime at the magic angle is the most novel, we focused much of our effort on understanding its underlying mechanism. Extrapolating the gained knowledge we were then able to rationalize the behavior of the low and high angle regimes as well.
 
-Focusing first on the evolution of the energy landscape of the model in Fig.~\ref{fig:GdMn2O5_heatmap}, we understood that the trajectory of the system through the four-states is not only described by the variation of their energy minima, but that a crucial role is played by the energy barriers between them.
+Focusing first on the evolution of the energy landscape of the model in Fig.~\ref{fig:GdMn2O5_heatmap}, we understood that the trajectory of the system through the four-states is not only described by the variation of their energy minima but that a crucial role is played by the energy barriers between them.
 We verified this by performing Nudged Elastic Band calculations that describe how the barriers between the four-states evolve as a function of the applied field strength (see Fig.~\ref{fig:GdMn2O5_neb}), fully uncovering the mechanism behind the unidirectional trajectory through the energy landscape.
 The main observation is that the barriers between neighboring states are not related by symmetry and are thus allowed to evolve asymmetrically, a fact confirmed by the different magnetizations of the barrier states.
 \\\\
 We then turned our attention to the behavior of the spins associated with the effective model. Incredibly, we found that the undirectional cycling of the four-state regime is reflected in the full 360$^\circ$ rotation of half the spins by increments close to 90$^\circ$ (see Fig.~\ref{fig:GdMn2O5_regimes} for a summary of all switching regimes).
-This is a microscopic analogue to the crankshaft in a car, transforming the linear back--and--forth motion of the applied magnetic field (the piston) into circular motion of the spins (crankshaft).
+This is a microscopic analog to the crankshaft in a car, transforming the linear back--and--forth motion of the applied magnetic field (the piston) into circular motion of the spins (crankshaft).
 Since the polarization in these materials is a direct result of the magnetic configuration, we managed to link the uncovered spin behavior directly to the observations of the magnetoelectric switching in the experimental measurements.
 \\\\
 Moreover, by realizing how the magic angle switching regime appears as a boundary between the low and high angle regimes, and by studying the difference in their trajectories through the energy landscape, we identified the topological nature of the switching behavior.
@@ -660,8 +638,8 @@ In order to verify the generality and robustness of this topological behavior, w
 Combining all our observations, we concluded by attempting an intuitive explanation of the switching from a microscopic point of view, comparing the behavior of the spins in GdMn$_2$O$_5$ to the well-known spin-flop transition.
 While our investigation explained the lion's share of the observed magnetoelectric switching behavior in GdMn$_2$O$_5$, there remain some unanswered questions, mainly concerning the influence of domains, and what leads to the smaller jumps of the polarization curves in Fig.~\ref{fig:GdMn2O5_experiment1}.
 \\\\
-We would like to conclude with some speculations on the technological applicability of this magnificent behavior.
-First, the clearest similarity is with a binary counter, where GdMn$_2$O$_5$ could be a single crystal analogue where the two polarization states denote either a 0 or 1 bit.
+We would like to conclude with some speculations on the technological applicability of this interesting behavior.
+First, the clearest similarity is with a binary counter, where GdMn$_2$O$_5$ could be a single crystal analog where the two polarization states denote either a 0 or 1 bit.
 It could then be trivially used as a binary counter for magnetic field pulses.
 Second, the flatness of the energy surface close to the switching field could open the door to a degree of electric control over the magnetic configuration~\cite{Radaelli08Y,Oh14}.
 This may then be utilized in storage devices that store data magnetically, but read and write it electrically.
