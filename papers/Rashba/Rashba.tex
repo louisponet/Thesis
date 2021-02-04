@@ -57,7 +57,7 @@ We will find that the more obscure ones actually dominate in most cases and that
 \\\\
 As a hallmark example of ferroelectrics that demonstrate a large spin-splitting, we focus in the numerical portion of this Chapter on simulations performed for Germanium Telluride (GeTe).
 Its dispersion is exactly the one we used to demonstrate the conical shape of the band structure, displayed Fig.~\ref{fig:Rashba_intro_dispersion}(a).
-To investigate how the microscopic effects, identified in the Theory Section~\ref{sec:Rashba_Theory}, manifest themselves in GeTe, we use DFT followed by a Wannierization to gain access to the local, real space, properties of the Bloch functions.
+To investigate how the microscopic effects, identified in the Theory Section~\ref{sec:Rashba_Theory}, manifest themselves in GeTe, we use DFT followed by a Wannierization in Sec.~\ref{sec:Rashba_results} to gain access to the local, real space, properties of the Bloch functions .
 \begin{figure}[h]
 	\IncludeGraphics{intro_dispersion_svg.png}
 	\caption{\label{fig:Rashba_intro_dispersion}
@@ -388,7 +388,7 @@ Afterwards we used the {\texttt Wannier90} package \cite{Mostofi2014AnFunctions}
 As the initial guess, we used projections onto hydrogenic $s$ and $p$ orbitals for both Ge and Te ions, since they are the main constituents of the bands around the Fermi level, as mentioned previously.
 A 10x10x10 $k$ grid was used for the sampling of the BZ during the Wannierization. 
 
-\section{Results and Discussion}
+\section{Results and Discussion \label{sec:Rashba_results}}
 
 The bands we will focus on are the three topmost valence bands which consist mostly of Te $p$ orbitals, as can be seen from DOS panels in Fig.~\ref{fig:Rashba_bands_dos}.
 The only Rashba term that plays a role along the $A$ --$Z$ -- $U$ path is of the form:

@@ -76,13 +76,13 @@ This leads to reduced effectiveness of external electric fields as a method of e
 Here, we focus specifically on GdMn$_2$O$_5$ (see Fig.~\ref{fig:GdMn2O5_unit_cell}(a)) that demonstrates an exceptional tunability of the ferroelectric polarization through an applied magnetic field~\cite{Khomskii2009,Lee13}.
 The orthorhombic $R$Mn$_2$O$_5$ manganites have a very complex crystalline structure, which leads to a wealth of different phases depending on the temperature, rare-earth ion $R$, external magnetic field, and even electric-field poling history~\cite{Chapon04, Chapon06, Blake05, Radaelli09,Radaelli08, Zheng2019}.
 
-In the next Section, we first give a summary of the transitions and phases that are important for this Chapter, followed by a discussion on the experiments that were performed by our collaborators.
-Afterward, we continue with a description of the system in terms of an effective spin Hamiltonian involving the Gd spins, and the AFM order parameters $\bm L$ describing the two Mn chains.
-We demonstrate that our model reproduces the overall behavior observed by the experiments remarkably well, and discuss its energetic properties.
-After uncovering the source of the peculiar magnetoelectric switching, we shift our focus to the magnetic configuration, and how it changes because of the applied magnetic fields.
-Finally, we comment on the topological nature of the switching behavior and the generality of the model, and conclude with an intuitive argument and resulting simplified model in an attempt to further rationalize our observations. 
+In the next Section, we first give a summary of the transitions and phases that are important for this Chapter, followed by a discussion on the experiments that were performed by our collaborators in Sec.~\ref{sec:GdMn2O5_experiment}.
+Afterward, we continue in Sec.~\ref{sec:GdMn2O5_Theory} with a description of the system in terms of an effective spin Hamiltonian involving the Gd spins, and the AFM order parameters $\bm L$ describing the two Mn chains.
+We demonstrate that our model reproduces the overall behavior observed by the experiments remarkably well, and discuss its energetic properties, in Sec.~\ref{sec:GdMn2O5_energetics}.
+After uncovering the source of the peculiar magnetoelectric switching, we shift our focus in Sec.~\ref{sec:GdMn2O5_magnetic_configuration} to the magnetic configuration, and how it changes because of the applied magnetic fields.
+Finally, we comment on the topological nature in Sec.~\ref{sec:GdMn2O5_topology} of the switching behavior and the generality of the model, and conclude with an intuitive argument in Sec.~\ref{sec:GdMn2O5_intuitive}, and resulting simplified model in Sec.~\ref{sec:GdMn2O5_simple_model} in an attempt to further rationalize our observations. 
 
-\section{GdMn$_2$O$_5$}
+\section{Gadolinium Manganite}
 All $R$Mn$_2$O$_5$ have crystallographic group P$bam$ \cite{Alonso97} in the paramagnetic phase at high temperature, which is eventually lowered to P$_ab2_1a$ when the commensurate magnetic order condenses below $T_{N} \approx 33$ K.
 This order is characterized by the propagation vector $\bm{q} = (1/2, 0, 0)$, i.e. there is a unit cell doubling along the crystalline $a$-direction, as shown in Fig.~\ref{fig:GdMn2O5_unit_cell}(a).
 The magnetic configuration repeats along the crystalline $c$-direction. The magnetic phase transition goes hand in hand with a sharp anomaly in the dielectric constant $\varepsilon_b$, signaling the onset of the improper ferroelectric polarization  along the $b$-direction ($P_b$) \cite{Vecchini08,Lee13,Vecchini14}.
@@ -129,7 +129,7 @@ This leads to a high magnetic susceptibility and associated magnetoelectric effe
 \\\\
 Now that the stage is set, we continue with a description of the puzzling experimental observations that motivated the study in this Chapter.
 
-\section{Experimental methods and results}
+\section{Experimental methods and results \label{sec:GdMn2O5_experiment}}
 \begin{figure}
     \centering
     \IncludeGraphics[width=\textwidth]{fig_exp2.png}
@@ -388,7 +388,7 @@ At the start, it follows the high angle behavior moving 1$\rightarrow$2, mimicki
 To gain a deeper understanding of this peculiar behavior, we focus first on the energetics of the model, as calculated by the simulations.
 The intricacies of the energetics are ultimately what results in the deterministic, unidirectional, switching of the system.
 
-\subsection{Energetics}
+\subsection{Energetics \label{sec:GdMn2O5_energetics}}
 Before continuing, let us take a moment to recall some of the symmetries of the system, whose transformation properties were listed in Tab.~\ref{tab:GdMn2O5_symm} during the construction of the Hamiltonian.
 We focus on how the transformations due to inversion ($I$) and time-reversal ($T$) symmetry relate the angles of $\bm L_1$ and $\bm L_2$ ($\phi_{\bm L_1}$ and $\phi_{\bm L_2}$).
 The energy surfaces in terms of the angles are depicted in Fig.~\ref{fig:GdMn2O5_heatmap}, for a varying field with strength $|H|$ and angle $\phi_H = +10^\circ$.
@@ -554,7 +554,7 @@ We have so far given a detailed description of the observed behavior, experiment
 While the model reproduces the experiments remarkably well, and we have found that a combination of symmetries and energetics lies at the core of the peculiar switching behavior, one may wonder if this can be rationalized further.
 In an attempt to do just this, we proceed in the following Section with some intuitive considerations.
 
-\subsection{Intuition}
+\subsection{Intuition \label{sec:GdMn2O5_intuitive}}
 First of all, we would like to point out the similarity of the behavior of $\bm L_1$ and $\bm L_2$ with the well-known spin-flop transition in antiferromagnets.
 As mentioned before around Eq.~\eqref{eq:GdMn2O5_Zeeman}, when a magnetic field is applied along the easy-axis of an antiferromagnetic material, the antiferromagnetic order will flip perpendicular to it when the field grows.
 This occurs when the Zeeman energy that can be gained through canting outweighs the penalty incurred from the misalignment with the easy axis.
@@ -575,7 +575,7 @@ When the field subsequently decreases, the Gd rotates further in the same direct
 
 We hope that this intuitive picture shines some light on what might be happening microscopically to cause the behavior, although we concede the claim that this is a complete microscopic explanation. We will give an additional demonstration of this intuitive argument in the context of a simplified model, derived in the next Section.
 
-\section{Simplified Model}
+\section{Simplified Model \label{sec:GdMn2O5_simple_model}}
 Having modeled the topologically protected switching in  GdMn$_2$O$_5$ with all its complexity, one may wonder what the minimal requirements are to have similar behavior where the spins rotate 360$^\circ$ while the applied field only oscillates along a single axis.
 It is clear from the spin configurations in Fig.~\ref{fig:GdMn2O5_spin_configs}, and previous considerations, that the chain with Mn moments most parallel to the applied field does the full rotation, while the other chain merely toggles around its starting orientation. As mentioned before, the Gd spins mostly follow the behavior of the chain they are most strongly coupled to. This warrants an attempt to reproduce the behavior of the rotating spins using only a single Mn chain with the Gd spins that are coupled to it via $v_1$. 
 In the particular case where the magic angle is along $\phi_H = +10^\circ$, we therefore keep $L_1$, $S_2$, $S_3$, $S_6$ and $S_7$ as the remaining variables in the model (see Fig.~\ref{fig:GdMn2O5_simple_model}).
