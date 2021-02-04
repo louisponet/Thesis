@@ -447,6 +447,11 @@ The calculated local properties of the Bloch functions are shown in Fig.~\ref{fi
 \IncludeGraphics[width=\linewidth]{OAMvsK1}
 \caption{\label{fig:Rashba_oamvseigvalv1}{\bf Properties of the Bloch functions in the first valence band.} a) Center of mass in the unit-cell. b) Eigenvalues. (c-f) $L_x$, $S_x$, $L_y$ and $S_y$ around the Te ion, respectively. The values are plotted in function of the relative distance to the $Z$ point, $|\bm{k}_r| = |\bm{k} - \bm{k}_Z|$, along the $A \rightarrow Z \rightarrow U$ path shown in Fig.~\ref{fig:Rashba_crystal}(b). The green graphs denote the values of non-relativistic calculations, whereas the orange and blue graphs denote those of the two spin-split bands resulting fully-relativistic calculations. See Fig.~\ref{fig:Rashba_bands_dos}(b) for the location of this first valence band in the band structure.}
 \end{figure}
+\begin{figure}[h!]
+	\centering
+\IncludeGraphics[width=\linewidth]{OAMvsK2}
+\caption{\label{fig:Rashba_oamvseigvalv2}{\bf Properties of the Bloch functions in the third valence band.} The panels depict the same properties as Fig.~\ref{fig:Rashba_oamvseigvalv1}, but for the third valence band (see number 3 in Fig.~\ref{fig:Rashba_bands_dos}(b)).}
+\end{figure}
 \\\\
 Many interesting local features of the Bloch functions can be observed in these figures, which we will now discuss in detail.
 \\\\
@@ -454,25 +459,20 @@ The main confirmation of our claim that OAM is at the root of the large splittin
 There is a clear linear variation of the OAM as $\bm k$ varies away from the $Z$ point, even though no atomic SOC is included.
 The only possible explanation for this unquenching can be found in expressions~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
 Moreover, $k_x$ remains zero along the $A$--$Z$ path, and we can observe that only $L_x$ develops due to the nonzero $k_y$. Only when $k_x$ is nonzero, along the $Z$--$U$ path, does $L_y$ show up. This dependence on $k_x$ and $k_y$ is fully consistent with the expressions for $L_x$ and $L_y$ in Eqs.~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
-\begin{figure}
-	\centering
-\IncludeGraphics[width=\linewidth]{OAMvsK2}
-\caption{\label{fig:Rashba_oamvseigvalv2}{\bf Properties of the Bloch functions in the third valence band.} The panels depict the same properties as Fig.~\ref{fig:Rashba_oamvseigvalv1}, but for the third valence band (see number 3 in Fig.~\ref{fig:Rashba_bands_dos}(b)).}
-\end{figure}
 \\\\
 If we then include fully-relativistic effects, thus also including the atomic SOC, we can see that an additional unquenching of the OAM shows up.
 This leads to a nearly constant shift of the OAM with opposite signs for the two sub bands and is the sole contributor to the unquenching at the T-invariant $Z$ point.
 How this unquenching leads to the second contribution of the linearly varying OAM was discussed in Eq.~\eqref{eq:d_z_from_OAM}, where we found that it results from the combination of the linear $\bm k$ due to the first-order expansion of $\eikr{R}$, and a nonzero OAM at the T-invariant point.
 We can find the signature of this contribution in the change of the linear slope of the OAM for the fully-relativistic calculations compared with the one resulting from the non-relativistic calculations.
 This is especially clear for the third valence band shown in Fig.~\ref{fig:Rashba_oamvseigvalv2}.
-\\\\
-The most convincing argument, perhaps, can be extracted from the top-left panels of Figs.~\ref{fig:Rashba_oamvseigvalv1} and \ref{fig:Rashba_oamvseigvalv2} that depict the variation of the center of mass of the Bloch functions. Indeed, not only does it change when $\bm k$ is moved away from the $Z$ point, it changes differently for the two spin-split bands, as their OAM is shifted opposite to one another.
-As an example,  we have depicted the charge variation of the Bloch functions in the first valence band in Fig.~\ref{fig:Rashba_diffdens}, demonstrating clearly how the dipole develops.
 \begin{figure}
 	\centering
 \IncludeGraphics[width=.7\columnwidth]{diffdens}
 \caption{\label{fig:Rashba_diffdens}{\bf Bloch function dipole.} The variation of the charge density of the Bloch function of the first valence band $\left.\frac{\partial |\psi(k)|^2}{\partial k}\right\rvert_{k=Z}$ away from $Z$ towards $A$. Te and Ge ions are in red and grey, respectively. The charge asymmetry around Ge showcases the nonzero dipole moment along $z$, which couples to the local electric field near Ge ion.}
 \end{figure}
+\\\\
+The most convincing argument, perhaps, can be extracted from the top-left panels of Figs.~\ref{fig:Rashba_oamvseigvalv1} and \ref{fig:Rashba_oamvseigvalv2} that depict the variation of the center of mass of the Bloch functions. Indeed, not only does it change when $\bm k$ is moved away from the $Z$ point, it changes differently for the two spin-split bands, as their OAM is shifted opposite to one another.
+As an example,  we have depicted the charge variation of the Bloch functions in the first valence band in Fig.~\ref{fig:Rashba_diffdens}, demonstrating clearly how the dipole develops.
 \\\\
 To conclude, we would like to comment on the OAM and spin textures of the first and third valence band.
 From their values at the $Z$ point (see Fig.~\ref{fig:Rashba_oamvseigvalv1}(c-f) and Fig.~\ref{fig:Rashba_oamvseigvalv2}(c-f)), we can clearly see that these bands have a different total angular momentum $j$.
@@ -483,17 +483,6 @@ The much smaller splitting and the opposite orientation of the OAM and spin in t
 The OAM and spin texture for the first and third valence band are shown for the whole BZ in Fig.~\ref{fig:Rashba_textures}.
 The zoom onto the $Z$ point in Fig.~\ref{fig:Rashba_textures_small} reveals one last very peculiar feature of the Bloch functions: the relative orientations of the OAM and spin reverse in a very narrow region around the $Z$ point.
 This draws attention to the inclusion of $H_R$ in Eq.~\eqref{eq:Rashba_hami}, which breaks threefold symmetry and results in $j$ not being a good quantum number anymore. This causes a highly non-trivial spin and OAM texture to be present in these two sub bands, with both textures varying considerably throughout the BZ. 
-\begin{figure}
-	\centering
-	\IncludeGraphics[width=.9\columnwidth]{OAM_SAM_texture.png}
-  \caption{\label{fig:Rashba_textures}{\bf OAM and spin in the BZ.} Panels (a-d) show the OAM (black arrows) and spin (green arrows) textures of the bands indicated by the same labels in the top panel. In each panel, a scaling factor for the length of the arrows was chosen for clarity. The color maps indicate the energy of the bands relative to the Fermi level. The small box around the $Z$ point indicates the area magnified in Fig.~\ref{fig:Rashba_textures_small}.}
-\end{figure}
-\begin{figure}
-	\centering
-	\IncludeGraphics[width=.9\columnwidth]{textures_small.png}
-  \caption{\label{fig:Rashba_textures_small}{\bf Zoom of OAM and spin around Z.} a) Zoom of panel (b) in Fig.~\ref{fig:Rashba_textures}. b) Zoom of panel (c) in Fig.~\ref{fig:Rashba_textures}.  These two zooms were chosen because they highlight the changing character most clearly, which is reflected in the change of the relative orientations of the OAM and spin, i.e. the black and green arrows.}
-\end{figure}
-
 \section{Conclusions}
 To conclude this Chapter, we take a step back and summarize the original problem, proposed resolution, and numerical investigation of the large Rashba-like spin-splitting in bulk ferroelectric materials.
 \\\\
@@ -518,3 +507,13 @@ Since the internal electric field directly determines the size of the linear OAM
 Furthermore, a material constituted by heavy ions with large atomic SOC is desirable due to its role in converting the linear unquenched OAM into a spin-splitting, and the unquenching of the OAM at T-invariant $k$-points.
 And finally: to maximize the unquenching of the OAM, a highly isotropic crystalline environment that minimizes the electrostatic penalty of having nonzero OAM is beneficial.
 Finding a material that achieves these three goals could enable more performant spintronic devices with the much needed electric control of spin polarization.
+\begin{figure}
+	\centering
+	\IncludeGraphics[width=.9\columnwidth]{OAM_SAM_texture.png}
+  \caption{\label{fig:Rashba_textures}{\bf OAM and spin in the BZ.} Panels (a-d) show the OAM (black arrows) and spin (green arrows) textures of the bands indicated by the same labels in the top panel. In each panel, a scaling factor for the length of the arrows was chosen for clarity. The color maps indicate the energy of the bands relative to the Fermi level. The small box around the $Z$ point indicates the area magnified in Fig.~\ref{fig:Rashba_textures_small}.}
+\end{figure}
+\begin{figure}
+	\centering
+	\IncludeGraphics[width=.9\columnwidth]{textures_small.png}
+  \caption{\label{fig:Rashba_textures_small}{\bf Zoom of OAM and spin around Z.} a) Zoom of panel (b) in Fig.~\ref{fig:Rashba_textures}. b) Zoom of panel (c) in Fig.~\ref{fig:Rashba_textures}.  These two zooms were chosen because they highlight the changing character most clearly, which is reflected in the change of the relative orientations of the OAM and spin, i.e. the black and green arrows.}
+\end{figure}

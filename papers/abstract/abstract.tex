@@ -1,0 +1,67 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[osf]{libertine}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\linespread{1.05}
+\selectfont
+
+
+\usepackage{geometry}
+\geometry{a4paper, textwidth=6.2in, textheight=9.5in, marginparsep=12pt, marginparwidth=1.4in}
+% \setlength\parindent{0in}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\usepackage{marginnote}
+\newcommand{\years}[1]{\marginnote{#1}}
+\setlength{\marginparsep}{12pt}
+\reversemarginpar
+
+\usepackage{sectsty}
+\usepackage[normalem]{ulem}
+\sectionfont{\mdseries\upshape\Large}
+\subsectionfont{\mdseries\scshape\normalsize}
+\subsubsectionfont{\mdseries\upshape\large}
+
+\usepackage[bookmarks, colorlinks, breaklinks]{hyperref}
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue}
+
+\usepackage{graphicx}
+
+\pagenumbering{gobble}
+
+
+\begin{document}
+
+\section*{\textsc{{\huge Interplay between Complex Orders in Functional Materials}\\[0.1cm] Abstract\\[0.2cm] {\normalsize Louis Ponet}}}
+
+\vspace{0.4cm}
+In an effort to reduce the sheer complexity associated with the many degrees of freedom encountered in Condensed Matter, it is beneficial to separate the full system under investigation into smaller subsystems.
+This separation is most often performed based on energy and time scales, allowing one to focus on the subsystem with the energy scale of interest.
+The influence of the decoupled subsystems can then be approximated by either treating them as a smeared out average, leading to mean-field approximations, or as constant background potentials, resulting in adiabatic approximations. This procedure relies on the weak interaction, or coupling, between the subsystems.
+For example, in the case of the electron-phonon interaction, the influence of the electrons on the phonons, describing the displacements of the ions, can be approximated as an average charge field, with the fluctuations cancelling out on the time scales involved with the phonon dynamics.
+The electrons, on the other hand, experience the ionic potential as a constant background, remaining at the instantaneous ground-state with respect to it. This is, of course, the well-known Born-Oppenheimer or adiabatic approximation.
+When the interaction between the subsystems is non-negligible, however, these approximations can fail spectacularly.
+A prime example is superconductivity, where the electron-phonon coupling forms the linchpin for the exotic physics that is observed in these materials.
+
+In this Thesis we set out to understand puzzling experimental results in systems of recent interest, where the novel behavior results from the strong interactions between ferroic orders.
+Aiding in this effort are the diverse analytical and numerical tools we utilize in combination with the simplified models that we formulate in order to rationalize the observations. 
+
+In Chapter 2 we commence by investigating the underlying mechanisms that lead to the large Rashba-like spin-splitting in the electronic band structure of ferroelectric semiconductors with large atomic SOC.
+We discuss that, contrary to what is generally accepted, it is not the purely relativistic Rashba-Bychkov effect that lies at the core of this spin-splitting, but rather electrostatic effects where orbitals that have nonzero orbital angular momentum are shown to result in Bloch functions that harbor dipoles. These dipoles couple to the ferroelectric polarization, making the resultant spin-splitting tunable by external electric fields.
+
+This is followed in Chapter 3 by a study on the very peculiar magnetoelectric switching that is observed in multiferroic GdMn$_2$O$_5$.
+Depending on the angle between the crystalline $a$ axis and an externally applied magnetic field, we uncover three distinct switching regimes for the ferroelectric polarization, one of which demonstrates a novel four-state hysteresis loop.
+We reproduce the behavior within a phenomenological model, and find that half the spins rotate a full 360$^\circ$ in 90$^\circ$ increments.
+Furthermore, we show that the trajectory of the order parameters in the four-state regime is topologically distinct from those of the two-state regimes. To the best of our knowledge this effect exemplifies the first manifestation of topology in the context of ferroic switching.
+
+In Chapter 4 the focus is shifted towards the aspect of dynamical control with increased granularity, that can be achieved in systems with strongly coupled orders.
+We show that, in a thin film of elemental Chromium, an extremely precise control over a lattice vibration can be achieved through the excitations of a coupled spin density wave.
+By applying a carefully chosen set of optical pulses, this allows us to indirectly modulate the amplitude of the lattice vibration, increasing or destroying it in the process.
+We formulate and fit a Landau model based on the experimental measurements with two pulses, and speculate on the extended possibilities than could be achieved with a larger set of pulses. 
+
+Finally, we conclude this Thesis in Chapter 5 by a systematic study of the implications on the mechanical properties of 180$^\circ$ ferroelectric domain walls in BaTiO$_3$, due to the interaction between strain and the polarization.
+Surprisingly, these walls appear mechanically softer to a tip applied to the surface of the sample, even though they are not ferroelastic and thus do not separate domains with different strain textures.
+Based on the experimental observations and a numerical simulation, we uncover that the mechanical interaction between the tip and domain wall localized phonons explains the apparent softening.
+\end{document}
