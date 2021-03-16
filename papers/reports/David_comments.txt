@@ -134,6 +134,9 @@ Start of 3.2: I suggest to list the space group (P2_1a ?) of
 the PM configuration, then say the _magnetic_ group of the
 ground state is P_ab2_1a.
 
+Is this true?
+
+
 In Fig. 3.1, I found it confusing.  Black arrows in a) have 
 a different meaning than those in b) and c).  I wonder if there
 is a way to outline in a) the regions that are blown up in
