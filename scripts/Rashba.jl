@@ -248,7 +248,9 @@ e5 = Entity(dio, grid, Glimpse.DensityGeometry(density2, 0.4), Glimpse.UniformCo
 e6 = Entity(dio, grid, Glimpse.DensityGeometry(density2, 0.4), Glimpse.UniformColor(RGB{Float32}(0.0,1.0,0.0)),Glimpse.Alpha(0.5f0), Glimpse.Material(), Glimpse.Spatial(position=Point3f0(4,0,0.0)))
 e7 = Entity(dio, grid, Glimpse.DensityGeometry(density2, 0.4), Glimpse.UniformColor(RGB{Float32}(0.0,1.0,0.0)),Glimpse.Alpha(0.5f0), Glimpse.Material(), Glimpse.Spatial(position=Point3f0(4,4,0.0)))
 e8 = Entity(dio, grid, Glimpse.DensityGeometry(density2, 0.4), Glimpse.UniformColor(RGB{Float32}(0.0,1.0,0.0)),Glimpse.Alpha(0.5f0), Glimpse.Material(), Glimpse.Spatial(position=Point3f0(0,4,0.0)))
-e9 = Entity(dio, Glimpse.assemble_box(Point3f0(-4.0, -4.0, 2.0), Point3f0(20, 20, 2.01), color=RGB{Float32}(0.5,0.2,0.4))..., Glimpse.Rotation(Vec3(1.0,0.0,0.0), deg2rad(20)), Glimpse.Alpha(0.4f0))
+
+e9 = Entity(dio, Glimpse.assemble_box(Point3f0(-4.0, -4.0, 2.0), Point3f0(4, 4, 2.01), color=RGB{Float32}(0.5,0.2,0.4))..., Glimpse.Rotation(Vec3(1.0,0.0,0.0), deg2rad(20)), Glimpse.Alpha(0.4f0)) # purple
+
 e10 = Entity(dio, grid2, Glimpse.DensityGeometry(density3, 0.4), Glimpse.UniformColor(RGB{Float32}(1.0,1.0,0.0)),Glimpse.Alpha(0.5f0), Glimpse.Material(), Glimpse.Spatial(position=Point3f0(0,0,1.0)))
 dio[Entity(2)] = Glimpse.Spatial(position=Point3f0(0,-10,10.0))
 e11 = Entity(dio, Glimpse.assemble_wire_axis_box(position=Point3f0(-2,-2,-2), x=Vec3f0(4,0,0), y=Vec3f0(0,4,0), z=Vec3f0(0,0,4),color=Glimpse.BLACK)...)
