@@ -159,6 +159,20 @@ phasons of the SDW after some excitation?  In short, is the
 SDW a static object, or a dynamic one, or both?  It needs
 explaining.
 
+The wording is indeed misleading. The question of thermalization is
+more about how valid it is to ascribe different temperatures to 
+different parts of the material, which is discussed at a later
+stage in the theory <add this to the theory>. 
+The SDW is present in the ground state, and the excitations that 
+are mentioned are amplitude modes that are excited through heating
+with optical pulses.
+
+I have changed the wording so that it reflects the concept of the chapter
+more rather than the question of thermalization, i.e. that through
+the fast dynamics of the SDW excitations, a high degree of control
+can be achieved over the slower PLD dynamics.
+
+
 The agreement in 4.4 looks pretty impressive.
 
 Chapter 5
