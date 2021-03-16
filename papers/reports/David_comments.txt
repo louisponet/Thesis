@@ -162,7 +162,7 @@ explaining.
 The wording is indeed misleading. The question of thermalization is
 more about how valid it is to ascribe different temperatures to 
 different parts of the material, which is discussed at a later
-stage in the theory <add this to the theory>. 
+stage in the theory. 
 The SDW is present in the ground state, and the excitations that 
 are mentioned are amplitude modes that are excited through heating
 with optical pulses.
