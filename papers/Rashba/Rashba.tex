@@ -60,14 +60,14 @@ To investigate how the microscopic effects, identified in the theory section~\re
 \begin{figure}[h]
 	\IncludeGraphics{intro_dispersion_svg.png}
 	\caption{\label{fig:Rashba_intro_dispersion}
-		{\bf Large Rashba splitting} a) The band dispersion of the first valence band in GeTe around the $Z$ point of the Brillouin zone (see Fig.~\ref{fig:Rashba_bands_dos} for details). The blue and red graphs show the non-relativistic (NSOC) and relativistic (SOC) band structure, respectively. The $u-d$ and $u'-d'$ labels designate the up and down spin-polarized bands, where the prime signifies that the orientation of the spin-up--down axis depends on $\bm{k}$. b) Generic example of intersecting conical energy surfaces due to the linear spin splitting. The spin texture is indicated by the arrows. This chiral spin texture is what leads to the changing orientation of the up-down spin axis.}
+		{\bf Large Rashba splitting} a) The band dispersion of the first valence band in GeTe around the $Z$ point of the Brillouin zone (see Fig.~\ref{fig:Rashba_bands_dos} for details). The blue and red graphs show the non-spin-orbit-coupled (NSOC) and spin-orbit-coupled (SOC) band structure, respectively. The $u-d$ and $u'-d'$ labels designate the up and down spin-polarized bands, where the prime signifies that the orientation of the spin-up--down axis depends on $\bm{k}$. b) Generic example of intersecting conical energy surfaces due to the linear spin splitting. The spin texture is indicated by the arrows. This chiral spin texture is what leads to the changing orientation of the up-down spin axis.}
 \end{figure}
 
 We finish with a conclusion that summarizes the observations and where we make the claim that the linear spin splitting often attributed to the relativistic Rashba effect is almost exclusively a result of the other effects we shall uncover.
 
 \section{Theory \label{sec:Rashba_Theory}}
 In this section we handle the theoretical underpinning of the observed large spin splitting, building up the arguments in favor of the orbital angular momentum (OAM) as the enabler of the main underlying mechanism.
-We start with an overview of the original derivation that leads to the fully relativistic Rashba effect in order to argue why it might not be able to explain the observed spin-splitting behavior.
+We start with an overview of the original derivation that leads to the purely relativistic Rashba effect in order to argue why it might not be able to explain the observed spin-splitting behavior.
 We then continue with a close study on the proposed alternative OAM based mechanism, and investigate the two main contributions: one that arises through electrostatics, and another that is the result of atomic SOC.
 We will see that these latter two mechanisms manage to explain the characteristics of the large linear spin-dependent dispersion of the Bloch Functions around the T-invariant $k$ points of the BZ.
 During the discussion, we will utilize a 2D tight-binding Model as a concrete example.
@@ -107,36 +107,38 @@ This leads to the following equations for $\Ket{\unk{n}{k}}$:
 \end{align}
 We neglected the last two terms of Eq.~\eqref{eq:Rashba_dirac} since they are exceedingly small and do not contribute to the linear $k$-dependent energy of the Rashba form in Eq.~\eqref{eq:Rashba_form}.
 
-Before turning to a $\bm{k} \cdot \bm{p}$ expansion of the above equations, we take a moment to address how $V^{\bm k}_2(\bm r)$ and $V^{\bm k}_3(\bm r)$ act on the Bloch functions, more specifically, which contribution to the local electric field $\bm{\nabla}V(\bm r)$ is important.
+Before turning to a $\bm{k} \cdot \bm{p}$ expansion of the above equations, we take a moment to discuss heuristically how $V^{\bm k}_2$ and $V^{\bm k}_3$ act on the Bloch functions, more specifically, which contribution to the local electric field $\bm{\nabla}V$ is important.
 Both terms originated from the application of Eq.~\eqref{eq:Rashba_momentum} to the third term on the right-hand side of Eq.~\eqref{eq:Rashba_dirac}.
 We study the case of a 2D square lattice, for a Bloch function with $\bm k = (k_x, 0)$, and with the polarization oriented along the $y$-direction.
 A pictorial representation of this situation is shown in Fig.~\ref{fig:Efield_cell_drawing}, where we separated the electric field into two contributions:
 \begin{equation}
-	\bm{\nabla} V(\bm r) = \bm{E}(\bm r) = \bm{E}_{\rm a}(\bm r) + \bm{E}_{\rm P}(\bm r),
+	\bm{\nabla} V(\bm r) = - \bm{E}(\bm r) = - (\bm{E}_{\rm a}(\bm r) + \bm{E}_{\rm P}(\bm r)),
 \end{equation}
-with $\bm E_{\rm a}$ resulting from the atomic potentials and $\bm E_{\rm P}$ the field originating from the dipoles that are associated with the polarization due to the inversion symmetry breaking\footnote{We have assumed that no external fields are applied, these can be included trivially by summing them to the internal field.}.
+with $\bm E_{\rm a}$ resulting from the atomic potentials and $\bm E_{\rm P}$ the electric field that groups the contributions that originate from the inversion symmetry breaking. One such contribution originates from the dipoles that are associated with the polarization, another could be an externally applied field.
+While the exact real-space distribution of $\bm E_{\rm P}$ depends on microscopic details, the important point for our heuristic discussion is that it is approximately constant in the region of space where the Bloch function peaks, i.e. close to the ionic cores.
+The purple plane in Fig.~\ref{fig:Efield_cell_drawing} pictorially shows the potential $V_{\rm P}$ associated with this field.   
 \begin{figure}[h]
 ~\centering
-\IncludeGraphics[width=\linewidth]{Rashba_potentials.png}\caption{\label{fig:Efield_cell_drawing}{\bf Potentials and wavefunctions inside the unit cell.} Pictorial representation of the different electric potentials ($V$, surfaces) and fields ($E=\bm \nabla V$, arrows) in a 2D square lattice. The blue spheres represent the atoms, which produce the spherically symmetric red potential $V_a$ and field $\bm E_a$. The purple plane denotes the potential $V_p$ associated with the polarization, and the resulting field $\bm E_p$. The green and yellow surfaces depict the cell periodic and envelope part of the Bloch function: $\unkKet{n}{k}$ and $e^{ik_x r_x}$, respectively. The vectors $\bm k$ and $\bm p_u$ denote the crystalline and canonical momentum of the Bloch function.
+\IncludeGraphics[width=\linewidth]{Rashba_potentials.png}\caption{\label{fig:Efield_cell_drawing}{\bf Potentials and wavefunctions inside the unit cell.} Pictorial representation of the different electric potentials ($V$, surfaces) and fields ($E=\bm \nabla V$, arrows) in a 2D square lattice. The blue spheres represent the atoms, which produce the spherically symmetric red potential $V_a$ and field $\bm E_a$. The purple plane denotes the potential $V_p$ associated with the polarization, and the resulting field $\bm E_p$. The green and yellow surfaces depict the cell periodic and envelope part of the Bloch function: $\unkKet{n}{k}$ and $e^{ik_x r_x}$, respectively. The vectors $\bm k$ and $\bm p_u$ denote the crystalline and canonical momentum of the Bloch function, respectively.
 The former results from the envelope function, and the latter from the periodic part, see Eq.~\eqref{eq:Rashba_momentum}.}
 \end{figure}
     
-Focusing first on $V^{\bm k}_2$:
+Focusing first on $V^{\bm k}_2(\bm r)$:
 \begin{equation}
 	\label{eq:Rashba_purerel}
-	V^{\bm k}_2 = -\lambda \bm{\sigma} \cdot \left[ (\bm E_a + \bm E_P) \times \bm{k}\right],
+	V^{\bm k}_2(\bm r) = \lambda \bm{\sigma} \cdot \left[ (\bm E_{\rm a}(\bm r) + \bm E_{\rm P}(\bm r)) \times \bm{k}\right],
 \end{equation}
-we can observe in the figure that the contribution of the atomic potential, $\bm E_a$, is zero since $\bm E_a$ is odd throughout the unit cell, whereas $\bm k$ is a constant.
-On the contrary, $\bm E_P$ is uniform throughout the unit cell, leading to a nonzero contribution.
-However, both $\bm E_P$ and $\bm k$ are generally small, meaning that $V^{\bm k}_2$ is also exceedingly small due to the tiny SOC constant $\lambda$ (usually $V^{\bm k}_2 \sim$ \SI{e-6}eV).
+we can observe in the figure that the atomic contribution with $\bm E_{\rm a}$ is zero since $\bm E_{\rm a}$ is odd throughout the unit cell, whereas $\bm k$ is a constant.
+On the contrary, $\bm E_{\rm P}$ is even throughout the unit cell, leading to a nonzero contribution.
+However, both $\bm E_{\rm P}$ and $\bm k$ are generally small, meaning that $V^{\bm k}_2$ is also exceedingly small due to the tiny SOC constant $\lambda$ (usually $V^{\bm k}_2 \sim$ \SI{e-6}eV).
     
 Following a similar train of thought for $V^{\bm k}_3$:
 \begin{equation}
-	V^{\bm k}_3 = -\lambda \bm{\sigma} \cdot \left[ (\bm E_a + \bm E_P) \times \bm{p}\right],
+	V^{\bm k}_3(\bm r) = \lambda \bm{\sigma} \cdot \left[ (\bm E_{\rm a}(\bm r) + \bm E_{\rm P}(\bm r)) \times \bm{p}\right],
 \end{equation}
-we find that $\bm p$ applied to the periodic $\Ket{\unk{n}{k}}$ part of the Bloch function is odd throughout the unit cell, and the contribution from the even $\bm E_P$ is zero.
-The shape of the atomic potential is such that $\bm E_a$ is also odd throughout the unit cell so that its contribution to $V^{\bm k}_3$ does not vanish.
-Moreover, because of the size and shape of the atomic potential, $\bm E_a \gg \bm E_P$, and similarly $\bm p\,\Ket{\unk{n}{k}} \gg \bm k$, meaning that $V^{\bm k}_3$ tends to contribute much more to the total energy than $V^{\bm k}_2$.
+we find that $\bm p$ applied to the periodic $\Ket{\unk{n}{k}}$ part of the Bloch function is odd throughout the unit cell (see the green arrows in Fig.~\ref{fig:Efield_cell_drawing}), and the contribution from the even $\bm E_{\rm P}$ is zero.
+The shape of the atomic potential is such that $\bm E_{\rm a}$ is also odd throughout the unit cell so that its contribution to $V^{\bm k}_3$ does not vanish.
+Moreover, because of the size and shape of the atomic potential, $\bm E_{\rm a} \gg \bm E_{\rm P}$, and similarly $\bm p\,\Ket{\unk{n}{k}} \gg \bm k$, meaning that $V^{\bm k}_3$ tends to contribute much more to the total energy than $V^{\bm k}_2$.
 
 As it turns out, $V^{\bm k}_3$ is exactly the energy term that describes the atomic SOC, which is known to not be negligible for heavier ions.
 This term by itself does not lead to any linear $k$-dependent spin splitting, however.
@@ -159,7 +161,7 @@ We know that the atomic SOC ($V^{\bm k}_3$) is much larger than $V^{\bm{k}}_2$, 
 A requirement for the second term to be nonzero is that $u_n$ and $u_m$ have different parity along the spatial direction defined by $\bm{k}$, since otherwise $\Bra{u_n} k_x \partial_x + k_y \partial_y + k_z \partial_z \Ket{u_m} = 0$.
 One example could be a $p_y$ orbital and a $s$-$p_z$ hybridized one, which would be created by a ferroelectric polarization along the $z$-axis.
 How exactly this hybridization arises will be discussed in further detail below in section~\ref{sec:tb_model}, in the context of a tight-binding model.
-The combination of the two linear-in-$\bm{k}$ terms in Eq.~\eqref{eq:kp_expansion} can be regarded as the fully relativistic Rashba effect~\cite{Bahramy2011}.
+The combination of the two linear-in-$\bm{k}$ terms in Eq.~\eqref{eq:kp_expansion} can be regarded as the purely relativistic Rashba effect~\cite{Bahramy2011}.
     
 In summary, we have given the derivation of the relativistic Rashba effect starting from the Dirac equation applied to the Bloch functions, followed by a $\bm k \cdot \bm p$ expansion.
 By carefully considering the microscopics we have found that both contributions have a similar order of magnitude of typically $10^{-6}$ eV.
@@ -184,7 +186,7 @@ Furthermore, the sign of the linear slope of the dispersion will be found to dep
     
 We now proceed with a pedagogical derivation of the electrostatic contribution, based on a tight-binding model \cite{Bloch1929,Slater1954,Petersen2000,Kim2014,Go2016}. This is an extension to our earlier work in Ref.~\cite{Ponet2018}.
 
-\subsubsection{Electrostatics \label{sec:tb_model}}
+\subsubsection{OAM due to electric dipoles \label{sec:tb_model}}
 We define the tight-binding model on a 2D square lattice with lattice parameter $a$, one atom per unit cell, and four orbitals centered on that atom.
 They resemble the angular character of an $s$ orbital and the three $p$ orbitals: $\Ket{s^{\bm{n}}}$, $\Ket{x^{\bm{n}}}$, $\Ket{y^{\bm{n}}}$, $\Ket{z^{\bm{n}}}$, where $\bm{n}$ denotes the unit cell indices ($n_x$,$n_y$) to which the orbital belongs to.
 To simplify notation, we omit $\bm{n} = (0, 0)$ when writing the orbitals of the central unit cell.
@@ -291,7 +293,7 @@ Through the atomic SOC, this linear-in-$\bm k$ OAM then couples to the spin whic
     
 There is one other term that contributes to the linear variation of OAM with $\bm{k}$ that originates from the atomic SOC.
 
-\subsubsection{Atomic spin-orbit coupling \label{sec:Rashba_SOC_part}}
+\subsubsection{Electric dipoles due to OAM \label{sec:Rashba_SOC_part}}
 As mentioned previously, the atomic SOC leads to a degree of unquenching of the OAM, even at a T-invariant $k$ point, e.g. $|k|=0$~\cite{Park2011,Park2012,Park2015}.
 This means that the Bloch function of a given band is now a linear combination of $p$ orbitals, rather than the pure one used as the starting point in the $\bm k \cdot \bm p$ expansion of Eq.~\eqref{eq:Rashba_kdotp}:
 \begin{equation}
@@ -342,7 +344,7 @@ Combining the linear--in--$\bm k$ terms found in the previous sections, we arriv
 \end{equation}
 where $\bm{E}_P$ denotes the internal electric field from the polarization.
 $c_1$ is a result of the combined effect of the relativistic term in Eq.~\eqref{eq:Rashba_purerel} and the overlap dipoles leading to Eq.~\eqref{eq:Rashba_from_OAM}, and the atomic SOC driven unquenching at $\bm k = \bm 0$ results in the term with $c_2$ (see Eq.~\eqref{eq:d_z_from_OAM}).
-\\\\
+
 To reiterate, the first mechanism is an electrostatically driven linear unquenching of the OAM which in turn couples to the spin through the atomic SOC, leading to the linear spin splitting.
 The second effect is a linear $\bm k$ variation of the dipoles of the Bloch functions with unquenched OAM at T-invariant points of the BZ, due to atomic SOC. Both together then result in the two terms on the right-hand side of Eq.~\eqref{eq:Rashba_hami}. 
     
@@ -361,7 +363,7 @@ The first BZ for this low-temperature structure is shown in panel (b), with the 
 
 \begin{figure}[h!]
 	\IncludeGraphics[width=0.9\linewidth]{bands_dos.png}
-\caption{\label{fig:Rashba_bands_dos}{\bf Bandstructure of GeTe.} a) Non-relativistic calculation. b) Fully-relativistic calculation. In both panels the band structure was colored according to the contribution of the constituent orbitals, as indicated in the flanking density of state plots. The bands that have larger $s$ character are located 5 eV below the shown window.}
+\caption{\label{fig:Rashba_bands_dos}{\bf Bandstructure of GeTe.} a) Non-spin-orbit-coupled (NSOC) calculation. b) Spin-orbit-coupled (SOC) calculation. In both panels the band structure was colored according to the contribution of the constituent orbitals, as indicated in the flanking density of state plots. The bands that have larger $s$ character are located 5 eV below the shown window.}
 \end{figure}
 In the calculations reported below, we used a unit cell with lattice parameter $a=$4.28~\AA, leading to a volume of 53.4~\AA$^3$.
 This makes the unit cell near identical to the experimental one, which has a volume of 53.3~\AA$^3$~\cite{Serebryanaya1995}.
@@ -377,7 +379,7 @@ Moreover, since the splitting is observed for the bulk band structure, we can ru
 
 \section{Methods}
 We utilize ab-initio DFT calculations (see Appendix~\ref{ch:DFT}) as implemented in the {\texttt Quantum ESPRESSO} software package \cite{Giannozzi2009}, in order to study the band structure in GeTe.
-We performed both fully-relativistic and non-relativistic calculations; the latter in order to verify that a linearly varying chiral OAM texture shows up even without including atomic SOC.
+We performed calculations including SOC, and not including SOC (NSOC). 
 Both calculations used the Optimized Norm-conserving Vanderbilt Pseudo Potentials \cite{Hamann2013}, and a generalized-gradient approximation \cite{Perdew1993} with Perdew-Burke-Enzerhof parametrization for the exchange-correlation functional \cite{Perdew1996}.
 Plane waves with an energy of up to 30 Ry were included, with a 120 Ry cutoff for the density.
 
@@ -407,7 +409,7 @@ The combined spread of the 16 spinor Wannier functions\footnote{4x2 for the Te i
 The Wannier interpolation of the ab-initio band structure is shown in Fig.~\ref{fig:Rashba_wannierization}, which demonstrates a close agreement between the interpolated and ab-initio bands in the chosen window, and the valence bands in particular. 
 \begin{figure}
 \IncludeGraphics{wanvsdft.png}
-\caption{\label{fig:Rashba_wannierization}{\bf Wannier interpolation.} Bandstructure interpolation by the tight-binding Hamiltonian in terms of the Wannier functions for non-relativistic (a) and relativistic (b) calculations.}
+\caption{\label{fig:Rashba_wannierization}{\bf Wannier interpolation.} Bandstructure interpolation by the tight-binding Hamiltonian in terms of the Wannier functions for NSOC (a) and SOC (b) calculations.}
 \end{figure}
     
 We then use the set of localized orbitals $\Ket{\alpha}$, to calculate the real space operators that are of importance for the mechanism we are trying to confirm, namely the dipole matrix elements and OAM.
@@ -444,7 +446,7 @@ The calculated local properties of the Bloch functions are shown in Fig.~\ref{fi
 \begin{figure}
 	\centering
 \IncludeGraphics[width=\linewidth]{OAMvsK1}
-\caption{\label{fig:Rashba_oamvseigvalv1}{\bf Properties of the Bloch functions in the first valence band.} a) Center of mass in the unit cell. b) Eigenvalues. (c-f) $L_x$, $S_x$, $L_y$ and $S_y$ around the Te ion, respectively. The values are plotted in function of the relative distance to the $Z$ point, $|\bm{k}_r| = |\bm{k} - \bm{k}_Z|$, along the $A \rightarrow Z \rightarrow U$ path shown in Fig.~\ref{fig:Rashba_crystal}(b). The green graphs denote the values of non-relativistic calculations, whereas the orange and blue graphs denote those of the two spin-split bands resulting fully-relativistic calculations. See Fig.~\ref{fig:Rashba_bands_dos}(b) for the location of this first valence band in the band structure.}
+\caption{\label{fig:Rashba_oamvseigvalv1}{\bf Properties of the Bloch functions in the first valence band.} a) Center of mass in the unit cell. b) Eigenvalues. (c-f) $L_x$, $S_x$, $L_y$ and $S_y$ around the Te ion, respectively. The values are plotted in function of the relative distance to the $Z$ point, $|\bm{k}_r| = |\bm{k} - \bm{k}_Z|$, along the $A \rightarrow Z \rightarrow U$ path shown in Fig.~\ref{fig:Rashba_crystal}(b). The green graphs denote the values of NSOC calculations, whereas the orange and blue graphs denote those of the two spin-split bands resulting from the SOC calculations. See Fig.~\ref{fig:Rashba_bands_dos}(b) for the location of this first valence band in the band structure.}
 \end{figure}
 \begin{figure}[h!]
 	\centering
@@ -452,17 +454,15 @@ The calculated local properties of the Bloch functions are shown in Fig.~\ref{fi
 \caption{\label{fig:Rashba_oamvseigvalv2}{\bf Properties of the Bloch functions in the third valence band.} The panels depict the same properties as Fig.~\ref{fig:Rashba_oamvseigvalv1}, but for the third valence band (see number 3 in Fig.~\ref{fig:Rashba_bands_dos}(b)).}
 \end{figure}
     
-Many interesting local features of the Bloch functions can be observed in these figures, which we will now discuss in detail.
-    
 The main confirmation of our claim that OAM is at the root of the large splitting can found in the panels that depict $L_x$ and $L_y$, namely the green graphs. These green-colored graphs are the result of calculations without relativistic effects included, which can be verified from the panels that depict the eigenvalues, colored in the same way.
 There is a clear linear variation of the OAM as $\bm k$ varies away from the $Z$ point, even though no atomic SOC is included.
 The only possible explanation for this unquenching can be found in expressions~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
 Moreover, $k_x$ remains zero along the $A$--$Z$ path, and we can observe that only $L_x$ develops due to the nonzero $k_y$. Only when $k_x$ is nonzero, along the $Z$--$U$ path, does $L_y$ show up. This dependence on $k_x$ and $k_y$ is fully consistent with the expressions for $L_x$ and $L_y$ in Eqs.~\eqref{eq:oam_from_k}--\eqref{eq:oam_from_k_final}.
     
-If we then include fully-relativistic effects, thus also including the atomic SOC, we can see that an additional unquenching of the OAM shows up.
+If we then include the atomic SOC, we can see that an additional unquenching of the OAM shows up.
 This leads to a nearly constant shift of the OAM with opposite signs for the two sub bands and is the sole contributor to the unquenching at the T-invariant $Z$ point.
 How this unquenching leads to the second contribution of the linearly varying OAM was discussed in Eq.~\eqref{eq:d_z_from_OAM}, where we found that it results from the combination of the linear $\bm k$ due to the first-order expansion of $\eikr{R}$, and a nonzero OAM at the T-invariant point.
-We can find the signature of this contribution in the change of the linear slope of the OAM for the fully-relativistic calculations compared with the one resulting from the non-relativistic calculations.
+We can find the signature of this contribution in the change of the linear slope of the OAM for the SOC calculations compared with the one resulting from the NSOC calculations.
 This is especially clear for the third valence band shown in Fig.~\ref{fig:Rashba_oamvseigvalv2}.
 \begin{figure}
 	\centering
@@ -487,7 +487,7 @@ To conclude this chapter, we take a step back and summarize the original problem
     
 The impetus of this research was the observation that the linear spin splitting that occurs in these bulk materials can be orders of magnitude larger than what is explainable by the purely relativistic Rashba effect.
 Moreover, a closer inspection led to the conclusion that the splitting is heavily influenced by the character of the bands, resulting in a different orientation and size of the splitting in each band.
-To substantiate these claims, we investigated the original derivation that leads to the relativistic Rashba effect, and discussed why it fails to explain these observations.
+To substantiate these claims, we investigated the original derivation that leads to the purely relativistic Rashba effect, and discussed why it fails to explain these observations.
     
 We then continued with a study of the proposed alternative mechanism, based on the combination of orbital angular momentum, electrostatics, and atomic SOC.
 Through the use of a toy tight-binding model and $\bm k \cdot \bm p$ expansions, we identified two contributing factors to this mechanism, both originating from the unquenching of OAM.

@@ -59,16 +59,42 @@ all functions of (r)?  And what, exactly, is the "field
 associated with the polarization"?  (Same question as in
 the previous paragraph above.)
 
+All of these should have been a function of r indeed. The field 
+associated with polarization is the field that is generated
+by the dipoles that lead to the ferroelectric polarization.
+As discussed above, this field thus varies in space. 
+The way it was meant is the local electric field that results
+from the inversion symmetry breaking potential.
+<Add where the text has been updated, and figure too> 
+
 By the way, I guess a factor of 'e' is missing in (2.11).
+
+I don't think this is true. There is, however, a minus sign missing,
+which propagates through the following equations as well.
 
 This whole discussion is somewhat heuristic anyway, so maybe
 a precise formulation is not needed, but in that case maybe
 you should introduce it as a heuristic discussion from the
 start.
 
+I have added heuristic to this sentence:
+"Before turning to a $\bm{k} \cdot \bm{p}$ expansion of the above equations, we take a moment to discuss heuristically..."
+ 
+
 I'm not sure why the title of the subsection starting above
 Eq. (2.15) is "Electrostatics".  Find a more suitable title?
 
+This title was chosen was to highlight that the discussion that followed
+was entirely on the basis of electrostatic contributions that 
+result in OAM L, rather than the usually known unquenching via
+atomic SOC. 
+However, I changed to title of this part to:
+"OAM due to electric dipoles",
+and the next to
+"Electric dipoles due to OAM",
+in an attempt to contrast the two similar, but different, contributions to the total
+effect. 
+ 
 Fig. 2.4: I'm lost.  First, some headings on the figure say
 p_x+ip_y and some say p_x+ip_z; was that intentional??  (Also
 in caption.)  The figure horiszontal axis label suggests the
@@ -78,14 +104,28 @@ each figure.  Are we looking at a top view of the x-y plane
 for the donuts, abut a side view of the x-z plane for the
 isosurfaces??  I find it very confusing.
 
+I have updated and corrected the figure. The p_y was a mistake,
+it should have been always p_x. I have added a set of axes to
+demonstrate that this is indeed the x-z plane. The arrows
+originally indicated that the neighboring Wannier functions
+were shifted by + and - a_x. I have removed those and simply
+added the double-sided arrow indicating the cell-parameter
+along the x-direction. 
+
 A detail: I think you are using "nonrelativistic" as a
 synonym for "absence of SOC", but this isn't quite right,
 since virtually all pseudopotentials include the scalar
 relativistic effects.  Unless you _really_ mean fully
 nonrelativistic, I think you need to use other wording.
 
+I have changed the wording to spin-orbit-coupled (SOC) calculations,
+and non-spin-orbit-coupled (NSOC) calculations, since indeed our
+pseudopotentials include the scalar relativistic contributions.
+ 
 There seems to be a redundant sentence, once at the bottom of
 p. 23, repeated just below Fig. 2.10.
+
+I removed the second sentence.
 
 Chapter 3
 ---------
