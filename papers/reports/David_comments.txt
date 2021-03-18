@@ -142,6 +142,10 @@ a different meaning than those in b) and c).  I wonder if there
 is a way to outline in a) the regions that are blown up in
 b) and c)?
 
+Rather than marking both situations with boxes (they overlap and make the panel even messier),
+I followed the other referee's suggestion and indicated the spins corresponding to b) and c) in a).
+I also changed the coloration of L1 and L2 to distinguish them from the spins in black. 
+
 This chapter seems to be in good shape overall.  (Pretty cool
 results, actually.)
 
