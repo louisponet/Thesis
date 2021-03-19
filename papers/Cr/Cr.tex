@@ -1,6 +1,6 @@
 \chapter{Coupling between spin and lattice in chromium \label{ch:CrSDW}}
 \section{Introduction}
-In all previous chapters, we discussed situations for which the order parameters were static, or at least at instantaneous equilibrium.
+In all previous Chapters, we discussed situations for which the order parameters were static, or at least at instantaneous equilibrium.
 For GeTe, the polarization and resulting spin splitting were fixed.
 Even though the thermal excitation of polar phonons can lead to a non-trivial dynamical splitting in the band structure, on the slower phonon timescale electrons can still be assumed to be at the instantaneous equilibrium with the ionic potential \cite{Monserrat2017}.
 This is because, as alluded to before, the electronic dynamics is generally many orders of magnitude faster than the atomic ones, meaning that the Born-Oppenheimer approximation remains valid.
@@ -21,7 +21,7 @@ The dynamics of the PLD is instead related to the motion of massive ions and is 
 % The system as a whole only reaches full equilibrium with the substrate after nanoseconds \cite{Singer2015prb}. 
 By using ultrafast pump-probe experiments that have a sub-picosecond resolution, these PLD dynamics can be studied and, more importantly, controlled very precisely through excitation of the much faster responding SDW.
 
-In this chapter we explore and investigate the additional possibilities opened up by applying a sequence of optical excitations spaced at various points in time.
+In this Chapter we explore and investigate the additional possibilities opened up by applying a sequence of optical excitations spaced at various points in time.
 We start by demonstrating the experimental observations made by applying not one, but two optical pulses to the SDW, and how their spacing changes drastically the response of the probed PLD.
 This showcases the additional complexity and control achieved over the standard single pump-probe experiments that were performed previously \cite{Singer2015prb, Singer2015prb}. 
 Among various possibilities, this additional control allows for the suppression of the intermediate nonequilibrium state thus reproducing adiabatic transitions on much faster timescales than would be possible without this control, which is termed ``shortcuts to adiabaticity'' in quantum technology \cite{Torrontegui2013,Deffner2014,Zhou2017}.
@@ -83,7 +83,7 @@ The influence of the pulse's fluence is detailed in Fig.~\ref{fig:Cr_experimenta
 Experiments performed with a high fluence initial pulse, cause the SDW to heat up and remain above $T_N$ for the entirety of the experiment, demonstrating that the impact of the second pulse, in this case, is completely lost. Indeed, varying its timing changes nothing to the oscillation of the PLD, as can be seen from Fig.~\ref{fig:Cr_experimental2}(c).
 If control is the goal, it is thus important that the SDW is allowed to cool down below $T_N$ before exciting it again.
 The SDW order parameter, furthermore, depends strongest on temperature when it is close to the critical point where it varies as the square root, thus increasing the pulse efficiency in that temperature region.
-These considerations will be discussed in greater detail in section~\ref{sec:Cr_results}, after the theoretical description is given.
+These considerations will be discussed in greater detail in Section~\ref{sec:Cr_results}, after the theoretical description is given.
 
 Finally, it was experimentally verified that no timescales related to the behavior of topological defects such as domain walls are present. This would be reflected in a changing width and intensity of the diffraction peaks associated with the PLD (Fig.~\ref{fig:Cr_schematic}(b)), which is not observed. This can be explained by the small thickness of the film, allowing only a single SDW wavevector direction, such that no domains are formed in the ``depth'' of the film. Furthermore, the XFEL pulses had a diameter of 0.2 mm, w hich envelopes multiple SDW domains in the plane of the film\cite{Nicholson2016}, making the measurements statistical over domains.
 These considerations also support our previous claim that the optical pulses can be assumed to excite the thin film homogeneously. 
@@ -122,7 +122,7 @@ The evolution of the temperatures can be described by the so-called two temperat
 \end{align}
 with $k$ the heat transfer rate, and $C_L$, $C_b$ the heat capacities of the electronic degrees of freedom and of the bath, respectively.
 The dots signify time derivatives.
-As one could expect, we find that the heat capacity of the bath is larger than that of the electronic system by an order of magnitude, as will be confirmed when we detail the model parameters in the Methods section~\ref{sec:Cr_Methods}.
+As one could expect, we find that the heat capacity of the bath is larger than that of the electronic system by an order of magnitude, as will be confirmed when we detail the model parameters in the methods Section~\ref{sec:Cr_Methods}.
 Finally, the heat injected by the pulses is modeled by a Gaussian $Q_{ph}(t) = A e^{\frac{-(t - \tau)^2}{\xi^2}}$, with $A$ the strength, $\xi$ the duration and $\tau$ the time delay.
 
 The changes to $T_L$ through heating and subsequent cooling affects the SDW amplitude $L$ and indirectly the PLD one $y$, as described by a Landau-type theory~\cite{Khomskii2010}.
@@ -189,7 +189,7 @@ The error of the solution $\tilde{x}$ w.r.t. the experimental measurements $x$ i
 The numerical optimization was done through the \href{https://github.com/JuliaNLSolvers/Optim.jl}{Optim.jl} package ~\cite{mogensen2018optim}, where we found that the Nelder-Mead simplex algorithm \cite{Nelder1965} works best for this very non-linear problem.
 
 \section{Results and discussion \label{sec:Cr_results}}
-The experimental measurements we use as a basis to fit our model were discussed in section~\ref{sec:Cr_experiment}, and shown in Fig.~\ref{fig:Cr_experimental1}.
+The experimental measurements we use as a basis to fit our model were discussed in Section~\ref{sec:Cr_experiment}, and shown in Fig.~\ref{fig:Cr_experimental1}.
 We took eleven representative experiments, which can be thought of as horizontal slices of Fig.~\ref{fig:Cr_experimental1}(a), in order to fit the model parameters to get the best total fit across all datasets, allowing only the pulse fluence to fluctuate between sets.
 
 The parameters that were thus found are
@@ -271,7 +271,7 @@ Moreover, through the use of prisms, a high fluence pulse can be split into many
 This is all to say that technically speaking such pulse trains can be generated, and we are hopeful that such experiments can be performed in the future.
 
 \section{Conclusions}
-In this chapter, we discussed the effects of cross-order coupling beyond quasi-static phenomena.
+In this Chapter, we discussed the effects of cross-order coupling beyond quasi-static phenomena.
 The results show that the coupling between the SDW and PLD through exchange striction in chromium is another prime example of cross-order control, where, in this case, the perturbation applied by optical pulses to the SDW leads to an excitation of the PLD mode.
 Moreover, the slower dynamics of the PLD compared to the SDW opens up new behavior and additional dynamical control that would not be possible without the coupling.
 If the PLD would have dynamics on the same timescale as the SDW, changing its potential through exciting the latter would not be very impactful since it would follow the minimum of the potential as fast as the excited SDW would change it.
