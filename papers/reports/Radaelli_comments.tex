@@ -99,6 +99,11 @@ These considerations also support our previous claim that the optical pulses can
 {\bf Page 80:}~{\it I found the introduction to Chapter 5 rather unsatisfactory. Why is the problem of FE soft domain walls interesting/relevant (i.e., who cares)? The link to the possibility of using the described effect for information storage seems rather remote. It would be much preferable if a
 higher-level context was provided.}
 \\\\
+I have added some additional context for the practical importance of these measurements and results:
+
+``From the practical point of view, this mechanical detection of ferroelectric DWs means that they can be probed without applying a bias voltage, which may prove useful for conducting ferroelectrics. Moreover, since phonon spectra are determined by the stiffness of the material, the softer DWs will harbor phonon modes with lower speeds. In turn, this may result in effects such as phonon refraction or even total internal reflection inside the walls, turning the DWs into ``phonon waveguides''. Because heat is transported by phonons, this would allow for heat propagation through the DWs with little dissipation. From the ability to create and destroy 180$^\circ$ DWs by voltage, regular patterns with internal elastic contrast could be created, effectively leading to a phononic crystal.
+This is interesting, since periodically poled ferroelectric crystals are already used in photonic applications [Ferraro2014].''
+\\\\
 {\bf Page 82:}~{\it ``The longitudinal part... leads to the largest contribution...''. How universal is this statement? Is that `usually'?}
 \\\\
 Indeed, looking at Table II in \href{http://dx.doi.org/10.1063/1.4861260}{Electrostrictive effect in ferroelectrics: An alternative approach to improve piezoelectricity}, the fluorites have a larger shear electrostrictive coefficient. I have changed it to `usually' in the text.
@@ -127,4 +132,6 @@ These were all taken from previous literature, I have added that and the referen
 {\bf Page 96:}~{\it The `spurious numerical effect' used in lieu of the P-N barriers seems rather
 unsatisfactory and poorly controllable. Can the candidate describe a possible alternative?}
 \\\\
+I agree, this is not a very desirable situation since usually the density of the mesh would be determined by a sufficient convergence of the total energy. However, since we found that for unperturbed cases the total energy was converged well using a mesh of larger size than the one we chose considering the PN barriers.
+In any case, one other way, maybe more satisfying, would be to superpimpose a PN barrier which could be characterized from atomistic simulations such as those in Ref.~[Meyer2002]. However, we can not get around the spurious contributions from the mesh size, and so the potential would have to be carefully designed for any given mesh size so that the combined effects add up to the real PN potential. In the end it could then be argued that just adapting the mesh size is simpler.
 \end{document}
