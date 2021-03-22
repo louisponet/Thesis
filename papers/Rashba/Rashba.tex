@@ -76,7 +76,7 @@ It is a purely relativistic effect that can be derived starting from a second-or
 \begin{equation}
 	\label{eq:Rashba_dirac}
 	\hat{H}(\bm r) \Ket{\psi} = \left[\frac{\hat{\bm{p}}^2}{2m} - e V(\bm r) - \frac{e \hbar}{4m^2c^2}(
-	hat{\bm{\sigma}}\cdot[\bm{\nabla}V(\bm r) \times\hat{\bm{p}}]) + \frac{\hat{\bm{p}}^2}{8m^2c^2} V(\bm r) - \frac{\hat{\bm{p}}^4}{8m^3c^2}\right]\Ket{\psi} = E\Ket{\psi}
+	\hat{\bm{\sigma}}\cdot[\bm{\nabla}V(\bm r) \times\hat{\bm{p}}]) + \frac{\hat{\bm{p}}^2}{8m^2c^2} V(\bm r) - \frac{\hat{\bm{p}}^4}{8m^3c^2}\right]\Ket{\psi} = E\Ket{\psi}
 \end{equation}
 where $\Ket{\psi}$ is a two component spinor, $V(\bm r)$ denotes the electric potential, $\hat{\bm{\sigma}}$ a vector of Pauli matrices $(\hat{\sigma}_x, \hat{\sigma}_y, \hat{\sigma}_z)$, and $m$ and $e$ the electron mass and charge, respectively.
 $\bm \nabla = (\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial }{\partial z})$ denotes spatial derivatives, and $\hat{\bm{p}} = -i\hbar \hat{\bm{\nabla}}$ the canonical momentum.
@@ -106,7 +106,7 @@ This leads to the following equations for $\Ket{\unk{n}{k}}$:
 \end{align}
 We neglected the last two terms of Eq.~\eqref{eq:Rashba_dirac} since they are exceedingly small and do not contribute to the linear $k$-dependent energy of the Rashba form in Eq.~\eqref{eq:Rashba_form}.
 
-Before turning to a $\bm{k} \cdot \cdot{\bm{p}}$ expansion of the above equations, we take a moment to discuss heuristically how $\hat{V}^{\bm k}_2$ and $\hat{V}_3$ act on the Bloch functions, more specifically, which contribution to the local electric field $\bm{\nabla}V$ is important.
+Before turning to a $\bm{k} \cdot \hat{\bm{p}}$ expansion of the above equations, we take a moment to discuss heuristically how $\hat{V}^{\bm k}_2$ and $\hat{V}_3$ act on the Bloch functions, more specifically, which contribution to the local electric field $\bm{\nabla}V$ is important.
 Both terms originated from the application of Eq.~\eqref{eq:Rashba_momentum} to the third term on the right-hand side of Eq.~\eqref{eq:Rashba_dirac}.
 We study the case of a 2D square lattice, for a Bloch function with $\bm k = (k_x, 0)$, and with the polarization oriented along the $y$-direction.
 A pictorial representation of this situation is shown in Fig.~\ref{fig:Efield_cell_drawing}, where we separated the electric field into two contributions:
@@ -146,24 +146,24 @@ Conversely, $\hat{V}_2^{\bm k}$ does have the correct form of Eq.~\eqref{eq:Rash
     
 In order to obtain the second contribution, we perform a $\bm k \cdot \hat{\bm p}$ expansion of Eq.~\eqref{eq:Rashba_unk_Vs} around a \gls{T}-invariant point of the \gls{BZ}, $\bm k_0$\cite{Rashba1959SymmetryAr,Lowdin1951,Bahramy2011}.
 We denote the {\it relative} vector between the \gls{T}-invariant point $\bm k_0$ and $\bm k$ as $\bm K$, i.e. $\bm K = \bm k - \bm k_0$.
-The basis states are chosen to be eigenstates of $\hat{V}_0^{\bm k_0}$, with the perturbation resulting from $\hat{V}^{\bm k}_1 + \hat{V}^{\bm k}_2 + \hat{V}_3$.
+The basis states are chosen to be eigenstates of $\hat{V}_0^{\bm k_0}$, with the perturbation resulting from $\hat{V}^{\bm K}_1 + \hat{V}^{\bm K}_2 + \hat{V}_3$.
 We will derive the energy dispersion for the $n$th band, with the spin-up and spin-down states of this band necessarily degenerate at the \gls{T}-invariant point.%, and we take $E^{\bm k_0}_{n,\sigma} = 0$%.
  Furthermore, we assume that this is the only degeneracy of this band, and we choose the spin-up and spin-down basis states at $\bm k_0$ so that no off-diagonal elements of $ \hat{V}_1^{\bm k_0} + \hat{V}_2^{\bm k_0} + \hat{V}_3$ exist between them.
 
 Expanding then Eq.~\eqref{eq:Rashba_unk_Vs} in small $\bm{K}$, keeping terms linear in $\bm{K}$ and up to second order in $1/c$ (or equivalently, up to $\lambda^2$), we find:
 \begin{align}
 	E_{n,\sigma}^{\bm{k}} - E_{n,\bm \sigma}^{\bm{k}_0} =& \Bra{u_{n,\bm \sigma}^{\bm k_0}} \hat{V}_1^{\bm K} + \hat{V}_2^{\bm K} + \hat{V}_3\Ket{u_{n,\bm \sigma}^{\bm k_0}}+ \\
-		& \sum_{m,\bm \sigma' \neq n,\bm \sigma}\frac{\Bra{u_{m,\bm \sigma'}^{\bm{k}_0}} \hat{V}_1^{\bm K} + \hat{V}_2^{\bm K} + \hat{V}_3\Ket{u_{n, \bm \sigma}^{\bm{k}_0}}\Bra{u_{n, \bm \sigma}^{\bm{k}_0}}  \hat{V}_1^{\bm K} + \hat{V}_2^{\bm K} + \hat{V}_3 \Ket{u_{m, \bm \sigma'}^{\bm{k}_0}}+h.c.}{E_{n, \bm \sigma} - E_{m, \bm \sigma'}},
+		& \sum_{m,\bm \sigma' \neq n,\bm \sigma}\frac{\Bra{u_{m,\bm \sigma'}^{\bm{k}_0}} \hat{V}_1^{\bm K} + \hat{V}_2^{\bm K} + \hat{V}_3\Ket{u_{n, \bm \sigma}^{\bm{k}_0}}\Bra{u_{n, \bm \sigma}^{\bm{k}_0}}  \hat{V}_1^{\bm K} + \hat{V}_2^{\bm K} + \hat{V}_3 \Ket{u_{m, \bm \sigma'}^{\bm{k}_0}}+\rm{H.c.}}{E_{n, \bm \sigma}^{\bm k_0}- E_{m, \bm \sigma'}^{\bm k_0}},
 \end{align}
 where the sum is performed over all states that are not identical to $\Ket{u_{n,\bm \sigma}^{\bm k_0}}$, and the spin up-down degeneracy is avoided by the definition of the basis that is used.
-Grouping then the terms that lead to linear-in-$k$ spin splittings, we arrive at:
+Grouping then the terms that lead to linear-in-$\bm K$ spin splittings, we arrive at:
 \begin{align}
 	\label{eq:kp_expansion}
-	\tilde{E}_{n,\sigma}^{\bm{k}} - \tilde{E}_{n,\bm \sigma}^{\bm{k}_0} =& -\lambda \Bra{u_{n,\bm \sigma}^{\bm k_0}}  \hat{\bm{\sigma}} \cdot ( \bm{\nabla}V(\bm r) \times \bm{k}) \Ket{u_{n,\bm \sigma}^{\bm k_0}} + \\
-		& \sum_{m,\bm \sigma' \neq n,\bm \sigma}\frac{\hbar}{m}\frac{\Bra{u_{m,\bm \sigma'}^{\bm{k}_0}} \bm k \cdot \bm p \Ket{u_{n, \bm \sigma}^{\bm{k}_0}}\Bra{u_{n, \bm \sigma}^{\bm{k}_0}} -\lambda \hat{\bm{\sigma}} \cdot \left( \bm{\nabla}V(\bm r) \times \hat{\bm{p}}\right) \Ket{u_{m, \bm \sigma'}^{\bm{k}_0}} + h.c.}{E_n^{\sigma} - E_m^{\sigma}}.\nonumber
+	\tilde{E}_{n,\sigma}^{\bm{k}} - \tilde{E}_{n,\bm \sigma}^{\bm{k}_0} =& -\lambda \Bra{u_{n,\bm \sigma}^{\bm k_0}}  \hat{\bm{\sigma}} \cdot ( \bm{\nabla}V(\bm r) \times \bm{K}) \Ket{u_{n,\bm \sigma}^{\bm k_0}} + \\
+		& \sum_{m,\bm \sigma \neq n,\bm \sigma}\frac{\hbar}{m}\frac{\Bra{u_{m,\bm \sigma}^{\bm{k}_0}} \bm K \cdot \hat{\bm p} \Ket{u_{n, \bm \sigma}^{\bm{k}_0}}\Bra{u_{n, \bm \sigma}^{\bm{k}_0}} -\lambda \hat{\bm{\sigma}} \cdot \left( \bm{\nabla}V(\bm r) \times \hat{\bm{p}}\right) \Ket{u_{m, \bm \sigma}^{\bm{k}_0}} + \rm{H.c.}}{E_{n, \bm \sigma}^{\bm k_0}- E_{m, \bm \sigma}^{\bm k_0}}.\nonumber
 \end{align}
 The first term at the right-hand side was discussed previously in Eq.~\eqref{eq:Rashba_purerel}.
-The second term has the atomic \gls{SOC} ($\hat{V}^{\bm k}_3$, discussed in Eq.~\eqref{eq:Rashba_SOC}) is much larger than $\hat{V}^{\bm{k}}_2$, leading to the same order of magnitude for both terms on the right-hand side of Eq.~\eqref{eq:kp_expansion}, even though the second is of a higher order in the perturbation theory. Notice how no spin off-diagonal terms appear in the second term due to the spin-diagonal form of $\bm k \cdot \hat{\bm p}$\lp{is this true?}.
+The second term has the atomic \gls{SOC} ($\hat{V}^{\bm k}_3$, discussed in Eq.~\eqref{eq:Rashba_SOC}) is much larger than $\hat{V}^{\bm{k}}_2$, leading to the same order of magnitude for both terms on the right-hand side of Eq.~\eqref{eq:kp_expansion}, even though the second is of a higher order in the perturbation theory. Notice how no spin off-diagonal terms appear in the second term due to the spin-diagonal form of $\bm K \cdot \hat{\bm p}$.
 
 A requirement for the second term to be nonzero is that $u_n$ and $u_m$ have different parity along the spatial direction defined by $\bm{k}$, since otherwise $\Bra{u_n} k_x \partial_x + k_y \partial_y + k_z \partial_z \Ket{u_m} = 0$.
 One example could be a $p_y$ orbital and a $s$-$p_z$ hybridized one, which would be created by a ferroelectric polarization along the $z$-axis.
@@ -372,8 +372,7 @@ The first \gls{BZ} for this low-temperature structure is shown in panel (b), wit
 	\IncludeGraphics[width=0.9\linewidth]{bands_dos.png}
 \caption{\label{fig:Rashba_bands_dos}{\bf Bandstructure of GeTe.} a) \gls{NSOC} calculation. b) \gls{SOC} calculation. In both panels the band structure was colored according to the contribution of the constituent orbitals, as indicated in the flanking density of state plots. The bands that have larger $s$ character are located 5 eV below the shown window.}
 \end{figure}
-In the calculations reported below, we used a unit cell with lattice parameter $a=$4.28~\AA, leading to a volume of 53.4~\AA$^3$.
-This makes the unit cell near identical to the experimental one, which has a volume of 53.3~\AA$^3$~\cite{Serebryanaya1995}.
+In the calculations reported below, we used a unit cell with lattice parameter $a=$4.28~\AA, leading to a volume of 53.4~\AA$^3$\cite{Nonaka2000}.
 The Te ion is shifted by 0.25~\AA~ away from the center of the unit cell.
 
 The valence (conduction) bands around the Fermi level are mainly formed by $s$ and $p$ orbitals from the Te (Ge) ion.

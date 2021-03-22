@@ -4,6 +4,8 @@ Detailed comments on the thesis
 A list of acronyms might be useful, either up front or as a
 fifth appendix.
 
+I have followed the suggestion and added a list after the appendices.
+
 Chapter 2
 ---------
 
@@ -29,22 +31,22 @@ and leads to the relativistic Rashba effect. Indeed this means that
 my discussion on which local fields interact with which parts of the 
 wavefunction is maybe too simplified, in the sense that this 
 internal field from the dipoles is not a constant throughout the unit-cell,
-as is depicted by the violet surface in Fig. 2.2. 
+as was depicted by the violet surface in Fig. 2.2. 
 In reality, if we consider the single atom paraelectric unit-cell of Fig. 2.2,
 dimerize the bonds along the y direction, the field from the resulting dipoles
 will be approximately constant across the atoms, where the Bloch function
 peaks. Thus, when computing the contribution to the energy of this field interacting
 with the envelope, i.e. by performing the real-space
 integral, it could be replaced by an effective constant field,
-which one could refer to as the be referred to as the ISB field.
-This constant effective field is indicated by the violet potential in Fig. 2.2. 
+which one could refer to as the ISB field.
+This constant effective field is now indicated by the violet potential in Fig. 2.2. 
 A very subtle point related with your comment is how different boundary 
 conditions would change the Rashba effect. Indeed, when open 
 boundary conditions would be considered, the electric field that
 is a result of the surface charges would also lead to a contribution,
 which would be absent for short-circuited boundary conditions. 
 However, again, since the prefactor is so small, and this field
-is really tiny, I think the difference between these boundary
+is really tiny, compared to the internal fields, I think the difference between these boundary
 conditions can be considered negligible. 
 
 I have replaced the E in eq 2.2 to \hat{\bm n} to indicate that 
@@ -65,6 +67,7 @@ by the dipoles that lead to the ferroelectric polarization.
 As discussed above, this field thus varies in space. 
 The way it was meant is the local electric field that results
 from the inversion symmetry breaking potential.
+To make the distinction between operators and numbers/vectors clearer I've added hats to the operators.
 <Add where the text has been updated, and figure too> 
 
 By the way, I guess a factor of 'e' is missing in (2.11).
@@ -78,7 +81,7 @@ you should introduce it as a heuristic discussion from the
 start.
 
 I have added heuristic to this sentence:
-"Before turning to a $\bm{k} \cdot \bm{p}$ expansion of the above equations, we take a moment to discuss heuristically..."
+"Before turning to a $\bm{k} \cdot \hat{\bm{p}}$ expansion of the above equations, we take a moment to discuss heuristically..."
  
 
 I'm not sure why the title of the subsection starting above
@@ -105,11 +108,11 @@ for the donuts, abut a side view of the x-z plane for the
 isosurfaces??  I find it very confusing.
 
 I have updated and corrected the figure. The p_y was a mistake,
-it should have been always p_x. I have added a set of axes to
+it should have been always p_z. I have added a set of axes to
 demonstrate that this is indeed the x-z plane. The arrows
 originally indicated that the neighboring Wannier functions
 were shifted by + and - a_x. I have removed those and simply
-added the double-sided arrow indicating the cell-parameter
+added the double-sided arrow indicating the cell parameter
 along the x-direction. 
 
 A detail: I think you are using "nonrelativistic" as a
@@ -134,8 +137,7 @@ Start of 3.2: I suggest to list the space group (P2_1a ?) of
 the PM configuration, then say the _magnetic_ group of the
 ground state is P_ab2_1a.
 
-Is this true?
-
+In conventional International Tables for Crystallography settings the magnetic group is P_aca2_1, making the corresponding space group Pca2_1.Comparing the generators for Pbam to Pca2_1, the only broken symmetry is inversion. I've added it also to the main text. 
 
 In Fig. 3.1, I found it confusing.  Black arrows in a) have 
 a different meaning than those in b) and c).  I wonder if there
@@ -172,12 +174,14 @@ are mentioned are amplitude modes that are excited through heating
 with optical pulses.
 
 I have changed the wording so that it reflects the concept of the chapter
-more rather than the question of thermalization, i.e. that through
+more, rather than the question of thermalization, i.e. that through
 the fast dynamics of the SDW excitations, a high degree of control
 can be achieved over the slower PLD dynamics.
 
 
 The agreement in 4.4 looks pretty impressive.
+
+Thank you.
 
 Chapter 5
 ---------

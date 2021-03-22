@@ -15,16 +15,17 @@ In what follows below, I have compiled the list of remarks each with my reply or
 \\\\
 {\bf Page 10:}~{\it The candidate states: ``Without loss of generality, we choose this point to be the gamma point.'' This does not appear to be obvious, because not all T-invariant points are equivalent. Can this be better explained?}
 \\\\
-% This is true. What is meant here is that for the purpose of the derivation only $\bm k_r = \bm k - \bm \bm k_0$ matters. Whether $\bm k_0 = \bm 0$ or another T-invariant point changes what the $|u_n, \sigma>$ are in Eq.(2.14).
-{\bf Page 17:}~{\it Why is the exact experimental unit cell not used in this case? Is the unit cell used here the result of \gls{DFT} optimisation?}
+This is true. There is nothing in the derivation inherently dependent on the T-invariant point being Gamma, so I removed the sentence and provided a more general derivation.
 \\\\
-No particular reason.
+{\bf Page 17:}~{\it Why is the exact experimental unit cell not used in this case? Is the unit cell used here the result of DFT optimisation?}
+\\\\
+In the calculations I used a crystal structure from the ICSD database, which is not identical to the one I found later. I have now searched more carefully where I found the original structure and updated the reference in the Thesis. 
 \\\\
 {\bf Page 24, Fig.~2.9:}~{\it The direction of the path in reciprocal space is not clear on the axes.}
 \\\\
 I have added $A \leftarrow Z \rightarrow U$ to this and the following figure.
 \\\\
-{\bf Page 36, Fig.~3.1:}~{\it This figure is not at all clear, partly due to the fact that only few spin directions are indicated. One should first of all sttate in the caption that the chains are \gls{AFM}, but also indicate some of the spins so that the fragments in panels b) and c) can be identified in the larger structure.}
+{\bf Page 36, Fig.~3.1:}~{\it This figure is not at all clear, partly due to the fact that only few spin directions are indicated. One should first of all sttate in the caption that the chains are AFM, but also indicate some of the spins so that the fragments in panels b) and c) can be identified in the larger structure.}
 \\\\
 Thank you for this suggestion, I have added the spins corresponding to b) and c) in a).
 I have also added a more explicit statement of the AFM nature of the chains in the caption.
@@ -48,20 +49,23 @@ For example, in the absence of a magnetic field, it is clear that Gd spins must 
 same irrep as Mn spins in order for coupling to exist. There may be a good reason why this is not
 possible or convenient here – explain.}
 \\\\
-Initially we tried to indeed construct a model using this method, based on the description in the middle of page 3 of \href{https://link.aps.org/doi/10.1103/PhysRevLett.110.137203}{Giant Tunability of Ferroelectric Polarization in GdMn$_2$O$_5$}. This means we used the X$_2$ irrep and its modes to find the invariants. We found that this led to very complicated expressions and we made little progress through this way, after which we decided to try it in this more explicit way.
-After finding that the model very well described the experiments, we tried to project the components of the spins and N\'eel vectors onto the X$_2$ modes during a field sweep. This is displayed in figure \ref{allirreps}.
+Initially we tried to indeed construct a model using this method, based on the description in the middle of page 3 of \href{https://link.aps.org/doi/10.1103/PhysRevLett.110.137203}{Giant Tunability of Ferroelectric Polarization in GdMn$_2$O$_5$}. This means we used the $X_2$ irrep and its modes to find the invariants, since $X_1$ is even under $xy$-mirror symmetry, whereas spins are odd.
+However, spins described by $X_2$ modes, by definition, change sign upon translation by $a$, whereas the magnetic field induces netto magnetization that requires modes transforming as the $\Gamma^{3+}$ and $\Gamma^{4+}$ irreps ($x$ and $y$ component).
+In principle each Wyckoff position could require a full set of these modes to be described reliably during the field sweeps.
+This then led us to try the different route of a microscopic model, making clear and physically inspired approximations, to reduce the amount of variables. 
+Through the use of a ``rigid L'' approximations and unit vectors in the $ab$ plane, we only need one angle per spin as the variable.
+After finding that the model very well described the experiments, we projected the components of the spins and N\'eel vectors onto the $X_2$ modes during a field sweep. This is displayed in figure \ref{allirreps}.
 \begin{figure}[h]
 	\includegraphics[width=\textwidth]{allIrreps.pdf}
-	\caption{\label{allirreps}{\bf Projections onto X$_2$ modes.} The graphs represent the projections on the (a,b) components of the X$_2$ of the spins that are in the unit cell, during the double field sweep. The magnetic field amplitude is represented by the grey dotted graph. The three Wyckoff positions are labeled by $f$, $h$ and $g$ for the Mn$^{4+}$, Mn$^{3+}$, and Gd positions. The numbering denotes which spatially equivalent Wyckoff position the moment belongs to, and the full and dotted graphs denote the $a$ and $b$ components of each moment, respectively.}
+	\caption{\label{allirreps}{\bf Projections onto $X_2$ modes.} The graphs represent the projections on the (a,b) components of the $X_2$ of the spins that are in the unit cell, during the double field sweep. The magnetic field amplitude is represented by the gray dotted graph. The three Wyckoff positions are labeled by $f$, $h$ and $g$ for the Mn$^{4+}$, Mn$^{3+}$, and Gd positions. The numbering denotes which spatially equivalent Wyckoff position the moment belongs to, and the full and dotted graphs denote the $a$ and $b$ components of each moment, respectively.}
 \end{figure}
-From the figure it is clear that the behavior of the projections of the spins is rather complex, and many require the full 2D projections to describe their evolution throughout the full cycle.
-Our model is greatly simplified since, through the use of the unit vectors in the $ab$ plane, we have only one angle per spin as the variable.
+From the figure it is clear that the behavior of the projections of the spins is rather complex, and many require both $a$ and $b$ components to describe their evolution throughout the full cycle.
 \\\\
 {\bf Page 50:}~{\it The candidate mentions the Nudged Elastic Band model which, however, is not introduced.}
 \\\\
 I have added a small description to the text:\\
 ``The Nudged Elastic Band calculations are a way to track how the low points of the valley in Fig.~\ref{fig:GdMn2O5_heatmap} change for different field strengths.
-This is done by taking two extremal states, then constructing a set of images that interpolate in phase space between these two states. The total energy of the entire chain is then optimized using a small elastic-like energy term that binds the images together, so that they find the lowest energy barrier between the two states.''
+This is done by taking two extremal states, then constructing a set of images that interpolate in configuration space between these two states. The total energy of the entire chain is then optimized using a small elastic-like energy term that binds the images together, so that they find the lowest energy barrier between the two states.''
 \\\\
 {\bf Page 54, Fig.~3.10:}~{\it I found this figure (especially the `squiggles' in panels b to f) extremely confusing. I am not sure it adds much, so I would consider omitting, but a better caption is certainly in order.}
 \\\\
@@ -73,16 +77,17 @@ I have changed the caption in an attempt to be more clear.
 what are the ‘blobs’ we are looking at (finite-size fringes mixed with superlattice peaks?) This may
 be clear from the related publications but not here.}
 \\\\
-I have added a little more explanation in the main text, updated the schematic figure in panel (b), and added additional information to the caption of the figure.
+I have added more explanation in the main text, updated the schematic figure in panel (b), and added additional information to the caption of the figure.
 \\\\
 {\bf Page 66, Fig.~4.2:}~{\it Perhaps a qualitative introduction to panel a) in this figure could help. I now understand what is going on, but I must admit it took me a while. Also, please provide the
 reference to the publication in the figure caption, both here and elsewhere.}
 \\\\
 I have added the following qualitative description to the main text:
 
-``We first focus on Fig.~4.2(a), where the PLD amplitude is represented as a heatmap with on the x-axis the time evolution, and on the y-axis the delay between the two consecutive pumps by optical pulses. The y-axis basically shows many experiments such as the ones in panel (b) and (c) of the same figure. Consequently, the blue and purple line demonstrate the horizontal slice corresponding to the measurement highlighted by the box with the same color.''
+``We first focus on Fig. 1.2(a), where
+the PLD amplitude is represented as a heatmap with the time evolution of the x-ray probe intensity on the horizontal axis, and the delay between the two consecutive pumps on the vertical axis. Each horizontal slice corresponds to an experiment such as those in panel (b) and (c) of the same figure. Consequently, the blue and purple line demonstrate the horizontal slice corresponding to the measurement highlighted by the box with the same color.''
 
-The publication with the figure is in the final stages of publishing, I will add the reference as soon as it is fully accepted.
+I have added the reference to the caption and to the main text.
 \\\\
 {\bf Page 67, Fig.~4.3:}~{\it The caption states `The dashed red line marks...’ but there are two dashed red lines...}
 \\\\
@@ -93,7 +98,7 @@ I have corrected this in the caption.
 \\\\
 I have expanded the discussion to:
 
-``Finally, it was experimentally verified that no timescales related to the behavior of topological defects such as domain walls are present. This would be reflected in a changing width and intensity of the diffraction peaks associated with the \gls{PLD} (Fig.~1.1(b)), which is not observed. This can be explained by the small thickness of the film, allowing only a single \gls{SDW} wavevector direction, such that no domains are formed in the ``depth'' of the film. Furthermore, the XFEL pulses had a diameter of 0.2 mm, w hich envelopes multiple \gls{SDW} domains in the plane of the film [Nicholson2016], making the measurements statistical over domains.
+``Finally, it was experimentally verified that no timescales related to the behavior of topological defects such as domain walls are present. This would be reflected in a changing width and intensity of the diffraction peaks associated with the PLD (Fig.~1.1(b)), which is not observed. This can be explained by the small thickness of the film, allowing only a single SDW wavevector direction, such that no domains are formed in the ``depth'' of the film. Furthermore, the XFEL pulses had a diameter of 0.2 mm, which envelopes multiple SDW domains in the plane of the film [Nicholson2016], making the measurements statistical over domains.
 These considerations also support our previous claim that the optical pulses can be assumed to excite the thin film homogeneously.''
 \\\\
 {\bf Page 80:}~{\it I found the introduction to Chapter 5 rather unsatisfactory. Why is the problem of FE soft domain walls interesting/relevant (i.e., who cares)? The link to the possibility of using the described effect for information storage seems rather remote. It would be much preferable if a
@@ -113,7 +118,7 @@ Perhaps there is scope to move this introduction higher up.}
 \\\\
 {\bf Page 84:}~{\it The reference to the `measure of the noise’ is unclear.}
 \\\\
-What was meant is that since only out-of-plane components of the polarization are measured in these experiments, any in-plane polarization would result in the same angle denoted by the coloration. The variations in the color then rather demonstrate the noise of the measurement technique, since it should be a uniform color if the measurements were perfect. I've added some additional discussion on this in the text.
+What was meant is that since only the out-of-plane component of the polarization are measured in these experiments, any in-plane polarization should result in the same PFM phase, denoted by the coloration. The variations in the color then rather demonstrate the noise of the measurement technique, since it should be a uniform color if the measurements were perfect. I've added some additional discussion on this in the text.
 \\\\
 {\bf Page 85, Fig.~5.2:}~{\it The order of the panels seems confusing. Panel e) should be moved next to
 panel c) for consistency with a) and b). Panels d) and f) do not add much but they could go on the
@@ -123,15 +128,15 @@ Yes that makes much more sense, I've changed it.
 \\\\
 {\bf Page 87:}~{\it ``It was found that the contribution Delta Z due {\bf to} hybridization'' it is just about the only typo that I could find in the {\bf whole} thesis.}
 \\\\
-Fixed. Indeed, Grammarly is truly fantastic.
+Fixed. Thank you for your careful reading!
 \\\\
 {\bf Page 89, Tab~5.1:}~{\it It is not clear where the parameters come from. Were they obtained from the literature or from the candidate’s own work?}
 \\\\
-These were all taken from previous literature, I have added that and the references.
+These were all taken from previous literature. I have added the references.
 \\\\
 {\bf Page 96:}~{\it The `spurious numerical effect' used in lieu of the P-N barriers seems rather
 unsatisfactory and poorly controllable. Can the candidate describe a possible alternative?}
 \\\\
-I agree, this is not a very desirable situation since usually the density of the mesh would be determined by a sufficient convergence of the total energy. However, since we found that for unperturbed cases the total energy was converged well using a mesh of larger size than the one we chose considering the PN barriers.
-In any case, one other way, maybe more satisfying, would be to superpimpose a PN barrier which could be characterized from atomistic simulations such as those in Ref.~[Meyer2002]. However, we can not get around the spurious contributions from the mesh size, and so the potential would have to be carefully designed for any given mesh size so that the combined effects add up to the real PN potential. In the end it could then be argued that just adapting the mesh size is simpler.
+I agree, this is not a very desirable situation since usually the density of the mesh would be determined by a sufficient convergence of the total energy. However, we found that for unperturbed cases the total energy was well converged using a mesh of lower density than the one we chose to mimic the PN barriers.
+In any case, one other way, perhaps more satisfying, would be to superpimpose a PN barrier which could be characterized from atomistic simulations such as those in Ref.~[Meyer2002]. However, we can not get around the spurious contributions from the mesh density, and so the potential would have to be carefully designed for any given mesh density so that the combined effects add up to the real PN potential. In the end it could then be argued that just adapting the mesh density is simpler.
 \end{document}
