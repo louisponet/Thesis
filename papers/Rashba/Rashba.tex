@@ -75,10 +75,11 @@ Before turning to the less well-known effects, we summarize the main points of t
 It is a purely relativistic effect that can be derived starting from a second-order expansion of the Dirac equation in small parameter $1/c$:
 \begin{equation}
 	\label{eq:Rashba_dirac}
-	H(\bm r) \Ket{\psi} = \left[\frac{\bm{p}^2}{2m} - e V(\bm r) - \frac{e \hbar}{4m^2c^2}(\bm{\sigma}\cdot[\bm{\nabla}V(\bm r) \times \bm{p}]) + \frac{\bm{p}^2}{8m^2c^2} V(\bm r) - \frac{\bm{p}^4}{8m^3c^2}\right]\Ket{\psi} = E\Ket{\psi}
+	\hat{H}(\bm r) \Ket{\psi} = \left[\frac{\hat{\bm{p}}^2}{2m} - e V(\bm r) - \frac{e \hbar}{4m^2c^2}(
+	hat{\bm{\sigma}}\cdot[\bm{\nabla}V(\bm r) \times\hat{\bm{p}}]) + \frac{\hat{\bm{p}}^2}{8m^2c^2} V(\bm r) - \frac{\hat{\bm{p}}^4}{8m^3c^2}\right]\Ket{\psi} = E\Ket{\psi}
 \end{equation}
-where $\Ket{\psi}$ is a two component spinor, $V(\bm r)$ denotes the electric potential, $\bm{\sigma}$ a vector of Pauli matrices $(\sigma_x, \sigma_y, \sigma_z)$, and $m$ and $e$ the electron mass and charge, respectively.
-$\bm \nabla = (\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial }{\partial z})$ denotes spatial derivatives, and $\bm{p} = -i\hbar \bm{\nabla}$ the canonical momentum.
+where $\Ket{\psi}$ is a two component spinor, $V(\bm r)$ denotes the electric potential, $\hat{\bm{\sigma}}$ a vector of Pauli matrices $(\hat{\sigma}_x, \hat{\sigma}_y, \hat{\sigma}_z)$, and $m$ and $e$ the electron mass and charge, respectively.
+$\bm \nabla = (\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial }{\partial z})$ denotes spatial derivatives, and $\hat{\bm{p}} = -i\hbar \hat{\bm{\nabla}}$ the canonical momentum.
 The first two terms in Eq.~\eqref{eq:Rashba_dirac} are the non-relativistic part of the Hamiltonian, the third one represents the \gls{SOC}, the fourth is known as the Darwin effect and the fifth is the relativistic correction to the effective electron mass. 
 As is common in the literature, we introduce the \gls{SOC} constant $\lambda = \frac{e \hbar}{4m^2c^2}$.
 The potential $V(\bm r)$ is periodic in a crystal, leading to eigenstates given by the Bloch wavefunctions $\BlochKetr{n} = \eikr{r} \Ket{\unkr{n}{k}}$, where $\Ket{\unkr{n}{k}}$ denotes the cell-periodic part, $\eikr{r}$ the envelope function, and $n$ the band index.
@@ -91,21 +92,21 @@ In the following we drop $\bm{r}$ in the wavefunctions, and inner products corre
 To obtain the eigenvalue equation for $\Ket{\unk{n}{k}}$, we insert $\BlochKet{n}$ in Eq.~\eqref{eq:Rashba_dirac}, carry out the differentiation
 \begin{equation}
 	\label{eq:Rashba_momentum}
-\bm{p} \, \Eikr\Ket{\unk{n}{k}} = -i \hbar \bm \nabla \Eikr\Ket{\unk{n}{k}} = \Eikr(\bm p + \hbar \bm k)\Ket{\unk{n}{k}},
+\hat{\bm{p}} \, \Eikr\Ket{\unk{n}{k}} = -i \hbar \hat{\bm \nabla}\Eikr\Ket{\unk{n}{k}} = \Eikr(\hat{\bm p} + \hbar \bm k)\Ket{\unk{n}{k}},
 \end{equation}
-and similarly substitute $\bm{p}^2 \rightarrow (\bm{p}+\hbar \bm{k})^2$.
+and similarly substitute $\hat{\bm{p}}^2 \rightarrow (\hat{\bm{p}}+\hbar \bm{k})^2$.
 This leads to the following equations for $\Ket{\unk{n}{k}}$:
 \begin{align}
 	\label{eq:Rashba_unk_Vs}
-	E_n \Ket{\unk{n}{k}} =& \left[V_0(\bm r) + V_1(\bm r)  +  V_2(\bm r) + V_3(\bm r) \right] \Ket{\unk{n}{k}} \\
-	V_0^{\bm{k}}(\bm r) =& \frac{p^2}{2m} - eV(\bm r) + \frac{\hbar^2 k^2}{2m} \\
-	V_1^{\bm{k}}(\bm r) =& \hbar\frac{\bm{k}\cdot\bm{p}}{m} \\
-	V_2^{\bm{k}}(\bm r) =& -\lambda \bm{\sigma} \cdot \left[ \bm{\nabla}V(\bm r) \times \bm{k}\right] \\
-	V_3^{\bm{k}}(\bm r) =& -\lambda \bm{\sigma} \cdot \left[ \bm{\nabla}V(\bm r) \times \bm{p}\right].
+	E_n \Ket{\unk{n}{k}} =& \left[\hat{V}_0^{\bm k}(\bm r) + \hat{V}_1^{\bm k}(\bm r)  +  \hat{V}_2^{\bm k}(\bm r) + \hat{V}_3(\bm r) \right] \Ket{\unk{n}{k}} \\
+	\hat{V}_0^{\bm{k}}(\bm r) =& \frac{\hat{\bm p}^2}{2m} - eV(\bm r) + \frac{\hbar^2 k^2}{2m} \\
+	\hat{V}_1^{\bm{k}}(\bm r) =& \hbar\frac{\bm{k}\cdot\hat{\bm{p}}}{m} \\
+	\hat{V}_2^{\bm{k}}(\bm r) =& -\lambda \hat{\bm{\sigma}} \cdot \left[ \bm{\nabla}V(\bm r) \times \bm{k}\right] \\
+	\hat{V}_3(\bm r) =& -\lambda \hat{\bm{\sigma}} \cdot \left[ \bm{\nabla}V(\bm r) \times \hat{\bm{p}}\right].
 \end{align}
 We neglected the last two terms of Eq.~\eqref{eq:Rashba_dirac} since they are exceedingly small and do not contribute to the linear $k$-dependent energy of the Rashba form in Eq.~\eqref{eq:Rashba_form}.
 
-Before turning to a $\bm{k} \cdot \bm{p}$ expansion of the above equations, we take a moment to discuss heuristically how $V^{\bm k}_2$ and $V^{\bm k}_3$ act on the Bloch functions, more specifically, which contribution to the local electric field $\bm{\nabla}V$ is important.
+Before turning to a $\bm{k} \cdot \cdot{\bm{p}}$ expansion of the above equations, we take a moment to discuss heuristically how $\hat{V}^{\bm k}_2$ and $\hat{V}_3$ act on the Bloch functions, more specifically, which contribution to the local electric field $\bm{\nabla}V$ is important.
 Both terms originated from the application of Eq.~\eqref{eq:Rashba_momentum} to the third term on the right-hand side of Eq.~\eqref{eq:Rashba_dirac}.
 We study the case of a 2D square lattice, for a Bloch function with $\bm k = (k_x, 0)$, and with the polarization oriented along the $y$-direction.
 A pictorial representation of this situation is shown in Fig.~\ref{fig:Efield_cell_drawing}, where we separated the electric field into two contributions:
@@ -121,28 +122,28 @@ The purple plane in Fig.~\ref{fig:Efield_cell_drawing} pictorially shows the pot
 The former results from the envelope function, and the latter from the periodic part, see Eq.~\eqref{eq:Rashba_momentum}.}
 \end{figure}
     
-Focusing first on $V^{\bm k}_2(\bm r)$:
+Focusing first on $\hat{V}^{\bm k}_2$:
 \begin{equation}
 	\label{eq:Rashba_purerel}
-	V^{\bm k}_2(\bm r) = \lambda \bm{\sigma} \cdot \left[ (\bm E_{\rm a}(\bm r) + \bm E_{\rm P}(\bm r)) \times \bm{k}\right],
+	\hat{V}^{\bm k}_2(\bm r) = \lambda \hat{\bm{\sigma}} \cdot \left[ (\bm E_{\rm a}(\bm r) + \bm E_{\rm P}(\bm r)) \times \bm{k}\right],
 \end{equation}
 we can observe in the figure that the atomic contribution with $\bm E_{\rm a}$ is zero since $\bm E_{\rm a}$ is odd throughout the unit cell, whereas $\bm k$ is a constant.
 On the contrary, $\bm E_{\rm P}$ is even throughout the unit cell, leading to a nonzero contribution.
-However, both $\bm E_{\rm P}$ and $\bm k$ are generally small, meaning that $V^{\bm k}_2$ is also exceedingly small due to the tiny \gls{SOC} constant $\lambda$ (usually $V^{\bm k}_2 \sim$ \SI{e-6}eV).
+However, both $\bm E_{\rm P}$ and $\bm k$ are generally small, meaning that the energy contribution of $V^{\bm k}_2$ is also exceedingly small due to the tiny \gls{SOC} constant $\lambda$, leading usually to an order of magnitude of $E^{\bm k}_2 = \Bra{u_n^{\bm k}} \hat{V}_2^{\bm k}(\bm r) \Ket{u_n^{\bm k}}$ of \SI{e-6}eV.
     
-Following a similar train of thought for $V^{\bm k}_3$:
+Following a similar train of thought for $\hat{V}^{\bm k}_3$:
 \begin{equation}
-	V^{\bm k}_3(\bm r) = \lambda \bm{\sigma} \cdot \left[ (\bm E_{\rm a}(\bm r) + \bm E_{\rm P}(\bm r)) \times \bm{p}\right],
+	\hat{V}^{\bm k}_3(\bm r) = \lambda \hat{\bm{\sigma}} \cdot \left[ (\bm E_{\rm a}(\bm r) + \bm E_{\rm P}(\bm r)) \times \hat{\bm{p}}\right],
 \end{equation}
-we find that $\bm p$ applied to the periodic $\Ket{\unk{n}{k}}$ part of the Bloch function is odd throughout the unit cell (see the green arrows in Fig.~\ref{fig:Efield_cell_drawing}), and the contribution from the even $\bm E_{\rm P}$ is zero.
-The shape of the atomic potential is such that $\bm E_{\rm a}$ is also odd throughout the unit cell so that its contribution to $V^{\bm k}_3$ does not vanish.
-Moreover, because of the size and shape of the atomic potential, $\bm E_{\rm a} \gg \bm E_{\rm P}$, and similarly $\bm p\,\Ket{\unk{n}{k}} \gg \bm k$, meaning that $V^{\bm k}_3$ tends to contribute much more to the total energy than $V^{\bm k}_2$.
+we find that $\hat{\bm p}$ applied to the periodic $\Ket{\unk{n}{k}}$ part of the Bloch function is odd throughout the unit cell (see the green arrows in Fig.~\ref{fig:Efield_cell_drawing}), and the contribution from the even $\bm E_{\rm P}$ is zero.
+The shape of the atomic potential is such that $\bm E_{\rm a}$ is also odd throughout the unit cell so that its contribution to $\hat{V}^{\bm k}_3$ does not vanish.
+Moreover, because of the size and shape of the atomic potential, $\bm E_{\rm a} \gg \bm E_{\rm P}$, and similarly $\hat{\bm p}\,\Ket{\unk{n}{k}} \gg \bm k$, meaning that $\hat{V}^{\bm k}_3$ tends to contribute much more to the total energy than $\hat{V}^{\bm k}_2$.
 
-As it turns out, $V^{\bm k}_3$ is exactly the energy term that describes the atomic \gls{SOC}, which is known to not be negligible for heavier ions.
+As it turns out, $\hat{V}^{\bm k}_3$ is exactly the energy term that describes the atomic \gls{SOC}, which is known to not be negligible for heavier ions.
 This term by itself does not lead to any linear $k$-dependent spin splitting, however.
-Conversely, $V_2^{\bm k}$ does have the correct form of Eq.~\eqref{eq:Rashba_form}, and we thus identify it as the first contribution to the purely relativistic Rashba spin splitting.
+Conversely, $\hat{V}_2^{\bm k}$ does have the correct form of Eq.~\eqref{eq:Rashba_form}, and we thus identify it as the first contribution to the purely relativistic Rashba spin splitting.
     
-In order to obtain the second contribution, we perform a $\bm k \cdot \bm p$ expansion of Eq.~\eqref{eq:Rashba_unk_Vs} around a \gls{T}-invariant point of the \gls{BZ}.
+In order to obtain the second contribution, we perform a $\bm k \cdot \hat{\bm p}$ expansion of Eq.~\eqref{eq:Rashba_unk_Vs} around a \gls{T}-invariant point of the \gls{BZ}.
 Without loss of generality we choose this point to be the gamma point: $\bm{k}_\Gamma = (0, 0)$.
 As we mentioned in the introduction, the spin-up and spin-down bands are necessarily degenerate at such a \gls{T}-invariant point, and we take $E^{\sigma}_n(\Gamma) = 0$.
 Furthermore, we denote the periodic parts of the corresponding Bloch functions as $\Ket{u_n, \sigma}$, where we have omitted $\bm k$ to distinguish the $\Ket{u_n}$ at $\Gamma$ from the $\Ket{\unk{n}{k}}$ at a general $k$ point.
@@ -153,15 +154,15 @@ Expanding then Eq.~\eqref{eq:Rashba_unk_Vs} in small $\bm{k}$, while keeping ter
 	E_n^{\sigma}(\bm{k}) =& -\lambda \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{k}) + \\
 		& \sum_{m \neq n}\frac{\hbar}{m}\frac{\Bra{u_n,\sigma} \bm k \cdot \bm p \Ket{u_m, \sigma}\Bra{u_m, \sigma} V_3^{\bm{k}} \Ket{u_n, \sigma} + h.c.}{E_n^{\sigma} - E_m^{\sigma}}.\nonumber
 \end{align}
-The first term at the right-hand side is equal to the earlier discussed $V^{\bm k}_2$.
-We know that the atomic \gls{SOC} ($V^{\bm k}_3$) is much larger than $V^{\bm{k}}_2$, leading to the same order of magnitude for both terms on the right-hand side of Eq.~\eqref{eq:kp_expansion}, even though the second is of a higher order in the perturbation theory. Notice how no spin off-diagonal terms appear in the second term due to the spin-diagonal form of $\bm k \cdot \bm p$.
+The first term at the right-hand side is equal to the earlier discussed $\hat{V}^{\bm k}_2$.
+We know that the atomic \gls{SOC} ($\hat{V}^{\bm k}_3$) is much larger than $\hat{V}^{\bm{k}}_2$, leading to the same order of magnitude for both terms on the right-hand side of Eq.~\eqref{eq:kp_expansion}, even though the second is of a higher order in the perturbation theory. Notice how no spin off-diagonal terms appear in the second term due to the spin-diagonal form of $\bm k \cdot \hat{\bm p}$.
 
 A requirement for the second term to be nonzero is that $u_n$ and $u_m$ have different parity along the spatial direction defined by $\bm{k}$, since otherwise $\Bra{u_n} k_x \partial_x + k_y \partial_y + k_z \partial_z \Ket{u_m} = 0$.
 One example could be a $p_y$ orbital and a $s$-$p_z$ hybridized one, which would be created by a ferroelectric polarization along the $z$-axis.
 How exactly this hybridization arises will be discussed in further detail below in Section~\ref{sec:tb_model}, in the context of a tight-binding model.
 The combination of the two linear-in-$\bm{k}$ terms in Eq.~\eqref{eq:kp_expansion} can be regarded as the purely relativistic Rashba effect~\cite{Bahramy2011}.
     
-In summary, we have given the derivation of the relativistic Rashba effect starting from the Dirac equation applied to the Bloch functions, followed by a $\bm k \cdot \bm p$ expansion.
+In summary, we have given the derivation of the relativistic Rashba effect starting from the Dirac equation applied to the Bloch functions, followed by a $\bm k \cdot \hat{\bm p}$ expansion.
 By carefully considering the microscopics we have found that both contributions have a similar order of magnitude of typically $10^{-6}$ eV.
 This leads us to the conclusion that the purely relativistic effect can not explain the observed spin splitting which is around 0.3 eV in GeTe, especially since this splitting appears in the bulk band structure where no large interface contributions to the electric field play a role.
 
