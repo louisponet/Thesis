@@ -8,6 +8,12 @@
 % \usepackage{cancel}
 \usepackage{siunitx}
 \usepackage{graphicx}
+\usepackage[acronym]{glossaries}
+
+\definecolor{mydarkblue}{rgb}{0.25, 0.0, 0.25}
+% \renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}}
+\renewcommand*{\glstextformat}[1]{\textcolor{mydarkblue}{#1}}
+
 % \usepackage{smartdiagram}
 % \usepackage{subcaption}
 % \usepackage[caption=false]{subfig}
@@ -149,7 +155,8 @@
 
 % \author{Louis Ponet}
 \date{today}
-
+\makenoidxglossaries
+\Include{acronyms}
 \begin{document}
 \frontmatter
 
@@ -168,7 +175,7 @@
 \titlepage
 
 \chapter*{Acknowledgements}
-First and foremost I would like to thank my supervisor Dr. Sergey Artyukhin for the wonderful opportunities I was offered during my Ph.D. The freedom and encouragement that he gave me to pursue my many interests have allowed me to develop my knowledge and skills in many areas of Condensed Matter Physics, while providing me with all the answers to the many questions I had, with most illuminating, engaging, and fruitful discussions, and with overall incredible guidance and support.  I would, furthermore, like to thank Prof. David Vanderbilt and Prof. Stefan Bl\"ugel for allowing me to visit their group, which broadened my scientific horizon and led to many engaging experiences. I also wish to thank Prof. Maxim Mostovoy, Prof. Sang-Wook Cheong, Prof. Andrei Pimenov, Prof. Andrei Singer, and Prof. Gustavo Catal\'an for their insights and wonderful collaborations. I would also like to thank Prof. Giuseppe La Rocca for his swift and helpful comments. Reflecting on the academic steps that ultimately brought me to this point, I can not help but feel a deep gratitude towards Meneer Koen Geeraert for providing the initial matchstick that ignited my passion for physics.
+First and foremost I would like to thank my supervisor Dr. Sergey Artyukhin for the wonderful opportunities I was offered during my Ph.D. The freedom and encouragement that he gave me to pursue my many interests have allowed me to develop my knowledge and skills in many areas of Condensed Matter Physics, while providing me with all the answers to the many questions I had, with most illuminating, engaging, and fruitful discussions, and with overall incredible guidance and support.  I would, furthermore, like to thank Prof. David Vanderbilt and Prof. Stefan Bl\"ugel for allowing me to visit their group, which broadened my scientific horizon and led to many engaging experiences. In light of the latter, I also want to thank Dr. Manuel dos Santos Dias for his friendship and the insightful discussions I had with him during my short stay. I also wish to thank Prof. Maxim Mostovoy, Prof. Sang-Wook Cheong, Prof. Andrei Pimenov, Prof. Andrei Singer, and Prof. Gustavo Catal\'an for their insights and wonderful collaborations. I would also like to thank Prof. Giuseppe La Rocca for his swift and helpful comments during the process of writing this Thesis. Reflecting on the academic steps that ultimately brought me to this point, I can not help but feel a deep gratitude towards Meneer Koen Geeraert for providing the initial matchstick that ignited my passion for physics.
 
 I wish to thank the many friends I got to know along this journey for providing me with an ever kind and pleasant environment. I will never forget the many discussions on numerical codes and techniques I had with Peng, some more heated than others, all of them rewarding. Giulia and Francesco were never faltering presences of kindness and joy in our office, either through music, or origami dinosaurs. In the later years, I got to share in the wisdom of Gabriele and the humor of Michele, dark and cynical, or otherwise. The first year I spent at Scuola Normale, I'll never forget. The true close-knit group of friends I found there led me to experience truly spectacularly fun moments. I will always cherish the never-ending battle fought with Paolo, Gianmichele, and Pietro on the billiardino, the calm composure of Bibek, and deep conversations with Marcello and Donato, all topped off by a bit of benzina during our nightly endeavors.
 I would also like to take this moment to truly thank my friends back home for remaining an ever-reliable source of fun, happiness, and support. Florian in particular has seen all the ups and downs I went through on this, sometimes tumultuous, journey, providing me with never-ending camaraderie, deep conversations, cat videos of every variety, beverages of every color, and consolation in more trying times.
@@ -192,6 +199,7 @@ This brings me, finally, to my Mother and Father, whom I can not thank enough fo
 \Include{FEM}
 \Include{codes}
 \backmatter
+\printnoidxglossary[sort=use,type=\acronymtype]
 \bibliography{references}
 \printindex
 \end{document}

@@ -3,7 +3,7 @@ We give a short introduction to the methods we used in order to simulate phase-f
 The Finite Element Method constitutes a big part of these simulations, thus, in light of making this Thesis relatively self contained, we give a short summary of the topic, based on Ref.~\cite{Biner}.
 \begin{figure}
 	\IncludeGraphics{fem}
-	\caption{\label{fig:BTO_fem}{\bf Finite Element Method.} a) Isoparametric local coordinate system for a triangular element. Image taken from Ref.~\cite{Biner}. b) 2D geometry spanned by triangular mesh demonstrating the flexibility of FEM meshes. Image taken from Ref.~\cite{2Dmesh}. c) Example of the geometry that is used in our simulations. d) Zoom in on the corner of the mesh shown in (c).}
+	\caption{\label{fig:BTO_fem}{\bf Finite Element Method.} a) Isoparametric local coordinate system for a triangular element. Image taken from Ref.~\cite{Biner}. b) 2D geometry spanned by triangular mesh demonstrating the flexibility of \gls{FEM} meshes. Image taken from Ref.~\cite{2Dmesh}. c) Example of the geometry that is used in our simulations. d) Zoom in on the corner of the mesh shown in (c).}
 \end{figure}
 
 A fundamental building block is the isoparametric representation.
@@ -47,7 +47,7 @@ The nodal values of the fields are therefore the variables of our model.
 A big bonus of the isoparametric representation, applied in this way, is that gradients of the fields can be evaluated purely locally, inside each element (see Eq.~\eqref{eq:BTO_derivatives}).
 It also allows for great flexibility through the density of the chosen grid, the morphology of the elements, and the order of the interpolating shape functions $N_i$ that are used in Eq.~\eqref{eq:BTO_funcinterp}.
 
-We developed our own code in order to run the FEM simulations, based on the building blocks supplied by the \href{https://github.com/KristofferC/JuAFEM.jl}{JuAFEM.jl} package.
+We developed our own code in order to run the \gls{FEM} simulations, based on the building blocks supplied by the \href{https://github.com/KristofferC/JuAFEM.jl}{JuAFEM.jl} package.
 We use a rectangular geometry uniformly spanned by tetrahedron elements, as shown in Fig.~\ref{fig:BTO_fem}(c,d).
 This choice is made since the uniform mesh mimics numerically the Peierls-Nabarro barriers that are present in any crystal due to the lattice.
     
