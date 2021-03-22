@@ -133,6 +133,7 @@ However, both $\bm E_{\rm P}$ and $\bm k$ are generally small, meaning that the 
     
 Following a similar train of thought for $\hat{V}^{\bm k}_3$:
 \begin{equation}
+	\label{eq:Rashba_SOC}
 	\hat{V}^{\bm k}_3(\bm r) = \lambda \hat{\bm{\sigma}} \cdot \left[ (\bm E_{\rm a}(\bm r) + \bm E_{\rm P}(\bm r)) \times \hat{\bm{p}}\right],
 \end{equation}
 we find that $\hat{\bm p}$ applied to the periodic $\Ket{\unk{n}{k}}$ part of the Bloch function is odd throughout the unit cell (see the green arrows in Fig.~\ref{fig:Efield_cell_drawing}), and the contribution from the even $\bm E_{\rm P}$ is zero.
@@ -143,19 +144,26 @@ As it turns out, $\hat{V}^{\bm k}_3$ is exactly the energy term that describes t
 This term by itself does not lead to any linear $k$-dependent spin splitting, however.
 Conversely, $\hat{V}_2^{\bm k}$ does have the correct form of Eq.~\eqref{eq:Rashba_form}, and we thus identify it as the first contribution to the purely relativistic Rashba spin splitting.
     
-In order to obtain the second contribution, we perform a $\bm k \cdot \hat{\bm p}$ expansion of Eq.~\eqref{eq:Rashba_unk_Vs} around a \gls{T}-invariant point of the \gls{BZ}.
-Without loss of generality we choose this point to be the gamma point: $\bm{k}_\Gamma = (0, 0)$.
-As we mentioned in the introduction, the spin-up and spin-down bands are necessarily degenerate at such a \gls{T}-invariant point, and we take $E^{\sigma}_n(\Gamma) = 0$.
-Furthermore, we denote the periodic parts of the corresponding Bloch functions as $\Ket{u_n, \sigma}$, where we have omitted $\bm k$ to distinguish the $\Ket{u_n}$ at $\Gamma$ from the $\Ket{\unk{n}{k}}$ at a general $k$ point.
+In order to obtain the second contribution, we perform a $\bm k \cdot \hat{\bm p}$ expansion of Eq.~\eqref{eq:Rashba_unk_Vs} around a \gls{T}-invariant point of the \gls{BZ}, $\bm k_0$\cite{Rashba1959SymmetryAr,Lowdin1951,Bahramy2011}.
+We denote the {\it relative} vector between the \gls{T}-invariant point $\bm k_0$ and $\bm k$ as $\bm K$, i.e. $\bm K = \bm k - \bm k_0$.
+The basis states are chosen to be eigenstates of $\hat{V}_0^{\bm k_0}$, with the perturbation resulting from $\hat{V}^{\bm k}_1 + \hat{V}^{\bm k}_2 + \hat{V}_3$.
+We will derive the energy dispersion for the $n$th band, with the spin-up and spin-down states of this band necessarily degenerate at the \gls{T}-invariant point.%, and we take $E^{\bm k_0}_{n,\sigma} = 0$%.
+ Furthermore, we assume that this is the only degeneracy of this band, and we choose the spin-up and spin-down basis states at $\bm k_0$ so that no off-diagonal elements of $ \hat{V}_1^{\bm k_0} + \hat{V}_2^{\bm k_0} + \hat{V}_3$ exist between them.
 
-Expanding then Eq.~\eqref{eq:Rashba_unk_Vs} in small $\bm{k}$, while keeping terms linear in $\bm{k}$ and up to second order in $1/c$, we find:
+Expanding then Eq.~\eqref{eq:Rashba_unk_Vs} in small $\bm{K}$, keeping terms linear in $\bm{K}$ and up to second order in $1/c$ (or equivalently, up to $\lambda^2$), we find:
+\begin{align}
+	E_{n,\sigma}^{\bm{k}} - E_{n,\bm \sigma}^{\bm{k}_0} =& \Bra{u_{n,\bm \sigma}^{\bm k_0}} \hat{V}_1^{\bm K} + \hat{V}_2^{\bm K} + \hat{V}_3\Ket{u_{n,\bm \sigma}^{\bm k_0}}+ \\
+		& \sum_{m,\bm \sigma' \neq n,\bm \sigma}\frac{\Bra{u_{m,\bm \sigma'}^{\bm{k}_0}} \hat{V}_1^{\bm K} + \hat{V}_2^{\bm K} + \hat{V}_3\Ket{u_{n, \bm \sigma}^{\bm{k}_0}}\Bra{u_{n, \bm \sigma}^{\bm{k}_0}}  \hat{V}_1^{\bm K} + \hat{V}_2^{\bm K} + \hat{V}_3 \Ket{u_{m, \bm \sigma'}^{\bm{k}_0}}+h.c.}{E_{n, \bm \sigma} - E_{m, \bm \sigma'}},
+\end{align}
+where the sum is performed over all states that are not identical to $\Ket{u_{n,\bm \sigma}^{\bm k_0}}$, and the spin up-down degeneracy is avoided by the definition of the basis that is used.
+Grouping then the terms that lead to linear-in-$k$ spin splittings, we arrive at:
 \begin{align}
 	\label{eq:kp_expansion}
-	E_n^{\sigma}(\bm{k}) =& -\lambda \bm{\sigma} \cdot ( \bm{\nabla}V \times \bm{k}) + \\
-		& \sum_{m \neq n}\frac{\hbar}{m}\frac{\Bra{u_n,\sigma} \bm k \cdot \bm p \Ket{u_m, \sigma}\Bra{u_m, \sigma} V_3^{\bm{k}} \Ket{u_n, \sigma} + h.c.}{E_n^{\sigma} - E_m^{\sigma}}.\nonumber
+	\tilde{E}_{n,\sigma}^{\bm{k}} - \tilde{E}_{n,\bm \sigma}^{\bm{k}_0} =& -\lambda \Bra{u_{n,\bm \sigma}^{\bm k_0}}  \hat{\bm{\sigma}} \cdot ( \bm{\nabla}V(\bm r) \times \bm{k}) \Ket{u_{n,\bm \sigma}^{\bm k_0}} + \\
+		& \sum_{m,\bm \sigma' \neq n,\bm \sigma}\frac{\hbar}{m}\frac{\Bra{u_{m,\bm \sigma'}^{\bm{k}_0}} \bm k \cdot \bm p \Ket{u_{n, \bm \sigma}^{\bm{k}_0}}\Bra{u_{n, \bm \sigma}^{\bm{k}_0}} -\lambda \hat{\bm{\sigma}} \cdot \left( \bm{\nabla}V(\bm r) \times \hat{\bm{p}}\right) \Ket{u_{m, \bm \sigma'}^{\bm{k}_0}} + h.c.}{E_n^{\sigma} - E_m^{\sigma}}.\nonumber
 \end{align}
-The first term at the right-hand side is equal to the earlier discussed $\hat{V}^{\bm k}_2$.
-We know that the atomic \gls{SOC} ($\hat{V}^{\bm k}_3$) is much larger than $\hat{V}^{\bm{k}}_2$, leading to the same order of magnitude for both terms on the right-hand side of Eq.~\eqref{eq:kp_expansion}, even though the second is of a higher order in the perturbation theory. Notice how no spin off-diagonal terms appear in the second term due to the spin-diagonal form of $\bm k \cdot \hat{\bm p}$.
+The first term at the right-hand side was discussed previously in Eq.~\eqref{eq:Rashba_purerel}.
+The second term has the atomic \gls{SOC} ($\hat{V}^{\bm k}_3$, discussed in Eq.~\eqref{eq:Rashba_SOC}) is much larger than $\hat{V}^{\bm{k}}_2$, leading to the same order of magnitude for both terms on the right-hand side of Eq.~\eqref{eq:kp_expansion}, even though the second is of a higher order in the perturbation theory. Notice how no spin off-diagonal terms appear in the second term due to the spin-diagonal form of $\bm k \cdot \hat{\bm p}$\lp{is this true?}.
 
 A requirement for the second term to be nonzero is that $u_n$ and $u_m$ have different parity along the spatial direction defined by $\bm{k}$, since otherwise $\Bra{u_n} k_x \partial_x + k_y \partial_y + k_z \partial_z \Ket{u_m} = 0$.
 One example could be a $p_y$ orbital and a $s$-$p_z$ hybridized one, which would be created by a ferroelectric polarization along the $z$-axis.
