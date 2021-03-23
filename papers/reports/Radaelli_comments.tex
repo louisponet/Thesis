@@ -1,8 +1,9 @@
-\documentclass[a4, UTF8]{article}
+\documentclass[phd, titlesmallcaps,foronline,oneside]{SNSthesis}
 \usepackage{amsmath}
 \usepackage{bm}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage[square,comma,numbers,sort&compress]{natbib}
 \begin{document}
 \title{List of remarks and minor corrections\\
 \large ``Interplay between Complex Orders in Functional Materials''\\
@@ -16,6 +17,10 @@ In what follows below, I have compiled the list of remarks each with my reply or
 {\bf Page 10:}~{\it The candidate states: ``Without loss of generality, we choose this point to be the gamma point.'' This does not appear to be obvious, because not all T-invariant points are equivalent. Can this be better explained?}
 \\\\
 This is true. There is nothing in the derivation inherently dependent on the T-invariant point being Gamma, so I removed the sentence and provided a more general derivation.
+\\\\
+{\bf Page 11, eq 2.14:}~{\it Provide an explicit derivation of this equation (perhaps in appendix).}
+\\\\
+This derivation has been performed many times before in previous papers, see Refs.~\cite{Rashba1959SymmetryAr, Lowdin1951, Bahramy2011}. I have added those references, and added an additional discussion of the derivation. I don't see a particular need to explicitly derive the formula here since it's rather long-winded and not particularly important for our own results.
 \\\\
 {\bf Page 17:}~{\it Why is the exact experimental unit cell not used in this case? Is the unit cell used here the result of DFT optimisation?}
 \\\\
@@ -32,7 +37,7 @@ I have also added a more explicit statement of the AFM nature of the chains in t
 \\\\
 {\bf Page 37:}~{\it The candidate states that the electronic and lattice polarisations largely cancel in other members of the $R$Mn$_2$O$_5$ family but not in GdMn$_2$O$_5$. This is a bit of an exaggeration, as the polarisation in GdMn$_2$O$_5$ is not hugely different from YMn$_2$O$_5$, for example - perhaps restate.}
 \\\\
-This was my mistake, I misinterpreted some discussions on the comparison of ab-initio calculations on $R$Mn$_2$O$_5$, either neglecting or including on-site Coulomb repulsion, where it was shown that without including correlations the polarization is an order of magnitude larger (see e.g. \href{https://arxiv.org/abs/0802.0653v1}{Electronic correlations decimate the ferroelectric polarization of multiferroic HoMn$_2$O$_5$}). However this happens in{\it any} $R$Mn$_2$O$_5$, making my wording misleading at best. I have changed it to be more precise, refering to the above paper. 
+This was my mistake, I misinterpreted some discussions on the comparison of ab-initio calculations on $R$Mn$_2$O$_5$, either neglecting or including on-site Coulomb repulsion, where it was shown that without including correlations the polarization is an order of magnitude larger (see e.g. Ref.~\cite{Giovannetti2008}). However this happens in{\it any} $R$Mn$_2$O$_5$, making my wording misleading at best. I have changed it to be more precise, refering to the above paper. 
 \\\\
 {\bf Page 38, Fig.~3.2:}~{\it It is really a pity that panel a) is inconsistent with previous measurements and with theory. Have these measurements been repeated?}
 \\\\
@@ -49,7 +54,7 @@ For example, in the absence of a magnetic field, it is clear that Gd spins must 
 same irrep as Mn spins in order for coupling to exist. There may be a good reason why this is not
 possible or convenient here – explain.}
 \\\\
-Initially we tried to indeed construct a model using this method, based on the description in the middle of page 3 of \href{https://link.aps.org/doi/10.1103/PhysRevLett.110.137203}{Giant Tunability of Ferroelectric Polarization in GdMn$_2$O$_5$}. This means we used the $X_2$ irrep and its modes to find the invariants, since $X_1$ is even under $xy$-mirror symmetry, whereas spins are odd.
+Initially we tried to indeed construct a model using this method, based on the description in the middle of page 3 of Ref.~\cite{Lee13}. This means we used the $X_2$ irrep and its modes to find the invariants, since $X_1$ is even under $xy$-mirror symmetry, whereas spins are odd.
 However, spins described by $X_2$ modes, by definition, change sign upon translation by $a$, whereas the magnetic field induces netto magnetization that requires modes transforming as the $\Gamma^{3+}$ and $\Gamma^{4+}$ irreps ($x$ and $y$ component).
 In principle each Wyckoff position could require a full set of these modes to be described reliably during the field sweeps.
 This then led us to try the different route of a microscopic model, making clear and physically inspired approximations, to reduce the amount of variables. 
@@ -98,7 +103,7 @@ I have corrected this in the caption.
 \\\\
 I have expanded the discussion to:
 
-``Finally, it was experimentally verified that no timescales related to the behavior of topological defects such as domain walls are present. This would be reflected in a changing width and intensity of the diffraction peaks associated with the PLD (Fig.~1.1(b)), which is not observed. This can be explained by the small thickness of the film, allowing only a single SDW wavevector direction, such that no domains are formed in the ``depth'' of the film. Furthermore, the XFEL pulses had a diameter of 0.2 mm, which envelopes multiple SDW domains in the plane of the film [Nicholson2016], making the measurements statistical over domains.
+``Finally, it was experimentally verified that no timescales related to the behavior of topological defects such as domain walls are present. This would be reflected in a changing width and intensity of the diffraction peaks associated with the PLD (Fig.~1.1(b)), which is not observed. This can be explained by the small thickness of the film, allowing only a single SDW wavevector direction, such that no domains are formed in the ``depth'' of the film. Furthermore, the XFEL pulses had a diameter of 0.2 mm, which envelopes multiple SDW domains in the plane of the film \cite{Nicholson2016}, making the measurements statistical over domains.
 These considerations also support our previous claim that the optical pulses can be assumed to excite the thin film homogeneously.''
 \\\\
 {\bf Page 80:}~{\it I found the introduction to Chapter 5 rather unsatisfactory. Why is the problem of FE soft domain walls interesting/relevant (i.e., who cares)? The link to the possibility of using the described effect for information storage seems rather remote. It would be much preferable if a
@@ -107,11 +112,11 @@ higher-level context was provided.}
 I have added some additional context for the practical importance of these measurements and results:
 
 ``From the practical point of view, this mechanical detection of ferroelectric DWs means that they can be probed without applying a bias voltage, which may prove useful for conducting ferroelectrics. Moreover, since phonon spectra are determined by the stiffness of the material, the softer DWs will harbor phonon modes with lower speeds. In turn, this may result in effects such as phonon refraction or even total internal reflection inside the walls, turning the DWs into ``phonon waveguides''. Because heat is transported by phonons, this would allow for heat propagation through the DWs with little dissipation. From the ability to create and destroy 180$^\circ$ DWs by voltage, regular patterns with internal elastic contrast could be created, effectively leading to a phononic crystal.
-This is interesting, since periodically poled ferroelectric crystals are already used in photonic applications [Ferraro2014].''
+This is interesting, since periodically poled ferroelectric crystals are already used in photonic applications \cite{Ferraro2014}.''
 \\\\
 {\bf Page 82:}~{\it ``The longitudinal part... leads to the largest contribution...''. How universal is this statement? Is that `usually'?}
 \\\\
-Indeed, looking at Table II in \href{http://dx.doi.org/10.1063/1.4861260}{Electrostrictive effect in ferroelectrics: An alternative approach to improve piezoelectricity}, the fluorites have a larger shear electrostrictive coefficient. I have changed it to `usually' in the text.
+Indeed, looking at Table II in Ref.~\cite{Li2014}, the fluorites have a larger shear electrostrictive coefficient. I have changed it to `usually' in the text.
 \\\\
 {\bf Page 83:}~{\it In the absence of a higher-level context generalising the importance of the problem, I found the introduction to the experimental section a rather satisfactory substitute – in other words, the candidate’s collaborators found some unusual results experimentally and asked for help!
 Perhaps there is scope to move this introduction higher up.}
@@ -138,5 +143,8 @@ These were all taken from previous literature. I have added the references.
 unsatisfactory and poorly controllable. Can the candidate describe a possible alternative?}
 \\\\
 I agree, this is not a very desirable situation since usually the density of the mesh would be determined by a sufficient convergence of the total energy. However, we found that for unperturbed cases the total energy was well converged using a mesh of lower density than the one we chose to mimic the PN barriers.
-In any case, one other way, perhaps more satisfying, would be to superpimpose a PN barrier which could be characterized from atomistic simulations such as those in Ref.~[Meyer2002]. However, we can not get around the spurious contributions from the mesh density, and so the potential would have to be carefully designed for any given mesh density so that the combined effects add up to the real PN potential. In the end it could then be argued that just adapting the mesh density is simpler.
+In any case, one other way, perhaps more satisfying, would be to superpimpose a PN barrier which could be characterized from atomistic simulations such as those in Ref.~\cite{Meyer2002}. However, we can not get around the spurious contributions from the mesh density, and so the potential would have to be carefully designed for any given mesh density so that the combined effects add up to the real PN potential. In the end it could then be argued that just adapting the mesh density is simpler.
+\\\\
+% \bibliographystyle{unsrt}
+\bibliography{bib}
 \end{document}

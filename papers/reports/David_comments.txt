@@ -1,15 +1,15 @@
 Detailed comments on the thesis
 -------------------------------
 
-A list of acronyms might be useful, either up front or as a
-fifth appendix.
+"A list of acronyms might be useful, either up front or as a
+fifth appendix."
 
 I have followed the suggestion and added a list after the appendices.
 
 Chapter 2
 ---------
 
-It seemed to me that the lack of centrosymmetry was sometimes
+"It seemed to me that the lack of centrosymmetry was sometimes
 described in terms of a polarization, and sometimes in terms
 of an E-field.  However, the latter, E-field, is not really
 so appropriate.  See Eq. (2.2), for example.  If you mean a
@@ -17,7 +17,7 @@ _local_ field, it should be E(r), not just E.  But if it is
 the macroscopic unit-cell-averaged electric field, that is
 not a material property, it is an externally imposed boundary
 condition.  For example, in almost all DFT calculations, it
-is zero.  What, then, is exactly meant by E in (2.2)?
+is zero.  What, then, is exactly meant by E in (2.2)?"
 
 Thank you for pointing this out. The terminology and description can 
 indeed be improved upon. There are some subtleties related with this.
@@ -31,11 +31,12 @@ and leads to the relativistic Rashba effect. Indeed this means that
 my discussion on which local fields interact with which parts of the 
 wavefunction is maybe too simplified, in the sense that this 
 internal field from the dipoles is not a constant throughout the unit-cell,
-as was depicted by the violet surface in Fig. 2.2. 
-In reality, if we consider the single atom paraelectric unit-cell of Fig. 2.2,
-dimerize the bonds along the y direction, the field from the resulting dipoles
-will be approximately constant across the atoms, where the Bloch function
-peaks. Thus, when computing the contribution to the energy of this field interacting
+as was originally depicted by the violet surface in Fig. 2.2. 
+The field from the dipoles associated with the polarization
+will be approximately uniform across the atoms depicted in Fig 2.2, where the Bloch function
+peaks. An example is how in GeTe the field accros the Te atom is a result of the 
+dipoles that appear due to its off-center position in the unit cell.
+Thus, when computing the contribution to the energy of this field interacting
 with the envelope, i.e. by performing the real-space
 integral, it could be replaced by an effective constant field,
 which one could refer to as the ISB field.
@@ -46,20 +47,19 @@ boundary conditions would be considered, the electric field that
 is a result of the surface charges would also lead to a contribution,
 which would be absent for short-circuited boundary conditions. 
 However, again, since the prefactor is so small, and this field
-is really tiny, compared to the internal fields, I think the difference between these boundary
-conditions can be considered negligible. 
+is really tiny, compared to total contribution of the internal fields, 
+I think the difference between these boundary 
+conditions can be considered negligible w.r.t the Rashba effect. 
 
 I have replaced the E in eq 2.2 to \hat{\bm n} to indicate that 
 it is a unit vector along the ISB field.
 
-
-
-I had some feeling that Eqs. 2.7-11 were also imprecise.
+"I had some feeling that Eqs. 2.7-11 were also imprecise.
 Which of the V's are just numbers (2.7, 2.8?) and which ones
 are functions V(r) (2.9 and 2.10?).  In (2.11), are these
 all functions of (r)?  And what, exactly, is the "field
 associated with the polarization"?  (Same question as in
-the previous paragraph above.)
+the previous paragraph above.)"
 
 All of these should have been a function of r indeed. The field 
 associated with polarization is the field that is generated
@@ -68,24 +68,22 @@ As discussed above, this field thus varies in space.
 The way it was meant is the local electric field that results
 from the inversion symmetry breaking potential.
 To make the distinction between operators and numbers/vectors clearer I've added hats to the operators.
-<Add where the text has been updated, and figure too> 
 
-By the way, I guess a factor of 'e' is missing in (2.11).
+"By the way, I guess a factor of 'e' is missing in (2.11)."
 
 I don't think this is true. There is, however, a minus sign missing,
 which propagates through the following equations as well.
 
-This whole discussion is somewhat heuristic anyway, so maybe
+"This whole discussion is somewhat heuristic anyway, so maybe
 a precise formulation is not needed, but in that case maybe
 you should introduce it as a heuristic discussion from the
-start.
+start."
 
 I have added heuristic to this sentence:
 "Before turning to a $\bm{k} \cdot \hat{\bm{p}}$ expansion of the above equations, we take a moment to discuss heuristically..."
  
-
-I'm not sure why the title of the subsection starting above
-Eq. (2.15) is "Electrostatics".  Find a more suitable title?
+"I'm not sure why the title of the subsection starting above
+Eq. (2.15) is "Electrostatics".  Find a more suitable title?"
 
 This title was chosen was to highlight that the discussion that followed
 was entirely on the basis of electrostatic contributions that 
@@ -98,14 +96,14 @@ and the next to
 in an attempt to contrast the two similar, but different, contributions to the total
 effect. 
  
-Fig. 2.4: I'm lost.  First, some headings on the figure say
+"Fig. 2.4: I'm lost.  First, some headings on the figure say
 p_x+ip_y and some say p_x+ip_z; was that intentional??  (Also
 in caption.)  The figure horiszontal axis label suggests the
 lattice constant is 2a_x, not a_x; is that right?  More
 importantly, I don't understand what the vertical axis is on
 each figure.  Are we looking at a top view of the x-y plane
 for the donuts, abut a side view of the x-z plane for the
-isosurfaces??  I find it very confusing.
+isosurfaces??  I find it very confusing."
 
 I have updated and corrected the figure. The p_y was a mistake,
 it should have been always p_z. I have added a set of axes to
@@ -115,46 +113,48 @@ were shifted by + and - a_x. I have removed those and simply
 added the double-sided arrow indicating the cell parameter
 along the x-direction. 
 
-A detail: I think you are using "nonrelativistic" as a
+"A detail: I think you are using "nonrelativistic" as a
 synonym for "absence of SOC", but this isn't quite right,
 since virtually all pseudopotentials include the scalar
 relativistic effects.  Unless you _really_ mean fully
-nonrelativistic, I think you need to use other wording.
+nonrelativistic, I think you need to use other wording."
 
 I have changed the wording to spin-orbit-coupled (SOC) calculations,
 and non-spin-orbit-coupled (NSOC) calculations, since indeed our
 pseudopotentials include the scalar relativistic contributions.
  
-There seems to be a redundant sentence, once at the bottom of
-p. 23, repeated just below Fig. 2.10.
+"There seems to be a redundant sentence, once at the bottom of
+p. 23, repeated just below Fig. 2.10."
 
 I removed the second sentence.
 
 Chapter 3
 ---------
 
-Start of 3.2: I suggest to list the space group (P2_1a ?) of
+"Start of 3.2: I suggest to list the space group (P2_1a ?) of
 the PM configuration, then say the _magnetic_ group of the
-ground state is P_ab2_1a.
+ground state is P_ab2_1a."
 
 In conventional International Tables for Crystallography settings the magnetic group is P_aca2_1, making the corresponding space group Pca2_1.Comparing the generators for Pbam to Pca2_1, the only broken symmetry is inversion. I've added it also to the main text. 
 
-In Fig. 3.1, I found it confusing.  Black arrows in a) have 
+"In Fig. 3.1, I found it confusing.  Black arrows in a) have 
 a different meaning than those in b) and c).  I wonder if there
 is a way to outline in a) the regions that are blown up in
-b) and c)?
+b) and c)?"
 
 Rather than marking both situations with boxes (they overlap and make the panel even messier),
 I followed the other referee's suggestion and indicated the spins corresponding to b) and c) in a).
 I also changed the coloration of L1 and L2 to distinguish them from the spins in black. 
 
-This chapter seems to be in good shape overall.  (Pretty cool
-results, actually.)
+"This chapter seems to be in good shape overall.  (Pretty cool
+results, actually.)"
+
+Thank you!
 
 Chapter 4
 ---------
 
-Introduction in 4.1: It seems to be unclear whether the SDW is
+"Introduction in 4.1: It seems to be unclear whether the SDW is
 present in the ground state, or it is induced by the light pulse.
 For example, you say it thermalizes on very short time scales.
 I would use that language for phonons or spin waves that are
@@ -163,7 +163,7 @@ distortion that is present in the ground state.  Are you
 talking about thermalization of amplitude modes and/or
 phasons of the SDW after some excitation?  In short, is the
 SDW a static object, or a dynamic one, or both?  It needs
-explaining.
+explaining."
 
 The wording is indeed misleading. The question of thermalization is
 more about how valid it is to ascribe different temperatures to 
@@ -179,26 +179,37 @@ the fast dynamics of the SDW excitations, a high degree of control
 can be achieved over the slower PLD dynamics.
 
 
-The agreement in 4.4 looks pretty impressive.
+"The agreement in 4.4 looks pretty impressive."
 
 Thank you.
 
 Chapter 5
 ---------
 
-There is a terminology used in the field of ferroelectrics and
+"There is a terminology used in the field of ferroelectrics and
 related systems, in which an "intrinsic" property (say,
 piezoelectricity) is the one you would get of DWs don't move,
 which the "extrinsic" response is larger since it takes into
 account the motion of DWs.  Usually the latter is at the level
 of the response of the domain pattern, rather than displacements
 of individual walls, but I still think it might be good to make
-the connection to this terminology somewhere.
+the connection to this terminology somewhere."
+
+In the introduction, I have added this connection to the original discussion:
+
+Another interesting observation is that, even though DWs occupy only a fraction of the entire volume, they can lead to the biggest contributions to macroscopic effects \cite{Schranz2012}. 
+Indeed, most of the research into DW was originally focused on their dynamics, since switching in ferroelectric materials is mainly a result of domain nucleation and associated DW movement \cite{Merz1954,Gao2013}. This is termed as {\it extrinsic switching} since it depends on the morphology of the sample, i.e. domain and DW distribution, rather than the microscopics and properties of individual unit cells \cite{Kliem2005}.
+The reason why extrinsic switching is usually favored can be understood from the following energetic argument.
+When an external electric field is applied to the sample, it is energetically more favorable for the DWs to move in order to grow the favored domains, rather than to uniformly rotate the polarization in the domain as a whole.
+The latter requires overcoming the prohibitively large energy barrier that separates different orientations of the polarization \cite{Tagantsev2010}.
+This uniform rotation is called {\it intrinsic} switching, since it can be described by the microscopics of a single unit cell, i.e. only depends on the properties of the material, and does not depend on the sample's domain and DW pattern \cite{Kliem2005}. 
+This relatively low energy cost associated with the \gls{DW} movement will also turn out to be one of the main contributors to the main subject of this Chapter: the mechanical softening at purely ferroelectric \glspl{DW}.
+
 
 Formatting details
 ------------------
 
-These are small things, but to make the presentation look
+"These are small things, but to make the presentation look
 more professional:
 
 You overuse upper-case lettering.  In English it is not
@@ -225,4 +236,8 @@ white space for this purpose.
 Hyphenation rules: "spin splitting" used as a noun should not
 be hyphenated, but when used as an adjective ("spin-splitting
 term") it is hyphenated.  Same for other hyphenations ("Rashba
-effect", etc).
+effect", etc)."
+
+I went through the text and implemented these suggestions.
+
+
