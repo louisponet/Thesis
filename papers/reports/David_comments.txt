@@ -20,39 +20,47 @@ condition.  For example, in almost all DFT calculations, it
 is zero.  What, then, is exactly meant by E in (2.2)?"
 
 Thank you for pointing this out. The terminology and description can 
-indeed be improved upon. There are some subtleties related with this.
-In the context of the Rashba effect and how it is discussed in this 
-section, this electric field associated with the polarization
-should be regarded as the local electric field that results from 
-the dipoles that appear due to the inversion symmetry breaking (ISB) and
-lead to the polarization. It is this field that will interact with the 
-envelope part of the wavefunction,
-and leads to the relativistic Rashba effect. Indeed this means that 
-my discussion on which local fields interact with which parts of the 
-wavefunction is maybe too simplified, in the sense that this 
-internal field from the dipoles is not a constant throughout the unit-cell,
+indeed be improved, and there are some subtleties related with this.
+In the context of the Rashba effect the "electric field associated with the polarization" 
+was meant as the local electric field near the ion, hosting the Bloch function 
+of the band, that results from the inversion symmetry breaking (ISB). 
+It is this field that will interact with the 
+envelope part of the wavefunction, that leads to the relativistic Rashba effect. 
+Indeed, my discussion on which local fields interact with which parts of 
+the wavefunction is too simplified, in the sense that this 
+internal field is not constant throughout the unit-cell,
 as was originally depicted by the violet surface in Fig. 2.2. 
-The field from the dipoles associated with the polarization
-will be approximately uniform across the atoms depicted in Fig 2.2, where the Bloch function
-peaks. An example is how in GeTe the field accros the Te atom is a result of the 
-dipoles that appear due to its off-center position in the unit cell.
+To really calculate the Rashba effect, one could maybe imagine a process where
+(1) the local electric field for the inversion symmetric phase is constructed, 
+(2) electric field in the inversion broken phase is calculated, and 
+(3) use the difference between the two as the ISB field which could then be used
+to calculate the relativistic Rashba effect.
+I'm not entirely sure whether this really the correct way but it demonstrates
+the concept. 
+Heuristically, the total contribution is due to the components of this field perpendicular
+to the wavevector of the Bloch function under scrutiny. This field could
+be approximately uniform across the atoms depicted in Fig 2.2, where the Bloch function
+peaks. An example is how in GeTe the field across the Te atom is a result of the 
+charge imbalance that appears due to its Te off-centering.
 Thus, when computing the contribution to the energy of this field interacting
 with the envelope, i.e. by performing the real-space
 integral, it could be replaced by an effective constant field,
-which one could refer to as the ISB field.
-This constant effective field is now indicated by the violet potential in Fig. 2.2. 
-A very subtle point related with your comment is how different boundary 
-conditions would change the Rashba effect. Indeed, when open 
-boundary conditions would be considered, the electric field that
-is a result of the surface charges would also lead to a contribution,
-which would be absent for short-circuited boundary conditions. 
-However, again, since the prefactor is so small, and this field
-is really tiny, compared to total contribution of the internal fields, 
-I think the difference between these boundary 
-conditions can be considered negligible w.r.t the Rashba effect. 
+which is now indicated by the violet potential in Fig. 2.2. 
+Another subtle point related to your comment is how different 
+boundary conditions would change the Rashba effect. 
+Indeed, for open boundary conditions, the electric field resulting from 
+bound surface charges would also lead to a contribution, which would be absent 
+for short-circuited boundary conditions.
+These two situations are exactly those depicted in Fig. 1 of your paper with Meyer: 
+"Ab initio study of BaTiO3 and PbTiO3 surfaces in external electric fields"
+DOI: 10.1103/PhysRevB.63.205426
+The internal field E = -4pi P that is present in panel (a) will lead a
+tiny additional contribution to the relativistic Rashba effect, which 
+is absent for the situation in panel (b).
 
-I have replaced the E in eq 2.2 to \hat{\bm n} to indicate that 
-it is a unit vector along the ISB field.
+I have replaced the E in eq 2.2 to \hat{\bm n} to indicate that
+it is a unit vector along the ISB field, and also improved
+the description of the potentials and electric fields.
 
 "I had some feeling that Eqs. 2.7-11 were also imprecise.
 Which of the V's are just numbers (2.7, 2.8?) and which ones
@@ -61,13 +69,9 @@ all functions of (r)?  And what, exactly, is the "field
 associated with the polarization"?  (Same question as in
 the previous paragraph above.)"
 
-All of these should have been a function of r indeed. The field 
-associated with polarization is the field that is generated
-by the dipoles that lead to the ferroelectric polarization.
-As discussed above, this field thus varies in space. 
-The way it was meant is the local electric field that results
-from the inversion symmetry breaking potential.
-To make the distinction between operators and numbers/vectors clearer I've added hats to the operators.
+All of these should have been a function of r indeed.
+Additionally, to make the distinction between operators and numbers/vectors 
+clearer I've added hats to the operators.
 
 "By the way, I guess a factor of 'e' is missing in (2.11)."
 
@@ -80,7 +84,8 @@ you should introduce it as a heuristic discussion from the
 start."
 
 I have added heuristic to this sentence:
-"Before turning to a $\bm{k} \cdot \hat{\bm{p}}$ expansion of the above equations, we take a moment to discuss heuristically..."
+"Before turning to a $\bm{k} \cdot \hat{\bm{p}}$ expansion of the above equations, 
+we take a moment to discuss heuristically..."
  
 "I'm not sure why the title of the subsection starting above
 Eq. (2.15) is "Electrostatics".  Find a more suitable title?"
@@ -135,7 +140,9 @@ Chapter 3
 the PM configuration, then say the _magnetic_ group of the
 ground state is P_ab2_1a."
 
-In conventional International Tables for Crystallography settings the magnetic group is P_aca2_1, making the corresponding space group Pca2_1.Comparing the generators for Pbam to Pca2_1, the only broken symmetry is inversion. I've added it also to the main text. 
+In conventional International Tables for Crystallography settings the magnetic group is P_aca2_1, 
+making the corresponding space group Pca2_1. Comparing the generators for Pbam to Pca2_1, 
+the only broken symmetry is inversion. I've added it also to the main text. 
 
 "In Fig. 3.1, I found it confusing.  Black arrows in a) have 
 a different meaning than those in b) and c).  I wonder if there
@@ -173,8 +180,10 @@ The SDW is present in the ground state, and the excitations that
 are mentioned are amplitude modes that are excited through heating
 with optical pulses.
 
-I have changed the wording so that it reflects the concept of the chapter
-more, rather than the question of thermalization, i.e. that through
+I changed the wording in the introduction to make this more clear,
+also adding reference to the amplitude exciations.
+Moreover, I adapted the discussion to more clearly reflect the concept of the chapter
+rather than the question of thermalization, i.e. that through
 the fast dynamics of the SDW excitations, a high degree of control
 can be achieved over the slower PLD dynamics.
 
@@ -197,13 +206,25 @@ the connection to this terminology somewhere."
 
 In the introduction, I have added this connection to the original discussion:
 
-Another interesting observation is that, even though DWs occupy only a fraction of the entire volume, they can lead to the biggest contributions to macroscopic effects \cite{Schranz2012}. 
-Indeed, most of the research into DW was originally focused on their dynamics, since switching in ferroelectric materials is mainly a result of domain nucleation and associated DW movement \cite{Merz1954,Gao2013}. This is termed as {\it extrinsic switching} since it depends on the morphology of the sample, i.e. domain and DW distribution, rather than the microscopics and properties of individual unit cells \cite{Kliem2005}.
-The reason why extrinsic switching is usually favored can be understood from the following energetic argument.
-When an external electric field is applied to the sample, it is energetically more favorable for the DWs to move in order to grow the favored domains, rather than to uniformly rotate the polarization in the domain as a whole.
-The latter requires overcoming the prohibitively large energy barrier that separates different orientations of the polarization \cite{Tagantsev2010}.
-This uniform rotation is called {\it intrinsic} switching, since it can be described by the microscopics of a single unit cell, i.e. only depends on the properties of the material, and does not depend on the sample's domain and DW pattern \cite{Kliem2005}. 
-This relatively low energy cost associated with the \gls{DW} movement will also turn out to be one of the main contributors to the main subject of this Chapter: the mechanical softening at purely ferroelectric \glspl{DW}.
+Another interesting observation is that, even though DWs occupy only a fraction 
+of the entire volume, they can lead to the biggest contributions to macroscopic effects [Schranz2012]. 
+Indeed, most of the research into DW was originally focused on their dynamics, 
+since switching in ferroelectric materials is mainly a result of domain nucleation 
+and associated DW movement [Merz1954,Gao2013]. This is termed as {\it extrinsic switching} 
+since it depends on the morphology of the sample, i.e. domain and DW distribution, 
+rather than the microscopics and properties of individual unit cells [Kliem2005].
+The reason why extrinsic switching is usually favored can be understood from 
+the following energetic argument. When an external electric field is applied 
+to the sample, it is energetically more favorable for the DWs to move in order 
+to grow the favored domains, rather than to uniformly rotate the polarization in 
+the domain as a whole. The latter requires overcoming the prohibitively large energy barrier 
+that separates different orientations of the polarization [Tagantsev2010].
+This uniform rotation is called {\it intrinsic} switching, since it can be described 
+by the microscopics of a single unit cell, i.e. only depends on the properties of the material, 
+and does not depend on the sample's domain and DW pattern [Kliem2005]. 
+This relatively low energy cost associated with the DW movement will also 
+turn out to be one of the main contributors to the main subject of 
+this Chapter: the mechanical softening at purely ferroelectric DWs.
 
 
 Formatting details
@@ -238,6 +259,7 @@ be hyphenated, but when used as an adjective ("spin-splitting
 term") it is hyphenated.  Same for other hyphenations ("Rashba
 effect", etc)."
 
-I went through the text and implemented these suggestions.
+Thank you for explaining these rules, I was not fully aware of them. 
+I went through the text and implemented the suggestions.
 
 

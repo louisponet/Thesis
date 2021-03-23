@@ -104,7 +104,7 @@ This leads to the following equations for $\Ket{\unk{n}{k}}$:
 	\hat{V}_2^{\bm{k}}(\bm r) =& -\lambda \hat{\bm{\sigma}} \cdot \left[ \bm{\nabla}V(\bm r) \times \bm{k}\right] \\
 	\hat{V}_3(\bm r) =& -\lambda \hat{\bm{\sigma}} \cdot \left[ \bm{\nabla}V(\bm r) \times \hat{\bm{p}}\right].
 \end{align}
-We neglected the last two terms of Eq.~\eqref{eq:Rashba_dirac} since they are exceedingly small and do not contribute to the linear $k$-dependent energy of the Rashba form in Eq.~\eqref{eq:Rashba_form}.
+We neglected the last two terms of Eq.~\eqref{eq:Rashba_dirac} since they are usually small for valence electrons and do not contribute to the linear $k$-dependent energy of the Rashba form in Eq.~\eqref{eq:Rashba_form}.
 
 Before turning to a $\bm{k} \cdot \hat{\bm{p}}$ expansion of the above equations, we take a moment to discuss heuristically how $\hat{V}^{\bm k}_2$ and $\hat{V}_3$ act on the Bloch functions, more specifically, which contribution to the local electric field $\bm{\nabla}V$ is important.
 Both terms originated from the application of Eq.~\eqref{eq:Rashba_momentum} to the third term on the right-hand side of Eq.~\eqref{eq:Rashba_dirac}.
@@ -113,15 +113,15 @@ A pictorial representation of this situation is shown in Fig.~\ref{fig:Efield_ce
 \begin{equation}
 	\bm{\nabla} V(\bm r) = - \bm{E}(\bm r) = - (\bm{E}_{\rm a}(\bm r) + \bm{E}_{\rm P}(\bm r)),
 \end{equation}
-with $\bm E_{\rm a}$ resulting from the atomic potentials and $\bm E_{\rm P}$ the electric field that groups the contributions that originate from the inversion symmetry breaking. One such contribution originates from the dipoles that are associated with the polarization, another could be an externally applied field.
+with $\bm E_{\rm a}$ resulting from the atomic potentials and $\bm E_{\rm P}$ the electric field that groups the contributions that originate from the inversion symmetry breaking. One such contribution originates from the charge imbalance that causes resulting from the inversion symmetry breaking, another could be an externally applied field.
 While the exact real-space distribution of $\bm E_{\rm P}$ depends on microscopic details, the important point for our heuristic discussion is that it is approximately constant in the region of space where the Bloch function peaks, i.e. close to the ionic cores.
 The purple plane in Fig.~\ref{fig:Efield_cell_drawing} pictorially shows the potential $V_{\rm P}$ associated with this field.   
+
 \begin{figure}[h]
 ~\centering
 \IncludeGraphics[width=\linewidth]{Rashba_potentials.png}\caption{\label{fig:Efield_cell_drawing}{\bf Potentials and wavefunctions inside the unit cell.} Pictorial representation of the different electric potentials ($V$, surfaces) and fields ($E=\bm \nabla V$, arrows) in a 2D square lattice. The blue spheres represent the atoms, which produce the spherically symmetric red potential $V_a$ and field $\bm E_a$. The purple plane denotes the potential $V_p$ associated with the polarization, and the resulting field $\bm E_p$. The green and yellow surfaces depict the cell periodic and envelope part of the Bloch function: $\unkKet{n}{k}$ and $e^{ik_x r_x}$, respectively. The vectors $\bm k$ and $\bm p_u$ denote the crystalline and canonical momentum of the Bloch function, respectively.
 The former results from the envelope function, and the latter from the periodic part, see Eq.~\eqref{eq:Rashba_momentum}.}
-\end{figure}
-    
+\end{figure}    
 Focusing first on $\hat{V}^{\bm k}_2$:
 \begin{equation}
 	\label{eq:Rashba_purerel}
@@ -129,7 +129,7 @@ Focusing first on $\hat{V}^{\bm k}_2$:
 \end{equation}
 we can observe in the figure that the atomic contribution with $\bm E_{\rm a}$ is zero since $\bm E_{\rm a}$ is odd throughout the unit cell, whereas $\bm k$ is a constant.
 On the contrary, $\bm E_{\rm P}$ is even throughout the unit cell, leading to a nonzero contribution.
-However, both $\bm E_{\rm P}$ and $\bm k$ are generally small, meaning that the energy contribution of $V^{\bm k}_2$ is also exceedingly small due to the tiny \gls{SOC} constant $\lambda$, leading usually to an order of magnitude of $E^{\bm k}_2 = \Bra{u_n^{\bm k}} \hat{V}_2^{\bm k}(\bm r) \Ket{u_n^{\bm k}}$ of \SI{e-6}eV.
+However, both $\bm E_{\rm P}$ and $\bm k$ are generally small, meaning that the energy contribution of $V^{\bm k}_2$ is also exceedingly small due to the tiny \gls{SOC} constant $\lambda$, leading usually to an order of magnitude for $E^{\bm k}_2 = \Bra{u_n^{\bm k}} \hat{V}_2^{\bm k}(\bm r) \Ket{u_n^{\bm k}}$ of \SI{e-6}eV.
     
 Following a similar train of thought for $\hat{V}^{\bm k}_3$:
 \begin{equation}
@@ -144,26 +144,26 @@ As it turns out, $\hat{V}^{\bm k}_3$ is exactly the energy term that describes t
 This term by itself does not lead to any linear $k$-dependent spin splitting, however.
 Conversely, $\hat{V}_2^{\bm k}$ does have the correct form of Eq.~\eqref{eq:Rashba_form}, and we thus identify it as the first contribution to the purely relativistic Rashba spin splitting.
     
-In order to obtain the second contribution, we perform a $\bm k \cdot \hat{\bm p}$ expansion of Eq.~\eqref{eq:Rashba_unk_Vs} around a \gls{T}-invariant point of the \gls{BZ}, $\bm k_0$\cite{Rashba1959SymmetryAr,Lowdin1951,Bahramy2011}.
+In order to obtain the second contribution, we perform a $\bm k \cdot \hat{\bm p}$ expansion of Eq.~\eqref{eq:Rashba_unk_Vs} around a \gls{T}-invariant point of the \gls{BZ}, $\bm k_0$~\cite{Rashba1959SymmetryAr,Lowdin1951,Bahramy2011}.
 We denote the {\it relative} vector between the \gls{T}-invariant point $\bm k_0$ and $\bm k$ as $\bm K$, i.e. $\bm K = \bm k - \bm k_0$.
 The basis states are chosen to be eigenstates of $\hat{V}_0^{\bm k_0}$, with the perturbation resulting from $\hat{V}^{\bm K}_1 + \hat{V}^{\bm K}_2 + \hat{V}_3$.
-We will derive the energy dispersion for the $n$th band, with the spin-up and spin-down states of this band necessarily degenerate at the \gls{T}-invariant point.%, and we take $E^{\bm k_0}_{n,\sigma} = 0$%.
- Furthermore, we assume that this is the only degeneracy of this band, and we choose the spin-up and spin-down basis states at $\bm k_0$ so that no off-diagonal elements of $ \hat{V}_1^{\bm k_0} + \hat{V}_2^{\bm k_0} + \hat{V}_3$ exist between them.
+We will derive the energy dispersion for the $n$th band, with the spin-up and spin-down states of this band necessarily degenerate at the \gls{T}-invariant point.
+Furthermore, we assume that this is the only degeneracy of this band, and we choose the spin-up and spin-down basis states at $\bm k_0$ so that no off-diagonal elements of $ \hat{V}_1^{\bm k_0} + \hat{V}_2^{\bm k_0} + \hat{V}_3$ exist between them.
 
 Expanding then Eq.~\eqref{eq:Rashba_unk_Vs} in small $\bm{K}$, keeping terms linear in $\bm{K}$ and up to second order in $1/c$ (or equivalently, up to $\lambda^2$), we find:
 \begin{align}
-	E_{n,\sigma}^{\bm{k}} - E_{n,\bm \sigma}^{\bm{k}_0} =& \Bra{u_{n,\bm \sigma}^{\bm k_0}} \hat{V}_1^{\bm K} + \hat{V}_2^{\bm K} + \hat{V}_3\Ket{u_{n,\bm \sigma}^{\bm k_0}}+ \\
+	\tilde{E}_{n,\sigma}^{\bm{k}} - E_{n,\bm \sigma}^{\bm{k}_0} =& \Bra{u_{n,\bm \sigma}^{\bm k_0}} \hat{V}_1^{\bm K} + \hat{V}_2^{\bm K} + \hat{V}_3\Ket{u_{n,\bm \sigma}^{\bm k_0}}+ \\
 		& \sum_{m,\bm \sigma' \neq n,\bm \sigma}\frac{\Bra{u_{m,\bm \sigma'}^{\bm{k}_0}} \hat{V}_1^{\bm K} + \hat{V}_2^{\bm K} + \hat{V}_3\Ket{u_{n, \bm \sigma}^{\bm{k}_0}}\Bra{u_{n, \bm \sigma}^{\bm{k}_0}}  \hat{V}_1^{\bm K} + \hat{V}_2^{\bm K} + \hat{V}_3 \Ket{u_{m, \bm \sigma'}^{\bm{k}_0}}+\rm{H.c.}}{E_{n, \bm \sigma}^{\bm k_0}- E_{m, \bm \sigma'}^{\bm k_0}},
 \end{align}
-where the sum is performed over all states that are not identical to $\Ket{u_{n,\bm \sigma}^{\bm k_0}}$, and the spin up-down degeneracy is avoided by the definition of the basis that is used.
+where the sum is performed over all states that are not identical to $\Ket{u_{n,\bm \sigma}^{\bm k_0}}$, and the singularity that would result from the spin up-down degeneracy is avoided by the definition of the basis that is used. The tilde indicates that the energy dispersion is approximate.
 Grouping then the terms that lead to linear-in-$\bm K$ spin splittings, we arrive at:
 \begin{align}
 	\label{eq:kp_expansion}
-	\tilde{E}_{n,\sigma}^{\bm{k}} - \tilde{E}_{n,\bm \sigma}^{\bm{k}_0} =& -\lambda \Bra{u_{n,\bm \sigma}^{\bm k_0}}  \hat{\bm{\sigma}} \cdot ( \bm{\nabla}V(\bm r) \times \bm{K}) \Ket{u_{n,\bm \sigma}^{\bm k_0}} + \\
+	\tilde{E}_{n,\sigma}^{\bm{k}} - E_{n,\bm \sigma}^{\bm{k}_0} =& -\lambda \Bra{u_{n,\bm \sigma}^{\bm k_0}}  \hat{\bm{\sigma}} \cdot ( \bm{\nabla}V(\bm r) \times \bm{K}) \Ket{u_{n,\bm \sigma}^{\bm k_0}} + \\
 		& \sum_{m,\bm \sigma \neq n,\bm \sigma}\frac{\hbar}{m}\frac{\Bra{u_{m,\bm \sigma}^{\bm{k}_0}} \bm K \cdot \hat{\bm p} \Ket{u_{n, \bm \sigma}^{\bm{k}_0}}\Bra{u_{n, \bm \sigma}^{\bm{k}_0}} -\lambda \hat{\bm{\sigma}} \cdot \left( \bm{\nabla}V(\bm r) \times \hat{\bm{p}}\right) \Ket{u_{m, \bm \sigma}^{\bm{k}_0}} + \rm{H.c.}}{E_{n, \bm \sigma}^{\bm k_0}- E_{m, \bm \sigma}^{\bm k_0}}.\nonumber
 \end{align}
 The first term at the right-hand side was discussed previously in Eq.~\eqref{eq:Rashba_purerel}.
-The second term has the atomic \gls{SOC} ($\hat{V}^{\bm k}_3$, discussed in Eq.~\eqref{eq:Rashba_SOC}) is much larger than $\hat{V}^{\bm{k}}_2$, leading to the same order of magnitude for both terms on the right-hand side of Eq.~\eqref{eq:kp_expansion}, even though the second is of a higher order in the perturbation theory. Notice how no spin off-diagonal terms appear in the second term due to the spin-diagonal form of $\bm K \cdot \hat{\bm p}$.
+The second term has the atomic \gls{SOC} ($\hat{V}^{\bm k}_3$, discussed in Eq.~\eqref{eq:Rashba_SOC}) which is much larger than $\hat{V}^{\bm{k}}_2$, leading usually to the same order of magnitude for both terms on the right-hand side of Eq.~\eqref{eq:kp_expansion}, even though the second is of a higher order in the perturbation theory. Notice how no spin off-diagonal terms appear in the second term due to the spin-diagonal form of $\bm K \cdot \hat{\bm p}$.
 
 A requirement for the second term to be nonzero is that $u_n$ and $u_m$ have different parity along the spatial direction defined by $\bm{k}$, since otherwise $\Bra{u_n} k_x \partial_x + k_y \partial_y + k_z \partial_z \Ket{u_m} = 0$.
 One example could be a $p_y$ orbital and a $s$-$p_z$ hybridized one, which would be created by a ferroelectric polarization along the $z$-axis.
